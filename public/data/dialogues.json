@@ -11169,6 +11169,4089 @@
    ]
   },
   {
+   "id": "warranty",
+   "g": "warranty",
+   "name": "保修期内换新 · 水壶坏了",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "水壶用了五个月不通电，你带着邮件回店里。",
+   "roles": [
+    "你",
+    "店员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "This kettle stopped working after five months.",
+     "zh": "这个水壶用了五个月就坏了。"
+    },
+    {
+     "r": 1,
+     "en": "Do you have the receipt?",
+     "zh": "有小票吗？"
+    },
+    {
+     "r": 0,
+     "en": "I have the order confirmation email.",
+     "zh": "我有订单确认邮件。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. It has a two-year warranty, so we can replace it today.",
+     "zh": "可以。保修两年，今天就能换。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need the original box?",
+     "zh": "需要原包装吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not for a replacement. Do you want the same model?",
+     "zh": "换货不用。要同款吗？"
+    },
+    {
+     "r": 0,
+     "en": "Is there something quieter? This one rattles.",
+     "zh": "有安静点的吗？这个有异响。"
+    },
+    {
+     "r": 1,
+     "en": "This one is ten more, and it is much quieter.",
+     "zh": "这款贵十块，安静很多。",
+     "note": "much quieter 这种程度副词，比 quiet 更能表达你的真实需求。"
+    },
+    {
+     "r": 0,
+     "en": "I will pay the difference. Thanks.",
+     "zh": "我补差价。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "offer",
+    "task": "店员给了一个替代方案，你要判断值不值",
+    "prompt": {
+     "en": "That model is out of stock. I can offer the next one up at the same price.",
+     "zh": "那款没货了。可以同价给你升级款。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Same price for a better one? Yes, please.",
+       "zh": "更好的同价？那要。"
+      },
+      "react": {
+       "en": "I will process it as a warranty swap.",
+       "zh": "我按保修换货处理。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is it the same size? It has to fit under the tap.",
+       "zh": "尺寸一样吗？得塞进水龙头下面。"
+      },
+      "react": {
+       "en": "Two centimetres taller, I am afraid.",
+       "zh": "恐怕高两厘米。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stopped working after five months.",
+     "zh": "用了五个月就坏了。"
+    },
+    {
+     "en": "Do I need the original box?",
+     "zh": "需要原包装吗？"
+    },
+    {
+     "en": "I will pay the difference.",
+     "zh": "我补差价。"
+    }
+   ]
+  },
+  {
+   "id": "warranty-2",
+   "g": "warranty",
+   "name": "保修期内换新 · 要退款",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你不想再要这个牌子了。",
+   "roles": [
+    "你",
+    "店员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "This kettle stopped working after five months.",
+     "zh": "这个水壶用了五个月就坏了。"
+    },
+    {
+     "r": 1,
+     "en": "Do you have the receipt?",
+     "zh": "有小票吗？"
+    },
+    {
+     "r": 0,
+     "en": "I have the order confirmation email.",
+     "zh": "我有订单确认邮件。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. It has a two-year warranty, so we can replace it today.",
+     "zh": "可以。保修两年，今天就能换。"
+    },
+    {
+     "r": 0,
+     "en": "Could I have a refund instead of a replacement?",
+     "zh": "能退款而不是换货吗？"
+    },
+    {
+     "r": 1,
+     "en": "Within six months, yes. It goes back to your card.",
+     "zh": "六个月以内可以。退回原卡。"
+    },
+    {
+     "r": 0,
+     "en": "Is there something quieter? This one rattles.",
+     "zh": "有安静点的吗？这个有异响。"
+    },
+    {
+     "r": 1,
+     "en": "This one is ten more, and it is much quieter.",
+     "zh": "这款贵十块，安静很多。",
+     "note": "much quieter 这种程度副词，比 quiet 更能表达你的真实需求。"
+    },
+    {
+     "r": 0,
+     "en": "I will pay the difference. Thanks.",
+     "zh": "我补差价。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "offer",
+    "task": "店员给了一个替代方案，你要判断值不值",
+    "prompt": {
+     "en": "That model is out of stock. I can offer the next one up at the same price.",
+     "zh": "那款没货了。可以同价给你升级款。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Same price for a better one? Yes, please.",
+       "zh": "更好的同价？那要。"
+      },
+      "react": {
+       "en": "I will process it as a warranty swap.",
+       "zh": "我按保修换货处理。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is it the same size? It has to fit under the tap.",
+       "zh": "尺寸一样吗？得塞进水龙头下面。"
+      },
+      "react": {
+       "en": "Two centimetres taller, I am afraid.",
+       "zh": "恐怕高两厘米。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stopped working after five months.",
+     "zh": "用了五个月就坏了。"
+    },
+    {
+     "en": "Do I need the original box?",
+     "zh": "需要原包装吗？"
+    },
+    {
+     "en": "I will pay the difference.",
+     "zh": "我补差价。"
+    }
+   ]
+  },
+  {
+   "id": "warranty-3",
+   "g": "warranty",
+   "name": "保修期内换新 · 超过保修",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "东西用了三年，早过保了。",
+   "roles": [
+    "你",
+    "店员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "It is three years old, so I expect no warranty. Can you still look at it?",
+     "zh": "用了三年，我知道过保了。还能看看吗？"
+    },
+    {
+     "r": 1,
+     "en": "We can send it for a quote, but there is a twenty fee.",
+     "zh": "可以送去报价，但要二十检测费。"
+    },
+    {
+     "r": 0,
+     "en": "I have the order confirmation email.",
+     "zh": "我有订单确认邮件。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. It has a two-year warranty, so we can replace it today.",
+     "zh": "可以。保修两年，今天就能换。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need the original box?",
+     "zh": "需要原包装吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not for a replacement. Do you want the same model?",
+     "zh": "换货不用。要同款吗？"
+    },
+    {
+     "r": 0,
+     "en": "Is there something quieter? This one rattles.",
+     "zh": "有安静点的吗？这个有异响。"
+    },
+    {
+     "r": 1,
+     "en": "This one is ten more, and it is much quieter.",
+     "zh": "这款贵十块，安静很多。",
+     "note": "much quieter 这种程度副词，比 quiet 更能表达你的真实需求。"
+    },
+    {
+     "r": 0,
+     "en": "I will pay the difference. Thanks.",
+     "zh": "我补差价。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "offer",
+    "task": "店员给了一个替代方案，你要判断值不值",
+    "prompt": {
+     "en": "That model is out of stock. I can offer the next one up at the same price.",
+     "zh": "那款没货了。可以同价给你升级款。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Same price for a better one? Yes, please.",
+       "zh": "更好的同价？那要。"
+      },
+      "react": {
+       "en": "I will process it as a warranty swap.",
+       "zh": "我按保修换货处理。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is it the same size? It has to fit under the tap.",
+       "zh": "尺寸一样吗？得塞进水龙头下面。"
+      },
+      "react": {
+       "en": "Two centimetres taller, I am afraid.",
+       "zh": "恐怕高两厘米。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stopped working after five months.",
+     "zh": "用了五个月就坏了。"
+    },
+    {
+     "en": "Do I need the original box?",
+     "zh": "需要原包装吗？"
+    },
+    {
+     "en": "I will pay the difference.",
+     "zh": "我补差价。"
+    }
+   ]
+  },
+  {
+   "id": "warranty-4",
+   "g": "warranty",
+   "name": "保修期内换新 · 网上买的",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你是在官网买的，来实体店问。",
+   "roles": [
+    "你",
+    "店员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "This kettle stopped working after five months.",
+     "zh": "这个水壶用了五个月就坏了。"
+    },
+    {
+     "r": 1,
+     "en": "Do you have the receipt?",
+     "zh": "有小票吗？"
+    },
+    {
+     "r": 0,
+     "en": "I bought it online. Can I deal with it here?",
+     "zh": "我在网上买的。能在店里处理吗？"
+    },
+    {
+     "r": 1,
+     "en": "You can, as long as the order is in your name.",
+     "zh": "可以，只要订单是你的名字。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need the original box?",
+     "zh": "需要原包装吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not for a replacement. Do you want the same model?",
+     "zh": "换货不用。要同款吗？"
+    },
+    {
+     "r": 0,
+     "en": "Is there something quieter? This one rattles.",
+     "zh": "有安静点的吗？这个有异响。"
+    },
+    {
+     "r": 1,
+     "en": "This one is ten more, and it is much quieter.",
+     "zh": "这款贵十块，安静很多。",
+     "note": "much quieter 这种程度副词，比 quiet 更能表达你的真实需求。"
+    },
+    {
+     "r": 0,
+     "en": "I will pay the difference. Thanks.",
+     "zh": "我补差价。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "offer",
+    "task": "店员给了一个替代方案，你要判断值不值",
+    "prompt": {
+     "en": "That model is out of stock. I can offer the next one up at the same price.",
+     "zh": "那款没货了。可以同价给你升级款。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Same price for a better one? Yes, please.",
+       "zh": "更好的同价？那要。"
+      },
+      "react": {
+       "en": "I will process it as a warranty swap.",
+       "zh": "我按保修换货处理。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is it the same size? It has to fit under the tap.",
+       "zh": "尺寸一样吗？得塞进水龙头下面。"
+      },
+      "react": {
+       "en": "Two centimetres taller, I am afraid.",
+       "zh": "恐怕高两厘米。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stopped working after five months.",
+     "zh": "用了五个月就坏了。"
+    },
+    {
+     "en": "Do I need the original box?",
+     "zh": "需要原包装吗？"
+    },
+    {
+     "en": "I will pay the difference.",
+     "zh": "我补差价。"
+    }
+   ]
+  },
+  {
+   "id": "warranty-5",
+   "g": "warranty",
+   "name": "保修期内换新 · 配件坏了",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "只是电源线坏了。",
+   "roles": [
+    "你",
+    "店员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Only the cable is broken. Can I just get a new one?",
+     "zh": "只是线坏了。能单买一根吗？"
+    },
+    {
+     "r": 1,
+     "en": "Do you have the receipt?",
+     "zh": "有小票吗？"
+    },
+    {
+     "r": 0,
+     "en": "I have the order confirmation email.",
+     "zh": "我有订单确认邮件。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. It has a two-year warranty, so we can replace it today.",
+     "zh": "可以。保修两年，今天就能换。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need the original box?",
+     "zh": "需要原包装吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not for a replacement. Do you want the same model?",
+     "zh": "换货不用。要同款吗？"
+    },
+    {
+     "r": 0,
+     "en": "Is there something quieter? This one rattles.",
+     "zh": "有安静点的吗？这个有异响。"
+    },
+    {
+     "r": 1,
+     "en": "This one is ten more, and it is much quieter.",
+     "zh": "这款贵十块，安静很多。",
+     "note": "much quieter 这种程度副词，比 quiet 更能表达你的真实需求。"
+    },
+    {
+     "r": 0,
+     "en": "I will pay the difference. Thanks.",
+     "zh": "我补差价。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "offer",
+    "task": "店员给了一个替代方案，你要判断值不值",
+    "prompt": {
+     "en": "That model is out of stock. I can offer the next one up at the same price.",
+     "zh": "那款没货了。可以同价给你升级款。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Same price for a better one? Yes, please.",
+       "zh": "更好的同价？那要。"
+      },
+      "react": {
+       "en": "I will process it as a warranty swap.",
+       "zh": "我按保修换货处理。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is it the same size? It has to fit under the tap.",
+       "zh": "尺寸一样吗？得塞进水龙头下面。"
+      },
+      "react": {
+       "en": "Two centimetres taller, I am afraid.",
+       "zh": "恐怕高两厘米。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stopped working after five months.",
+     "zh": "用了五个月就坏了。"
+    },
+    {
+     "en": "Do I need the original box?",
+     "zh": "需要原包装吗？"
+    },
+    {
+     "en": "I will pay the difference.",
+     "zh": "我补差价。"
+    }
+   ]
+  },
+  {
+   "id": "moving",
+   "g": "moving",
+   "name": "找搬家公司报价 · 两居室同城搬",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你下个月搬家，两边都是没有电梯的老楼。",
+   "roles": [
+    "你",
+    "搬家客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I need a quote for a two-bedroom flat move.",
+     "zh": "两居室搬家，想报个价。"
+    },
+    {
+     "r": 1,
+     "en": "How far is the move?",
+     "zh": "搬多远？"
+    },
+    {
+     "r": 0,
+     "en": "About six miles, same city.",
+     "zh": "大概六英里，同城。"
+    },
+    {
+     "r": 1,
+     "en": "Any stairs or a lift?",
+     "zh": "有楼梯还是电梯？"
+    },
+    {
+     "r": 0,
+     "en": "Third floor, no lift at either end.",
+     "zh": "三楼，两边都没电梯。"
+    },
+    {
+     "r": 1,
+     "en": "That adds an hour. Roughly four hundred, including packing materials.",
+     "zh": "那要多一小时。大概四百，含包装材料。"
+    },
+    {
+     "r": 0,
+     "en": "Does that include dismantling the bed?",
+     "zh": "包含拆床吗？"
+    },
+    {
+     "r": 1,
+     "en": "It does. We can also reassemble it at the new place.",
+     "zh": "包含。到新家也能装回去。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Are you insured if something breaks?",
+     "zh": "好。东西摔坏了有保险吗？"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "cost",
+    "task": "报价比你预期高，你要砍价或减项",
+    "prompt": {
+     "en": "Four hundred is the weekday price. Saturdays are four eighty.",
+     "zh": "四百是工作日价。周六四百八。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then I will take a weekday and book time off.",
+       "zh": "那我要工作日，请一天假。"
+      },
+      "react": {
+       "en": "Tuesday is our quietest day.",
+       "zh": "周二我们最闲。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can you drop the packing materials to bring it down?",
+       "zh": "去掉包装材料能便宜点吗？"
+      },
+      "react": {
+       "en": "Minus forty, but you supply the boxes.",
+       "zh": "少四十，但纸箱你自己准备。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I need a quote for a move.",
+     "zh": "搬家想报个价。"
+    },
+    {
+     "en": "Any stairs or a lift?",
+     "zh": "有楼梯还是电梯？"
+    },
+    {
+     "en": "Are you insured?",
+     "zh": "有保险吗？"
+    }
+   ]
+  },
+  {
+   "id": "moving-2",
+   "g": "moving",
+   "name": "找搬家公司报价 · 只要人工",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你自己打包，只想要人搬。",
+   "roles": [
+    "你",
+    "搬家客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I will pack everything myself. What is the price for labour only?",
+     "zh": "我自己打包。只要人工多少钱？"
+    },
+    {
+     "r": 1,
+     "en": "Three hundred, and we still cover the stairs.",
+     "zh": "三百，楼梯费也算在里面。"
+    },
+    {
+     "r": 0,
+     "en": "About six miles, same city.",
+     "zh": "大概六英里，同城。"
+    },
+    {
+     "r": 1,
+     "en": "Any stairs or a lift?",
+     "zh": "有楼梯还是电梯？"
+    },
+    {
+     "r": 0,
+     "en": "Third floor, no lift at either end.",
+     "zh": "三楼，两边都没电梯。"
+    },
+    {
+     "r": 1,
+     "en": "That adds an hour. Roughly four hundred, including packing materials.",
+     "zh": "那要多一小时。大概四百，含包装材料。"
+    },
+    {
+     "r": 0,
+     "en": "Does that include dismantling the bed?",
+     "zh": "包含拆床吗？"
+    },
+    {
+     "r": 1,
+     "en": "It does. We can also reassemble it at the new place.",
+     "zh": "包含。到新家也能装回去。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Are you insured if something breaks?",
+     "zh": "好。东西摔坏了有保险吗？"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "cost",
+    "task": "报价比你预期高，你要砍价或减项",
+    "prompt": {
+     "en": "Four hundred is the weekday price. Saturdays are four eighty.",
+     "zh": "四百是工作日价。周六四百八。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then I will take a weekday and book time off.",
+       "zh": "那我要工作日，请一天假。"
+      },
+      "react": {
+       "en": "Tuesday is our quietest day.",
+       "zh": "周二我们最闲。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can you drop the packing materials to bring it down?",
+       "zh": "去掉包装材料能便宜点吗？"
+      },
+      "react": {
+       "en": "Minus forty, but you supply the boxes.",
+       "zh": "少四十，但纸箱你自己准备。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I need a quote for a move.",
+     "zh": "搬家想报个价。"
+    },
+    {
+     "en": "Any stairs or a lift?",
+     "zh": "有楼梯还是电梯？"
+    },
+    {
+     "en": "Are you insured?",
+     "zh": "有保险吗？"
+    }
+   ]
+  },
+  {
+   "id": "moving-3",
+   "g": "moving",
+   "name": "找搬家公司报价 · 长途搬家",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你要搬到另一个城市。",
+   "roles": [
+    "你",
+    "搬家客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I am moving to another city, about two hundred miles.",
+     "zh": "我要搬到另一个城市，大概两百英里。"
+    },
+    {
+     "r": 1,
+     "en": "Then it is by the mile and the day. I will email a quote.",
+     "zh": "那要按里程和天数算。我邮件发报价。"
+    },
+    {
+     "r": 0,
+     "en": "About six miles, same city.",
+     "zh": "大概六英里，同城。"
+    },
+    {
+     "r": 1,
+     "en": "Any stairs or a lift?",
+     "zh": "有楼梯还是电梯？"
+    },
+    {
+     "r": 0,
+     "en": "Third floor, no lift at either end.",
+     "zh": "三楼，两边都没电梯。"
+    },
+    {
+     "r": 1,
+     "en": "That adds an hour. Roughly four hundred, including packing materials.",
+     "zh": "那要多一小时。大概四百，含包装材料。"
+    },
+    {
+     "r": 0,
+     "en": "Does that include dismantling the bed?",
+     "zh": "包含拆床吗？"
+    },
+    {
+     "r": 1,
+     "en": "It does. We can also reassemble it at the new place.",
+     "zh": "包含。到新家也能装回去。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Are you insured if something breaks?",
+     "zh": "好。东西摔坏了有保险吗？"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "cost",
+    "task": "报价比你预期高，你要砍价或减项",
+    "prompt": {
+     "en": "Four hundred is the weekday price. Saturdays are four eighty.",
+     "zh": "四百是工作日价。周六四百八。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then I will take a weekday and book time off.",
+       "zh": "那我要工作日，请一天假。"
+      },
+      "react": {
+       "en": "Tuesday is our quietest day.",
+       "zh": "周二我们最闲。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can you drop the packing materials to bring it down?",
+       "zh": "去掉包装材料能便宜点吗？"
+      },
+      "react": {
+       "en": "Minus forty, but you supply the boxes.",
+       "zh": "少四十，但纸箱你自己准备。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I need a quote for a move.",
+     "zh": "搬家想报个价。"
+    },
+    {
+     "en": "Any stairs or a lift?",
+     "zh": "有楼梯还是电梯？"
+    },
+    {
+     "en": "Are you insured?",
+     "zh": "有保险吗？"
+    }
+   ]
+  },
+  {
+   "id": "moving-4",
+   "g": "moving",
+   "name": "找搬家公司报价 · 钢琴",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你有一架立式钢琴。",
+   "roles": [
+    "你",
+    "搬家客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I need a quote for a two-bedroom flat move.",
+     "zh": "两居室搬家，想报个价。"
+    },
+    {
+     "r": 1,
+     "en": "How far is the move?",
+     "zh": "搬多远？"
+    },
+    {
+     "r": 0,
+     "en": "About six miles, same city.",
+     "zh": "大概六英里，同城。"
+    },
+    {
+     "r": 1,
+     "en": "Any stairs or a lift?",
+     "zh": "有楼梯还是电梯？"
+    },
+    {
+     "r": 0,
+     "en": "There is an upright piano. Can you move it?",
+     "zh": "有一架立式钢琴。你们能搬吗？"
+    },
+    {
+     "r": 1,
+     "en": "We can, but it needs three people and a piano board.",
+     "zh": "能，但要三个人和一块钢琴滑板。"
+    },
+    {
+     "r": 0,
+     "en": "Does that include dismantling the bed?",
+     "zh": "包含拆床吗？"
+    },
+    {
+     "r": 1,
+     "en": "It does. We can also reassemble it at the new place.",
+     "zh": "包含。到新家也能装回去。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Are you insured if something breaks?",
+     "zh": "好。东西摔坏了有保险吗？"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "cost",
+    "task": "报价比你预期高，你要砍价或减项",
+    "prompt": {
+     "en": "Four hundred is the weekday price. Saturdays are four eighty.",
+     "zh": "四百是工作日价。周六四百八。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then I will take a weekday and book time off.",
+       "zh": "那我要工作日，请一天假。"
+      },
+      "react": {
+       "en": "Tuesday is our quietest day.",
+       "zh": "周二我们最闲。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can you drop the packing materials to bring it down?",
+       "zh": "去掉包装材料能便宜点吗？"
+      },
+      "react": {
+       "en": "Minus forty, but you supply the boxes.",
+       "zh": "少四十，但纸箱你自己准备。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I need a quote for a move.",
+     "zh": "搬家想报个价。"
+    },
+    {
+     "en": "Any stairs or a lift?",
+     "zh": "有楼梯还是电梯？"
+    },
+    {
+     "en": "Are you insured?",
+     "zh": "有保险吗？"
+    }
+   ]
+  },
+  {
+   "id": "moving-5",
+   "g": "moving",
+   "name": "找搬家公司报价 · 问保险",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你最担心损坏赔偿。",
+   "roles": [
+    "你",
+    "搬家客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I need a quote for a two-bedroom flat move.",
+     "zh": "两居室搬家，想报个价。"
+    },
+    {
+     "r": 1,
+     "en": "How far is the move?",
+     "zh": "搬多远？"
+    },
+    {
+     "r": 0,
+     "en": "About six miles, same city.",
+     "zh": "大概六英里，同城。"
+    },
+    {
+     "r": 1,
+     "en": "Any stairs or a lift?",
+     "zh": "有楼梯还是电梯？"
+    },
+    {
+     "r": 0,
+     "en": "Third floor, no lift at either end.",
+     "zh": "三楼，两边都没电梯。"
+    },
+    {
+     "r": 1,
+     "en": "That adds an hour. Roughly four hundred, including packing materials.",
+     "zh": "那要多一小时。大概四百，含包装材料。"
+    },
+    {
+     "r": 0,
+     "en": "Does that include dismantling the bed?",
+     "zh": "包含拆床吗？"
+    },
+    {
+     "r": 1,
+     "en": "It does. We can also reassemble it at the new place.",
+     "zh": "包含。到新家也能装回去。"
+    },
+    {
+     "r": 0,
+     "en": "What is covered if something breaks?",
+     "zh": "东西坏了保到什么程度？"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "cost",
+    "task": "报价比你预期高，你要砍价或减项",
+    "prompt": {
+     "en": "Four hundred is the weekday price. Saturdays are four eighty.",
+     "zh": "四百是工作日价。周六四百八。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then I will take a weekday and book time off.",
+       "zh": "那我要工作日，请一天假。"
+      },
+      "react": {
+       "en": "Tuesday is our quietest day.",
+       "zh": "周二我们最闲。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can you drop the packing materials to bring it down?",
+       "zh": "去掉包装材料能便宜点吗？"
+      },
+      "react": {
+       "en": "Minus forty, but you supply the boxes.",
+       "zh": "少四十，但纸箱你自己准备。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I need a quote for a move.",
+     "zh": "搬家想报个价。"
+    },
+    {
+     "en": "Any stairs or a lift?",
+     "zh": "有楼梯还是电梯？"
+    },
+    {
+     "en": "Are you insured?",
+     "zh": "有保险吗？"
+    }
+   ]
+  },
+  {
+   "id": "internet",
+   "g": "internet",
+   "name": "装宽带 · 新家装光纤",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你刚租下商铺楼上的房子，两个人在家办公。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like to set up broadband at my new flat.",
+     "zh": "我想在新家装宽带。"
+    },
+    {
+     "r": 1,
+     "en": "What is the postcode?",
+     "zh": "邮编是多少？"
+    },
+    {
+     "r": 0,
+     "en": "It is the flat above the shop on Mill Street.",
+     "zh": "磨坊街商铺楼上那套。"
+    },
+    {
+     "r": 1,
+     "en": "We can do fibre there. Which package suits you?",
+     "zh": "那边能装光纤。您要哪个套餐？"
+    },
+    {
+     "r": 0,
+     "en": "Two people, both working from home. Something reliable.",
+     "zh": "两个人都在家办公。要稳定的。"
+    },
+    {
+     "r": 1,
+     "en": "The middle package is sixty a month, and it is not shared.",
+     "zh": "中间那个套餐每月六十，不是共享带宽。",
+     "note": "not shared 是「独享带宽」，多人上网时不掉速。"
+    },
+    {
+     "r": 0,
+     "en": "Is there a setup fee?",
+     "zh": "有安装费吗？"
+    },
+    {
+     "r": 1,
+     "en": "Normally thirty, but it is free on an eighteen-month contract.",
+     "zh": "一般三十，签十八个月免费。"
+    },
+    {
+     "r": 0,
+     "en": "What if I move before then?",
+     "zh": "如果我在那之前搬家呢？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "对方说套餐有个隐藏限制，你要问清代价",
+    "prompt": {
+     "en": "The middle package is sixty, but it is shared at peak times.",
+     "zh": "中间套餐六十，但高峰时段是共享带宽。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How slow does it get in the evening?",
+       "zh": "晚上会慢到什么程度？"
+      },
+      "react": {
+       "en": "Half the speed between seven and ten.",
+       "zh": "七点到十点速度减半。"
+      }
+     },
+     {
+      "say": {
+       "en": "What does the unshared one cost?",
+       "zh": "独享的要多少钱？"
+      },
+      "react": {
+       "en": "Eighty. It is worth it if you both work from home.",
+       "zh": "八十。两个人在家办公的话值。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to set up broadband.",
+     "zh": "我想装宽带。"
+    },
+    {
+     "en": "Is there a setup fee?",
+     "zh": "有安装费吗？"
+    },
+    {
+     "en": "What if I move before then?",
+     "zh": "如果之前搬家呢？"
+    }
+   ]
+  },
+  {
+   "id": "internet-2",
+   "g": "internet",
+   "name": "装宽带 · 网速不够",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你已经在用，但视频会议总断。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "My video calls keep dropping. Is my line fast enough?",
+     "zh": "视频会议老断。我的线路够快吗？"
+    },
+    {
+     "r": 1,
+     "en": "Let me run a test on your line. It may be the router.",
+     "zh": "我给线路做个测试。可能是路由器。"
+    },
+    {
+     "r": 0,
+     "en": "It is the flat above the shop on Mill Street.",
+     "zh": "磨坊街商铺楼上那套。"
+    },
+    {
+     "r": 1,
+     "en": "We can do fibre there. Which package suits you?",
+     "zh": "那边能装光纤。您要哪个套餐？"
+    },
+    {
+     "r": 0,
+     "en": "Two people, both working from home. Something reliable.",
+     "zh": "两个人都在家办公。要稳定的。"
+    },
+    {
+     "r": 1,
+     "en": "The middle package is sixty a month, and it is not shared.",
+     "zh": "中间那个套餐每月六十，不是共享带宽。",
+     "note": "not shared 是「独享带宽」，多人上网时不掉速。"
+    },
+    {
+     "r": 0,
+     "en": "Is there a setup fee?",
+     "zh": "有安装费吗？"
+    },
+    {
+     "r": 1,
+     "en": "Normally thirty, but it is free on an eighteen-month contract.",
+     "zh": "一般三十，签十八个月免费。"
+    },
+    {
+     "r": 0,
+     "en": "What if I move before then?",
+     "zh": "如果我在那之前搬家呢？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "对方说套餐有个隐藏限制，你要问清代价",
+    "prompt": {
+     "en": "The middle package is sixty, but it is shared at peak times.",
+     "zh": "中间套餐六十，但高峰时段是共享带宽。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How slow does it get in the evening?",
+       "zh": "晚上会慢到什么程度？"
+      },
+      "react": {
+       "en": "Half the speed between seven and ten.",
+       "zh": "七点到十点速度减半。"
+      }
+     },
+     {
+      "say": {
+       "en": "What does the unshared one cost?",
+       "zh": "独享的要多少钱？"
+      },
+      "react": {
+       "en": "Eighty. It is worth it if you both work from home.",
+       "zh": "八十。两个人在家办公的话值。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to set up broadband.",
+     "zh": "我想装宽带。"
+    },
+    {
+     "en": "Is there a setup fee?",
+     "zh": "有安装费吗？"
+    },
+    {
+     "en": "What if I move before then?",
+     "zh": "如果之前搬家呢？"
+    }
+   ]
+  },
+  {
+   "id": "internet-3",
+   "g": "internet",
+   "name": "装宽带 · 要换运营商",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想从别家转过来。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I am with another provider. How does switching work?",
+     "zh": "我在用别家。转网怎么操作？"
+    },
+    {
+     "r": 1,
+     "en": "We handle the switch, and your number stays the same.",
+     "zh": "我们处理转网，号码不变。"
+    },
+    {
+     "r": 0,
+     "en": "It is the flat above the shop on Mill Street.",
+     "zh": "磨坊街商铺楼上那套。"
+    },
+    {
+     "r": 1,
+     "en": "We can do fibre there. Which package suits you?",
+     "zh": "那边能装光纤。您要哪个套餐？"
+    },
+    {
+     "r": 0,
+     "en": "Two people, both working from home. Something reliable.",
+     "zh": "两个人都在家办公。要稳定的。"
+    },
+    {
+     "r": 1,
+     "en": "The middle package is sixty a month, and it is not shared.",
+     "zh": "中间那个套餐每月六十，不是共享带宽。",
+     "note": "not shared 是「独享带宽」，多人上网时不掉速。"
+    },
+    {
+     "r": 0,
+     "en": "Is there a setup fee?",
+     "zh": "有安装费吗？"
+    },
+    {
+     "r": 1,
+     "en": "Normally thirty, but it is free on an eighteen-month contract.",
+     "zh": "一般三十，签十八个月免费。"
+    },
+    {
+     "r": 0,
+     "en": "What if I move before then?",
+     "zh": "如果我在那之前搬家呢？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "对方说套餐有个隐藏限制，你要问清代价",
+    "prompt": {
+     "en": "The middle package is sixty, but it is shared at peak times.",
+     "zh": "中间套餐六十，但高峰时段是共享带宽。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How slow does it get in the evening?",
+       "zh": "晚上会慢到什么程度？"
+      },
+      "react": {
+       "en": "Half the speed between seven and ten.",
+       "zh": "七点到十点速度减半。"
+      }
+     },
+     {
+      "say": {
+       "en": "What does the unshared one cost?",
+       "zh": "独享的要多少钱？"
+      },
+      "react": {
+       "en": "Eighty. It is worth it if you both work from home.",
+       "zh": "八十。两个人在家办公的话值。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to set up broadband.",
+     "zh": "我想装宽带。"
+    },
+    {
+     "en": "Is there a setup fee?",
+     "zh": "有安装费吗？"
+    },
+    {
+     "en": "What if I move before then?",
+     "zh": "如果之前搬家呢？"
+    }
+   ]
+  },
+  {
+   "id": "internet-4",
+   "g": "internet",
+   "name": "装宽带 · 搬家迁移",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你要把宽带迁到新地址。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like to set up broadband at my new flat.",
+     "zh": "我想在新家装宽带。"
+    },
+    {
+     "r": 1,
+     "en": "What is the postcode?",
+     "zh": "邮编是多少？"
+    },
+    {
+     "r": 0,
+     "en": "It is the flat above the shop on Mill Street.",
+     "zh": "磨坊街商铺楼上那套。"
+    },
+    {
+     "r": 1,
+     "en": "We can do fibre there. Which package suits you?",
+     "zh": "那边能装光纤。您要哪个套餐？"
+    },
+    {
+     "r": 0,
+     "en": "Two people, both working from home. Something reliable.",
+     "zh": "两个人都在家办公。要稳定的。"
+    },
+    {
+     "r": 1,
+     "en": "The middle package is sixty a month, and it is not shared.",
+     "zh": "中间那个套餐每月六十，不是共享带宽。",
+     "note": "not shared 是「独享带宽」，多人上网时不掉速。"
+    },
+    {
+     "r": 0,
+     "en": "Can I move the service to a new address in June?",
+     "zh": "六月能把服务迁到新地址吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes, thirty days notice and a twenty fee.",
+     "zh": "可以，提前三十天通知，收二十。"
+    },
+    {
+     "r": 0,
+     "en": "What if I move before then?",
+     "zh": "如果我在那之前搬家呢？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "对方说套餐有个隐藏限制，你要问清代价",
+    "prompt": {
+     "en": "The middle package is sixty, but it is shared at peak times.",
+     "zh": "中间套餐六十，但高峰时段是共享带宽。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How slow does it get in the evening?",
+       "zh": "晚上会慢到什么程度？"
+      },
+      "react": {
+       "en": "Half the speed between seven and ten.",
+       "zh": "七点到十点速度减半。"
+      }
+     },
+     {
+      "say": {
+       "en": "What does the unshared one cost?",
+       "zh": "独享的要多少钱？"
+      },
+      "react": {
+       "en": "Eighty. It is worth it if you both work from home.",
+       "zh": "八十。两个人在家办公的话值。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to set up broadband.",
+     "zh": "我想装宽带。"
+    },
+    {
+     "en": "Is there a setup fee?",
+     "zh": "有安装费吗？"
+    },
+    {
+     "en": "What if I move before then?",
+     "zh": "如果之前搬家呢？"
+    }
+   ]
+  },
+  {
+   "id": "internet-5",
+   "g": "internet",
+   "name": "装宽带 · 取消",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你要回国，想提前解约。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like to set up broadband at my new flat.",
+     "zh": "我想在新家装宽带。"
+    },
+    {
+     "r": 1,
+     "en": "What is the postcode?",
+     "zh": "邮编是多少？"
+    },
+    {
+     "r": 0,
+     "en": "It is the flat above the shop on Mill Street.",
+     "zh": "磨坊街商铺楼上那套。"
+    },
+    {
+     "r": 1,
+     "en": "We can do fibre there. Which package suits you?",
+     "zh": "那边能装光纤。您要哪个套餐？"
+    },
+    {
+     "r": 0,
+     "en": "Two people, both working from home. Something reliable.",
+     "zh": "两个人都在家办公。要稳定的。"
+    },
+    {
+     "r": 1,
+     "en": "The middle package is sixty a month, and it is not shared.",
+     "zh": "中间那个套餐每月六十，不是共享带宽。",
+     "note": "not shared 是「独享带宽」，多人上网时不掉速。"
+    },
+    {
+     "r": 0,
+     "en": "Is there a setup fee?",
+     "zh": "有安装费吗？"
+    },
+    {
+     "r": 1,
+     "en": "Normally thirty, but it is free on an eighteen-month contract.",
+     "zh": "一般三十，签十八个月免费。"
+    },
+    {
+     "r": 0,
+     "en": "I am leaving the country. What is the early exit fee?",
+     "zh": "我要回国。提前解约多少钱？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "对方说套餐有个隐藏限制，你要问清代价",
+    "prompt": {
+     "en": "The middle package is sixty, but it is shared at peak times.",
+     "zh": "中间套餐六十，但高峰时段是共享带宽。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How slow does it get in the evening?",
+       "zh": "晚上会慢到什么程度？"
+      },
+      "react": {
+       "en": "Half the speed between seven and ten.",
+       "zh": "七点到十点速度减半。"
+      }
+     },
+     {
+      "say": {
+       "en": "What does the unshared one cost?",
+       "zh": "独享的要多少钱？"
+      },
+      "react": {
+       "en": "Eighty. It is worth it if you both work from home.",
+       "zh": "八十。两个人在家办公的话值。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to set up broadband.",
+     "zh": "我想装宽带。"
+    },
+    {
+     "en": "Is there a setup fee?",
+     "zh": "有安装费吗？"
+    },
+    {
+     "en": "What if I move before then?",
+     "zh": "如果之前搬家呢？"
+    }
+   ]
+  },
+  {
+   "id": "utilities",
+   "g": "utilities",
+   "name": "水电开户 · 开通电力",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你搬进新租的房子，前租客已经销户。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I have just moved in and need to set up the electricity.",
+     "zh": "我刚搬进来，要开通电。"
+    },
+    {
+     "r": 1,
+     "en": "Is the supply already on?",
+     "zh": "现在有电吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is, but the previous tenant closed the account.",
+     "zh": "有，但前租客把账户销了。"
+    },
+    {
+     "r": 1,
+     "en": "I need a meter reading from the day you moved in.",
+     "zh": "需要您入住当天的电表读数。"
+    },
+    {
+     "r": 0,
+     "en": "I took a photo on the first day. Will that do?",
+     "zh": "我第一天拍了照。可以吗？"
+    },
+    {
+     "r": 1,
+     "en": "Perfect. Are you on a fixed or variable rate?",
+     "zh": "很好。您要固定价还是浮动价？"
+    },
+    {
+     "r": 0,
+     "en": "Fixed, if the price is reasonable.",
+     "zh": "价格合理的话要固定价。"
+    },
+    {
+     "r": 1,
+     "en": "Fixed for twelve months is slightly higher, but it will not move.",
+     "zh": "固定十二个月略贵，但不会变。"
+    },
+    {
+     "r": 0,
+     "en": "I will take fixed. Can I set up a direct debit?",
+     "zh": "那要固定价。能设自动扣款吗？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "对方要一个你没有的东西，你要找替代办法",
+    "prompt": {
+     "en": "We need the reading from the move-in date, not today.",
+     "zh": "我们要入住当天的读数，不是今天的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The landlord wrote it in the inventory. Can I send a photo?",
+       "zh": "房东在交接单上写了。能发照片吗？"
+      },
+      "react": {
+       "en": "A photo of the inventory is fine.",
+       "zh": "交接单照片可以。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can the engineer read it and backdate the bill?",
+       "zh": "能让工程师来抄表并按那天算吗？"
+      },
+      "react": {
+       "en": "We can, but there is a fifteen charge.",
+       "zh": "可以，但要收十五。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I need a meter reading.",
+     "zh": "需要电表读数。"
+    },
+    {
+     "en": "Fixed or variable rate?",
+     "zh": "固定价还是浮动价？"
+    },
+    {
+     "en": "Can I set up a direct debit?",
+     "zh": "能设自动扣款吗？"
+    }
+   ]
+  },
+  {
+   "id": "utilities-2",
+   "g": "utilities",
+   "name": "水电开户 · 水费",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你要开水费账户。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I also need to set up the water account.",
+     "zh": "我还想开水费账户。"
+    },
+    {
+     "r": 1,
+     "en": "Water is with the council here, not with us.",
+     "zh": "这边水费归市政，不归我们。"
+    },
+    {
+     "r": 0,
+     "en": "It is, but the previous tenant closed the account.",
+     "zh": "有，但前租客把账户销了。"
+    },
+    {
+     "r": 1,
+     "en": "I need a meter reading from the day you moved in.",
+     "zh": "需要您入住当天的电表读数。"
+    },
+    {
+     "r": 0,
+     "en": "I took a photo on the first day. Will that do?",
+     "zh": "我第一天拍了照。可以吗？"
+    },
+    {
+     "r": 1,
+     "en": "Perfect. Are you on a fixed or variable rate?",
+     "zh": "很好。您要固定价还是浮动价？"
+    },
+    {
+     "r": 0,
+     "en": "Fixed, if the price is reasonable.",
+     "zh": "价格合理的话要固定价。"
+    },
+    {
+     "r": 1,
+     "en": "Fixed for twelve months is slightly higher, but it will not move.",
+     "zh": "固定十二个月略贵，但不会变。"
+    },
+    {
+     "r": 0,
+     "en": "I will take fixed. Can I set up a direct debit?",
+     "zh": "那要固定价。能设自动扣款吗？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "对方要一个你没有的东西，你要找替代办法",
+    "prompt": {
+     "en": "We need the reading from the move-in date, not today.",
+     "zh": "我们要入住当天的读数，不是今天的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The landlord wrote it in the inventory. Can I send a photo?",
+       "zh": "房东在交接单上写了。能发照片吗？"
+      },
+      "react": {
+       "en": "A photo of the inventory is fine.",
+       "zh": "交接单照片可以。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can the engineer read it and backdate the bill?",
+       "zh": "能让工程师来抄表并按那天算吗？"
+      },
+      "react": {
+       "en": "We can, but there is a fifteen charge.",
+       "zh": "可以，但要收十五。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I need a meter reading.",
+     "zh": "需要电表读数。"
+    },
+    {
+     "en": "Fixed or variable rate?",
+     "zh": "固定价还是浮动价？"
+    },
+    {
+     "en": "Can I set up a direct debit?",
+     "zh": "能设自动扣款吗？"
+    }
+   ]
+  },
+  {
+   "id": "utilities-3",
+   "g": "utilities",
+   "name": "水电开户 · 账单太高",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "上个月账单翻倍了。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "My last bill doubled. Is there a leak or a meter fault?",
+     "zh": "上个月账单翻倍。是漏水还是表坏了？"
+    },
+    {
+     "r": 1,
+     "en": "We can send an engineer to test the meter for free.",
+     "zh": "我们可以免费派工程师测表。"
+    },
+    {
+     "r": 0,
+     "en": "It is, but the previous tenant closed the account.",
+     "zh": "有，但前租客把账户销了。"
+    },
+    {
+     "r": 1,
+     "en": "I need a meter reading from the day you moved in.",
+     "zh": "需要您入住当天的电表读数。"
+    },
+    {
+     "r": 0,
+     "en": "I took a photo on the first day. Will that do?",
+     "zh": "我第一天拍了照。可以吗？"
+    },
+    {
+     "r": 1,
+     "en": "Perfect. Are you on a fixed or variable rate?",
+     "zh": "很好。您要固定价还是浮动价？"
+    },
+    {
+     "r": 0,
+     "en": "Fixed, if the price is reasonable.",
+     "zh": "价格合理的话要固定价。"
+    },
+    {
+     "r": 1,
+     "en": "Fixed for twelve months is slightly higher, but it will not move.",
+     "zh": "固定十二个月略贵，但不会变。"
+    },
+    {
+     "r": 0,
+     "en": "I will take fixed. Can I set up a direct debit?",
+     "zh": "那要固定价。能设自动扣款吗？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "对方要一个你没有的东西，你要找替代办法",
+    "prompt": {
+     "en": "We need the reading from the move-in date, not today.",
+     "zh": "我们要入住当天的读数，不是今天的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The landlord wrote it in the inventory. Can I send a photo?",
+       "zh": "房东在交接单上写了。能发照片吗？"
+      },
+      "react": {
+       "en": "A photo of the inventory is fine.",
+       "zh": "交接单照片可以。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can the engineer read it and backdate the bill?",
+       "zh": "能让工程师来抄表并按那天算吗？"
+      },
+      "react": {
+       "en": "We can, but there is a fifteen charge.",
+       "zh": "可以，但要收十五。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I need a meter reading.",
+     "zh": "需要电表读数。"
+    },
+    {
+     "en": "Fixed or variable rate?",
+     "zh": "固定价还是浮动价？"
+    },
+    {
+     "en": "Can I set up a direct debit?",
+     "zh": "能设自动扣款吗？"
+    }
+   ]
+  },
+  {
+   "id": "utilities-4",
+   "g": "utilities",
+   "name": "水电开户 · 换供应商",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想比价换一家。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I have just moved in and need to set up the electricity.",
+     "zh": "我刚搬进来，要开通电。"
+    },
+    {
+     "r": 1,
+     "en": "Is the supply already on?",
+     "zh": "现在有电吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is, but the previous tenant closed the account.",
+     "zh": "有，但前租客把账户销了。"
+    },
+    {
+     "r": 1,
+     "en": "I need a meter reading from the day you moved in.",
+     "zh": "需要您入住当天的电表读数。"
+    },
+    {
+     "r": 0,
+     "en": "I took a photo on the first day. Will that do?",
+     "zh": "我第一天拍了照。可以吗？"
+    },
+    {
+     "r": 1,
+     "en": "Perfect. Are you on a fixed or variable rate?",
+     "zh": "很好。您要固定价还是浮动价？"
+    },
+    {
+     "r": 0,
+     "en": "How much notice do I need to switch supplier?",
+     "zh": "换供应商要提前多久？"
+    },
+    {
+     "r": 1,
+     "en": "Twenty-eight days, and we do the paperwork.",
+     "zh": "二十八天，手续我们来办。"
+    },
+    {
+     "r": 0,
+     "en": "I will take fixed. Can I set up a direct debit?",
+     "zh": "那要固定价。能设自动扣款吗？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "对方要一个你没有的东西，你要找替代办法",
+    "prompt": {
+     "en": "We need the reading from the move-in date, not today.",
+     "zh": "我们要入住当天的读数，不是今天的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The landlord wrote it in the inventory. Can I send a photo?",
+       "zh": "房东在交接单上写了。能发照片吗？"
+      },
+      "react": {
+       "en": "A photo of the inventory is fine.",
+       "zh": "交接单照片可以。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can the engineer read it and backdate the bill?",
+       "zh": "能让工程师来抄表并按那天算吗？"
+      },
+      "react": {
+       "en": "We can, but there is a fifteen charge.",
+       "zh": "可以，但要收十五。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I need a meter reading.",
+     "zh": "需要电表读数。"
+    },
+    {
+     "en": "Fixed or variable rate?",
+     "zh": "固定价还是浮动价？"
+    },
+    {
+     "en": "Can I set up a direct debit?",
+     "zh": "能设自动扣款吗？"
+    }
+   ]
+  },
+  {
+   "id": "utilities-5",
+   "g": "utilities",
+   "name": "水电开户 · 搬走销户",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你要搬走，想结算。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I have just moved in and need to set up the electricity.",
+     "zh": "我刚搬进来，要开通电。"
+    },
+    {
+     "r": 1,
+     "en": "Is the supply already on?",
+     "zh": "现在有电吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is, but the previous tenant closed the account.",
+     "zh": "有，但前租客把账户销了。"
+    },
+    {
+     "r": 1,
+     "en": "I need a meter reading from the day you moved in.",
+     "zh": "需要您入住当天的电表读数。"
+    },
+    {
+     "r": 0,
+     "en": "I took a photo on the first day. Will that do?",
+     "zh": "我第一天拍了照。可以吗？"
+    },
+    {
+     "r": 1,
+     "en": "Perfect. Are you on a fixed or variable rate?",
+     "zh": "很好。您要固定价还是浮动价？"
+    },
+    {
+     "r": 0,
+     "en": "Fixed, if the price is reasonable.",
+     "zh": "价格合理的话要固定价。"
+    },
+    {
+     "r": 1,
+     "en": "Fixed for twelve months is slightly higher, but it will not move.",
+     "zh": "固定十二个月略贵，但不会变。"
+    },
+    {
+     "r": 0,
+     "en": "I am moving out at the end of the month. How do I close it?",
+     "zh": "我月底搬走。怎么销户？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "对方要一个你没有的东西，你要找替代办法",
+    "prompt": {
+     "en": "We need the reading from the move-in date, not today.",
+     "zh": "我们要入住当天的读数，不是今天的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The landlord wrote it in the inventory. Can I send a photo?",
+       "zh": "房东在交接单上写了。能发照片吗？"
+      },
+      "react": {
+       "en": "A photo of the inventory is fine.",
+       "zh": "交接单照片可以。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can the engineer read it and backdate the bill?",
+       "zh": "能让工程师来抄表并按那天算吗？"
+      },
+      "react": {
+       "en": "We can, but there is a fifteen charge.",
+       "zh": "可以，但要收十五。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I need a meter reading.",
+     "zh": "需要电表读数。"
+    },
+    {
+     "en": "Fixed or variable rate?",
+     "zh": "固定价还是浮动价？"
+    },
+    {
+     "en": "Can I set up a direct debit?",
+     "zh": "能设自动扣款吗？"
+    }
+   ]
+  },
+  {
+   "id": "cleaning",
+   "g": "cleaning",
+   "name": "请保洁上门 · 两居室常规保洁",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你工作忙，厨房和浴室已经顾不上两周了。",
+   "roles": [
+    "你",
+    "保洁公司"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like a cleaner for a two-bedroom flat, once a fortnight.",
+     "zh": "我想请保洁，两居室，两周一次。"
+    },
+    {
+     "r": 1,
+     "en": "Is it a deep clean or a regular one?",
+     "zh": "是深度保洁还是常规保洁？"
+    },
+    {
+     "r": 0,
+     "en": "Regular. The kitchen needs attention though.",
+     "zh": "常规。不过厨房需要重点处理。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Two hours is usually enough.",
+     "zh": "可以。一般两小时够。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need to be home?",
+     "zh": "我需要在家吗？"
+    },
+    {
+     "r": 1,
+     "en": "Most clients leave a key or a code. It is up to you.",
+     "zh": "多数客户留钥匙或密码。看您方便。"
+    },
+    {
+     "r": 0,
+     "en": "I would rather be here the first time.",
+     "zh": "第一次我还是在家。"
+    },
+    {
+     "r": 1,
+     "en": "Sensible. Two hours is fifty, and the products are included.",
+     "zh": "这样稳妥。两小时五十，耗材包含在内。"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "cost",
+    "task": "第一次上门时间更长，你要确认价格会不会变",
+    "prompt": {
+     "en": "The first visit usually takes three hours. It may cost more.",
+     "zh": "第一次一般要三小时，可能会贵一些。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much more? I would rather know now.",
+       "zh": "贵多少？我宁愿现在就知道。"
+      },
+      "react": {
+       "en": "Twenty more, and we agree it before we start.",
+       "zh": "多二十，开工前先跟您确认。"
+      }
+     },
+     {
+      "say": {
+       "en": "Then I will do the kitchen myself first.",
+       "zh": "那厨房我自己先收拾。"
+      },
+      "react": {
+       "en": "That would keep it to two hours.",
+       "zh": "那样两小时就够。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Once a fortnight.",
+     "zh": "两周一次。"
+    },
+    {
+     "en": "Do I need to be home?",
+     "zh": "我需要在家吗？"
+    },
+    {
+     "en": "The products are included.",
+     "zh": "耗材包含在内。"
+    }
+   ]
+  },
+  {
+   "id": "cleaning-2",
+   "g": "cleaning",
+   "name": "请保洁上门 · 退租大扫除",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你要退租，房东要求专业清洁。",
+   "roles": [
+    "你",
+    "保洁公司"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I need an end-of-tenancy clean before Friday.",
+     "zh": "周五前要做退租清洁。"
+    },
+    {
+     "r": 1,
+     "en": "That is a fixed price, a hundred and eighty for two bedrooms.",
+     "zh": "那是固定价，两居室一百八。"
+    },
+    {
+     "r": 0,
+     "en": "Regular. The kitchen needs attention though.",
+     "zh": "常规。不过厨房需要重点处理。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Two hours is usually enough.",
+     "zh": "可以。一般两小时够。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need to be home?",
+     "zh": "我需要在家吗？"
+    },
+    {
+     "r": 1,
+     "en": "Most clients leave a key or a code. It is up to you.",
+     "zh": "多数客户留钥匙或密码。看您方便。"
+    },
+    {
+     "r": 0,
+     "en": "I would rather be here the first time.",
+     "zh": "第一次我还是在家。"
+    },
+    {
+     "r": 1,
+     "en": "Sensible. Two hours is fifty, and the products are included.",
+     "zh": "这样稳妥。两小时五十，耗材包含在内。"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "cost",
+    "task": "第一次上门时间更长，你要确认价格会不会变",
+    "prompt": {
+     "en": "The first visit usually takes three hours. It may cost more.",
+     "zh": "第一次一般要三小时，可能会贵一些。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much more? I would rather know now.",
+       "zh": "贵多少？我宁愿现在就知道。"
+      },
+      "react": {
+       "en": "Twenty more, and we agree it before we start.",
+       "zh": "多二十，开工前先跟您确认。"
+      }
+     },
+     {
+      "say": {
+       "en": "Then I will do the kitchen myself first.",
+       "zh": "那厨房我自己先收拾。"
+      },
+      "react": {
+       "en": "That would keep it to two hours.",
+       "zh": "那样两小时就够。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Once a fortnight.",
+     "zh": "两周一次。"
+    },
+    {
+     "en": "Do I need to be home?",
+     "zh": "我需要在家吗？"
+    },
+    {
+     "en": "The products are included.",
+     "zh": "耗材包含在内。"
+    }
+   ]
+  },
+  {
+   "id": "cleaning-3",
+   "g": "cleaning",
+   "name": "请保洁上门 · 只打扫厨房",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你只想处理厨房。",
+   "roles": [
+    "你",
+    "保洁公司"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Just the kitchen and the bathroom, nothing else.",
+     "zh": "只打扫厨房和浴室，别的不动。"
+    },
+    {
+     "r": 1,
+     "en": "Ninety minutes, forty pounds.",
+     "zh": "九十分钟，四十镑。"
+    },
+    {
+     "r": 0,
+     "en": "Regular. The kitchen needs attention though.",
+     "zh": "常规。不过厨房需要重点处理。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Two hours is usually enough.",
+     "zh": "可以。一般两小时够。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need to be home?",
+     "zh": "我需要在家吗？"
+    },
+    {
+     "r": 1,
+     "en": "Most clients leave a key or a code. It is up to you.",
+     "zh": "多数客户留钥匙或密码。看您方便。"
+    },
+    {
+     "r": 0,
+     "en": "I would rather be here the first time.",
+     "zh": "第一次我还是在家。"
+    },
+    {
+     "r": 1,
+     "en": "Sensible. Two hours is fifty, and the products are included.",
+     "zh": "这样稳妥。两小时五十，耗材包含在内。"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "cost",
+    "task": "第一次上门时间更长，你要确认价格会不会变",
+    "prompt": {
+     "en": "The first visit usually takes three hours. It may cost more.",
+     "zh": "第一次一般要三小时，可能会贵一些。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much more? I would rather know now.",
+       "zh": "贵多少？我宁愿现在就知道。"
+      },
+      "react": {
+       "en": "Twenty more, and we agree it before we start.",
+       "zh": "多二十，开工前先跟您确认。"
+      }
+     },
+     {
+      "say": {
+       "en": "Then I will do the kitchen myself first.",
+       "zh": "那厨房我自己先收拾。"
+      },
+      "react": {
+       "en": "That would keep it to two hours.",
+       "zh": "那样两小时就够。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Once a fortnight.",
+     "zh": "两周一次。"
+    },
+    {
+     "en": "Do I need to be home?",
+     "zh": "我需要在家吗？"
+    },
+    {
+     "en": "The products are included.",
+     "zh": "耗材包含在内。"
+    }
+   ]
+  },
+  {
+   "id": "cleaning-4",
+   "g": "cleaning",
+   "name": "请保洁上门 · 不满意",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "上次打扫漏了窗台。",
+   "roles": [
+    "你",
+    "保洁公司"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like a cleaner for a two-bedroom flat, once a fortnight.",
+     "zh": "我想请保洁，两居室，两周一次。"
+    },
+    {
+     "r": 1,
+     "en": "Is it a deep clean or a regular one?",
+     "zh": "是深度保洁还是常规保洁？"
+    },
+    {
+     "r": 0,
+     "en": "Regular. The kitchen needs attention though.",
+     "zh": "常规。不过厨房需要重点处理。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Two hours is usually enough.",
+     "zh": "可以。一般两小时够。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need to be home?",
+     "zh": "我需要在家吗？"
+    },
+    {
+     "r": 1,
+     "en": "Most clients leave a key or a code. It is up to you.",
+     "zh": "多数客户留钥匙或密码。看您方便。"
+    },
+    {
+     "r": 0,
+     "en": "Last time the windowsills were missed. Could you note that?",
+     "zh": "上次窗台没擦。能备注一下吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will add it to the checklist for this visit.",
+     "zh": "我加到这次的服务清单里。"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "cost",
+    "task": "第一次上门时间更长，你要确认价格会不会变",
+    "prompt": {
+     "en": "The first visit usually takes three hours. It may cost more.",
+     "zh": "第一次一般要三小时，可能会贵一些。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much more? I would rather know now.",
+       "zh": "贵多少？我宁愿现在就知道。"
+      },
+      "react": {
+       "en": "Twenty more, and we agree it before we start.",
+       "zh": "多二十，开工前先跟您确认。"
+      }
+     },
+     {
+      "say": {
+       "en": "Then I will do the kitchen myself first.",
+       "zh": "那厨房我自己先收拾。"
+      },
+      "react": {
+       "en": "That would keep it to two hours.",
+       "zh": "那样两小时就够。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Once a fortnight.",
+     "zh": "两周一次。"
+    },
+    {
+     "en": "Do I need to be home?",
+     "zh": "我需要在家吗？"
+    },
+    {
+     "en": "The products are included.",
+     "zh": "耗材包含在内。"
+    }
+   ]
+  },
+  {
+   "id": "cleaning-5",
+   "g": "cleaning",
+   "name": "请保洁上门 · 改时间",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你要临时改期。",
+   "roles": [
+    "你",
+    "保洁公司"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like a cleaner for a two-bedroom flat, once a fortnight.",
+     "zh": "我想请保洁，两居室，两周一次。"
+    },
+    {
+     "r": 1,
+     "en": "Is it a deep clean or a regular one?",
+     "zh": "是深度保洁还是常规保洁？"
+    },
+    {
+     "r": 0,
+     "en": "Regular. The kitchen needs attention though.",
+     "zh": "常规。不过厨房需要重点处理。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Two hours is usually enough.",
+     "zh": "可以。一般两小时够。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need to be home?",
+     "zh": "我需要在家吗？"
+    },
+    {
+     "r": 1,
+     "en": "Most clients leave a key or a code. It is up to you.",
+     "zh": "多数客户留钥匙或密码。看您方便。"
+    },
+    {
+     "r": 0,
+     "en": "I would rather be here the first time.",
+     "zh": "第一次我还是在家。"
+    },
+    {
+     "r": 1,
+     "en": "Sensible. Two hours is fifty, and the products are included.",
+     "zh": "这样稳妥。两小时五十，耗材包含在内。"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "cost",
+    "task": "第一次上门时间更长，你要确认价格会不会变",
+    "prompt": {
+     "en": "The first visit usually takes three hours. It may cost more.",
+     "zh": "第一次一般要三小时，可能会贵一些。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much more? I would rather know now.",
+       "zh": "贵多少？我宁愿现在就知道。"
+      },
+      "react": {
+       "en": "Twenty more, and we agree it before we start.",
+       "zh": "多二十，开工前先跟您确认。"
+      }
+     },
+     {
+      "say": {
+       "en": "Then I will do the kitchen myself first.",
+       "zh": "那厨房我自己先收拾。"
+      },
+      "react": {
+       "en": "That would keep it to two hours.",
+       "zh": "那样两小时就够。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Once a fortnight.",
+     "zh": "两周一次。"
+    },
+    {
+     "en": "Do I need to be home?",
+     "zh": "我需要在家吗？"
+    },
+    {
+     "en": "The products are included.",
+     "zh": "耗材包含在内。"
+    }
+   ]
+  },
+  {
+   "id": "lockout",
+   "g": "lockout",
+   "name": "被锁在门外 · 钥匙转不开",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "晚上十点，你被关在自己家门外。",
+   "roles": [
+    "你",
+    "开锁师傅"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I am locked out. The key turns but the door will not open.",
+     "zh": "我被锁在外面了。钥匙能转，门打不开。"
+    },
+    {
+     "r": 1,
+     "en": "Is there a chain on the inside?",
+     "zh": "里面有门链吗？"
+    },
+    {
+     "r": 0,
+     "en": "I do not think so. I left through this door an hour ago.",
+     "zh": "应该没有。我一小时前从这个门出去的。"
+    },
+    {
+     "r": 1,
+     "en": "I can be there in twenty minutes. It is eighty for a lockout.",
+     "zh": "二十分钟能到。开锁八十。",
+     "note": "lockout 是「被锁在门外」的服务名，报价时先问清。"
+    },
+    {
+     "r": 0,
+     "en": "Do you need proof that I live here?",
+     "zh": "需要证明我住这儿吗？"
+    },
+    {
+     "r": 1,
+     "en": "A bill with your name and this address is enough.",
+     "zh": "有您名字和这个地址的账单就行。"
+    },
+    {
+     "r": 0,
+     "en": "I have one in my bag. Will you damage the lock?",
+     "zh": "包里有一张。会弄坏锁吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not if it is a standard cylinder. I will pick it, not drill it.",
+     "zh": "标准锁芯就不会。我技术开锁，不钻孔。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "cost",
+    "task": "对方报的价比你预期高，你要决定",
+    "prompt": {
+     "en": "After ten it is a hundred and twenty, not eighty.",
+     "zh": "十点之后是一百二，不是八十。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Fine, I have no choice tonight.",
+       "zh": "行，今晚也没别的办法。"
+      },
+      "react": {
+       "en": "I will be there in twenty.",
+       "zh": "我二十分钟到。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you come at eight tomorrow instead?",
+       "zh": "能改成明天八点吗？"
+      },
+      "react": {
+       "en": "Cheaper, but you need somewhere to sleep.",
+       "zh": "便宜些，但你得有地方睡。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am locked out.",
+     "zh": "我被锁在门外了。"
+    },
+    {
+     "en": "Will you damage the lock?",
+     "zh": "会弄坏锁吗？"
+    },
+    {
+     "en": "Is there a callout surcharge?",
+     "zh": "有上门附加费吗？"
+    }
+   ]
+  },
+  {
+   "id": "lockout-2",
+   "g": "lockout",
+   "name": "被锁在门外 · 钥匙丢了",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "钥匙彻底丢了。",
+   "roles": [
+    "你",
+    "开锁师傅"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I lost my keys. Can you open it and change the lock?",
+     "zh": "我钥匙丢了。能开锁并换锁吗？"
+    },
+    {
+     "r": 1,
+     "en": "Open and change is a hundred and forty, with two new keys.",
+     "zh": "开锁加换锁一百四，含两把新钥匙。"
+    },
+    {
+     "r": 0,
+     "en": "I do not think so. I left through this door an hour ago.",
+     "zh": "应该没有。我一小时前从这个门出去的。"
+    },
+    {
+     "r": 1,
+     "en": "I can be there in twenty minutes. It is eighty for a lockout.",
+     "zh": "二十分钟能到。开锁八十。",
+     "note": "lockout 是「被锁在门外」的服务名，报价时先问清。"
+    },
+    {
+     "r": 0,
+     "en": "Do you need proof that I live here?",
+     "zh": "需要证明我住这儿吗？"
+    },
+    {
+     "r": 1,
+     "en": "A bill with your name and this address is enough.",
+     "zh": "有您名字和这个地址的账单就行。"
+    },
+    {
+     "r": 0,
+     "en": "I have one in my bag. Will you damage the lock?",
+     "zh": "包里有一张。会弄坏锁吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not if it is a standard cylinder. I will pick it, not drill it.",
+     "zh": "标准锁芯就不会。我技术开锁，不钻孔。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "cost",
+    "task": "对方报的价比你预期高，你要决定",
+    "prompt": {
+     "en": "After ten it is a hundred and twenty, not eighty.",
+     "zh": "十点之后是一百二，不是八十。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Fine, I have no choice tonight.",
+       "zh": "行，今晚也没别的办法。"
+      },
+      "react": {
+       "en": "I will be there in twenty.",
+       "zh": "我二十分钟到。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you come at eight tomorrow instead?",
+       "zh": "能改成明天八点吗？"
+      },
+      "react": {
+       "en": "Cheaper, but you need somewhere to sleep.",
+       "zh": "便宜些，但你得有地方睡。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am locked out.",
+     "zh": "我被锁在门外了。"
+    },
+    {
+     "en": "Will you damage the lock?",
+     "zh": "会弄坏锁吗？"
+    },
+    {
+     "en": "Is there a callout surcharge?",
+     "zh": "有上门附加费吗？"
+    }
+   ]
+  },
+  {
+   "id": "lockout-3",
+   "g": "lockout",
+   "name": "被锁在门外 · 钥匙断在锁里",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "钥匙断在锁孔里。",
+   "roles": [
+    "你",
+    "开锁师傅"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Half my key is stuck in the lock.",
+     "zh": "我半截钥匙卡在锁里了。"
+    },
+    {
+     "r": 1,
+     "en": "I will need to extract it first. That is ninety.",
+     "zh": "得先取出来。九十。"
+    },
+    {
+     "r": 0,
+     "en": "I do not think so. I left through this door an hour ago.",
+     "zh": "应该没有。我一小时前从这个门出去的。"
+    },
+    {
+     "r": 1,
+     "en": "I can be there in twenty minutes. It is eighty for a lockout.",
+     "zh": "二十分钟能到。开锁八十。",
+     "note": "lockout 是「被锁在门外」的服务名，报价时先问清。"
+    },
+    {
+     "r": 0,
+     "en": "Do you need proof that I live here?",
+     "zh": "需要证明我住这儿吗？"
+    },
+    {
+     "r": 1,
+     "en": "A bill with your name and this address is enough.",
+     "zh": "有您名字和这个地址的账单就行。"
+    },
+    {
+     "r": 0,
+     "en": "I have one in my bag. Will you damage the lock?",
+     "zh": "包里有一张。会弄坏锁吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not if it is a standard cylinder. I will pick it, not drill it.",
+     "zh": "标准锁芯就不会。我技术开锁，不钻孔。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "cost",
+    "task": "对方报的价比你预期高，你要决定",
+    "prompt": {
+     "en": "After ten it is a hundred and twenty, not eighty.",
+     "zh": "十点之后是一百二，不是八十。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Fine, I have no choice tonight.",
+       "zh": "行，今晚也没别的办法。"
+      },
+      "react": {
+       "en": "I will be there in twenty.",
+       "zh": "我二十分钟到。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you come at eight tomorrow instead?",
+       "zh": "能改成明天八点吗？"
+      },
+      "react": {
+       "en": "Cheaper, but you need somewhere to sleep.",
+       "zh": "便宜些，但你得有地方睡。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am locked out.",
+     "zh": "我被锁在门外了。"
+    },
+    {
+     "en": "Will you damage the lock?",
+     "zh": "会弄坏锁吗？"
+    },
+    {
+     "en": "Is there a callout surcharge?",
+     "zh": "有上门附加费吗？"
+    }
+   ]
+  },
+  {
+   "id": "lockout-4",
+   "g": "lockout",
+   "name": "被锁在门外 · 租的房子",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你是租客，房东不在。",
+   "roles": [
+    "你",
+    "开锁师傅"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I am locked out. The key turns but the door will not open.",
+     "zh": "我被锁在外面了。钥匙能转，门打不开。"
+    },
+    {
+     "r": 1,
+     "en": "Is there a chain on the inside?",
+     "zh": "里面有门链吗？"
+    },
+    {
+     "r": 0,
+     "en": "I do not think so. I left through this door an hour ago.",
+     "zh": "应该没有。我一小时前从这个门出去的。"
+    },
+    {
+     "r": 1,
+     "en": "I can be there in twenty minutes. It is eighty for a lockout.",
+     "zh": "二十分钟能到。开锁八十。",
+     "note": "lockout 是「被锁在门外」的服务名，报价时先问清。"
+    },
+    {
+     "r": 0,
+     "en": "I rent the flat. The landlord is away. Is that a problem?",
+     "zh": "我是租客。房东不在。有问题吗？"
+    },
+    {
+     "r": 1,
+     "en": "As long as you can show the tenancy agreement, no.",
+     "zh": "能出示租约就没问题。"
+    },
+    {
+     "r": 0,
+     "en": "I have one in my bag. Will you damage the lock?",
+     "zh": "包里有一张。会弄坏锁吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not if it is a standard cylinder. I will pick it, not drill it.",
+     "zh": "标准锁芯就不会。我技术开锁，不钻孔。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "cost",
+    "task": "对方报的价比你预期高，你要决定",
+    "prompt": {
+     "en": "After ten it is a hundred and twenty, not eighty.",
+     "zh": "十点之后是一百二，不是八十。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Fine, I have no choice tonight.",
+       "zh": "行，今晚也没别的办法。"
+      },
+      "react": {
+       "en": "I will be there in twenty.",
+       "zh": "我二十分钟到。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you come at eight tomorrow instead?",
+       "zh": "能改成明天八点吗？"
+      },
+      "react": {
+       "en": "Cheaper, but you need somewhere to sleep.",
+       "zh": "便宜些，但你得有地方睡。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am locked out.",
+     "zh": "我被锁在门外了。"
+    },
+    {
+     "en": "Will you damage the lock?",
+     "zh": "会弄坏锁吗？"
+    },
+    {
+     "en": "Is there a callout surcharge?",
+     "zh": "有上门附加费吗？"
+    }
+   ]
+  },
+  {
+   "id": "lockout-5",
+   "g": "lockout",
+   "name": "被锁在门外 · 问价格",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你怕半夜被加价。",
+   "roles": [
+    "你",
+    "开锁师傅"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I am locked out. The key turns but the door will not open.",
+     "zh": "我被锁在外面了。钥匙能转，门打不开。"
+    },
+    {
+     "r": 1,
+     "en": "Is there a chain on the inside?",
+     "zh": "里面有门链吗？"
+    },
+    {
+     "r": 0,
+     "en": "I do not think so. I left through this door an hour ago.",
+     "zh": "应该没有。我一小时前从这个门出去的。"
+    },
+    {
+     "r": 1,
+     "en": "I can be there in twenty minutes. It is eighty for a lockout.",
+     "zh": "二十分钟能到。开锁八十。",
+     "note": "lockout 是「被锁在门外」的服务名，报价时先问清。"
+    },
+    {
+     "r": 0,
+     "en": "Do you need proof that I live here?",
+     "zh": "需要证明我住这儿吗？"
+    },
+    {
+     "r": 1,
+     "en": "A bill with your name and this address is enough.",
+     "zh": "有您名字和这个地址的账单就行。"
+    },
+    {
+     "r": 0,
+     "en": "Is there a callout surcharge at night?",
+     "zh": "夜间有上门附加费吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not if it is a standard cylinder. I will pick it, not drill it.",
+     "zh": "标准锁芯就不会。我技术开锁，不钻孔。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "cost",
+    "task": "对方报的价比你预期高，你要决定",
+    "prompt": {
+     "en": "After ten it is a hundred and twenty, not eighty.",
+     "zh": "十点之后是一百二，不是八十。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Fine, I have no choice tonight.",
+       "zh": "行，今晚也没别的办法。"
+      },
+      "react": {
+       "en": "I will be there in twenty.",
+       "zh": "我二十分钟到。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you come at eight tomorrow instead?",
+       "zh": "能改成明天八点吗？"
+      },
+      "react": {
+       "en": "Cheaper, but you need somewhere to sleep.",
+       "zh": "便宜些，但你得有地方睡。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am locked out.",
+     "zh": "我被锁在门外了。"
+    },
+    {
+     "en": "Will you damage the lock?",
+     "zh": "会弄坏锁吗？"
+    },
+    {
+     "en": "Is there a callout surcharge?",
+     "zh": "有上门附加费吗？"
+    }
+   ]
+  },
+  {
+   "id": "subscription",
+   "g": "subscription",
+   "name": "取消订阅 · 用不上想退订",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你订阅了一年的软件，实际只用了三次。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like to cancel my subscription.",
+     "zh": "我想取消订阅。"
+    },
+    {
+     "r": 1,
+     "en": "Sorry to hear that. Can I ask why?",
+     "zh": "很遗憾。能问下原因吗？"
+    },
+    {
+     "r": 0,
+     "en": "I am not using it enough to justify the price.",
+     "zh": "我用得不够多，不值这个价。"
+    },
+    {
+     "r": 1,
+     "en": "We could offer three months at half price.",
+     "zh": "可以给您三个月半价。"
+    },
+    {
+     "r": 0,
+     "en": "That is kind, but I would still be paying for something I do not use.",
+     "zh": "谢谢，但我还是在为不用的东西付钱。"
+    },
+    {
+     "r": 1,
+     "en": "Understood. Your access runs to the end of the billing period.",
+     "zh": "明白。使用权到本期结束。"
+    },
+    {
+     "r": 0,
+     "en": "Will I be charged again after that?",
+     "zh": "之后还会扣费吗？"
+    },
+    {
+     "r": 1,
+     "en": "No. And you can export your data before it closes.",
+     "zh": "不会。关停前您可以导出数据。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Please send me the confirmation in writing.",
+     "zh": "好。请把确认发我一份。"
+    }
+   ],
+   "branch": {
+    "at": 2,
+    "kind": "offer",
+    "task": "客服给了一个挽留方案，你要判断接不接受",
+    "prompt": {
+     "en": "What if we drop it to five a month for a year?",
+     "zh": "一年内降到每月五块怎么样？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That changes things. Send me that in writing.",
+       "zh": "那不一样了。把这条写进邮件发我。"
+      },
+      "react": {
+       "en": "I will email the terms today.",
+       "zh": "我今天把条款发邮件。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would still not use it. Please cancel.",
+       "zh": "我还是不会用。请取消。"
+      },
+      "react": {
+       "en": "Done. You will get a confirmation email.",
+       "zh": "已取消。您会收到确认邮件。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to cancel my subscription.",
+     "zh": "我想取消订阅。"
+    },
+    {
+     "en": "I am not using it enough to justify the price.",
+     "zh": "用得不够多，不值这个价。"
+    },
+    {
+     "en": "Please send me the confirmation in writing.",
+     "zh": "请把确认发我一份。"
+    }
+   ]
+  },
+  {
+   "id": "subscription-2",
+   "g": "subscription",
+   "name": "取消订阅 · 免费试用要到期",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你怕免费试用自动转付费。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I am on a free trial and I do not want it to turn into a charge.",
+     "zh": "我在免费试用，不想被自动扣费。"
+    },
+    {
+     "r": 1,
+     "en": "I can cancel it now. You keep access until the trial ends.",
+     "zh": "现在就能取消。试用结束前还能用。"
+    },
+    {
+     "r": 0,
+     "en": "I am not using it enough to justify the price.",
+     "zh": "我用得不够多，不值这个价。"
+    },
+    {
+     "r": 1,
+     "en": "We could offer three months at half price.",
+     "zh": "可以给您三个月半价。"
+    },
+    {
+     "r": 0,
+     "en": "That is kind, but I would still be paying for something I do not use.",
+     "zh": "谢谢，但我还是在为不用的东西付钱。"
+    },
+    {
+     "r": 1,
+     "en": "Understood. Your access runs to the end of the billing period.",
+     "zh": "明白。使用权到本期结束。"
+    },
+    {
+     "r": 0,
+     "en": "Will I be charged again after that?",
+     "zh": "之后还会扣费吗？"
+    },
+    {
+     "r": 1,
+     "en": "No. And you can export your data before it closes.",
+     "zh": "不会。关停前您可以导出数据。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Please send me the confirmation in writing.",
+     "zh": "好。请把确认发我一份。"
+    }
+   ],
+   "branch": {
+    "at": 2,
+    "kind": "offer",
+    "task": "客服给了一个挽留方案，你要判断接不接受",
+    "prompt": {
+     "en": "What if we drop it to five a month for a year?",
+     "zh": "一年内降到每月五块怎么样？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That changes things. Send me that in writing.",
+       "zh": "那不一样了。把这条写进邮件发我。"
+      },
+      "react": {
+       "en": "I will email the terms today.",
+       "zh": "我今天把条款发邮件。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would still not use it. Please cancel.",
+       "zh": "我还是不会用。请取消。"
+      },
+      "react": {
+       "en": "Done. You will get a confirmation email.",
+       "zh": "已取消。您会收到确认邮件。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to cancel my subscription.",
+     "zh": "我想取消订阅。"
+    },
+    {
+     "en": "I am not using it enough to justify the price.",
+     "zh": "用得不够多，不值这个价。"
+    },
+    {
+     "en": "Please send me the confirmation in writing.",
+     "zh": "请把确认发我一份。"
+    }
+   ]
+  },
+  {
+   "id": "subscription-3",
+   "g": "subscription",
+   "name": "取消订阅 · 涨价的套餐",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你的套餐突然涨了三成。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "My price went up thirty percent with no notice.",
+     "zh": "我的价格没通知就涨了三成。"
+    },
+    {
+     "r": 1,
+     "en": "There was an email in March. I can offer the old rate for six months.",
+     "zh": "三月发过邮件。可以给您保留旧价六个月。"
+    },
+    {
+     "r": 0,
+     "en": "I am not using it enough to justify the price.",
+     "zh": "我用得不够多，不值这个价。"
+    },
+    {
+     "r": 1,
+     "en": "We could offer three months at half price.",
+     "zh": "可以给您三个月半价。"
+    },
+    {
+     "r": 0,
+     "en": "That is kind, but I would still be paying for something I do not use.",
+     "zh": "谢谢，但我还是在为不用的东西付钱。"
+    },
+    {
+     "r": 1,
+     "en": "Understood. Your access runs to the end of the billing period.",
+     "zh": "明白。使用权到本期结束。"
+    },
+    {
+     "r": 0,
+     "en": "Will I be charged again after that?",
+     "zh": "之后还会扣费吗？"
+    },
+    {
+     "r": 1,
+     "en": "No. And you can export your data before it closes.",
+     "zh": "不会。关停前您可以导出数据。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Please send me the confirmation in writing.",
+     "zh": "好。请把确认发我一份。"
+    }
+   ],
+   "branch": {
+    "at": 2,
+    "kind": "offer",
+    "task": "客服给了一个挽留方案，你要判断接不接受",
+    "prompt": {
+     "en": "What if we drop it to five a month for a year?",
+     "zh": "一年内降到每月五块怎么样？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That changes things. Send me that in writing.",
+       "zh": "那不一样了。把这条写进邮件发我。"
+      },
+      "react": {
+       "en": "I will email the terms today.",
+       "zh": "我今天把条款发邮件。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would still not use it. Please cancel.",
+       "zh": "我还是不会用。请取消。"
+      },
+      "react": {
+       "en": "Done. You will get a confirmation email.",
+       "zh": "已取消。您会收到确认邮件。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to cancel my subscription.",
+     "zh": "我想取消订阅。"
+    },
+    {
+     "en": "I am not using it enough to justify the price.",
+     "zh": "用得不够多，不值这个价。"
+    },
+    {
+     "en": "Please send me the confirmation in writing.",
+     "zh": "请把确认发我一份。"
+    }
+   ]
+  },
+  {
+   "id": "subscription-4",
+   "g": "subscription",
+   "name": "取消订阅 · 被挽留",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "客服一直劝你留下。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like to cancel my subscription.",
+     "zh": "我想取消订阅。"
+    },
+    {
+     "r": 1,
+     "en": "Sorry to hear that. Can I ask why?",
+     "zh": "很遗憾。能问下原因吗？"
+    },
+    {
+     "r": 0,
+     "en": "I am not using it enough to justify the price.",
+     "zh": "我用得不够多，不值这个价。"
+    },
+    {
+     "r": 1,
+     "en": "We could offer three months at half price.",
+     "zh": "可以给您三个月半价。"
+    },
+    {
+     "r": 0,
+     "en": "I understand the offer, but my decision is made.",
+     "zh": "我理解这个优惠，但我已经决定了。"
+    },
+    {
+     "r": 1,
+     "en": "Understood. Your access runs to the end of the billing period.",
+     "zh": "明白。使用权到本期结束。"
+    },
+    {
+     "r": 0,
+     "en": "Will I be charged again after that?",
+     "zh": "之后还会扣费吗？"
+    },
+    {
+     "r": 1,
+     "en": "No. And you can export your data before it closes.",
+     "zh": "不会。关停前您可以导出数据。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Please send me the confirmation in writing.",
+     "zh": "好。请把确认发我一份。"
+    }
+   ],
+   "branch": {
+    "at": 2,
+    "kind": "offer",
+    "task": "客服给了一个挽留方案，你要判断接不接受",
+    "prompt": {
+     "en": "What if we drop it to five a month for a year?",
+     "zh": "一年内降到每月五块怎么样？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That changes things. Send me that in writing.",
+       "zh": "那不一样了。把这条写进邮件发我。"
+      },
+      "react": {
+       "en": "I will email the terms today.",
+       "zh": "我今天把条款发邮件。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would still not use it. Please cancel.",
+       "zh": "我还是不会用。请取消。"
+      },
+      "react": {
+       "en": "Done. You will get a confirmation email.",
+       "zh": "已取消。您会收到确认邮件。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to cancel my subscription.",
+     "zh": "我想取消订阅。"
+    },
+    {
+     "en": "I am not using it enough to justify the price.",
+     "zh": "用得不够多，不值这个价。"
+    },
+    {
+     "en": "Please send me the confirmation in writing.",
+     "zh": "请把确认发我一份。"
+    }
+   ]
+  },
+  {
+   "id": "subscription-5",
+   "g": "subscription",
+   "name": "取消订阅 · 退款",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你刚续费就想退。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like to cancel my subscription.",
+     "zh": "我想取消订阅。"
+    },
+    {
+     "r": 1,
+     "en": "Sorry to hear that. Can I ask why?",
+     "zh": "很遗憾。能问下原因吗？"
+    },
+    {
+     "r": 0,
+     "en": "I am not using it enough to justify the price.",
+     "zh": "我用得不够多，不值这个价。"
+    },
+    {
+     "r": 1,
+     "en": "We could offer three months at half price.",
+     "zh": "可以给您三个月半价。"
+    },
+    {
+     "r": 0,
+     "en": "That is kind, but I would still be paying for something I do not use.",
+     "zh": "谢谢，但我还是在为不用的东西付钱。"
+    },
+    {
+     "r": 1,
+     "en": "Understood. Your access runs to the end of the billing period.",
+     "zh": "明白。使用权到本期结束。"
+    },
+    {
+     "r": 0,
+     "en": "I renewed two days ago by accident. Can I get a refund?",
+     "zh": "我两天前误续费了。能退款吗？"
+    },
+    {
+     "r": 1,
+     "en": "No. And you can export your data before it closes.",
+     "zh": "不会。关停前您可以导出数据。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Please send me the confirmation in writing.",
+     "zh": "好。请把确认发我一份。"
+    }
+   ],
+   "branch": {
+    "at": 2,
+    "kind": "offer",
+    "task": "客服给了一个挽留方案，你要判断接不接受",
+    "prompt": {
+     "en": "What if we drop it to five a month for a year?",
+     "zh": "一年内降到每月五块怎么样？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That changes things. Send me that in writing.",
+       "zh": "那不一样了。把这条写进邮件发我。"
+      },
+      "react": {
+       "en": "I will email the terms today.",
+       "zh": "我今天把条款发邮件。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would still not use it. Please cancel.",
+       "zh": "我还是不会用。请取消。"
+      },
+      "react": {
+       "en": "Done. You will get a confirmation email.",
+       "zh": "已取消。您会收到确认邮件。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to cancel my subscription.",
+     "zh": "我想取消订阅。"
+    },
+    {
+     "en": "I am not using it enough to justify the price.",
+     "zh": "用得不够多，不值这个价。"
+    },
+    {
+     "en": "Please send me the confirmation in writing.",
+     "zh": "请把确认发我一份。"
+    }
+   ]
+  },
+  {
+   "id": "tailor",
+   "g": "tailor",
+   "name": "改衣店改尺寸 · 裤子收腰",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你买了一条版型很好的裤子，腰大了一点。",
+   "roles": [
+    "你",
+    "裁缝"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Could you take in the waist on these trousers?",
+     "zh": "这条裤子能把腰收一下吗？",
+     "note": "take in 是「收窄」，let out 是「放款」—— 改衣店的核心动词。"
+    },
+    {
+     "r": 1,
+     "en": "How much do you need taken in?",
+     "zh": "要收多少？"
+    },
+    {
+     "r": 0,
+     "en": "About two centimetres. They slip down when I walk.",
+     "zh": "大概两厘米。走路会往下掉。"
+    },
+    {
+     "r": 1,
+     "en": "I can do that. Anything else?",
+     "zh": "可以。还有别的吗？"
+    },
+    {
+     "r": 0,
+     "en": "The legs are a bit long too. Could you shorten them?",
+     "zh": "裤腿也有点长。能改短吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. Hemming is twelve, taking in is fifteen.",
+     "zh": "可以。改裤脚十二，收腰十五。"
+    },
+    {
+     "r": 0,
+     "en": "When can I pick them up?",
+     "zh": "什么时候能取？"
+    },
+    {
+     "r": 1,
+     "en": "Thursday. I will pin them now so you can check the length.",
+     "zh": "周四。我现在别一下，您看看长度。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "裁缝提了一个工艺上的限制，你要决定接受还是改方案",
+    "prompt": {
+     "en": "I can hem them, but the original stitch is hard to copy exactly.",
+     "zh": "裤脚能改，但原来的针脚很难完全一样。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Close enough is fine. Nobody will look that closely.",
+       "zh": "差不多就行。没人会凑近看。"
+      },
+      "react": {
+       "en": "Then I will match the thread colour as best I can.",
+       "zh": "那我把线色尽量配准。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you keep the original hem and just take up the waist?",
+       "zh": "能只收腰，保留原来的裤脚吗？"
+      },
+      "react": {
+       "en": "Then they will still be a little long.",
+       "zh": "那还是会有点长。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could you take in the waist?",
+     "zh": "能把腰收一下吗？"
+    },
+    {
+     "en": "Could you shorten the legs?",
+     "zh": "裤腿能改短吗？"
+    },
+    {
+     "en": "Could you pin it so I can check?",
+     "zh": "能别一下让我看看吗？"
+    }
+   ]
+  },
+  {
+   "id": "tailor-2",
+   "g": "tailor",
+   "name": "改衣店改尺寸 · 改短大衣",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "大衣袖子太长。",
+   "roles": [
+    "你",
+    "裁缝"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Could you shorten the sleeves on this coat?",
+     "zh": "这件大衣的袖子能改短吗？",
+     "note": "take in 是「收窄」，let out 是「放款」—— 改衣店的核心动词。"
+    },
+    {
+     "r": 1,
+     "en": "Taking up sleeves with a lining costs more, twenty-two.",
+     "zh": "有里衬的袖子贵一些，二十二。"
+    },
+    {
+     "r": 0,
+     "en": "About two centimetres. They slip down when I walk.",
+     "zh": "大概两厘米。走路会往下掉。"
+    },
+    {
+     "r": 1,
+     "en": "I can do that. Anything else?",
+     "zh": "可以。还有别的吗？"
+    },
+    {
+     "r": 0,
+     "en": "The legs are a bit long too. Could you shorten them?",
+     "zh": "裤腿也有点长。能改短吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. Hemming is twelve, taking in is fifteen.",
+     "zh": "可以。改裤脚十二，收腰十五。"
+    },
+    {
+     "r": 0,
+     "en": "When can I pick them up?",
+     "zh": "什么时候能取？"
+    },
+    {
+     "r": 1,
+     "en": "Thursday. I will pin them now so you can check the length.",
+     "zh": "周四。我现在别一下，您看看长度。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "裁缝提了一个工艺上的限制，你要决定接受还是改方案",
+    "prompt": {
+     "en": "I can hem them, but the original stitch is hard to copy exactly.",
+     "zh": "裤脚能改，但原来的针脚很难完全一样。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Close enough is fine. Nobody will look that closely.",
+       "zh": "差不多就行。没人会凑近看。"
+      },
+      "react": {
+       "en": "Then I will match the thread colour as best I can.",
+       "zh": "那我把线色尽量配准。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you keep the original hem and just take up the waist?",
+       "zh": "能只收腰，保留原来的裤脚吗？"
+      },
+      "react": {
+       "en": "Then they will still be a little long.",
+       "zh": "那还是会有点长。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could you take in the waist?",
+     "zh": "能把腰收一下吗？"
+    },
+    {
+     "en": "Could you shorten the legs?",
+     "zh": "裤腿能改短吗？"
+    },
+    {
+     "en": "Could you pin it so I can check?",
+     "zh": "能别一下让我看看吗？"
+    }
+   ]
+  },
+  {
+   "id": "tailor-3",
+   "g": "tailor",
+   "name": "改衣店改尺寸 · 换拉链",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "外套拉链坏了，但衣服还很好。",
+   "roles": [
+    "你",
+    "裁缝"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "The zip is broken. Is it worth replacing?",
+     "zh": "拉链坏了。值得换吗？",
+     "note": "take in 是「收窄」，let out 是「放款」—— 改衣店的核心动词。"
+    },
+    {
+     "r": 1,
+     "en": "For this jacket, yes. Twenty-five, and it takes a week.",
+     "zh": "这件外套值得。二十五，一周。"
+    },
+    {
+     "r": 0,
+     "en": "About two centimetres. They slip down when I walk.",
+     "zh": "大概两厘米。走路会往下掉。"
+    },
+    {
+     "r": 1,
+     "en": "I can do that. Anything else?",
+     "zh": "可以。还有别的吗？"
+    },
+    {
+     "r": 0,
+     "en": "The legs are a bit long too. Could you shorten them?",
+     "zh": "裤腿也有点长。能改短吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. Hemming is twelve, taking in is fifteen.",
+     "zh": "可以。改裤脚十二，收腰十五。"
+    },
+    {
+     "r": 0,
+     "en": "When can I pick them up?",
+     "zh": "什么时候能取？"
+    },
+    {
+     "r": 1,
+     "en": "Thursday. I will pin them now so you can check the length.",
+     "zh": "周四。我现在别一下，您看看长度。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "裁缝提了一个工艺上的限制，你要决定接受还是改方案",
+    "prompt": {
+     "en": "I can hem them, but the original stitch is hard to copy exactly.",
+     "zh": "裤脚能改，但原来的针脚很难完全一样。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Close enough is fine. Nobody will look that closely.",
+       "zh": "差不多就行。没人会凑近看。"
+      },
+      "react": {
+       "en": "Then I will match the thread colour as best I can.",
+       "zh": "那我把线色尽量配准。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you keep the original hem and just take up the waist?",
+       "zh": "能只收腰，保留原来的裤脚吗？"
+      },
+      "react": {
+       "en": "Then they will still be a little long.",
+       "zh": "那还是会有点长。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could you take in the waist?",
+     "zh": "能把腰收一下吗？"
+    },
+    {
+     "en": "Could you shorten the legs?",
+     "zh": "裤腿能改短吗？"
+    },
+    {
+     "en": "Could you pin it so I can check?",
+     "zh": "能别一下让我看看吗？"
+    }
+   ]
+  },
+  {
+   "id": "tailor-4",
+   "g": "tailor",
+   "name": "改衣店改尺寸 · 婚礼改衣",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你要在婚礼前改礼服。",
+   "roles": [
+    "你",
+    "裁缝"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Could you take in the waist on these trousers?",
+     "zh": "这条裤子能把腰收一下吗？",
+     "note": "take in 是「收窄」，let out 是「放款」—— 改衣店的核心动词。"
+    },
+    {
+     "r": 1,
+     "en": "How much do you need taken in?",
+     "zh": "要收多少？"
+    },
+    {
+     "r": 0,
+     "en": "About two centimetres. They slip down when I walk.",
+     "zh": "大概两厘米。走路会往下掉。"
+    },
+    {
+     "r": 1,
+     "en": "I can do that. Anything else?",
+     "zh": "可以。还有别的吗？"
+    },
+    {
+     "r": 0,
+     "en": "The legs are a bit long too. Could you shorten them?",
+     "zh": "裤腿也有点长。能改短吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. Hemming is twelve, taking in is fifteen.",
+     "zh": "可以。改裤脚十二，收腰十五。"
+    },
+    {
+     "r": 0,
+     "en": "I need it before the wedding on the twelfth. Is that possible?",
+     "zh": "十二号婚礼前要拿到。来得及吗？"
+    },
+    {
+     "r": 1,
+     "en": "Tight, but I can do it if you come for a fitting on Monday.",
+     "zh": "有点紧，但你周一能来试一次就行。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "裁缝提了一个工艺上的限制，你要决定接受还是改方案",
+    "prompt": {
+     "en": "I can hem them, but the original stitch is hard to copy exactly.",
+     "zh": "裤脚能改，但原来的针脚很难完全一样。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Close enough is fine. Nobody will look that closely.",
+       "zh": "差不多就行。没人会凑近看。"
+      },
+      "react": {
+       "en": "Then I will match the thread colour as best I can.",
+       "zh": "那我把线色尽量配准。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you keep the original hem and just take up the waist?",
+       "zh": "能只收腰，保留原来的裤脚吗？"
+      },
+      "react": {
+       "en": "Then they will still be a little long.",
+       "zh": "那还是会有点长。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could you take in the waist?",
+     "zh": "能把腰收一下吗？"
+    },
+    {
+     "en": "Could you shorten the legs?",
+     "zh": "裤腿能改短吗？"
+    },
+    {
+     "en": "Could you pin it so I can check?",
+     "zh": "能别一下让我看看吗？"
+    }
+   ]
+  },
+  {
    "id": "shopping",
    "g": "shopping",
    "name": "退换货 · 拉链坏了",
