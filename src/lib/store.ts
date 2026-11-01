@@ -3,6 +3,7 @@ import type { Article, GhostFrame, RunResult, Screen, WordStat } from './types';
 import { appendRun, isDesktop, loadNativeProgress, saveNativeProgress } from './native';
 import { yesterdayKey } from './daily';
 import { review, retrievability, type Grade } from './fsrs';
+import { spreadConfusable } from './confuse';
 
 const KEY = 'typewake:v1';
 const DAY = 86400000;
@@ -448,5 +449,6 @@ export function dueWords(mastery: Record<string, WordStat>, limit = 12): string[
     out.push({ w, pri: r });
   }
   out.sort((a, b) => a.pri - b.pri);
-  return out.slice(0, limit).map(x => x.w);
+  // 形近词别挤在同一批：affect 和 effect 一起复习会互相干扰
+  return spreadConfusable(out.map(x => x.w), limit);
 }

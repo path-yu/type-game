@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useCorpus } from '../lib/CorpusContext';
 import { lookup } from '../lib/data';
 import { dayNo, useGame } from '../lib/store';
+import { spreadConfusable, rivalsOf } from '../lib/confuse';
 import { speak } from '../lib/speech';
 import { chime, errorThud, keyClick } from '../lib/sfx';
 import type { WordStat } from '../lib/types';
@@ -26,7 +27,8 @@ function buildQueue(mastery: Record<string, WordStat>, limit = 12): string[] {
     .filter(x => x.pri < 99);
 
   items.sort((a, b) => (a.pri - b.pri) || (a.st.m - b.st.m));
-  return items.slice(0, limit).map(x => x.w);
+  // 形近词错开：同一批里同时出现 affect / effect，两个都会被搅乱
+  return spreadConfusable(items.map(x => x.w), limit);
 }
 
 type Phase = 'ask' | 'right' | 'wrong';
@@ -51,6 +53,10 @@ export function ReviewScreen() {
   const word = queue[i] ?? '';
   const entry = word ? lookup(corpus, word) : null;
   const target = word.replace(/[^a-z']/gi, '');
+  // 答错时才找易混词：从「学过的词」里翻，几百个量级，逐词比编辑距离够快
+  const rivals = phase === 'wrong'
+    ? rivalsOf(target, Object.keys(p.mastery)).filter(w => w !== target)
+    : [];
   const finished = i >= queue.length;
 
   const replay = () => speak(word, { accent: settings.voice, rate: settings.rate });
@@ -184,7 +190,14 @@ export function ReviewScreen() {
           </div>
 
           {phase === 'wrong' ? (
-            <div className="rv-answer">{target}</div>
+            <>
+              <div className="rv-answer">{target}</div>
+              {rivals.length > 0 && (
+                <div className="rv-rival">
+                  易混：{rivals.join(' / ')} —— 看清再打
+                </div>
+              )}
+            </>
           ) : (
             <button className="rv-play" onClick={replay} title="再听一次（Enter）">
               <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.6"
