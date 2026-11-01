@@ -29,7 +29,8 @@
     "test:daily": "node scripts/test-daily.mjs",
     "test:report": "node scripts/test-report.mjs",
     "test:cloze": "node scripts/test-cloze.mjs",
-    "audit:cloze": "node scripts/audit-cloze.mjs"
+    "audit:cloze": "node scripts/audit-cloze.mjs",
+    "audit:gloss": "node scripts/audit-gloss.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

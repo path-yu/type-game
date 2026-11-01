@@ -74,6 +74,16 @@ for (const [word, prev, next, nextNoun, must, mustNot] of cases) {
 const SENTS = [
   ['And when it comes to sleeping with an unknown stranger, in a strange inn, in a strange town, and that stranger a harpooneer, then your objections indefinitely multiply.', 'stranger', ['陌生'], ['奇怪']],
   ['The little packet for Nantucket had already sailed.', 'packet', [], []],
+
+  // 2026-11 补的四条规则：缩写展开 / to 不定式 / be+ing / -ly 副词
+  ["I'm opening the door for the first time.", 'opening', ['打开'], ['开始']],
+  ['He is coming back tonight.', 'coming', ['来', '到达'], ['就要来的']],
+  ['They had been talking for hours.', 'talking', ['讲话', '说话'], ['多嘴']],
+  ['He shook his head gravely.', 'gravely', ['严肃', '庄重'], ['墓穴']],
+  ['We decided to protest against the plan.', 'protest', ['反对', '抗议'], []],
+  ['The making of the film took years.', 'making', ['制造', '制作'], []],
+  ['She had been waiting since noon.', 'waiting', ['vt.', 'vi.'], ['n.']],
+  ['He was tired after the long walk.', 'tired', ['疲', '累'], ['轮胎']],
 ];
 
 for (const [sentence, word, must, mustNot] of SENTS) {
@@ -90,6 +100,9 @@ for (const [sentence, word, must, mustNot] of SENTS) {
 const SENTINEL = [
   ['born', '熊'], ['tired', '轮胎'], ['evening', '平坦'], ['means', '低劣'],
   ['stranger', '奇怪'], ['united', '接合'], ['could', '装罐'], ['thought', '想象'],
+  // 副词：不能取原形的名词义（gravely → grave → 墓穴）
+  ['gravely', '墓穴'], ['earnestly', '定金'], ['narrowly', '狭窄部分'],
+  // 进行时：不能取名词义（opening → 开始 在 the opening 里是对的，所以只哨兵查 opening 的「口子」）
 ];
 const arts = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/articles.json'), 'utf8')).items;
 let scanned = 0;
