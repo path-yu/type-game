@@ -85,6 +85,15 @@ export function IconStar({ className, filled = true }: P & { filled?: boolean })
   );
 }
 
+export function IconChat({ className }: P) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M2.8 5.2a1.8 1.8 0 0 1 1.8-1.8h10.8a1.8 1.8 0 0 1 1.8 1.8v6.4a1.8 1.8 0 0 1-1.8 1.8H8.4L4.8 16v-2.6H4.6a1.8 1.8 0 0 1-1.8-1.8z" />
+      <path d="M6.4 7.6h7.2M6.4 10.4h4.4" />
+    </svg>
+  );
+}
+
 export function IconGear({ className }: P) {
   return (
     <svg {...base} className={className}>

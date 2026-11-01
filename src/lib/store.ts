@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { Article, GhostFrame, RunResult, Screen, WordStat } from './types';
+import type { Article, GhostFrame, RunResult, SceneStat, Screen, WordStat } from './types';
 import { appendRun, isDesktop, loadNativeProgress, saveNativeProgress } from './native';
 import { yesterdayKey } from './daily';
 import { review, retrievability, type Grade } from './fsrs';
@@ -38,6 +38,8 @@ export interface Progress {
   dailyLastDay: string;    // 最近一次完成每日卷轴的日期
   dailyWpm: number;        // 完成时的成绩（用于地图页回显）
   dailyStars: number;
+  /** 场景对话：sceneId -> 练习记录 */
+  scenes: Record<string, SceneStat>;
 }
 
 export interface Settings {
@@ -73,6 +75,7 @@ const emptyProgress = (): Progress => ({
   dailyLastDay: '',
   dailyWpm: 0,
   dailyStars: 0,
+  scenes: {},
 });
 
 const defaultSettings = (): Settings => ({ voice: 'us', rate: 1, sound: true, motion: true, autoSpeak: false, sentenceHelp: 'gloss', clozeHint: 'first', pretest: true });
@@ -93,6 +96,8 @@ interface State {
   review: (word: string, ok: boolean) => void;
   /** 阅读填空的结果：填对涨掌握度，填错记为错误并当天进夜巡 */
   applyCloze: (results: { word: string; ok: boolean }[]) => void;
+  /** 场景对话练完一场：正确率入库，打错的词进夜巡 */
+  finishScene: (id: string, score: number, words: { w: string; ok: boolean }[]) => void;
   markUnknown: (word: string) => void;
   toggleLex: (word: string) => void;
   setSetting: <K extends keyof Settings>(k: K, v: Settings[K]) => void;
@@ -100,6 +105,35 @@ interface State {
   ensureDaily: (id: string) => void;
   pushToast: (t: string) => void;
   reset: () => void;
+}
+
+/**
+ * 一次作答落到词上：掌握度 + FSRS 记忆参数。
+ *
+ * 夜巡、预习卡、场景对话都走这一份 —— 三处各写一遍的话，
+ * 「答错当天回炉」这种规则迟早会有一处漏掉。
+ */
+function gradedWord(base: WordStat | undefined, ok: boolean, today: number): WordStat {
+  const st: WordStat = base ?? { m: 0, s: 0, due: 0, seen: 0, ok: 0, er: 0 };
+  const m = Math.max(0, Math.min(100, st.m + (ok ? 15 : -20)));
+  const prev = st.d != null
+    ? { s: st.s, d: st.d, due: st.due, last: st.last ?? 0, reps: st.reps ?? 1, lapses: st.lapses ?? 0 }
+    : null;
+  const mem = review(prev, ok ? 3 : 1, today);
+  return {
+    ...st,
+    m,
+    seen: st.seen + 1,
+    ok: st.ok + (ok ? 1 : 0),
+    er: st.er + (ok ? 0 : 1),
+    s: mem.s,
+    d: mem.d,
+    last: mem.last,
+    reps: mem.reps,
+    lapses: mem.lapses,
+    // 答错的词当晚就回炉，答对的按 FSRS 排期
+    due: ok ? mem.due : today,
+  };
 }
 
 /**
@@ -340,31 +374,33 @@ export const useGame = create<State>((set, get) => ({
 
   review: (word, ok) => {
     const { p } = get();
-    const st = p.mastery[word];
-    const base: WordStat = st ?? { m: 0, s: 0, due: 0, seen: 0, ok: 0, er: 0 };
-    const m = Math.max(0, Math.min(100, base.m + (ok ? 15 : -20)));
-    // 夜巡的一次作答同样进 FSRS：答对算 good，答错算 again（当天回炉）
-    const prev = base.d != null
-      ? { s: base.s, d: base.d, due: base.due, last: base.last ?? 0, reps: base.reps ?? 1, lapses: base.lapses ?? 0 }
-      : null;
-    const mem = review(prev, ok ? 3 : 1, dayNo());
-    const mastery = {
-      ...p.mastery,
-      [word]: {
-        ...base,
-        m,
-        seen: base.seen + 1,
-        ok: base.ok + (ok ? 1 : 0),
-        er: base.er + (ok ? 0 : 1),
-        s: mem.s,
-        d: mem.d,
-        last: mem.last,
-        reps: mem.reps,
-        lapses: mem.lapses,
-        due: ok ? mem.due : dayNo(),
+    const mastery = { ...p.mastery, [word]: gradedWord(p.mastery[word], ok, dayNo()) };
+    set({ p: { ...p, mastery } });
+    save();
+  },
+
+  finishScene: (id, score, words) => {
+    const { p } = get();
+    const today = todayStr();
+    const day = dayNo();
+    const mastery = { ...p.mastery };
+    // 只把真正打错的词记一笔 —— 整句八个词全记一遍，掌握度就没意义了
+    for (const { w, ok } of words) mastery[w] = gradedWord(mastery[w], ok, day);
+
+    const prev = p.scenes[id];
+    const scenes: Record<string, SceneStat> = {
+      ...p.scenes,
+      [id]: {
+        best: Math.max(prev?.best ?? 0, Math.round(score)),
+        at: today,
+        runs: (prev?.runs ?? 0) + 1,
       },
     };
-    set({ p: { ...p, mastery } });
+    const streak = p.lastDay !== today ? p.streak + 1 : p.streak;
+    set({
+      p: { ...p, mastery, scenes, streak, lastDay: today, totalSeconds: p.totalSeconds + 90 },
+      toast: `这一场练完了 · 正确率 ${Math.round(score)}%`,
+    });
     save();
   },
 

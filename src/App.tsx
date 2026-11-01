@@ -12,7 +12,8 @@ import { SettingsScreen } from './screens/SettingsScreen';
 import { ReportScreen } from './screens/ReportScreen';
 import { ClozeScreen } from './screens/ClozeScreen';
 import { LibraryScreen } from './screens/LibraryScreen';
-import { IconBlank, IconBook, IconCity, IconGear, IconMonitor, IconMoon, IconPulse, IconShelf, IconSun } from './components/Icons';
+import { DialogueScreen } from './screens/DialogueScreen';
+import { IconBlank, IconBook, IconChat, IconCity, IconGear, IconMonitor, IconMoon, IconPulse, IconShelf, IconSun } from './components/Icons';
 import { reportReady } from './lib/native';
 import { stopSpeaking } from './lib/speech';
 
@@ -59,8 +60,8 @@ export default function App() {
         else if (screen === 'result') document.querySelector<HTMLButtonElement>('.actions .btn-primary')?.click();
       }
       if ((e.metaKey || e.ctrlKey) && !isFocus) {
-        const map: Record<string, 'map' | 'review' | 'lexicon' | 'library' | 'cloze' | 'report' | 'settings'> = {
-          '1': 'map', '2': 'review', '3': 'lexicon', '4': 'library', '5': 'cloze', '6': 'report', '7': 'settings',
+        const map: Record<string, 'map' | 'review' | 'lexicon' | 'library' | 'dialogue' | 'cloze' | 'report' | 'settings'> = {
+          '1': 'map', '2': 'review', '3': 'lexicon', '4': 'library', '5': 'dialogue', '6': 'cloze', '7': 'report', '8': 'settings',
         };
         const target = map[e.key];
         if (target) { e.preventDefault(); go(target); }
@@ -132,6 +133,10 @@ export default function App() {
               <IconBook />
               <span>藏书阁</span>
             </button>
+            <button className={`side-item${screen === 'dialogue' ? ' on' : ''}`} onClick={() => go('dialogue')}>
+              <IconChat />
+              <span>场景对话</span>
+            </button>
             <button className={`side-item${screen === 'cloze' ? ' on' : ''}`} onClick={() => go('cloze')}>
               <IconBlank />
               <span>阅读填空</span>
@@ -168,6 +173,7 @@ export default function App() {
           {screen === 'result' && <ResultScreen />}
           {screen === 'review' && <ReviewScreen />}
           {screen === 'library' && <LibraryScreen />}
+          {screen === 'dialogue' && <DialogueScreen />}
           {screen === 'lexicon' && <LexiconScreen />}
           {screen === 'cloze' && <ClozeScreen />}
           {screen === 'report' && <ReportScreen />}

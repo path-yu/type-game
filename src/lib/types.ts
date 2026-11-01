@@ -42,6 +42,12 @@ export interface WordStat {
   lex?: boolean; // 已收藏
 }
 
+export interface SceneStat {
+  best: number;   // 最高正确率 0-100
+  at: string;     // 最近一次完成的日期
+  runs: number;   // 练过几遍
+}
+
 export interface RunResult {
   articleId: string;
   lv: number;
@@ -67,4 +73,4 @@ export interface GhostFrame {
   wpm: number;
 }
 
-export type Screen = 'map' | 'play' | 'result' | 'review' | 'lexicon' | 'library' | 'report' | 'cloze' | 'settings';
+export type Screen = 'map' | 'play' | 'result' | 'review' | 'lexicon' | 'library' | 'report' | 'cloze' | 'dialogue' | 'settings';
