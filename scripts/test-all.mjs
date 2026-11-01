@@ -39,6 +39,7 @@ const steps = [
   { name: '阅读填空', cmd: 'node', args: ['scripts/test-cloze.mjs'], desc: '20 项出题 / 提示 / 回写', needsServer: true },
   { name: '体检报告', cmd: 'node', args: ['scripts/test-report.mjs'], desc: '40 项统计 / 诊断 / 岔路分类', needsServer: true },
   { name: '语音', cmd: 'node', args: ['scripts/test-speech.mjs'], desc: '7 项语音取消', needsServer: true },
+  { name: '进度备份', cmd: 'node', args: ['scripts/test-backup.mjs'], desc: '44 项导出 / 校验 / 覆盖', needsServer: true },
 ];
 
 // 注意：vite preview 默认只监听 IPv6（::1），用 127.0.0.1 探测会误判为「不可达」。

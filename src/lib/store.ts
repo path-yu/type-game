@@ -161,6 +161,8 @@ interface State {
   consumePendingScene: () => void;
   pushToast: (t: string) => void;
   reset: () => void;
+  /** 从备份文件恢复整份进度（覆盖当前档案） */
+  restore: (p: Progress, s: Settings) => void;
 }
 
 /**
@@ -573,6 +575,21 @@ export const useGame = create<State>((set, get) => ({
 
   reset: () => {
     set({ p: emptyProgress(), s: defaultSettings(), screen: 'map', article: null, lastResult: null });
+    save();
+  },
+
+  restore: (p, s) => {
+    // 备份可能来自旧版本（稳定度还是 0–5 档位），照常走一次迁移
+    const next: Progress = { ...emptyProgress(), ...p };
+    next.mastery = migrateMastery(next.mastery ?? {});
+    set({
+      p: next,
+      s: { ...defaultSettings(), ...s },
+      screen: 'map',
+      article: null,
+      lastResult: null,
+      toast: '进度已从备份恢复',
+    });
     save();
   },
 }));

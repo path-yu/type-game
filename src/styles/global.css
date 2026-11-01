@@ -1922,3 +1922,51 @@ input, textarea { font-family: inherit; }
   padding: 1px 5px; border-radius: 4px;
   display: inline-block; margin: 2px 0;
 }
+
+/* ============ 设置：进度备份 ============ */
+.bk-acts { display: flex; gap: 8px; flex: none; }
+
+.bk-msg {
+  margin: 0 0 var(--sp-3) 0;
+  padding: 9px 12px;
+  font-size: 12px; line-height: 1.7;
+  border-radius: var(--r-ctl);
+}
+.bk-msg.ok { color: var(--fg-2); background: color-mix(in srgb, var(--ok) 8%, transparent); }
+.bk-msg.err { color: var(--err); background: color-mix(in srgb, var(--err) 8%, transparent); }
+
+.bk-confirm {
+  margin-bottom: var(--sp-3);
+  padding: var(--sp-4);
+  border: 1px solid var(--sep-2);
+  border-radius: var(--r-card);
+  background: var(--surface);
+}
+.bk-confirm-head {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: 12.5px; color: var(--fg-2); margin-bottom: 10px;
+}
+.bk-confirm-head b { color: var(--err); }
+.bk-confirm-head em {
+  margin-left: auto; font-style: normal;
+  font-family: var(--font-mono); font-size: 10.5px; color: var(--fg-3);
+}
+
+.bk-cmp { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+.bk-cmp > div {
+  display: flex; align-items: baseline; gap: 10px;
+  font-size: 11.5px; color: var(--fg-3);
+}
+.bk-cmp span {
+  flex: none; width: 30px;
+  font-size: 10px; letter-spacing: 0.06em;
+}
+.bk-cmp b { font-weight: 500; color: var(--fg-2); font-family: var(--font-mono); font-size: 11px; }
+.bk-cmp .in b { color: var(--accent); }
+
+.bk-warn {
+  margin: 0 0 10px; padding-left: 26px;
+  font-size: 11.5px; line-height: 1.8; color: var(--fg-2);
+  list-style: disc;
+}
+.bk-confirm-acts { display: flex; justify-content: flex-end; gap: 8px; }
