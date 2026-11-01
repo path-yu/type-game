@@ -3,15 +3,11 @@ import { speak, stopSpeaking } from '../lib/speech';
 import { useCorpus } from '../lib/CorpusContext';
 import { useGame } from '../lib/store';
 import {
-  diff, errorWords, initials, linesOf, maskOf, scoreSay, timelineOf, typedSteps, validate, yourLines,
+  diff, errorWords, initials, linesOf, loadDialogues, maskOf, scoreSay, timelineOf, typedSteps, validate, yourLines,
   type DBank, type Role, type SayResult, type Scene,
 } from '../lib/dialogue';
 import { asrMessage, asrSupported, createAsr, type AsrHandles } from '../lib/asr';
 
-const BASE = import.meta.env.BASE_URL || '/';
-
-/** 语料只有一份，切页不重复拉 */
-let cache: DBank | null = null;
 
 type Mode = 'read' | 'copy' | 'recall' | 'speak' | 'live';
 
@@ -26,21 +22,19 @@ const MODES: { id: Mode; label: string; hint: string }[] = [
 export function DialogueScreen() {
   const p = useGame(s => s.p);
   const finishScene = useGame(s => s.finishScene);
-  const [bank, setBank] = useState<DBank | null>(cache);
+  const [bank, setBank] = useState<DBank | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [openId, setOpenId] = useState<string | null>(null);
 
   useEffect(() => {
-    if (cache) return;
-    fetch(`${BASE}data/dialogues.json`)
-      .then(r => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
-      .then((j: DBank) => {
-        const bad = validate(j);
-        if (bad.length) console.warn('[dialogue] 语料有问题：', bad);
-        cache = j;
-        setBank(j);
-      })
-      .catch(e => setErr(String(e.message ?? e)));
+    let alive = true;
+    void loadDialogues().then(j => {
+      if (!alive || !j) return;
+      const bad = validate(j);
+      if (bad.length) console.warn('[dialogue] 语料有问题：', bad);
+      setBank(j);
+    }).catch(e => { if (alive) setErr(String(e.message ?? e)); });
+    return () => { alive = false; };
   }, []);
 
   useEffect(() => () => stopSpeaking(), []);
@@ -80,7 +74,7 @@ export function DialogueScreen() {
         key={scene.id}
         scene={scene}
         onBack={() => { stopSpeaking(); setOpenId(null); }}
-        onFinish={(score, words, r) => finishScene(scene.id, score, words, r)}
+        onFinish={(score, words, as) => finishScene(scene.id, score, words, as)}
       />
     );
   }
@@ -122,6 +116,7 @@ export function DialogueScreen() {
                 <span className="dg-bests">
                   {stat && stat.best > 0 && <em className="dg-best">最好 {stat.best}%</em>}
                   {stat?.swapBest != null && <em className="dg-best swap">换角 {stat.swapBest}%</em>}
+                  {stat?.liveBest != null && <em className="dg-best swap">实战 {stat.liveBest}%</em>}
                 </span>
               </div>
             </button>
@@ -141,7 +136,7 @@ function SceneView({
 }: {
   scene: Scene;
   onBack: () => void;
-  onFinish: (score: number, words: { w: string; ok: boolean }[], role: Role) => void;
+  onFinish: (score: number, words: { w: string; ok: boolean }[], as: Role | 'live') => void;
 }) {
   const settings = useGame(s => s.s);
   const corpus = useCorpus();
@@ -214,7 +209,7 @@ function SceneView({
           rate={settings.rate}
           known={known}
           onExit={onBack}
-          onFinish={(score, words) => onFinish(score, words, 'you')}
+          onFinish={(score, words) => onFinish(score, words, 'live')}
         />
       )}
 

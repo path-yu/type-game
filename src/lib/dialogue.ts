@@ -385,6 +385,22 @@ export function validate(bank: DBank): string[] {
   return bad;
 }
 
+/** 语料只有一份，两个页面（对话 / 体检报告）共用同一个请求 */
+let bankCache: DBank | null = null;
+
+export async function loadDialogues(): Promise<DBank | null> {
+  if (bankCache) return bankCache;
+  try {
+    const base = (import.meta as { env?: { BASE_URL?: string } }).env?.BASE_URL ?? '/';
+    const res = await fetch(`${base}data/dialogues.json`);
+    if (!res.ok) return null;
+    bankCache = (await res.json()) as DBank;
+    return bankCache;
+  } catch {
+    return null;
+  }
+}
+
 /** 场景总进度：已完成的场景数 / 总数 */
 export function sceneProgress(bank: DBank, done: Record<string, unknown>): { done: number; total: number } {
   const total = bank.scenes.length;

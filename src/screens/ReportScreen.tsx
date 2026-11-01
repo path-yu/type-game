@@ -1,8 +1,9 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useCorpus } from '../lib/CorpusContext';
 import { estimateVocab } from '../lib/data';
 import { useGame } from '../lib/store';
 import { buildReport } from '../lib/report';
+import { loadDialogues } from '../lib/dialogue';
 import { speak } from '../lib/speech';
 
 /** 折线：把 WPM 序列压成一条 SVG path */
@@ -25,12 +26,23 @@ export function ReportScreen() {
   const p = useGame(s => s.p);
   const settings = useGame(s => s.s);
 
-  const r = useMemo(() => buildReport(p, corpus, p.unlocked), [p, corpus]);
+  // 语料总场数只有报告页需要（「练过 3 / 10 场」），单独拉一次
+  const [sceneTotal, setSceneTotal] = useState(0);
+  useEffect(() => {
+    let alive = true;
+    void loadDialogues().then(b => { if (alive && b) setSceneTotal(b.scenes.length); });
+    return () => { alive = false; };
+  }, []);
+
+  const r = useMemo(
+    () => buildReport(p, corpus, p.unlocked, { scenes: sceneTotal }),
+    [p, corpus, sceneTotal]
+  );
   const vocab = estimateVocab(p.mastery, corpus);
   const path = sparkline(r.trend);
   const maxKey = r.topKeys[0]?.n ?? 1;
 
-  if (r.runs === 0) {
+  if (r.runs === 0 && r.talk.played === 0) {
     return (
       <div className="report">
         <div className="page-head">
@@ -50,96 +62,141 @@ export function ReportScreen() {
         <div>
           <h1 className="page-title">体检报告</h1>
           <div className="page-sub">
-            累计 {p.runs} 次 · {r.minutes} 分钟 · 掌握 {vocab.toLocaleString()} 词
+            {r.runs > 0
+              ? `累计 ${p.runs} 次 · ${r.minutes} 分钟 · 掌握 ${vocab.toLocaleString()} 词`
+              : `还没有打字记录 · 对话练过 ${r.talk.played} 场`}
           </div>
         </div>
-        <span className={`pill-badge${r.verdict.tone === 'good' ? ' gold' : ''}`}>
-          {r.verdict.tone === 'good' ? '状态良好' : r.verdict.tone === 'warn' ? '有提升空间' : '先修准确率'}
-        </span>
+      {r.runs > 0 && (
+          <span className={`pill-badge${r.verdict.tone === 'good' ? ' gold' : ''}`}>
+            {r.verdict.tone === 'good' ? '状态良好' : r.verdict.tone === 'warn' ? '有提升空间' : '先修准确率'}
+          </span>
+        )}
       </div>
 
-      <section className={`rep-verdict ${r.verdict.tone}`}>
-        <div className="rv-title">{r.verdict.title}</div>
-        <div className="rv-detail">{r.verdict.detail}</div>
-      </section>
+        {r.runs > 0 && (
+          <>
+          <section className={`rep-verdict ${r.verdict.tone}`}>
+            <div className="rv-title">{r.verdict.title}</div>
+            <div className="rv-detail">{r.verdict.detail}</div>
+          </section>
 
-      <section className="rep-grid">
-        <div className="rep-card">
-          <div className="rep-label">平均速度</div>
-          <div className="rep-big">{r.avgWpm}<u>WPM</u></div>
-          <div className="rep-foot">最好 {r.bestWpm} WPM</div>
-        </div>
-        <div className="rep-card">
-          <div className="rep-label">平均准确率</div>
-          <div className="rep-big">{r.avgAcc}<u>%</u></div>
-          <div className="rep-foot">{r.avgAcc >= 98 ? '很稳' : r.avgAcc >= 95 ? '合格' : '需要改进'}</div>
-        </div>
-        <div className="rep-card">
-          <div className="rep-label">一致性</div>
-          <div className="rep-big">{r.avgCons}<u>%</u></div>
-          <div className="rep-foot">{r.avgCons >= 70 ? '节奏平稳' : r.avgCons >= 55 ? '略有起伏' : '忽快忽慢'}</div>
-        </div>
-      </section>
+          <section className="rep-grid">
+            <div className="rep-card">
+              <div className="rep-label">平均速度</div>
+              <div className="rep-big">{r.avgWpm}<u>WPM</u></div>
+              <div className="rep-foot">最好 {r.bestWpm} WPM</div>
+            </div>
+            <div className="rep-card">
+              <div className="rep-label">平均准确率</div>
+              <div className="rep-big">{r.avgAcc}<u>%</u></div>
+              <div className="rep-foot">{r.avgAcc >= 98 ? '很稳' : r.avgAcc >= 95 ? '合格' : '需要改进'}</div>
+            </div>
+            <div className="rep-card">
+              <div className="rep-label">一致性</div>
+              <div className="rep-big">{r.avgCons}<u>%</u></div>
+              <div className="rep-foot">{r.avgCons >= 70 ? '节奏平稳' : r.avgCons >= 55 ? '略有起伏' : '忽快忽慢'}</div>
+            </div>
+          </section>
 
-      <section className="rep-block">
-        <div className="rep-block-head">
-          <h2>最近 {r.trend.length} 次</h2>
-          <span>
-            最低 {Math.min(...r.trend)} · 最高 {Math.max(...r.trend)} WPM
-          </span>
-        </div>
-        <svg className="spark" viewBox="0 0 640 76" preserveAspectRatio="none" aria-label="WPM 趋势">
-          <path className="spark-line" d={path} />
-        </svg>
-      </section>
+          <section className="rep-block">
+            <div className="rep-block-head">
+              <h2>最近 {r.trend.length} 次</h2>
+              <span>
+                最低 {Math.min(...r.trend)} · 最高 {Math.max(...r.trend)} WPM
+              </span>
+            </div>
+            <svg className="spark" viewBox="0 0 640 76" preserveAspectRatio="none" aria-label="WPM 趋势">
+              <path className="spark-line" d={path} />
+            </svg>
+          </section>
 
-      <section className="rep-block">
-        <div className="rep-block-head">
-          <h2>最容易打错的键</h2>
-          <span>左为应打，右为实际打出</span>
-        </div>
-        {r.topKeys.length === 0 ? (
-          <div className="rep-none">还没有记录到错键</div>
-        ) : (
-          <div className="key-list">
-            {r.topKeys.map(k => (
-              <div className="key-row" key={`${k.from}${k.to}`}>
-                <span className="key-pair">
-                  <kbd>{k.from === ' ' ? '空格' : k.from}</kbd>
-                  <i>打成</i>
-                  <kbd>{k.to === ' ' ? '空格' : k.to}</kbd>
-                </span>
-                <span className="key-bar"><i style={{ width: `${(k.n / maxKey) * 100}%` }} /></span>
-                <span className="key-n">{k.n} 次</span>
+          <section className="rep-block">
+            <div className="rep-block-head">
+              <h2>最容易打错的键</h2>
+              <span>左为应打，右为实际打出</span>
+            </div>
+            {r.topKeys.length === 0 ? (
+              <div className="rep-none">还没有记录到错键</div>
+            ) : (
+              <div className="key-list">
+                {r.topKeys.map(k => (
+                  <div className="key-row" key={`${k.from}${k.to}`}>
+                    <span className="key-pair">
+                      <kbd>{k.from === ' ' ? '空格' : k.from}</kbd>
+                      <i>打成</i>
+                      <kbd>{k.to === ' ' ? '空格' : k.to}</kbd>
+                    </span>
+                    <span className="key-bar"><i style={{ width: `${(k.n / maxKey) * 100}%` }} /></span>
+                    <span className="key-n">{k.n} 次</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        )}
-      </section>
+            )}
+          </section>
 
-      <section className="rep-block">
-        <div className="rep-block-head">
-          <h2>反复打错的词</h2>
-          <span>点一下听发音</span>
-        </div>
-        {r.weakWords.length === 0 ? (
-          <div className="rep-none">还没有打错过的词</div>
-        ) : (
-          <div className="weak-grid">
-            {r.weakWords.map(w => (
-              <button
-                key={w.w}
-                className="weak-item"
-                onClick={() => speak(w.w, { accent: settings.voice, rate: settings.rate })}
-              >
-                <b>{w.w}</b>
-                <span>{w.zh || '—'}</span>
-                <em>错 {w.er} 次 · 掌握 {w.m}</em>
-              </button>
-            ))}
+          <section className="rep-block">
+            <div className="rep-block-head">
+              <h2>反复打错的词</h2>
+              <span>点一下听发音</span>
+            </div>
+            {r.weakWords.length === 0 ? (
+              <div className="rep-none">还没有打错过的词</div>
+            ) : (
+              <div className="weak-grid">
+                {r.weakWords.map(w => (
+                  <button
+                    key={w.w}
+                    className="weak-item"
+                    onClick={() => speak(w.w, { accent: settings.voice, rate: settings.rate })}
+                  >
+                    <b>{w.w}</b>
+                    <span>{w.zh || '—'}</span>
+                    <em>错 {w.er} 次 · 掌握 {w.m}</em>
+                  </button>
+                ))}
+              </div>
+            )}
+          </section>
+
+        </>
+      )}
+
+      {r.talk.played > 0 && (
+        <section className="rep-block rep-talk">
+          <div className="rep-block-head">
+            <h2>场景对话</h2>
+            <span>
+              练过 {r.talk.played}{r.talk.total ? ` / ${r.talk.total}` : ''} 场 ·
+              换角 {r.talk.bothWays} 场 · 实战 {r.talk.live} 场
+            </span>
           </div>
-        )}
-      </section>
+
+          <div className="rep-grid two">
+            <div className="rep-card">
+              <div className="rep-label">说台词</div>
+              <div className="rep-big">{r.talk.bestAvg || '—'}<u>{r.talk.bestAvg ? '%' : ''}</u></div>
+              <div className="rep-foot">
+                {r.talk.bestAvg >= 85 ? '句子已经熟了' : r.talk.bestAvg >= 60 ? '基本能说下来' : '先跟打几遍'}
+              </div>
+            </div>
+            <div className="rep-card">
+              <div className="rep-label">实战接住率</div>
+              <div className="rep-big">{r.talk.live ? r.talk.liveAvg : '—'}<u>{r.talk.live ? '%' : ''}</u></div>
+              <div className="rep-foot">
+                {r.talk.live === 0 ? '还没走过实战' : r.talk.liveAvg >= 75 ? '临场很稳' : r.talk.liveAvg >= 55 ? '偶尔卡壳' : '还接不顺'}
+              </div>
+            </div>
+          </div>
+
+          {r.talk.verdict && (
+            <div className={`rep-talk-note ${r.talk.verdict.tone}`}>
+              <b>{r.talk.verdict.title}</b>
+              <span>{r.talk.verdict.detail}</span>
+            </div>
+          )}
+        </section>
+      )}
 
       <section className="rep-block">
         <div className="rep-block-head"><h2>接下来这样练</h2></div>

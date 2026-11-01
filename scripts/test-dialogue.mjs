@@ -496,6 +496,11 @@ try {
   check('实战走完有结算', liveSum.has, liveSum.line.slice(0, 26));
   check('结算按「开口次数」记', /6 处开口/.test(liveSum.line) && /接住 1 处/.test(liveSum.line), liveSum.line);
 
+  const afterLive = await store();
+  const liveStat = afterLive?.p?.scenes?.[first.id];
+  check('实战成绩单独记成 liveBest', typeof liveStat?.liveBest === 'number',
+    `live=${liveStat?.liveBest} best=${liveStat?.best}`);
+
   check('页面无报错', errs.length === 0, errs.slice(0, 2).join(' / '));
 } finally {
   await b.close();

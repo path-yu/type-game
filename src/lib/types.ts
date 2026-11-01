@@ -48,6 +48,8 @@ export interface SceneStat {
   runs: number;        // 练过几遍
   /** 角色互换（练对方台词）的最高正确率。没练过就没有这个字段 */
   swapBest?: number;
+  /** 实战（含岔路，整场走一遍）的接住率。和上面两项测的不是一种能力 */
+  liveBest?: number;
 }
 
 export interface RunResult {

@@ -1674,3 +1674,16 @@ input, textarea { font-family: inherit; }
   text-align: left;
 }
 .dg-listen .dg-listen-note { max-width: none; margin-left: 0; }
+
+/* —— 体检报告：场景对话 —— */
+.rep-grid.two { grid-template-columns: repeat(2, 1fr); margin-bottom: 0; }
+@media (max-width: 720px) { .rep-grid.two { grid-template-columns: 1fr; } }
+.rep-talk-note {
+  margin-top: var(--sp-4); padding: 12px 14px;
+  background: var(--fill); border-radius: var(--r-ctl);
+}
+.rep-talk-note b { display: block; font-size: 12.5px; font-weight: 600; margin-bottom: 4px; }
+.rep-talk-note span { font-size: 12px; line-height: 1.7; color: var(--fg-2); }
+.rep-talk-note.good b { color: var(--ok); }
+.rep-talk-note.warn b { color: var(--accent); }
+.rep-talk-note.bad b { color: var(--err); }

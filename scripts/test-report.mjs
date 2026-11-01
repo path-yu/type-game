@@ -3,10 +3,67 @@
  * 用法：node scripts/test-report.mjs（预览服务需在 4173）
  */
 import puppeteer from 'puppeteer-core';
+import * as esbuild from 'esbuild';
+import path from 'node:path';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const TMP = path.join(ROOT, 'node_modules', '.tmp-report.mjs');
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 let pass = 0, fail = 0;
 const check = (n, ok, d = '') => { ok ? pass++ : fail++; console.log(`  ${ok ? '✓' : '✗'} ${n}${d ? '  ' + d : ''}`); };
+
+/* ---------------- 纯逻辑：对话维度 ---------------- */
+await esbuild.build({
+  entryPoints: [path.join(ROOT, 'src/lib/report.ts')],
+  bundle: true, format: 'esm', platform: 'neutral', outfile: TMP, logLevel: 'silent',
+});
+const R = await import(`file://${TMP.replace(/\\/g, '/')}?t=${Date.now()}`);
+const fakeCorpus = { dict: new Map(), names: new Set(), articles: [], byLevel: [] };
+const mk = scenes => ({
+  history: [], keyErr: {}, mastery: {}, bestWpm: {}, runs: 0, totalSeconds: 0, scenes,
+});
+const reportOf = (scenes, total = 10) => R.buildReport(mk(scenes), fakeCorpus, 1, { scenes: total });
+
+const none = reportOf({});
+check('没练过对话时不影响报告', none.talk.played === 0 && none.talk.verdict === null);
+
+const mixed = reportOf({
+  cafe: { best: 92, swapBest: 74, liveBest: 55, at: '', runs: 5 },
+  hotel: { best: 88, liveBest: 60, at: '', runs: 3 },
+  doctor: { best: 70, at: '', runs: 1 },
+}, 10);
+check('统计练过的场数', mixed.talk.played === 3, `${mixed.talk.played} 场`);
+check('统计换角与实战', mixed.talk.bothWays === 1 && mixed.talk.live === 2,
+  `换角 ${mixed.talk.bothWays} · 实战 ${mixed.talk.live}`);
+check('平均分只算练过的', mixed.talk.bestAvg === 83, `说台词 ${mixed.talk.bestAvg}%`);
+check('总场数取自参数', mixed.talk.total === 10);
+check('差距大时判「临场接不住」', /临场/.test(mixed.talk.verdict?.title ?? ''), mixed.talk.verdict?.title);
+
+const wide = reportOf({
+  a: { best: 95, liveBest: 45, at: '', runs: 2 },
+  b: { best: 90, liveBest: 50, at: '', runs: 2 },
+});
+check('差距 ≥20 判 warn', wide.talk.verdict?.tone === 'warn', `${wide.talk.bestAvg} vs ${wide.talk.liveAvg}`);
+
+const weak = reportOf({
+  a: { best: 55, liveBest: 40, at: '', runs: 2 },
+  b: { best: 60, liveBest: 42, at: '', runs: 2 },
+});
+check('整体偏低判 bad', weak.talk.verdict?.tone === 'bad', weak.talk.verdict?.title);
+
+const even = reportOf({
+  a: { best: 82, liveBest: 78, at: '', runs: 2 },
+  b: { best: 86, liveBest: 80, at: '', runs: 2 },
+});
+check('两条线齐平时判 good', even.talk.verdict?.tone === 'good', even.talk.verdict?.title);
+
+const few = reportOf({ a: { best: 90, liveBest: 40, at: '', runs: 1 } });
+check('实战不足两场不下结论', few.talk.verdict === null, `实战 ${few.talk.live} 场`);
+
+try { fs.unlinkSync(TMP); } catch { /* ignore */ }
 
 const b = await puppeteer.launch({
   executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
@@ -99,6 +156,41 @@ check('WPM 趋势折线有数据', rep.sparkLen > 20, `${rep.sparkLen} 字符路
 check('列出易错键', rep.keys > 0, `${rep.keys} 行 · ${rep.firstKey}`);
 check('列出反复打错的词', rep.weak > 0, `${rep.weak} 个`);
 check('给出练习建议', rep.tips >= 2, `${rep.tips} 条`);
+
+// 对话维度：没有练过对话时不显示
+const talkNone = await page.evaluate(() => !!document.querySelector('.rep-talk'));
+check('没练对话时不显示对话块', !talkNone);
+
+await page.evaluate(() => {
+  const raw = JSON.parse(localStorage.getItem('typewake:v1') || '{}');
+  raw.p = raw.p || {};
+  raw.p.scenes = {
+    cafe: { best: 92, swapBest: 74, liveBest: 55, at: '2026-11-01', runs: 4 },
+    hotel: { best: 88, liveBest: 60, at: '2026-11-01', runs: 2 },
+    airport: { best: 80, liveBest: 40, at: '2026-11-01', runs: 1 },
+  };
+  localStorage.setItem('typewake:v1', JSON.stringify(raw));
+});
+await page.reload({ waitUntil: 'networkidle2' });
+await page.waitForSelector('.side-item');
+await page.evaluate(() => {
+  [...document.querySelectorAll('.side-item')].find(x => x.textContent.includes('体检报告'))?.click();
+});
+await sleep(700);
+const talk = await page.evaluate(() => {
+  const t = document.querySelector('.rep-talk');
+  return {
+    has: !!t,
+    head: t?.querySelector('.rep-block-head span')?.textContent?.replace(/\s+/g, ' ') ?? '',
+    cards: [...(t?.querySelectorAll('.rep-card') ?? [])].map(c => c.innerText.replace(/\n/g, ' ')),
+    note: t?.querySelector('.rep-talk-note b')?.textContent ?? '',
+  };
+});
+check('练过对话后出现对话块', talk.has);
+check('统计口径写清楚', /3 \/ 10 场/.test(talk.head) && /实战 3 场/.test(talk.head), talk.head.trim());
+check('两个数据卡片', talk.cards.length === 2 && /说台词/.test(talk.cards[0]) && /实战接住率/.test(talk.cards[1]),
+  talk.cards.join(' | '));
+check('给出差距结论', /临场/.test(talk.note), talk.note);
 
 // 刷新后仍在
 await page.reload({ waitUntil: 'networkidle2' });

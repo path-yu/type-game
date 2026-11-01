@@ -152,18 +152,48 @@ React 里把 input 设成 `disabled`，它立刻失去焦点，**键盘事件再
 练完一场，两件事写进档案：
 
 ```js
-finishScene(sceneId, score, failedWords)
-  ├── p.scenes[sceneId] = { best, at, runs }     // 场景进度（列表上的 ✓ 与最好成绩）
+finishScene(sceneId, score, failedWords, as)
+  ├── p.scenes[sceneId] = { best, swapBest, liveBest, at, runs }
+  │     as = 'you'   → best      说自己的台词
+  │     as = 'other' → swapBest  换角，说对方的台词
+  │     as = 'live'  → liveBest  实战，整场含岔路的接住率
   └── 每个错词 gradedWord(...)                    // 掌握度 + FSRS 排期，当晚进夜巡
 ```
+
+三项成绩分开记，因为它们是三种能力：**照着说**（best）、**替对方说**（swapBest）、
+**没人给稿子时接住**（liveBest）。混成一个数字，就等于把三者抵消。
 
 `gradedWord()` 是这一轮新抽出来的：夜巡、预习卡、场景对话原来各写了一遍评分逻辑
 （掌握度 -20、FSRS 记 Again、当天回炉）。三份代码迟早会有一份漏掉「答错当天回炉」。
 现在只有一份。
 
+### 报告里的位置
+
+练过对话之后，体检报告会多出一块「场景对话」：
+
+```
+场景对话                      练过 4 / 10 场 · 换角 1 场 · 实战 3 场
+┌─ 说台词 83% ──────┐  ┌─ 实战接住率 52% ──┐
+│    基本能说下来    │  │     还接不顺      │
+└───────────────────┘  └───────────────────┘
+台词背得下来，临场接不住
+说台词最好 83%，实战接住率只有 52%。差的不是发音也不是词，是没人给稿子时想不出怎么接。
+```
+
+判定只在**两样都练过两场以上**时才下结论——一场的分差说明不了任何事。
+三种结论文案：
+
+| 条件 | 结论 |
+|---|---|
+| `best - live ≥ 20` | 台词背得下来，临场接不住（并往建议里塞一条「专挑岔路练」） |
+| `live < 60` | 实战还没上手，先回背打 |
+| `best - live ≤ 8` | 既能背也能接 |
+
+没有对话数据时整块不渲染——报告里不该出现一堆 0。
+
 ## 7. 测试
 
-`scripts/test-dialogue.mjs`，88 项，分两层：
+`scripts/test-dialogue.mjs`，89 项，分两层：
 
 **纯逻辑（esbuild 直接 import `src/lib/dialogue.ts`）**
 

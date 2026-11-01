@@ -24,11 +24,24 @@ export interface Report {
   verdict: { title: string; detail: string; tone: 'good' | 'warn' | 'bad' };
   /** 三条建议 */
   tips: string[];
+  /** 场景对话：和打字是两种能力，单独一块 */
+  talk: TalkReport;
+}
+
+export interface TalkReport {
+  played: number;      // 练过几场
+  total: number;       // 语料一共几场（0 = 还没加载）
+  bothWays: number;    // 两个角色都练过的
+  live: number;        // 实战过的
+  bestAvg: number;     // 「说台词」的平均最好成绩
+  liveAvg: number;     // 实战接住率
+  /** 两种能力的差距诊断；样本不够时为 null，不硬下结论 */
+  verdict: { title: string; detail: string; tone: 'good' | 'warn' | 'bad' } | null;
 }
 
 const TARGET_WPM = [0, 26, 30, 36, 42, 48, 54, 60];
 
-export function buildReport(p: Progress, corpus: Corpus, unlocked: number): Report {
+export function buildReport(p: Progress, corpus: Corpus, unlocked: number, opts: { scenes?: number } = {}): Report {
   const all = p.history ?? [];
   // 超过 300 WPM 基本是脚本/自动化输入（人类纪录约 210），混进平均值会让报告失真
   const usable = all.filter(x => x.wpm > 0 && x.wpm <= 300);
@@ -62,6 +75,48 @@ export function buildReport(p: Progress, corpus: Corpus, unlocked: number): Repo
     }))
     .sort((a, b) => b.er - a.er || a.m - b.m)
     .slice(0, 8);
+
+  /* ---------- 场景对话：说台词 vs 临场接话 ---------- */
+  const sceneStats = Object.values(p.scenes ?? {});
+  const talkBest = sceneStats.map(st => st.best).filter(n => n > 0);
+  const talkLive = sceneStats.map(st => st.liveBest).filter((n): n is number => typeof n === 'number');
+  const bestAvg = avg(talkBest);
+  const liveAvg = avg(talkLive);
+
+  // 只在两样都练过几场之后才下结论 —— 一场的分差说明不了任何事
+  let talkVerdict: TalkReport['verdict'] = null;
+  if (talkLive.length >= 2 && talkBest.length >= 1) {
+    const gap = bestAvg - liveAvg;
+    if (gap >= 20) {
+      talkVerdict = {
+        title: '台词背得下来，临场接不住',
+        detail: `说台词最好 ${bestAvg}%，实战接住率只有 ${liveAvg}%。差的不是发音也不是词，是没人给稿子时想不出怎么接。`,
+        tone: 'warn',
+      };
+    } else if (liveAvg < 60) {
+      talkVerdict = {
+        title: '实战还没上手',
+        detail: `实战接住率 ${liveAvg}%。先把整场的句子用「背打」走熟，再来碰岔路——同时练两件事反而都练不进去。`,
+        tone: 'bad',
+      };
+    } else if (gap <= 8) {
+      talkVerdict = {
+        title: '既能背，也能接',
+        detail: `说台词 ${bestAvg}%、实战 ${liveAvg}%，两条线差不多齐——说明你不只是在背句子，是真的能换一种说法接上去。`,
+        tone: 'good',
+      };
+    }
+  }
+
+  const talk: TalkReport = {
+    played: sceneStats.length,
+    total: opts.scenes ?? 0,
+    bothWays: sceneStats.filter(st => st.best > 0 && st.swapBest != null).length,
+    live: talkLive.length,
+    bestAvg,
+    liveAvg,
+    verdict: talkVerdict,
+  };
 
   const target = TARGET_WPM[Math.min(7, Math.max(1, unlocked))];
   const totalErr = topKeys.reduce((s, k) => s + k.n, 0);
@@ -110,7 +165,10 @@ export function buildReport(p: Progress, corpus: Corpus, unlocked: number): Repo
   if (avgAcc >= 98 && avgWpm >= target) {
     tips.push(`准确率 ${avgAcc}% 已经很高，可以试着打比当前城区高一档的文本找新瓶颈。`);
   }
+  if (talkVerdict?.tone === 'warn' && talkLive.length >= 2) {
+    tips.push('实战分数低不代表背得差，缺的是「换一种说法」的储备——去对话里专挑岔路练，记住那几句能救场的短句。');
+  }
   if (tips.length < 2) tips.push('每天打一篇比周末打十篇有用——连续天数比总时长更能带走能力。');
 
-  return { runs, minutes, avgWpm, bestWpm, avgAcc, avgCons, trend, topKeys, weakWords, verdict, tips };
+  return { runs, minutes, avgWpm, bestWpm, avgAcc, avgCons, trend, topKeys, weakWords, verdict, tips, talk };
 }
