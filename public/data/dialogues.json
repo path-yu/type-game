@@ -19971,6 +19971,4106 @@
    ]
   },
   {
+   "id": "enroll",
+   "g": "enroll",
+   "name": "报名语言班 · 报通用英语班",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你在这座城市待一年，想把口语练起来。",
+   "roles": [
+    "你",
+    "课程顾问"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi, I would like to join a general English course.",
+     "zh": "你好，我想报一个通用英语班。"
+    },
+    {
+     "r": 1,
+     "en": "Have you taken a test with us before?",
+     "zh": "您在我们这儿考过测试吗？"
+    },
+    {
+     "r": 0,
+     "en": "No. Could I do a placement test?",
+     "zh": "没有。能做分级测试吗？",
+     "note": "placement test 是分级测试，决定你进哪个班，不是考试入学。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. It takes about forty minutes.",
+     "zh": "当然。大概四十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "That is fine. How often do the classes run?",
+     "zh": "可以。课多久一次？"
+    },
+    {
+     "r": 1,
+     "en": "Twice a week, evenings or Saturdays.",
+     "zh": "一周两次，晚上或周六。"
+    },
+    {
+     "r": 0,
+     "en": "Evenings suit me better. What is the fee?",
+     "zh": "晚上更适合我。学费多少？"
+    },
+    {
+     "r": 1,
+     "en": "Three hundred and twenty for twelve weeks.",
+     "zh": "十二周三百二。"
+    },
+    {
+     "r": 0,
+     "en": "Is there a discount if I pay upfront?",
+     "zh": "一次付清有折扣吗？"
+    },
+    {
+     "r": 1,
+     "en": "Five percent, and you can change class once.",
+     "zh": "九折，而且可以换一次班。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "测试结果和你预期的不一样，你要决定进哪个班",
+    "prompt": {
+     "en": "Your test puts you in intermediate, but the evening intermediate class is full.",
+     "zh": "测试结果是中级，但晚上的中级班满了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Could I take the morning class instead?",
+       "zh": "那我能上周中的上午班吗？"
+      },
+      "react": {
+       "en": "We have space on Tuesday and Thursday mornings.",
+       "zh": "周二周四上午有位子。"
+      }
+     },
+     {
+      "say": {
+       "en": "How long is the waiting list?",
+       "zh": "候补要等多久？"
+      },
+      "react": {
+       "en": "Two weeks, usually. People drop out.",
+       "zh": "一般两周。总有人退。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could I do a placement test?",
+     "zh": "能做分级测试吗？"
+    },
+    {
+     "en": "How often do the classes run?",
+     "zh": "课多久一次？"
+    },
+    {
+     "en": "Is there a discount if I pay upfront?",
+     "zh": "一次付清有折扣吗？"
+    }
+   ]
+  },
+  {
+   "id": "enroll-2",
+   "g": "enroll",
+   "name": "报名语言班 · 要考雅思",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你不是为了日常，是为了考试。",
+   "roles": [
+    "你",
+    "课程顾问"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I need IELTS preparation, not general English.",
+     "zh": "我要雅思备考，不是通用英语。"
+    },
+    {
+     "r": 1,
+     "en": "Then we test you the same way, but the class is exam-focused.",
+     "zh": "分级测试一样，但课是备考方向。"
+    },
+    {
+     "r": 0,
+     "en": "No. Could I do a placement test?",
+     "zh": "没有。能做分级测试吗？",
+     "note": "placement test 是分级测试，决定你进哪个班，不是考试入学。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. It takes about forty minutes.",
+     "zh": "当然。大概四十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "That is fine. How often do the classes run?",
+     "zh": "可以。课多久一次？"
+    },
+    {
+     "r": 1,
+     "en": "Twice a week, evenings or Saturdays.",
+     "zh": "一周两次，晚上或周六。"
+    },
+    {
+     "r": 0,
+     "en": "Evenings suit me better. What is the fee?",
+     "zh": "晚上更适合我。学费多少？"
+    },
+    {
+     "r": 1,
+     "en": "Three hundred and twenty for twelve weeks.",
+     "zh": "十二周三百二。"
+    },
+    {
+     "r": 0,
+     "en": "Is there a discount if I pay upfront?",
+     "zh": "一次付清有折扣吗？"
+    },
+    {
+     "r": 1,
+     "en": "Five percent, and you can change class once.",
+     "zh": "九折，而且可以换一次班。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "测试结果和你预期的不一样，你要决定进哪个班",
+    "prompt": {
+     "en": "Your test puts you in intermediate, but the evening intermediate class is full.",
+     "zh": "测试结果是中级，但晚上的中级班满了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Could I take the morning class instead?",
+       "zh": "那我能上周中的上午班吗？"
+      },
+      "react": {
+       "en": "We have space on Tuesday and Thursday mornings.",
+       "zh": "周二周四上午有位子。"
+      }
+     },
+     {
+      "say": {
+       "en": "How long is the waiting list?",
+       "zh": "候补要等多久？"
+      },
+      "react": {
+       "en": "Two weeks, usually. People drop out.",
+       "zh": "一般两周。总有人退。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could I do a placement test?",
+     "zh": "能做分级测试吗？"
+    },
+    {
+     "en": "How often do the classes run?",
+     "zh": "课多久一次？"
+    },
+    {
+     "en": "Is there a discount if I pay upfront?",
+     "zh": "一次付清有折扣吗？"
+    }
+   ]
+  },
+  {
+   "id": "enroll-3",
+   "g": "enroll",
+   "name": "报名语言班 · 只能周末",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你工作日都要上班。",
+   "roles": [
+    "你",
+    "课程顾问"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi, I would like to join a general English course.",
+     "zh": "你好，我想报一个通用英语班。"
+    },
+    {
+     "r": 1,
+     "en": "Have you taken a test with us before?",
+     "zh": "您在我们这儿考过测试吗？"
+    },
+    {
+     "r": 0,
+     "en": "No. Could I do a placement test?",
+     "zh": "没有。能做分级测试吗？",
+     "note": "placement test 是分级测试，决定你进哪个班，不是考试入学。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. It takes about forty minutes.",
+     "zh": "当然。大概四十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "That is fine. How often do the classes run?",
+     "zh": "可以。课多久一次？"
+    },
+    {
+     "r": 1,
+     "en": "Twice a week, evenings or Saturdays.",
+     "zh": "一周两次，晚上或周六。"
+    },
+    {
+     "r": 0,
+     "en": "Evenings are hard. Is there a Saturday-only class?",
+     "zh": "晚上不太行。有只上周六的班吗？"
+    },
+    {
+     "r": 1,
+     "en": "There is, but it runs sixteen weeks instead of twelve.",
+     "zh": "有，但要十六周，不是十二周。"
+    },
+    {
+     "r": 0,
+     "en": "Is there a discount if I pay upfront?",
+     "zh": "一次付清有折扣吗？"
+    },
+    {
+     "r": 1,
+     "en": "Five percent, and you can change class once.",
+     "zh": "九折，而且可以换一次班。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "测试结果和你预期的不一样，你要决定进哪个班",
+    "prompt": {
+     "en": "Your test puts you in intermediate, but the evening intermediate class is full.",
+     "zh": "测试结果是中级，但晚上的中级班满了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Could I take the morning class instead?",
+       "zh": "那我能上周中的上午班吗？"
+      },
+      "react": {
+       "en": "We have space on Tuesday and Thursday mornings.",
+       "zh": "周二周四上午有位子。"
+      }
+     },
+     {
+      "say": {
+       "en": "How long is the waiting list?",
+       "zh": "候补要等多久？"
+      },
+      "react": {
+       "en": "Two weeks, usually. People drop out.",
+       "zh": "一般两周。总有人退。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could I do a placement test?",
+     "zh": "能做分级测试吗？"
+    },
+    {
+     "en": "How often do the classes run?",
+     "zh": "课多久一次？"
+    },
+    {
+     "en": "Is there a discount if I pay upfront?",
+     "zh": "一次付清有折扣吗？"
+    }
+   ]
+  },
+  {
+   "id": "enroll-4",
+   "g": "enroll",
+   "name": "报名语言班 · 问退款",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想先确认能不能退。",
+   "roles": [
+    "你",
+    "课程顾问"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi, I would like to join a general English course.",
+     "zh": "你好，我想报一个通用英语班。"
+    },
+    {
+     "r": 1,
+     "en": "Have you taken a test with us before?",
+     "zh": "您在我们这儿考过测试吗？"
+    },
+    {
+     "r": 0,
+     "en": "No. Could I do a placement test?",
+     "zh": "没有。能做分级测试吗？",
+     "note": "placement test 是分级测试，决定你进哪个班，不是考试入学。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. It takes about forty minutes.",
+     "zh": "当然。大概四十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "That is fine. How often do the classes run?",
+     "zh": "可以。课多久一次？"
+    },
+    {
+     "r": 1,
+     "en": "Twice a week, evenings or Saturdays.",
+     "zh": "一周两次，晚上或周六。"
+    },
+    {
+     "r": 0,
+     "en": "Evenings suit me better. What is the fee?",
+     "zh": "晚上更适合我。学费多少？"
+    },
+    {
+     "r": 1,
+     "en": "Three hundred and twenty for twelve weeks.",
+     "zh": "十二周三百二。"
+    },
+    {
+     "r": 0,
+     "en": "What happens if I have to stop halfway?",
+     "zh": "如果我中途要停怎么办？"
+    },
+    {
+     "r": 1,
+     "en": "You can transfer to the next term once, no refund.",
+     "zh": "可以顺延到下一期一次，不退费。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "测试结果和你预期的不一样，你要决定进哪个班",
+    "prompt": {
+     "en": "Your test puts you in intermediate, but the evening intermediate class is full.",
+     "zh": "测试结果是中级，但晚上的中级班满了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Could I take the morning class instead?",
+       "zh": "那我能上周中的上午班吗？"
+      },
+      "react": {
+       "en": "We have space on Tuesday and Thursday mornings.",
+       "zh": "周二周四上午有位子。"
+      }
+     },
+     {
+      "say": {
+       "en": "How long is the waiting list?",
+       "zh": "候补要等多久？"
+      },
+      "react": {
+       "en": "Two weeks, usually. People drop out.",
+       "zh": "一般两周。总有人退。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could I do a placement test?",
+     "zh": "能做分级测试吗？"
+    },
+    {
+     "en": "How often do the classes run?",
+     "zh": "课多久一次？"
+    },
+    {
+     "en": "Is there a discount if I pay upfront?",
+     "zh": "一次付清有折扣吗？"
+    }
+   ]
+  },
+  {
+   "id": "enroll-5",
+   "g": "enroll",
+   "name": "报名语言班 · 试听",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想先试一节再决定。",
+   "roles": [
+    "你",
+    "课程顾问"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi, I would like to join a general English course.",
+     "zh": "你好，我想报一个通用英语班。"
+    },
+    {
+     "r": 1,
+     "en": "Have you taken a test with us before?",
+     "zh": "您在我们这儿考过测试吗？"
+    },
+    {
+     "r": 0,
+     "en": "No. Could I do a placement test?",
+     "zh": "没有。能做分级测试吗？",
+     "note": "placement test 是分级测试，决定你进哪个班，不是考试入学。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. It takes about forty minutes.",
+     "zh": "当然。大概四十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Could I sit in on a class before I pay?",
+     "zh": "付钱前能听一节课吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes, any Tuesday. Just arrive ten minutes early.",
+     "zh": "可以，任意周二。提前十分钟到。"
+    },
+    {
+     "r": 0,
+     "en": "Evenings suit me better. What is the fee?",
+     "zh": "晚上更适合我。学费多少？"
+    },
+    {
+     "r": 1,
+     "en": "Three hundred and twenty for twelve weeks.",
+     "zh": "十二周三百二。"
+    },
+    {
+     "r": 0,
+     "en": "Is there a discount if I pay upfront?",
+     "zh": "一次付清有折扣吗？"
+    },
+    {
+     "r": 1,
+     "en": "Five percent, and you can change class once.",
+     "zh": "九折，而且可以换一次班。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "测试结果和你预期的不一样，你要决定进哪个班",
+    "prompt": {
+     "en": "Your test puts you in intermediate, but the evening intermediate class is full.",
+     "zh": "测试结果是中级，但晚上的中级班满了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Could I take the morning class instead?",
+       "zh": "那我能上周中的上午班吗？"
+      },
+      "react": {
+       "en": "We have space on Tuesday and Thursday mornings.",
+       "zh": "周二周四上午有位子。"
+      }
+     },
+     {
+      "say": {
+       "en": "How long is the waiting list?",
+       "zh": "候补要等多久？"
+      },
+      "react": {
+       "en": "Two weeks, usually. People drop out.",
+       "zh": "一般两周。总有人退。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could I do a placement test?",
+     "zh": "能做分级测试吗？"
+    },
+    {
+     "en": "How often do the classes run?",
+     "zh": "课多久一次？"
+    },
+    {
+     "en": "Is there a discount if I pay upfront?",
+     "zh": "一次付清有折扣吗？"
+    }
+   ]
+  },
+  {
+   "id": "classroom",
+   "g": "classroom",
+   "name": "课堂提问 · 没跟上推导",
+   "cat": "学习",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "课上老师讲得很快，你在第三步就掉了。",
+   "roles": [
+    "你",
+    "老师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Any questions before we move on?",
+     "zh": "继续之前有问题吗？"
+    },
+    {
+     "r": 0,
+     "en": "Sorry, could you go back to the second example?",
+     "zh": "抱歉，能回到第二个例子吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Which part was unclear?",
+     "zh": "当然。哪部分不清楚？"
+    },
+    {
+     "r": 0,
+     "en": "I did not follow why you changed the sign there.",
+     "zh": "我没跟上那里为什么变号。"
+    },
+    {
+     "r": 1,
+     "en": "Because we moved it across the equals sign. Does that help?",
+     "zh": "因为移到了等号另一边。这样清楚吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, thank you. Could you write that step on the board?",
+     "zh": "清楚了，谢谢。能把这一步写在黑板上吗？"
+    },
+    {
+     "r": 1,
+     "en": "Sure. Anything else?",
+     "zh": "可以。还有吗？"
+    },
+    {
+     "r": 0,
+     "en": "Not from me.",
+     "zh": "我没有了。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "老师反问回来，你要把不懂的地方说具体",
+    "prompt": {
+     "en": "Which part exactly? The sign, or the step before it?",
+     "zh": "具体哪儿？变号，还是前面那一步？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The step before. I lost the reason for moving it.",
+       "zh": "前面那一步。我没抓住为什么要移过去。"
+      },
+      "react": {
+       "en": "Let me do it once more, slowly.",
+       "zh": "我再慢慢做一遍。"
+      }
+     },
+     {
+      "say": {
+       "en": "The sign. I thought it should stay the same.",
+       "zh": "变号那里。我以为不用变。"
+      },
+      "react": {
+       "en": "It does when you move terms across. Let me show you again.",
+       "zh": "移项时是要变的。我再给你演示一遍。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could you go back to the second example?",
+     "zh": "能回到第二个例子吗？"
+    },
+    {
+     "en": "I did not follow why…",
+     "zh": "我没跟上为什么……"
+    },
+    {
+     "en": "Could you write that step on the board?",
+     "zh": "能把这步写在黑板上吗？"
+    }
+   ]
+  },
+  {
+   "id": "classroom-2",
+   "g": "classroom",
+   "name": "课堂提问 · 没听清",
+   "cat": "学习",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "老师声音太小。",
+   "roles": [
+    "你",
+    "老师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Any questions before we move on?",
+     "zh": "继续之前有问题吗？"
+    },
+    {
+     "r": 0,
+     "en": "Sorry, could you say that again a bit louder?",
+     "zh": "抱歉，能大声一点再说一遍吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Which part was unclear?",
+     "zh": "当然。哪部分不清楚？"
+    },
+    {
+     "r": 0,
+     "en": "I did not follow why you changed the sign there.",
+     "zh": "我没跟上那里为什么变号。"
+    },
+    {
+     "r": 1,
+     "en": "Because we moved it across the equals sign. Does that help?",
+     "zh": "因为移到了等号另一边。这样清楚吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, thank you. Could you write that step on the board?",
+     "zh": "清楚了，谢谢。能把这一步写在黑板上吗？"
+    },
+    {
+     "r": 1,
+     "en": "Sure. Anything else?",
+     "zh": "可以。还有吗？"
+    },
+    {
+     "r": 0,
+     "en": "Not from me.",
+     "zh": "我没有了。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "老师反问回来，你要把不懂的地方说具体",
+    "prompt": {
+     "en": "Which part exactly? The sign, or the step before it?",
+     "zh": "具体哪儿？变号，还是前面那一步？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The step before. I lost the reason for moving it.",
+       "zh": "前面那一步。我没抓住为什么要移过去。"
+      },
+      "react": {
+       "en": "Let me do it once more, slowly.",
+       "zh": "我再慢慢做一遍。"
+      }
+     },
+     {
+      "say": {
+       "en": "The sign. I thought it should stay the same.",
+       "zh": "变号那里。我以为不用变。"
+      },
+      "react": {
+       "en": "It does when you move terms across. Let me show you again.",
+       "zh": "移项时是要变的。我再给你演示一遍。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could you go back to the second example?",
+     "zh": "能回到第二个例子吗？"
+    },
+    {
+     "en": "I did not follow why…",
+     "zh": "我没跟上为什么……"
+    },
+    {
+     "en": "Could you write that step on the board?",
+     "zh": "能把这步写在黑板上吗？"
+    }
+   ]
+  },
+  {
+   "id": "classroom-3",
+   "g": "classroom",
+   "name": "课堂提问 · 问作业",
+   "cat": "学习",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "下课你想确认作业要求。",
+   "roles": [
+    "你",
+    "老师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Any questions before we move on?",
+     "zh": "继续之前有问题吗？"
+    },
+    {
+     "r": 0,
+     "en": "Sorry, could you go back to the second example?",
+     "zh": "抱歉，能回到第二个例子吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Which part was unclear?",
+     "zh": "当然。哪部分不清楚？"
+    },
+    {
+     "r": 0,
+     "en": "I did not follow why you changed the sign there.",
+     "zh": "我没跟上那里为什么变号。"
+    },
+    {
+     "r": 1,
+     "en": "Because we moved it across the equals sign. Does that help?",
+     "zh": "因为移到了等号另一边。这样清楚吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, thank you. Could you write that step on the board?",
+     "zh": "清楚了，谢谢。能把这一步写在黑板上吗？"
+    },
+    {
+     "r": 1,
+     "en": "Could you confirm what we hand in on Friday?",
+     "zh": "能确认一下周五交什么吗？"
+    },
+    {
+     "r": 0,
+     "en": "The worksheet, not the essay. The essay is next week.",
+     "zh": "是练习纸，不是论文。论文下周交。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "老师反问回来，你要把不懂的地方说具体",
+    "prompt": {
+     "en": "Which part exactly? The sign, or the step before it?",
+     "zh": "具体哪儿？变号，还是前面那一步？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The step before. I lost the reason for moving it.",
+       "zh": "前面那一步。我没抓住为什么要移过去。"
+      },
+      "react": {
+       "en": "Let me do it once more, slowly.",
+       "zh": "我再慢慢做一遍。"
+      }
+     },
+     {
+      "say": {
+       "en": "The sign. I thought it should stay the same.",
+       "zh": "变号那里。我以为不用变。"
+      },
+      "react": {
+       "en": "It does when you move terms across. Let me show you again.",
+       "zh": "移项时是要变的。我再给你演示一遍。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could you go back to the second example?",
+     "zh": "能回到第二个例子吗？"
+    },
+    {
+     "en": "I did not follow why…",
+     "zh": "我没跟上为什么……"
+    },
+    {
+     "en": "Could you write that step on the board?",
+     "zh": "能把这步写在黑板上吗？"
+    }
+   ]
+  },
+  {
+   "id": "classroom-4",
+   "g": "classroom",
+   "name": "课堂提问 · 问考试范围",
+   "cat": "学习",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你想知道考什么。",
+   "roles": [
+    "你",
+    "老师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Will the exam cover chapter five as well?",
+     "zh": "考试也包括第五章吗？"
+    },
+    {
+     "r": 0,
+     "en": "Chapters one to five, but five is only ten percent.",
+     "zh": "一到五章，但第五章只占一成。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Which part was unclear?",
+     "zh": "当然。哪部分不清楚？"
+    },
+    {
+     "r": 0,
+     "en": "I did not follow why you changed the sign there.",
+     "zh": "我没跟上那里为什么变号。"
+    },
+    {
+     "r": 1,
+     "en": "Because we moved it across the equals sign. Does that help?",
+     "zh": "因为移到了等号另一边。这样清楚吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, thank you. Could you write that step on the board?",
+     "zh": "清楚了，谢谢。能把这一步写在黑板上吗？"
+    },
+    {
+     "r": 1,
+     "en": "Sure. Anything else?",
+     "zh": "可以。还有吗？"
+    },
+    {
+     "r": 0,
+     "en": "Not from me.",
+     "zh": "我没有了。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "老师反问回来，你要把不懂的地方说具体",
+    "prompt": {
+     "en": "Which part exactly? The sign, or the step before it?",
+     "zh": "具体哪儿？变号，还是前面那一步？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The step before. I lost the reason for moving it.",
+       "zh": "前面那一步。我没抓住为什么要移过去。"
+      },
+      "react": {
+       "en": "Let me do it once more, slowly.",
+       "zh": "我再慢慢做一遍。"
+      }
+     },
+     {
+      "say": {
+       "en": "The sign. I thought it should stay the same.",
+       "zh": "变号那里。我以为不用变。"
+      },
+      "react": {
+       "en": "It does when you move terms across. Let me show you again.",
+       "zh": "移项时是要变的。我再给你演示一遍。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could you go back to the second example?",
+     "zh": "能回到第二个例子吗？"
+    },
+    {
+     "en": "I did not follow why…",
+     "zh": "我没跟上为什么……"
+    },
+    {
+     "en": "Could you write that step on the board?",
+     "zh": "能把这步写在黑板上吗？"
+    }
+   ]
+  },
+  {
+   "id": "classroom-5",
+   "g": "classroom",
+   "name": "课堂提问 · 私下问",
+   "cat": "学习",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你想课后单独问一个问题。",
+   "roles": [
+    "你",
+    "老师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Any questions before we move on?",
+     "zh": "继续之前有问题吗？"
+    },
+    {
+     "r": 0,
+     "en": "Sorry, could you go back to the second example?",
+     "zh": "抱歉，能回到第二个例子吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Which part was unclear?",
+     "zh": "当然。哪部分不清楚？"
+    },
+    {
+     "r": 0,
+     "en": "I did not follow why you changed the sign there.",
+     "zh": "我没跟上那里为什么变号。"
+    },
+    {
+     "r": 1,
+     "en": "Because we moved it across the equals sign. Does that help?",
+     "zh": "因为移到了等号另一边。这样清楚吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, thank you. Could you write that step on the board?",
+     "zh": "清楚了，谢谢。能把这一步写在黑板上吗？"
+    },
+    {
+     "r": 1,
+     "en": "Could I ask you something after class?",
+     "zh": "课后能问您一个问题吗？"
+    },
+    {
+     "r": 0,
+     "en": "Not from me.",
+     "zh": "我没有了。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "老师反问回来，你要把不懂的地方说具体",
+    "prompt": {
+     "en": "Which part exactly? The sign, or the step before it?",
+     "zh": "具体哪儿？变号，还是前面那一步？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The step before. I lost the reason for moving it.",
+       "zh": "前面那一步。我没抓住为什么要移过去。"
+      },
+      "react": {
+       "en": "Let me do it once more, slowly.",
+       "zh": "我再慢慢做一遍。"
+      }
+     },
+     {
+      "say": {
+       "en": "The sign. I thought it should stay the same.",
+       "zh": "变号那里。我以为不用变。"
+      },
+      "react": {
+       "en": "It does when you move terms across. Let me show you again.",
+       "zh": "移项时是要变的。我再给你演示一遍。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Could you go back to the second example?",
+     "zh": "能回到第二个例子吗？"
+    },
+    {
+     "en": "I did not follow why…",
+     "zh": "我没跟上为什么……"
+    },
+    {
+     "en": "Could you write that step on the board?",
+     "zh": "能把这步写在黑板上吗？"
+    }
+   ]
+  },
+  {
+   "id": "library",
+   "g": "library",
+   "name": "图书馆借书 · 办借书证",
+   "cat": "学习",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你刚搬来，想借书而不是一直买。",
+   "roles": [
+    "你",
+    "馆员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi, I would like to join the library.",
+     "zh": "你好，我想办借书证。"
+    },
+    {
+     "r": 1,
+     "en": "Are you a resident? I need proof of address.",
+     "zh": "您是本地居民吗？需要地址证明。"
+    },
+    {
+     "r": 0,
+     "en": "I have a letter from my landlord.",
+     "zh": "我有房东开的信。"
+    },
+    {
+     "r": 1,
+     "en": "That works. How many books can I put you down for?",
+     "zh": "可以。给您开多少本的额度？"
+    },
+    {
+     "r": 0,
+     "en": "How many is normal?",
+     "zh": "一般是多少？"
+    },
+    {
+     "r": 1,
+     "en": "Twelve at a time, three weeks each.",
+     "zh": "一次十二本，每本三周。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Can I renew online?",
+     "zh": "好。能在网上续借吗？"
+    },
+    {
+     "r": 1,
+     "en": "You can, twice, unless someone has reserved it.",
+     "zh": "能续两次，除非有人预约了。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "short",
+    "task": "你要的额度说法变了，你要确认",
+    "prompt": {
+     "en": "Actually, new members start with six books for the first month.",
+     "zh": "其实新会员头一个月只能借六本。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Six is plenty. I read slowly anyway.",
+       "zh": "六本够了。我读得慢。"
+      },
+      "react": {
+       "en": "Then I will issue the card now.",
+       "zh": "那我现在给您办卡。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I get more after the first month?",
+       "zh": "一个月后能多借吗？"
+      },
+      "react": {
+       "en": "Automatic. It goes up to twelve.",
+       "zh": "自动升到十二本。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to join the library.",
+     "zh": "我想办借书证。"
+    },
+    {
+     "en": "Can I renew online?",
+     "zh": "能在网上续借吗？"
+    },
+    {
+     "en": "It is checked out.",
+     "zh": "书被借走了。"
+    }
+   ]
+  },
+  {
+   "id": "library-2",
+   "g": "library",
+   "name": "图书馆借书 · 找一本书",
+   "cat": "学习",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你要找一本指定的书。",
+   "roles": [
+    "你",
+    "馆员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I am looking for a book on local history. Where would that be?",
+     "zh": "我在找一本本地历史的书。在哪一区？"
+    },
+    {
+     "r": 1,
+     "en": "Second floor, under nine-four-two.",
+     "zh": "二楼，942 那一排。"
+    },
+    {
+     "r": 0,
+     "en": "I have a letter from my landlord.",
+     "zh": "我有房东开的信。"
+    },
+    {
+     "r": 1,
+     "en": "That works. How many books can I put you down for?",
+     "zh": "可以。给您开多少本的额度？"
+    },
+    {
+     "r": 0,
+     "en": "How many is normal?",
+     "zh": "一般是多少？"
+    },
+    {
+     "r": 1,
+     "en": "Twelve at a time, three weeks each.",
+     "zh": "一次十二本，每本三周。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Can I renew online?",
+     "zh": "好。能在网上续借吗？"
+    },
+    {
+     "r": 1,
+     "en": "You can, twice, unless someone has reserved it.",
+     "zh": "能续两次，除非有人预约了。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "short",
+    "task": "你要的额度说法变了，你要确认",
+    "prompt": {
+     "en": "Actually, new members start with six books for the first month.",
+     "zh": "其实新会员头一个月只能借六本。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Six is plenty. I read slowly anyway.",
+       "zh": "六本够了。我读得慢。"
+      },
+      "react": {
+       "en": "Then I will issue the card now.",
+       "zh": "那我现在给您办卡。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I get more after the first month?",
+       "zh": "一个月后能多借吗？"
+      },
+      "react": {
+       "en": "Automatic. It goes up to twelve.",
+       "zh": "自动升到十二本。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to join the library.",
+     "zh": "我想办借书证。"
+    },
+    {
+     "en": "Can I renew online?",
+     "zh": "能在网上续借吗？"
+    },
+    {
+     "en": "It is checked out.",
+     "zh": "书被借走了。"
+    }
+   ]
+  },
+  {
+   "id": "library-3",
+   "g": "library",
+   "name": "图书馆借书 · 预约",
+   "cat": "学习",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "书被借走了，你想预约。",
+   "roles": [
+    "你",
+    "馆员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi, I would like to join the library.",
+     "zh": "你好，我想办借书证。"
+    },
+    {
+     "r": 1,
+     "en": "Are you a resident? I need proof of address.",
+     "zh": "您是本地居民吗？需要地址证明。"
+    },
+    {
+     "r": 0,
+     "en": "I have a letter from my landlord.",
+     "zh": "我有房东开的信。"
+    },
+    {
+     "r": 1,
+     "en": "That works. How many books can I put you down for?",
+     "zh": "可以。给您开多少本的额度？"
+    },
+    {
+     "r": 0,
+     "en": "How many is normal?",
+     "zh": "一般是多少？"
+    },
+    {
+     "r": 1,
+     "en": "Twelve at a time, three weeks each.",
+     "zh": "一次十二本，每本三周。"
+    },
+    {
+     "r": 0,
+     "en": "It is checked out. Can I reserve it?",
+     "zh": "书被借走了。能预约吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes, two pounds, and we will email you.",
+     "zh": "可以，两镑，我们邮件通知您。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "short",
+    "task": "你要的额度说法变了，你要确认",
+    "prompt": {
+     "en": "Actually, new members start with six books for the first month.",
+     "zh": "其实新会员头一个月只能借六本。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Six is plenty. I read slowly anyway.",
+       "zh": "六本够了。我读得慢。"
+      },
+      "react": {
+       "en": "Then I will issue the card now.",
+       "zh": "那我现在给您办卡。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I get more after the first month?",
+       "zh": "一个月后能多借吗？"
+      },
+      "react": {
+       "en": "Automatic. It goes up to twelve.",
+       "zh": "自动升到十二本。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to join the library.",
+     "zh": "我想办借书证。"
+    },
+    {
+     "en": "Can I renew online?",
+     "zh": "能在网上续借吗？"
+    },
+    {
+     "en": "It is checked out.",
+     "zh": "书被借走了。"
+    }
+   ]
+  },
+  {
+   "id": "library-4",
+   "g": "library",
+   "name": "图书馆借书 · 还书逾期",
+   "cat": "学习",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你还书晚了，想问罚多少。",
+   "roles": [
+    "你",
+    "馆员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I am returning these two days late. Is there a fine?",
+     "zh": "这两本晚还了两天。有罚金吗？"
+    },
+    {
+     "r": 1,
+     "en": "Are you a resident? I need proof of address.",
+     "zh": "您是本地居民吗？需要地址证明。"
+    },
+    {
+     "r": 0,
+     "en": "I have a letter from my landlord.",
+     "zh": "我有房东开的信。"
+    },
+    {
+     "r": 1,
+     "en": "That works. How many books can I put you down for?",
+     "zh": "可以。给您开多少本的额度？"
+    },
+    {
+     "r": 0,
+     "en": "How many is normal?",
+     "zh": "一般是多少？"
+    },
+    {
+     "r": 1,
+     "en": "Twelve at a time, three weeks each.",
+     "zh": "一次十二本，每本三周。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Can I renew online?",
+     "zh": "好。能在网上续借吗？"
+    },
+    {
+     "r": 1,
+     "en": "You can, twice, unless someone has reserved it.",
+     "zh": "能续两次，除非有人预约了。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "short",
+    "task": "你要的额度说法变了，你要确认",
+    "prompt": {
+     "en": "Actually, new members start with six books for the first month.",
+     "zh": "其实新会员头一个月只能借六本。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Six is plenty. I read slowly anyway.",
+       "zh": "六本够了。我读得慢。"
+      },
+      "react": {
+       "en": "Then I will issue the card now.",
+       "zh": "那我现在给您办卡。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I get more after the first month?",
+       "zh": "一个月后能多借吗？"
+      },
+      "react": {
+       "en": "Automatic. It goes up to twelve.",
+       "zh": "自动升到十二本。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to join the library.",
+     "zh": "我想办借书证。"
+    },
+    {
+     "en": "Can I renew online?",
+     "zh": "能在网上续借吗？"
+    },
+    {
+     "en": "It is checked out.",
+     "zh": "书被借走了。"
+    }
+   ]
+  },
+  {
+   "id": "library-5",
+   "g": "library",
+   "name": "图书馆借书 · 用电脑",
+   "cat": "学习",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你想用馆内电脑打印。",
+   "roles": [
+    "你",
+    "馆员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi, I would like to join the library.",
+     "zh": "你好，我想办借书证。"
+    },
+    {
+     "r": 1,
+     "en": "Are you a resident? I need proof of address.",
+     "zh": "您是本地居民吗？需要地址证明。"
+    },
+    {
+     "r": 0,
+     "en": "I have a letter from my landlord.",
+     "zh": "我有房东开的信。"
+    },
+    {
+     "r": 1,
+     "en": "That works. How many books can I put you down for?",
+     "zh": "可以。给您开多少本的额度？"
+    },
+    {
+     "r": 0,
+     "en": "Can I use a computer to print something?",
+     "zh": "能用电脑打印东西吗？"
+    },
+    {
+     "r": 1,
+     "en": "Any machine on the first floor. Printing is ten pence a page.",
+     "zh": "一楼任意一台。打印一页十便士。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Can I renew online?",
+     "zh": "好。能在网上续借吗？"
+    },
+    {
+     "r": 1,
+     "en": "You can, twice, unless someone has reserved it.",
+     "zh": "能续两次，除非有人预约了。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "short",
+    "task": "你要的额度说法变了，你要确认",
+    "prompt": {
+     "en": "Actually, new members start with six books for the first month.",
+     "zh": "其实新会员头一个月只能借六本。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Six is plenty. I read slowly anyway.",
+       "zh": "六本够了。我读得慢。"
+      },
+      "react": {
+       "en": "Then I will issue the card now.",
+       "zh": "那我现在给您办卡。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I get more after the first month?",
+       "zh": "一个月后能多借吗？"
+      },
+      "react": {
+       "en": "Automatic. It goes up to twelve.",
+       "zh": "自动升到十二本。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to join the library.",
+     "zh": "我想办借书证。"
+    },
+    {
+     "en": "Can I renew online?",
+     "zh": "能在网上续借吗？"
+    },
+    {
+     "en": "It is checked out.",
+     "zh": "书被借走了。"
+    }
+   ]
+  },
+  {
+   "id": "group-work",
+   "g": "group-work",
+   "name": "小组作业分工 · 分报告章节",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "四个人一组，报告下周五交，还没分工。",
+   "roles": [
+    "你",
+    "组员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Shall we split the report now, so nobody doubles up?",
+     "zh": "现在分一下报告吧，免得重复做。"
+    },
+    {
+     "r": 1,
+     "en": "Good idea. I can take the introduction and the method.",
+     "zh": "好主意。我可以写引言和方法。"
+    },
+    {
+     "r": 0,
+     "en": "I will do the results and the charts.",
+     "zh": "我来做结果和图表。"
+    },
+    {
+     "r": 1,
+     "en": "That leaves the discussion. Who wants it?",
+     "zh": "剩下讨论部分。谁写？"
+    },
+    {
+     "r": 0,
+     "en": "Sam said he would, but he has not answered since Monday.",
+     "zh": "Sam 说他要写，但周一起就没回消息。"
+    },
+    {
+     "r": 1,
+     "en": "Then we should have a backup. Can you draft it if he goes quiet?",
+     "zh": "那我们得有个后手。他不吭声的话你能起草吗？"
+    },
+    {
+     "r": 0,
+     "en": "I can, but I need his data by Wednesday.",
+     "zh": "可以，但我周三前要他的数据。"
+    },
+    {
+     "r": 1,
+     "en": "I will message him today and copy you.",
+     "zh": "我今天给他发消息，抄送你。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "组员临时退出，你要重新分活",
+    "prompt": {
+     "en": "Sam just emailed. He is dropping the module.",
+     "zh": "Sam 刚发邮件。他退课了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then we split his part between us.",
+       "zh": "那他的部分我们分掉。"
+      },
+      "react": {
+       "en": "I will take the discussion if you take his charts.",
+       "zh": "你接他的图表，我接讨论。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can we ask the tutor for an extension?",
+       "zh": "能跟老师申请延期吗？"
+      },
+      "react": {
+       "en": "Worth asking. Losing a member is a valid reason.",
+       "zh": "值得问。少一个人是正当理由。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Shall we split the report now?",
+     "zh": "现在分一下报告吧？"
+    },
+    {
+     "en": "Who wants it?",
+     "zh": "谁想写这个？"
+    },
+    {
+     "en": "Can we rebalance?",
+     "zh": "能重新分一下吗？"
+    }
+   ]
+  },
+  {
+   "id": "group-work-2",
+   "g": "group-work",
+   "name": "小组作业分工 · 有人不干活",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "有个组员一直消失。",
+   "roles": [
+    "你",
+    "组员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Shall we split the report now, so nobody doubles up?",
+     "zh": "现在分一下报告吧，免得重复做。"
+    },
+    {
+     "r": 1,
+     "en": "Good idea. I can take the introduction and the method.",
+     "zh": "好主意。我可以写引言和方法。"
+    },
+    {
+     "r": 0,
+     "en": "I will do the results and the charts.",
+     "zh": "我来做结果和图表。"
+    },
+    {
+     "r": 1,
+     "en": "That leaves the discussion. Who wants it?",
+     "zh": "剩下讨论部分。谁写？"
+    },
+    {
+     "r": 0,
+     "en": "We have not heard from Sam all week. Should we tell the tutor?",
+     "zh": "Sam 一周没消息了。要告诉老师吗？"
+    },
+    {
+     "r": 1,
+     "en": "Let us give him until Friday, then yes.",
+     "zh": "先等到周五，之后再说。"
+    },
+    {
+     "r": 0,
+     "en": "I can, but I need his data by Wednesday.",
+     "zh": "可以，但我周三前要他的数据。"
+    },
+    {
+     "r": 1,
+     "en": "I will message him today and copy you.",
+     "zh": "我今天给他发消息，抄送你。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "组员临时退出，你要重新分活",
+    "prompt": {
+     "en": "Sam just emailed. He is dropping the module.",
+     "zh": "Sam 刚发邮件。他退课了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then we split his part between us.",
+       "zh": "那他的部分我们分掉。"
+      },
+      "react": {
+       "en": "I will take the discussion if you take his charts.",
+       "zh": "你接他的图表，我接讨论。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can we ask the tutor for an extension?",
+       "zh": "能跟老师申请延期吗？"
+      },
+      "react": {
+       "en": "Worth asking. Losing a member is a valid reason.",
+       "zh": "值得问。少一个人是正当理由。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Shall we split the report now?",
+     "zh": "现在分一下报告吧？"
+    },
+    {
+     "en": "Who wants it?",
+     "zh": "谁想写这个？"
+    },
+    {
+     "en": "Can we rebalance?",
+     "zh": "能重新分一下吗？"
+    }
+   ]
+  },
+  {
+   "id": "group-work-3",
+   "g": "group-work",
+   "name": "小组作业分工 · 想换题目",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你觉得选题太大，做不完。",
+   "roles": [
+    "你",
+    "组员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "The topic is too broad for four weeks. Can we narrow it?",
+     "zh": "这个题目四周做不完。能收窄吗？"
+    },
+    {
+     "r": 1,
+     "en": "We could focus on one city instead of the whole country.",
+     "zh": "可以只做一个城市，不做全国。"
+    },
+    {
+     "r": 0,
+     "en": "I will do the results and the charts.",
+     "zh": "我来做结果和图表。"
+    },
+    {
+     "r": 1,
+     "en": "That leaves the discussion. Who wants it?",
+     "zh": "剩下讨论部分。谁写？"
+    },
+    {
+     "r": 0,
+     "en": "Sam said he would, but he has not answered since Monday.",
+     "zh": "Sam 说他要写，但周一起就没回消息。"
+    },
+    {
+     "r": 1,
+     "en": "Then we should have a backup. Can you draft it if he goes quiet?",
+     "zh": "那我们得有个后手。他不吭声的话你能起草吗？"
+    },
+    {
+     "r": 0,
+     "en": "I can, but I need his data by Wednesday.",
+     "zh": "可以，但我周三前要他的数据。"
+    },
+    {
+     "r": 1,
+     "en": "I will message him today and copy you.",
+     "zh": "我今天给他发消息，抄送你。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "组员临时退出，你要重新分活",
+    "prompt": {
+     "en": "Sam just emailed. He is dropping the module.",
+     "zh": "Sam 刚发邮件。他退课了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then we split his part between us.",
+       "zh": "那他的部分我们分掉。"
+      },
+      "react": {
+       "en": "I will take the discussion if you take his charts.",
+       "zh": "你接他的图表，我接讨论。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can we ask the tutor for an extension?",
+       "zh": "能跟老师申请延期吗？"
+      },
+      "react": {
+       "en": "Worth asking. Losing a member is a valid reason.",
+       "zh": "值得问。少一个人是正当理由。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Shall we split the report now?",
+     "zh": "现在分一下报告吧？"
+    },
+    {
+     "en": "Who wants it?",
+     "zh": "谁想写这个？"
+    },
+    {
+     "en": "Can we rebalance?",
+     "zh": "能重新分一下吗？"
+    }
+   ]
+  },
+  {
+   "id": "group-work-4",
+   "g": "group-work",
+   "name": "小组作业分工 · 定时间",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你们要定下一次讨论时间。",
+   "roles": [
+    "你",
+    "组员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Shall we split the report now, so nobody doubles up?",
+     "zh": "现在分一下报告吧，免得重复做。"
+    },
+    {
+     "r": 1,
+     "en": "Good idea. I can take the introduction and the method.",
+     "zh": "好主意。我可以写引言和方法。"
+    },
+    {
+     "r": 0,
+     "en": "I will do the results and the charts.",
+     "zh": "我来做结果和图表。"
+    },
+    {
+     "r": 1,
+     "en": "That leaves the discussion. Who wants it?",
+     "zh": "剩下讨论部分。谁写？"
+    },
+    {
+     "r": 0,
+     "en": "Sam said he would, but he has not answered since Monday.",
+     "zh": "Sam 说他要写，但周一起就没回消息。"
+    },
+    {
+     "r": 1,
+     "en": "Then we should have a backup. Can you draft it if he goes quiet?",
+     "zh": "那我们得有个后手。他不吭声的话你能起草吗？"
+    },
+    {
+     "r": 0,
+     "en": "When can we all meet again?",
+     "zh": "我们什么时候能再碰一次？"
+    },
+    {
+     "r": 1,
+     "en": "Thursday after the lecture, in the library.",
+     "zh": "周四课后，图书馆。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "组员临时退出，你要重新分活",
+    "prompt": {
+     "en": "Sam just emailed. He is dropping the module.",
+     "zh": "Sam 刚发邮件。他退课了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then we split his part between us.",
+       "zh": "那他的部分我们分掉。"
+      },
+      "react": {
+       "en": "I will take the discussion if you take his charts.",
+       "zh": "你接他的图表，我接讨论。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can we ask the tutor for an extension?",
+       "zh": "能跟老师申请延期吗？"
+      },
+      "react": {
+       "en": "Worth asking. Losing a member is a valid reason.",
+       "zh": "值得问。少一个人是正当理由。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Shall we split the report now?",
+     "zh": "现在分一下报告吧？"
+    },
+    {
+     "en": "Who wants it?",
+     "zh": "谁想写这个？"
+    },
+    {
+     "en": "Can we rebalance?",
+     "zh": "能重新分一下吗？"
+    }
+   ]
+  },
+  {
+   "id": "group-work-5",
+   "g": "group-work",
+   "name": "小组作业分工 · 分工不均",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你做的部分明显比别人多。",
+   "roles": [
+    "你",
+    "组员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Shall we split the report now, so nobody doubles up?",
+     "zh": "现在分一下报告吧，免得重复做。"
+    },
+    {
+     "r": 1,
+     "en": "Good idea. I can take the introduction and the method.",
+     "zh": "好主意。我可以写引言和方法。"
+    },
+    {
+     "r": 0,
+     "en": "I will do the results and the charts.",
+     "zh": "我来做结果和图表。"
+    },
+    {
+     "r": 1,
+     "en": "That leaves the discussion. Who wants it?",
+     "zh": "剩下讨论部分。谁写？"
+    },
+    {
+     "r": 0,
+     "en": "Sam said he would, but he has not answered since Monday.",
+     "zh": "Sam 说他要写，但周一起就没回消息。"
+    },
+    {
+     "r": 1,
+     "en": "Then we should have a backup. Can you draft it if he goes quiet?",
+     "zh": "那我们得有个后手。他不吭声的话你能起草吗？"
+    },
+    {
+     "r": 0,
+     "en": "I am doing two sections. Can we rebalance?",
+     "zh": "我写了两节。能重新分一下吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will message him today and copy you.",
+     "zh": "我今天给他发消息，抄送你。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "组员临时退出，你要重新分活",
+    "prompt": {
+     "en": "Sam just emailed. He is dropping the module.",
+     "zh": "Sam 刚发邮件。他退课了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then we split his part between us.",
+       "zh": "那他的部分我们分掉。"
+      },
+      "react": {
+       "en": "I will take the discussion if you take his charts.",
+       "zh": "你接他的图表，我接讨论。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can we ask the tutor for an extension?",
+       "zh": "能跟老师申请延期吗？"
+      },
+      "react": {
+       "en": "Worth asking. Losing a member is a valid reason.",
+       "zh": "值得问。少一个人是正当理由。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Shall we split the report now?",
+     "zh": "现在分一下报告吧？"
+    },
+    {
+     "en": "Who wants it?",
+     "zh": "谁想写这个？"
+    },
+    {
+     "en": "Can we rebalance?",
+     "zh": "能重新分一下吗？"
+    }
+   ]
+  },
+  {
+   "id": "exam-defer",
+   "g": "exam-defer",
+   "name": "申请考试延期 · 住院错过考试",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你住院一周，正好撞上期中考试。",
+   "roles": [
+    "你",
+    "教务"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like to apply for a deferral for the exam next week.",
+     "zh": "我想申请下周考试的延期。"
+    },
+    {
+     "r": 1,
+     "en": "What is the reason?",
+     "zh": "什么原因？"
+    },
+    {
+     "r": 0,
+     "en": "I was in hospital last week. I have the discharge letter.",
+     "zh": "我上周住院了。有出院小结。"
+    },
+    {
+     "r": 1,
+     "en": "That is normally accepted. Have you missed any coursework?",
+     "zh": "这种情况一般可以。有缺交的作业吗？"
+    },
+    {
+     "r": 0,
+     "en": "One assignment. I emailed the tutor but got no reply.",
+     "zh": "一份作业。我给老师发过邮件但没回复。"
+    },
+    {
+     "r": 1,
+     "en": "I will note it here. The deferred exam is in August.",
+     "zh": "我在这儿备注。延期考试在八月。"
+    },
+    {
+     "r": 0,
+     "en": "Does the deferral affect my grade?",
+     "zh": "延期会影响我的成绩吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, it is marked the same. You just sit it later.",
+     "zh": "不会，评分一样。只是晚点考。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "对方要你证明，但你的材料不齐",
+    "prompt": {
+     "en": "The letter does not cover the exam date. Do you have anything else?",
+     "zh": "这份小结没覆盖考试日期。还有别的吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I can ask the hospital for a letter covering that week.",
+       "zh": "我可以让医院开一份覆盖那周的信。"
+      },
+      "react": {
+       "en": "That would settle it. Send it within ten days.",
+       "zh": "那就可以了。十天内发来。"
+      }
+     },
+     {
+      "say": {
+       "en": "My GP can confirm it by phone.",
+       "zh": "我的家庭医生可以电话确认。"
+      },
+      "react": {
+       "en": "We need it in writing, I am afraid.",
+       "zh": "恐怕要书面的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to apply for a deferral.",
+     "zh": "我想申请延期。"
+    },
+    {
+     "en": "Does the deferral affect my grade?",
+     "zh": "延期会影响成绩吗？"
+    },
+    {
+     "en": "We may ask for evidence.",
+     "zh": "可能要证明。"
+    }
+   ]
+  },
+  {
+   "id": "exam-defer-2",
+   "g": "exam-defer",
+   "name": "申请考试延期 · 家里有事",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你要回国处理家里的事。",
+   "roles": [
+    "你",
+    "教务"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I need to fly home for a family emergency. Can I defer?",
+     "zh": "我要回国处理家里急事。能延期吗？"
+    },
+    {
+     "r": 1,
+     "en": "We may ask for evidence. A flight booking is not enough.",
+     "zh": "可能要证明。机票不算。"
+    },
+    {
+     "r": 0,
+     "en": "I was in hospital last week. I have the discharge letter.",
+     "zh": "我上周住院了。有出院小结。"
+    },
+    {
+     "r": 1,
+     "en": "That is normally accepted. Have you missed any coursework?",
+     "zh": "这种情况一般可以。有缺交的作业吗？"
+    },
+    {
+     "r": 0,
+     "en": "One assignment. I emailed the tutor but got no reply.",
+     "zh": "一份作业。我给老师发过邮件但没回复。"
+    },
+    {
+     "r": 1,
+     "en": "I will note it here. The deferred exam is in August.",
+     "zh": "我在这儿备注。延期考试在八月。"
+    },
+    {
+     "r": 0,
+     "en": "Does the deferral affect my grade?",
+     "zh": "延期会影响我的成绩吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, it is marked the same. You just sit it later.",
+     "zh": "不会，评分一样。只是晚点考。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "对方要你证明，但你的材料不齐",
+    "prompt": {
+     "en": "The letter does not cover the exam date. Do you have anything else?",
+     "zh": "这份小结没覆盖考试日期。还有别的吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I can ask the hospital for a letter covering that week.",
+       "zh": "我可以让医院开一份覆盖那周的信。"
+      },
+      "react": {
+       "en": "That would settle it. Send it within ten days.",
+       "zh": "那就可以了。十天内发来。"
+      }
+     },
+     {
+      "say": {
+       "en": "My GP can confirm it by phone.",
+       "zh": "我的家庭医生可以电话确认。"
+      },
+      "react": {
+       "en": "We need it in writing, I am afraid.",
+       "zh": "恐怕要书面的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to apply for a deferral.",
+     "zh": "我想申请延期。"
+    },
+    {
+     "en": "Does the deferral affect my grade?",
+     "zh": "延期会影响成绩吗？"
+    },
+    {
+     "en": "We may ask for evidence.",
+     "zh": "可能要证明。"
+    }
+   ]
+  },
+  {
+   "id": "exam-defer-3",
+   "g": "exam-defer",
+   "name": "申请考试延期 · 设备故障",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "线上考试时网络断了。",
+   "roles": [
+    "你",
+    "教务"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "My internet dropped halfway through the online exam.",
+     "zh": "线上考试考到一半网断了。"
+    },
+    {
+     "r": 1,
+     "en": "Did you get a screenshot or a ticket from your provider?",
+     "zh": "有截图或者运营商的工单吗？"
+    },
+    {
+     "r": 0,
+     "en": "I was in hospital last week. I have the discharge letter.",
+     "zh": "我上周住院了。有出院小结。"
+    },
+    {
+     "r": 1,
+     "en": "That is normally accepted. Have you missed any coursework?",
+     "zh": "这种情况一般可以。有缺交的作业吗？"
+    },
+    {
+     "r": 0,
+     "en": "One assignment. I emailed the tutor but got no reply.",
+     "zh": "一份作业。我给老师发过邮件但没回复。"
+    },
+    {
+     "r": 1,
+     "en": "I will note it here. The deferred exam is in August.",
+     "zh": "我在这儿备注。延期考试在八月。"
+    },
+    {
+     "r": 0,
+     "en": "Does the deferral affect my grade?",
+     "zh": "延期会影响我的成绩吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, it is marked the same. You just sit it later.",
+     "zh": "不会，评分一样。只是晚点考。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "对方要你证明，但你的材料不齐",
+    "prompt": {
+     "en": "The letter does not cover the exam date. Do you have anything else?",
+     "zh": "这份小结没覆盖考试日期。还有别的吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I can ask the hospital for a letter covering that week.",
+       "zh": "我可以让医院开一份覆盖那周的信。"
+      },
+      "react": {
+       "en": "That would settle it. Send it within ten days.",
+       "zh": "那就可以了。十天内发来。"
+      }
+     },
+     {
+      "say": {
+       "en": "My GP can confirm it by phone.",
+       "zh": "我的家庭医生可以电话确认。"
+      },
+      "react": {
+       "en": "We need it in writing, I am afraid.",
+       "zh": "恐怕要书面的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to apply for a deferral.",
+     "zh": "我想申请延期。"
+    },
+    {
+     "en": "Does the deferral affect my grade?",
+     "zh": "延期会影响成绩吗？"
+    },
+    {
+     "en": "We may ask for evidence.",
+     "zh": "可能要证明。"
+    }
+   ]
+  },
+  {
+   "id": "exam-defer-4",
+   "g": "exam-defer",
+   "name": "申请考试延期 · 问补考时间",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你想知道下次机会。",
+   "roles": [
+    "你",
+    "教务"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like to apply for a deferral for the exam next week.",
+     "zh": "我想申请下周考试的延期。"
+    },
+    {
+     "r": 1,
+     "en": "What is the reason?",
+     "zh": "什么原因？"
+    },
+    {
+     "r": 0,
+     "en": "I was in hospital last week. I have the discharge letter.",
+     "zh": "我上周住院了。有出院小结。"
+    },
+    {
+     "r": 1,
+     "en": "That is normally accepted. Have you missed any coursework?",
+     "zh": "这种情况一般可以。有缺交的作业吗？"
+    },
+    {
+     "r": 0,
+     "en": "One assignment. I emailed the tutor but got no reply.",
+     "zh": "一份作业。我给老师发过邮件但没回复。"
+    },
+    {
+     "r": 1,
+     "en": "I will note it here. The deferred exam is in August.",
+     "zh": "我在这儿备注。延期考试在八月。"
+    },
+    {
+     "r": 0,
+     "en": "When is the next sitting after August?",
+     "zh": "八月之后下一次是什么时候？"
+    },
+    {
+     "r": 1,
+     "en": "No, it is marked the same. You just sit it later.",
+     "zh": "不会，评分一样。只是晚点考。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "对方要你证明，但你的材料不齐",
+    "prompt": {
+     "en": "The letter does not cover the exam date. Do you have anything else?",
+     "zh": "这份小结没覆盖考试日期。还有别的吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I can ask the hospital for a letter covering that week.",
+       "zh": "我可以让医院开一份覆盖那周的信。"
+      },
+      "react": {
+       "en": "That would settle it. Send it within ten days.",
+       "zh": "那就可以了。十天内发来。"
+      }
+     },
+     {
+      "say": {
+       "en": "My GP can confirm it by phone.",
+       "zh": "我的家庭医生可以电话确认。"
+      },
+      "react": {
+       "en": "We need it in writing, I am afraid.",
+       "zh": "恐怕要书面的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to apply for a deferral.",
+     "zh": "我想申请延期。"
+    },
+    {
+     "en": "Does the deferral affect my grade?",
+     "zh": "延期会影响成绩吗？"
+    },
+    {
+     "en": "We may ask for evidence.",
+     "zh": "可能要证明。"
+    }
+   ]
+  },
+  {
+   "id": "exam-defer-5",
+   "g": "exam-defer",
+   "name": "申请考试延期 · 被拒",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "申请被拒了，你想问申诉。",
+   "roles": [
+    "你",
+    "教务"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like to apply for a deferral for the exam next week.",
+     "zh": "我想申请下周考试的延期。"
+    },
+    {
+     "r": 1,
+     "en": "What is the reason?",
+     "zh": "什么原因？"
+    },
+    {
+     "r": 0,
+     "en": "I was in hospital last week. I have the discharge letter.",
+     "zh": "我上周住院了。有出院小结。"
+    },
+    {
+     "r": 1,
+     "en": "That is normally accepted. Have you missed any coursework?",
+     "zh": "这种情况一般可以。有缺交的作业吗？"
+    },
+    {
+     "r": 0,
+     "en": "One assignment. I emailed the tutor but got no reply.",
+     "zh": "一份作业。我给老师发过邮件但没回复。"
+    },
+    {
+     "r": 1,
+     "en": "I will note it here. The deferred exam is in August.",
+     "zh": "我在这儿备注。延期考试在八月。"
+    },
+    {
+     "r": 0,
+     "en": "Does the deferral affect my grade?",
+     "zh": "延期会影响我的成绩吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, it is marked the same. You just sit it later.",
+     "zh": "不会，评分一样。只是晚点考。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "对方要你证明，但你的材料不齐",
+    "prompt": {
+     "en": "The letter does not cover the exam date. Do you have anything else?",
+     "zh": "这份小结没覆盖考试日期。还有别的吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I can ask the hospital for a letter covering that week.",
+       "zh": "我可以让医院开一份覆盖那周的信。"
+      },
+      "react": {
+       "en": "That would settle it. Send it within ten days.",
+       "zh": "那就可以了。十天内发来。"
+      }
+     },
+     {
+      "say": {
+       "en": "My GP can confirm it by phone.",
+       "zh": "我的家庭医生可以电话确认。"
+      },
+      "react": {
+       "en": "We need it in writing, I am afraid.",
+       "zh": "恐怕要书面的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I would like to apply for a deferral.",
+     "zh": "我想申请延期。"
+    },
+    {
+     "en": "Does the deferral affect my grade?",
+     "zh": "延期会影响成绩吗？"
+    },
+    {
+     "en": "We may ask for evidence.",
+     "zh": "可能要证明。"
+    }
+   ]
+  },
+  {
+   "id": "grade-query",
+   "g": "grade-query",
+   "name": "找老师问成绩 · 论文分数偏低",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你觉得评分不公，但想先弄清楚标准。",
+   "roles": [
+    "你",
+    "老师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Do you have a minute? I would like to ask about my essay grade.",
+     "zh": "您有空吗？我想问一下论文成绩。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Which question?",
+     "zh": "当然。哪一题？"
+    },
+    {
+     "r": 0,
+     "en": "Question two. I got fifty-eight, and I am not sure why.",
+     "zh": "第二题。我得了五十八，不太清楚原因。"
+    },
+    {
+     "r": 1,
+     "en": "Your argument was solid, but the sources were thin.",
+     "zh": "你的论证扎实，但文献太少。"
+    },
+    {
+     "r": 0,
+     "en": "I cited four. Was that not enough for this length?",
+     "zh": "我引了四篇。这个篇幅还不够吗？"
+    },
+    {
+     "r": 1,
+     "en": "For a three-thousand-word essay, I expect eight to ten.",
+     "zh": "三千字的论文，我希望八到十篇。"
+    },
+    {
+     "r": 0,
+     "en": "That is fair. Is there any chance to resubmit?",
+     "zh": "有道理。有机会重交吗？",
+     "note": "resubmit 是重新提交，问的时候要接受「没有」这个答案。"
+    },
+    {
+     "r": 1,
+     "en": "Not for this one, but come to me before the next essay.",
+     "zh": "这次不行，但下一篇之前来找我。"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "probe",
+    "task": "老师说不能重交，你要问出下一步该怎么做",
+    "prompt": {
+     "en": "Not for this one. The marks have gone to the board.",
+     "zh": "这次不行。分数已经报上去了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "What should I do differently next time?",
+       "zh": "下次我该怎么做？"
+      },
+      "react": {
+       "en": "Come to me with a plan before you start writing.",
+       "zh": "动笔前先拿个提纲来找我。"
+      }
+     },
+     {
+      "say": {
+       "en": "I understand. Thanks for explaining.",
+       "zh": "我明白。谢谢您解释。"
+      },
+      "react": {
+       "en": "Any time. That is what office hours are for.",
+       "zh": "随时。办公时间就是干这个的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am not sure why.",
+     "zh": "我不太清楚原因。"
+    },
+    {
+     "en": "Is there any chance to resubmit?",
+     "zh": "有机会重交吗？"
+    },
+    {
+     "en": "How do I request a formal review?",
+     "zh": "怎么申请正式复核？"
+    }
+   ]
+  },
+  {
+   "id": "grade-query-2",
+   "g": "grade-query",
+   "name": "找老师问成绩 · 算错分",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你怀疑加总错了。",
+   "roles": [
+    "你",
+    "老师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I think the marks may have been added up wrong.",
+     "zh": "我觉得分数可能加错了。"
+    },
+    {
+     "r": 1,
+     "en": "Let me check. Four sections, twenty-five each.",
+     "zh": "我看看。四部分，各二十五。"
+    },
+    {
+     "r": 0,
+     "en": "Question two. I got fifty-eight, and I am not sure why.",
+     "zh": "第二题。我得了五十八，不太清楚原因。"
+    },
+    {
+     "r": 1,
+     "en": "Your argument was solid, but the sources were thin.",
+     "zh": "你的论证扎实，但文献太少。"
+    },
+    {
+     "r": 0,
+     "en": "I cited four. Was that not enough for this length?",
+     "zh": "我引了四篇。这个篇幅还不够吗？"
+    },
+    {
+     "r": 1,
+     "en": "For a three-thousand-word essay, I expect eight to ten.",
+     "zh": "三千字的论文，我希望八到十篇。"
+    },
+    {
+     "r": 0,
+     "en": "That is fair. Is there any chance to resubmit?",
+     "zh": "有道理。有机会重交吗？",
+     "note": "resubmit 是重新提交，问的时候要接受「没有」这个答案。"
+    },
+    {
+     "r": 1,
+     "en": "Not for this one, but come to me before the next essay.",
+     "zh": "这次不行，但下一篇之前来找我。"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "probe",
+    "task": "老师说不能重交，你要问出下一步该怎么做",
+    "prompt": {
+     "en": "Not for this one. The marks have gone to the board.",
+     "zh": "这次不行。分数已经报上去了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "What should I do differently next time?",
+       "zh": "下次我该怎么做？"
+      },
+      "react": {
+       "en": "Come to me with a plan before you start writing.",
+       "zh": "动笔前先拿个提纲来找我。"
+      }
+     },
+     {
+      "say": {
+       "en": "I understand. Thanks for explaining.",
+       "zh": "我明白。谢谢您解释。"
+      },
+      "react": {
+       "en": "Any time. That is what office hours are for.",
+       "zh": "随时。办公时间就是干这个的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am not sure why.",
+     "zh": "我不太清楚原因。"
+    },
+    {
+     "en": "Is there any chance to resubmit?",
+     "zh": "有机会重交吗？"
+    },
+    {
+     "en": "How do I request a formal review?",
+     "zh": "怎么申请正式复核？"
+    }
+   ]
+  },
+  {
+   "id": "grade-query-3",
+   "g": "grade-query",
+   "name": "找老师问成绩 · 想复议",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你正式申请复核。",
+   "roles": [
+    "你",
+    "老师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Do you have a minute? I would like to ask about my essay grade.",
+     "zh": "您有空吗？我想问一下论文成绩。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Which question?",
+     "zh": "当然。哪一题？"
+    },
+    {
+     "r": 0,
+     "en": "Question two. I got fifty-eight, and I am not sure why.",
+     "zh": "第二题。我得了五十八，不太清楚原因。"
+    },
+    {
+     "r": 1,
+     "en": "Your argument was solid, but the sources were thin.",
+     "zh": "你的论证扎实，但文献太少。"
+    },
+    {
+     "r": 0,
+     "en": "I cited four. Was that not enough for this length?",
+     "zh": "我引了四篇。这个篇幅还不够吗？"
+    },
+    {
+     "r": 1,
+     "en": "For a three-thousand-word essay, I expect eight to ten.",
+     "zh": "三千字的论文，我希望八到十篇。"
+    },
+    {
+     "r": 0,
+     "en": "How do I request a formal review?",
+     "zh": "怎么申请正式复核？",
+     "note": "resubmit 是重新提交，问的时候要接受「没有」这个答案。"
+    },
+    {
+     "r": 1,
+     "en": "Fill in the form, and a second marker reads it.",
+     "zh": "填表，第二位老师重读。"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "probe",
+    "task": "老师说不能重交，你要问出下一步该怎么做",
+    "prompt": {
+     "en": "Not for this one. The marks have gone to the board.",
+     "zh": "这次不行。分数已经报上去了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "What should I do differently next time?",
+       "zh": "下次我该怎么做？"
+      },
+      "react": {
+       "en": "Come to me with a plan before you start writing.",
+       "zh": "动笔前先拿个提纲来找我。"
+      }
+     },
+     {
+      "say": {
+       "en": "I understand. Thanks for explaining.",
+       "zh": "我明白。谢谢您解释。"
+      },
+      "react": {
+       "en": "Any time. That is what office hours are for.",
+       "zh": "随时。办公时间就是干这个的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am not sure why.",
+     "zh": "我不太清楚原因。"
+    },
+    {
+     "en": "Is there any chance to resubmit?",
+     "zh": "有机会重交吗？"
+    },
+    {
+     "en": "How do I request a formal review?",
+     "zh": "怎么申请正式复核？"
+    }
+   ]
+  },
+  {
+   "id": "grade-query-4",
+   "g": "grade-query",
+   "name": "找老师问成绩 · 问下次要求",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你只想知道下次怎么拿高分。",
+   "roles": [
+    "你",
+    "老师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Do you have a minute? I would like to ask about my essay grade.",
+     "zh": "您有空吗？我想问一下论文成绩。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Which question?",
+     "zh": "当然。哪一题？"
+    },
+    {
+     "r": 0,
+     "en": "Question two. I got fifty-eight, and I am not sure why.",
+     "zh": "第二题。我得了五十八，不太清楚原因。"
+    },
+    {
+     "r": 1,
+     "en": "Your argument was solid, but the sources were thin.",
+     "zh": "你的论证扎实，但文献太少。"
+    },
+    {
+     "r": 0,
+     "en": "I cited four. Was that not enough for this length?",
+     "zh": "我引了四篇。这个篇幅还不够吗？"
+    },
+    {
+     "r": 1,
+     "en": "For a three-thousand-word essay, I expect eight to ten.",
+     "zh": "三千字的论文，我希望八到十篇。"
+    },
+    {
+     "r": 0,
+     "en": "What would a seventy look like for the next one?",
+     "zh": "下一篇要做到什么程度能拿七十？",
+     "note": "resubmit 是重新提交，问的时候要接受「没有」这个答案。"
+    },
+    {
+     "r": 1,
+     "en": "Not for this one, but come to me before the next essay.",
+     "zh": "这次不行，但下一篇之前来找我。"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "probe",
+    "task": "老师说不能重交，你要问出下一步该怎么做",
+    "prompt": {
+     "en": "Not for this one. The marks have gone to the board.",
+     "zh": "这次不行。分数已经报上去了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "What should I do differently next time?",
+       "zh": "下次我该怎么做？"
+      },
+      "react": {
+       "en": "Come to me with a plan before you start writing.",
+       "zh": "动笔前先拿个提纲来找我。"
+      }
+     },
+     {
+      "say": {
+       "en": "I understand. Thanks for explaining.",
+       "zh": "我明白。谢谢您解释。"
+      },
+      "react": {
+       "en": "Any time. That is what office hours are for.",
+       "zh": "随时。办公时间就是干这个的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am not sure why.",
+     "zh": "我不太清楚原因。"
+    },
+    {
+     "en": "Is there any chance to resubmit?",
+     "zh": "有机会重交吗？"
+    },
+    {
+     "en": "How do I request a formal review?",
+     "zh": "怎么申请正式复核？"
+    }
+   ]
+  },
+  {
+   "id": "grade-query-5",
+   "g": "grade-query",
+   "name": "找老师问成绩 · 组员分数",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "小组作业大家分数一样，你觉得不公。",
+   "roles": [
+    "你",
+    "老师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "We all got the same mark, but I wrote most of it.",
+     "zh": "我们分数一样，但大部分是我写的。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Which question?",
+     "zh": "当然。哪一题？"
+    },
+    {
+     "r": 0,
+     "en": "Question two. I got fifty-eight, and I am not sure why.",
+     "zh": "第二题。我得了五十八，不太清楚原因。"
+    },
+    {
+     "r": 1,
+     "en": "Your argument was solid, but the sources were thin.",
+     "zh": "你的论证扎实，但文献太少。"
+    },
+    {
+     "r": 0,
+     "en": "I cited four. Was that not enough for this length?",
+     "zh": "我引了四篇。这个篇幅还不够吗？"
+    },
+    {
+     "r": 1,
+     "en": "For a three-thousand-word essay, I expect eight to ten.",
+     "zh": "三千字的论文，我希望八到十篇。"
+    },
+    {
+     "r": 0,
+     "en": "That is fair. Is there any chance to resubmit?",
+     "zh": "有道理。有机会重交吗？",
+     "note": "resubmit 是重新提交，问的时候要接受「没有」这个答案。"
+    },
+    {
+     "r": 1,
+     "en": "Not for this one, but come to me before the next essay.",
+     "zh": "这次不行，但下一篇之前来找我。"
+    }
+   ],
+   "branch": {
+    "at": 6,
+    "kind": "probe",
+    "task": "老师说不能重交，你要问出下一步该怎么做",
+    "prompt": {
+     "en": "Not for this one. The marks have gone to the board.",
+     "zh": "这次不行。分数已经报上去了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "What should I do differently next time?",
+       "zh": "下次我该怎么做？"
+      },
+      "react": {
+       "en": "Come to me with a plan before you start writing.",
+       "zh": "动笔前先拿个提纲来找我。"
+      }
+     },
+     {
+      "say": {
+       "en": "I understand. Thanks for explaining.",
+       "zh": "我明白。谢谢您解释。"
+      },
+      "react": {
+       "en": "Any time. That is what office hours are for.",
+       "zh": "随时。办公时间就是干这个的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am not sure why.",
+     "zh": "我不太清楚原因。"
+    },
+    {
+     "en": "Is there any chance to resubmit?",
+     "zh": "有机会重交吗？"
+    },
+    {
+     "en": "How do I request a formal review?",
+     "zh": "怎么申请正式复核？"
+    }
+   ]
+  },
+  {
+   "id": "presentation",
+   "g": "presentation",
+   "name": "课堂演讲被打断 · 被追问数据来源",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "课堂展示，你讲到第二页就被打断。",
+   "roles": [
+    "你",
+    "同学"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Today I will cover three points: the problem, the data, and what we suggest.",
+     "zh": "今天讲三点：问题、数据、以及我们的建议。"
+    },
+    {
+     "r": 1,
+     "en": "Sorry to interrupt. Where did the data come from?",
+     "zh": "抱歉打断。数据从哪儿来的？"
+    },
+    {
+     "r": 0,
+     "en": "Good question. It is the city survey from last year, about four thousand responses.",
+     "zh": "好问题。是去年的城市调查，大约四千份回复。"
+    },
+    {
+     "r": 1,
+     "en": "Was it a random sample?",
+     "zh": "是随机抽样吗？"
+    },
+    {
+     "r": 0,
+     "en": "Mostly. They weighted it by age and district.",
+     "zh": "基本是。他们按年龄和区做了加权。"
+    },
+    {
+     "r": 1,
+     "en": "All right. Sorry, go on.",
+     "zh": "好。抱歉，继续。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. So the second point is what changed after the policy.",
+     "zh": "谢谢。第二点是政策之后发生了什么变化。"
+    },
+    {
+     "r": 1,
+     "en": "One more thing. How confident are you in the last number?",
+     "zh": "还有一点。最后一个数字你有多大把握？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "有人问了一个你没准备的问题",
+    "prompt": {
+     "en": "What would change your conclusion?",
+     "zh": "什么情况会改变你的结论？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "If the response rate had been lower, the numbers would not hold.",
+       "zh": "如果回复率更低，这些数字就站不住。"
+      },
+      "react": {
+       "en": "That is a good answer.",
+       "zh": "这个回答不错。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would need to rerun it with this year data.",
+       "zh": "要用今年的数据重跑一遍。"
+      },
+      "react": {
+       "en": "Could you do that before the final?",
+       "zh": "期末前能做吗？"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Sorry to interrupt.",
+     "zh": "抱歉打断。"
+    },
+    {
+     "en": "Sorry, go on.",
+     "zh": "抱歉，继续。"
+    },
+    {
+     "en": "I would not overclaim.",
+     "zh": "我不会过度断言。"
+    }
+   ]
+  },
+  {
+   "id": "presentation-2",
+   "g": "presentation",
+   "name": "课堂演讲被打断 · 超时",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你讲得太久，老师提醒时间。",
+   "roles": [
+    "你",
+    "同学"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Today I will cover three points: the problem, the data, and what we suggest.",
+     "zh": "今天讲三点：问题、数据、以及我们的建议。"
+    },
+    {
+     "r": 1,
+     "en": "Sorry to interrupt. Where did the data come from?",
+     "zh": "抱歉打断。数据从哪儿来的？"
+    },
+    {
+     "r": 0,
+     "en": "Good question. It is the city survey from last year, about four thousand responses.",
+     "zh": "好问题。是去年的城市调查，大约四千份回复。"
+    },
+    {
+     "r": 1,
+     "en": "Was it a random sample?",
+     "zh": "是随机抽样吗？"
+    },
+    {
+     "r": 0,
+     "en": "Mostly. They weighted it by age and district.",
+     "zh": "基本是。他们按年龄和区做了加权。"
+    },
+    {
+     "r": 1,
+     "en": "All right. Sorry, go on.",
+     "zh": "好。抱歉，继续。"
+    },
+    {
+     "r": 0,
+     "en": "I am running over. Let me skip to the conclusion.",
+     "zh": "我超时了。直接跳到结论。"
+    },
+    {
+     "r": 1,
+     "en": "One more thing. How confident are you in the last number?",
+     "zh": "还有一点。最后一个数字你有多大把握？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "有人问了一个你没准备的问题",
+    "prompt": {
+     "en": "What would change your conclusion?",
+     "zh": "什么情况会改变你的结论？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "If the response rate had been lower, the numbers would not hold.",
+       "zh": "如果回复率更低，这些数字就站不住。"
+      },
+      "react": {
+       "en": "That is a good answer.",
+       "zh": "这个回答不错。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would need to rerun it with this year data.",
+       "zh": "要用今年的数据重跑一遍。"
+      },
+      "react": {
+       "en": "Could you do that before the final?",
+       "zh": "期末前能做吗？"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Sorry to interrupt.",
+     "zh": "抱歉打断。"
+    },
+    {
+     "en": "Sorry, go on.",
+     "zh": "抱歉，继续。"
+    },
+    {
+     "en": "I would not overclaim.",
+     "zh": "我不会过度断言。"
+    }
+   ]
+  },
+  {
+   "id": "presentation-3",
+   "g": "presentation",
+   "name": "课堂演讲被打断 · 紧张卡住",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你忘词了。",
+   "roles": [
+    "你",
+    "同学"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Today I will cover three points: the problem, the data, and what we suggest.",
+     "zh": "今天讲三点：问题、数据、以及我们的建议。"
+    },
+    {
+     "r": 1,
+     "en": "Sorry to interrupt. Where did the data come from?",
+     "zh": "抱歉打断。数据从哪儿来的？"
+    },
+    {
+     "r": 0,
+     "en": "Sorry, let me start that again.",
+     "zh": "抱歉，我重说一遍。"
+    },
+    {
+     "r": 1,
+     "en": "Was it a random sample?",
+     "zh": "是随机抽样吗？"
+    },
+    {
+     "r": 0,
+     "en": "Mostly. They weighted it by age and district.",
+     "zh": "基本是。他们按年龄和区做了加权。"
+    },
+    {
+     "r": 1,
+     "en": "All right. Sorry, go on.",
+     "zh": "好。抱歉，继续。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. So the second point is what changed after the policy.",
+     "zh": "谢谢。第二点是政策之后发生了什么变化。"
+    },
+    {
+     "r": 1,
+     "en": "One more thing. How confident are you in the last number?",
+     "zh": "还有一点。最后一个数字你有多大把握？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "有人问了一个你没准备的问题",
+    "prompt": {
+     "en": "What would change your conclusion?",
+     "zh": "什么情况会改变你的结论？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "If the response rate had been lower, the numbers would not hold.",
+       "zh": "如果回复率更低，这些数字就站不住。"
+      },
+      "react": {
+       "en": "That is a good answer.",
+       "zh": "这个回答不错。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would need to rerun it with this year data.",
+       "zh": "要用今年的数据重跑一遍。"
+      },
+      "react": {
+       "en": "Could you do that before the final?",
+       "zh": "期末前能做吗？"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Sorry to interrupt.",
+     "zh": "抱歉打断。"
+    },
+    {
+     "en": "Sorry, go on.",
+     "zh": "抱歉，继续。"
+    },
+    {
+     "en": "I would not overclaim.",
+     "zh": "我不会过度断言。"
+    }
+   ]
+  },
+  {
+   "id": "presentation-4",
+   "g": "presentation",
+   "name": "课堂演讲被打断 · 设备坏了",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "投影连不上。",
+   "roles": [
+    "你",
+    "同学"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "The projector is not picking up my laptop. Can I email the file?",
+     "zh": "投影连不上我的电脑。能发邮件吗？"
+    },
+    {
+     "r": 1,
+     "en": "Sorry to interrupt. Where did the data come from?",
+     "zh": "抱歉打断。数据从哪儿来的？"
+    },
+    {
+     "r": 0,
+     "en": "Good question. It is the city survey from last year, about four thousand responses.",
+     "zh": "好问题。是去年的城市调查，大约四千份回复。"
+    },
+    {
+     "r": 1,
+     "en": "Was it a random sample?",
+     "zh": "是随机抽样吗？"
+    },
+    {
+     "r": 0,
+     "en": "Mostly. They weighted it by age and district.",
+     "zh": "基本是。他们按年龄和区做了加权。"
+    },
+    {
+     "r": 1,
+     "en": "All right. Sorry, go on.",
+     "zh": "好。抱歉，继续。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. So the second point is what changed after the policy.",
+     "zh": "谢谢。第二点是政策之后发生了什么变化。"
+    },
+    {
+     "r": 1,
+     "en": "One more thing. How confident are you in the last number?",
+     "zh": "还有一点。最后一个数字你有多大把握？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "有人问了一个你没准备的问题",
+    "prompt": {
+     "en": "What would change your conclusion?",
+     "zh": "什么情况会改变你的结论？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "If the response rate had been lower, the numbers would not hold.",
+       "zh": "如果回复率更低，这些数字就站不住。"
+      },
+      "react": {
+       "en": "That is a good answer.",
+       "zh": "这个回答不错。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would need to rerun it with this year data.",
+       "zh": "要用今年的数据重跑一遍。"
+      },
+      "react": {
+       "en": "Could you do that before the final?",
+       "zh": "期末前能做吗？"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Sorry to interrupt.",
+     "zh": "抱歉打断。"
+    },
+    {
+     "en": "Sorry, go on.",
+     "zh": "抱歉，继续。"
+    },
+    {
+     "en": "I would not overclaim.",
+     "zh": "我不会过度断言。"
+    }
+   ]
+  },
+  {
+   "id": "presentation-5",
+   "g": "presentation",
+   "name": "课堂演讲被打断 · 被质疑结论",
+   "cat": "学习",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "同学不同意你的结论。",
+   "roles": [
+    "你",
+    "同学"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Today I will cover three points: the problem, the data, and what we suggest.",
+     "zh": "今天讲三点：问题、数据、以及我们的建议。"
+    },
+    {
+     "r": 1,
+     "en": "Sorry to interrupt. Where did the data come from?",
+     "zh": "抱歉打断。数据从哪儿来的？"
+    },
+    {
+     "r": 0,
+     "en": "Good question. It is the city survey from last year, about four thousand responses.",
+     "zh": "好问题。是去年的城市调查，大约四千份回复。"
+    },
+    {
+     "r": 1,
+     "en": "Was it a random sample?",
+     "zh": "是随机抽样吗？"
+    },
+    {
+     "r": 0,
+     "en": "Mostly. They weighted it by age and district.",
+     "zh": "基本是。他们按年龄和区做了加权。"
+    },
+    {
+     "r": 1,
+     "en": "All right. Sorry, go on.",
+     "zh": "好。抱歉，继续。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. So the second point is what changed after the policy.",
+     "zh": "谢谢。第二点是政策之后发生了什么变化。"
+    },
+    {
+     "r": 1,
+     "en": "That is a fair challenge. The sample was small, so I would not overclaim.",
+     "zh": "这个质疑有道理。样本小，我不会过度断言。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "有人问了一个你没准备的问题",
+    "prompt": {
+     "en": "What would change your conclusion?",
+     "zh": "什么情况会改变你的结论？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "If the response rate had been lower, the numbers would not hold.",
+       "zh": "如果回复率更低，这些数字就站不住。"
+      },
+      "react": {
+       "en": "That is a good answer.",
+       "zh": "这个回答不错。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would need to rerun it with this year data.",
+       "zh": "要用今年的数据重跑一遍。"
+      },
+      "react": {
+       "en": "Could you do that before the final?",
+       "zh": "期末前能做吗？"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Sorry to interrupt.",
+     "zh": "抱歉打断。"
+    },
+    {
+     "en": "Sorry, go on.",
+     "zh": "抱歉，继续。"
+    },
+    {
+     "en": "I would not overclaim.",
+     "zh": "我不会过度断言。"
+    }
+   ]
+  },
+  {
+   "id": "online-course",
+   "g": "online-course",
+   "name": "网课平台出问题 · 视频播不了",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你晚上抽时间上课，视频卡在第二分钟。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "The video for week three will not play. It stops after two minutes.",
+     "zh": "第三周的视频放不了。两分钟就停。"
+    },
+    {
+     "r": 1,
+     "en": "Which browser are you using?",
+     "zh": "您用什么浏览器？"
+    },
+    {
+     "r": 0,
+     "en": "Chrome, on a laptop. It works on my phone, but I want the big screen.",
+     "zh": "笔记本上的 Chrome。手机能放，但我想用大屏。"
+    },
+    {
+     "r": 1,
+     "en": "Try clearing the cache, or using a different browser.",
+     "zh": "试试清缓存，或者换个浏览器。"
+    },
+    {
+     "r": 0,
+     "en": "I did both. Same result.",
+     "zh": "都试了。一样。"
+    },
+    {
+     "r": 1,
+     "en": "Then it may be the file. I will report it and unlock the next module for you.",
+     "zh": "那可能是文件问题。我上报，并给您解锁下一模块。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Will the quiz still count?",
+     "zh": "谢谢。测验还算数吗？"
+    },
+    {
+     "r": 1,
+     "en": "It will. The deadline moves with the unlock.",
+     "zh": "算。截止日跟着顺延。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "客服给的办法都不管用，你要一个实际补偿",
+    "prompt": {
+     "en": "Clearing the cache did not help either?",
+     "zh": "清缓存也没用？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Same result. Can you unlock the next module?",
+       "zh": "一样。能先解锁下一模块吗？"
+      },
+      "react": {
+       "en": "I can, and the deadline moves with it.",
+       "zh": "可以，截止日跟着顺延。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you send me the file directly?",
+       "zh": "能直接把文件发我吗？"
+      },
+      "react": {
+       "en": "I am not allowed to, but I can report the fault.",
+       "zh": "这个不允许，但我可以报故障。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stops after two minutes.",
+     "zh": "两分钟就停。"
+    },
+    {
+     "en": "I did both. Same result.",
+     "zh": "都试了。一样。"
+    },
+    {
+     "en": "The deadline moves with the unlock.",
+     "zh": "截止日跟着顺延。"
+    }
+   ]
+  },
+  {
+   "id": "online-course-2",
+   "g": "online-course",
+   "name": "网课平台出问题 · 证书没发",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你学完了但没收到证书。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I finished the course last week but have not received the certificate.",
+     "zh": "我上周学完了，但没收到证书。"
+    },
+    {
+     "r": 1,
+     "en": "It is issued within five working days. Let me check your progress.",
+     "zh": "五个工作日内发。我查一下您的进度。"
+    },
+    {
+     "r": 0,
+     "en": "Chrome, on a laptop. It works on my phone, but I want the big screen.",
+     "zh": "笔记本上的 Chrome。手机能放，但我想用大屏。"
+    },
+    {
+     "r": 1,
+     "en": "Try clearing the cache, or using a different browser.",
+     "zh": "试试清缓存，或者换个浏览器。"
+    },
+    {
+     "r": 0,
+     "en": "I did both. Same result.",
+     "zh": "都试了。一样。"
+    },
+    {
+     "r": 1,
+     "en": "Then it may be the file. I will report it and unlock the next module for you.",
+     "zh": "那可能是文件问题。我上报，并给您解锁下一模块。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Will the quiz still count?",
+     "zh": "谢谢。测验还算数吗？"
+    },
+    {
+     "r": 1,
+     "en": "It will. The deadline moves with the unlock.",
+     "zh": "算。截止日跟着顺延。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "客服给的办法都不管用，你要一个实际补偿",
+    "prompt": {
+     "en": "Clearing the cache did not help either?",
+     "zh": "清缓存也没用？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Same result. Can you unlock the next module?",
+       "zh": "一样。能先解锁下一模块吗？"
+      },
+      "react": {
+       "en": "I can, and the deadline moves with it.",
+       "zh": "可以，截止日跟着顺延。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you send me the file directly?",
+       "zh": "能直接把文件发我吗？"
+      },
+      "react": {
+       "en": "I am not allowed to, but I can report the fault.",
+       "zh": "这个不允许，但我可以报故障。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stops after two minutes.",
+     "zh": "两分钟就停。"
+    },
+    {
+     "en": "I did both. Same result.",
+     "zh": "都试了。一样。"
+    },
+    {
+     "en": "The deadline moves with the unlock.",
+     "zh": "截止日跟着顺延。"
+    }
+   ]
+  },
+  {
+   "id": "online-course-3",
+   "g": "online-course",
+   "name": "网课平台出问题 · 作业被误判",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "系统判你抄袭。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "The system flagged my essay for plagiarism. It was my own writing.",
+     "zh": "系统标我论文抄袭。那是我自己写的。"
+    },
+    {
+     "r": 1,
+     "en": "We will have a tutor review it manually.",
+     "zh": "我们让老师人工复核。"
+    },
+    {
+     "r": 0,
+     "en": "Chrome, on a laptop. It works on my phone, but I want the big screen.",
+     "zh": "笔记本上的 Chrome。手机能放，但我想用大屏。"
+    },
+    {
+     "r": 1,
+     "en": "Try clearing the cache, or using a different browser.",
+     "zh": "试试清缓存，或者换个浏览器。"
+    },
+    {
+     "r": 0,
+     "en": "I did both. Same result.",
+     "zh": "都试了。一样。"
+    },
+    {
+     "r": 1,
+     "en": "Then it may be the file. I will report it and unlock the next module for you.",
+     "zh": "那可能是文件问题。我上报，并给您解锁下一模块。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Will the quiz still count?",
+     "zh": "谢谢。测验还算数吗？"
+    },
+    {
+     "r": 1,
+     "en": "It will. The deadline moves with the unlock.",
+     "zh": "算。截止日跟着顺延。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "客服给的办法都不管用，你要一个实际补偿",
+    "prompt": {
+     "en": "Clearing the cache did not help either?",
+     "zh": "清缓存也没用？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Same result. Can you unlock the next module?",
+       "zh": "一样。能先解锁下一模块吗？"
+      },
+      "react": {
+       "en": "I can, and the deadline moves with it.",
+       "zh": "可以，截止日跟着顺延。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you send me the file directly?",
+       "zh": "能直接把文件发我吗？"
+      },
+      "react": {
+       "en": "I am not allowed to, but I can report the fault.",
+       "zh": "这个不允许，但我可以报故障。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stops after two minutes.",
+     "zh": "两分钟就停。"
+    },
+    {
+     "en": "I did both. Same result.",
+     "zh": "都试了。一样。"
+    },
+    {
+     "en": "The deadline moves with the unlock.",
+     "zh": "截止日跟着顺延。"
+    }
+   ]
+  },
+  {
+   "id": "online-course-4",
+   "g": "online-course",
+   "name": "网课平台出问题 · 想退课",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "课和你预期差太多。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "The video for week three will not play. It stops after two minutes.",
+     "zh": "第三周的视频放不了。两分钟就停。"
+    },
+    {
+     "r": 1,
+     "en": "Which browser are you using?",
+     "zh": "您用什么浏览器？"
+    },
+    {
+     "r": 0,
+     "en": "Chrome, on a laptop. It works on my phone, but I want the big screen.",
+     "zh": "笔记本上的 Chrome。手机能放，但我想用大屏。"
+    },
+    {
+     "r": 1,
+     "en": "Try clearing the cache, or using a different browser.",
+     "zh": "试试清缓存，或者换个浏览器。"
+    },
+    {
+     "r": 0,
+     "en": "I did both. Same result.",
+     "zh": "都试了。一样。"
+    },
+    {
+     "r": 1,
+     "en": "Then it may be the file. I will report it and unlock the next module for you.",
+     "zh": "那可能是文件问题。我上报，并给您解锁下一模块。"
+    },
+    {
+     "r": 0,
+     "en": "Can I get a refund after two weeks?",
+     "zh": "上了两周能退款吗？"
+    },
+    {
+     "r": 1,
+     "en": "Within fourteen days, yes. After that it is credit only.",
+     "zh": "十四天内可以。之后只能转成学分。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "客服给的办法都不管用，你要一个实际补偿",
+    "prompt": {
+     "en": "Clearing the cache did not help either?",
+     "zh": "清缓存也没用？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Same result. Can you unlock the next module?",
+       "zh": "一样。能先解锁下一模块吗？"
+      },
+      "react": {
+       "en": "I can, and the deadline moves with it.",
+       "zh": "可以，截止日跟着顺延。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you send me the file directly?",
+       "zh": "能直接把文件发我吗？"
+      },
+      "react": {
+       "en": "I am not allowed to, but I can report the fault.",
+       "zh": "这个不允许，但我可以报故障。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stops after two minutes.",
+     "zh": "两分钟就停。"
+    },
+    {
+     "en": "I did both. Same result.",
+     "zh": "都试了。一样。"
+    },
+    {
+     "en": "The deadline moves with the unlock.",
+     "zh": "截止日跟着顺延。"
+    }
+   ]
+  },
+  {
+   "id": "online-course-5",
+   "g": "online-course",
+   "name": "网课平台出问题 · 字幕问题",
+   "cat": "学习",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想开字幕。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "The video for week three will not play. It stops after two minutes.",
+     "zh": "第三周的视频放不了。两分钟就停。"
+    },
+    {
+     "r": 1,
+     "en": "Which browser are you using?",
+     "zh": "您用什么浏览器？"
+    },
+    {
+     "r": 0,
+     "en": "Is there a captions option? I learn better reading along.",
+     "zh": "有字幕选项吗？我边看边读学得更好。"
+    },
+    {
+     "r": 1,
+     "en": "Try clearing the cache, or using a different browser.",
+     "zh": "试试清缓存，或者换个浏览器。"
+    },
+    {
+     "r": 0,
+     "en": "I did both. Same result.",
+     "zh": "都试了。一样。"
+    },
+    {
+     "r": 1,
+     "en": "Then it may be the file. I will report it and unlock the next module for you.",
+     "zh": "那可能是文件问题。我上报，并给您解锁下一模块。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Will the quiz still count?",
+     "zh": "谢谢。测验还算数吗？"
+    },
+    {
+     "r": 1,
+     "en": "It will. The deadline moves with the unlock.",
+     "zh": "算。截止日跟着顺延。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "change",
+    "task": "客服给的办法都不管用，你要一个实际补偿",
+    "prompt": {
+     "en": "Clearing the cache did not help either?",
+     "zh": "清缓存也没用？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Same result. Can you unlock the next module?",
+       "zh": "一样。能先解锁下一模块吗？"
+      },
+      "react": {
+       "en": "I can, and the deadline moves with it.",
+       "zh": "可以，截止日跟着顺延。"
+      }
+     },
+     {
+      "say": {
+       "en": "Could you send me the file directly?",
+       "zh": "能直接把文件发我吗？"
+      },
+      "react": {
+       "en": "I am not allowed to, but I can report the fault.",
+       "zh": "这个不允许，但我可以报故障。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stops after two minutes.",
+     "zh": "两分钟就停。"
+    },
+    {
+     "en": "I did both. Same result.",
+     "zh": "都试了。一样。"
+    },
+    {
+     "en": "The deadline moves with the unlock.",
+     "zh": "截止日跟着顺延。"
+    }
+   ]
+  },
+  {
    "id": "directions",
    "g": "directions",
    "name": "街头问路 · 找药店",
