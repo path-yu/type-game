@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TypeWake · 词醒 — UI 原型</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-base:#0B0D14; --bg-raised:#131722; --bg-overlay:#1A1F2E;
+  --line:#242A3A; --line-soft:#1B2130;
+  --tx:#EDE6D6; --tx-done:#4A5163; --tx-muted:#8A93A8; --tx-dim:#5A6274;
+  --accent:#F2B34B; --accent-glow:rgba(242,179,75,.32);
+  --ok:#6FE3C4; --err:#FF6B81; --rare:#A78BFA;
+  --lh:60px;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --sans:'Noto Sans SC',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --serif:'Lora',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--bg-base); color:var(--tx); font-family:var(--sans);
+  -webkit-font-smoothing:antialiased; overflow:hidden;
+}
+body::before{
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(242,179,75,.055), transparent 60%),
+    radial-gradient(900px 500px at 85% 110%, rgba(111,227,196,.035), transparent 60%);
+}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:relative; z-index:30; height:60px; display:flex; align-items:center;
+  padding:0 28px; gap:26px; border-bottom:1px solid var(--line-soft);
+  transition:opacity .35s ease;
+}
+body.typing .nav{opacity:.3}
+body.typing .nav:hover{opacity:1}
+.brand{display:flex; align-items:baseline; gap:9px; font-weight:700; letter-spacing:.02em}
+.brand b{font-size:17px}
+.brand span{font-family:var(--mono); font-size:10.5px; color:var(--tx-dim); letter-spacing:.16em}
+.nav-pills{display:flex; gap:4px; margin-left:8px}
+.pill{
+  padding:6px 13px; border-radius:999px; font-size:13px; color:var(--tx-muted);
+  transition:.18s; white-space:nowrap;
+}
+.pill:hover{color:var(--tx); background:rgba(255,255,255,.04)}
+.pill.on{color:#0B0D14; background:var(--accent); font-weight:500}
+.nav-stats{margin-left:auto; display:flex; gap:20px; font-family:var(--mono); font-size:12.5px; color:var(--tx-muted)}
+.nav-stats b{color:var(--tx); font-weight:500}
+.nav-stats .u{color:var(--tx-dim); font-size:10.5px; margin-left:3px; font-family:var(--sans)}
+
+/* ---------- VIEWS ---------- */
+.view{position:absolute; inset:60px 0 0; display:none; z-index:10; overflow:auto}
+.view.on{display:block}
+body.typing .view.on{inset:60px 0 0}
+
+/* ================= MAP ================= */
+.map-wrap{max-width:1080px; margin:0 auto; padding:26px 28px 40px}
+.map-head{display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:14px}
+.map-head h1{font-size:19px; font-weight:600; letter-spacing:.02em}
+.map-head p{font-size:12.5px; color:var(--tx-dim); margin-top:5px}
+.city{
+  position:relative; height:400px; border-radius:18px; overflow:hidden;
+  background:linear-gradient(180deg,#0D1018,#0A0C12);
+  border:1px solid var(--line-soft);
+}
+.city svg{position:absolute; inset:0; width:100%; height:100%}
+.dnode{cursor:pointer}
+.dnode:hover .dlab{fill:var(--tx)}
+.dlab{font-family:var(--sans); font-size:12px; fill:var(--tx-dim); transition:.2s}
+.dsub{font-family:var(--mono); font-size:9.5px; fill:#3C4354}
+@keyframes breathe{0%,100%{opacity:.25; transform:scale(1)}50%{opacity:.7; transform:scale(1.18)}}
+.pulse{transform-origin:center; animation:breathe 2.6s ease-in-out infinite}
+.cont-card{
+  margin-top:16px; border:1px solid var(--line); border-radius:14px; background:var(--bg-raised);
+  padding:18px 22px; display:flex; align-items:center; gap:22px;
+}
+.cont-card .t{font-family:var(--serif); font-size:19px; letter-spacing:.01em}
+.cont-card .m{font-size:12.5px; color:var(--tx-muted); margin-top:7px; display:flex; gap:14px; flex-wrap:wrap}
+.cont-card .m em{font-style:normal; color:var(--accent)}
+.btn-primary{
+  margin-left:auto; background:var(--accent); color:#0B0D14; font-weight:600; font-size:14px;
+  padding:12px 22px; border-radius:10px; transition:.18s; white-space:nowrap;
+  box-shadow:0 8px 24px -10px var(--accent-glow);
+}
+.btn-primary:hover{transform:translateY(-1px); box-shadow:0 12px 30px -10px var(--accent-glow)}
+.btn-ghost{
+  padding:11px 18px; border:1px solid var(--line); border-radius:10px; font-size:13.5px;
+  color:var(--tx); transition:.18s; white-space:nowrap;
+}
+.btn-ghost:hover{border-color:#3A4358; background:rgba(255,255,255,.03)}
+.kbd{
+  font-family:var(--mono); font-size:10.5px; border:1px solid #343C4F; border-bottom-width:2px;
+  border-radius:4px; padding:1px 5px; color:var(--tx-muted); margin-left:7px;
+}
+
+/* ================= TYPING ================= */
+.stage-wrap{position:relative; min-height:100%; display:flex; flex-direction:column}
+.tbar{
+  height:56px; display:flex; align-items:center; gap:16px; padding:0 30px;
+  font-size:12.5px; color:var(--tx-muted); transition:opacity .3s;
+}
+body.typing .tbar{opacity:.4}
+body.typing .tbar:hover{opacity:1}
+.tbar .back{font-size:16px; color:var(--tx-muted); padding:4px 8px; border-radius:6px}
+.tbar .back:hover{background:rgba(255,255,255,.05); color:var(--tx)}
+.tbar .ttl{font-family:var(--serif); font-size:15.5px; color:var(--tx); letter-spacing:.01em}
+.badge{
+  font-size:10.5px; font-family:var(--mono); padding:2.5px 8px; border-radius:999px;
+  border:1px solid var(--line); color:var(--tx-muted); letter-spacing:.04em;
+}
+.badge.new{color:var(--rare); border-color:rgba(167,139,250,.35); background:rgba(167,139,250,.08)}
+.tbar .right{margin-left:auto; display:flex; align-items:center; gap:16px}
+.icon-btn{padding:6px 9px; border-radius:7px; color:var(--tx-muted); transition:.15s; font-size:14px}
+.icon-btn:hover{background:rgba(255,255,255,.05); color:var(--tx)}
+
+.stage-area{
+  position:relative; flex:1; display:flex; align-items:center; justify-content:center;
+  padding:0 30px; margin-top:-40px;
+}
+.stage{
+  position:relative; width:min(720px,86vw); height:calc(var(--lh)*3); overflow:hidden;
+  mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 82%,transparent 100%);
+}
+.inner{position:relative; transition:transform .22s cubic-bezier(.2,.8,.2,1); padding-top:2px}
+.line{}
+.word{display:inline-block; white-space:nowrap; border-radius:3px; transition:background .15s}
+.word:hover{background:rgba(237,230,214,.055)}
+.word.focus{}
+.ch{
+  font-family:var(--mono); font-size:26px; line-height:var(--lh); color:var(--tx);
+  transition:color .12s ease-out;
+}
+.ch.sp{white-space:pre}
+.ch.done{color:var(--tx-done)}
+.ch.err{color:var(--err); position:relative}
+.ch.err::after{
+  content:''; position:absolute; left:0; right:0; bottom:20px; height:2px;
+  background:var(--err); border-radius:2px; opacity:.85;
+}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.ch.err.shake{animation:shake .18s ease-in-out}
+.ch.sp.err::after{bottom:24px}
+
+.caret{
+  position:absolute; width:3px; height:34px; background:var(--accent); border-radius:2px;
+  top:13px; left:0; transform:translate3d(0,0,0);
+  transition:transform .09s cubic-bezier(.2,.9,.3,1), height .09s ease-out;
+  box-shadow:0 0 12px var(--accent-glow);
+  animation:blink 1.6s steps(1,end) infinite;
+}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:.25}}
+.caret.hit{height:42px}
+
+/* combo rail */
+.rail{
+  position:absolute; left:44px; top:50%; width:3px; height:0; transform:translateY(-50%);
+  background:linear-gradient(180deg,#FFF0C4,var(--accent)); border-radius:3px;
+  transition:height .16s ease-out, opacity .25s; opacity:0;
+  box-shadow:0 0 18px var(--accent-glow);
+}
+.rail.on{opacity:.9}
+.rail::after{
+  content:''; position:absolute; top:-5px; left:-2px; width:7px; height:7px; border-radius:50%;
+  background:#FFF0C4; box-shadow:0 0 14px var(--accent);
+}
+.metrics{
+  position:absolute; right:38px; top:50%; transform:translateY(-50%);
+  display:flex; flex-direction:column; gap:20px; align-items:flex-end;
+  transition:opacity .3s; font-family:var(--mono);
+}
+body.typing .metrics{opacity:.25}
+.metrics .k{font-size:9.5px; letter-spacing:.16em; color:var(--tx-dim); font-family:var(--sans); margin-bottom:2px}
+.metrics .v{font-size:26px; font-weight:500; color:var(--tx); font-variant-numeric:tabular-nums; line-height:1}
+.metrics .v small{font-size:11px; color:var(--tx-dim); font-weight:400}
+.hint{
+  position:absolute; left:50%; bottom:16%; transform:translateX(-50%);
+  font-size:12.5px; color:var(--tx-dim); letter-spacing:.06em; transition:opacity .4s;
+  pointer-events:none;
+}
+.hint b{color:var(--accent); font-weight:500}
+.progress{
+  position:absolute; left:0; right:0; bottom:44px; height:2px; background:#151A26;
+}
+.progress i{display:block; height:100%; width:0; background:var(--accent); transition:width .18s ease-out; box-shadow:0 0 10px var(--accent-glow)}
+.fbar{
+  height:44px; display:flex; align-items:center; justify-content:space-between;
+  padding:0 30px; font-size:11.5px; color:var(--tx-dim); font-family:var(--mono);
+}
+.fbar .l{display:flex; gap:18px}
+.ghostdot{color:var(--tx-dim)}
+.ghostdot b{color:rgba(237,230,214,.55); font-weight:400}
+
+/* tooltip */
+.ttip{
+  position:fixed; z-index:60; pointer-events:none; opacity:0; transform:translateY(4px);
+  background:var(--bg-overlay); border:1px solid var(--line); border-radius:9px;
+  padding:7px 11px; transition:opacity .16s, transform .16s; white-space:nowrap;
+  box-shadow:0 16px 32px rgba(0,0,0,.5);
+}
+.ttip.on{opacity:1; transform:translateY(0)}
+.ttip .w{font-family:var(--serif); font-size:14px; letter-spacing:.01em}
+.ttip .p{font-family:var(--mono); font-size:10.5px; color:var(--accent); margin-left:7px}
+.ttip .z{font-size:12px; color:var(--tx-muted); margin-top:3px}
+
+/* word card */
+.card{
+  position:fixed; z-index:70; width:364px; background:var(--bg-overlay);
+  border:1px solid var(--line); border-radius:16px; padding:20px 22px 16px;
+  box-shadow:0 30px 60px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.02) inset;
+  opacity:0; transform:scale(.96) translateY(6px); pointer-events:none;
+  transition:opacity .18s cubic-bezier(.16,1,.3,1), transform .18s cubic-bezier(.16,1,.3,1);
+}
+.card.on{opacity:1; transform:scale(1) translateY(0); pointer-events:auto}
+.card .hd{display:flex; align-items:baseline; gap:10px}
+.card .hw{font-family:var(--serif); font-size:23px; font-weight:600; letter-spacing:.01em}
+.card .ipa{font-family:var(--mono); font-size:12px; color:var(--tx-muted); margin-top:5px}
+.card .spk{
+  margin-left:auto; display:flex; gap:6px;
+}
+.card .spk button{
+  width:32px; height:32px; border-radius:9px; border:1px solid var(--line);
+  display:grid; place-items:center; color:var(--tx-muted); transition:.16s; font-size:13px;
+}
+.card .spk button:hover{color:var(--accent); border-color:rgba(242,179,75,.4); background:rgba(242,179,75,.07)}
+.card .spk button.play{color:var(--accent); border-color:rgba(242,179,75,.5)}
+.card .zh{font-size:17px; margin-top:14px; line-height:1.55}
+.card .en{font-family:var(--serif); font-size:13.5px; color:var(--tx-muted); line-height:1.6; margin-top:8px}
+.card hr{border:none; border-top:1px solid var(--line-soft); margin:14px 0}
+.card .meta{display:flex; flex-direction:column; gap:7px; font-size:12px; color:var(--tx-muted)}
+.card .meta div{display:flex; gap:10px}
+.card .meta span{color:var(--tx-dim); width:32px; flex:none}
+.card .meta em{font-style:normal; color:var(--tx)}
+.card .ft{display:flex; gap:9px; margin-top:16px}
+.card .ft button{
+  flex:1; padding:9px; border-radius:9px; font-size:12.5px; border:1px solid var(--line);
+  color:var(--tx-muted); transition:.16s;
+}
+.card .ft button:hover{color:var(--tx); border-color:#3A4358}
+.card .ft button.pri{background:rgba(242,179,75,.1); border-color:rgba(242,179,75,.35); color:var(--accent)}
+.card .pausetag{
+  font-size:10.5px; color:var(--tx-dim); letter-spacing:.06em; margin-top:12px;
+  display:flex; align-items:center; gap:6px;
+}
+.card .pausetag::before{content:''; width:5px; height:5px; border-radius:50%; background:var(--ok)}
+
+/* ================= RESULT ================= */
+.result{max-width:720px; margin:0 auto; padding:60px 28px 48px; text-align:center}
+.stars{display:flex; justify-content:center; gap:14px; margin-bottom:26px; height:44px}
+.star{
+  font-size:30px; color:var(--accent); opacity:0; transform:translateY(12px) rotate(-15deg);
+  filter:drop-shadow(0 0 14px var(--accent-glow));
+}
+.star.off{color:#28303F; filter:none}
+@keyframes pop{to{opacity:1; transform:translateY(0) rotate(0)}}
+.star.in{animation:pop .42s cubic-bezier(.16,1.4,.3,1) forwards}
+.wpm{font-family:var(--mono); font-size:64px; font-weight:500; letter-spacing:-.03em; font-variant-numeric:tabular-nums; line-height:1}
+.wpm u{font-size:15px; color:var(--tx-dim); text-decoration:none; margin-left:6px; letter-spacing:.1em}
+.sub{margin-top:12px; font-size:13px; color:var(--tx-muted); font-family:var(--mono); letter-spacing:.02em}
+.delta{margin-top:10px; font-size:12.5px; color:var(--ok)}
+.panel{
+  margin-top:30px; text-align:left; border:1px solid var(--line); border-radius:14px;
+  background:var(--bg-raised); padding:16px 18px;
+}
+.panel .ph{font-size:11.5px; color:var(--tx-dim); letter-spacing:.1em; margin-bottom:12px}
+.chips{display:flex; flex-wrap:wrap; gap:9px}
+.chip{
+  display:flex; align-items:center; gap:7px; padding:7px 11px; border-radius:9px;
+  border:1px solid var(--line); font-size:13px; transition:.16s; cursor:pointer;
+}
+.chip:hover{border-color:rgba(242,179,75,.4); background:rgba(242,179,75,.06)}
+.chip .sp{font-size:11px; color:var(--tx-dim)}
+.chip .sp:hover{color:var(--accent)}
+.actions{display:flex; gap:12px; justify-content:center; margin-top:28px}
+.district{margin-top:22px; font-size:12.5px; color:var(--tx-muted); display:flex; align-items:center; justify-content:center; gap:8px}
+.dotbar{width:120px; height:3px; border-radius:2px; background:#1E2534; overflow:hidden}
+.dotbar i{display:block; height:100%; width:25%; background:var(--accent); box-shadow:0 0 8px var(--accent-glow)}
+
+/* ================= REVIEW ================= */
+.review{
+  position:absolute; inset:0; display:flex; flex-direction:column;
+  background:radial-gradient(700px 420px at 50% 42%, rgba(242,179,75,.075), transparent 70%), #070810;
+}
+.rv-top{height:56px; display:flex; align-items:center; padding:0 30px; gap:16px; font-size:12px; color:var(--tx-dim)}
+.rv-top .dots{margin-left:auto; display:flex; gap:6px}
+.rv-top .dots i{width:6px; height:6px; border-radius:50%; background:#222A38}
+.rv-top .dots i.on{background:var(--accent); box-shadow:0 0 8px var(--accent-glow)}
+.rv-body{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px; margin-top:-40px}
+.rv-zh{font-size:28px; letter-spacing:.06em; color:var(--tx); font-weight:300}
+.slots{display:flex; gap:9px; font-family:var(--mono); font-size:30px}
+.slot{width:22px; text-align:center; border-bottom:2px solid #2C3446; padding-bottom:4px; color:var(--tx-dim)}
+.slot.f{color:var(--tx); border-color:var(--accent)}
+.slot.cur{border-color:var(--accent); box-shadow:0 2px 12px -2px var(--accent-glow)}
+.rv-speak{
+  display:flex; align-items:center; gap:9px; padding:9px 18px; border-radius:999px;
+  border:1px solid var(--line); color:var(--tx-muted); font-size:12.5px; transition:.18s;
+}
+.rv-speak:hover{color:var(--accent); border-color:rgba(242,179,75,.4)}
+.rv-foot{height:70px; display:flex; align-items:center; justify-content:center; font-size:12px; color:#3C4354; letter-spacing:.04em}
+
+/* ================= VOCAB ================= */
+.vocab{max-width:1080px; margin:0 auto; padding:34px 28px 50px}
+.v-head{display:flex; align-items:flex-end; gap:26px; margin-bottom:22px}
+.bignum{font-family:var(--mono); font-size:46px; font-weight:500; letter-spacing:-.03em; line-height:1}
+.bignum small{font-size:14px; color:var(--tx-dim); letter-spacing:.08em; margin-left:6px}
+.v-head p{font-size:12px; color:var(--tx-dim); margin-top:8px}
+.stack{display:flex; height:6px; border-radius:3px; overflow:hidden; margin-top:12px; width:340px; background:#141926}
+.stack i{height:100%}
+.v-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:12px; margin-top:26px}
+.wcard{
+  border:1px solid var(--line-soft); border-radius:11px; padding:13px 15px; background:#10141E;
+  transition:.18s; position:relative; overflow:hidden;
+}
+.wcard:hover{border-color:#333C50; transform:translateY(-2px)}
+.wcard.lit{border-color:rgba(242,179,75,.28); background:rgba(242,179,75,.045)}
+.wcard.rare::after{
+  content:'RARE'; position:absolute; top:0; right:0; font-family:var(--mono); font-size:8px;
+  letter-spacing:.1em; color:var(--rare); background:rgba(167,139,250,.14); padding:3px 7px;
+  border-bottom-left-radius:7px;
+}
+.wcard .w{font-family:var(--serif); font-size:16px; letter-spacing:.01em}
+.wcard .z{font-size:11.5px; color:var(--tx-dim); margin-top:5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.wcard .bar{margin-top:11px; height:2px; background:#1C2231; border-radius:2px; overflow:hidden}
+.wcard .bar i{display:block; height:100%; background:var(--ok); opacity:.7}
+.wcard.lit .bar i{background:var(--accent); opacity:1}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand"><b>词醒</b><span>TYPEWAKE</span></div>
+  <div class="nav-pills">
+    <button class="pill on" data-go="map">地图</button>
+    <button class="pill" data-go="typing">打字</button>
+    <button class="pill" data-go="result">结算</button>
+    <button class="pill" data-go="review">夜巡</button>
+    <button class="pill" data-go="vocab">藏书阁</button>
+  </div>
+  <div class="nav-stats">
+    <span>🔥 <b>12</b><span class="u">天</span></span>
+    <span><b>68</b><span class="u">WPM</span></span>
+    <span><b>1,284</b><span class="u">词</span></span>
+  </div>
+</nav>
+
+<!-- ========== MAP ========== -->
+<section class="view on" id="v-map">
+  <div class="map-wrap">
+    <div class="map-head">
+      <div>
+        <h1>词醒之城</h1>
+        <p>已点亮 3 / 7 城区 · 今夜还有 4 个词在等你</p>
+      </div>
+      <div style="font-size:11.5px;color:var(--tx-dim);font-family:var(--mono)">SEASON 1 · 第 3 周</div>
+    </div>
+
+    <div class="city">
+      <svg viewBox="0 0 900 400" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="7" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <linearGradient id="road" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#F2B34B" stop-opacity=".5"/>
+            <stop offset=".55" stop-color="#F2B34B" stop-opacity=".18"/>
+            <stop offset="1" stop-color="#2A3244"/>
+          </linearGradient>
+        </defs>
+
+        <!-- river / base lines -->
+        <path d="M0,300 C180,268 300,330 460,300 C620,270 760,320 900,286" stroke="#151B28" stroke-width="34" fill="none"/>
+        <path d="M0,300 C180,268 300,330 460,300 C620,270 760,320 900,286" stroke="#1D2434" stroke-width="1" fill="none" stroke-dasharray="3 7"/>
+
+        <!-- connecting road -->
+        <path d="M120,300 L232,232 L352,258 L470,180 L590,208 L712,132 L818,168"
+              stroke="url(#road)" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+        <!-- districts -->
+        <g class="dnode">
+          <circle cx="120" cy="300" r="26" fill="rgba(242,179,75,.13)" filter="url(#glow)"/>
+          <circle cx="120" cy="300" r="7" fill="#F2B34B"/>
+          <text class="dlab" x="120" y="348" text-anchor="middle">石阶巷</text>
+          <text class="dsub" x="120" y="364" text-anchor="middle">A1.1 · 20/20</text>
+        </g>
+        <g class="dnode">
+          <circle cx="232" cy="232" r="22" fill="rgba(242,179,75,.11)" filter="url(#glow)"/>
+          <circle cx="232" cy="232" r="6" fill="#F2B34B"/>
+          <text class="dlab" x="232" y="200" text-anchor="middle">灯火市集</text>
+          <text class="dsub" x="232" y="186" text-anchor="middle">A1.2 · 18/18</text>
+        </g>
+        <g class="dnode">
+          <circle cx="352" cy="258" r="20" fill="rgba(242,179,75,.1)" filter="url(#glow)"/>
+          <circle cx="352" cy="258" r="6" fill="#F2B34B"/>
+          <text class="dlab" x="352" y="300" text-anchor="middle">钟楼区</text>
+          <text class="dsub" x="352" y="316" text-anchor="middle">A2 · 16/16</text>
+        </g>
+        <!-- current -->
+        <g class="dnode">
+          <circle cx="470" cy="180" r="34" fill="rgba(108,142,191,.14)" class="pulse"/>
+          <circle cx="470" cy="180" r="30" fill="rgba(108,142,191,.16)" filter="url(#glow)"/>
+          <circle cx="470" cy="180" r="9" fill="#8FB4DE"/>
+          <text class="dlab" fill="#EDE6D6" x="470" y="140" text-anchor="middle" font-size="13">雾港</text>
+          <text class="dsub" x="470" y="232" text-anchor="middle">B1 · 4/16 · 进行中</text>
+        </g>
+        <!-- locked -->
+        <g class="dnode">
+          <circle cx="590" cy="208" r="15" fill="none" stroke="#2A3244" stroke-width="1.5" stroke-dasharray="3 4"/>
+          <text class="dlab" x="590" y="252" text-anchor="middle" opacity=".55">档案馆</text>
+          <text class="dsub" x="590" y="266" text-anchor="middle" opacity=".5">B1+ · 锁定</text>
+        </g>
+        <g class="dnode">
+          <circle cx="712" cy="132" r="14" fill="none" stroke="#2A3244" stroke-width="1.5" stroke-dasharray="3 4"/>
+          <text class="dlab" x="712" y="172" text-anchor="middle" opacity=".55">星图台</text>
+          <text class="dsub" x="712" y="186" text-anchor="middle" opacity=".5">B2 · 锁定</text>
+        </g>
+        <g class="dnode">
+          <circle cx="818" cy="168" r="13" fill="none" stroke="#2A3244" stroke-width="1.5" stroke-dasharray="3 4"/>
+          <text class="dlab" x="818" y="206" text-anchor="middle" opacity=".55">无名塔</text>
+          <text class="dsub" x="818" y="220" text-anchor="middle" opacity=".5">C1 · 锁定</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="cont-card">
+      <div>
+        <div class="t">The Fox and the Grapes</div>
+        <div class="m">
+          <span>132 词</span><span>生词 <em>2</em></span><span>目标 42 WPM</span><span>A1.2</span><span>寓言</span>
+        </div>
+      </div>
+      <button class="btn-primary" data-go="typing">开始打字<span class="kbd">↵</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TYPING ========== -->
+<section class="view" id="v-typing">
+  <div class="stage-wrap">
+    <div class="tbar">
+      <button class="back" data-go="map">←</button>
+      <span class="ttl">The Fox and the Grapes</span>
+      <span class="badge">A1.2</span>
+      <span class="badge new">生词 2</span>
+      <div class="right">
+        <span style="font-family:var(--mono);font-size:11.5px">01:12</span>
+        <button class="icon-btn" id="btn-restart" title="重开">↻</button>
+        <button class="icon-btn" title="音量">🔊</button>
+      </div>
+    </div>
+
+    <div class="stage-area">
+      <div class="rail" id="rail"></div>
+      <div class="metrics">
+        <div><div class="k">COMBO</div><div class="v" id="m-combo">0</div></div>
+        <div><div class="k">ACCURACY</div><div class="v" id="m-acc">100<small>%</small></div></div>
+      </div>
+
+      <div class="stage">
+        <div class="inner" id="inner"></div>
+      </div>
+
+      <div class="hint" id="hint">直接开始打字 · <b>点任意词</b>看释义与发音</div>
+    </div>
+
+    <div class="progress"><i id="prog"></i></div>
+    <div class="fbar">
+      <div class="l"><span>The Fox and the Grapes</span></div>
+      <div class="l">
+        <span class="ghostdot">幽灵 <b>62 WPM</b></span>
+        <span id="f-count">0 / 62 词</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RESULT ========== -->
+<section class="view" id="v-result">
+  <div class="result">
+    <div class="stars">
+      <span class="star">✦</span><span class="star">✦</span><span class="star">✦</span>
+    </div>
+    <div class="wpm" id="rwpm">0<u>WPM</u></div>
+    <div class="sub">准确率 <span style="color:var(--tx)">98.2%</span> · 一致性 91% · 用时 1:52</div>
+    <div class="delta">↑ 比上次快 4 WPM · 你超越了昨天的自己</div>
+
+    <div class="panel">
+      <div class="ph">本局新词 · 3</div>
+      <div class="chips">
+        <span class="chip" data-say="orchard">orchard <span class="sp">🔊</span></span>
+        <span class="chip" data-say="vine">vine <span class="sp">🔊</span></span>
+        <span class="chip" data-say="bunch">bunch <span class="sp">🔊</span></span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="ph">回声练习 · 3 个错词</div>
+      <div style="display:flex;align-items:center;gap:14px">
+        <div style="font-family:var(--mono);font-size:13px;color:var(--tx-muted);flex:1">
+          strolling · hanging · bunch
+        </div>
+        <button class="btn-ghost" style="padding:8px 14px;font-size:12.5px">30 秒微练</button>
+      </div>
+    </div>
+
+    <div class="district">
+      <span>雾港</span><span class="dotbar"><i></i></span><span>已点亮 4 / 16</span>
+    </div>
+
+    <div class="actions">
+      <button class="btn-primary" data-go="typing">再来一条<span class="kbd">↵</span></button>
+      <button class="btn-ghost" data-go="map">回地图</button>
+      <button class="btn-ghost">复盘</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REVIEW ========== -->
+<section class="view" id="v-review">
+  <div class="review">
+    <div class="rv-top">
+      <button class="back" data-go="map" style="font-size:15px;color:var(--tx-dim)">✕</button>
+      <span style="font-family:var(--mono)">3 / 12</span>
+      <div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+    </div>
+    <div class="rv-body">
+      <div class="rv-zh">韧性；复原力；弹性</div>
+      <div class="slots">
+        <span class="slot f">r</span><span class="slot f">e</span><span class="slot f">s</span>
+        <span class="slot cur"></span><span class="slot"></span><span class="slot"></span>
+        <span class="slot"></span><span class="slot"></span><span class="slot"></span><span class="slot"></span>
+      </div>
+      <button class="rv-speak" data-say="resilience">🔊 听发音</button>
+    </div>
+    <div class="rv-foot">准确率不是重点，想不起来就听</div>
+  </div>
+</section>
+
+<!-- ========== VOCAB ========== -->
+<section class="view" id="v-vocab">
+  <div class="vocab">
+    <div class="v-head">
+      <div>
+        <div class="bignum">1,284<small>词</small></div>
+        <p>已掌握词汇量 · 距 2,000 词里程碑还差 716</p>
+        <div class="stack">
+          <i style="width:22%;background:#F2B34B"></i>
+          <i style="width:14%;background:#D9A24A"></i>
+          <i style="width:7%;background:#A78BFA"></i>
+          <i style="width:3%;background:#6C8EBF"></i>
+          <i style="width:1%;background:#4A5163"></i>
+        </div>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:8px">
+        <button class="btn-ghost" style="padding:8px 14px;font-size:12.5px">全部</button>
+        <button class="btn-ghost" style="padding:8px 14px;font-size:12.5px;border-color:var(--accent);color:var(--accent)">学习中 34</button>
+        <button class="btn-ghost" style="padding:8px 14px;font-size:12.5px">已掌握</button>
+      </div>
+    </div>
+
+    <div class="v-grid">
+      <div class="wcard lit"><div class="w">orchard</div><div class="z">n. 果园</div><div class="bar"><i style="width:92%"></i></div></div>
+      <div class="wcard lit"><div class="w">vine</div><div class="z">n. 藤蔓；葡萄藤</div><div class="bar"><i style="width:86%"></i></div></div>
+      <div class="wcard lit"><div class="w">grasp</div><div class="z">v. 抓住；理解</div><div class="bar"><i style="width:78%"></i></div></div>
+      <div class="wcard"><div class="w">resilience</div><div class="z">n. 韧性；复原力</div><div class="bar"><i style="width:34%"></i></div></div>
+      <div class="wcard rare"><div class="w">strolling</div><div class="z">v. 漫步；闲逛</div><div class="bar"><i style="width:22%"></i></div></div>
+      <div class="wcard"><div class="w">bunch</div><div class="z">n. 一串；一束</div><div class="bar"><i style="width:56%"></i></div></div>
+      <div class="wcard rare"><div class="w">lighthouse</div><div class="z">n. 灯塔</div><div class="bar"><i style="width:18%"></i></div></div>
+      <div class="wcard lit"><div class="w">wonder</div><div class="z">v. 想知道；n. 惊奇</div><div class="bar"><i style="width:81%"></i></div></div>
+      <div class="wcard"><div class="w">hanging</div><div class="z">v. 悬挂（hang 的现在分词）</div><div class="bar"><i style="width:41%"></i></div></div>
+      <div class="wcard rare"><div class="w">orchard</div><div class="z">n. 果园</div><div class="bar"><i style="width:12%"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- overlays -->
+<div class="ttip" id="ttip">
+  <div><span class="w" id="tt-w">word</span><span class="p" id="tt-p"></span></div>
+  <div class="z" id="tt-z"></div>
+</div>
+
+<div class="card" id="card">
+  <div class="hd">
+    <div>
+      <div class="hw" id="c-w">orchard</div>
+      <div class="ipa" id="c-ipa">/ˈɔːrtʃərd/</div>
+    </div>
+    <div class="spk">
+      <button id="c-us" title="美音">🔊</button>
+      <button id="c-star" title="收藏">☆</button>
+    </div>
+  </div>
+  <div class="zh" id="c-zh">n. 果园</div>
+  <div class="en" id="c-en">a piece of land where fruit trees are grown</div>
+  <hr>
+  <div class="meta">
+    <div><span>词形</span><em id="c-f">orchards</em></div>
+    <div><span>频段</span><em id="c-t">Tier 2 · 高考 · 柯林斯 ★★★☆☆</em></div>
+  </div>
+  <div class="ft">
+    <button>听整句</button>
+    <button class="pri" id="c-save">收藏到藏书阁</button>
+  </div>
+  <div class="pausetag">查词时计时已暂停</div>
+</div>
+
+<script>
+/* ---------------- data ---------------- */
+const LINES = [
+  ["One","hot","summer's","day","a","Fox","was","strolling"],
+  ["through","an","orchard","when","he","came","to","a"],
+  ["bunch","of","Grapes","hanging","from","a","vine."],
+  ["He","tried","to","reach","them,","but","they","were"],
+  ["just","out","of","his","grasp,","and","he","began"],
+  ["to","wonder","why","they","hung","so","high."]
+];
+
+const DICT = {
+  orchard:{ipa:"ˈɔːrtʃərd",zh:"n. 果园",en:"a piece of land where fruit trees are grown",forms:"orchards",tier:"Tier 2 · 高考 · 柯林斯 ★★★☆☆"},
+  strolling:{ipa:"ˈstroʊlɪŋ",zh:"v. 漫步；闲逛（stroll 的现在分词）",en:"walking in a relaxed way, for pleasure",forms:"stroll / strolled / strolls",tier:"Tier 4 · CET6 · 柯林斯 ★★☆☆☆"},
+  bunch:{ipa:"bʌntʃ",zh:"n. 一串；一束；一群",en:"a group of things of the same type growing or fastened together",forms:"bunches",tier:"Tier 2 · 高考 · 柯林斯 ★★★☆☆"},
+  grapes:{ipa:"ɡreɪps",zh:"n. 葡萄（grape 的复数）",en:"small green or purple fruits that grow in bunches",forms:"grape",tier:"Tier 1 · 柯林斯 ★★★★☆"},
+  grapes2:{ipa:"ɡreɪps",zh:"n. 葡萄",en:"small round fruit growing in bunches",forms:"grape",tier:"Tier 1"},
+  vine:{ipa:"vaɪn",zh:"n. 藤蔓；葡萄藤",en:"a climbing plant that produces grapes",forms:"vines",tier:"Tier 3 · 雅思 · 柯林斯 ★★☆☆☆"},
+  grasp:{ipa:"ɡræsp",zh:"v. 抓住；领会  n. 理解力",en:"to take hold of something firmly; to understand fully",forms:"grasped / grasping",tier:"Tier 3 · CET4 · 柯林斯 ★★★☆☆"},
+  hanging:{ipa:"ˈhæŋɪŋ",zh:"v. 悬挂（hang 的现在分词）",en:"being suspended from above",forms:"hang / hung",tier:"Tier 1 · 柯林斯 ★★★★☆"},
+  reach:{ipa:"riːtʃ",zh:"v. 伸手够到；到达",en:"to stretch out your hand in order to touch or take something",forms:"reached / reaches",tier:"Tier 1 · 柯林斯 ★★★★★"},
+  wonder:{ipa:"ˈwʌndər",zh:"v. 想知道；n. 惊奇",en:"to want to know something; a feeling of surprise",forms:"wondered / wonderful",tier:"Tier 1 · 柯林斯 ★★★★★"},
+  tried:{ipa:"traɪd",zh:"v. 尝试（try 的过去式）",en:"made an attempt to do something",forms:"try / tries",tier:"Tier 1"},
+  summer:{ipa:"ˈsʌmər",zh:"n. 夏天",en:"the warmest season of the year",forms:"summers",tier:"Tier 1"},
+  fox:{ipa:"fɑːks",zh:"n. 狐狸",en:"a wild animal with a bushy tail",forms:"foxes",tier:"Tier 1"},
+  high:{ipa:"haɪ",zh:"adj. 高的  adv. 高高地",en:"measuring a long distance from bottom to top",forms:"higher / highest",tier:"Tier 1"},
+  resilience:{ipa:"rɪˈzɪliəns",zh:"n. 韧性；复原力；弹性",en:"the ability to recover quickly from difficulties",forms:"resilient / resiliently",tier:"Tier 4 · CET6 · 柯林斯 ★★★☆☆"}
+};
+
+/* ---------------- view router ---------------- */
+const views = {map:"v-map",typing:"v-typing",result:"v-result",review:"v-review",vocab:"v-vocab"};
+function go(v){
+  document.querySelectorAll(".view").forEach(e=>e.classList.remove("on"));
+  document.getElementById(views[v]).classList.add("on");
+  document.querySelectorAll(".pill").forEach(p=>p.classList.toggle("on", p.dataset.go===v));
+  document.body.classList.toggle("typing", v==="typing");
+  hideCard();
+  if(v==="typing"){ reset(); setTimeout(()=>document.getElementById("inner").focus(),30); }
+  if(v==="result"){ runResult(); }
+}
+document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>go(b.dataset.go)));
+
+/* ---------------- typing engine ---------------- */
+const inner = document.getElementById("inner");
+const LH = 60;
+let flat = [];       // {el, ch, line}
+let idx = 0;
+let combo = 0, bestCombo = 0, typed = 0, errs = 0;
+let caretEl;
+
+function buildStage(){
+  inner.innerHTML = "";
+  flat = [];
+  LINES.forEach((words, li)=>{
+    const lineEl = document.createElement("div");
+    lineEl.className = "line";
+    words.forEach((w, wi)=>{
+      const wEl = document.createElement("span");
+      wEl.className = "word";
+      wEl.dataset.word = w;
+      for(const c of w){
+        const s = document.createElement("span");
+        s.className = "ch"; s.textContent = c;
+        wEl.appendChild(s);
+        flat.push({el:s, ch:c, line:li});
+      }
+      lineEl.appendChild(wEl);
+      if(wi < words.length-1){
+        const sp = document.createElement("span");
+        sp.className = "ch sp";
+        sp.innerHTML = "&nbsp;";
+        wEl.after(sp);
+        flat.push({el:sp, ch:" ", line:li});
+      }
+    });
+    inner.appendChild(lineEl);
+  });
+  caretEl = document.createElement("div");
+  caretEl.className = "caret";
+  inner.appendChild(caretEl);
+}
+
+function reset(){
+  buildStage();
+  idx = 0; combo = 0; typed = 0; errs = 0;
+  const rail = document.getElementById("rail");
+  rail.style.height = "0px"; rail.classList.remove("on");
+  document.getElementById("m-combo").textContent = "0";
+  document.getElementById("m-acc").innerHTML = "100<small>%</small>";
+  document.getElementById("prog").style.width = "0%";
+  document.getElementById("hint").style.opacity = 1;
+  document.getElementById("f-count").textContent = "0 / 62 词";
+  inner.style.transform = "translateY(0px)";
+  requestAnimationFrame(placeCaret);
+}
+
+document.getElementById("btn-restart").addEventListener("click", e=>{ e.stopPropagation(); reset(); });
+
+function placeCaret(){
+  if(!flat.length) return;
+  const cur = flat[Math.min(idx, flat.length-1)];
+  if(!cur) return;
+  const x = cur.el.offsetLeft + (cur.ch===" " ? 0 : 0);
+  const y = cur.el.offsetTop;
+  caretEl.style.transform = `translate3d(${x}px, ${y - 13}px, 0)`;
+  // line scroll
+  const vline = Math.round(y / LH);
+  const shift = Math.max(0, (vline - 1)) * LH;
+  inner.style.transform = `translateY(${-shift}px)`;
+}
+
+function renderStats(){
+  document.getElementById("m-combo").textContent = combo;
+  const total = idx + errs;
+  const acc = total === 0 ? 100 : Math.round((idx/total)*1000)/10;
+  document.getElementById("m-acc").innerHTML = acc.toFixed(1) + "<small>%</small>";
+  document.getElementById("prog").style.width = (idx/flat.length*100).toFixed(1) + "%";
+  const rail = document.getElementById("rail");
+  const h = Math.min(combo/150, 1) * 300;
+  rail.style.height = h + "px";
+  rail.classList.toggle("on", combo >= 30);
+  document.getElementById("f-count").textContent = Math.round(idx/flat.length*62) + " / 62 词";
+}
+
+function commit(ch){
+  if(idx >= flat.length) return;
+  const cur = flat[idx];
+  if(ch === cur.ch){
+    cur.el.classList.remove("err","shake");
+    cur.el.classList.add("done");
+    idx++; combo++; typed++;
+    if(combo > bestCombo) bestCombo = combo;
+    caretEl.classList.add("hit");
+    setTimeout(()=>caretEl.classList.remove("hit"), 90);
+    document.getElementById("hint").style.opacity = 0;
+    placeCaret(); renderStats();
+    if(idx >= flat.length) finish();
+  } else {
+    errs++;
+    cur.el.classList.add("err");
+    cur.el.classList.remove("shake");
+    void cur.el.offsetWidth;
+    cur.el.classList.add("shake");
+    combo = Math.max(0, combo - 30);
+    renderStats();
+  }
+}
+
+function back(){
+  if(idx <= 0) return;
+  idx--;
+  const cur = flat[idx];
+  cur.el.classList.remove("done");
+  combo = 0; renderStats(); placeCaret();
+}
+
+document.addEventListener("keydown", e=>{
+  if(!document.getElementById("v-typing").classList.contains("on")) {
+    if(e.key === "Enter"){
+      const on = document.querySelector(".view.on");
+      if(on.id === "v-map" || on.id === "v-result"){ go("typing"); e.preventDefault(); }
+    }
+    if(e.key === "Escape") hideCard();
+    return;
+  }
+  if(cardOpen){ if(e.key === "Escape"){ hideCard(); e.preventDefault(); } return; }
+  if(e.key === "Backspace"){ e.preventDefault(); back(); return; }
+  if(e.key === "Escape"){ go("map"); return; }
+  if(e.key.length === 1){
+    e.preventDefault();
+    commit(e.key);
+  }
+});
+
+function finish(){
+  flat.forEach(f=>f.el.classList.add("done"));
+  setTimeout(()=>go("result"), 620);
+}
+
+inner.addEventListener("click", ()=>{});
+document.addEventListener("click", e=>{
+  if(e.target.closest(".card")) return;          // 卡片内部交互不冒泡到"关闭"
+  if(!document.getElementById("v-typing").classList.contains("on")) return;
+  const w = e.target.closest(".word");
+  if(!w) { hideCard(); return; }
+  openCard(w);
+});
+
+/* ---------------- tooltip + card ---------------- */
+const ttip = document.getElementById("ttip");
+let hoverTimer = null;
+
+document.addEventListener("mouseover", e=>{
+  if(!document.getElementById("v-typing").classList.contains("on")) return;
+  const w = e.target.closest(".word");
+  if(!w || cardOpen) { return; }
+  clearTimeout(hoverTimer);
+  const r = w.getBoundingClientRect();
+  hoverTimer = setTimeout(()=>{
+    const key = norm(w.dataset.word);
+    const found = lookup(key);
+    const d = found ? DICT[found] : null;
+    if(!d) return;
+    document.getElementById("tt-w").textContent = found;
+    document.getElementById("tt-p").textContent = d.ipa;
+    document.getElementById("tt-z").textContent = d.zh;
+    ttip.style.left = Math.min(r.left, window.innerWidth-240) + "px";
+    ttip.style.top = (r.top - 62) + "px";
+    ttip.classList.add("on");
+  }, 300);
+});
+document.addEventListener("mouseout", e=>{
+  if(e.target.closest(".word")){ clearTimeout(hoverTimer); ttip.classList.remove("on"); }
+});
+
+const card = document.getElementById("card");
+let cardOpen = false, cardKey = null;
+
+function norm(w){ return w.toLowerCase().replace(/[^a-z']/g,""); }
+function lookup(key){
+  if(DICT[key]) return key;
+  if(key.endsWith("'s") && DICT[key.slice(0,-2)]) return key.slice(0,-2);
+  if(DICT[key+"s"]) return key+"s";
+  return null;
+}
+
+function openCard(wordEl){
+  const key = norm(wordEl.dataset.word);
+  const found = lookup(key);
+  const d = found ? DICT[found] : {ipa:"",zh:"未收录 · 可手动添加释义",en:"—",forms:"—",tier:"—"};
+  cardKey = found;
+  document.getElementById("c-w").textContent = key;
+  document.getElementById("c-ipa").textContent = d.ipa ? "/"+d.ipa+"/" : "";
+  document.getElementById("c-zh").textContent = d.zh;
+  document.getElementById("c-en").textContent = d.en;
+  document.getElementById("c-f").textContent = d.forms;
+  document.getElementById("c-t").textContent = d.tier;
+  ttip.classList.remove("on");
+  const r = wordEl.getBoundingClientRect();
+  card.classList.add("on"); cardOpen = true;
+  const cw = 364, chh = card.offsetHeight || 300;
+  let left = r.left + r.width/2 - cw/2;
+  left = Math.max(16, Math.min(left, window.innerWidth - cw - 16));
+  let top = r.bottom + 12;
+  if(top + chh > window.innerHeight - 16) top = r.top - chh - 12;
+  card.style.left = left + "px";
+  card.style.top = Math.max(70, top) + "px";
+}
+function hideCard(){ card.classList.remove("on"); cardOpen = false; }
+
+document.getElementById("c-star").addEventListener("click", e=>{
+  const b = e.currentTarget;
+  b.textContent = b.textContent === "☆" ? "★" : "☆";
+  b.style.color = b.textContent === "★" ? "var(--accent)" : "";
+});
+document.getElementById("c-save").addEventListener("click", ()=>{
+  document.getElementById("c-star").textContent = "★";
+  document.getElementById("c-star").style.color = "var(--accent)";
+});
+document.getElementById("c-us").addEventListener("click", e=>{
+  e.stopPropagation();
+  speak(cardKey || "word");
+});
+
+/* ---------------- speech ---------------- */
+function speak(text){
+  if(!("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US"; u.rate = 0.92;
+  window.speechSynthesis.speak(u);
+}
+document.querySelectorAll("[data-say]").forEach(el=>{
+  el.addEventListener("click", e=>{ e.stopPropagation(); speak(el.dataset.say); });
+});
+
+/* ---------------- result ---------------- */
+let resultRan = false;
+function runResult(){
+  const el = document.getElementById("rwpm");
+  const target = 68;
+  let cur = 0;
+  const step = () => {
+    cur += Math.max(1, Math.round((target-cur)/8));
+    if(cur >= target){ cur = target; }
+    el.innerHTML = cur + "<u>WPM</u>";
+    if(cur < target) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+  document.querySelectorAll(".star").forEach((s,i)=>{
+    s.classList.remove("in");
+    setTimeout(()=>s.classList.add("in"), i*160);
+  });
+}
+
+/* ---------------- init ---------------- */
+buildStage();
+requestAnimationFrame(placeCaret);
+window.addEventListener("resize", ()=>requestAnimationFrame(placeCaret));
+</script>
+</body>
+</html>

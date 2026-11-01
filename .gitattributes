@@ -1,0 +1,10 @@
+# 统一换行符：仓库里一律 LF，签出时按平台
+* text=auto eol=lf
+
+# 二进制文件不参与换行转换
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff2 binary
+*.woff binary
+*.icns binary

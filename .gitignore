@@ -1,0 +1,30 @@
+# 依赖与构建产物
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/
+
+# 原始语料（72M，`npm run data` 会重新下载）
+# public/data 里的产物是提交的，那才是运行时要用的
+data/raw/
+
+# 过程产物
+data/backup/
+data/cache/
+data/qa/
+data/tr-inbox/
+shots/
+
+# 工具与编辑器
+.workbuddy/
+.wv2/
+.vscode/
+.idea/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# 环境变量
+.env
+.env.local

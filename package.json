@@ -1,0 +1,48 @@
+{
+  "name": "typewake",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "TypeWake / 词醒 — 用打字唤醒词语的英文训练游戏",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "data": "node scripts/build-data.mjs",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "test": "node scripts/test-all.mjs",
+    "test:growth": "node scripts/growth.mjs",
+    "shot": "node scripts/shot.mjs",
+    "icons": "node scripts/build-icons.mjs",
+    "test:speech": "node scripts/test-speech.mjs",
+    "translate": "node scripts/translate.mjs",
+    "names": "node scripts/build-names.mjs",
+    "verify": "node scripts/verify-tr.mjs",
+    "trace": "node scripts/trace-source.mjs",
+    "qa": "node scripts/qa-tr.mjs",
+    "qa:sample": "node scripts/qa-sample.mjs --n 8",
+    "qa:quotes": "node scripts/qa-quotes.mjs",
+    "test:e2e": "node scripts/e2e.mjs",
+    "test:data": "node scripts/verify-tr.mjs && node scripts/qa-tr.mjs --check",
+    "test:daily": "node scripts/test-daily.mjs",
+    "test:report": "node scripts/test-report.mjs",
+    "test:cloze": "node scripts/test-cloze.mjs",
+    "audit:cloze": "node scripts/audit-cloze.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.5"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.1.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "puppeteer-core": "^25.16.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  }
+}

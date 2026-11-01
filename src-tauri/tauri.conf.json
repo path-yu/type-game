@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "TypeWake",
+  "version": "0.1.0",
+  "identifier": "com.typewake.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:5183",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "词醒 TypeWake",
+        "width": 1280,
+        "height": 840,
+        "minWidth": 960,
+        "minHeight": 640,
+        "resizable": true,
+        "center": true,
+        "theme": "Dark",
+        "backgroundColor": "#0B0D14",
+        "dragDropEnabled": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi", "dmg", "appimage", "deb"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "copyright": "TypeWake · 文本来自 Project Gutenberg (PD) 与 Simple English Wikipedia (CC BY-SA 3.0)",
+    "category": "Education",
+    "shortDescription": "用打字唤醒词语的英文训练游戏",
+    "longDescription": "TypeWake / 词醒：1200+ 篇分级英文文本，7200 词词典，点词即查、即听；连击、幽灵竞速与夜巡复习把打字练习变成一场可以每天回来的游戏。",
+    "windows": {
+      "webviewInstallMode": { "type": "downloadBootstrapper" },
+      "nsis": { "installMode": "currentUser" }
+    }
+  }
+}

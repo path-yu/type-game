@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh"><head><meta charset="utf-8">
+<style>
+  body{margin:0;background:#15181f;display:flex;gap:36px;padding:40px;align-items:flex-start;font-family:system-ui}
+  .item{text-align:center}
+  .cap{color:#7a8496;font-size:12px;letter-spacing:.12em;margin-top:16px}
+  .row{display:flex;gap:14px;margin-top:18px;align-items:flex-end;justify-content:center}
+  .row svg{border-radius:14px}
+</style></head>
+<body>
+
+<!-- A: 光标 + 火花（文稿叙事） -->
+<div class="item">
+  <svg width="300" height="300" viewBox="0 0 512 512">
+    <defs>
+      <linearGradient id="bgA" x1="0" y1="0" x2="0.6" y2="1">
+        <stop offset="0" stop-color="#1A2133"/><stop offset="1" stop-color="#080A10"/>
+      </linearGradient>
+      <linearGradient id="caA" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#FFF3CE"/><stop offset=".45" stop-color="#F2B34B"/><stop offset="1" stop-color="#C4801B"/>
+      </linearGradient>
+      <radialGradient id="glA" cx=".5" cy=".35" r=".55">
+        <stop offset="0" stop-color="#F2B34B" stop-opacity=".28"/><stop offset="1" stop-color="#F2B34B" stop-opacity="0"/>
+      </radialGradient>
+      <filter id="blA" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="14"/></filter>
+    </defs>
+    <rect width="512" height="512" rx="116" fill="url(#bgA)"/>
+    <rect x="1.5" y="1.5" width="509" height="509" rx="114.5" fill="none" stroke="#ffffff" stroke-opacity=".07" stroke-width="3"/>
+    <rect width="512" height="512" rx="116" fill="url(#glA)"/>
+    <g fill="#232B3D">
+      <rect x="104" y="176" width="196" height="20" rx="10"/>
+      <rect x="104" y="240" width="150" height="20" rx="10"/>
+      <rect x="104" y="304" width="112" height="20" rx="10"/>
+    </g>
+    <rect x="300" y="168" width="30" height="176" rx="15" fill="#F2B34B" opacity=".55" filter="url(#blA)"/>
+    <rect x="300" y="168" width="30" height="176" rx="15" fill="url(#caA)"/>
+    <path d="M370 96 L381 132 L417 143 L381 154 L370 190 L359 154 L323 143 L359 132 Z" fill="#FFF3CE"/>
+    <circle cx="410" cy="196" r="7" fill="#FFF3CE" opacity=".55"/>
+  </svg>
+  <div class="cap">A · 光标 + 火花</div>
+  <div class="row">
+    <svg width="64" height="64" viewBox="0 0 512 512"><rect width="512" height="512" rx="116" fill="#0C0F16"/><g fill="#232B3D"><rect x="104" y="176" width="196" height="20" rx="10"/><rect x="104" y="240" width="150" height="20" rx="10"/><rect x="104" y="304" width="112" height="20" rx="10"/></g><rect x="300" y="168" width="30" height="176" rx="15" fill="#F2B34B"/><path d="M370 96 L381 132 L417 143 L381 154 L370 190 L359 154 L323 143 L359 132 Z" fill="#FFF3CE"/></svg>
+    <svg width="32" height="32" viewBox="0 0 512 512"><rect width="512" height="512" rx="116" fill="#0C0F16"/><g fill="#232B3D"><rect x="104" y="176" width="196" height="20" rx="10"/><rect x="104" y="240" width="150" height="20" rx="10"/><rect x="104" y="304" width="112" height="20" rx="10"/></g><rect x="300" y="168" width="30" height="176" rx="15" fill="#F2B34B"/><path d="M370 96 L381 132 L417 143 L381 154 L370 190 L359 154 L323 143 L359 132 Z" fill="#FFF3CE"/></svg>
+  </div>
+</div>
+
+<!-- B: 键帽 + 星 -->
+<div class="item">
+  <svg width="300" height="300" viewBox="0 0 512 512">
+    <defs>
+      <linearGradient id="bgB" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#1A2133"/><stop offset="1" stop-color="#080A10"/></linearGradient>
+      <linearGradient id="keyB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B3448"/><stop offset="1" stop-color="#161C29"/></linearGradient>
+      <radialGradient id="dotB" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFF3CE"/><stop offset=".5" stop-color="#F2B34B"/><stop offset="1" stop-color="#B8740F"/></radialGradient>
+      <filter id="blB" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="22"/></filter>
+    </defs>
+    <rect width="512" height="512" rx="116" fill="url(#bgB)"/>
+    <rect x="1.5" y="1.5" width="509" height="509" rx="114.5" fill="none" stroke="#ffffff" stroke-opacity=".07" stroke-width="3"/>
+    <rect x="96" y="116" width="320" height="300" rx="64" fill="url(#keyB)"/>
+    <rect x="96" y="116" width="320" height="300" rx="64" fill="none" stroke="#ffffff" stroke-opacity=".09" stroke-width="3"/>
+    <rect x="96" y="116" width="320" height="34" rx="17" fill="#ffffff" fill-opacity=".045"/>
+    <circle cx="256" cy="286" r="66" fill="#F2B34B" opacity=".5" filter="url(#blB)"/>
+    <circle cx="256" cy="286" r="48" fill="url(#dotB)"/>
+  </svg>
+  <div class="cap">B · 键帽 + 灯</div>
+  <div class="row">
+    <svg width="64" height="64" viewBox="0 0 512 512"><rect width="512" height="512" rx="116" fill="#0C0F16"/><rect x="96" y="116" width="320" height="300" rx="64" fill="#222A3C"/><circle cx="256" cy="286" r="48" fill="#F2B34B"/></svg>
+    <svg width="32" height="32" viewBox="0 0 512 512"><rect width="512" height="512" rx="116" fill="#0C0F16"/><rect x="96" y="116" width="320" height="300" rx="64" fill="#222A3C"/><circle cx="256" cy="286" r="48" fill="#F2B34B"/></svg>
+  </div>
+</div>
+
+<!-- C: W 字标 -->
+<div class="item">
+  <svg width="300" height="300" viewBox="0 0 512 512">
+    <defs>
+      <linearGradient id="bgC" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#1A2133"/><stop offset="1" stop-color="#080A10"/></linearGradient>
+      <linearGradient id="wcC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF3CE"/><stop offset=".55" stop-color="#F2B34B"/><stop offset="1" stop-color="#C4801B"/></linearGradient>
+      <filter id="blC" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="16"/></filter>
+    </defs>
+    <rect width="512" height="512" rx="116" fill="url(#bgC)"/>
+    <rect x="1.5" y="1.5" width="509" height="509" rx="114.5" fill="none" stroke="#ffffff" stroke-opacity=".07" stroke-width="3"/>
+    <path d="M96 152 L164 372 L256 250 L348 372 L416 152" fill="none" stroke="#F2B34B" stroke-opacity=".5" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" filter="url(#blC)"/>
+    <path d="M96 152 L164 372 L256 250 L348 372 L416 152" fill="none" stroke="url(#wcC)" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="256" cy="152" r="15" fill="#FFF3CE"/>
+  </svg>
+  <div class="cap">C · W 字标</div>
+  <div class="row">
+    <svg width="64" height="64" viewBox="0 0 512 512"><rect width="512" height="512" rx="116" fill="#0C0F16"/><path d="M96 152 L164 372 L256 250 L348 372 L416 152" fill="none" stroke="#F2B34B" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg width="32" height="32" viewBox="0 0 512 512"><rect width="512" height="512" rx="116" fill="#0C0F16"/><path d="M96 152 L164 372 L256 250 L348 372 L416 152" fill="none" stroke="#F2B34B" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</div>
+
+</body></html>
