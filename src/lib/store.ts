@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import type { Article, GhostFrame, RunResult, SceneStat, Screen, WordStat } from './types';
+import type { Scene } from './dialogue';
 import { appendRun, isDesktop, loadNativeProgress, saveNativeProgress } from './native';
 import { bumpDailyStreak } from './daily';
 import { review, retrievability, type Grade } from './fsrs';
@@ -43,6 +44,8 @@ export interface Progress {
   dailySceneDone: boolean;
   /** 场景对话：sceneId -> 练习记录 */
   scenes: Record<string, SceneStat>;
+  /** 用户自己导入的对话（和内置语料分开存，重装不丢） */
+  customScenes: Scene[];
 }
 
 export interface Settings {
@@ -81,6 +84,7 @@ const emptyProgress = (): Progress => ({
   dailyScene: null,
   dailySceneDone: false,
   scenes: {},
+  customScenes: [],
 });
 
 const defaultSettings = (): Settings => ({ voice: 'us', rate: 1, sound: true, motion: true, autoSpeak: false, sentenceHelp: 'gloss', clozeHint: 'first', pretest: true });
@@ -112,6 +116,9 @@ interface State {
   ensureDaily: (id: string, sceneId?: string | null) => void;
   /** 从首页直接进某一场对话 */
   openScene: (id: string) => void;
+  /** 导入一场自定义对话 */
+  addCustomScene: (scene: Scene) => void;
+  removeCustomScene: (id: string) => void;
   consumePendingScene: () => void;
   pushToast: (t: string) => void;
   reset: () => void;
@@ -482,6 +489,20 @@ export const useGame = create<State>((set, get) => ({
   },
 
   openScene: (id) => set({ screen: 'dialogue', pendingScene: id }),
+
+  addCustomScene: (scene) => {
+    const { p } = get();
+    set({ p: { ...p, customScenes: [scene, ...p.customScenes] } });
+    save();
+  },
+
+  removeCustomScene: (id) => {
+    const { p } = get();
+    const scenes = { ...p.scenes };
+    delete scenes[id];
+    set({ p: { ...p, customScenes: p.customScenes.filter(s => s.id !== id), scenes } });
+    save();
+  },
 
   consumePendingScene: () => set({ pendingScene: null }),
 

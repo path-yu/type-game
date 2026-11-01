@@ -4,6 +4,7 @@ import { useGame } from '../lib/store';
 import { loadDialogues, linesOf, validate, yourLines, type DBank, type Role, type Scene } from '../lib/dialogue';
 import { stopSpeaking } from '../lib/speech';
 import { MODES, type Mode } from './dialogue/shared';
+import { ImportScene } from './dialogue/Import';
 import { Reader } from './dialogue/Reader';
 import { Drill } from './dialogue/Drill';
 import { Speak } from './dialogue/Speak';
@@ -19,6 +20,9 @@ import { Live } from './dialogue/Live';
 export function DialogueScreen() {
   const p = useGame(s => s.p);
   const finishScene = useGame(s => s.finishScene);
+  const addCustom = useGame(s => s.addCustomScene);
+  const removeCustom = useGame(s => s.removeCustomScene);
+  const [importing, setImporting] = useState(false);
   const [bank, setBank] = useState<DBank | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const pending = useGame(s => s.pendingScene);
@@ -45,8 +49,10 @@ export function DialogueScreen() {
 
   useEffect(() => () => stopSpeaking(), []);
 
-  const scene = bank?.scenes.find(s => s.id === openId) ?? null;
-  const done = bank ? bank.scenes.filter(s => p.scenes[s.id]).length : 0;
+  // 自建对话排在最前，内置的按原顺序跟在后面
+  const all: Scene[] = bank ? [...p.customScenes, ...bank.scenes] : p.customScenes;
+  const scene = all.find(s => s.id === openId) ?? null;
+  const done = all.filter(s => p.scenes[s.id]).length;
 
   if (err) {
     return (
@@ -91,22 +97,33 @@ export function DialogueScreen() {
         <div>
           <h1 className="page-title">场景对话</h1>
           <div className="page-sub">
-            {bank.scenes.length} 个真实场合 · 已练 <em className="dg-em">{done}</em> 场 ·
-            背打时打错的词，当晚进夜巡
+            {all.length} 场对话（其中自建 {p.customScenes.length} 场） · 已练{' '}
+            <em className="dg-em">{done}</em> 场 · 背打时打错的词，当晚进夜巡
           </div>
         </div>
+        <button className="btn btn-ghost" onClick={() => setImporting(true)}>导入自己的对话</button>
       </div>
 
+      {p.customScenes.length === 0 && (
+        <div className="dg-empty">
+          课本里的对话、自己写的台词都能贴进来练 —— 五种练法一样能用，
+          只是没有现成的岔路。点右上角试试。
+        </div>
+      )}
+
       <div className="dg-grid">
-        {bank.scenes.map(sc => {
+        {all.map(sc => {
           const stat = p.scenes[sc.id];
           const mine = yourLines(sc).length;
+          const custom = p.customScenes.some(x => x.id === sc.id);
           return (
-            <button key={sc.id} className={`dg-card${stat ? ' done' : ''}`} onClick={() => setOpenId(sc.id)}>
+            <div className="dg-cell" key={sc.id}>
+            <button className={`dg-card${stat ? ' done' : ''}`} onClick={() => setOpenId(sc.id)}>
               <div className="dg-card-top">
                 <span className="dg-cat">{sc.cat}</span>
-                <span className="dg-cefr">{sc.cefr}</span>
-                {stat && (
+                {/* 自建场的 cefr 是「自定」，跟左侧标签重复，不如不显示 */}
+                {!custom && <span className="dg-cefr">{sc.cefr}</span>}
+                {stat && !custom && (
                   <span
                     className="dg-check"
                     title={stat.swapBest != null ? '两个角色都练过' : `最好 ${stat.best}%`}
@@ -118,7 +135,9 @@ export function DialogueScreen() {
               <div className="dg-name">{sc.name}</div>
               <div className="dg-set">{sc.setting}</div>
               <div className="dg-card-foot">
-                <span>{mine} 句你的台词 · {sc.phrases.length} 个句型</span>
+                <span>
+                  {mine} 句你的台词{sc.phrases.length > 0 ? ` · ${sc.phrases.length} 个句型` : ''}
+                </span>
                 <span className="dg-bests">
                   {stat && stat.best > 0 && <em className="dg-best">最好 {stat.best}%</em>}
                   {stat?.swapBest != null && <em className="dg-best swap">换角 {stat.swapBest}%</em>}
@@ -126,9 +145,32 @@ export function DialogueScreen() {
                 </span>
               </div>
             </button>
+            {custom && (
+              <button
+                className="dg-del"
+                title="删除这场对话"
+                onClick={() => {
+                  if (confirm(`删除「${sc.name}」？练过的成绩也会一起清掉。`)) removeCustom(sc.id);
+                }}
+              >
+                ✕
+              </button>
+            )}
+            </div>
           );
         })}
       </div>
+
+      {importing && (
+        <ImportScene
+          onCancel={() => setImporting(false)}
+          onSave={sc => {
+            addCustom(sc);
+            setImporting(false);
+            setOpenId(sc.id);
+          }}
+        />
+      )}
     </div>
   );
 }

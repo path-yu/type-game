@@ -56,16 +56,18 @@ export function Reader({ scene, accent, rate }: { scene: Scene; accent: 'us' | '
         ))}
       </div>
 
-      <div className="dg-phrases">
-        <div className="dg-phrases-title">带走这几句</div>
-        {scene.phrases.map((ph, i) => (
-          <div key={i} className="dg-phrase" onClick={() => speak(ph.en, { accent, rate })}>
-            <div className="dg-phrase-en">{ph.en}</div>
-            <div className="dg-phrase-zh">{ph.zh}</div>
-            {ph.tip && <div className="dg-tip">{ph.tip}</div>}
-          </div>
-        ))}
-      </div>
+      {scene.phrases.length > 0 && (
+        <div className="dg-phrases">
+          <div className="dg-phrases-title">带走这几句</div>
+          {scene.phrases.map((ph, i) => (
+            <div key={i} className="dg-phrase" onClick={() => speak(ph.en, { accent, rate })}>
+              <div className="dg-phrase-en">{ph.en}</div>
+              <div className="dg-phrase-zh">{ph.zh}</div>
+              {ph.tip && <div className="dg-tip">{ph.tip}</div>}
+            </div>
+          ))}
+        </div>
+      )}
     </>
   );
 }

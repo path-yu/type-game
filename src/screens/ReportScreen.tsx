@@ -35,7 +35,7 @@ export function ReportScreen() {
   }, []);
 
   const r = useMemo(
-    () => buildReport(p, corpus, p.unlocked, { scenes: sceneTotal }),
+    () => buildReport(p, corpus, p.unlocked, { scenes: sceneTotal + (p.customScenes?.length ?? 0) }),
     [p, corpus, sceneTotal]
   );
   const vocab = estimateVocab(p.mastery, corpus);

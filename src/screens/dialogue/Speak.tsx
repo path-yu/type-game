@@ -122,15 +122,17 @@ export function Speak({ scene, accent, rate, known, role, onExit, onType, onFini
           {mine.length} 句里说清 {passed} 句
           {failRef.current.length > 0 ? '，没听清的词今晚夜巡会考你' : ''}
         </div>
-        <div className="dg-phrases">
-          <div className="dg-phrases-title">这场能带走的句子</div>
-          {scene.phrases.map((ph, k) => (
-            <div key={k} className="dg-phrase" onClick={() => speak(ph.en, { accent, rate })}>
-              <div className="dg-phrase-en">{ph.en}</div>
-              <div className="dg-phrase-zh">{ph.zh}</div>
-            </div>
-          ))}
-        </div>
+        {scene.phrases.length > 0 && (
+          <div className="dg-phrases">
+            <div className="dg-phrases-title">这场能带走的句子</div>
+            {scene.phrases.map((ph, k) => (
+              <div key={k} className="dg-phrase" onClick={() => speak(ph.en, { accent, rate })}>
+                <div className="dg-phrase-en">{ph.en}</div>
+                <div className="dg-phrase-zh">{ph.zh}</div>
+              </div>
+            ))}
+          </div>
+        )}
         <div className="dg-sum-acts">
           <button className="btn btn-ghost" onClick={onExit}>回到场景列表</button>
           <button

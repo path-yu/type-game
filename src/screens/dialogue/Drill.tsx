@@ -91,15 +91,17 @@ export function Drill({ scene, mode, accent, rate, known, role, onExit, onFinish
           {words.length > 0 ? `，${words.length} 个词记下了，今晚夜巡会考你` : '，一个词都没错'}
         </div>
 
-        <div className="dg-phrases">
-          <div className="dg-phrases-title">这场能带走的句子</div>
-          {scene.phrases.map((ph, k) => (
-            <div key={k} className="dg-phrase" onClick={() => speak(ph.en, { accent, rate })}>
-              <div className="dg-phrase-en">{ph.en}</div>
-              <div className="dg-phrase-zh">{ph.zh}</div>
-            </div>
-          ))}
-        </div>
+        {scene.phrases.length > 0 && (
+          <div className="dg-phrases">
+            <div className="dg-phrases-title">这场能带走的句子</div>
+            {scene.phrases.map((ph, k) => (
+              <div key={k} className="dg-phrase" onClick={() => speak(ph.en, { accent, rate })}>
+                <div className="dg-phrase-en">{ph.en}</div>
+                <div className="dg-phrase-zh">{ph.zh}</div>
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="dg-sum-acts">
           <button className="btn btn-ghost" onClick={onExit}>回到场景列表</button>
