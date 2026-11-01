@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useCorpus } from '../lib/CorpusContext';
-import { useGame } from '../lib/store';
+import { dayNo, useGame } from '../lib/store';
 import { loadDialogues, linesOf, validate, yourLines, type DBank, type Role, type Scene } from '../lib/dialogue';
+import { pendingCount, pickSession, unlockedPhrases, type PhraseItem } from '../lib/phrases';
 import { stopSpeaking } from '../lib/speech';
 import { MODES, type Mode } from './dialogue/shared';
 import { ImportScene } from './dialogue/Import';
+import { PhraseDrill } from './dialogue/PhraseDrill';
 import { Reader } from './dialogue/Reader';
 import { Drill } from './dialogue/Drill';
 import { Speak } from './dialogue/Speak';
@@ -19,10 +21,14 @@ import { Live } from './dialogue/Live';
 
 export function DialogueScreen() {
   const p = useGame(s => s.p);
+  const settings = useGame(s => s.s);
   const finishScene = useGame(s => s.finishScene);
   const addCustom = useGame(s => s.addCustomScene);
   const removeCustom = useGame(s => s.removeCustomScene);
   const [importing, setImporting] = useState(false);
+  const [reviewing, setReviewing] = useState(false);
+  // 一轮复习的题单要在开始时定死：答题会改写 due，边答边算会让题越练越少
+  const [session, setSession] = useState<PhraseItem[]>([]);
   const [bank, setBank] = useState<DBank | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const pending = useGame(s => s.pendingScene);
@@ -54,6 +60,10 @@ export function DialogueScreen() {
   const scene = all.find(s => s.id === openId) ?? null;
   const done = all.filter(s => p.scenes[s.id]).length;
 
+  // 句型池只收「练过的那几场」，否则 40 句一起涌进来没人扛得住
+  const pool = useMemo(() => unlockedPhrases(all, p.scenes), [all, p.scenes]);
+  const dueCount = useMemo(() => pendingCount(pool, p.phrases, dayNo()), [pool, p.phrases]);
+
   if (err) {
     return (
       <div className="dg">
@@ -77,6 +87,17 @@ export function DialogueScreen() {
           </div>
         </div>
       </div>
+    );
+  }
+
+  if (reviewing) {
+    return (
+      <PhraseDrill
+        items={session}
+        accent={settings.voice}
+        rate={settings.rate}
+        onExit={() => setReviewing(false)}
+      />
     );
   }
 
@@ -109,6 +130,23 @@ export function DialogueScreen() {
           课本里的对话、自己写的台词都能贴进来练 —— 五种练法一样能用，
           只是没有现成的岔路。点右上角试试。
         </div>
+      )}
+
+      {pool.length > 0 && (
+        <button
+          className="dg-pe"
+          onClick={() => {
+            setSession(pickSession(pool, p.phrases, dayNo(), 8));
+            setReviewing(true);
+          }}
+        >
+          <span className="dg-pe-tag">句型复习</span>
+          <span className="dg-pe-body">
+            <b>{dueCount > 0 ? `${dueCount} 句待复习` : '今天的句型都复习过了'}</b>
+            <em>来自你练过的 {done} 场对话 · 共收 {pool.length} 句</em>
+          </span>
+          <span className="dg-pe-go">{dueCount > 0 ? '开始' : '再看看'}</span>
+        </button>
       )}
 
       <div className="dg-grid">

@@ -46,6 +46,8 @@ export interface Progress {
   scenes: Record<string, SceneStat>;
   /** 用户自己导入的对话（和内置语料分开存，重装不丢） */
   customScenes: Scene[];
+  /** 句型复习：key 是英文原句，值的结构和单词一样，走同一套 FSRS */
+  phrases: Record<string, WordStat>;
 }
 
 export interface Settings {
@@ -85,6 +87,7 @@ const emptyProgress = (): Progress => ({
   dailySceneDone: false,
   scenes: {},
   customScenes: [],
+  phrases: {},
 });
 
 const defaultSettings = (): Settings => ({ voice: 'us', rate: 1, sound: true, motion: true, autoSpeak: false, sentenceHelp: 'gloss', clozeHint: 'first', pretest: true });
@@ -116,6 +119,8 @@ interface State {
   ensureDaily: (id: string, sceneId?: string | null) => void;
   /** 从首页直接进某一场对话 */
   openScene: (id: string) => void;
+  /** 句型复习：一句过一遍，和单词共用 gradedWord */
+  reviewPhrase: (en: string, ok: boolean) => void;
   /** 导入一场自定义对话 */
   addCustomScene: (scene: Scene) => void;
   removeCustomScene: (id: string) => void;
@@ -489,6 +494,13 @@ export const useGame = create<State>((set, get) => ({
   },
 
   openScene: (id) => set({ screen: 'dialogue', pendingScene: id }),
+
+  reviewPhrase: (en, ok) => {
+    const { p } = get();
+    const phrases = { ...p.phrases, [en]: gradedWord(p.phrases[en], ok, dayNo()) };
+    set({ p: { ...p, phrases } });
+    save();
+  },
 
   addCustomScene: (scene) => {
     const { p } = get();
