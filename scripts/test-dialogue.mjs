@@ -92,6 +92,35 @@ const say7 = D.scoreSay('Where is the fitting room?', 'where is fitting room');
 check('逐词标对，漏的词能被指出来', say7.pass === false || say7.words.length === 5, say7.words.map(w => (w.ok ? w.w : `[${w.w}]`)).join(' '));
 check('漏词的位置准确', say7.words.filter(w => !w.ok).map(w => w.w).join(',') === 'the', say7.words.map(w => (w.ok ? '+' : '-') + w.w).join(' '));
 
+// 岔路：主线 + 一个分支，且顶替掉一句对方台词
+check('每场都有岔路', bank.scenes.every(s => s.branch), `${bank.scenes.filter(s => s.branch).length} 场`);
+const tl = bank.scenes.map(s => D.timelineOf(s));
+check('时间线里各有一处岔路',
+  tl.every((steps, k) => steps.filter(x => x.kind === 'branch').length === (bank.scenes[k].branch ? 1 : 0)),
+  tl.map(x => x.filter(y => y.kind === 'branch').length).join('/'));
+check('岔路顶替一句对方台词，总步数等于台词数',
+  tl.every((steps, k) => steps.length === bank.scenes[k].lines.length),
+  tl.map((x, k) => `${x.length}/${bank.scenes[k].lines.length}`).join(' '));
+check('被顶替的是岔路后面那句',
+  tl.every((steps, k) => {
+    const sc = bank.scenes[k];
+    const flat = steps.filter(x => x.kind === 'line').map(x => x.line);
+    return !flat.includes(sc.lines[sc.branch.at + 1]);
+  }));
+check('要自己开口的次数 = 你的台词 + 岔路',
+  bank.scenes.every(s => D.typedSteps(s) === D.linesOf(s, 'you').length + 1),
+  bank.scenes.map(s => D.typedSteps(s)).join('/'));
+
+const badBranch = {
+  v: 1,
+  scenes: [{
+    ...JSON.parse(JSON.stringify(bank.scenes[0])),
+    branch: { at: 0, task: 'x', prompt: bank.scenes[0].branch.prompt, options: [bank.scenes[0].branch.options[0]] },
+  }],
+};
+const bb = D.validate(badBranch);
+check('校验器能挑出坏岔路', bb.some(x => /岔路/.test(x)), bb.slice(0, 3).join(' / '));
+
 const noYou = { v: 1, scenes: [{ id: 'x', name: 'x', cat: 'x', lv: 1, cefr: 'A1', setting: 'x', roles: ['你', '他'], you: 0, lines: [], phrases: [] }] };
 check('校验器能挑出残缺语料', D.validate(noYou).length >= 2, D.validate(noYou).slice(0, 2).join(' / '));
 try { fs.unlinkSync(TMP); } catch { /* ignore */ }
@@ -393,6 +422,79 @@ try {
   }));
   check('卡片标出两个角色都练过', card.check.includes('✓✓'), card.check);
   check('卡片显示换角成绩', /换角\s*\d+%/.test(card.swap), card.swap);
+
+  /* ---------------- 实战：岔路 ---------------- */
+  await p.click('.dg-card');
+  await p.waitForSelector('.dg-thread');
+  await p.evaluate(() => [...document.querySelectorAll('.dg-tabs button')].find(x => x.textContent === '实战')?.click());
+  await sleep(400);
+
+  const live0 = await p.evaluate(() => ({
+    bar: document.querySelector('.dg-bar span')?.textContent ?? '',
+    listen: document.querySelector('.dg-listen-en')?.textContent ?? '',
+    input: !!document.querySelector('.dg-input'),
+    roles: !!document.querySelector('.dg-roles'),
+  }));
+  check('实战第一步是听对方说', live0.listen.trim() === first.lines[0].en && !live0.input, live0.listen.slice(0, 34));
+  check('实战不显示角色开关', !live0.roles);
+  check('实战进度按步数算', /^1\s*\/\s*10$/.test(live0.bar), live0.bar);
+
+  // 一路推到岔路（该你说话的地方都随便打错）
+  for (let n = 0; n < 24; n++) {
+    if (await p.evaluate(() => !!document.querySelector('.dg-branch'))) break;
+    const st = await p.evaluate(() => ({
+      go: !!document.querySelector('.dg-go'),
+      input: !!document.querySelector('.dg-input'),
+    }));
+    if (st.go) { await p.evaluate(() => document.querySelector('.dg-go')?.click()); await sleep(220); continue; }
+    if (st.input) { await p.keyboard.type('zz'); await p.keyboard.press('Enter'); await sleep(180); await p.keyboard.press('Enter'); await sleep(220); }
+  }
+
+  const br = await p.evaluate(() => ({
+    tag: document.querySelector('.dg-branch-tag')?.textContent ?? '',
+    en: document.querySelector('.dg-branch .dg-listen-en')?.textContent ?? '',
+    task: document.querySelector('.dg-branch-task')?.textContent ?? '',
+    leaked: document.body.innerText.includes(document.querySelector('.dg-branch')?.getAttribute('data-next') ?? '\u0000'),
+  }));
+  check('岔路出现并标出来', /岔路/.test(br.tag), br.tag);
+  check('岔路的台词是语料里那句', br.en.trim() === first.branch.prompt.en, br.en.slice(0, 40));
+  check('岔路给出目标而不是答案', /你的目标/.test(br.task) && !br.task.includes(first.branch.options[0].say.en), br.task);
+
+  // 照着第一个选项打 —— 应该判「接住了」
+  await p.keyboard.type(first.branch.options[0].say.en, { delay: 0 });
+  await p.keyboard.press('Enter');
+  await sleep(400);
+  const hit = await p.evaluate(() => ({
+    tag: document.querySelector('.dg-branch-tag')?.textContent ?? '',
+    up: !!document.querySelector('.dg-branch-tag.up'),
+    react: document.querySelector('.dg-branch .dg-listen-en')?.textContent ?? '',
+  }));
+  check('岔路打对判为接住', hit.up, hit.tag);
+  check('对方按你选的那条路反应', hit.react.trim() === first.branch.options[0].react.en, hit.react.slice(0, 40));
+
+  // 继续 → 回到主线（被顶替的那句不再出现）
+  await p.evaluate(() => [...document.querySelectorAll('.dg-sum-acts button, .dg-drill-foot .btn')].find(b => b.textContent === '继续')?.click());
+  await sleep(400);
+  const rejoin = await p.evaluate(() => ({
+    bar: document.querySelector('.dg-bar span')?.textContent ?? '',
+    zh: document.querySelector('.dg-prompt-zh')?.textContent ?? '',
+    absorbed: document.body.innerText.includes(document.querySelector('.dg-drill')?.getAttribute('data-x') ?? ''),
+  }));
+  check('岔路后接回你的下一句', rejoin.zh === first.lines[first.branch.at + 2].zh, rejoin.zh);
+  check('岔路后回到主线（进度 10/10）', /^10\s*\/\s*10$/.test(rejoin.bar), rejoin.bar);
+
+  // 打完最后一句 → 结算
+  await p.keyboard.type('zz');
+  await p.keyboard.press('Enter');
+  await sleep(200);
+  await p.keyboard.press('Enter');
+  await sleep(400);
+  const liveSum = await p.evaluate(() => ({
+    has: !!document.querySelector('.dg-sum'),
+    line: document.querySelector('.dg-sum-line')?.textContent ?? '',
+  }));
+  check('实战走完有结算', liveSum.has, liveSum.line.slice(0, 26));
+  check('结算按「开口次数」记', /6 处开口/.test(liveSum.line) && /接住 1 处/.test(liveSum.line), liveSum.line);
 
   check('页面无报错', errs.length === 0, errs.slice(0, 2).join(' / '));
 } finally {

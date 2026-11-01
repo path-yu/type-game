@@ -1604,3 +1604,73 @@ input, textarea { font-family: inherit; }
 .dg-bests { margin-left: auto; display: inline-flex; gap: 8px; }
 .dg-bests .dg-best { margin-left: 0; }
 .dg-best.swap { color: var(--fg-3); }
+
+/* —— 实战：听对方说 + 岔路 —— */
+.dg-speak-who {
+  font-size: 10.5px; letter-spacing: 0.06em; color: var(--fg-3);
+  margin-bottom: 8px;
+}
+.dg-listen-en {
+  font-family: var(--font-serif);
+  font-size: 19px; line-height: 1.6; color: var(--fg);
+  cursor: pointer; transition: color 0.14s;
+}
+.dg-listen-en:hover { color: var(--accent); }
+.dg-listen-note {
+  margin-top: 10px; font-size: 11.5px; line-height: 1.7; color: var(--fg-3);
+  max-width: 460px; margin-left: auto; margin-right: auto;
+}
+.dg-go { margin-left: auto; }
+
+.dg-branch {
+  max-width: 700px; margin: 0 auto;
+  padding: var(--sp-5) var(--sp-6);
+  background: var(--surface);
+  border: var(--hairline); border-radius: var(--r-card);
+  box-shadow: var(--sh-1);
+  text-align: center;
+}
+.dg-branch-tag {
+  display: inline-block;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
+  color: var(--fg-3); padding: 3px 9px; margin-bottom: var(--sp-4);
+  background: var(--fill); border-radius: var(--r-pill);
+}
+.dg-branch-tag.up { color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, transparent); }
+.dg-branch-who { font-size: 10.5px; letter-spacing: 0.06em; color: var(--fg-3); margin-bottom: 6px; }
+.dg-branch-zh { font-size: 12.5px; line-height: 1.7; color: var(--fg-2); margin-top: 6px; }
+.dg-branch-task {
+  display: inline-block;
+  margin: var(--sp-5) 0 var(--sp-4);
+  font-size: 12px; color: var(--accent);
+  padding: 4px 12px; border-radius: var(--r-pill);
+  background: var(--accent-soft);
+}
+.dg-branch-said {
+  font-size: 12px; color: var(--fg-2); margin-bottom: var(--sp-4);
+  padding-bottom: var(--sp-4); border-bottom: var(--hairline);
+}
+
+.dg-options-title {
+  margin: var(--sp-5) 0 8px;
+  font-size: 11px; color: var(--fg-3); letter-spacing: 0.02em;
+}
+.dg-options { display: flex; flex-direction: column; gap: 6px; }
+.dg-option {
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 10px 14px; text-align: left; font: inherit; color: inherit;
+  background: var(--surface-2); border: 1px solid transparent; border-radius: var(--r-ctl);
+  cursor: pointer; transition: border-color 0.14s, background-color 0.14s;
+}
+.dg-option:hover { border-color: var(--accent); background: var(--accent-soft); }
+.dg-option b { font-size: 13px; font-weight: 500; color: var(--fg); }
+.dg-option span { font-size: 11.5px; color: var(--fg-2); }
+
+.dg-listen {
+  max-width: 620px; margin: 0 auto;
+  padding: var(--sp-6);
+  background: var(--surface);
+  border: var(--hairline); border-radius: 16px; border-bottom-left-radius: 4px;
+  text-align: left;
+}
+.dg-listen .dg-listen-note { max-width: none; margin-left: 0; }

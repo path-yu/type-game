@@ -17,6 +17,32 @@ export interface DLine {
   note?: string;     // 用法提示（习语 / 语法 / 文化）
 }
 
+/** 岔路里的一句（对方的意外发言 / 你的应对 / 对方的反应） */
+export interface DSay {
+  en: string;
+  zh: string;
+  note?: string;
+}
+
+export interface BranchOption {
+  say: DSay;     // 你可以这么接
+  react: DSay;   // 对方听完的反应（顶替原本那一句）
+}
+
+/**
+ * 岔路：对方在某个点上不按剧本说话。
+ *
+ * `at` 指的是**你的**某句台词的下标 —— 岔路接在这句之后。
+ * 紧接着的那句对方的台词会被 `options[].react` 顶替（两条路各自有各自的反应），
+ * 再往后从你的下一句接回主线。这个结构由 validate() 强制。
+ */
+export interface Branch {
+  at: number;
+  task: string;      // 你要达到的目的（中文，不泄露说法）
+  prompt: DSay;      // 对方的意外发言
+  options: BranchOption[];
+}
+
 export interface DPhrase {
   en: string;
   zh: string;
@@ -34,6 +60,7 @@ export interface Scene {
   you: number;       // 「你」在 roles 里的下标
   lines: DLine[];
   phrases: DPhrase[];
+  branch?: Branch;
 }
 
 export interface DBank {
@@ -167,6 +194,33 @@ export function linesOf(scene: Scene, as: Role = 'you'): DLine[] {
   return scene.lines.filter(l => (as === 'you' ? l.r === scene.you : l.r !== scene.you));
 }
 
+export type Step =
+  | { kind: 'line'; line: DLine }
+  | { kind: 'branch'; branch: Branch };
+
+/**
+ * 把「主线 + 岔路」摊成一条时间线。
+ *
+ * 岔路接在你第 at 句之后，同时**吃掉**原本第 at+1 句（对方的台词）——
+ * 因为两种应对各自有各自的反应，那句主线台词不再是唯一的下文了。
+ */
+export function timelineOf(scene: Scene): Step[] {
+  const b = scene.branch;
+  if (!b) return scene.lines.map(line => ({ kind: 'line', line }));
+  const out: Step[] = [];
+  scene.lines.forEach((line, i) => {
+    if (i === b.at + 1) return;
+    out.push({ kind: 'line', line });
+    if (i === b.at) out.push({ kind: 'branch', branch: b });
+  });
+  return out;
+}
+
+/** 时间线里需要你自己开口的次数（你的台词 + 岔路） */
+export function typedSteps(scene: Scene): number {
+  return timelineOf(scene).filter(s => s.kind === 'branch' || s.line.r === scene.you).length;
+}
+
 /** 这一场里需要你打的句子 */
 export function yourLines(scene: Scene): DLine[] {
   return linesOf(scene, 'you');
@@ -296,6 +350,32 @@ export function validate(bank: DBank): string[] {
       else if (!/[\u4e00-\u9fa5]/.test(l.zh)) bad.push(`${at} 中文不含汉字`);
     }
     if (mine < 3) bad.push(`${tag} 你的台词少于 3 句（没法练）`);
+
+    const b = s.branch;
+    if (b) {
+      const checkSay = (say: DSay | undefined, where: string) => {
+        if (!say?.en || !say?.zh) { bad.push(`${where} 缺字段`); return; }
+        if (/[^\x20-\x7E]/.test(say.en)) bad.push(`${where} 英文含非 ASCII 字符`);
+        if (!/[.!?]$/.test(say.en)) bad.push(`${where} 英文没有句末标点`);
+        if (!/[\u4e00-\u9fa5]/.test(say.zh)) bad.push(`${where} 中文不含汉字`);
+      };
+      if (!(b.at >= 0 && b.at < (s.lines?.length ?? 0))) bad.push(`${tag} 岔路位置越界：${b.at}`);
+      else {
+        if (s.lines[b.at].r !== s.you) bad.push(`${tag} 岔路必须接在你的台词之后`);
+        const next = s.lines[b.at + 1];
+        if (!next) bad.push(`${tag} 岔路后面没有可被顶替的台词`);
+        else if (next.r === s.you) bad.push(`${tag} 岔路后面应该是对方的台词（react 要顶替它）`);
+        const back = s.lines[b.at + 2];
+        if (back && back.r !== s.you) bad.push(`${tag} 岔路结束后应接回你的台词`);
+      }
+      if (!b.task || !/[\u4e00-\u9fa5]/.test(b.task)) bad.push(`${tag} 岔路缺目标说明`);
+      checkSay(b.prompt, `${tag} 岔路 prompt`);
+      if (!(b.options?.length >= 2)) bad.push(`${tag} 岔路少于两个选项`);
+      for (const [k, o] of (b.options ?? []).entries()) {
+        checkSay(o.say, `${tag} 岔路选项${k}.say`);
+        checkSay(o.react, `${tag} 岔路选项${k}.react`);
+      }
+    }
     if ((s.phrases?.length ?? 0) < 2) bad.push(`${tag} 句型少于 2 条`);
     for (const [i, p] of (s.phrases ?? []).entries()) {
       if (!p.en || !p.zh) bad.push(`${tag} 句型 #${i} 缺字段`);
