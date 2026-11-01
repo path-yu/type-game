@@ -174,7 +174,17 @@ export function errorWords(line: string, wrongAt: number[]): string[] {
  * 比一串 • • • 有用 —— 词数和词长就是最基础的脚手架，又不泄露字母。
  */
 export function maskOf(line: string): string {
-  return scan(line).words.map(w => '_'.repeat(w.replace(/'/g, '').length)).join('  ');
+  return maskWords(line).join('  ');
+}
+
+/**
+ * 按词拆开的空位。
+ *
+ * 用空格连接的字符串在等宽字体里靠「两个空格」区分词边界，字距一拉就看不清了；
+ * 拆成数组交给 flex 排版，词与词之间才有真正的间隙。
+ */
+export function maskWords(line: string): string[] {
+  return scan(line).words.map(w => '_'.repeat(w.replace(/'/g, '').length));
 }
 
 /** 首字母提示：Could I get a large latte? → C I g a l l */

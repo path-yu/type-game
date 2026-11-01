@@ -256,7 +256,11 @@ try {
   const scene = saved?.p?.scenes?.[first.id];
   check('场景成绩写入档案', !!scene && typeof scene.runs === 'number', JSON.stringify(scene));
 
-  const today = await p.evaluate(() => Math.floor(Date.now() / 86400000));
+  // 与 store 的 dayNo 同口径：本地日历日，不是 UTC
+  const today = await p.evaluate(() => {
+    const d = new Date();
+    return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000);
+  });
   const learned = Object.entries(saved?.p?.mastery ?? {})
     .filter(([, st]) => st && st.due === today && st.er > 0).map(([w]) => w);
   check('打错的词进了今日夜巡队列', learned.length > 0, learned.slice(0, 6).join(', '));

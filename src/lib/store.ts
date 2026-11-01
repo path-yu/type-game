@@ -9,8 +9,32 @@ import { spreadConfusable } from './confuse';
 const KEY = 'typewake:v1';
 const DAY = 86400000;
 
-export const dayNo = (t = Date.now()) => Math.floor(t / DAY);
-export const todayStr = (t = Date.now()) => new Date(t).toISOString().slice(0, 10);
+/**
+ * 日期一律用**本地日历**，不用 UTC。
+ *
+ * 原来这里是 `Math.floor(Date.now() / DAY)` 和 `toISOString()` —— 两个都是 UTC，
+ * 而每日卷轴用的是本地日期（`daily.todayKey`）。对 UTC+8 的人来说，
+ * 凌晨 0 点到 8 点之间两套口径差一天：卷轴说「今天是 2 号」，连续天数却按 1 号记，
+ * 于是「今日卷轴已完成」这个判定永远对不上，打完了不打勾、也不算连续。
+ */
+export const dayNo = (t = Date.now()) => {
+  const d = new Date(t);
+  return Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / DAY);
+};
+
+export const todayStr = (t = Date.now()) => {
+  const d = new Date(t);
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${d.getFullYear()}-${m}-${day}`;
+};
+
+/** 把 `2026-11-02` 这样的本地日期串换回日期号（`new Date(key)` 会按 UTC 解析） */
+export const dayNoOfKey = (key: string) => {
+  const [y, m, d] = key.split('-').map(Number);
+  if (!y || !m || !d) return dayNo();
+  return Math.floor(Date.UTC(y, m - 1, d) / DAY);
+};
 
 /** 旧调度阶梯，只用于把老数据迁移到 FSRS（s 曾是 0–5 的档位） */
 const LEGACY_INTERVALS = [1, 3, 7, 16, 35, 75];
@@ -223,7 +247,7 @@ export const useGame = create<State>((set, get) => ({
     const { p } = get();
     const today = todayStr();
     if (p.lastDay && p.lastDay !== today) {
-      const gap = dayNo() - dayNo(new Date(p.lastDay).getTime());
+      const gap = dayNo() - dayNoOfKey(p.lastDay);
       if (gap > 1) set({ p: { ...p, streak: 0 } });
     }
     set({ ready: true });

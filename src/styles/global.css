@@ -1811,3 +1811,59 @@ input, textarea { font-family: inherit; }
   flex: none; padding: 5px 12px; border-radius: var(--r-pill);
   font-size: 12px; color: var(--accent); background: var(--accent-soft);
 }
+
+/* ---------------- 夜巡：夹进去的句型 ---------------- */
+.rv-zh {
+  font-family: var(--font-serif);
+  font-size: 20px; line-height: 1.6;
+  text-align: center; color: var(--fg);
+  max-width: 460px;
+}
+.rv-mask {
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  max-width: 460px;
+}
+.rv-mask-words {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end;
+  gap: 6px 14px;
+  font-family: var(--font-mono); font-size: 14px;
+}
+/* 用下边框画横线，比下划线字符清楚得多 —— 每个词的宽度就是它的字母数 */
+.rv-mask-words span {
+  height: 15px;
+  border-bottom: 2px solid var(--sep-2);
+}
+.rv-mask-hint {
+  font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.14em;
+  color: var(--fg-2); text-align: center; word-break: break-word;
+}
+.rv-say-input {
+  width: min(460px, 80vw); height: 42px; padding: 0 14px;
+  font-family: var(--font-mono); font-size: 14px;
+  color: var(--fg); text-align: center;
+  background: var(--fill); border: 1px solid var(--sep-2); border-radius: var(--r-pill);
+  outline: none; transition: border-color 0.14s, box-shadow 0.14s, background-color 0.14s;
+}
+.rv-say-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.rv-say-input.ok { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 7%, var(--fill)); }
+.rv-say-input::placeholder { font-family: var(--font-ui); font-size: 12px; color: var(--fg-3); }
+
+.rv-say-fix {
+  font-family: var(--font-serif);
+  font-size: 16px; line-height: 1.75;
+  text-align: center; color: var(--fg-2);
+  max-width: 480px;
+}
+.rv-say-fix .on { color: var(--ok); }
+.rv-say-fix .err { color: var(--err); text-decoration: underline; text-decoration-style: wavy; text-underline-offset: 3px; }
+.rv-say-fix .miss { color: var(--fg); border-bottom: 1px dashed var(--fg-3); }
+
+.rv-wrong-say { width: 100%; display: flex; flex-direction: column; gap: 6px; }
+.rv-wrong-item {
+  padding: 8px 12px; border-radius: var(--r-ctl);
+  background: var(--fill); cursor: pointer;
+  transition: background-color 0.14s;
+}
+.rv-wrong-item:hover { background: var(--fill-2, var(--fill)); }
+.rv-wrong-item b { display: block; font-size: 11.5px; font-weight: 600; color: var(--fg-2); }
+.rv-wrong-item span { font-size: 11px; color: var(--fg-3); }
