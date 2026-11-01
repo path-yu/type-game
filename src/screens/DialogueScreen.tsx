@@ -3,8 +3,8 @@ import { speak, stopSpeaking } from '../lib/speech';
 import { useCorpus } from '../lib/CorpusContext';
 import { useGame } from '../lib/store';
 import {
-  diff, errorWords, initials, maskOf, scoreSay, validate, yourLines,
-  type DBank, type SayResult, type Scene,
+  diff, errorWords, initials, linesOf, maskOf, scoreSay, validate, yourLines,
+  type DBank, type Role, type SayResult, type Scene,
 } from '../lib/dialogue';
 import { asrMessage, asrSupported, createAsr, type AsrHandles } from '../lib/asr';
 
@@ -79,7 +79,7 @@ export function DialogueScreen() {
         key={scene.id}
         scene={scene}
         onBack={() => { stopSpeaking(); setOpenId(null); }}
-        onFinish={(score, words) => finishScene(scene.id, score, words)}
+        onFinish={(score, words, r) => finishScene(scene.id, score, words, r)}
       />
     );
   }
@@ -105,13 +105,23 @@ export function DialogueScreen() {
               <div className="dg-card-top">
                 <span className="dg-cat">{sc.cat}</span>
                 <span className="dg-cefr">{sc.cefr}</span>
-                {stat && <span className="dg-check" title={`最好 ${stat.best}%`}>✓</span>}
+                {stat && (
+                  <span
+                    className="dg-check"
+                    title={stat.swapBest != null ? '两个角色都练过' : `最好 ${stat.best}%`}
+                  >
+                    {stat.swapBest != null ? '✓✓' : '✓'}
+                  </span>
+                )}
               </div>
               <div className="dg-name">{sc.name}</div>
               <div className="dg-set">{sc.setting}</div>
               <div className="dg-card-foot">
                 <span>{mine} 句你的台词 · {sc.phrases.length} 个句型</span>
-                {stat && <em className="dg-best">最好 {stat.best}%</em>}
+                <span className="dg-bests">
+                  {stat && stat.best > 0 && <em className="dg-best">最好 {stat.best}%</em>}
+                  {stat?.swapBest != null && <em className="dg-best swap">换角 {stat.swapBest}%</em>}
+                </span>
               </div>
             </button>
           );
@@ -130,12 +140,16 @@ function SceneView({
 }: {
   scene: Scene;
   onBack: () => void;
-  onFinish: (score: number, words: { w: string; ok: boolean }[]) => void;
+  onFinish: (score: number, words: { w: string; ok: boolean }[], role: Role) => void;
 }) {
   const settings = useGame(s => s.s);
   const corpus = useCorpus();
   const known = useMemo(() => (w: string) => !!corpus.dict.get(w)?.z, [corpus]);
   const [mode, setMode] = useState<Mode>('read');
+  const [role, setRole] = useState<Role>('you');
+  const nYou = linesOf(scene, 'you').length;
+  const nOther = scene.lines.length - nYou;
+  const otherName = scene.roles[1 - scene.you] ?? '对方';
 
   return (
     <div className="dg dg-scene">
@@ -158,6 +172,24 @@ function SceneView({
 
       <div className="dg-setting">{scene.setting}</div>
 
+      {/* 角色互换：练对方的话，才逼自己先听懂再开口 */}
+      {mode !== 'read' && (
+        <div className="dg-roles">
+          <span className="dg-roles-label">练谁</span>
+          <div className="seg">
+            <button className={role === 'you' ? 'on' : ''} onClick={() => setRole('you')}>
+              你 · {nYou} 句
+            </button>
+            <button className={role === 'other' ? 'on' : ''} onClick={() => setRole('other')}>
+              {otherName} · {nOther} 句
+            </button>
+          </div>
+          <span className="dg-roles-hint">
+            {role === 'other' ? '换角：先听懂对方说什么，再替他说出来' : '默认练你自己的台词'}
+          </span>
+        </div>
+      )}
+
       {mode === 'read' && <Reader scene={scene} accent={settings.voice} rate={settings.rate} />}
 
       {mode === 'speak' && (
@@ -166,22 +198,24 @@ function SceneView({
           accent={settings.voice}
           rate={settings.rate}
           known={known}
+          role={role}
           onExit={onBack}
           onType={() => setMode('copy')}
-          onFinish={onFinish}
+          onFinish={(score, words) => onFinish(score, words, role)}
         />
       )}
 
       {(mode === 'copy' || mode === 'recall') && (
           <Drill
-            key={mode}
+            key={`${mode}-${role}`}
             scene={scene}
             mode={mode}
             accent={settings.voice}
             rate={settings.rate}
             known={known}
+            role={role}
             onExit={onBack}
-            onFinish={onFinish}
+            onFinish={(score, words) => onFinish(score, words, role)}
           />
       )}
     </div>
@@ -266,6 +300,7 @@ function Drill({
   accent,
   rate,
   known,
+  role,
   onExit,
   onFinish,
 }: {
@@ -274,10 +309,11 @@ function Drill({
   accent: 'us' | 'uk';
   rate: number;
   known: (w: string) => boolean;
+  role: Role;
   onExit: () => void;
   onFinish: (score: number, words: { w: string; ok: boolean }[]) => void;
 }) {
-  const mine = useMemo(() => yourLines(scene), [scene]);
+  const mine = useMemo(() => linesOf(scene, role), [scene, role]);
   const [i, setI] = useState(0);
   const [typed, setTyped] = useState('');
   const [status, setStatus] = useState<'idle' | 'ok' | 'bad'>('idle');
@@ -464,7 +500,7 @@ function Drill({
         {mode === 'recall' && status === 'idle' && (
           <button className="dg-link" onClick={reveal}>看答案</button>
         )}
-        <span className="dg-drill-hint">这句是{scene.roles[scene.you]}要说的</span>
+        <span className="dg-drill-hint">这句是{scene.roles[line.r]}要说的</span>
       </div>
     </div>
   );
@@ -477,6 +513,7 @@ function Speak({
   accent,
   rate,
   known,
+  role,
   onExit,
   onType,
   onFinish,
@@ -485,11 +522,12 @@ function Speak({
   accent: 'us' | 'uk';
   rate: number;
   known: (w: string) => boolean;
+  role: Role;
   onExit: () => void;
   onType: () => void;
   onFinish: (score: number, words: { w: string; ok: boolean }[]) => void;
 }) {
-  const mine = useMemo(() => yourLines(scene), [scene]);
+  const mine = useMemo(() => linesOf(scene, role), [scene, role]);
   const supported = useMemo(() => asrSupported(), []);
 
   const [i, setI] = useState(0);

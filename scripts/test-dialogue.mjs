@@ -34,6 +34,15 @@ check('场景数与难度在 1-7', bank.scenes.length >= 8 && bank.scenes.every(
   `${bank.scenes.length} 场`);
 
 const mineTotal = bank.scenes.reduce((n, s) => n + D.yourLines(s).length, 0);
+check('两个角色的台词加起来正好是全篇',
+  bank.scenes.every(s => D.linesOf(s, 'you').length + D.linesOf(s, 'other').length === s.lines.length),
+  `${mineTotal} + ${bank.scenes.reduce((n, s) => n + D.linesOf(s, 'other').length, 0)} 句`);
+check('换角也有足够的句子可练',
+  bank.scenes.every(s => D.linesOf(s, 'other').length >= 3),
+  bank.scenes.map(s => D.linesOf(s, 'other').length).join('/'));
+const s0 = bank.scenes[0];
+check('两个角色的句子不重叠',
+  D.linesOf(s0, 'you').every(a => !D.linesOf(s0, 'other').includes(a)));
 check('每场至少 3 句你的台词', bank.scenes.every(s => D.yourLines(s).length >= 3), `${mineTotal} 句可练`);
 
 // 标点与大小写不计较
@@ -331,6 +340,59 @@ try {
     tabs: [...document.querySelectorAll('.dg-tabs button')].find(x => x.classList.contains('on'))?.textContent,
   }));
   check('降级后能切到跟打', switched.target && switched.tabs === '跟打', `当前 ${switched.tabs}`);
+
+  /* ---------------- 角色互换 ---------------- */
+  const roleBtns = await p.evaluate(() =>
+    [...document.querySelectorAll('.dg-roles button')].map(x => x.textContent));
+  check('练习模式有角色开关', roleBtns.length === 2, roleBtns.join(' / '));
+
+  const before = await p.evaluate(() => document.querySelector('.dg-target')?.textContent ?? '');
+  check('默认练自己的台词', before.trim() === D.linesOf(first, 'you')[0].en, before.trim().slice(0, 36));
+
+  await p.evaluate(() => [...document.querySelectorAll('.dg-roles button')].find(x => x.textContent.startsWith('店员'))?.click());
+  await sleep(350);
+  const after = await p.evaluate(() => ({
+    target: document.querySelector('.dg-target')?.textContent ?? '',
+    bar: document.querySelector('.dg-bar span')?.textContent ?? '',
+    hint: document.querySelector('.dg-roles-hint')?.textContent ?? '',
+  }));
+  check('换角后改练对方的台词', after.target.trim() === D.linesOf(first, 'other')[0].en, after.target.trim().slice(0, 36));
+  check('换角后进度归零', /^1\s*\/\s*/.test(after.bar), after.bar);
+  check('换角有说明', /先听懂/.test(after.hint), after.hint.trim());
+
+  const storeBefore = await store();
+  const bestBefore = storeBefore?.p?.scenes?.[first.id]?.best ?? 0;
+
+  // 换角一路打错推完，只为验证成绩写到 swapBest
+  await p.click('.dg-input');
+  for (let n = 0; n < 16; n++) {
+    if (await p.evaluate(() => !!document.querySelector('.dg-sum'))) break;
+    const ro = await p.evaluate(() => document.querySelector('.dg-input')?.hasAttribute('readonly'));
+    if (ro) { await p.keyboard.press('Enter'); await sleep(280); continue; }
+    await p.keyboard.type('zzz');
+    await p.keyboard.press('Enter');
+    await sleep(220);
+  }
+  const swapSum = await p.evaluate(() => ({
+    has: !!document.querySelector('.dg-sum'),
+    line: document.querySelector('.dg-sum-line')?.textContent ?? '',
+  }));
+  check('换角也能练完并结算', swapSum.has, swapSum.line.slice(0, 24));
+
+  const afterSwap = await store();
+  const st = afterSwap?.p?.scenes?.[first.id];
+  check('换角成绩单独记', typeof st?.swapBest === 'number', `swapBest=${st?.swapBest} best=${st?.best}`);
+  check('换角不覆盖原来的最好成绩', (st?.best ?? null) === bestBefore, `${bestBefore} → ${st?.best}`);
+
+  await p.evaluate(() => [...document.querySelectorAll('.dg-sum-acts button')].find(x => x.textContent.includes('回到场景列表'))?.click());
+  await p.waitForSelector('.dg-grid');
+  await sleep(300);
+  const card = await p.evaluate(() => ({
+    check: document.querySelector('.dg-card .dg-check')?.textContent ?? '',
+    swap: document.querySelector('.dg-card .dg-best.swap')?.textContent ?? '',
+  }));
+  check('卡片标出两个角色都练过', card.check.includes('✓✓'), card.check);
+  check('卡片显示换角成绩', /换角\s*\d+%/.test(card.swap), card.swap);
 
   check('页面无报错', errs.length === 0, errs.slice(0, 2).join(' / '));
 } finally {

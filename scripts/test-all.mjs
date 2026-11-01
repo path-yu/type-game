@@ -31,7 +31,7 @@ const steps = [
   { name: '续读链路', cmd: 'node', args: ['scripts/test-seq.mjs'], desc: '6 项段号 / 同书续读', needsServer: true },
   { name: '预习卡', cmd: 'node', args: ['scripts/test-pretest.mjs'], desc: '12 项先测后学', needsServer: true },
   { name: '文库浏览', cmd: 'node', args: ['scripts/test-library.mjs'], desc: '11 项全库 / 筛选 / 进入', needsServer: true },
-  { name: '场景对话', cmd: 'node', args: ['scripts/test-dialogue.mjs'], desc: '57 项语料 / 逐词比对 / 跟读判分', needsServer: true },
+  { name: '场景对话', cmd: 'node', args: ['scripts/test-dialogue.mjs'], desc: '70 项语料 / 双角色 / 跟读判分', needsServer: true },
   { name: '阅读填空', cmd: 'node', args: ['scripts/test-cloze.mjs'], desc: '20 项出题 / 提示 / 回写', needsServer: true },
   { name: '体检报告', cmd: 'node', args: ['scripts/test-report.mjs'], desc: '10 项统计 / 诊断', needsServer: true },
   { name: '语音', cmd: 'node', args: ['scripts/test-speech.mjs'], desc: '7 项语音取消', needsServer: true },

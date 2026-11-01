@@ -43,9 +43,11 @@ export interface WordStat {
 }
 
 export interface SceneStat {
-  best: number;   // 最高正确率 0-100
-  at: string;     // 最近一次完成的日期
-  runs: number;   // 练过几遍
+  best: number;        // 「你」的最高正确率 0-100
+  at: string;          // 最近一次完成的日期
+  runs: number;        // 练过几遍
+  /** 角色互换（练对方台词）的最高正确率。没练过就没有这个字段 */
+  swapBest?: number;
 }
 
 export interface RunResult {

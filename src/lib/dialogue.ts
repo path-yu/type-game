@@ -155,9 +155,21 @@ export function initials(line: string): string {
   return scan(line).words.map(w => w[0]).join(' ');
 }
 
+export type Role = 'you' | 'other';
+
+/**
+ * 按角色取台词。
+ *
+ * 默认只练「你」的话；换成 other 就是**角色互换** —— 练对方的台词。
+ * 换角不是重复劳动：对方的话你得先听懂，再替他说出来，压力完全不同。
+ */
+export function linesOf(scene: Scene, as: Role = 'you'): DLine[] {
+  return scene.lines.filter(l => (as === 'you' ? l.r === scene.you : l.r !== scene.you));
+}
+
 /** 这一场里需要你打的句子 */
 export function yourLines(scene: Scene): DLine[] {
-  return scene.lines.filter(l => l.r === scene.you);
+  return linesOf(scene, 'you');
 }
 
 /* ------------------------- 跟读判分 ------------------------- */

@@ -96,8 +96,8 @@ interface State {
   review: (word: string, ok: boolean) => void;
   /** 阅读填空的结果：填对涨掌握度，填错记为错误并当天进夜巡 */
   applyCloze: (results: { word: string; ok: boolean }[]) => void;
-  /** 场景对话练完一场：正确率入库，打错的词进夜巡 */
-  finishScene: (id: string, score: number, words: { w: string; ok: boolean }[]) => void;
+  /** 场景对话练完一场：正确率入库，打错的词进夜巡。as=other 时写进换角成绩 */
+  finishScene: (id: string, score: number, words: { w: string; ok: boolean }[], as?: 'you' | 'other') => void;
   markUnknown: (word: string) => void;
   toggleLex: (word: string) => void;
   setSetting: <K extends keyof Settings>(k: K, v: Settings[K]) => void;
@@ -379,7 +379,7 @@ export const useGame = create<State>((set, get) => ({
     save();
   },
 
-  finishScene: (id, score, words) => {
+  finishScene: (id, score, words, as = 'you') => {
     const { p } = get();
     const today = todayStr();
     const day = dayNo();
@@ -388,10 +388,13 @@ export const useGame = create<State>((set, get) => ({
     for (const { w, ok } of words) mastery[w] = gradedWord(mastery[w], ok, day);
 
     const prev = p.scenes[id];
+    const hit = Math.round(score);
+    // 两个角色的成绩分开记 —— 换角打了满分，不该把「你」的最好成绩刷掉
     const scenes: Record<string, SceneStat> = {
       ...p.scenes,
       [id]: {
-        best: Math.max(prev?.best ?? 0, Math.round(score)),
+        best: as === 'other' ? (prev?.best ?? 0) : Math.max(prev?.best ?? 0, hit),
+        swapBest: as === 'other' ? Math.max(prev?.swapBest ?? 0, hit) : prev?.swapBest,
         at: today,
         runs: (prev?.runs ?? 0) + 1,
       },
@@ -399,7 +402,7 @@ export const useGame = create<State>((set, get) => ({
     const streak = p.lastDay !== today ? p.streak + 1 : p.streak;
     set({
       p: { ...p, mastery, scenes, streak, lastDay: today, totalSeconds: p.totalSeconds + 90 },
-      toast: `这一场练完了 · 正确率 ${Math.round(score)}%`,
+      toast: `${as === 'other' ? '换角' : '这一场'}练完了 · 正确率 ${Math.round(score)}%`,
     });
     save();
   },
