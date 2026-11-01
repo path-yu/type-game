@@ -28,3 +28,6 @@ Thumbs.db
 # 环境变量
 .env
 .env.local
+
+# TypeScript 增量构建缓存
+*.tsbuildinfo
