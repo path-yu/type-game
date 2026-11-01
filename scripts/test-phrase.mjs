@@ -24,8 +24,9 @@ const P = await import(`file://${TMP.replace(/\\/g, '/')}?t=${Date.now()}`);
 const bank = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/dialogues.json'), 'utf8'));
 
 const all = P.bankPhrases(bank.scenes);
-const total = bank.scenes.reduce((n, s) => n + s.phrases.length, 0);
-check('收全库句型', all.length === total, `${all.length} / ${total}`);
+// 同一段情境的多个变体共用句型，收池时按英文去重 —— 所以条数少于「场景 × 句型」
+const uniq = new Set(bank.scenes.flatMap(s => s.phrases.map(p => p.en)));
+check('收全库句型并去重', all.length === uniq.size, `${all.length} / 唯一 ${uniq.size} / 全部 ${bank.scenes.reduce((n, s) => n + s.phrases.length, 0)}`);
 check('按英文去重', new Set(all.map(p => p.en)).size === all.length);
 check('带出场景名', all.every(p => p.sceneName && p.sceneId));
 
@@ -68,7 +69,7 @@ const errs = [];
 page.on('pageerror', e => errs.push(e.message));
 
 try {
-  await page.goto('http://localhost:4173/', { waitUntil: 'networkidle2' });
+  await page.goto(`http://localhost:${process.env.PORT || 4173}/`, { waitUntil: 'networkidle2' });
   await page.evaluate(() => { localStorage.clear(); localStorage.setItem('typewake:theme', 'light'); });
   await page.reload({ waitUntil: 'networkidle2' });
   await page.waitForSelector('.hero');
@@ -79,7 +80,7 @@ try {
   check('没练过对话时没有复习入口', !(await page.evaluate(() => !!document.querySelector('.dg-pe'))));
 
   // 用背打把第一场走完（看答案 → 回车）
-  await page.click('.dg-cell .dg-card');
+  await page.click(`[data-scene="${cafe.id}"]`);
   await page.waitForSelector('.dg-thread');
   await page.evaluate(() => [...document.querySelectorAll('.dg-tabs button')].find(x => x.textContent === '背打')?.click());
   await sleep(400);

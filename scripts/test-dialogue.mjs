@@ -161,12 +161,30 @@ try {
   await p.waitForSelector('.dg-grid', { timeout: 5000 });
   await sleep(400);
 
-  const cards = await p.evaluate(() => document.querySelectorAll('.dg-card').length);
-  check('场景列表渲染全部场景', cards === bank.scenes.length, `${cards} 张卡`);
+  // 上千场之后列表按「情境骨架」分组，每组先摊开两张，其余折叠
+  const list = await p.evaluate(() => ({
+    cards: document.querySelectorAll('.dg-card').length,
+    groups: document.querySelectorAll('.dg-group').length,
+    more: document.querySelectorAll('.dg-more').length,
+  }));
+  check('列表按情境分组', list.groups > 0 && list.groups <= 12, `${list.groups} 组`);
+  check('每组先摊开两场，其余折叠', list.cards === Math.min(bank.scenes.length, list.groups * 2), `${list.cards} 张卡`);
+  check('折叠的组给出展开入口', list.more > 0, `${list.more} 个「还有 n 种情形」`);
+
+  // 搜英文台词也能定位到场景
+  await p.type('.dg-search', 'cash back');
+  await sleep(300);
+  const found = await p.evaluate(() => [...document.querySelectorAll('.dg-card')].map(x => x.dataset.scene));
+  check('搜台词能定位场景', found.includes('grocery'), found.slice(0, 4).join(','));
+  await p.click('.dg-search');
+  await p.keyboard.down('Control'); await p.keyboard.press('a'); await p.keyboard.up('Control');
+  await p.keyboard.press('Backspace');
+  await sleep(300);
 
   // 进第一场
-  const first = bank.scenes[0];
-  await p.click('.dg-card');
+  // 语料按类别分文件，scenes[0] 会随文件顺序变；测试点定 cafe（10 句、有岔路）
+  const first = bank.scenes.find(x => x.id === 'cafe') ?? bank.scenes[0];
+  await p.click(`[data-scene="${first.id}"]`);
   await p.waitForSelector('.dg-thread', { timeout: 5000 });
   await sleep(300);
 
@@ -291,7 +309,7 @@ try {
     window.__TYPEWAKE_ASR__ = () => window.__nextSay;
   });
 
-  await p.click('.dg-card');
+  await p.click(`[data-scene="${first.id}"]`);
   await p.waitForSelector('.dg-thread');
   await p.evaluate(() => [...document.querySelectorAll('.dg-tabs button')].find(x => x.textContent === '跟读')?.click());
   await p.waitForSelector('.dg-mic', { timeout: 5000 });
@@ -435,11 +453,12 @@ try {
   check('卡片显示换角成绩', /换角\s*\d+%/.test(card.swap), card.swap);
 
   /* ---------------- 实战：岔路 ---------------- */
-  await p.click('.dg-card');
+  await p.click(`[data-scene="${first.id}"]`);
   await p.waitForSelector('.dg-thread');
   await p.evaluate(() => [...document.querySelectorAll('.dg-tabs button')].find(x => x.textContent === '实战')?.click());
   await sleep(400);
 
+  const steps = first.lines.length;
   const live0 = await p.evaluate(() => ({
     bar: document.querySelector('.dg-bar span')?.textContent ?? '',
     listen: document.querySelector('.dg-listen-en')?.textContent ?? '',
@@ -448,7 +467,7 @@ try {
   }));
   check('实战第一步是听对方说', live0.listen.trim() === first.lines[0].en && !live0.input, live0.listen.slice(0, 34));
   check('实战不显示角色开关', !live0.roles);
-  check('实战进度按步数算', /^1\s*\/\s*10$/.test(live0.bar), live0.bar);
+  check('实战进度按步数算', new RegExp(`^1\\s*/\\s*${steps}$`).test(live0.bar), `${live0.bar} · 共 ${steps} 步`);
 
   // 一路推到岔路（该你说话的地方都随便打错）
   for (let n = 0; n < 24; n++) {
@@ -492,7 +511,7 @@ try {
     absorbed: document.body.innerText.includes(document.querySelector('.dg-drill')?.getAttribute('data-x') ?? ''),
   }));
   check('岔路后接回你的下一句', rejoin.zh === first.lines[first.branch.at + 2].zh, rejoin.zh);
-  check('岔路后回到主线（进度 10/10）', /^10\s*\/\s*10$/.test(rejoin.bar), rejoin.bar);
+  check('岔路后回到主线（进度走到最后）', new RegExp(`^${steps}\\s*/\\s*${steps}$`).test(rejoin.bar), rejoin.bar);
 
   // 打完最后一句 → 结算
   await p.keyboard.type('zz');

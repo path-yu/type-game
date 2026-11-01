@@ -60,7 +60,7 @@ const errs = [];
 page.on('pageerror', e => errs.push(e.message));
 
 try {
-  await page.goto('http://localhost:4173/', { waitUntil: 'networkidle2' });
+  await page.goto(`http://localhost:${process.env.PORT || 4173}/`, { waitUntil: 'networkidle2' });
   await page.evaluate(() => {
     localStorage.clear();
     localStorage.setItem('typewake:theme', 'light');

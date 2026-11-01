@@ -56,13 +56,58 @@ export function DialogueScreen() {
   useEffect(() => () => stopSpeaking(), []);
 
   // 自建对话排在最前，内置的按原顺序跟在后面
-  const all: Scene[] = bank ? [...p.customScenes, ...bank.scenes] : p.customScenes;
+  const all: Scene[] = useMemo(
+    () => (bank ? [...p.customScenes, ...bank.scenes] : p.customScenes),
+    [bank, p.customScenes],
+  );
   const scene = all.find(s => s.id === openId) ?? null;
   const done = all.filter(s => p.scenes[s.id]).length;
 
   // 句型池只收「练过的那几场」，否则 40 句一起涌进来没人扛得住
   const pool = useMemo(() => unlockedPhrases(all, p.scenes), [all, p.scenes]);
   const dueCount = useMemo(() => pendingCount(pool, p.phrases, dayNo()), [pool, p.phrases]);
+
+  /* ---- 筛选与分组：一千场之后，翻卡片找场景是不现实的 ---- */
+  const [q, setQ] = useState('');
+  const [cat, setCat] = useState('全部');
+  const [lv, setLv] = useState(0);
+  const [open, setOpen] = useState<Record<string, boolean>>({});
+  const [page, setPage] = useState(1);
+
+  const customIds = useMemo(() => new Set(p.customScenes.map(x => x.id)), [p.customScenes]);
+
+  const cats = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const s of all) m.set(s.cat, (m.get(s.cat) ?? 0) + 1);
+    return [...m].sort((a, b) => b[1] - a[1]);
+  }, [all]);
+
+  const matched = useMemo(() => {
+    const k = q.trim().toLowerCase();
+    return all.filter(s =>
+      (cat === '全部' || s.cat === cat)
+      && (lv === 0 || s.lv === lv)
+      && (!k
+        || s.name.toLowerCase().includes(k)
+        || s.cat.includes(k)
+        || s.setting.toLowerCase().includes(k)
+        || s.lines.some(l => l.en.toLowerCase().includes(k) || l.zh.includes(k)))
+    );
+  }, [all, cat, lv, q]);
+
+  // 同一段情境骨架的变体收成一组：一千张平铺的卡片没法浏览
+  const groups = useMemo(() => {
+    const m = new Map<string, Scene[]>();
+    for (const s of matched) {
+      const key = s.g ?? (customIds.has(s.id) ? '__custom' : s.id);
+      const list = m.get(key);
+      if (list) list.push(s);
+      else m.set(key, [s]);
+    }
+    return [...m].map(([key, list]) => ({ key, list }));
+  }, [matched, customIds]);
+
+  const shown = groups.slice(0, page * 12);
 
   if (err) {
     return (
@@ -118,7 +163,7 @@ export function DialogueScreen() {
         <div>
           <h1 className="page-title">场景对话</h1>
           <div className="page-sub">
-            {all.length} 场对话（其中自建 {p.customScenes.length} 场） · 已练{' '}
+            {all.length} 场对话 · {groups.length} 个情境 · 已练{' '}
             <em className="dg-em">{done}</em> 场 · 背打时打错的词，当晚进夜巡
           </div>
         </div>
@@ -149,57 +194,82 @@ export function DialogueScreen() {
         </button>
       )}
 
-      <div className="dg-grid">
-        {all.map(sc => {
-          const stat = p.scenes[sc.id];
-          const mine = yourLines(sc).length;
-          const custom = p.customScenes.some(x => x.id === sc.id);
-          return (
-            <div className="dg-cell" key={sc.id}>
-            <button className={`dg-card${stat ? ' done' : ''}`} onClick={() => setOpenId(sc.id)}>
-              <div className="dg-card-top">
-                <span className="dg-cat">{sc.cat}</span>
-                {/* 自建场的 cefr 是「自定」，跟左侧标签重复，不如不显示 */}
-                {!custom && <span className="dg-cefr">{sc.cefr}</span>}
-                {stat && !custom && (
-                  <span
-                    className="dg-check"
-                    title={stat.swapBest != null ? '两个角色都练过' : `最好 ${stat.best}%`}
-                  >
-                    {stat.swapBest != null ? '✓✓' : '✓'}
-                  </span>
-                )}
-              </div>
-              <div className="dg-name">{sc.name}</div>
-              <div className="dg-set">{sc.setting}</div>
-              <div className="dg-card-foot">
-                <span>
-                  {mine} 句你的台词
-                  {sc.phrases.length > 0 ? ` · ${sc.phrases.length} 个句型` : ''}
-                  {sc.branch ? ' · 1 处岔路' : ''}
-                </span>
-                <span className="dg-bests">
-                  {stat && stat.best > 0 && <em className="dg-best">最好 {stat.best}%</em>}
-                  {stat?.swapBest != null && <em className="dg-best swap">换角 {stat.swapBest}%</em>}
-                  {stat?.liveBest != null && <em className="dg-best swap">实战 {stat.liveBest}%</em>}
-                </span>
-              </div>
+      {/* 上千场之后，靠翻卡片找场景是不现实的 */}
+      <div className="dg-filters">
+        <input
+          className="dg-search"
+          value={q}
+          onChange={e => { setQ(e.target.value); setPage(1); }}
+          placeholder="搜场景：退换货 / 面试 / 没货 / forgot"
+        />
+        <div className="dg-chips">
+          {['全部', ...cats.map(([k]) => k)].map(k => (
+            <button
+              key={k}
+              className={`dg-chip${cat === k ? ' on' : ''}`}
+              onClick={() => { setCat(k); setPage(1); }}
+            >
+              {k}
+              <em>{k === '全部' ? all.length : (cats.find(([c]) => c === k)?.[1] ?? 0)}</em>
             </button>
-            {custom && (
-              <button
-                className="dg-del"
-                title="删除这场对话"
-                onClick={() => {
-                  if (confirm(`删除「${sc.name}」？练过的成绩也会一起清掉。`)) removeCustom(sc.id);
-                }}
-              >
-                ✕
+          ))}
+        </div>
+        <div className="dg-chips dg-chips-lv">
+          <button className={`dg-chip${lv === 0 ? ' on' : ''}`} onClick={() => { setLv(0); setPage(1); }}>全部难度</button>
+          {[1, 2, 3, 4, 5, 6, 7].map(n => (
+            <button key={n} className={`dg-chip${lv === n ? ' on' : ''}`} onClick={() => { setLv(n); setPage(1); }}>
+              L{n}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {shown.length === 0 && <div className="dg-empty">没有匹配的场景，换个词试试。</div>}
+
+      {shown.map(({ key, list }) => {
+        const isOpen = !!open[key] || !!q.trim();
+        const cards = isOpen ? list : list.slice(0, 2);
+        const okN = list.filter(s => p.scenes[s.id]).length;
+        return (
+          <section className="dg-group" key={key}>
+            {list.length > 1 && (
+              <div className="dg-group-head">
+                <span className="dg-group-name">{baseName(list[0])}</span>
+                <span className="dg-group-meta">
+                  {list[0].cat} · {list[0].cefr} · {list.length} 种情形
+                  {okN > 0 ? ` · 已练 ${okN}` : ''}
+                </span>
+              </div>
+            )}
+            <div className="dg-grid">
+              {cards.map(sc => (
+                <SceneCard
+                  key={sc.id}
+                  scene={sc}
+                  stat={p.scenes[sc.id]}
+                  custom={customIds.has(sc.id)}
+                  solo={list.length === 1}
+                  onOpen={() => setOpenId(sc.id)}
+                  onDelete={() => {
+                    if (confirm(`删除「${sc.name}」？练过的成绩也会一起清掉。`)) removeCustom(sc.id);
+                  }}
+                />
+              ))}
+            </div>
+            {!isOpen && list.length > 2 && (
+              <button className="dg-more" onClick={() => setOpen(o => ({ ...o, [key]: true }))}>
+                还有 {list.length - 2} 种情形
               </button>
             )}
-            </div>
-          );
-        })}
-      </div>
+          </section>
+        );
+      })}
+
+      {shown.length < groups.length && (
+        <button className="dg-loadmore" onClick={() => setPage(n => n + 1)}>
+          还有 {groups.length - shown.length} 个情境 · 继续看
+        </button>
+      )}
 
       {importing && (
         <ImportScene
@@ -210,6 +280,60 @@ export function DialogueScreen() {
             setOpenId(sc.id);
           }}
         />
+      )}
+    </div>
+  );
+}
+
+/** 组头用骨架名，卡片用变体名（「咖啡店点单」/「想坐一会儿」） */
+function baseName(s: Scene): string {
+  const i = s.name.indexOf(' · ');
+  return i < 0 ? s.name : s.name.slice(0, i);
+}
+function tagName(s: Scene): string {
+  const i = s.name.indexOf(' · ');
+  return i < 0 ? s.name : s.name.slice(i + 3);
+}
+
+function SceneCard({
+  scene, stat, custom, solo, onOpen, onDelete,
+}: {
+  scene: Scene;
+  stat: { best: number; swapBest?: number | null; liveBest?: number | null } | undefined;
+  custom: boolean;
+  solo: boolean;
+  onOpen: () => void;
+  onDelete: () => void;
+}) {
+  const mine = yourLines(scene).length;
+  return (
+    <div className="dg-cell">
+      <button className={`dg-card${stat ? ' done' : ''}`} data-scene={scene.id} onClick={onOpen}>
+        <div className="dg-card-top">
+          {solo && <span className="dg-cat">{scene.cat}</span>}
+          {!custom && <span className="dg-cefr">{scene.cefr}</span>}
+          {stat && !custom && (
+            <span className="dg-check" title={stat.swapBest != null ? '两个角色都练过' : `最好 ${stat.best}%`}>
+              {stat.swapBest != null ? '✓✓' : '✓'}
+            </span>
+          )}
+        </div>
+        <div className="dg-name">{tagName(scene)}</div>
+        <div className="dg-set">{scene.setting}</div>
+        <div className="dg-card-foot">
+          <span>
+            {mine} 句你的台词
+            {scene.branch ? ' · 1 处岔路' : ''}
+          </span>
+          <span className="dg-bests">
+            {stat && stat.best > 0 && <em className="dg-best">最好 {stat.best}%</em>}
+            {stat?.swapBest != null && <em className="dg-best swap">换角 {stat.swapBest}%</em>}
+            {stat?.liveBest != null && <em className="dg-best swap">实战 {stat.liveBest}%</em>}
+          </span>
+        </div>
+      </button>
+      {custom && (
+        <button className="dg-del" title="删除这场对话" onClick={onDelete}>✕</button>
       )}
     </div>
   );

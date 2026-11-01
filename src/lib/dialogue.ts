@@ -74,6 +74,8 @@ export interface DPhrase {
 
 export interface Scene {
   id: string;
+  /** 同一段情境骨架的 id —— 列表按它分组，避免一千张卡片平铺 */
+  g?: string;
   name: string;
   cat: string;
   lv: number;        // 1-7，与城区难度对齐
