@@ -455,7 +455,28 @@ consumePendingScene()  // 对话页挂载时取走并清空
 进度看起来正常（界面用的是即时算出来的 id），但结算时永远对不上。
 改成每次都调、由 `ensureDaily` 内部比对去重。**界面好看不代表记账是对的**。
 
-## 12. 还能往哪走
+## 12. 代码结构
+
+五种练法挤在一个文件里时，`DialogueScreen.tsx` 到了 1090 行——改跟读要滚过整个跟打，
+改岔路要先确认不会碰到背诵。现在按「一种练法一个文件」拆开：
+
+```
+screens/DialogueScreen.tsx   列表 + 场景外壳（挑场景、切模式、传参数）  235 行
+screens/dialogue/shared.tsx  模式表 / PracticeProps / 进度条            32 行
+screens/dialogue/Reader.tsx  通读（气泡 + 连播）                        71 行
+screens/dialogue/Drill.tsx   跟打 / 背打（同一个组件，差一个 shown）     201 行
+screens/dialogue/Speak.tsx   跟读（麦克风 + 降级）                     222 行
+screens/dialogue/Live.tsx    实战（时间线 + 岔路）                     312 行
+lib/dialogue.ts              纯逻辑（比对 / 判分 / 时间线 / 校验）      可被 Node 直接测
+```
+
+拆分本身不改任何行为：89 项端到端断言在拆分前后完全一致。
+顺手把三处重复的进度条（跟打、跟读、实战各写一遍）合并成 `StepBar`。
+
+真正的收益不是行数，而是**改动的爆炸半径**：现在改岔路只影响 Live，
+改 ASR 只影响 Speak，改比对逻辑只影响 `lib/dialogue.ts`（且有单测守着）。
+
+## 13. 还能往哪走
 
 - **难度自适应**：按 `p.scenes[id].best` 决定下次默认进哪一档（跟打 or 背打）。
 

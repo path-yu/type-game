@@ -60,7 +60,9 @@ src/
   engine/TypingEngine.ts   打字引擎（纯逻辑，零 DOM 依赖）
   components/TextStage.tsx 文字舞台（ref 直改 DOM + 命令式光标同步）
   components/WordCard.tsx  查词卡片
-  screens/                 地图 / 打字 / 结算 / 夜巡 / 藏书阁 / 阅读填空 / 体检报告
+  screens/                 地图 / 打字 / 结算 / 夜巡 / 藏书阁 / 阅读填空 / 体检报告 / 对话
+  screens/dialogue/        场景对话的四种练法各一个文件（Reader / Drill / Speak / Live）
+  lib/dialogue.ts          对话的纯逻辑：归一化比对 / 逐词对齐判分 / 时间线 / 语料校验
   lib/data.ts              词库索引、词形归一、i+1 推荐
   lib/store.ts             进度持久化、掌握度模型、SRS
   lib/native.ts            Tauri 桥（浏览器下自动降级）
