@@ -28,6 +28,7 @@ const steps = [
   { name: '易混词', cmd: 'node', args: ['scripts/test-confuse.mjs'], desc: '23 项判定 / 错开' },
   { name: '端到端', cmd: 'node', args: ['scripts/e2e.mjs'], desc: '49 项交互断言', needsServer: true },
   { name: '每日卷轴', cmd: 'node', args: ['scripts/test-daily.mjs'], desc: '14 项确定性 / 连续 / 预告', needsServer: true },
+  { name: '今日对话', cmd: 'node', args: ['scripts/test-daily-scene.mjs'], desc: '23 项抽取 / 直达 / 记账', needsServer: true },
   { name: '续读链路', cmd: 'node', args: ['scripts/test-seq.mjs'], desc: '6 项段号 / 同书续读', needsServer: true },
   { name: '预习卡', cmd: 'node', args: ['scripts/test-pretest.mjs'], desc: '12 项先测后学', needsServer: true },
   { name: '文库浏览', cmd: 'node', args: ['scripts/test-library.mjs'], desc: '11 项全库 / 筛选 / 进入', needsServer: true },

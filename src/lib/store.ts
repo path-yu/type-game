@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import type { Article, GhostFrame, RunResult, SceneStat, Screen, WordStat } from './types';
 import { appendRun, isDesktop, loadNativeProgress, saveNativeProgress } from './native';
-import { yesterdayKey } from './daily';
+import { bumpDailyStreak } from './daily';
 import { review, retrievability, type Grade } from './fsrs';
 import { spreadConfusable } from './confuse';
 
@@ -38,6 +38,9 @@ export interface Progress {
   dailyLastDay: string;    // 最近一次完成每日卷轴的日期
   dailyWpm: number;        // 完成时的成绩（用于地图页回显）
   dailyStars: number;
+  /** 今日对话：场景 id 与完成状态（和文章分开记，连续天数共用） */
+  dailyScene: string | null;
+  dailySceneDone: boolean;
   /** 场景对话：sceneId -> 练习记录 */
   scenes: Record<string, SceneStat>;
 }
@@ -75,6 +78,8 @@ const emptyProgress = (): Progress => ({
   dailyLastDay: '',
   dailyWpm: 0,
   dailyStars: 0,
+  dailyScene: null,
+  dailySceneDone: false,
   scenes: {},
 });
 
@@ -88,6 +93,8 @@ interface State {
   p: Progress;
   s: Settings;
   toast: string | null;
+  /** 首页点「今日对话」时带过去的场景 id，进页面后清掉 */
+  pendingScene: string | null;
 
   boot: () => void;
   go: (s: Screen) => void;
@@ -101,8 +108,11 @@ interface State {
   markUnknown: (word: string) => void;
   toggleLex: (word: string) => void;
   setSetting: <K extends keyof Settings>(k: K, v: Settings[K]) => void;
-  /** 今日卷轴还没定或已跨天时，写入当天选中的文章 */
-  ensureDaily: (id: string) => void;
+  /** 今日卷轴还没定或已跨天时，写入当天选中的文章与对话 */
+  ensureDaily: (id: string, sceneId?: string | null) => void;
+  /** 从首页直接进某一场对话 */
+  openScene: (id: string) => void;
+  consumePendingScene: () => void;
   pushToast: (t: string) => void;
   reset: () => void;
 }
@@ -184,6 +194,7 @@ export const useGame = create<State>((set, get) => ({
   p: initial.p,
   s: initial.s,
   toast: null,
+  pendingScene: null,
 
   boot: () => {
     // 桌面端优先读本地档案（卸载重装不丢档）
@@ -283,15 +294,12 @@ export const useGame = create<State>((set, get) => ({
     // 今日卷轴：只有打的是今天那一篇才算完成
     const isDaily = p.dailyDay === today && p.dailyArticle === r.articleId;
     const dailyDone = isDaily ? true : p.dailyDone;
-    // 每日连续：昨天做过就 +1，今天重复打不重复计，断了从 1 重来
-    const dailyStreak = !isDaily
-      ? p.dailyStreak
-      : p.dailyLastDay === today
-        ? p.dailyStreak
-        : p.dailyLastDay === yesterdayKey()
-          ? p.dailyStreak + 1
-          : 1;
-    const dailyLastDay = isDaily ? today : p.dailyLastDay;
+    // 每日连续：昨天做过就 +1，今天重复做不重复计，断了从 1 重来
+    const bumped = isDaily
+      ? bumpDailyStreak(p, today)
+      : { dailyStreak: p.dailyStreak, dailyLastDay: p.dailyLastDay };
+    const dailyStreak = bumped.dailyStreak;
+    const dailyLastDay = bumped.dailyLastDay;
     const dailyWpm = isDaily ? Math.max(p.dailyWpm, r.wpm) : p.dailyWpm;
     const dailyStars = isDaily ? Math.max(p.dailyStars, r.stars) : p.dailyStars;
 
@@ -401,8 +409,23 @@ export const useGame = create<State>((set, get) => ({
       },
     };
     const streak = p.lastDay !== today ? p.streak + 1 : p.streak;
+    // 打的是今天推荐的对话 → 记账；连续天数与文章共用一套规则
+    const isDailyScene = p.dailyDay === today && p.dailyScene === id;
+    const bumped = isDailyScene
+      ? bumpDailyStreak(p, today)
+      : { dailyStreak: p.dailyStreak, dailyLastDay: p.dailyLastDay };
     set({
-      p: { ...p, mastery, scenes, streak, lastDay: today, totalSeconds: p.totalSeconds + 90 },
+      p: {
+        ...p,
+        mastery,
+        scenes,
+        streak,
+        lastDay: today,
+        totalSeconds: p.totalSeconds + 90,
+        dailySceneDone: isDailyScene ? true : p.dailySceneDone,
+        dailyStreak: bumped.dailyStreak,
+        dailyLastDay: bumped.dailyLastDay,
+      },
       toast: `${as === 'other' ? '换角' : as === 'live' ? '实战' : '这一场'}练完了 · ${as === 'live' ? '接住率' : '正确率'} ${Math.round(score)}%`,
     });
     save();
@@ -435,16 +458,32 @@ export const useGame = create<State>((set, get) => ({
     save();
   },
 
-  ensureDaily: (id) => {
+  ensureDaily: (id, sceneId) => {
     const { p } = get();
     const today = todayStr();
+    const scene = sceneId === undefined ? p.dailyScene : sceneId;
     // 同一天且已经选过就不动 —— 中途解锁新城区也不该把今日卷轴换掉
-    if (p.dailyDay === today && p.dailyArticle === id) return;
+    if (p.dailyDay === today && p.dailyArticle === id && p.dailyScene === scene) return;
+    // 跨天才重置完成状态：对话数据比文章晚到几毫秒，不能把刚打过的 ✓ 抹掉
+    const fresh = p.dailyDay !== today;
     set({
-      p: { ...p, dailyDay: today, dailyArticle: id, dailyDone: false, dailyWpm: 0, dailyStars: 0 },
+      p: {
+        ...p,
+        dailyDay: today,
+        dailyArticle: id,
+        dailyScene: scene,
+        dailyDone: fresh ? false : p.dailyDone,
+        dailySceneDone: fresh ? false : p.dailySceneDone,
+        dailyWpm: fresh ? 0 : p.dailyWpm,
+        dailyStars: fresh ? 0 : p.dailyStars,
+      },
     });
     save();
   },
+
+  openScene: (id) => set({ screen: 'dialogue', pendingScene: id }),
+
+  consumePendingScene: () => set({ pendingScene: null }),
 
   setSetting: (k, v) => {
     const { s } = get();

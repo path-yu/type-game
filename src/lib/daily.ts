@@ -41,6 +41,41 @@ export function pickDaily(corpus: Corpus, unlocked: number, day: string): Articl
   return list[hash(day) % list.length];
 }
 
+/**
+ * 抽出今天的对话场景。
+ *
+ * 和文章一样用日期做种子：同一天刷新多少次都是同一场。
+ * 只从已解锁难度里抽，免得第一天就被扔进面试或客服电话。
+ */
+export function pickDailyScene<T extends { id: string; lv: number }>(
+  scenes: T[],
+  unlocked: number,
+  day: string
+): T | null {
+  if (!scenes.length) return null;
+  const lv = Math.min(7, Math.max(1, unlocked));
+  const pool = scenes.filter(s => s.lv <= lv);
+  const list = pool.length ? pool : scenes;
+  return list[hash(`scene:${day}`) % list.length];
+}
+
+/**
+ * 完成任意一项（文章 or 对话）就推进「每日连续」。
+ *
+ * 两项分开记完成状态，但连续天数只认「今天有没有开张」——
+ * 要求两项都做才 +1，等于把门槛翻倍，多数人第一天就断了。
+ */
+export function bumpDailyStreak(
+  p: { dailyStreak: number; dailyLastDay: string },
+  today: string
+): { dailyStreak: number; dailyLastDay: string } {
+  if (p.dailyLastDay === today) return { dailyStreak: p.dailyStreak, dailyLastDay: today };
+  return {
+    dailyStreak: p.dailyLastDay === yesterdayKey() ? p.dailyStreak + 1 : 1,
+    dailyLastDay: today,
+  };
+}
+
 /** 该日卷轴是否已完成 */
 export function isDailyDone(
   p: { dailyDay: string; dailyArticle: string | null; dailyDone: boolean },

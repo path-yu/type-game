@@ -24,7 +24,16 @@ export function DialogueScreen() {
   const finishScene = useGame(s => s.finishScene);
   const [bank, setBank] = useState<DBank | null>(null);
   const [err, setErr] = useState<string | null>(null);
-  const [openId, setOpenId] = useState<string | null>(null);
+  const pending = useGame(s => s.pendingScene);
+  const consumePending = useGame(s => s.consumePendingScene);
+  // 从首页「今日对话」进来时直接打开那一场
+  const [openId, setOpenId] = useState<string | null>(pending);
+
+  useEffect(() => {
+    if (!pending) return;
+    setOpenId(pending);
+    consumePending();
+  }, [pending, consumePending]);
 
   useEffect(() => {
     let alive = true;

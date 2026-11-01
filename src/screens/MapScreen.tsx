@@ -1,9 +1,10 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useCorpus } from '../lib/CorpusContext';
 import { estimateVocab, newWordRate, recommend } from '../lib/data';
 import { useGame } from '../lib/store';
 import type { Article } from '../lib/types';
-import { aliveDailyStreak, peekTomorrow, pickDaily, todayKey } from '../lib/daily';
+import { aliveDailyStreak, peekTomorrow, pickDaily, pickDailyScene, todayKey } from '../lib/daily';
+import { loadDialogues, type Scene } from '../lib/dialogue';
 import { DISTRICTS, THEME } from '../lib/districts';
 
 const TARGET = [0, 26, 30, 36, 42, 48, 54, 60];
@@ -16,6 +17,7 @@ export function MapScreen() {
   const go = useGame(s => s.go);
 
   const ensureDaily = useGame(s => s.ensureDaily);
+  const openScene = useGame(s => s.openScene);
   const vocab = estimateVocab(p.mastery, corpus);
   const level = Math.min(7, Math.max(1, p.unlocked));
 
@@ -29,15 +31,38 @@ export function MapScreen() {
   /* 每日卷轴：当天第一次进入时定稿，之后固定 */
   const today = todayKey();
   const picked = useMemo(() => pickDaily(corpus, p.unlocked, today), [corpus, p.unlocked, today]);
+
+  /* 今日对话：语料单独拉一次（有缓存），没加载好就先只显示文章 */
+  const [scenes, setScenes] = useState<Scene[] | null>(null);
   useEffect(() => {
-    if (p.dailyDay !== today) ensureDaily(picked.id);
-  }, [p.dailyDay, today, picked.id, ensureDaily]);
+    let alive = true;
+    void loadDialogues().then(b => { if (alive && b) setScenes(b.scenes); });
+    return () => { alive = false; };
+  }, []);
+  const dailyScenePicked = useMemo(
+    () => (scenes ? pickDailyScene(scenes, p.unlocked, today) : null),
+    [scenes, p.unlocked, today]
+  );
+  const dailyScene = useMemo(
+    () => (dailyScenePicked && p.dailyScene
+      ? scenes?.find(s => s.id === p.dailyScene) ?? dailyScenePicked
+      : dailyScenePicked),
+    [scenes, p.dailyScene, dailyScenePicked]
+  );
+
+  // 不按「跨天才写」来判：对话语料比文章晚到一帧，第一次写入时可能还没有场景 id。
+  // ensureDaily 内部会比对当前值，没变化就直接返回，所以这里可以每次都调。
+  useEffect(() => {
+    ensureDaily(picked.id, dailyScenePicked?.id);
+  }, [p.dailyDay, today, picked.id, dailyScenePicked, ensureDaily]);
 
   const daily = useMemo(
     () => corpus.articles.find(a => a.id === p.dailyArticle) ?? picked,
     [corpus, p.dailyArticle, picked]
   );
   const dailyDone = p.dailyDay === today && p.dailyDone;
+  const dailySceneDone = p.dailyDay === today && p.dailySceneDone;
+  const todayDone = (dailyDone ? 1 : 0) + (dailySceneDone ? 1 : 0);
   const dailyStreak = aliveDailyStreak(p, today);
   const tomorrow = useMemo(() => peekTomorrow(corpus, p.unlocked), [corpus, p.unlocked]);
   const dailyInfo = useMemo(() => newWordRate(corpus, daily, p.mastery), [corpus, daily, p.mastery]);
@@ -107,6 +132,27 @@ export function MapScreen() {
         </span>
         <span className="daily-go">{dailyDone ? '再打一次' : '开始'}</span>
       </button>
+
+      {dailyScene && (
+        <button
+          className={`daily-row scene${dailySceneDone ? ' done' : ''}`}
+          onClick={() => openScene(dailyScene.id)}
+        >
+          <span className="daily-mark">{dailySceneDone ? '✓' : '❝'}</span>
+          <span className="daily-body">
+            <span className="daily-label">
+              今日对话 · {dailyScene.cat}
+              <em className="daily-streak">今日 {todayDone} / 2</em>
+            </span>
+            <span className="daily-title">{dailyScene.name}</span>
+            <span className="daily-meta">
+              {dailyScene.cefr} · 你 {dailyScene.lines.filter(l => l.r === dailyScene.you).length} 句台词
+              · {dailyScene.phrases.length} 个句型 · 1 处岔路
+            </span>
+          </span>
+          <span className="daily-go">{dailySceneDone ? '再练一次' : '去练'}</span>
+        </button>
+      )}
 
       <div className="dist-list">
         {DISTRICTS.map(d => {

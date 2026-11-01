@@ -1687,3 +1687,8 @@ input, textarea { font-family: inherit; }
 .rep-talk-note.good b { color: var(--ok); }
 .rep-talk-note.warn b { color: var(--accent); }
 .rep-talk-note.bad b { color: var(--err); }
+
+/* 今日卷轴的第二行：对话 */
+.daily-row.scene .daily-mark { font-size: 12px; }
+.daily-row.scene:not(.done) .daily-mark { color: var(--fg-3); background: var(--fill); }
+.daily-row.scene + .dist-list { margin-top: var(--sp-2); }
