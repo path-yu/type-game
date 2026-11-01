@@ -18,7 +18,11 @@ const errs = [];
 page.on('pageerror', e => errs.push(e.message));
 
 await page.goto('http://localhost:4173/', { waitUntil: 'networkidle2' });
-await page.evaluate(() => localStorage.clear());
+await page.evaluate(() => {
+  localStorage.clear();
+  // 预习卡会盖住打字区，这几项测试只关心打字与结算，先关掉；它有专属测试
+  localStorage.setItem('typewake:v1', JSON.stringify({ s: { pretest: false } }));
+});
 await page.reload({ waitUntil: 'networkidle2' });
 await page.waitForSelector('.hero');
 
@@ -26,6 +30,13 @@ await page.waitForSelector('.hero');
 async function playOnce() {
   await page.click('.hero .btn-primary');
   await page.waitForSelector('.stage');
+  // 预习卡会盖住打字区：测试里统一跳过（它有自己的专项测试）
+  await sleep(350);
+  if (await page.$('.pre')) {
+    await page.evaluate(() => document.querySelector('.pre-skip')?.click());
+    await sleep(300);
+  }
+
   await sleep(250);
   const text = await page.evaluate(() => [...document.querySelectorAll('.stage .ch')].map(e => e.textContent).join(''));
 

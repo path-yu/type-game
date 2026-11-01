@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import type { WordEntry } from '../lib/types';
 import { speak } from '../lib/speech';
-import { useGame } from '../lib/store';
+import { dayNo, useGame } from '../lib/store';
+import { memoryLabel } from '../lib/fsrs';
 
 const TAG_LABEL: Record<string, string> = {
   zk: '中考', gk: '高考', cet4: 'CET4', cet6: 'CET6',
@@ -24,6 +25,7 @@ interface Props {
 export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const settings = useGame(s => s.s);
+  const stat = useGame(s => s.p.mastery[word]);
   const setSetting = useGame(s => s.setSetting);
   const [speedOpen, setSpeedOpen] = useState(false);
 
@@ -127,7 +129,7 @@ export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave 
       <div className="zh">{entry?.z || '词库中暂未收录这个词 · 可手动收藏'}</div>
       {entry?.e && <div className="en">{entry.e}</div>}
 
-      {(entry?.t || tags.length > 0) && (
+      {(entry?.t || tags.length > 0 || stat?.d != null) && (
         <>
           <hr />
           <div className="meta">
@@ -141,6 +143,19 @@ export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave 
               <div>
                 <span>标签</span>
                 <em>{tags.join(' · ')}</em>
+              </div>
+            )}
+            {/* 记忆状态来自 FSRS：这个词的稳定度、难度，以及排到哪一天复习 */}
+            {stat?.d != null && (
+              <div>
+                <span>记忆</span>
+                <em>
+                  {memoryLabel(
+                    { s: stat.s, d: stat.d, due: stat.due, last: stat.last ?? 0, reps: stat.reps ?? 1, lapses: stat.lapses ?? 0 },
+                    dayNo()
+                  )}
+                  {` · 难度 ${Math.round(stat.d)}/10`}
+                </em>
               </div>
             )}
           </div>

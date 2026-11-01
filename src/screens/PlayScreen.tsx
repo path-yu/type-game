@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { TextStage, type StageHandle } from '../components/TextStage';
 import { WordCard } from '../components/WordCard';
+import { PreTeach } from '../components/PreTeach';
 import { TypingEngine, ghostIndex } from '../engine/TypingEngine';
 import { useCorpus } from '../lib/CorpusContext';
 import { lookup, newWordRate, priorOf, tokenize } from '../lib/data';
@@ -30,6 +31,7 @@ export function PlayScreen() {
   const go = useGame(s => s.go);
   const markUnknown = useGame(s => s.markUnknown);
   const toggleLex = useGame(s => s.toggleLex);
+  const reviewWord = useGame(s => s.review);
   const pushToast = useGame(s => s.pushToast);
 
   const [runId, setRunId] = useState(0);
@@ -40,6 +42,8 @@ export function PlayScreen() {
   const [reading, setReading] = useState(false);
   const [sIdx, setSIdx] = useState(0);
   const [tr, setTr] = useState<string[] | null>(null);
+  // 预习卡：每篇只弹一次，跳过或做完都记为 done
+  const [preDone, setPreDone] = useState(false);
 
   const stageRef = useRef<StageHandle>(null);
   const comboRef = useRef<HTMLDivElement>(null);
@@ -78,6 +82,11 @@ export function PlayScreen() {
   }, [article.id, settings.sentenceHelp]);
 
   const vocab = newWordRate(corpus, article, progress.mastery);
+  // 只挑词库里有中文释义的词 —— 没有释义就无从回忆，预习卡会变成一张空牌
+  const preWords = useMemo(
+    () => vocab.unknown.filter(w => corpus.dict.get(w)?.z),
+    [vocab.unknown, corpus]
+  );
   const ghost = progress.ghost[article.id];
   const prevWpm = progress.bestWpm[article.id] ?? null;
 
@@ -439,6 +448,18 @@ export function PlayScreen() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* 先测后学：进正文前把本篇生词过一遍。只在本篇有 3 个以上生词时出现 */}
+      {!preDone && settings.pretest && preWords.length >= 2 && !paused && (
+        <PreTeach
+          key={`pre-${article.id}-${runId}`}
+          words={preWords}
+          onDone={(res) => {
+            for (const r of res) reviewWord(r.word, r.ok);
+            setPreDone(true);
+          }}
+        />
       )}
     </div>
   );

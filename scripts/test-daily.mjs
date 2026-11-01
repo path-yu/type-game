@@ -18,7 +18,11 @@ const errs = [];
 page.on('pageerror', e => errs.push(e.message));
 
 await page.goto('http://localhost:4173/', { waitUntil: 'networkidle2' });
-await page.evaluate(() => localStorage.clear());
+await page.evaluate(() => {
+  localStorage.clear();
+  // 预习卡会盖住打字区，这几项测试只关心打字与结算，先关掉；它有专属测试
+  localStorage.setItem('typewake:v1', JSON.stringify({ s: { pretest: false } }));
+});
 await page.reload({ waitUntil: 'networkidle2' });
 await page.waitForSelector('.daily-row');
 await sleep(400);
@@ -54,6 +58,13 @@ check('选中结果已写入存档', !!stored.id && !!stored.day, `${stored.id} 
 // 进入 → 标题应与卷轴一致（标题后面跟了一个「第 N/M 段」，比对时剥掉）
 await page.click('.daily-row');
 await page.waitForSelector('.stage');
+  // 预习卡会盖住打字区：测试里统一跳过（它有自己的专项测试）
+  await sleep(350);
+  if (await page.$('.pre')) {
+    await page.evaluate(() => document.querySelector('.pre-skip')?.click());
+    await sleep(300);
+  }
+
 await sleep(400);
 const ttl = await page.evaluate(() => {
   const el = document.querySelector('.tbar .ttl');
@@ -118,6 +129,13 @@ check('未断签时显示连续 3 天', /连续 3 天/.test(await page.evaluate(
 
 await page.click('.daily-row');
 await page.waitForSelector('.stage');
+  // 预习卡会盖住打字区：测试里统一跳过（它有自己的专项测试）
+  await sleep(350);
+  if (await page.$('.pre')) {
+    await page.evaluate(() => document.querySelector('.pre-skip')?.click());
+    await sleep(300);
+  }
+
 await sleep(300);
 const text2 = await page.evaluate(() => [...document.querySelectorAll('.stage .ch')].map(e => e.textContent).join(''));
 await page.keyboard.type(text2);

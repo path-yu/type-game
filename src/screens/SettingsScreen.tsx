@@ -58,9 +58,27 @@ export function SettingsScreen({ mode, onMode }: Props) {
             <span>关闭连击光带、粒子与过渡动画</span>
           </div>
           <button
-            className={`switch${s.motion ? ' on' : ''}`}
+            className={`switch${!s.motion ? ' on' : ''}`}
             onClick={() => set('motion', !s.motion)}
-            aria-pressed={s.motion}
+            aria-pressed={!s.motion}
+          >
+            <i />
+          </button>
+        </div>
+      </div>
+
+      <div className="set-group">
+        <div className="set-group-title">学习</div>
+
+        <div className="set-row">
+          <div className="set-label">
+            <b>开打前预习生词</b>
+            <span>先用中文释义回忆一遍本篇的生词，再进正文（先测后学）</span>
+          </div>
+          <button
+            className={`switch${s.pretest ? ' on' : ''}`}
+            onClick={() => set('pretest', !s.pretest)}
+            aria-pressed={s.pretest}
           >
             <i />
           </button>

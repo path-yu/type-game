@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import type { Article, GhostFrame, RunResult, Screen, WordStat } from './types';
 import { appendRun, isDesktop, loadNativeProgress, saveNativeProgress } from './native';
 import { yesterdayKey } from './daily';
+import { review, retrievability, type Grade } from './fsrs';
 
 const KEY = 'typewake:v1';
 const DAY = 86400000;
@@ -9,7 +10,8 @@ const DAY = 86400000;
 export const dayNo = (t = Date.now()) => Math.floor(t / DAY);
 export const todayStr = (t = Date.now()) => new Date(t).toISOString().slice(0, 10);
 
-const INTERVALS = [1, 3, 7, 16, 35, 75];
+/** 旧调度阶梯，只用于把老数据迁移到 FSRS（s 曾是 0–5 的档位） */
+const LEGACY_INTERVALS = [1, 3, 7, 16, 35, 75];
 
 export interface Progress {
   mastery: Record<string, WordStat>;
@@ -45,6 +47,7 @@ export interface Settings {
   autoSpeak: boolean;  // 打字时实时朗读刚打完的单词
   sentenceHelp: 'off' | 'gloss' | 'both'; // 打字时的句子解析
   clozeHint: 'none' | 'first' | 'both';   // 阅读填空的提示强度
+  pretest: boolean;    // 开打前先过一遍生词（先测后学）
 }
 
 const emptyProgress = (): Progress => ({
@@ -71,7 +74,7 @@ const emptyProgress = (): Progress => ({
   dailyStars: 0,
 });
 
-const defaultSettings = (): Settings => ({ voice: 'us', rate: 1, sound: true, motion: true, autoSpeak: false, sentenceHelp: 'gloss', clozeHint: 'first' });
+const defaultSettings = (): Settings => ({ voice: 'us', rate: 1, sound: true, motion: true, autoSpeak: false, sentenceHelp: 'gloss', clozeHint: 'first', pretest: true });
 
 interface State {
   ready: boolean;
@@ -98,12 +101,39 @@ interface State {
   reset: () => void;
 }
 
+/**
+ * 老档迁移：`s` 曾经是 0–5 的阶梯档位，FSRS 要求它是「稳定度天数」。
+ * 不迁移的话，所有老词的 s 都是个位数，会被当成快要忘光的词，一夜之间全涌进夜巡。
+ */
+function migrateMastery(mastery: Record<string, WordStat>): Record<string, WordStat> {
+  let migrated = 0;
+  const out: Record<string, WordStat> = {};
+  for (const [w, st] of Object.entries(mastery)) {
+    if (st.d != null) { out[w] = st; continue; }
+    const tier = Math.max(0, Math.min(5, Math.round(st.s || 0)));
+    const days = LEGACY_INTERVALS[tier] ?? 1;
+    out[w] = {
+      ...st,
+      s: days,
+      d: 5,                                   // 未知难度，先给中位值
+      reps: st.seen,
+      lapses: st.er,
+      last: Math.max(0, (st.due || 0) - days),
+    };
+    migrated++;
+  }
+  if (migrated) console.info(`[typewake] 已把 ${migrated} 个词的旧稳定度迁移到 FSRS`);
+  return out;
+}
+
 function load(): { p: Progress; s: Settings } {
   try {
     const raw = localStorage.getItem(KEY);
     if (!raw) return { p: emptyProgress(), s: defaultSettings() };
     const j = JSON.parse(raw);
-    return { p: { ...emptyProgress(), ...(j.p || {}) }, s: { ...defaultSettings(), ...(j.s || {}) } };
+    const p = { ...emptyProgress(), ...(j.p || {}) };
+    p.mastery = migrateMastery(p.mastery || {});
+    return { p, s: { ...defaultSettings(), ...(j.s || {}) } };
   } catch {
     return { p: emptyProgress(), s: defaultSettings() };
   }
@@ -160,17 +190,31 @@ export const useGame = create<State>((set, get) => ({
       const loss = 8 * d.er;
       const m = Math.max(0, Math.min(100, st.m + gain - loss));
       const seen2 = st.seen + d.ok + d.er;
-      // 稳定度只看"被正确产出过几次"，不看掌握度 —— 打对一次不该排到 75 天后复习
-      const s = Math.max(0, Math.min(5, Math.floor(seen2 / 2)));
+
+      // 复习间隔交给 FSRS：每个词有自己的难度和稳定度，不再共用一张 [1,3,7,16,35,75] 阶梯
+      const grade: Grade =
+        d.er === 0 ? (st.seen === 0 ? 4 : 3)   // 一次没错：首见算 easy，否则 good
+        : d.ok > d.er ? 2                       // 错了但整体还是对得多：hard
+        : 1;                                    // 错得比对得多：again
+      const prev = st.d != null
+        ? { s: st.s, d: st.d, due: st.due, last: st.last ?? 0, reps: st.reps ?? 1, lapses: st.lapses ?? 0 }
+        : null;
+      const mem = review(prev, grade, dayNo());
+      // 打错的词当天就回炉（当晚夜巡就能捞回来），其余按 FSRS 排期
+      const due = grade === 1 ? dayNo() : mem.due;
+
       mastery[w] = {
         ...st,
         m,
-        s,
         seen: seen2,
         ok: st.ok + d.ok,
         er: st.er + d.er,
-        // 打错的词当天就进复习队列，当天晚上的夜巡就能捞回来
-        due: d.er > 0 ? dayNo() : dayNo() + (INTERVALS[s] ?? 1),
+        s: mem.s,
+        d: mem.d,
+        last: mem.last,
+        reps: mem.reps,
+        lapses: mem.lapses,
+        due,
       };
     }
 
@@ -297,18 +341,26 @@ export const useGame = create<State>((set, get) => ({
     const { p } = get();
     const st = p.mastery[word];
     const base: WordStat = st ?? { m: 0, s: 0, due: 0, seen: 0, ok: 0, er: 0 };
-    const s = ok ? Math.min(5, base.s + 1) : Math.max(0, base.s - 1);
     const m = Math.max(0, Math.min(100, base.m + (ok ? 15 : -20)));
+    // 夜巡的一次作答同样进 FSRS：答对算 good，答错算 again（当天回炉）
+    const prev = base.d != null
+      ? { s: base.s, d: base.d, due: base.due, last: base.last ?? 0, reps: base.reps ?? 1, lapses: base.lapses ?? 0 }
+      : null;
+    const mem = review(prev, ok ? 3 : 1, dayNo());
     const mastery = {
       ...p.mastery,
       [word]: {
         ...base,
         m,
-        s,
         seen: base.seen + 1,
         ok: base.ok + (ok ? 1 : 0),
         er: base.er + (ok ? 0 : 1),
-        due: dayNo() + (ok ? INTERVALS[Math.min(s, 5)] : 1),
+        s: mem.s,
+        d: mem.d,
+        last: mem.last,
+        reps: mem.reps,
+        lapses: mem.lapses,
+        due: ok ? mem.due : dayNo(),
       },
     };
     set({ p: { ...p, mastery } });
@@ -318,10 +370,13 @@ export const useGame = create<State>((set, get) => ({
   markUnknown: (word) => {
     const { p } = get();
     const st = p.mastery[word];
+    const today = dayNo();
+    // 查了词＝承认不认识：掌握度打回 25，并让它当晚就进复习队列。
+    // 这里不记 reps —— 用户只是看了一眼释义，没有真正作答。
     if (!st) {
-      set({ p: { ...p, mastery: { ...p.mastery, [word]: { m: 25, s: 0, due: dayNo() + 1, seen: 0, ok: 0, er: 0 } } } });
-    } else if (st.m > 25) {
-      set({ p: { ...p, mastery: { ...p.mastery, [word]: { ...st, m: 25 } } } });
+      set({ p: { ...p, mastery: { ...p.mastery, [word]: { m: 25, s: 0.5, due: today, seen: 0, ok: 0, er: 0 } } } });
+    } else if (st.m > 25 || st.due > today) {
+      set({ p: { ...p, mastery: { ...p.mastery, [word]: { ...st, m: 25, due: today } } } });
     }
     save();
   },
@@ -386,8 +441,11 @@ export function dueWords(mastery: Record<string, WordStat>, limit = 12): string[
   for (const [w, st] of Object.entries(mastery)) {
     if (!st.lex && !st.seen) continue;
     if (st.m >= 95) continue;
-    const overdue = today - (st.due || 0);
-    if (overdue >= 0) out.push({ w, pri: st.m + overdue * 2 });
+    if (today < (st.due || 0)) continue;      // 还没到期
+    // 到期的词按「此刻还记得住的概率」排序 —— 越快忘的越先复习。
+    // 旧版按「掌握度 + 逾期天数」排，逾期久的反而排后面，顺序是反的。
+    const r = retrievability(today - (st.last ?? today), st.s || 0.5);
+    out.push({ w, pri: r });
   }
   out.sort((a, b) => a.pri - b.pri);
   return out.slice(0, limit).map(x => x.w);

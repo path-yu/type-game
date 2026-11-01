@@ -29,9 +29,13 @@ export interface Article {
 }
 
 export interface WordStat {
-  m: number;    // 掌握度 0-100
-  s: number;    // 记忆稳定度 0-5
+  m: number;    // 掌握度 0-100（UI 口径，词汇量统计也用它）
+  s: number;    // FSRS 稳定度：保持率降到 90% 所需的天数
+  d?: number;   // FSRS 难度 1-10，越大越难记住
   due: number;  // 下次复习时间戳（天）
+  last?: number; // 上次复习的天序号
+  reps?: number;
+  lapses?: number;
   seen: number;
   ok: number;
   er: number;

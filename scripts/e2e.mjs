@@ -27,6 +27,14 @@ page.on('pageerror', e => errors.push('PAGEERROR ' + e.message));
 page.on('console', m => { if (m.type() === 'error' && !m.text().includes('favicon')) errors.push('CONSOLE ' + m.text()); });
 
 await page.goto(URL, { waitUntil: 'networkidle2' });
+await page.evaluate(() => {
+  // 预习卡会盖住打字区，端到端只关心打字判定与结算，先关掉；它有专属测试
+  const raw = localStorage.getItem('typewake:v1');
+  const j = raw ? JSON.parse(raw) : { p: {}, s: {} };
+  j.s = { ...(j.s || {}), pretest: false };
+  localStorage.setItem('typewake:v1', JSON.stringify(j));
+});
+await page.reload({ waitUntil: 'networkidle2' });
 await page.waitForSelector('.dist-list', { timeout: 20000 });
 await sleep(600);
 
@@ -50,6 +58,13 @@ check('卡片显示生词与目标 WPM', /生词\s*\d+/.test(mapInfo.meta) && /W
 section('打字判定');
 await page.click('.hero .btn-primary');
 await page.waitForSelector('.stage');
+  // 预习卡会盖住打字区：测试里统一跳过（它有自己的专项测试）
+  await sleep(350);
+  if (await page.$('.pre')) {
+    await page.evaluate(() => document.querySelector('.pre-skip')?.click());
+    await sleep(300);
+  }
+
 await sleep(400);
 
 const text = await page.evaluate(() =>
