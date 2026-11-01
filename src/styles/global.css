@@ -1867,3 +1867,38 @@ input, textarea { font-family: inherit; }
 .rv-wrong-item:hover { background: var(--fill-2, var(--fill)); }
 .rv-wrong-item b { display: block; font-size: 11.5px; font-weight: 600; color: var(--fg-2); }
 .rv-wrong-item span { font-size: 11px; color: var(--fg-3); }
+
+/* —— 体检报告：岔路分类 —— */
+.rep-branch { margin-top: var(--sp-5); }
+.rep-branch-title {
+  display: flex; align-items: baseline; gap: 8px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.06em;
+  color: var(--fg-3); margin-bottom: 10px;
+}
+.rep-branch-title em {
+  font-style: normal; font-weight: 500; letter-spacing: 0;
+  color: var(--err); opacity: 0.85;
+}
+.rep-branch-row {
+  display: grid; grid-template-columns: 62px 1fr 42px;
+  align-items: center; gap: 10px;
+  padding: 4px 0;
+}
+.rep-branch-row .k { font-size: 11.5px; color: var(--fg-2); }
+.rep-branch-row i {
+  height: 3px; border-radius: 2px;
+  background: var(--fill-2); overflow: hidden;
+}
+.rep-branch-row i b {
+  display: block; height: 100%;
+  /* 正常的行压得很淡，只让「最弱」那一行跳出来 */
+  background: var(--accent); opacity: 0.4;
+  transition: width 0.3s var(--ease-out);
+}
+.rep-branch-row em {
+  font-style: normal; font-family: var(--font-mono);
+  font-size: 10.5px; color: var(--fg-3); text-align: right;
+}
+.rep-branch-row.weak .k { color: var(--fg); font-weight: 600; }
+.rep-branch-row.weak i b { background: var(--err); opacity: 0.85; }
+.rep-branch-row.weak em { color: var(--err); }

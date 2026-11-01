@@ -38,10 +38,31 @@ export interface BranchOption {
  */
 export interface Branch {
   at: number;
+  /** 这是哪一类意外 —— 报告里据此看「你最容易卡在哪种情况」 */
+  kind: BranchKind;
   task: string;      // 你要达到的目的（中文，不泄露说法）
   prompt: DSay;      // 对方的意外发言
   options: BranchOption[];
 }
+
+/**
+ * 岔路的类型。
+ *
+ * 分类不是为了做目录，是为了**诊断**：「实战 52 分」说明不了什么，
+ * 「你卡住的三次里有两次是对方要加钱」才指向下一步该练什么。
+ */
+export type BranchKind = 'short' | 'cost' | 'change' | 'probe' | 'offer';
+
+export const BRANCH_KINDS: Record<BranchKind, string> = {
+  short: '东西没了',
+  cost: '要加钱',
+  change: '流程变了',
+  probe: '被追问',
+  offer: '对方提议',
+};
+
+export const isBranchKind = (k: unknown): k is BranchKind =>
+  typeof k === 'string' && k in BRANCH_KINDS;
 
 export interface DPhrase {
   en: string;
@@ -378,6 +399,7 @@ export function validate(bank: DBank): string[] {
         const back = s.lines[b.at + 2];
         if (back && back.r !== s.you) bad.push(`${tag} 岔路结束后应接回你的台词`);
       }
+      if (!isBranchKind(b.kind)) bad.push(`${tag} 岔路类型非法：${String(b.kind)}`);
       if (!b.task || !/[\u4e00-\u9fa5]/.test(b.task)) bad.push(`${tag} 岔路缺目标说明`);
       checkSay(b.prompt, `${tag} 岔路 prompt`);
       if (!(b.options?.length >= 2)) bad.push(`${tag} 岔路少于两个选项`);

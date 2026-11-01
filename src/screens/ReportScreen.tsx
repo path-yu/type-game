@@ -195,6 +195,25 @@ export function ReportScreen() {
               <span>{r.talk.verdict.detail}</span>
             </div>
           )}
+
+          {/* 岔路按类型拆开：低分的排前面，一眼看出该补哪一类 */}
+          {r.talk.branches.length > 0 && (
+            <div className="rep-branch">
+              <div className="rep-branch-title">
+                岔路 · 哪类意外最容易卡住
+                {r.talk.weakBranch && (
+                  <em>{`最弱：${r.talk.weakBranch.label}`}</em>
+                )}
+              </div>
+              {r.talk.branches.map(b => (
+                <div key={b.kind} className={`rep-branch-row${b === r.talk.weakBranch ? ' weak' : ''}`}>
+                  <span className="k">{b.label}</span>
+                  <i><b style={{ width: `${Math.max(b.rate, 2)}%` }} /></i>
+                  <em>{b.ok}/{b.n}</em>
+                </div>
+              ))}
+            </div>
+          )}
         </section>
       )}
 

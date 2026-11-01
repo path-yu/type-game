@@ -22,10 +22,11 @@ await esbuild.build({
 });
 const R = await import(`file://${TMP.replace(/\\/g, '/')}?t=${Date.now()}`);
 const fakeCorpus = { dict: new Map(), names: new Set(), articles: [], byLevel: [] };
-const mk = scenes => ({
-  history: [], keyErr: {}, mastery: {}, bestWpm: {}, runs: 0, totalSeconds: 0, scenes,
+const mk = (scenes, branchStats = {}) => ({
+  history: [], keyErr: {}, mastery: {}, bestWpm: {}, runs: 0, totalSeconds: 0, scenes, branchStats,
 });
-const reportOf = (scenes, total = 10) => R.buildReport(mk(scenes), fakeCorpus, 1, { scenes: total });
+const reportOf = (scenes, total = 10, branchStats = {}) =>
+  R.buildReport(mk(scenes, branchStats), fakeCorpus, 1, { scenes: total });
 
 const none = reportOf({});
 check('没练过对话时不影响报告', none.talk.played === 0 && none.talk.verdict === null);
@@ -62,6 +63,37 @@ check('两条线齐平时判 good', even.talk.verdict?.tone === 'good', even.tal
 
 const few = reportOf({ a: { best: 90, liveBest: 40, at: '', runs: 1 } });
 check('实战不足两场不下结论', few.talk.verdict === null, `实战 ${few.talk.live} 场`);
+
+/* ---------------- 岔路按类型 ---------------- */
+const none2 = reportOf({}, 10, {});
+check('没练过岔路时不出分类', none2.talk.branches.length === 0 && none2.talk.weakBranch === null);
+
+const br = (ok, n) => ({ ok, n });
+const mix = reportOf({}, 10, { cost: br(1, 3), short: br(2, 2), change: br(0, 2), probe: br(0, 1) });
+check('只列练过的类型', mix.talk.branches.length === 4,
+  mix.talk.branches.map(b => b.label).join(' / '));
+check('接住率低的排前面', mix.talk.branches[0].kind === 'change',
+  mix.talk.branches.map(b => `${b.label}${b.rate}%`).join(' / '));
+check('样本不足一局的排到最后', mix.talk.branches[3].kind === 'probe',
+  mix.talk.branches.map(b => `${b.label} ${b.n}局`).join(' / '));
+check('接住率是百分比', mix.talk.branches.find(b => b.kind === 'short').rate === 100);
+check('挑出最弱的一类', mix.talk.weakBranch?.kind === 'change', mix.talk.weakBranch?.label);
+check('最弱的一类写进建议', mix.tips.some(t => /流程变了/.test(t)), mix.tips.join(' | ').slice(0, 60));
+
+// 只练过一次就下结论等于碰运气
+const once = reportOf({}, 10, { cost: br(0, 1) });
+check('样本只有一次不下「最弱」结论', once.talk.weakBranch === null,
+  once.talk.branches.map(b => `${b.label} ${b.ok}/${b.n}`).join(' / '));
+
+// 两类打平：按场次多的排前面
+const tie = reportOf({}, 10, { short: br(1, 2), cost: br(1, 2) });
+check('打平时场次多的在前', tie.talk.branches.length === 2 &&
+  tie.talk.branches.every(b => b.n === 2));
+
+// 全都接得住时不判「最弱」
+const allOk = reportOf({}, 10, { cost: br(3, 3), short: br(2, 2) });
+check('全接住时没有最弱项', allOk.talk.weakBranch === null,
+  allOk.talk.branches.map(b => `${b.label} ${b.rate}%`).join(' / '));
 
 try { fs.unlinkSync(TMP); } catch { /* ignore */ }
 
@@ -169,6 +201,8 @@ await page.evaluate(() => {
     hotel: { best: 88, liveBest: 60, at: '2026-11-01', runs: 2 },
     airport: { best: 80, liveBest: 40, at: '2026-11-01', runs: 1 },
   };
+  // 岔路按类型：要加钱 1/3（最弱）、东西没了 2/2、流程变了 0/1（样本不足不下结论）
+  raw.p.branchStats = { cost: { ok: 1, n: 3 }, short: { ok: 2, n: 2 }, change: { ok: 0, n: 1 } };
   localStorage.setItem('typewake:v1', JSON.stringify(raw));
 });
 await page.reload({ waitUntil: 'networkidle2' });
@@ -191,6 +225,27 @@ check('统计口径写清楚', /3 \/ 10 场/.test(talk.head) && /实战 3 场/.t
 check('两个数据卡片', talk.cards.length === 2 && /说台词/.test(talk.cards[0]) && /实战接住率/.test(talk.cards[1]),
   talk.cards.join(' | '));
 check('给出差距结论', /临场/.test(talk.note), talk.note);
+
+const branch = await page.evaluate(() => {
+  const rows = [...document.querySelectorAll('.rep-branch-row')];
+  return {
+    has: !!document.querySelector('.rep-branch'),
+    title: document.querySelector('.rep-branch-title')?.textContent ?? '',
+    rows: rows.map(r => ({
+      k: r.querySelector('.k')?.textContent ?? '',
+      n: r.querySelector('em')?.textContent ?? '',
+      weak: r.classList.contains('weak'),
+    })),
+  };
+});
+check('报告列出岔路分类', branch.has && branch.rows.length === 3, `${branch.rows.length} 类`);
+check('最弱的一类排最前', branch.rows[0]?.k === '要加钱', branch.rows.map(r => r.k).join(' / '));
+check('标出最弱的一类', branch.rows[0]?.weak && /要加钱/.test(branch.title), branch.title.trim());
+check('每类标出接住次数', branch.rows[0]?.n === '1/3',
+  branch.rows.map(r => `${r.k}:${r.n}`).join(' '));
+check('样本不足的一类排最后且不高亮',
+  branch.rows[2]?.k === '流程变了' && !branch.rows[2].weak,
+  branch.rows.map(r => `${r.k}${r.weak ? '*' : ''}`).join(' / '));
 
 // 刷新后仍在
 await page.reload({ waitUntil: 'networkidle2' });

@@ -72,6 +72,8 @@ export interface Progress {
   customScenes: Scene[];
   /** 句型复习：key 是英文原句，值的结构和单词一样，走同一套 FSRS */
   phrases: Record<string, WordStat>;
+  /** 岔路按类型统计：哪一类意外接住过几次（key 是 BranchKind） */
+  branchStats: Record<string, { ok: number; n: number }>;
 }
 
 export interface Settings {
@@ -112,6 +114,7 @@ const emptyProgress = (): Progress => ({
   scenes: {},
   customScenes: [],
   phrases: {},
+  branchStats: {},
 });
 
 const defaultSettings = (): Settings => ({ voice: 'us', rate: 1, sound: true, motion: true, autoSpeak: false, sentenceHelp: 'gloss', clozeHint: 'first', pretest: true });
@@ -135,7 +138,14 @@ interface State {
   /** 阅读填空的结果：填对涨掌握度，填错记为错误并当天进夜巡 */
   applyCloze: (results: { word: string; ok: boolean }[]) => void;
   /** 场景对话练完一场：正确率入库，打错的词进夜巡。as=other 时写进换角成绩 */
-  finishScene: (id: string, score: number, words: { w: string; ok: boolean }[], as?: 'you' | 'other' | 'live') => void;
+  finishScene: (
+    id: string,
+    score: number,
+    words: { w: string; ok: boolean }[],
+    as?: 'you' | 'other' | 'live',
+    /** 实战里那道岔路的结果，写进 branchStats 用于按类型诊断 */
+    branch?: { kind: string; ok: boolean }
+  ) => void;
   markUnknown: (word: string) => void;
   toggleLex: (word: string) => void;
   setSetting: <K extends keyof Settings>(k: K, v: Settings[K]) => void;
@@ -423,7 +433,7 @@ export const useGame = create<State>((set, get) => ({
     save();
   },
 
-  finishScene: (id, score, words, as = 'you') => {
+  finishScene: (id, score, words, as = 'you', branch) => {
     const { p } = get();
     const today = todayStr();
     const day = dayNo();
@@ -444,6 +454,13 @@ export const useGame = create<State>((set, get) => ({
         runs: (prev?.runs ?? 0) + 1,
       },
     };
+    // 岔路按类型累计：同一类意外反复接不住，才谈得上「该练哪一类」
+    let branchStats = p.branchStats ?? {};
+    if (branch) {
+      const cur = branchStats[branch.kind] ?? { ok: 0, n: 0 };
+      branchStats = { ...branchStats, [branch.kind]: { ok: cur.ok + (branch.ok ? 1 : 0), n: cur.n + 1 } };
+    }
+
     const streak = p.lastDay !== today ? p.streak + 1 : p.streak;
     // 打的是今天推荐的对话 → 记账；连续天数与文章共用一套规则
     const isDailyScene = p.dailyDay === today && p.dailyScene === id;
@@ -455,6 +472,7 @@ export const useGame = create<State>((set, get) => ({
         ...p,
         mastery,
         scenes,
+        branchStats,
         streak,
         lastDay: today,
         totalSeconds: p.totalSeconds + 90,

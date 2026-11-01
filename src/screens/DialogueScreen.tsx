@@ -107,7 +107,7 @@ export function DialogueScreen() {
         key={scene.id}
         scene={scene}
         onBack={() => { stopSpeaking(); setOpenId(null); }}
-        onFinish={(score, words, as) => finishScene(scene.id, score, words, as)}
+        onFinish={(score, words, as, br) => finishScene(scene.id, score, words, as, br)}
       />
     );
   }
@@ -220,7 +220,12 @@ function SceneView({
 }: {
   scene: Scene;
   onBack: () => void;
-  onFinish: (score: number, words: { w: string; ok: boolean }[], as: Role | 'live') => void;
+  onFinish: (
+    score: number,
+    words: { w: string; ok: boolean }[],
+    as: Role | 'live',
+    branch?: { kind: string; ok: boolean }
+  ) => void;
 }) {
   const settings = useGame(s => s.s);
   const corpus = useCorpus();
@@ -293,7 +298,7 @@ function SceneView({
           rate={settings.rate}
           known={known}
           onExit={onBack}
-          onFinish={(score, words) => onFinish(score, words, 'live')}
+          onFinish={(score, words, br) => onFinish(score, words, 'live', br)}
         />
       )}
 

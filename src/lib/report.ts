@@ -7,6 +7,7 @@
  */
 import type { Corpus } from './data';
 import type { Progress } from './store';
+import { BRANCH_KINDS } from './dialogue';
 
 export interface Report {
   runs: number;
@@ -37,6 +38,18 @@ export interface TalkReport {
   liveAvg: number;     // 实战接住率
   /** 两种能力的差距诊断；样本不够时为 null，不硬下结论 */
   verdict: { title: string; detail: string; tone: 'good' | 'warn' | 'bad' } | null;
+  /** 按岔路类型分开统计：接住率低的排前面 */
+  branches: BranchRow[];
+  /** 最容易卡住的那一类；样本不足两场时为 null */
+  weakBranch: BranchRow | null;
+}
+
+export interface BranchRow {
+  kind: string;
+  label: string;
+  ok: number;
+  n: number;
+  rate: number;   // 0-100
 }
 
 const TARGET_WPM = [0, 26, 30, 36, 42, 48, 54, 60];
@@ -108,6 +121,20 @@ export function buildReport(p: Progress, corpus: Corpus, unlocked: number, opts:
     }
   }
 
+  /* ---------- 岔路：哪一类意外最容易卡住 ---------- */
+  const bs = p.branchStats ?? {};
+  const branches: BranchRow[] = Object.entries(BRANCH_KINDS)
+    .map(([kind, label]) => {
+      const st = bs[kind] ?? { ok: 0, n: 0 };
+      return { kind, label, ok: st.ok, n: st.n, rate: st.n ? Math.round((st.ok / st.n) * 100) : 0 };
+    })
+    .filter(b => b.n > 0)
+    // 只练过一次的类型排到最后：样本不够，看了也不能下结论，
+    // 排在前面反而会把「真正最弱的那类」挤下去
+    .sort((a, b) => (Number(a.n < 2) - Number(b.n < 2)) || (a.rate - b.rate) || (b.n - a.n));
+  // 只练过一次就下结论是碰运气；至少两次、且接住率不过半，才值得让人专门去补
+  const weakBranch = branches.find(b => b.n >= 2 && b.rate < 50) ?? null;
+
   const talk: TalkReport = {
     played: sceneStats.length,
     total: opts.scenes ?? 0,
@@ -116,6 +143,8 @@ export function buildReport(p: Progress, corpus: Corpus, unlocked: number, opts:
     bestAvg,
     liveAvg,
     verdict: talkVerdict,
+    branches,
+    weakBranch,
   };
 
   const target = TARGET_WPM[Math.min(7, Math.max(1, unlocked))];
@@ -164,6 +193,12 @@ export function buildReport(p: Progress, corpus: Corpus, unlocked: number, opts:
   }
   if (avgAcc >= 98 && avgWpm >= target) {
     tips.push(`准确率 ${avgAcc}% 已经很高，可以试着打比当前城区高一档的文本找新瓶颈。`);
+  }
+  if (weakBranch) {
+    tips.push(
+      `岔路里「${weakBranch.label}」这一类你只接住 ${weakBranch.ok}/${weakBranch.n} —— ` +
+      '去对话里专挑这类练，换一种说法是练出来的，不是临场想出来的。'
+    );
   }
   if (talkVerdict?.tone === 'warn' && talkLive.length >= 2) {
     tips.push('实战分数低不代表背得差，缺的是「换一种说法」的储备——去对话里专挑岔路练，记住那几句能救场的短句。');

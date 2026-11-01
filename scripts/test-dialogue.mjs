@@ -94,6 +94,12 @@ check('漏词的位置准确', say7.words.filter(w => !w.ok).map(w => w.w).join(
 
 // 岔路：主线 + 一个分支，且顶替掉一句对方台词
 check('每场都有岔路', bank.scenes.every(s => s.branch), `${bank.scenes.filter(s => s.branch).length} 场`);
+check('每处岔路都标了类型',
+  bank.scenes.every(s => s.branch && D.isBranchKind(s.branch.kind)),
+  bank.scenes.map(s => s.branch.kind).join(','));
+check('类型覆盖了五种意外',
+  new Set(bank.scenes.map(s => s.branch.kind)).size === Object.keys(D.BRANCH_KINDS).length,
+  Object.keys(D.BRANCH_KINDS).filter(k => !bank.scenes.some(s => s.branch.kind === k)).join(',') || '全覆盖');
 const tl = bank.scenes.map(s => D.timelineOf(s));
 check('时间线里各有一处岔路',
   tl.every((steps, k) => steps.filter(x => x.kind === 'branch').length === (bank.scenes[k].branch ? 1 : 0)),
@@ -504,6 +510,11 @@ try {
   const liveStat = afterLive?.p?.scenes?.[first.id];
   check('实战成绩单独记成 liveBest', typeof liveStat?.liveBest === 'number',
     `live=${liveStat?.liveBest} best=${liveStat?.best}`);
+
+  // 岔路按类型记账：这次是照着参考说法打对的，应该记成 1/1
+  const bs = afterLive?.p?.branchStats?.[first.branch.kind];
+  check('岔路结果按类型记账', bs?.ok === 1 && bs?.n === 1,
+    `${first.branch.kind} ${bs?.ok}/${bs?.n}`);
 
   check('页面无报错', errs.length === 0, errs.slice(0, 2).join(' / '));
 } finally {

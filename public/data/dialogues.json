@@ -71,6 +71,7 @@
       ],
       "branch": {
         "at": 7,
+        "kind": "change",
         "task": "收银台出了状况，给出一个能继续走下去的解决方案",
         "prompt": {
           "en": "So sorry, the card machine is down. It's cash only today.",
@@ -182,6 +183,7 @@
       ],
       "branch": {
         "at": 2,
+        "kind": "short",
         "task": "对方说药店可能关了，把方向问清楚",
         "prompt": {
           "en": "Actually, I think that one closed down last month.",
@@ -294,6 +296,7 @@
       ],
       "branch": {
         "at": 5,
+        "kind": "offer",
         "task": "邻居提出一件具体的邀请，答应或婉拒，别让话掉在地上",
         "prompt": {
           "en": "If the noise gets too much, we've got a group chat about it. Want me to add you?",
@@ -413,6 +416,7 @@
       ],
       "branch": {
         "at": 5,
+        "kind": "cost",
         "task": "行李超重了，选一种解决方式",
         "prompt": {
           "en": "I'm afraid this one's two kilos over.",
@@ -531,6 +535,7 @@
       ],
       "branch": {
         "at": 3,
+        "kind": "cost",
         "task": "早餐不含在房价里，决定加还是不加",
         "prompt": {
           "en": "I'm afraid breakfast isn't included in your rate.",
@@ -650,6 +655,7 @@
       ],
       "branch": {
         "at": 3,
+        "kind": "short",
         "task": "点的菜没了，换一个说法继续点",
         "prompt": {
           "en": "I'm sorry, the salmon's just sold out.",
@@ -768,6 +774,7 @@
       ],
       "branch": {
         "at": 5,
+        "kind": "short",
         "task": "没有你要的尺码，选一个退路",
         "prompt": {
           "en": "We don't have it in a medium, only large.",
@@ -887,6 +894,7 @@
       ],
       "branch": {
         "at": 3,
+        "kind": "change",
         "task": "医生要先做检查，问清楚你真正关心的那件事",
         "prompt": {
           "en": "Before I take a look, I'd like to run a quick test. Is that all right?",
@@ -1007,6 +1015,7 @@
       ],
       "branch": {
         "at": 5,
+        "kind": "probe",
         "task": "对方说你的回答太笼统，要给一个具体例子",
         "prompt": {
           "en": "That's a bit vague. Could you give me an example?",
@@ -1125,6 +1134,7 @@
       ],
       "branch": {
         "at": 3,
+        "kind": "change",
         "task": "订单被取消了，问清原因或者直接要求重下",
         "prompt": {
           "en": "I'm afraid that order was cancelled by the system.",

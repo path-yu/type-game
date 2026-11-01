@@ -2,10 +2,20 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { speak } from '../../lib/speech';
 import {
   diff, errorWords, initials, maskOf, scoreSay, timelineOf, typedSteps,
+  type Branch, type BranchKind,
 } from '../../lib/dialogue';
 import { StepBar, type PracticeProps } from './shared';
 
-type Props = PracticeProps & { onExit: () => void };
+export interface BranchResult {
+  kind: BranchKind;
+  ok: boolean;
+}
+
+type Props = Omit<PracticeProps, 'onFinish'> & {
+  onExit: () => void;
+  /** 岔路结果随成绩一起交出去 —— 报告要按类型看「哪类意外最容易卡住」 */
+  onFinish: (score: number, words: { w: string; ok: boolean }[], branch?: BranchResult) => void;
+};
 
 export function Live({ scene, accent, rate, known, onExit, onFinish }: Props) {
   const steps = useMemo(() => timelineOf(scene), [scene]);
@@ -21,6 +31,7 @@ export function Live({ scene, accent, rate, known, onExit, onFinish }: Props) {
 
   const rightRef = useRef(0);
   const failRef = useRef<{ w: string; ok: boolean }[]>([]);
+  const branchRef = useRef<BranchResult | null>(null);
   const saved = useRef(false);
   const input = useRef<HTMLInputElement | null>(null);
 
@@ -42,7 +53,7 @@ export function Live({ scene, accent, rate, known, onExit, onFinish }: Props) {
     setFinished(true);
     if (saved.current) return;
     saved.current = true;
-    onFinish((rightRef.current / total) * 100, failRef.current);
+    onFinish((rightRef.current / total) * 100, failRef.current, branchRef.current ?? undefined);
   };
 
   const next = () => {
@@ -69,29 +80,29 @@ export function Live({ scene, accent, rate, known, onExit, onFinish }: Props) {
     }
   };
 
-  const submitBranch = (line: { options: { say: { en: string } }[] }) => {
+  const submitBranch = (b: Branch) => {
     // 两条路都算一遍，取更像的那条；0.7 以上才认
-    const scored = line.options.map(o => scoreSay(o.say.en, typed).ratio);
+    const scored = b.options.map(o => scoreSay(o.say.en, typed).ratio);
     const best = Math.max(...scored);
     if (best >= 0.7) {
       rightRef.current += 1;
       setRight(rightRef.current);
       setPick(scored.indexOf(best));
       setCredited(true);
+      branchRef.current = { kind: b.kind, ok: true };
       setPhase('react');
     } else {
       setCredited(false);
-      const at = steps[i];
-      if (at?.kind === 'branch') {
-        // 打错的地方按「离你最近的那个选项」记词，不惩罚你没学过另一种说法
-        const near = line.options[scored.indexOf(best)].say.en;
-        mark(errorWords(near, diff(near, typed).wrong));
-      }
+      // 打错的地方按「离你最近的那个选项」记词，不惩罚你没学过另一种说法
+      const near = b.options[scored.indexOf(best)].say.en;
+      mark(errorWords(near, diff(near, typed).wrong));
       setPhase('bad');
     }
   };
 
+  /** 从选项里挑一个 = 这一次没接住（不计分，但要记类型） */
   const chooseOption = (k: number) => {
+    if (step?.kind === 'branch') branchRef.current = { kind: step.branch.kind, ok: false };
     setPick(k);
     setPhase('react');
   };
