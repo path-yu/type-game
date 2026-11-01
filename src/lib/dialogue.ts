@@ -51,7 +51,7 @@ export interface Branch {
  * 分类不是为了做目录，是为了**诊断**：「实战 52 分」说明不了什么，
  * 「你卡住的三次里有两次是对方要加钱」才指向下一步该练什么。
  */
-export type BranchKind = 'short' | 'cost' | 'change' | 'probe' | 'offer';
+export type BranchKind = 'short' | 'cost' | 'change' | 'probe' | 'offer' | 'other';
 
 export const BRANCH_KINDS: Record<BranchKind, string> = {
   short: '东西没了',
@@ -59,6 +59,8 @@ export const BRANCH_KINDS: Record<BranchKind, string> = {
   change: '流程变了',
   probe: '被追问',
   offer: '对方提议',
+  // 自建对话里没标类型的岔路都归到这里 —— 猜一个更接近的标签是在编数据
+  other: '其他意外',
 };
 
 export const isBranchKind = (k: unknown): k is BranchKind =>

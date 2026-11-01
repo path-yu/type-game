@@ -1902,3 +1902,23 @@ input, textarea { font-family: inherit; }
 .rep-branch-row.weak .k { color: var(--fg); font-weight: 600; }
 .rep-branch-row.weak i b { background: var(--err); opacity: 0.85; }
 .rep-branch-row.weak em { color: var(--err); }
+
+/* 导入面板里的可展开说明 */
+.dg-import-more { margin-top: 8px; }
+.dg-import-more summary {
+  font-size: 11.5px; color: var(--accent); cursor: pointer;
+  list-style: none; display: inline-flex; align-items: center; gap: 4px;
+}
+.dg-import-more summary::-webkit-details-marker { display: none; }
+.dg-import-more summary::before { content: '›'; transition: transform 0.14s; }
+.dg-import-more[open] summary::before { transform: rotate(90deg); }
+.dg-import-more p {
+  margin: 8px 0 0; font-size: 11.5px; line-height: 1.9; color: var(--fg-2);
+  padding-left: 12px; border-left: 2px solid var(--sep-2);
+}
+.dg-import-more code {
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--fg); background: var(--fill);
+  padding: 1px 5px; border-radius: 4px;
+  display: inline-block; margin: 2px 0;
+}

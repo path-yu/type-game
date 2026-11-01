@@ -34,7 +34,66 @@ check('句数与角色', sample.scene?.lines.length === 5 && sample.scene.roles[
 check('「我」的台词归到自己', sample.scene?.lines.filter(l => l.r === 0).length === 2);
 check('场景名与说明取自 # 和 >', sample.scene?.name === '咖啡店点单' && /街角咖啡店/.test(sample.scene?.setting ?? ''),
   `${sample.scene?.name} · ${sample.scene?.setting}`);
-check('自建场景没有岔路', sample.scene?.branch === undefined);
+check('示例带一处岔路', !!sample.scene?.branch && sample.scene.branch.options.length === 2,
+  `${sample.scene?.branch?.options.length} 条路`);
+check('岔路挂在「我」的台词之后', sample.scene?.lines[sample.scene.branch.at].r === 0,
+  sample.scene?.lines[sample.scene.branch.at].en);
+check('中文类型名认得出', sample.scene?.branch.kind === 'cost', sample.scene?.branch.kind);
+check('岔路里的英文也是半角',
+  !/[^\x20-\x7E]/.test(sample.scene?.branch.prompt.en ?? '') &&
+  sample.scene.branch.options.every(o => !/[^\x20-\x7E]/.test(o.say.en + o.react.en)));
+
+/* ---------- 岔路：可选的两种行 ---------- */
+const plain = C.parseDialogue(`我: Hi | 你好\n店员: Hello | 你好\n我: Thanks | 谢谢\n店员: Bye | 再见`, 'p1');
+check('不写岔路就没有岔路', plain.scene?.branch === undefined);
+
+const noKind = C.parseDialogue(
+  `店员: Hi. | 你好。\n我: A latte. | 一杯拿铁。\n` +
+  `? 应付一次意外 | Card machine is down. | 刷卡机坏了。\n` +
+  `+ Cash is fine. | 现金可以。 > Five dollars. | 五块。\n` +
+  `+ Phone works. | 手机也行。 > Sure. | 可以。\n` +
+  `店员: OK. | 好。`, 'p2');
+check('省掉类型也能解析', noKind.scene?.branch?.kind === 'other', noKind.errors.join(' / '));
+check('三个分段时第一段当目标', noKind.scene?.branch?.task === '应付一次意外', noKind.scene?.branch?.task);
+
+const enKind = C.parseDialogue(
+  `店员: Hi. | 你好。\n我: A latte. | 一杯拿铁。\n` +
+  `? probe | 应付一次追问 | Why that one? | 为什么点这个？\n` +
+  `+ I like it. | 我喜欢。 > Fair enough. | 行吧。\n` +
+  `+ No reason. | 没理由。 > Okay. | 好吧。\n` +
+  `店员: OK. | 好。`, 'p3');
+check('英文类型名也认', enKind.scene?.branch?.kind === 'probe', enKind.errors.join(' / '));
+
+const badKind = C.parseDialogue(
+  `店员: Hi. | 你好。\n我: A latte. | 一杯拿铁。\n` +
+  `? 退款 | 目标 | Something. | 什么。\n店员: OK. | 好。`, 'p4');
+check('不认识的类型会报错', badKind.errors.some(e => /不认识/.test(e)), badKind.errors[0]);
+
+const oneOpt = C.parseDialogue(
+  `店员: Hi. | 你好。\n我: A latte. | 一杯拿铁。\n` +
+  `? 目标 | Something. | 什么。\n+ Cash. | 现金。 > Five. | 五。\n店员: OK. | 好。`, 'p5');
+check('只有一条路不算岔路', oneOpt.errors.some(e => /至少写两行/.test(e)), oneOpt.errors[0]);
+
+const orphanPlus = C.parseDialogue(
+  `店员: Hi. | 你好。\n+ Cash. | 现金。 > Five. | 五。\n我: A latte. | 一杯。\n店员: OK. | 好。`, 'p6');
+check('没有「?」的「+」会报错', orphanPlus.errors.some(e => /前面没有/.test(e)), orphanPlus.errors[0]);
+
+const twoBranch = C.parseDialogue(
+  `店员: Hi. | 你好。\n我: A latte. | 一杯拿铁。\n` +
+  `? 目标一 | Something. | 什么。\n+ Cash. | 现金。 > Five. | 五。\n+ Phone. | 手机。 > Sure. | 行。\n` +
+  `店员: OK. | 好。\n我: Thanks. | 谢谢。\n` +
+  `? 目标二 | Another. | 另一个。\n+ Yes. | 是。 > Good. | 好。\n+ No. | 不。 > Fine. | 行。\n`, 'p7');
+check('一场只能有一处岔路', twoBranch.errors.some(e => /只能写一处岔路/.test(e)), twoBranch.errors[0]);
+
+const notAfterMe = C.parseDialogue(
+  `店员: Hi. | 你好。\n? 目标 | Something. | 什么。\n+ Cash. | 现金。 > Five. | 五。\n我: A latte. | 一杯。`, 'p8');
+check('岔路必须接在自己的台词之后', notAfterMe.errors.some(e => /接在「我:」的台词后面/.test(e)), notAfterMe.errors[0]);
+
+const nextIsMine = C.parseDialogue(
+  `店员: Hi. | 你好。\n我: A latte. | 一杯拿铁。\n` +
+  `? 目标 | Something. | 什么。\n+ Cash. | 现金。 > Five. | 五。\n+ Phone. | 手机。 > Sure. | 行。\n` +
+  `我: Thanks. | 谢谢。\n店员: OK. | 好。`, 'p9');
+check('岔路后面接自己的台词会被拦下', nextIsMine.errors.some(e => /顶替/.test(e)), nextIsMine.errors[0]);
 
 // 宽容：中文冒号、全角竖线、弯引号、破折号
 const loose = C.parseDialogue(`# 试\n我：I’d like this — please｜我要这个。\n店员: Sure. | 好的。\n我: Thanks. | 谢谢。`, 'x2');
@@ -153,6 +212,42 @@ try {
   await sleep(400);
   const liveBar = await page.evaluate(() => document.querySelector('.dg-bar span')?.textContent ?? '');
   check('自建场的实战按台词数算步数', /^1\s*\/\s*5$/.test(liveBar), liveBar);
+
+  // 走到岔路：自建场也能有「对方突然改口」
+  for (let n = 0; n < 10; n++) {
+    if (await page.evaluate(() => !!document.querySelector('.dg-branch'))) break;
+    const st = await page.evaluate(() => ({
+      go: !!document.querySelector('.dg-go'),
+      input: !!document.querySelector('.dg-input'),
+    }));
+    if (st.go) { await page.evaluate(() => document.querySelector('.dg-go')?.click()); await sleep(220); continue; }
+    if (st.input) {
+      await page.keyboard.type('zz');
+      await page.keyboard.press('Enter');
+      await sleep(180);
+      await page.keyboard.press('Enter');
+      await sleep(220);
+    }
+  }
+  const branchUI = await page.evaluate(() => ({
+    has: !!document.querySelector('.dg-branch'),
+    en: document.querySelector('.dg-branch .dg-listen-en')?.textContent ?? '',
+    task: document.querySelector('.dg-branch-task')?.textContent ?? '',
+  }));
+  check('导入的岔路出现在实战里', branchUI.has, branchUI.en.slice(0, 40));
+  check('岔路显示导入时写的目标', /给个能继续走下去的办法/.test(branchUI.task), branchUI.task);
+
+  // 照着第一条路打 → 接住，对方按这条反应
+  const opt0 = sample.scene.branch.options[0];
+  await page.keyboard.type(opt0.say.en, { delay: 0 });
+  await page.keyboard.press('Enter');
+  await sleep(400);
+  const hit = await page.evaluate(() => ({
+    up: !!document.querySelector('.dg-branch-tag.up'),
+    react: document.querySelector('.dg-branch .dg-listen-en')?.textContent ?? '',
+  }));
+  check('照着参考说法打能接住', hit.up);
+  check('对方按选的那条路反应', hit.react.trim() === opt0.react.en, hit.react.slice(0, 40));
 
   // 背打走完，验证能结算
   await page.evaluate(() => [...document.querySelectorAll('.dg-tabs button')].find(x => x.textContent === '背打')?.click());

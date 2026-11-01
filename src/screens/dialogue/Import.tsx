@@ -38,6 +38,20 @@ export function ImportScene({
         <div className="dg-import-hint">
           一行一句：<b>角色: 英文 | 中文</b>。用「我:」标出你要练的那一方，
           其余角色都算对方。<b>中文不能省</b>——背打拿它当题干，实战拿它当目标。
+
+          <details className="dg-import-more">
+            <summary>想加一处岔路（对方突然改口）</summary>
+            <p>
+              在你<b>自己要说的那句后面</b>接两行：<br />
+              <code>? 类型 | 目标 | 对方的话 | 中文</code><br />
+              <code>+ 你的应对 | 中文 &gt; 对方的反应 | 中文</code><br />
+              「+」至少要两行。类型可以省（省了算「其他意外」），也可以写
+              东西没了 / 要加钱 / 流程变了 / 被追问 / 对方提议。
+            </p>
+            <p>
+              注意：岔路后面那句对方的台词会被两种「反应」顶替 —— 它只是主线的默认走法。
+            </p>
+          </details>
         </div>
 
         <textarea
@@ -46,7 +60,7 @@ export function ImportScene({
           onChange={e => setText(e.target.value)}
           spellCheck={false}
           placeholder={SAMPLE}
-          rows={12}
+          rows={14}
         />
 
         <div className="dg-import-row">

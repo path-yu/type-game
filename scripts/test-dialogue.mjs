@@ -97,9 +97,10 @@ check('每场都有岔路', bank.scenes.every(s => s.branch), `${bank.scenes.fil
 check('每处岔路都标了类型',
   bank.scenes.every(s => s.branch && D.isBranchKind(s.branch.kind)),
   bank.scenes.map(s => s.branch.kind).join(','));
-check('类型覆盖了五种意外',
-  new Set(bank.scenes.map(s => s.branch.kind)).size === Object.keys(D.BRANCH_KINDS).length,
-  Object.keys(D.BRANCH_KINDS).filter(k => !bank.scenes.some(s => s.branch.kind === k)).join(',') || '全覆盖');
+// 内置语料要覆盖五种真实意外；other 只留给自建对话里没标类型的岔路
+check('类型覆盖了五种真实意外',
+  ['short', 'cost', 'change', 'probe', 'offer'].every(k => bank.scenes.some(s => s.branch.kind === k)),
+  Object.keys(D.BRANCH_KINDS).filter(k => k !== 'other' && !bank.scenes.some(s => s.branch.kind === k)).join(',') || '全覆盖');
 const tl = bank.scenes.map(s => D.timelineOf(s));
 check('时间线里各有一处岔路',
   tl.every((steps, k) => steps.filter(x => x.kind === 'branch').length === (bank.scenes[k].branch ? 1 : 0)),

@@ -174,7 +174,9 @@ export function DialogueScreen() {
               <div className="dg-set">{sc.setting}</div>
               <div className="dg-card-foot">
                 <span>
-                  {mine} 句你的台词{sc.phrases.length > 0 ? ` · ${sc.phrases.length} 个句型` : ''}
+                  {mine} 句你的台词
+                  {sc.phrases.length > 0 ? ` · ${sc.phrases.length} 个句型` : ''}
+                  {sc.branch ? ' · 1 处岔路' : ''}
                 </span>
                 <span className="dg-bests">
                   {stat && stat.best > 0 && <em className="dg-best">最好 {stat.best}%</em>}

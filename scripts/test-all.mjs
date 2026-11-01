@@ -33,7 +33,7 @@ const steps = [
   { name: '预习卡', cmd: 'node', args: ['scripts/test-pretest.mjs'], desc: '12 项先测后学', needsServer: true },
   { name: '文库浏览', cmd: 'node', args: ['scripts/test-library.mjs'], desc: '11 项全库 / 筛选 / 进入', needsServer: true },
   { name: '场景对话', cmd: 'node', args: ['scripts/test-dialogue.mjs'], desc: '92 项语料 / 岔路 / 双角色 / 跟读', needsServer: true },
-  { name: '自定义对话', cmd: 'node', args: ['scripts/test-custom.mjs'], desc: '32 项解析 / 导入 / 删除', needsServer: true },
+  { name: '自定义对话', cmd: 'node', args: ['scripts/test-custom.mjs'], desc: '49 项解析 / 岔路 / 导入 / 删除', needsServer: true },
   { name: '句型复习', cmd: 'node', args: ['scripts/test-phrase.mjs'], desc: '25 项收池 / 到期 / 复习', needsServer: true },
   { name: '夜巡扩容', cmd: 'node', args: ['scripts/test-review.mjs'], desc: '38 项混排 / 轮次 / 回写', needsServer: true },
   { name: '阅读填空', cmd: 'node', args: ['scripts/test-cloze.mjs'], desc: '20 项出题 / 提示 / 回写', needsServer: true },
