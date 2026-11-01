@@ -15,12 +15,11 @@ npm run tauri:dev      # 桌面端开发模式（自动起 vite）
 npm run tauri:build    # 打包安装程序（nsis / msi）
 ```
 
-> 想直接跑现成的可执行文件：
-> `src/lib/split.js          切句规则（唯一实现，脚本侧也 import 这一份）
-src-tauri/target/release/typewake.exe`（约 4.3 MB，已内嵌全部文本与词库，双击即可）。
+> 想直接跑现成的可执行文件：`src-tauri/target/release/typewake.exe`
+> （约 4.3 MB，已内嵌全部文本与词库，双击即可）。
 
 桌面端首次启动会在 `%APPDATA%\com.typewake.app\` 生成 `ready.json`，
-内容形如 `{"articles":1151,"words":7200}`。**如果这个文件没出现，说明资源加载通路有问题**，
+内容形如 `{"articles":1179,"words":7200}`。**如果这个文件没出现，说明资源加载通路有问题**，
 可以直接据此排查白屏。
 
 首次运行需要数据。仓库已包含构建产物（`public/data/`），如需重新生成：
@@ -113,6 +112,8 @@ docs/
    提示三档（无 / 首字母 / 首字母+释义），完整提示档带焦点随动的整句中文译文；
    填错的词当晚自动进夜巡。
 9. **体检报告** —— 一句话诊断（准确率 / 节奏 / 手速哪个是瓶颈）+ WPM 趋势 + 易错键对 + 反复打错的词 + 练习建议。
+10. **文库** —— 1179 篇全部摊开，按来源分组、书内按原文顺序，标段号与已读星级；
+    支持搜书名、按城区筛选。城市页只推荐一篇，文库才看得到全库。
 
 ---
 
@@ -121,7 +122,7 @@ docs/
 | 来源 | 用途 | 许可 |
 |---|---|---|
 | [Project Gutenberg](https://www.gutenberg.org/)（12 部公版书） | 1112 段叙事文本 | Public Domain |
-| [Simple English Wikipedia](https://simple.wikipedia.org/) | 39 段科普文本 | CC BY-SA 3.0 |
+| [Simple English Wikipedia](https://simple.wikipedia.org/) | 67 段科普文本 | CC BY-SA 3.0 |
 | [ECDICT](https://github.com/skywind3000/ECDICT) | 音标 / 中英释义 / 柯林斯星级 / BNC+当代词频 / 考试标签 / 词形变化 | MIT |
 
 文本内容版权归原作者；Gutenberg 与维基百科内容遵循其各自许可，详见 `LICENSE-NOTICE.md`。
