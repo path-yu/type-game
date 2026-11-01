@@ -8,6 +8,8 @@
  *   才进夜巡。整句 8 个词全部记一遍错误，会把掌握度砸得毫无意义。
  */
 
+import { editDistance } from './confuse';
+
 export interface DLine {
   r: number;         // 角色下标（0 = 你，1 = 对方）
   en: string;
@@ -156,6 +158,92 @@ export function initials(line: string): string {
 /** 这一场里需要你打的句子 */
 export function yourLines(scene: Scene): DLine[] {
   return scene.lines.filter(l => l.r === scene.you);
+}
+
+/* ------------------------- 跟读判分 ------------------------- */
+
+/** 常见缩写的展开：识别器常把 I'm 写成 I am，两边都展开才能对齐 */
+function spokenWords(s: string): string[] {
+  return s
+    .toLowerCase()
+    .replace(/[\u2019']/g, "'")
+    .replace(/n't\b/g, ' not')
+    .replace(/'re\b/g, ' are')
+    .replace(/'ll\b/g, ' will')
+    .replace(/'ve\b/g, ' have')
+    .replace(/'m\b/g, ' am')
+    .replace(/'d\b/g, ' would')
+    .replace(/'s\b/g, '')
+    .split(/[^a-z0-9]+/)
+    .filter(Boolean);
+}
+
+/**
+ * 两个词算不算「说对了」。
+ *
+ * 允许一个字母的出入（iced / ice、latte / lattes）—— 识别器对词尾变化本来就不稳。
+ * 但只有较长的那一边 ≥4 字母才放宽：cat / car 差一个字母是两个完全不同的词，
+ * 在口语里听错就是听错了，不该算过。
+ */
+function sameWord(a: string, b: string): boolean {
+  if (a === b) return true;
+  if (Math.max(a.length, b.length) < 4) return false;
+  return editDistance(a, b, 1) <= 1;
+}
+
+export interface SayResult {
+  /** 逐词判对，用于给用户看哪里没说清 */
+  words: { w: string; ok: boolean }[];
+  matched: number;
+  total: number;
+  /** 多说了几个词（不扣分，只提示） */
+  extra: number;
+  ratio: number;
+  pass: boolean;
+}
+
+/**
+ * 跟读判分：按**词**对齐，不按字符。
+ *
+ * 语音识别本来就有误差（口音、连读、麦克风），字符级比对会把「说得很好但识别错了一个词」
+ * 判成灾难。用最长公共子序列对齐后，容忍 20% 的词没被识别出来 ——
+ * 但 3 个词的短句必须全对，因为短句里漏一个就是漏了一半意思。
+ */
+export function scoreSay(target: string, said: string): SayResult {
+  const t = spokenWords(target);
+  const s = spokenWords(said);
+  const n = t.length;
+  const m = s.length;
+
+  const dp: number[][] = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= m; j++) {
+      dp[i][j] = sameWord(t[i - 1], s[j - 1])
+        ? dp[i - 1][j - 1] + 1
+        : Math.max(dp[i - 1][j], dp[i][j - 1]);
+    }
+  }
+
+  const ok = new Array(n).fill(false);
+  let i = n, j = m;
+  while (i > 0 && j > 0) {
+    if (sameWord(t[i - 1], s[j - 1]) && dp[i][j] === dp[i - 1][j - 1] + 1) {
+      ok[i - 1] = true;
+      i--; j--;
+    } else if (dp[i - 1][j] >= dp[i][j - 1]) i--;
+    else j--;
+  }
+
+  const matched = dp[n][m];
+  const allow = Math.floor(n / 5);          // 20% 的容错，短句自动收紧到 0
+  return {
+    words: t.map((w, k) => ({ w, ok: ok[k] })),
+    matched,
+    total: n,
+    extra: m - matched,
+    ratio: n ? matched / n : 0,
+    pass: n > 0 && matched >= n - allow,
+  };
 }
 
 /**

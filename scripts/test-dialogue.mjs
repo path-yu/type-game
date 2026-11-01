@@ -59,6 +59,30 @@ check('所有格与缩写不会被拆坏', !w3.includes('thats') && w3.every(w =
 check('空位按词长画', D.maskOf('Hot or iced?') === '___  __  ____', JSON.stringify(D.maskOf('Hot or iced?')));
 check('首字母提示', D.initials('Hot or iced?') === 'H o i', D.initials('Hot or iced?'));
 
+// 跟读判分：按词对齐，容 20%
+const say1 = D.scoreSay('Could I get a large latte, please?', 'could i get a large latte please');
+check('说得一模一样算过', say1.pass && say1.ratio === 1, `${say1.matched}/${say1.total}`);
+
+const say2 = D.scoreSay("I'm checking in for the flight to Seattle.", 'I am checking in for the flight to Seattle');
+check('缩写展开后能对上', say2.pass && say2.ratio === 1, `${say2.matched}/${say2.total}`);
+
+const say3 = D.scoreSay('Hot or iced?', 'hot or nice');
+check('短句漏一个词就算没过', !say3.pass && say3.matched === 2, `${say3.matched}/${say3.total}`);
+
+const say4 = D.scoreSay('Hot or iced?', 'hot or ice');
+check('长词允许一个字母的出入', say4.pass, `${say4.matched}/${say4.total}`);
+
+const long = 'Iced, please. And could you make it with oat milk?';
+const say5 = D.scoreSay(long, 'Iced please and could you make it with milk');
+check('长句容忍两成词没说清', say5.pass, `${say5.matched}/${say5.total}`);
+
+const say6 = D.scoreSay(long, 'hello there how are you today my friend');
+check('答非所问判不过', !say6.pass && say6.ratio < 0.3, `${say6.matched}/${say6.total}`);
+
+const say7 = D.scoreSay('Where is the fitting room?', 'where is fitting room');
+check('逐词标对，漏的词能被指出来', say7.pass === false || say7.words.length === 5, say7.words.map(w => (w.ok ? w.w : `[${w.w}]`)).join(' '));
+check('漏词的位置准确', say7.words.filter(w => !w.ok).map(w => w.w).join(',') === 'the', say7.words.map(w => (w.ok ? '+' : '-') + w.w).join(' '));
+
 const noYou = { v: 1, scenes: [{ id: 'x', name: 'x', cat: 'x', lv: 1, cefr: 'A1', setting: 'x', roles: ['你', '他'], you: 0, lines: [], phrases: [] }] };
 check('校验器能挑出残缺语料', D.validate(noYou).length >= 2, D.validate(noYou).slice(0, 2).join(' / '));
 try { fs.unlinkSync(TMP); } catch { /* ignore */ }
@@ -210,6 +234,103 @@ try {
   }));
   check('已练过的场景有标记', doneMark.done === 1, `${doneMark.done} 张卡 · ${doneMark.best}`);
   check('顶部统计已练场次', /已练\s*1\s*场/.test(doneMark.sub), doneMark.sub.trim());
+
+  /* ---------------- 跟读 ---------------- */
+  // 注入假识别器：把要说的话放进 __nextSay，点麦克风时由它返回
+  await p.evaluate(() => {
+    window.__nextSay = '';
+    window.__TYPEWAKE_ASR__ = () => window.__nextSay;
+  });
+
+  await p.click('.dg-card');
+  await p.waitForSelector('.dg-thread');
+  await p.evaluate(() => [...document.querySelectorAll('.dg-tabs button')].find(x => x.textContent === '跟读')?.click());
+  await p.waitForSelector('.dg-mic', { timeout: 5000 });
+  await sleep(300);
+
+  const sayTab = await p.evaluate(() =>
+    [...document.querySelectorAll('.dg-tabs button')].map(x => x.textContent));
+  check('有跟读模式', sayTab.includes('跟读'), sayTab.join(' / '));
+
+  const target1 = await p.evaluate(() => document.querySelector('.dg-speak-en')?.textContent ?? '');
+  await p.evaluate(t => { window.__nextSay = t; }, target1);
+  await p.click('.dg-mic');
+  await sleep(400);
+
+  const passState = await p.evaluate(() => ({
+    cls: document.querySelector('.dg-say')?.className ?? '',
+    head: document.querySelector('.dg-say-head')?.textContent ?? '',
+    ok: document.querySelectorAll('.dg-say-words .ok').length,
+    no: document.querySelectorAll('.dg-say-words .no').length,
+  }));
+  check('说对了判为通过', /pass/.test(passState.cls) && passState.no === 0, passState.head.trim());
+  check('逐词都标成听清', passState.ok > 3, `${passState.ok} 个词`);
+
+  await sleep(1800);   // 通过后自动进下一句
+  const barSay = await p.evaluate(() => document.querySelector('.dg-bar span')?.textContent ?? '');
+  check('说对后自动进下一句', /^2\s*\/\s*/.test(barSay), barSay);
+
+  // 说错
+  await p.evaluate(() => { window.__nextSay = 'hello there how are you'; });
+  await p.click('.dg-mic');
+  await sleep(400);
+  const failState = await p.evaluate(() => ({
+    cls: document.querySelector('.dg-say')?.className ?? '',
+    no: document.querySelectorAll('.dg-say-words .no').length,
+    heard: document.querySelector('.dg-say-heard')?.textContent ?? '',
+  }));
+  check('说错判为不通过', !/pass/.test(failState.cls), failState.cls);
+  check('标出没说清的词', failState.no > 0, `${failState.no} 个词`);
+  check('回显识别到的内容', /hello there/.test(failState.heard), failState.heard.trim());
+
+  await p.evaluate(() => [...document.querySelectorAll('.dg-link')].find(x => x.textContent === '下一句')?.click());
+  await sleep(300);
+  const barSay2 = await p.evaluate(() => document.querySelector('.dg-bar span')?.textContent ?? '');
+  check('可以跳过这一句', /^3\s*\/\s*/.test(barSay2), barSay2);
+
+  // 剩下三句全部说对，走到结算
+  for (let n = 0; n < 6; n++) {
+    if (await p.evaluate(() => !!document.querySelector('.dg-sum'))) break;
+    const t = await p.evaluate(() => document.querySelector('.dg-speak-en')?.textContent ?? '');
+    if (!t) break;
+    await p.evaluate(x => { window.__nextSay = x; }, t);
+    await p.click('.dg-mic');
+    await sleep(1900);
+  }
+  const saySum = await p.evaluate(() => ({
+    has: !!document.querySelector('.dg-sum'),
+    score: document.querySelector('.dg-sum-score')?.textContent ?? '',
+    line: document.querySelector('.dg-sum-line')?.textContent ?? '',
+  }));
+  check('跟读也有结算', saySum.has, `${saySum.score} · ${saySum.line.slice(0, 26)}`);
+  const saved2 = await store();
+  check('跟读成绩写入档案', (saved2?.p?.scenes?.[first.id]?.runs ?? 0) >= 1, `runs=${saved2?.p?.scenes?.[first.id]?.runs}`);
+
+  /* ---------------- 不支持时降级 ---------------- */
+  await p.evaluate(() => {
+    delete window.__TYPEWAKE_ASR__;
+    delete window.SpeechRecognition;
+    delete window.webkitSpeechRecognition;
+  });
+  await p.evaluate(() => [...document.querySelectorAll('.dg-tabs button')].find(x => x.textContent === '通读')?.click());
+  await sleep(250);
+  await p.evaluate(() => [...document.querySelectorAll('.dg-tabs button')].find(x => x.textContent === '跟读')?.click());
+  await sleep(350);
+  const nosay = await p.evaluate(() => ({
+    has: !!document.querySelector('.dg-nosay'),
+    title: document.querySelector('.dg-nosay-title')?.textContent ?? '',
+    acts: [...document.querySelectorAll('.dg-nosay-acts button')].map(x => x.textContent),
+  }));
+  check('没有识别能力时给出说明', nosay.has && /跑不了语音识别/.test(nosay.title), nosay.title);
+  check('降级路径给出替代方案', nosay.acts.includes('改用跟打'), nosay.acts.join(' / '));
+
+  await p.evaluate(() => [...document.querySelectorAll('.dg-nosay-acts button')].find(x => x.textContent === '改用跟打')?.click());
+  await sleep(350);
+  const switched = await p.evaluate(() => ({
+    target: !!document.querySelector('.dg-target'),
+    tabs: [...document.querySelectorAll('.dg-tabs button')].find(x => x.classList.contains('on'))?.textContent,
+  }));
+  check('降级后能切到跟打', switched.target && switched.tabs === '跟打', `当前 ${switched.tabs}`);
 
   check('页面无报错', errs.length === 0, errs.slice(0, 2).join(' / '));
 } finally {
