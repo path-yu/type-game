@@ -424,6 +424,40 @@ export function validate(bank: DBank): string[] {
 /** 语料只有一份，两个页面（对话 / 体检报告）共用同一个请求 */
 let bankCache: DBank | null = null;
 
+/**
+ * 场景索引：首页只要"抽哪一场、叫什么、你几句台词"，不需要整段台词。
+ *
+ * dialogues.json 有 2.8 MB，索引只有 130 KB。首页为了显示一张"今日对话"卡
+ * 去 parse 整个语料库，首屏就白等半秒 —— 这条路径单独走。
+ * 字段由 scripts/build-dialogue-index.mjs 从语料派生，audit-dialogue 会校验一致性。
+ */
+export interface SceneLite {
+  id: string;
+  name: string;
+  cat: string;
+  lv: number;
+  cefr: string;
+  you: number;
+  ny: number;   // 你的台词句数
+  np: number;   // 句型数
+}
+
+let liteCache: SceneLite[] | null = null;
+
+export async function loadSceneIndex(): Promise<SceneLite[] | null> {
+  if (liteCache) return liteCache;
+  try {
+    const base = (import.meta as { env?: { BASE_URL?: string } }).env?.BASE_URL ?? '/';
+    const res = await fetch(`${base}data/dialogues-index.json`);
+    if (!res.ok) return null;
+    const json = (await res.json()) as { items: SceneLite[] };
+    liteCache = json.items;
+    return liteCache;
+  } catch {
+    return null;
+  }
+}
+
 export async function loadDialogues(): Promise<DBank | null> {
   if (bankCache) return bankCache;
   try {

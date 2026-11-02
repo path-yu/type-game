@@ -32,19 +32,24 @@ export default {
         }),
         V('离职结算', '你离职了，想知道最后一笔。', {
           0: ['I am leaving on Friday. What will the final payslip include?', '我周五离职。最后一笔工资条包括什么？'],
-        }),
+        }, 1),
         V('问年假', '你想知道还剩多少天年假。', {
           6: ['How many holiday days do I have left?', '我还剩多少天年假？'],
-        }),
+        }, 1),
         V('工资没到', '发薪日钱没到账。', {
           0: ['My pay has not arrived and it was due yesterday.', '工资没到，昨天就该发了。'],
-        }),
+        }, 1),
       ],
       branches: [
         B(6, 'probe', '人事要你确认一个数字，你要能对得上',
           S('Before I send it, what figure did you expect for net pay?', '发之前先确认，你预计实发多少？'),
           [O(S('About two thousand one hundred, based on last month.', '大概两千一，按上月算的。'), S('That matches my calculation. I will send it now.', '跟我算的一样。我现在发。')),
            O(S('I do not know. That is why I am asking.', '我不知道。所以才来问。'), S('Fair. I will walk you through line by line.', '行。我一行一行讲。'))]),
+        // 你要的东西（书面明细）拿不到 —— 这类意外的正确动作不是争，是退一步换个能拿到手的。
+        B(6, 'short', '你要的东西给不了，换个能拿到手的办法',
+          S('I cannot send a full breakdown, but I can read the lines out to you now.', '完整明细我不能发，不过现在可以逐项念给你听。'),
+          [O(S('Go ahead, I will take notes.', '你念，我记。'), S('Gross, then tax, then pension. What is left is net.', '先应发，再税，再养老金。剩下就是实发。')),
+           O(S('Then could I have it as a screenshot?', '那能给我截图吗？'), S('Let me ask payroll. I will email it if they agree.', '我问下薪酬组，同意就邮件发你。'))]),
       ],
       phrases: [
         P('Could you explain my payslip?', '能解释一下我的工资条吗？', 'payslip 是工资条，不是工资。'),

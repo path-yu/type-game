@@ -28,13 +28,13 @@ export default {
         }),
         V('绝育', '你要给猫做绝育。', {
           1: ['I would like to book her in for neutering.', '我想给她约绝育手术。'],
-        }),
+        }, 1),
         V('急诊', '宠物被车撞了。', {
           1: ['He was hit by a car. He is breathing but cannot stand.', '他被车撞了。还有呼吸，但站不起来。'],
-        }),
+        }, 1),
         V('问费用', '你最关心价格。', {
           5: ['What is the total likely to be, including treatment?', '连治疗大概一共多少？'],
-        }),
+        }, 1),
         V('问保险', '你想确认保险能报。', {
           7: ['Will you fill in the insurance form for me?', '能帮我填保险单吗？'],
         }),
@@ -44,6 +44,12 @@ export default {
           S('I would also like to scan her, just in case there is a blockage.', '我还想给她做个扫描，以防有阻塞。'),
           [O(S('If it changes the treatment, do it.', '如果会改变治疗方案，那就做。'), S('It would, in about one case in ten.', '一成的情况下会。')),
            O(S('Let us start with the blood tests only.', '先只做验血。'), S('Sensible. We can scan later if needed.', '稳妥。需要再扫。'))]),
+        // 同一间诊室，另一种意外：验血之外还要扫描，价格是另一个量级。
+        // 指向这条的变体（问费用 / 绝育 / 急诊）都是「心里在算钱」的场次。
+        B(5, 'cost', '报价比预想高，你要么先做基础项、要么问有没有便宜的做法',
+          S('One forty for the blood panel. The scan is another two hundred.', '验血一百四。扫描另外两百。'),
+          [O(S('Let us start with the panel and see.', '先做验血，看了再说。'), S('Fine. I will only book the scan if the results call for it.', '好。结果需要我再约扫描。')),
+           O(S('Is there a cheaper panel?', '有便宜一点的验血吗？'), S('The basic one is eighty, but it misses the kidney markers.', '基础的是八十，但查不到肾功能那几项。'))]),
       ],
       phrases: [
         P('She has not eaten for two days.', '她两天没吃东西。', '宠物问诊先说进食和饮水。'),
@@ -255,6 +261,11 @@ id: 'babysitter', name: '找临时保姆', lv: 3, cefr: 'B1',
           S('The online payment is down. You can pay at the desk.', '线上支付挂了。可以到前台付。'),
           [O(S('Then I will come early and pay in person.', '那我早点来现场付。'), S('I will hold it until six.', '我给您留到六点。')),
            O(S('Can I transfer the money and send you the screenshot?', '我能转账把截图发你们吗？'), S('That works today. Not usually.', '今天可以。平时不行。'))]),
+        // 「对方提议」不是坏消息，是要你在陌生方案里判断值不值 —— 这比应对事故更常见。
+        B(0, 'offer', '对方给了一个你没想过的替代方案，你要判断接不接受',
+          S('Thursday is full, but I can offer you the school hall next door at the same price.', '周四满了，不过隔壁学校的礼堂可以给你，价钱一样。'),
+          [O(S('Same size and same floor?', '一样大、一样的地板吗？'), S('Same size, wooden floor, five minutes walk.', '一样大，木地板，走过去五分钟。')),
+           O(S('That works. Book it for eight.', '行。就订八点。'), S('Done. I will send the confirmation to your phone.', '订好了。确认短信发你手机。'))]),
       ],
 id: 'court-booking', name: '订球场', lv: 3, cefr: 'B1',
       roles: ['你', '场馆'],
@@ -273,7 +284,7 @@ id: 'court-booking', name: '订球场', lv: 3, cefr: 'B1',
         V('长期订场', '你想每周固定。', {
           0: ['Could I book the same slot every Thursday for three months?', '能每周四同一时段订三个月吗？'],
           1: ['We can hold it, with a deposit of forty.', '可以留位，押金四十。'],
-        }),
+        }, 1),
         V('取消', '你们临时取消。', {
           6: ['Can I cancel and get the money back?', '能取消退款吗？'],
         }),
@@ -282,7 +293,7 @@ id: 'court-booking', name: '订球场', lv: 3, cefr: 'B1',
         }),
         V('人数', '你们来了六个人。', {
           3: ['There are six of us. Is one court enough?', '我们有六个人。一个场地够吗？'],
-        }),
+        }, 1),
         V('设备', '场地灯光太暗。', {
           7: ['The lights on court three are dim. Could someone look at them?', '三号场的灯很暗。能有人看看吗？'],
         }),
@@ -315,10 +326,10 @@ id: 'court-booking', name: '订球场', lv: 3, cefr: 'B1',
         V('电脑很慢', '开机要五分钟。', {
           0: ['It takes five minutes to boot and the fan never stops.', '开机要五分钟，风扇一直转。'],
           1: ['Sounds like the disk. I will check the health report.', '像是硬盘问题。我看下健康报告。'],
-        }),
+        }, 1),
         V('打印机', '打印机连不上。', {
           0: ['The printer on the third floor is offline again.', '三楼打印机又离线了。'],
-        }),
+        }, 1),
         V('忘记密码', '你被锁在系统外。', {
           0: ['I am locked out of my account after three wrong passwords.', '我输错三次密码被锁了。'],
           1: ['I will reset it. You will get a link in a minute.', '我重置。一分钟内你会收到链接。'],
@@ -338,6 +349,12 @@ id: 'court-booking', name: '订球场', lv: 3, cefr: 'B1',
           S('Send me your password so I can log in and test it.', '把密码发我，我登进去测一下。'),
           [O(S('I would rather not. Can you reset it instead?', '我不太想。能重置吗？'), S('Fair. I will send a reset link.', '合理。我发重置链接。')),
            O(S('Our policy says never share it. Can you use remote access?', '公司规定不能给。你能远程接入吗？'), S('Good answer. I will use the admin console.', '答得好。我用管理后台。'))]),
+        // 同一通电话的另一种走向：修不了，只能先换个地方办公。
+        // 「流程变了」考的不是词汇，是能不能当场接受一个新的、更麻烦的安排。
+        B(4, 'change', '原来的路走不通了，你要接受新安排或提出替代',
+          S('The ticket queue is two days. Could you work from the fourth floor until then?', '工单排到两天后。这之前你能去四楼办公吗？'),
+          [O(S('I can. I will take my laptop up after this call.', '可以。打完这个电话我就把电脑搬上去。'), S('Good. I will note the workaround on the ticket.', '好。我在工单上标「已有临时方案」。')),
+           O(S('I have meetings on this floor. Could I get a hotspot instead?', '我这层有会。能给我一个热点吗？'), S('I will lend you a dongle for the day.', '我借你一个随身网卡，用一天。'))]),
       ],
       phrases: [
         P('It will not connect since this morning.', '今早开始连不上。', '说时间点，排除偶发。'),

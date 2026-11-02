@@ -4,7 +4,7 @@ import { estimateVocab, newWordRate, recommend } from '../lib/data';
 import { dayNo, dayNoOfKey, sceneStale, useGame } from '../lib/store';
 import type { Article } from '../lib/types';
 import { aliveDailyStreak, peekTomorrow, pickDaily, pickDailyScene, todayKey } from '../lib/daily';
-import { loadDialogues, type Scene } from '../lib/dialogue';
+import { loadDialogues, loadSceneIndex, type SceneLite } from '../lib/dialogue';
 import { DISTRICTS, THEME } from '../lib/districts';
 import { bookZh } from '../lib/book-titles';
 
@@ -34,12 +34,24 @@ export function MapScreen() {
   const today = todayKey();
   const picked = useMemo(() => pickDaily(corpus, p.unlocked, today), [corpus, p.unlocked, today]);
 
-  /* 今日对话：语料单独拉一次（有缓存），没加载好就先只显示文章 */
-  const [scenes, setScenes] = useState<Scene[] | null>(null);
+  /* 今日对话：只拉 130 KB 的索引，整份语料（2.8 MB）等进对话页再取 */
+  const [scenes, setScenes] = useState<SceneLite[] | null>(null);
   useEffect(() => {
     let alive = true;
-    void loadDialogues().then(b => { if (alive && b) setScenes(b.scenes); });
+    void loadSceneIndex().then(list => { if (alive && list) setScenes(list); });
     return () => { alive = false; };
+  }, []);
+
+  /*
+   * 首屏画完再偷偷把整份语料取回来。
+   * 索引只够显示这张卡片，真进对话页要的是完整台词；不预取的话点进去要空等 2.8 MB。
+   * 用空闲时段取，既不压在首屏上，又让「去练」这一次点击是热的。
+   */
+  useEffect(() => {
+    const idle = window.requestIdleCallback
+      ?? ((fn: () => void) => window.setTimeout(fn, 1500));
+    const id = idle(() => { void loadDialogues(); });
+    return () => window.cancelIdleCallback?.(id as number);
   }, []);
   const dailyScenePicked = useMemo(
     () => (scenes ? pickDailyScene(scenes, p.unlocked, today) : null),
@@ -81,7 +93,7 @@ export function MapScreen() {
   }, [p.scenes]);
   const dueSceneN = dueIds.length;
   const dueScenes = useMemo(
-    () => (scenes ? dueIds.map(id => scenes.find(s => s.id === id)).filter((s): s is Scene => !!s) : []),
+    () => (scenes ? dueIds.map(id => scenes.find(s => s.id === id)).filter((s): s is SceneLite => !!s) : []),
     [scenes, dueIds],
   );
   const totalDone = Object.keys(p.played).length;
@@ -164,8 +176,8 @@ export function MapScreen() {
             </span>
             <span className="daily-title">{dailyScene.name}</span>
             <span className="daily-meta">
-              {dailyScene.cefr} · 你 {dailyScene.lines.filter(l => l.r === dailyScene.you).length} 句台词
-              · {dailyScene.phrases.length} 个句型 · 1 处岔路
+              {dailyScene.cefr} · 你 {dailyScene.ny} 句台词
+              · {dailyScene.np} 个句型 · 1 处岔路
             </span>
           </span>
           <span className="daily-go">{dailySceneDone ? '再练一次' : '去练'}</span>

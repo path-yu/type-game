@@ -28692,32 +28692,32 @@
     }
    ],
    "branch": {
-    "at": 3,
-    "kind": "probe",
-    "task": "兽医提出要加一项检查，你要决定做不做",
+    "at": 5,
+    "kind": "cost",
+    "task": "报价比预想高，你要么先做基础项、要么问有没有便宜的做法",
     "prompt": {
-     "en": "I would also like to scan her, just in case there is a blockage.",
-     "zh": "我还想给她做个扫描，以防有阻塞。"
+     "en": "One forty for the blood panel. The scan is another two hundred.",
+     "zh": "验血一百四。扫描另外两百。"
     },
     "options": [
      {
       "say": {
-       "en": "If it changes the treatment, do it.",
-       "zh": "如果会改变治疗方案，那就做。"
+       "en": "Let us start with the panel and see.",
+       "zh": "先做验血，看了再说。"
       },
       "react": {
-       "en": "It would, in about one case in ten.",
-       "zh": "一成的情况下会。"
+       "en": "Fine. I will only book the scan if the results call for it.",
+       "zh": "好。结果需要我再约扫描。"
       }
      },
      {
       "say": {
-       "en": "Let us start with the blood tests only.",
-       "zh": "先只做验血。"
+       "en": "Is there a cheaper panel?",
+       "zh": "有便宜一点的验血吗？"
       },
       "react": {
-       "en": "Sensible. We can scan later if needed.",
-       "zh": "稳妥。需要再扫。"
+       "en": "The basic one is eighty, but it misses the kidney markers.",
+       "zh": "基础的是八十，但查不到肾功能那几项。"
       }
      }
     ]
@@ -28793,32 +28793,32 @@
     }
    ],
    "branch": {
-    "at": 3,
-    "kind": "probe",
-    "task": "兽医提出要加一项检查，你要决定做不做",
+    "at": 5,
+    "kind": "cost",
+    "task": "报价比预想高，你要么先做基础项、要么问有没有便宜的做法",
     "prompt": {
-     "en": "I would also like to scan her, just in case there is a blockage.",
-     "zh": "我还想给她做个扫描，以防有阻塞。"
+     "en": "One forty for the blood panel. The scan is another two hundred.",
+     "zh": "验血一百四。扫描另外两百。"
     },
     "options": [
      {
       "say": {
-       "en": "If it changes the treatment, do it.",
-       "zh": "如果会改变治疗方案，那就做。"
+       "en": "Let us start with the panel and see.",
+       "zh": "先做验血，看了再说。"
       },
       "react": {
-       "en": "It would, in about one case in ten.",
-       "zh": "一成的情况下会。"
+       "en": "Fine. I will only book the scan if the results call for it.",
+       "zh": "好。结果需要我再约扫描。"
       }
      },
      {
       "say": {
-       "en": "Let us start with the blood tests only.",
-       "zh": "先只做验血。"
+       "en": "Is there a cheaper panel?",
+       "zh": "有便宜一点的验血吗？"
       },
       "react": {
-       "en": "Sensible. We can scan later if needed.",
-       "zh": "稳妥。需要再扫。"
+       "en": "The basic one is eighty, but it misses the kidney markers.",
+       "zh": "基础的是八十，但查不到肾功能那几项。"
       }
      }
     ]
@@ -28894,32 +28894,32 @@
     }
    ],
    "branch": {
-    "at": 3,
-    "kind": "probe",
-    "task": "兽医提出要加一项检查，你要决定做不做",
+    "at": 5,
+    "kind": "cost",
+    "task": "报价比预想高，你要么先做基础项、要么问有没有便宜的做法",
     "prompt": {
-     "en": "I would also like to scan her, just in case there is a blockage.",
-     "zh": "我还想给她做个扫描，以防有阻塞。"
+     "en": "One forty for the blood panel. The scan is another two hundred.",
+     "zh": "验血一百四。扫描另外两百。"
     },
     "options": [
      {
       "say": {
-       "en": "If it changes the treatment, do it.",
-       "zh": "如果会改变治疗方案，那就做。"
+       "en": "Let us start with the panel and see.",
+       "zh": "先做验血，看了再说。"
       },
       "react": {
-       "en": "It would, in about one case in ten.",
-       "zh": "一成的情况下会。"
+       "en": "Fine. I will only book the scan if the results call for it.",
+       "zh": "好。结果需要我再约扫描。"
       }
      },
      {
       "say": {
-       "en": "Let us start with the blood tests only.",
-       "zh": "先只做验血。"
+       "en": "Is there a cheaper panel?",
+       "zh": "有便宜一点的验血吗？"
       },
       "react": {
-       "en": "Sensible. We can scan later if needed.",
-       "zh": "稳妥。需要再扫。"
+       "en": "The basic one is eighty, but it misses the kidney markers.",
+       "zh": "基础的是八十，但查不到肾功能那几项。"
       }
      }
     ]
@@ -32025,32 +32025,32 @@
     }
    ],
    "branch": {
-    "at": 4,
-    "kind": "change",
-    "task": "付款方式有限制，你要换个办法",
+    "at": 0,
+    "kind": "offer",
+    "task": "对方给了一个你没想过的替代方案，你要判断接不接受",
     "prompt": {
-     "en": "The online payment is down. You can pay at the desk.",
-     "zh": "线上支付挂了。可以到前台付。"
+     "en": "Thursday is full, but I can offer you the school hall next door at the same price.",
+     "zh": "周四满了，不过隔壁学校的礼堂可以给你，价钱一样。"
     },
     "options": [
      {
       "say": {
-       "en": "Then I will come early and pay in person.",
-       "zh": "那我早点来现场付。"
+       "en": "Same size and same floor?",
+       "zh": "一样大、一样的地板吗？"
       },
       "react": {
-       "en": "I will hold it until six.",
-       "zh": "我给您留到六点。"
+       "en": "Same size, wooden floor, five minutes walk.",
+       "zh": "一样大，木地板，走过去五分钟。"
       }
      },
      {
       "say": {
-       "en": "Can I transfer the money and send you the screenshot?",
-       "zh": "我能转账把截图发你们吗？"
+       "en": "That works. Book it for eight.",
+       "zh": "行。就订八点。"
       },
       "react": {
-       "en": "That works today. Not usually.",
-       "zh": "今天可以。平时不行。"
+       "en": "Done. I will send the confirmation to your phone.",
+       "zh": "订好了。确认短信发你手机。"
       }
      }
     ]
@@ -32328,32 +32328,32 @@
     }
    ],
    "branch": {
-    "at": 4,
-    "kind": "change",
-    "task": "付款方式有限制，你要换个办法",
+    "at": 0,
+    "kind": "offer",
+    "task": "对方给了一个你没想过的替代方案，你要判断接不接受",
     "prompt": {
-     "en": "The online payment is down. You can pay at the desk.",
-     "zh": "线上支付挂了。可以到前台付。"
+     "en": "Thursday is full, but I can offer you the school hall next door at the same price.",
+     "zh": "周四满了，不过隔壁学校的礼堂可以给你，价钱一样。"
     },
     "options": [
      {
       "say": {
-       "en": "Then I will come early and pay in person.",
-       "zh": "那我早点来现场付。"
+       "en": "Same size and same floor?",
+       "zh": "一样大、一样的地板吗？"
       },
       "react": {
-       "en": "I will hold it until six.",
-       "zh": "我给您留到六点。"
+       "en": "Same size, wooden floor, five minutes walk.",
+       "zh": "一样大，木地板，走过去五分钟。"
       }
      },
      {
       "say": {
-       "en": "Can I transfer the money and send you the screenshot?",
-       "zh": "我能转账把截图发你们吗？"
+       "en": "That works. Book it for eight.",
+       "zh": "行。就订八点。"
       },
       "react": {
-       "en": "That works today. Not usually.",
-       "zh": "今天可以。平时不行。"
+       "en": "Done. I will send the confirmation to your phone.",
+       "zh": "订好了。确认短信发你手机。"
       }
      }
     ]
@@ -32733,31 +32733,31 @@
    ],
    "branch": {
     "at": 4,
-    "kind": "probe",
-    "task": "对方要你提供信息，你要判断哪些能给",
+    "kind": "change",
+    "task": "原来的路走不通了，你要接受新安排或提出替代",
     "prompt": {
-     "en": "Send me your password so I can log in and test it.",
-     "zh": "把密码发我，我登进去测一下。"
+     "en": "The ticket queue is two days. Could you work from the fourth floor until then?",
+     "zh": "工单排到两天后。这之前你能去四楼办公吗？"
     },
     "options": [
      {
       "say": {
-       "en": "I would rather not. Can you reset it instead?",
-       "zh": "我不太想。能重置吗？"
+       "en": "I can. I will take my laptop up after this call.",
+       "zh": "可以。打完这个电话我就把电脑搬上去。"
       },
       "react": {
-       "en": "Fair. I will send a reset link.",
-       "zh": "合理。我发重置链接。"
+       "en": "Good. I will note the workaround on the ticket.",
+       "zh": "好。我在工单上标「已有临时方案」。"
       }
      },
      {
       "say": {
-       "en": "Our policy says never share it. Can you use remote access?",
-       "zh": "公司规定不能给。你能远程接入吗？"
+       "en": "I have meetings on this floor. Could I get a hotspot instead?",
+       "zh": "我这层有会。能给我一个热点吗？"
       },
       "react": {
-       "en": "Good answer. I will use the admin console.",
-       "zh": "答得好。我用管理后台。"
+       "en": "I will lend you a dongle for the day.",
+       "zh": "我借你一个随身网卡，用一天。"
       }
      }
     ]
@@ -32834,31 +32834,31 @@
    ],
    "branch": {
     "at": 4,
-    "kind": "probe",
-    "task": "对方要你提供信息，你要判断哪些能给",
+    "kind": "change",
+    "task": "原来的路走不通了，你要接受新安排或提出替代",
     "prompt": {
-     "en": "Send me your password so I can log in and test it.",
-     "zh": "把密码发我，我登进去测一下。"
+     "en": "The ticket queue is two days. Could you work from the fourth floor until then?",
+     "zh": "工单排到两天后。这之前你能去四楼办公吗？"
     },
     "options": [
      {
       "say": {
-       "en": "I would rather not. Can you reset it instead?",
-       "zh": "我不太想。能重置吗？"
+       "en": "I can. I will take my laptop up after this call.",
+       "zh": "可以。打完这个电话我就把电脑搬上去。"
       },
       "react": {
-       "en": "Fair. I will send a reset link.",
-       "zh": "合理。我发重置链接。"
+       "en": "Good. I will note the workaround on the ticket.",
+       "zh": "好。我在工单上标「已有临时方案」。"
       }
      },
      {
       "say": {
-       "en": "Our policy says never share it. Can you use remote access?",
-       "zh": "公司规定不能给。你能远程接入吗？"
+       "en": "I have meetings on this floor. Could I get a hotspot instead?",
+       "zh": "我这层有会。能给我一个热点吗？"
       },
       "react": {
-       "en": "Good answer. I will use the admin console.",
-       "zh": "答得好。我用管理后台。"
+       "en": "I will lend you a dongle for the day.",
+       "zh": "我借你一个随身网卡，用一天。"
       }
      }
     ]
@@ -39298,31 +39298,31 @@
    ],
    "branch": {
     "at": 6,
-    "kind": "probe",
-    "task": "人事要你确认一个数字，你要能对得上",
+    "kind": "short",
+    "task": "你要的东西给不了，换个能拿到手的办法",
     "prompt": {
-     "en": "Before I send it, what figure did you expect for net pay?",
-     "zh": "发之前先确认，你预计实发多少？"
+     "en": "I cannot send a full breakdown, but I can read the lines out to you now.",
+     "zh": "完整明细我不能发，不过现在可以逐项念给你听。"
     },
     "options": [
      {
       "say": {
-       "en": "About two thousand one hundred, based on last month.",
-       "zh": "大概两千一，按上月算的。"
+       "en": "Go ahead, I will take notes.",
+       "zh": "你念，我记。"
       },
       "react": {
-       "en": "That matches my calculation. I will send it now.",
-       "zh": "跟我算的一样。我现在发。"
+       "en": "Gross, then tax, then pension. What is left is net.",
+       "zh": "先应发，再税，再养老金。剩下就是实发。"
       }
      },
      {
       "say": {
-       "en": "I do not know. That is why I am asking.",
-       "zh": "我不知道。所以才来问。"
+       "en": "Then could I have it as a screenshot?",
+       "zh": "那能给我截图吗？"
       },
       "react": {
-       "en": "Fair. I will walk you through line by line.",
-       "zh": "行。我一行一行讲。"
+       "en": "Let me ask payroll. I will email it if they agree.",
+       "zh": "我问下薪酬组，同意就邮件发你。"
       }
      }
     ]
@@ -39399,31 +39399,31 @@
    ],
    "branch": {
     "at": 6,
-    "kind": "probe",
-    "task": "人事要你确认一个数字，你要能对得上",
+    "kind": "short",
+    "task": "你要的东西给不了，换个能拿到手的办法",
     "prompt": {
-     "en": "Before I send it, what figure did you expect for net pay?",
-     "zh": "发之前先确认，你预计实发多少？"
+     "en": "I cannot send a full breakdown, but I can read the lines out to you now.",
+     "zh": "完整明细我不能发，不过现在可以逐项念给你听。"
     },
     "options": [
      {
       "say": {
-       "en": "About two thousand one hundred, based on last month.",
-       "zh": "大概两千一，按上月算的。"
+       "en": "Go ahead, I will take notes.",
+       "zh": "你念，我记。"
       },
       "react": {
-       "en": "That matches my calculation. I will send it now.",
-       "zh": "跟我算的一样。我现在发。"
+       "en": "Gross, then tax, then pension. What is left is net.",
+       "zh": "先应发，再税，再养老金。剩下就是实发。"
       }
      },
      {
       "say": {
-       "en": "I do not know. That is why I am asking.",
-       "zh": "我不知道。所以才来问。"
+       "en": "Then could I have it as a screenshot?",
+       "zh": "那能给我截图吗？"
       },
       "react": {
-       "en": "Fair. I will walk you through line by line.",
-       "zh": "行。我一行一行讲。"
+       "en": "Let me ask payroll. I will email it if they agree.",
+       "zh": "我问下薪酬组，同意就邮件发你。"
       }
      }
     ]
@@ -39500,31 +39500,31 @@
    ],
    "branch": {
     "at": 6,
-    "kind": "probe",
-    "task": "人事要你确认一个数字，你要能对得上",
+    "kind": "short",
+    "task": "你要的东西给不了，换个能拿到手的办法",
     "prompt": {
-     "en": "Before I send it, what figure did you expect for net pay?",
-     "zh": "发之前先确认，你预计实发多少？"
+     "en": "I cannot send a full breakdown, but I can read the lines out to you now.",
+     "zh": "完整明细我不能发，不过现在可以逐项念给你听。"
     },
     "options": [
      {
       "say": {
-       "en": "About two thousand one hundred, based on last month.",
-       "zh": "大概两千一，按上月算的。"
+       "en": "Go ahead, I will take notes.",
+       "zh": "你念，我记。"
       },
       "react": {
-       "en": "That matches my calculation. I will send it now.",
-       "zh": "跟我算的一样。我现在发。"
+       "en": "Gross, then tax, then pension. What is left is net.",
+       "zh": "先应发，再税，再养老金。剩下就是实发。"
       }
      },
      {
       "say": {
-       "en": "I do not know. That is why I am asking.",
-       "zh": "我不知道。所以才来问。"
+       "en": "Then could I have it as a screenshot?",
+       "zh": "那能给我截图吗？"
       },
       "react": {
-       "en": "Fair. I will walk you through line by line.",
-       "zh": "行。我一行一行讲。"
+       "en": "Let me ask payroll. I will email it if they agree.",
+       "zh": "我问下薪酬组，同意就邮件发你。"
       }
      }
     ]
