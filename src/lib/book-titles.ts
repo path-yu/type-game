@@ -21,6 +21,8 @@ export const BOOK_ZH: Record<string, string> = {
   'A Tale of Two Cities': '双城记',
   'Moby Dick': '白鲸',
   'Frankenstein': '弗兰肯斯坦',
+  'The Call of the Wild': '野性的呼唤',
+  'A Christmas Carol': '圣诞颂歌',
 
   // —— 32 个维基条目 ——
   'Volcano': '火山',

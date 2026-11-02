@@ -9,6 +9,10 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import {
+  analyzeItem, chunkParagraph, cleanGutenberg,
+  isCleanParagraph, normalize, splitSentences, wordCount,
+} from './lib/prose.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')), '..');
 const RAW = path.join(ROOT, 'data/raw');
@@ -160,71 +164,10 @@ function buildLemma(words) {
 }
 
 /* ============================ 4. 文本处理 ============================ */
-function cleanGutenberg(raw) {
-  let t = raw.replace(/\r\n?/g, '\n');
-  const s = t.search(/\*\*\* ?START OF (THE|THIS) PROJECT GUTENBERG EBOOK/);
-  if (s >= 0) t = t.slice(t.indexOf('\n', s) + 1);
-  const e = t.search(/\*\*\* ?END OF (THE|THIS) PROJECT GUTENBERG EBOOK/);
-  if (e >= 0) t = t.slice(0, e);
-  return t;
-}
 
-function normalize(p) {
-  return p
-    .replace(/[\u2018\u2019]/g, "'")
-    .replace(/[\u201C\u201D]/g, '"')
-    .replace(/[\u2013\u2014]/g, '-')
-    .replace(/\u2026/g, '...')
-    .replace(/\[[^\]]{0,40}\]/g, '')
-    .replace(/[_*]+/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
 
-const ABBR = /\b(Mr|Mrs|Ms|Dr|St|Jr|Sr|Prof|Capt|Col|Gen|Lt|Sgt|Rev|Hon|vs|etc|No|Fig|Vol|Ch)\./g;
 
-function splitSentences(p) {
-  const guarded = p.replace(ABBR, m => m.replace('.', '\u0001'));
-  return guarded
-    .split(/(?<=[.!?])\s+(?=["'A-Z])/)
-    .map(x => x.replace(/\u0001/g, '.').trim())
-    .filter(Boolean);
-}
 
-const wordCount = s => (s.match(/[A-Za-z][A-Za-z'-]*/g) || []).length;
-
-function isCleanParagraph(p) {
-  if (p.length < 80 || p.length > 2400) return false;
-  if (/GUTENBERG|Project Gutenberg|ebook/i.test(p)) return false;
-  if (/^(CHAPTER|PART|BOOK|SECTION|ACT|SCENE)\b/i.test(p)) return false;
-  if (/^[A-Z\s\d.,'-]{25,}$/.test(p)) return false;                 // 全大写标题
-  if (/https?:|\bwww\.|@|\.com\b/i.test(p)) return false;
-  const caps = (p.match(/[A-Z]/g) || []).length / p.length;
-  if (caps > 0.32) return false;
-  const letters = (p.match(/[A-Za-z]/g) || []).length;
-  if (letters / p.length < 0.72) return false;
-  const strange = (p.match(/[^A-Za-z0-9\s.,;:'"!?()\-%$&/]/g) || []).length;
-  if (strange / p.length > 0.012) return false;
-  return true;
-}
-
-function chunkParagraph(p, minW, maxW, targetW) {
-  const sents = splitSentences(p);
-  const out = [];
-  let buf = [], n = 0;
-  for (const s of sents) {
-    const sw = wordCount(s);
-    if (sw === 0) continue;
-    if (sw > maxW * 1.4) continue;                                   // 超长句多半是排版噪音
-    buf.push(s); n += sw;
-    if (n >= targetW) { out.push(buf.join(' ')); buf = []; n = 0; }
-  }
-  if (buf.length && n >= minW * 0.7) out.push(buf.join(' '));
-  return out.map(t => t.replace(/^[\s.,;:!?)"'\]]+/, '')).filter(t => {
-    const w = wordCount(t);
-    return w >= minW && w <= maxW && /[.!?"']$/.test(t) && splitSentences(t).length >= 2;
-  });
-}
 
 async function fetchBook(id, slug) {
   const f = path.join(BOOKS, `${id}.txt`);
@@ -339,28 +282,7 @@ function buildTierIndex(words) {
 }
 
 function analyze(items, tierOf) {
-  const TOK = /[A-Za-z][A-Za-z'-]*/g;
-  for (const it of items) {
-    const toks = (it.tx.match(TOK) || []).map(t => t.toLowerCase().replace(/'s$/, ''));
-    const n = toks.length || 1;
-    let t1 = 0, t2 = 0, unknown = 0;
-    for (const t of toks) {
-      const k = tierOf.get(t);
-      if (!k) unknown++;
-      else if (k === 1) t1++;
-      else if (k === 2) t2++;
-    }
-    const sents = splitSentences(it.tx);
-    const avg = n / Math.max(1, sents.length);
-    it.w = n;
-    it.st = sents.length;
-    it.avg = Math.round(avg * 10) / 10;
-    it.t1 = t1 / n;
-    it.nw = unknown + (n - t1 - t2 - unknown);            // 一级词之外的词数
-    // 难度分：一级词覆盖率 55% + 二级词覆盖率 30% + 句长 15%
-    const diff = 0.55 * (1 - t1 / n) + 0.30 * (1 - (t1 + t2) / n) + 0.15 * Math.min(avg / 32, 1);
-    it.sc = Math.round(diff * 1000) / 1000;
-  }
+  for (const it of items) analyzeItem(it, tierOf);
 }
 
 function assignLevels(items) {
