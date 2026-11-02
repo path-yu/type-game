@@ -1342,6 +1342,7 @@ input, textarea { font-family: inherit; }
 /* —— 场景卡片 —— */
 .dg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(288px, 1fr)); gap: var(--sp-3); }
 .dg-card {
+  position: relative;
   display: flex; flex-direction: column; gap: 6px;
   padding: var(--sp-5);
   text-align: left; font: inherit; color: inherit;
@@ -1351,8 +1352,10 @@ input, textarea { font-family: inherit; }
 }
 .dg-card:hover { transform: translateY(-2px); box-shadow: var(--sh-2); border-color: var(--sep-2); }
 .dg-card:active { transform: translateY(0); }
+.dg-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .dg-card.done { border-color: var(--accent-soft-2); }
-.dg-card-top { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
+.dg-card.fav { border-color: var(--accent-soft-2); }
+.dg-card-top { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; padding-right: 22px; }
 .dg-cat {
   font-size: 10px; font-weight: 500; letter-spacing: 0.04em;
   padding: 2px 7px; border-radius: var(--r-pill);
@@ -1375,6 +1378,7 @@ input, textarea { font-family: inherit; }
 .dg-best.swap { color: var(--fg-3); }
 
 /* —— 上千场的导航：搜索 / 类别 / 难度 / 按情境分组 —— */
+.dg-head-acts { display: flex; gap: 8px; }
 .dg-filters { display: flex; flex-direction: column; gap: 8px; margin-bottom: var(--sp-5); }
 .dg-search {
   width: 100%; height: 38px; padding: 0 var(--sp-4);
@@ -1398,6 +1402,10 @@ input, textarea { font-family: inherit; }
 .dg-chip:hover { color: var(--fg); border-color: var(--sep-2); }
 .dg-chip.on { color: var(--accent); background: var(--accent-soft); border-color: var(--accent-soft-2); }
 .dg-chip.on em { color: var(--accent); opacity: 0.7; }
+/* 收藏筛选单独一点：它和类别不是同一维度，混在一排里容易被当成又一个类别 */
+.dg-chip-fav { margin-right: 4px; }
+.dg-chip-fav:not(.on) { color: var(--fg-3); }
+.dg-chip-fav:hover { color: var(--accent); }
 
 .dg-hint { margin: -6px 0 var(--sp-4); padding-left: 2px; font-size: 11.5px; color: var(--fg-3); }
 .dg-why {
@@ -1437,6 +1445,7 @@ input, textarea { font-family: inherit; }
 /* —— 场景头 —— */
 .dg-scene-head { display: flex; align-items: flex-end; gap: var(--sp-4); margin-bottom: var(--sp-4); }
 .dg-scene-meta { flex: 1; min-width: 0; }
+.dg-scene-title { display: flex; align-items: center; }
 .dg-back {
   flex: none; align-self: flex-start;
   font-size: 12px; color: var(--fg-3); background: none; border: none;
@@ -1769,8 +1778,33 @@ input, textarea { font-family: inherit; }
 
 .dg-cell { position: relative; display: flex; }
 .dg-cell > .dg-card { flex: 1; }
+
+/* 收藏：一千多场里「找回来」靠它。平时藏起来不抢注意力，收藏过的一直亮着 */
+.dg-fav {
+  position: absolute; top: 7px; right: 7px;
+  width: 22px; height: 22px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 12px; line-height: 1; color: var(--fg-3);
+  background: none; border: none; cursor: pointer;
+  /* 不能完全藏起来：藏着的话没人知道能收藏。压到很淡，指到卡片才亮 */
+  opacity: 0.3;
+  transition: opacity 0.14s, color 0.14s, background-color 0.14s;
+}
+.dg-card:hover .dg-fav, .dg-fav:focus-visible { opacity: 1; }
+.dg-fav:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.dg-fav.on { opacity: 1; color: var(--accent); }
+.dg-fav:hover { background: var(--fill); color: var(--accent); }
+/* 场景页标题旁的那颗星：不用悬停就能看见（卡片上的星平时是藏着的） */
+.dg-fav-lg {
+  position: static; flex: none;
+  width: 24px; height: 24px; margin-left: 4px;
+  font-size: 16px; color: var(--fg-3); opacity: 0.9;
+}
+.dg-fav-lg:hover { color: var(--accent); }
+.dg-fav-lg:hover, .dg-fav-lg.on { background: none; opacity: 1; }
+
 .dg-del {
-  position: absolute; top: 8px; right: 8px;
+  position: absolute; bottom: 8px; right: 8px;
   width: 22px; height: 22px; border-radius: 50%;
   display: grid; place-items: center;
   font-size: 10px; color: var(--fg-3);
@@ -1778,8 +1812,29 @@ input, textarea { font-family: inherit; }
   opacity: 0;
   transition: opacity 0.14s, background-color 0.14s, color 0.14s;
 }
-.dg-cell:hover .dg-del { opacity: 1; }
+.dg-card:hover .dg-del { opacity: 1; }
 .dg-del:hover { background: color-mix(in srgb, var(--err) 14%, transparent); color: var(--err); }
+
+/* —— 场景内的上一场 / 下一场 —— */
+/* 内容宽度的胶囊，不要等分整行：等分加边框看起来像两个空输入框 */
+.dg-nav { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); margin: calc(var(--sp-2) * -1) 0 var(--sp-5); }
+.dg-navbtn {
+  display: inline-flex; align-items: baseline; gap: 6px;
+  max-width: 46%; height: 26px; padding: 0 10px;
+  font: inherit; font-size: 11.5px; color: var(--fg-2);
+  background: transparent; border: var(--hairline); border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: color 0.14s, border-color 0.14s, background-color 0.14s;
+}
+.dg-navbtn > span { flex: none; white-space: nowrap; }
+.dg-navbtn > em {
+  min-width: 0; font-style: normal; color: var(--fg-3);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  transition: color 0.14s;
+}
+.dg-navbtn:hover:not(:disabled) { color: var(--accent); border-color: var(--accent-soft-2); background: var(--accent-soft); }
+.dg-navbtn:hover:not(:disabled) > em { color: var(--accent); }
+.dg-navbtn:disabled { opacity: 0.38; cursor: default; }
 
 /* —— 导入面板 —— */
 .dg-import {

@@ -70,6 +70,8 @@ export interface Progress {
   scenes: Record<string, SceneStat>;
   /** 用户自己导入的对话（和内置语料分开存，重装不丢） */
   customScenes: Scene[];
+  /** 收藏的场景 id。一千多场里，找回来靠这个而不是靠记性 */
+  favScenes: string[];
   /** 句型复习：key 是英文原句，值的结构和单词一样，走同一套 FSRS */
   phrases: Record<string, WordStat>;
   /** 岔路按类型统计：哪一类意外接住过几次（key 是 BranchKind） */
@@ -113,6 +115,7 @@ const emptyProgress = (): Progress => ({
   dailySceneDone: false,
   scenes: {},
   customScenes: [],
+  favScenes: [],
   phrases: {},
   branchStats: {},
 });
@@ -158,6 +161,8 @@ interface State {
   /** 导入一场自定义对话 */
   addCustomScene: (scene: Scene) => void;
   removeCustomScene: (id: string) => void;
+  /** 收藏／取消收藏一场对话 */
+  toggleFavScene: (id: string) => void;
   consumePendingScene: () => void;
   pushToast: (t: string) => void;
   reset: () => void;
@@ -556,7 +561,24 @@ export const useGame = create<State>((set, get) => ({
     const { p } = get();
     const scenes = { ...p.scenes };
     delete scenes[id];
-    set({ p: { ...p, customScenes: p.customScenes.filter(s => s.id !== id), scenes } });
+    set({
+      p: {
+        ...p,
+        customScenes: p.customScenes.filter(s => s.id !== id),
+        // 删掉的自建对话不该留一条悬空的收藏
+        favScenes: p.favScenes.filter(x => x !== id),
+        scenes,
+      },
+    });
+    save();
+  },
+
+  toggleFavScene: (id) => {
+    const { p } = get();
+    const on = p.favScenes.includes(id);
+    set({
+      p: { ...p, favScenes: on ? p.favScenes.filter(x => x !== id) : [id, ...p.favScenes] },
+    });
     save();
   },
 

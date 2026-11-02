@@ -25,6 +25,7 @@ export function DialogueScreen() {
   const finishScene = useGame(s => s.finishScene);
   const addCustom = useGame(s => s.addCustomScene);
   const removeCustom = useGame(s => s.removeCustomScene);
+  const toggleFav = useGame(s => s.toggleFavScene);
   const [importing, setImporting] = useState(false);
   const [reviewing, setReviewing] = useState(false);
   // 一轮复习的题单要在开始时定死：答题会改写 due，边答边算会让题越练越少
@@ -71,8 +72,13 @@ export function DialogueScreen() {
   const [q, setQ] = useState('');
   const [cat, setCat] = useState('全部');
   const [lv, setLv] = useState(0);
+  const [favOnly, setFavOnly] = useState(false);
   const [open, setOpen] = useState<Record<string, boolean>>({});
   const [page, setPage] = useState(1);
+  // 练法提到这一层：切到下一场时不该被打回「通读」，刚在打什么就接着打什么
+  const [mode, setMode] = useState<Mode>('read');
+
+  const fav = useMemo(() => new Set(p.favScenes), [p.favScenes]);
 
   const customIds = useMemo(() => new Set(p.customScenes.map(x => x.id)), [p.customScenes]);
 
@@ -90,7 +96,9 @@ export function DialogueScreen() {
   const matched = useMemo(() => {
     const k = q.trim().toLowerCase();
     const base = all.filter(s =>
-      (cat === '全部' || s.cat === cat) && (lv === 0 || s.lv === lv));
+      (cat === '全部' || s.cat === cat)
+      && (lv === 0 || s.lv === lv)
+      && (!favOnly || fav.has(s.id)));
     if (!k) return base;
 
     const scored: { s: Scene; hit: number }[] = [];
@@ -106,7 +114,7 @@ export function DialogueScreen() {
       });
     }
     return scored.sort((a, b) => b.hit - a.hit).map(x => x.s);
-  }, [all, cat, lv, q]);
+  }, [all, cat, lv, q, favOnly, fav]);
 
   // 同一段情境骨架的变体收成一组：一千张平铺的卡片没法浏览
   const groups = useMemo(() => {
@@ -131,6 +139,31 @@ export function DialogueScreen() {
   }, [matched, customIds, q]);
 
   const shown = groups.slice(0, page * 12);
+
+  // 练完一场接着练下一场：顺序跟着当前筛选取，用户在被筛出来的这一池里往前走
+  const order = useMemo(() => groups.flatMap(g => g.list), [groups]);
+  const nav = useMemo(() => {
+    if (!scene) return { prev: null as Scene | null, next: null as Scene | null };
+    const inView = order.some(s => s.id === scene.id);
+    const pool = inView ? order : all;
+    const i = pool.findIndex(s => s.id === scene.id);
+    return {
+      prev: i > 0 ? pool[i - 1] : null,
+      next: i >= 0 && i < pool.length - 1 ? pool[i + 1] : null,
+    };
+  }, [scene, order, all]);
+
+  /** 不想挑的时候最省事的入口：优先给没练过的，全练过了就随便来一场 */
+  const randomScene = () => {
+    const pool = matched.length ? matched : all;
+    if (!pool.length) return;
+    const fresh = pool.filter(s => !p.scenes[s.id]);
+    const bag = fresh.length ? fresh : pool;
+    const pick = bag[Math.floor(Math.random() * bag.length)];
+    if (!pick) return;
+    stopSpeaking();
+    setOpenId(pick.id);
+  };
 
   if (err) {
     return (
@@ -174,7 +207,14 @@ export function DialogueScreen() {
       <SceneView
         key={scene.id}
         scene={scene}
-        onBack={() => { stopSpeaking(); setOpenId(null); }}
+        mode={mode}
+        setMode={m => { stopSpeaking(); setMode(m); }}
+        prev={nav.prev}
+        next={nav.next}
+        fav={fav.has(scene.id)}
+        onFav={() => toggleFav(scene.id)}
+        onGo={id => { stopSpeaking(); setOpenId(id); }}
+        onBack={() => { stopSpeaking(); setMode('read'); setOpenId(null); }}
         onFinish={(score, words, as, br) => finishScene(scene.id, score, words, as, br)}
       />
     );
@@ -190,7 +230,10 @@ export function DialogueScreen() {
             <em className="dg-em">{done}</em> 场 · 背打时打错的词，当晚进夜巡
           </div>
         </div>
-        <button className="btn btn-ghost" onClick={() => setImporting(true)}>导入自己的对话</button>
+        <div className="dg-head-acts">
+          <button className="btn btn-ghost" onClick={randomScene}>随机一场</button>
+          <button className="btn btn-ghost" onClick={() => setImporting(true)}>导入自己的对话</button>
+        </div>
       </div>
 
       {p.customScenes.length === 0 && (
@@ -226,6 +269,13 @@ export function DialogueScreen() {
           placeholder="搜场景：退换货 / 面试 / 没货 / forgot"
         />
         <div className="dg-chips">
+          <button
+            className={`dg-chip dg-chip-fav${favOnly ? ' on' : ''}`}
+            onClick={() => { setFavOnly(v => !v); setPage(1); }}
+          >
+            ★ 收藏
+            <em>{p.favScenes.length}</em>
+          </button>
           {['全部', ...cats.map(([k]) => k)].map(k => (
             <button
               key={k}
@@ -253,8 +303,9 @@ export function DialogueScreen() {
 
       {shown.length === 0 && (
         <div className="dg-empty">
-          没有匹配的场景。搜索认三种：情境名（点单 / 面试）、场景描述里的话（赶时间 / 没货），
-          以及台词原文（cash back / sold out）。
+          {favOnly && p.favScenes.length === 0
+            ? '还没有收藏的场景。把鼠标移到卡片上，点右上角的 ☆ —— 练到一半被打断的那几场尤其值得留住。'
+            : '没有匹配的场景。搜索认三种：情境名（点单 / 面试）、场景描述里的话（赶时间 / 没货），以及台词原文（cash back / sold out）。'}
         </div>
       )}
 
@@ -282,6 +333,8 @@ export function DialogueScreen() {
                   stat={p.scenes[sc.id]}
                   custom={customIds.has(sc.id)}
                   solo={list.length === 1}
+                  fav={fav.has(sc.id)}
+                  onFav={() => toggleFav(sc.id)}
                   onOpen={() => setOpenId(sc.id)}
                   onDelete={() => {
                     if (confirm(`删除「${sc.name}」？练过的成绩也会一起清掉。`)) removeCustom(sc.id);
@@ -354,58 +407,100 @@ function quotedHit(scene: Scene, q: string): string | null {
 }
 
 function SceneCard({
-  scene, stat, custom, solo, q, onOpen, onDelete,
+  scene, stat, custom, solo, fav, q, onOpen, onFav, onDelete,
 }: {
   scene: Scene;
   q: string;
   stat: { best: number; swapBest?: number | null; liveBest?: number | null } | undefined;
   custom: boolean;
   solo: boolean;
+  fav: boolean;
   onOpen: () => void;
+  onFav: () => void;
   onDelete: () => void;
 }) {
   const mine = yourLines(scene).length;
   const why = quotedHit(scene, q);
   return (
+    // 卡片里要放收藏和删除两个真按钮，所以外层不能用 <button>（嵌套按钮是非法 HTML）
     <div className="dg-cell">
-      <button className={`dg-card${stat ? ' done' : ''}`} data-scene={scene.id} onClick={onOpen}>
-        <div className="dg-card-top">
-          {solo && <span className="dg-cat">{scene.cat}</span>}
-          {!custom && <span className="dg-cefr">{scene.cefr}</span>}
-          {stat && !custom && (
-            <span className="dg-check" title={stat.swapBest != null ? '两个角色都练过' : `最好 ${stat.best}%`}>
-              {stat.swapBest != null ? '✓✓' : '✓'}
-            </span>
-          )}
-        </div>
-        <div className="dg-name">{hl(tagName(scene), q)}</div>
-        <div className="dg-set">{hl(scene.setting, q)}</div>
-        {why && <div className="dg-why">{hl(why, q)}</div>}
-        <div className="dg-card-foot">
-          <span>
-            {mine} 句你的台词
-            {scene.branch ? ' · 1 处岔路' : ''}
-          </span>
-          <span className="dg-bests">
-            {stat && stat.best > 0 && <em className="dg-best">最好 {stat.best}%</em>}
-            {stat?.swapBest != null && <em className="dg-best swap">换角 {stat.swapBest}%</em>}
-            {stat?.liveBest != null && <em className="dg-best swap">实战 {stat.liveBest}%</em>}
-          </span>
-        </div>
+    <div
+      className={`dg-card${stat ? ' done' : ''}${fav ? ' fav' : ''}`}
+      role="button"
+      tabIndex={0}
+      data-scene={scene.id}
+      onClick={onOpen}
+      onKeyDown={e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(); }
+      }}
+    >
+      <button
+        className={`dg-fav${fav ? ' on' : ''}`}
+        aria-label={fav ? '取消收藏' : '收藏这场'}
+        aria-pressed={fav}
+        title={fav ? '取消收藏' : '收藏这场'}
+        onClick={e => { e.stopPropagation(); onFav(); }}
+      >
+        {fav ? '★' : '☆'}
       </button>
+      <div className="dg-card-top">
+        {solo && <span className="dg-cat">{scene.cat}</span>}
+        {!custom && <span className="dg-cefr">{scene.cefr}</span>}
+        {stat && !custom && (
+          <span className="dg-check" title={stat.swapBest != null ? '两个角色都练过' : `最好 ${stat.best}%`}>
+            {stat.swapBest != null ? '✓✓' : '✓'}
+          </span>
+        )}
+      </div>
+      <div className="dg-name">{hl(tagName(scene), q)}</div>
+      <div className="dg-set">{hl(scene.setting, q)}</div>
+      {why && <div className="dg-why">{hl(why, q)}</div>}
+      <div className="dg-card-foot">
+        <span>
+          {mine} 句你的台词
+          {scene.branch ? ' · 1 处岔路' : ''}
+        </span>
+        <span className="dg-bests">
+          {stat && stat.best > 0 && <em className="dg-best">最好 {stat.best}%</em>}
+          {stat?.swapBest != null && <em className="dg-best swap">换角 {stat.swapBest}%</em>}
+          {stat?.liveBest != null && <em className="dg-best swap">实战 {stat.liveBest}%</em>}
+        </span>
+      </div>
       {custom && (
-        <button className="dg-del" title="删除这场对话" aria-label="删除这场对话" onClick={onDelete}>✕</button>
+        <button
+          className="dg-del"
+          title="删除这场对话"
+          aria-label="删除这场对话"
+          onClick={e => { e.stopPropagation(); onDelete(); }}
+        >
+          ✕
+        </button>
       )}
+    </div>
     </div>
   );
 }
 
 function SceneView({
   scene,
+  mode,
+  setMode,
+  prev,
+  next,
+  fav,
+  onFav,
+  onGo,
   onBack,
   onFinish,
 }: {
   scene: Scene;
+  mode: Mode;
+  setMode: (m: Mode) => void;
+  prev: Scene | null;
+  next: Scene | null;
+  fav: boolean;
+  onFav: () => void;
+  onGo: (id: string) => void;
   onBack: () => void;
   onFinish: (
     score: number,
@@ -417,7 +512,6 @@ function SceneView({
   const settings = useGame(s => s.s);
   const corpus = useCorpus();
   const known = useMemo(() => (w: string) => !!corpus.dict.get(w)?.z, [corpus]);
-  const [mode, setMode] = useState<Mode>('read');
   const [role, setRole] = useState<Role>('you');
   const nYou = linesOf(scene, 'you').length;
   const nOther = scene.lines.length - nYou;
@@ -428,7 +522,18 @@ function SceneView({
       <div className="dg-scene-head">
         <button className="dg-back" onClick={onBack}>‹ 全部场景</button>
         <div className="dg-scene-meta">
-          <h1 className="page-title">{scene.name}</h1>
+          <div className="dg-scene-title">
+            <h1 className="page-title">{scene.name}</h1>
+            <button
+              className={`dg-fav dg-fav-lg${fav ? ' on' : ''}`}
+              aria-label={fav ? '取消收藏' : '收藏这场'}
+              aria-pressed={fav}
+              title={fav ? '取消收藏' : '收藏这场'}
+              onClick={onFav}
+            >
+              {fav ? '★' : '☆'}
+            </button>
+          </div>
           <div className="page-sub">
             {scene.cat} · {scene.cefr} · {scene.lines.length} 句 · 对方是{scene.roles[1 - scene.you] ?? '对话方'}
           </div>
@@ -443,6 +548,20 @@ function SceneView({
       </div>
 
       <div className="dg-setting">{scene.setting}</div>
+
+      {/* 练完一场最常见的动作是「再来一场」，不该逼人回列表里重新找位置 */}
+      {(prev || next) && (
+        <div className="dg-nav">
+          <button className="dg-navbtn" disabled={!prev} onClick={() => prev && onGo(prev.id)}>
+            <span>‹ 上一场</span>
+            {prev && <em>{prev.name}</em>}
+          </button>
+          <button className="dg-navbtn next" disabled={!next} onClick={() => next && onGo(next.id)}>
+            {next && <em>{next.name}</em>}
+            <span>下一场 ›</span>
+          </button>
+        </div>
+      )}
 
       {/* 角色互换：练对方的话，才逼自己先听懂再开口 */}
       {mode !== 'read' && mode !== 'live' && (

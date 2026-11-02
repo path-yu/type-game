@@ -177,6 +177,40 @@ try {
       .map(x => (x.textContent.match(/[ABC][12]\+?/) ?? ['?'])[0]));
   check('列表从最简单的场景开始', headLv.every(x => /^A[12]/.test(x)), headLv.join(','));
 
+  // 收藏：一千多场里「找回来」靠它，不靠记性
+  const favId = await p.evaluate(() => {
+    const card = document.querySelectorAll('.dg-card')[0];
+    card.querySelector('.dg-fav').click();
+    return card.dataset.scene;
+  });
+  await sleep(300);
+  const favState = await p.evaluate(() => ({
+    on: document.querySelector('.dg-card .dg-fav')?.className.includes('on'),
+    chip: document.querySelector('.dg-chip-fav')?.textContent ?? '',
+    saved: JSON.parse(localStorage.getItem('typewake:v1') || '{}').p?.favScenes ?? [],
+  }));
+  check('卡片上的星能收藏并落盘', favState.on && favState.saved.includes(favId), favState.saved.join(','));
+  check('收藏数显示在筛选上', /1/.test(favState.chip), favState.chip);
+
+  await p.click('.dg-chip-fav');
+  await sleep(350);
+  const favOnly = await p.evaluate(() => [...document.querySelectorAll('.dg-card')].map(x => x.dataset.scene));
+  check('收藏筛选只剩收藏的那场', favOnly.length === 1 && favOnly[0] === favId, favOnly.join(','));
+  await p.click('.dg-chip-fav');
+  await sleep(300);
+
+  // 不想挑的时候最省事的入口
+  const hitRandom = await p.evaluate(() => {
+    const b = [...document.querySelectorAll('.btn')].find(x => x.textContent.trim() === '随机一场');
+    b?.click();
+    return !!b;
+  });
+  await sleep(500);
+  const randomTitle = await p.evaluate(() => document.querySelector('.dg-scene-title .page-title')?.textContent ?? '');
+  check('随机一场直接开一场', hitRandom && randomTitle.length > 0, randomTitle);
+  await p.evaluate(() => document.querySelector('.dg-back')?.click());
+  await sleep(400);
+
   // 搜英文台词也能定位到场景
   await p.type('.dg-search', 'cash back');
   await sleep(300);
@@ -212,6 +246,19 @@ try {
   }));
   check('通读渲染全部台词', thread.bubbles === first.lines.length, `${thread.bubbles} 条`);
   check('你的台词靠右', thread.me === D.yourLines(first).length, `${thread.me} 条`);
+
+  // 练完一场接着练下一场：不该逼人回列表里重新找位置
+  const navBtns = await p.evaluate(() => [...document.querySelectorAll('.dg-navbtn')].map(x => x.textContent));
+  check('场景里有上一场 / 下一场', navBtns.length === 2, navBtns.join(' | '));
+  const title0 = await p.evaluate(() => document.querySelector('.dg-scene-title .page-title')?.textContent);
+  await p.evaluate(() => document.querySelectorAll('.dg-navbtn')[1].click());
+  await sleep(500);
+  const title1 = await p.evaluate(() => document.querySelector('.dg-scene-title .page-title')?.textContent);
+  check('下一场能直接切过去', !!title1 && title1 !== title0, `${title0} → ${title1}`);
+  await p.evaluate(() => document.querySelectorAll('.dg-navbtn')[0].click());
+  await sleep(500);
+  const title2 = await p.evaluate(() => document.querySelector('.dg-scene-title .page-title')?.textContent);
+  check('上一场能退回去', title2 === title0, `${title1} → ${title2}`);
 
   // 跟打
   const mine = D.yourLines(first);
