@@ -36,6 +36,9 @@ const DROP = {
   'the-aesop-for-children': [[62, 409]],
   // 5 起是 CONTENTS（每条还带着自己的罗马数字和页码），47 才是"PART ONE"与第一章标题
   'treasure-island': [[5, 47]],
+  // 3 起是 ETYMOLOGY 与 EXTRACTS 两大段引文（"U. S." / "Ex." 这种被切碎的卷次缩写也在里面），
+  // 191 才是 "CHAPTER 1." —— 全书正文其实从"叫我以实玛利"开始
+  'moby-dick': [[3, 191]],
 };
 
 const dropSet = (slug) => {

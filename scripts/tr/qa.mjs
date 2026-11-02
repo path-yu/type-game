@@ -56,8 +56,13 @@ function qa(slug) {
     // 2. 同一句英文的两种译法
     const k = en.trim().toLowerCase();
     if (en.length > 25) {
-      if (en2zh.has(k) && en2zh.get(k).zh !== zh) issues.diverge.push([en2zh.get(k).i, i]);
-      else if (!en2zh.has(k)) en2zh.set(k, { i, zh });
+      // 只比"原文一字不差"的两条。大小写不同就是排版不同 ——
+      // `Why hadn't Father taken his clothes?` 与 `WHY hadn't ... ?`
+      // 是同一句，但第二句作者用全大写强调，译文跟着变是应该的，不算前后不一致。
+      if (en2zh.has(k)) {
+        const prev = en2zh.get(k);
+        if (prev.en === en.trim() && prev.zh !== zh) issues.diverge.push([prev.i, i]);
+      } else en2zh.set(k, { i, zh, en: en.trim() });
     }
     // 4. 相邻同译但原文不同
     if (i > 0 && w[i - 1] != null && zh === w[i - 1] && src[i].en !== src[i - 1].en) issues.dup.push(i);
