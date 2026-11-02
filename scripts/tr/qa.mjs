@@ -44,8 +44,15 @@ function qa(slug) {
     // 1. 中文里还有成串英文单词
     if (/([A-Za-z]{3,}\s+){4,}/.test(zh)) issues.latin.push(i);
     // 3. 太短
+    //
+    // 例外：这一条是上一句被缩写截断的残留。1818 年版通篇写 "M. Krempe"，
+    // 切句会在 "M." 后面断开 —— 前一条收在 "…continued M."，这一条从
+    // "Krempe, professor of natural philosophy." 起。它本来就只有半个短语，
+    // 长度比必然偏低，但两行连起来读是通的，不算漏译。
+    const contOfAbbr = i > 0
+      && /(^|\s)(M|Mr|Mrs|Dr|St|No)\.\s*$/.test(src[i - 1].en.trim());
     const ratio = zh.length / Math.max(1, en.length);
-    if (en.length > 40 && ratio < 0.15) issues.short.push(i);
+    if (en.length > 40 && ratio < 0.15 && !contOfAbbr) issues.short.push(i);
     // 2. 同一句英文的两种译法
     const k = en.trim().toLowerCase();
     if (en.length > 25) {
