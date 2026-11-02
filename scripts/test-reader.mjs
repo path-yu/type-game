@@ -30,10 +30,16 @@ await page.reload({ waitUntil: 'networkidle2' });
 await page.waitForSelector('.side-item');
 await sleep(700);
 
+/*
+ * 进文库后是书架，不是列表 —— 得先点一本书才能看到段落。
+ * 统一从这里进：书架 → 第一本书 → 第一篇。
+ */
 const openLibrary = async () => {
   await page.evaluate(() => {
     [...document.querySelectorAll('.side-item')].find(x => x.textContent.includes('文库'))?.click();
   });
+  await page.waitForSelector('.lib-shelf');
+  await page.evaluate(() => document.querySelector('.lib-book')?.click());
   await page.waitForSelector('.lib-row');
   await sleep(400);
 };
@@ -131,6 +137,48 @@ const cardInfo = await page.evaluate(() => ({
 check('点生词弹出词卡', cardInfo.shown && cardInfo.word.length > 0, `${cardInfo.word} / ${cardInfo.gloss}`);
 await page.keyboard.press('Escape');
 await sleep(250);
+
+// —— 分页：一屏一页，翻页而不是滚动 ——
+const pager = await page.evaluate(() => {
+  const pageEl = document.querySelector('.rd-page');
+  const bodyEl = document.querySelector('.rd-body');
+  return {
+    label: document.querySelector('.rd-pageno')?.textContent?.trim() ?? '',
+    pageH: pageEl?.clientHeight ?? 0,
+    bodyH: bodyEl?.clientHeight ?? 0,
+    flowW: bodyEl?.scrollWidth ?? 0,
+    viewW: pageEl?.clientWidth ?? 1,
+    run: document.querySelector('.rd-run')?.textContent?.replace(/\s+/g, ' ').trim() ?? '',
+  };
+});
+check('阅读页带页码', /^\d+ \/ \d+$/.test(pager.label), pager.label);
+check('正文高度等于书页高度（不靠滚动）', Math.abs(pager.bodyH - pager.pageH) <= 1, `${pager.bodyH} / ${pager.pageH}`);
+check('正文按页宽分栏', pager.viewW > 0 && pager.flowW > 0 && pager.flowW % pager.viewW < pager.viewW * 0.2,
+  `${pager.flowW}px 内容 / ${pager.viewW}px 页宽`);
+check('书眉带书名', /[\u4e00-\u9fa5]/.test(pager.run), pager.run.slice(0, 26));
+
+const beforeTurn = await page.evaluate(() => ({
+  page: document.querySelector('.rd-pageno')?.textContent?.trim() ?? '',
+  title: document.querySelector('.rd-title')?.textContent?.trim() ?? '',
+}));
+await page.keyboard.press('ArrowRight');
+await sleep(450);
+const afterTurn = await page.evaluate(() => ({
+  page: document.querySelector('.rd-pageno')?.textContent?.trim() ?? '',
+  title: document.querySelector('.rd-title')?.textContent?.trim() ?? '',
+}));
+check('→ 键能翻页（或翻到下一段）', afterTurn.page !== beforeTurn.page || afterTurn.title !== beforeTurn.title,
+  `${beforeTurn.page} → ${afterTurn.page}`);
+
+// 翻回第一页：同一篇按页退，换篇了按篇退
+await page.keyboard.press('ArrowLeft');
+await sleep(500);
+const backToStart = await page.evaluate(() => ({
+  page: document.querySelector('.rd-pageno')?.textContent?.trim() ?? '',
+  title: document.querySelector('.rd-title')?.textContent?.trim() ?? '',
+}));
+check('← 键能退回上一页', backToStart.page === beforeTurn.page || backToStart.title === beforeTurn.title,
+  `${afterTurn.page} → ${backToStart.page}`);
 
 // —— 段间导航 ——
 const beforeTitle = await page.evaluate(() => document.querySelector('.rd-title')?.textContent ?? '');

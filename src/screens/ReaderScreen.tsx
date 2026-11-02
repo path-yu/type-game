@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useCorpus } from '../lib/CorpusContext';
 import { lookup, masteryOf, tokenize, type Corpus, type Token } from '../lib/data';
 import { LEVEL_NAME } from '../lib/levels';
@@ -15,6 +15,10 @@ import { WordCard } from '../components/WordCard';
  * 文库原来点一行直接进打字页 —— 想「先看看这篇讲什么」的用户没有办法，
  * 只能进打字页看着一屏黑字发愣，或者去点词卡。阅读是独立的一件事，
  * 它需要的是完整全文、句末译文和可以停留的节奏，不是倒计时和连击。
+ *
+ * 版式照书来：一页一屏、不滚动，翻页而不是滚轮。分页交给 CSS 多栏 ——
+ * 容器宽 = 栏宽，浏览器自己把正文切成若干栏，翻页就是把整块往左推一栏。
+ * 自己算「一页能放几句」会按字体、译文开关、窗口宽度不停出错，多栏不会。
  */
 export function ReaderScreen() {
   const corpus = useCorpus();
@@ -29,6 +33,10 @@ export function ReaderScreen() {
   const toggleLex = useGame(s => s.toggleLex);
 
   const [tr, setTr] = useState<string[] | null>(null);
+  const pageRef = useRef<HTMLDivElement>(null);
+  const [page, setPage] = useState(0);
+  const [pages, setPages] = useState(1);
+  const [box, setBox] = useState({ w: 0, h: 0 });
   const [trTried, setTrTried] = useState(false);
   const [reading, setReading] = useState(false);
   const [card, setCard] = useState<{
@@ -52,6 +60,20 @@ export function ReaderScreen() {
 
   useEffect(() => () => { stopSpeaking(); }, []);
 
+  /* 每次换篇目回到第一页 */
+  useEffect(() => { setPage(0); }, [id]);
+
+  /* 量一次可视区；窗口缩放、译文开关都会改变分页，所以跟着 ResizeObserver 走 */
+  useLayoutEffect(() => {
+    const el = pageRef.current;
+    if (!el) return;
+    const read = () => setBox({ w: el.clientWidth, h: el.clientHeight });
+    read();
+    const ro = new ResizeObserver(read);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
   const sents = useMemo(() => (article ? splitSentences(article.tx) : []), [article]);
   const toks = useMemo(() => (article ? tokenize(corpus, article.tx) : []), [corpus, article]);
 
@@ -65,6 +87,15 @@ export function ReaderScreen() {
     }
     return arr;
   }, [sents, toks]);
+
+  /* 分页：多栏容器的 scrollWidth ÷ 栏宽 = 页数 */
+  useLayoutEffect(() => {
+    const el = pageRef.current?.querySelector('.rd-body') as HTMLElement | null;
+    if (!el || !box.w) return;
+    const n = Math.max(1, Math.round(el.scrollWidth / box.w));
+    setPages(n);
+    setPage(p => Math.min(p, n - 1));
+  }, [box.w, box.h, sents.length, settings.readerZh, tr]);
 
   // 只标「词库里有释义、但还没掌握」的词。
   // 词库外的多是专名（Æsop / Holmes）—— 标了也查不到东西，只是制造噪音
@@ -84,6 +115,35 @@ export function ReaderScreen() {
   const at = sibs.findIndex(a => a.id === article?.id);
   const prev = at > 0 ? sibs[at - 1] : null;
   const next = at >= 0 && at < sibs.length - 1 ? sibs[at + 1] : null;
+
+  /*
+   * 翻页：到底了就翻篇。
+   * 真书不会在段落末尾停住让人回目录 —— 读到最后一页再往后，就是下一段。
+   */
+  const turn = useCallback((d: number) => {
+    setPage(cur => {
+      const nx = cur + d;
+      if (nx >= pages) {
+        if (next) { openArticle(next); return 0; }
+        return cur;
+      }
+      if (nx < 0) {
+        if (prev) { openArticle(prev); return 0; }
+        return cur;
+      }
+      return nx;
+    });
+  }, [pages, next, prev, openArticle]);
+
+  /* 左右键翻页 —— 读书时手不该离开键盘旁边的位置 */
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') { turn(1); e.preventDefault(); }
+      else if (e.key === 'ArrowLeft') { turn(-1); e.preventDefault(); }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [turn]);
 
   const toggleRead = useCallback(() => {
     if (!article) return;
@@ -160,16 +220,51 @@ export function ReaderScreen() {
         <div className="rd-notice">这篇还没有译文，只显示原文。点句子可以听读音，点词可以看释义。</div>
       )}
 
-      <article className="rd-body">
-        {sents.map((s, i) => (
-          <div className="rd-sent" key={s.start}>
-            <p className="rd-en" onClick={() => speakLine(s.text)} title="点这一句可以朗读">
-              {renderLine(article.tx, s.start, s.end, perSent[i], corpus, p.mastery, onWord)}
-            </p>
-            {showZh && tr?.[i] && <p className="rd-zh">{tr[i]}</p>}
-          </div>
-        ))}
-      </article>
+      <div className="rd-book">
+        {/* 书眉：左边书名，右边读到第几段 —— 真书翻开也是这样 */}
+        <div className="rd-run">
+          <span>{bookZh(article.s)}</span>
+          <span>{article.ord && article.tot ? `第 ${article.ord}/${article.tot} 段` : ''}</span>
+        </div>
+
+        <div className="rd-page" ref={pageRef}>
+          <article
+            className="rd-body"
+            style={{
+              columnWidth: box.w ? `${box.w}px` : undefined,
+              height: box.h || undefined,
+              transform: `translateX(${-page * box.w}px)`,
+            }}
+          >
+            {sents.map((s, i) => (
+              <div className="rd-sent" key={s.start}>
+                <p className="rd-en" onClick={() => speakLine(s.text)} title="点这一句可以朗读">
+                  {renderLine(article.tx, s.start, s.end, perSent[i], corpus, p.mastery, onWord)}
+                </p>
+                {showZh && tr?.[i] && <p className="rd-zh">{tr[i]}</p>}
+              </div>
+            ))}
+          </article>
+
+          <button
+            className="rd-turn prev"
+            onClick={() => turn(-1)}
+            disabled={page === 0}
+            aria-label="上一页"
+          >‹</button>
+          <button
+            className="rd-turn next"
+            onClick={() => turn(1)}
+            disabled={page >= pages - 1 && !next}
+            aria-label="下一页"
+          >›</button>
+        </div>
+
+        <div className="rd-pagefoot">
+          <span className="rd-pageno">{page + 1} / {pages}</span>
+          <span className="rd-hint">← → 翻页 · 点句子听读 · 点词看释义</span>
+        </div>
+      </div>
 
       <div className="rd-foot">
         <button className="rd-navbtn" disabled={!prev} onClick={() => prev && openArticle(prev)}>

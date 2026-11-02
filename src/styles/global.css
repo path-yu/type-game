@@ -1486,24 +1486,80 @@ input, textarea { font-family: inherit; }
 .lib-chip.on em { color: var(--accent); }
 .lib-chip.dim { opacity: 0.55; }
 
-.lib-books { display: flex; flex-direction: column; gap: var(--sp-6); }
-.lib-book { content-visibility: auto; contain-intrinsic-size: auto 480px; }
-.lib-book-head {
-  display: flex; align-items: baseline; gap: var(--sp-3);
-  padding-bottom: 8px; margin-bottom: 6px; border-bottom: 1px solid var(--line);
+/* ---------------- 书架 ---------------- */
+/* 封面按 2:3 排；一排放得下几本交给 auto-fill，1320 宽一般是 6 本 */
+.lib-shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  gap: var(--sp-5) var(--sp-4);
 }
-.lib-book-title { font-family: var(--font-serif); font-size: 15px; font-weight: 600; }
+.lib-book {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 0; font: inherit; text-align: left; color: inherit;
+  background: none; border: none; cursor: pointer;
+}
+.lib-cover {
+  position: relative; display: block;
+  aspect-ratio: 2 / 3; width: 100%;
+  border-radius: 3px 5px 5px 3px; overflow: hidden;
+  background: var(--fill);
+  /* 书脊 + 底部落影：不是装饰，是为了让一排平图看着像立在架上 */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16), 0 10px 18px -12px rgba(0, 0, 0, 0.5),
+              inset 3px 0 0 rgba(0, 0, 0, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.lib-cover::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.14), transparent 9%);
+}
+.lib-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lib-book:hover .lib-cover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18), 0 18px 28px -14px rgba(0, 0, 0, 0.55); }
+.lib-book:active .lib-cover { transform: translateY(0); }
+/* 读过的进度压在封面底边：不占版面，也不打扰选书 */
+.lib-cover-bar {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+  background: rgba(0, 0, 0, 0.35);
+}
+.lib-cover-bar i { display: block; height: 100%; background: var(--accent); }
+
+.lib-book-title {
+  display: block;
+  font-family: var(--font-serif); font-size: 13.5px; font-weight: 600;
+  line-height: 1.35; color: var(--fg);
+}
+.lib-book-meta { display: block; font-size: 10.5px; color: var(--fg-3); font-family: var(--font-mono); }
 /* 英文原名做副标：学英语的人需要知道原文叫什么，但不该和中文名抢主位 */
 .lib-book-en {
-  margin-left: 8px;
-  font-family: var(--font-ui); font-size: 11px; font-weight: 400;
+  display: block; margin-top: 2px;
+  font-family: var(--font-ui); font-size: 10.5px; font-weight: 400;
   font-style: normal; color: var(--fg-3);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
-.lib-book-count { font-family: var(--font-mono); font-size: 10.5px; color: var(--fg-3); }
-.lib-book-theme {
-  margin-left: auto; font-size: 10.5px; color: var(--fg-3);
-  padding: 2px 7px; border-radius: var(--r-pill); background: var(--fill);
+
+/* ---------------- 一本书的目录 ---------------- */
+.lib-toc { display: flex; flex-direction: column; gap: var(--sp-4); }
+.lib-toc-head {
+  display: flex; align-items: center; gap: var(--sp-4);
+  padding: 0 0 var(--sp-4); border-bottom: 1px solid var(--line);
 }
+.lib-back {
+  align-self: flex-start; padding: 4px 10px; margin-left: -10px;
+  font: inherit; font-size: 12px; color: var(--fg-2);
+  background: none; border: none; border-radius: var(--r-pill); cursor: pointer;
+}
+.lib-back:hover { background: var(--fill); color: var(--fg); }
+.lib-toc-cover {
+  width: 76px; aspect-ratio: 2 / 3; object-fit: cover; flex: none;
+  border-radius: 2px 3px 3px 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16), 0 8px 14px -10px rgba(0, 0, 0, 0.5);
+}
+.lib-toc-meta { min-width: 0; flex: 1; }
+.lib-toc-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; margin: 0; }
+.lib-toc-title em {
+  margin-left: 8px; font-family: var(--font-ui); font-size: 11.5px;
+  font-style: normal; font-weight: 400; color: var(--fg-3);
+}
+.lib-toc-sub { margin-top: 4px; font-size: 11.5px; color: var(--fg-3); font-family: var(--font-mono); }
 
 .lib-rows { display: flex; flex-direction: column; }
 .lib-row {
@@ -1564,10 +1620,60 @@ input, textarea { font-family: inherit; }
   background: var(--fill); border-radius: var(--r-ctl);
 }
 
-.rd-body { margin-top: var(--sp-5); }
+/* ---------------- 书页 ---------------- */
+/* 一屏一页：翻页而不是滚轮。高度给足，但不许无限长 —— 书页是有边的 */
+.rd-page {
+  position: relative;
+  height: clamp(360px, calc(100vh - 340px), 680px);
+  overflow: hidden;
+}
+.rd-body {
+  margin: 0; column-gap: 0; column-fill: auto; height: 100%;
+  transition: transform 0.26s cubic-bezier(0.2, 0.7, 0.3, 1);
+  will-change: transform;
+}
+/* 一句一块：英文在上，中文贴在它下面，不隔到别处去。
+   break-inside 必须给 —— 否则一句会被翻页线劈成两半，上一页半句下一页半句 */
+.rd-sent { margin-bottom: 22px; break-inside: avoid; }
 
-/* 一句一块：英文在上，中文贴在它下面，不隔到别处去 */
-.rd-sent { margin-bottom: 24px; }
+/* 首句首字母下沉：书翻开第一眼的那个老规矩 */
+.rd-sent:first-child .rd-en::first-letter {
+  float: left;
+  font-size: 46px; line-height: 0.86; font-weight: 600;
+  padding: 3px 8px 0 0; color: var(--fg);
+}
+
+/* 书眉：书名在左，段号在右 */
+.rd-run {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 8px; margin-bottom: var(--sp-4);
+  border-bottom: var(--hairline);
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.05em;
+  color: var(--fg-3);
+}
+.rd-run span:first-child { font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.02em; }
+
+/* 翻页按钮压在页边，半透明，不读的时候不显眼 */
+.rd-turn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 30px; height: 60px; display: grid; place-items: center;
+  font-size: 20px; line-height: 1; color: var(--fg-3);
+  background: none; border: none; border-radius: 8px; cursor: pointer;
+  opacity: 0; transition: opacity 0.16s, color 0.16s, background-color 0.16s;
+}
+.rd-page:hover .rd-turn:not(:disabled) { opacity: 1; }
+.rd-turn.prev { left: -34px; }
+.rd-turn.next { right: -34px; }
+.rd-turn:hover:not(:disabled) { color: var(--accent); background: var(--accent-soft); }
+.rd-turn:disabled { cursor: default; }
+
+.rd-pagefoot {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: var(--sp-3);
+  font-family: var(--font-mono); font-size: 10.5px; color: var(--fg-3);
+}
+.rd-pageno { letter-spacing: 0.08em; }
+.rd-hint { opacity: 0.75; }
 .rd-en {
   font-family: var(--font-serif);
   font-size: 17px; line-height: 1.75; color: var(--fg);
@@ -1621,6 +1727,11 @@ input, textarea { font-family: inherit; }
 
 @media (max-width: 760px) {
   .rd-head { flex-direction: column; align-items: stretch; gap: var(--sp-3); }
+  .rd-page { height: clamp(320px, calc(100vh - 300px), 560px); }
+  .rd-turn.prev { left: 0; }
+  .rd-turn.next { right: 0; }
+  .rd-page:hover .rd-turn:not(:disabled) { opacity: 0.5; }
+  .rd-hint { display: none; }
   .rd-head-acts { flex-wrap: wrap; }
   .rd-en { font-size: 16px; }
 }

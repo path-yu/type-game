@@ -29,9 +29,12 @@ try {
 
   // 首页推荐的那篇可能只有一两个生词；从文库挑 Moby Dick（生词密度高）更稳
   await p.click('.ghost-btn');
-  await p.waitForSelector('.lib');
+  await p.waitForSelector('.lib-shelf');
   await p.type('.lib-search', 'moby');
   await sleep(400);
+  // 文库现在是「书架 → 目录 → 阅读页」，搜索过滤的是书，段落要点进书里才看得到
+  await p.evaluate(() => document.querySelector('.lib-book')?.click());
+  await p.waitForSelector('.lib-row');
   const rows = await p.evaluate(() => document.querySelectorAll('.lib-row').length);
   if (rows === 0) throw new Error('文库搜不到 Moby Dick');
   // 文库点条目现在先进阅读页，要从那里按「开始打字」才到打字页

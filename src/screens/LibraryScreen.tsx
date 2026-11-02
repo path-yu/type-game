@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useCorpus } from '../lib/CorpusContext';
 import { DISTRICTS, THEME } from '../lib/districts';
 import { recommend } from '../lib/data';
@@ -7,10 +7,15 @@ import type { Article } from '../lib/types';
 import { bookHasZh, bookMatches, bookZh } from '../lib/book-titles';
 
 /**
- * 文库：把库里全部文章摊开。
+ * 文库：先看书架，再翻目录，最后才是一段一段读。
  *
- * 之前没有这一页 —— 城市页只有 7 行城区，每行写「0/8」，看起来像总共只有 56 篇。
- * 实际上每行背后是 165 篇左右，用户没法知道，也没法挑。
+ * 上一版是把 1419 段全摊在一页里 —— 能搜、能筛，但看不出"这是一本书"：
+ * 二十本长篇和三十个维基条目混在同一列，书名只是个小标签，
+ * 点进来面对的是几千行英文片段，而不是五十二个可以挑的东西。
+ *
+ * 现在：封面 + 书名排成书架；点一本书进去看目录（每段一行），再点进阅读页。
+ * 封面来自 public/data/covers.json：长篇用 Gutenberg 的扫描封面，
+ * 其余用 scripts/fetch-covers.mjs 画的封面 —— 没有这张图，书架就是一格空格。
  */
 export function LibraryScreen() {
   const corpus = useCorpus();
@@ -19,6 +24,17 @@ export function LibraryScreen() {
   const openRead = useGame(s => s.read);
   const [lv, setLv] = useState(0);
   const [q, setQ] = useState('');
+  const [open, setOpen] = useState<string | null>(null);
+  const [covers, setCovers] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    let alive = true;
+    fetch(`${import.meta.env.BASE_URL || '/'}data/covers.json`)
+      .then(r => (r.ok ? r.json() : {}))
+      .then(j => { if (alive) setCovers(j); })
+      .catch(() => {});
+    return () => { alive = false; };
+  }, []);
 
   // 同一本书的段落挨在一起，书内按原文顺序 —— 这样能看出"这本书有 80 段"
   const groups = useMemo(() => {
@@ -34,13 +50,21 @@ export function LibraryScreen() {
       if (!byBook.has(a.s)) byBook.set(a.s, []);
       byBook.get(a.s)!.push(a);
     }
-    const out = [...byBook].map(([title, list]) => ({
-      title,
-      list: list.sort((x, y) => (x.ord ?? 0) - (y.ord ?? 0)),
-    }));
+    const out = [...byBook].map(([title, list]) => {
+      const sorted = list.sort((x, y) => (x.ord ?? 0) - (y.ord ?? 0));
+      const lvs = sorted.map(a => a.lv);
+      return {
+        title,
+        list: sorted,
+        lvMin: Math.min(...lvs),
+        lvMax: Math.max(...lvs),
+        done: sorted.filter(a => (p.played[a.id] ?? 0) > 0).length,
+        theme: THEME[sorted[0].th] ?? '阅读',
+      };
+    });
     // 篇数多的书排前面（小说在前，单篇维基在后）
     return out.sort((x, y) => y.list.length - x.list.length || bookOrder.get(x.title)! - bookOrder.get(y.title)!);
-  }, [corpus, lv, q]);
+  }, [corpus, lv, q, p.played]);
 
   const total = corpus.articles.length;
   // 书的本数用全库口径：筛选后 groups 只剩几本，页头写「13 本书 · 1179 篇」会自相矛盾
@@ -48,6 +72,9 @@ export function LibraryScreen() {
   const read = Object.keys(p.played).length;
   const shown = groups.reduce((s, g) => s + g.list.length, 0);
   const next = useMemo(() => recommend(corpus, p.mastery, Math.min(7, p.unlocked), p.recent), [corpus, p.mastery, p.unlocked, p.recent]);
+
+  const book = open ? groups.find(g => g.title === open) ?? null : null;
+  const coverOf = (title: string) => `${import.meta.env.BASE_URL || '/'}covers/${covers[title] ?? ''}`;
 
   return (
     <div className="page lib">
@@ -68,17 +95,17 @@ export function LibraryScreen() {
         <input
           className="lib-search"
           value={q}
-          onChange={e => setQ(e.target.value)}
+          onChange={e => { setQ(e.target.value); setOpen(null); }}
           placeholder="搜书名…"
           spellCheck={false}
         />
         <div className="lib-chips">
-          <button className={`lib-chip${lv === 0 ? ' on' : ''}`} onClick={() => setLv(0)}>全部</button>
+          <button className={`lib-chip${lv === 0 ? ' on' : ''}`} onClick={() => { setLv(0); setOpen(null); }}>全部</button>
           {DISTRICTS.map(d => (
             <button
               key={d.lv}
               className={`lib-chip${lv === d.lv ? ' on' : ''}${d.lv > p.unlocked ? ' dim' : ''}`}
-              onClick={() => setLv(d.lv)}
+              onClick={() => { setLv(d.lv); setOpen(null); }}
             >
               {d.name}
               <em>L{d.lv}</em>
@@ -87,46 +114,90 @@ export function LibraryScreen() {
         </div>
       </div>
 
-      <div className="lib-books">
-        {groups.map(g => (
-          <section key={g.title} className="lib-book">
-            <header className="lib-book-head">
+      {book ? (
+        <section className="lib-toc">
+          <header className="lib-toc-head">
+            <button className="lib-back" onClick={() => setOpen(null)}>← 书架</button>
+            <img className="lib-toc-cover" src={coverOf(book.title)} alt="" />
+            <div className="lib-toc-meta">
+              <h2 className="lib-toc-title">
+                {bookZh(book.title)}
+                {bookHasZh(book.title) && <em>{book.title}</em>}
+              </h2>
+              <div className="lib-toc-sub">
+                {book.theme} · {book.list.length} 篇 · L{book.lvMin}
+                {book.lvMax !== book.lvMin && `–${book.lvMax}`}
+                {book.done > 0 && ` · 已练 ${book.done} 篇`}
+              </div>
+            </div>
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                // 从没练过的那一篇开始读；都练过就从第一篇重新读
+                const first = book.list.find(a => !(p.played[a.id] ?? 0)) ?? book.list[0];
+                openRead(first);
+              }}
+            >
+              从头读
+            </button>
+          </header>
+
+          <div className="lib-rows">
+            {book.list.map(a => {
+              const stars = p.played[a.id] ?? 0;
+              return (
+                <button
+                  key={a.id}
+                  className={`lib-row${stars ? ' done' : ''}`}
+                  onClick={() => openRead(a)}
+                  title="打开阅读：看全文和译文，再决定要不要打"
+                >
+                  <span className="lib-ord">{a.ord && a.tot ? `${a.ord}/${a.tot}` : '—'}</span>
+                  <span className="lib-text">{a.tx.slice(0, 64)}…</span>
+                  <span className="lib-meta">
+                    {a.w} 词
+                    <em>L{a.lv}</em>
+                  </span>
+                  <span className={`lib-flag${stars ? ' on' : ''}`}>
+                    {stars ? '★'.repeat(stars) : '未读'}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+      ) : (
+        <div className="lib-shelf">
+          {groups.map(g => (
+            <button
+              key={g.title}
+              className="lib-book"
+              onClick={() => setOpen(g.title)}
+              title={`${bookZh(g.title)} · ${g.list.length} 篇`}
+            >
+              <span className="lib-cover">
+                {/* 不做懒加载：52 张封面加起来 600 KB 上下，本地读几乎不花时间，
+                    而懒加载会在滚动时一格一格地闪白 —— 书架最不该有的就是这个 */}
+                <img src={coverOf(g.title)} alt="" decoding="async" />
+                {g.done > 0 && (
+                  <span className="lib-cover-bar">
+                    <i style={{ width: `${Math.round((g.done / g.list.length) * 100)}%` }} />
+                  </span>
+                )}
+              </span>
               <span className="lib-book-title">
                 {bookZh(g.title)}
                 {bookHasZh(g.title) && <em className="lib-book-en">{g.title}</em>}
               </span>
-              <span className="lib-book-count">{g.list.length} 篇</span>
-              <span className="lib-book-theme">{THEME[g.list[0].th] ?? '阅读'}</span>
-            </header>
-            <div className="lib-rows">
-              {g.list.map(a => {
-                const stars = p.played[a.id] ?? 0;
-                return (
-                  <button
-                    key={a.id}
-                    className={`lib-row${stars ? ' done' : ''}`}
-                    onClick={() => openRead(a)}
-                    title="打开阅读：看全文和译文，再决定要不要打"
-                  >
-                    <span className="lib-ord">
-                      {a.ord && a.tot ? `${a.ord}/${a.tot}` : '—'}
-                    </span>
-                    <span className="lib-text">{a.tx.slice(0, 64)}…</span>
-                    <span className="lib-meta">
-                      {a.w} 词
-                      <em>L{a.lv}</em>
-                    </span>
-                    <span className={`lib-flag${stars ? ' on' : ''}`}>
-                      {stars ? '★'.repeat(stars) : '未读'}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </section>
-        ))}
-        {groups.length === 0 && <div className="lib-empty">没有匹配的书名</div>}
-      </div>
+              <span className="lib-book-meta">
+                {g.list.length} 篇 · L{g.lvMin}
+                {g.lvMax !== g.lvMin && `–${g.lvMax}`}
+              </span>
+            </button>
+          ))}
+          {groups.length === 0 && <div className="lib-empty">没有匹配的书名</div>}
+        </div>
+      )}
     </div>
   );
 }
