@@ -17,6 +17,7 @@ export function ResultScreen() {
   const go = useGame(s => s.go);
   const play = useGame(s => s.play);
   const article = useGame(s => s.article);
+  const fromReader = useGame(s => s.playFrom) === 'reader';
 
   const [shown, setShown] = useState(0);
   const raf = useRef(0);
@@ -155,7 +156,9 @@ export function ResultScreen() {
 
       <div className="actions">
         <button className="btn btn-primary" onClick={next}>再来一条<span className="kbd">Enter</span></button>
-        <button className="btn btn-ghost" onClick={() => go('map')}>回地图</button>
+        <button className="btn btn-ghost" onClick={() => go(fromReader ? 'reader' : 'map')}>
+          {fromReader ? '回阅读' : '回地图'}
+        </button>
         <button className="btn btn-ghost" onClick={() => go('lexicon')}>藏书阁</button>
       </div>
     </div>

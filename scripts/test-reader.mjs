@@ -1,0 +1,181 @@
+/**
+ * 阅读页：从文库点进去应该先能看文章，而不是直接开打。
+ *
+ * 这条改动的来由：文库原来点一行直接进打字页，想「先看看这篇讲什么」的人没路可走。
+ * 所以这里的断言重点不是「有个新页面」，而是三件事：
+ *   1. 进来是阅读页，不是打字页
+ *   2. 译文渲染在对应英文句子的下方（不是堆在文末、不是浮在别处）
+ *   3. 从这里还能进打字页 —— 阅读不是把练习的路堵死
+ *
+ * 用法：node scripts/test-reader.mjs（预览服务默认 4173，可用 PORT 覆盖）
+ */
+import puppeteer from 'puppeteer-core';
+
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+let pass = 0, fail = 0;
+const check = (n, ok, d = '') => { ok ? pass++ : fail++; console.log(`  ${ok ? '✓' : '✗'} ${n}${d ? '  ' + d : ''}`); };
+
+const b = await puppeteer.launch({
+  executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+  headless: 'new', args: ['--no-sandbox', '--disable-gpu', '--mute-audio'],
+  defaultViewport: { width: 1280, height: 960, deviceScaleFactor: 2 },
+});
+const page = await b.newPage();
+const errs = [];
+page.on('pageerror', e => errs.push(e.message));
+
+await page.goto(`http://localhost:${process.env.PORT || 4173}/`, { waitUntil: 'networkidle2' });
+await page.evaluate(() => localStorage.clear());
+await page.reload({ waitUntil: 'networkidle2' });
+await page.waitForSelector('.side-item');
+await sleep(700);
+
+const openLibrary = async () => {
+  await page.evaluate(() => {
+    [...document.querySelectorAll('.side-item')].find(x => x.textContent.includes('文库'))?.click();
+  });
+  await page.waitForSelector('.lib-row');
+  await sleep(400);
+};
+
+await openLibrary();
+
+// —— 点一行，应该进阅读页 ——
+const firstText = await page.evaluate(() => document.querySelector('.lib-row .lib-text')?.textContent ?? '');
+await page.evaluate(() => document.querySelector('.lib-row')?.click());
+await page.waitForSelector('.rd-body', { timeout: 6000 });
+await sleep(600);
+
+const entered = await page.evaluate(() => ({
+  reader: !!document.querySelector('.rd-body'),
+  typing: !!document.querySelector('.stage-area'),
+  title: document.querySelector('.rd-title')?.textContent?.trim() ?? '',
+  sub: document.querySelector('.page-sub')?.textContent?.trim() ?? '',
+}));
+check('从文库点进去是阅读页，不是打字页', entered.reader && !entered.typing, entered.title.slice(0, 28));
+check('标题显示书名与段号', /第 \d+\/\d+ 段/.test(entered.title), entered.title);
+
+// 全文：句数要和页头自报的一致
+const body = await page.evaluate(() => ({
+  sents: document.querySelectorAll('.rd-sent').length,
+  en: document.querySelectorAll('.rd-en').length,
+  claim: Number((/·\s*(\d+)\s*句/.exec(document.querySelector('.page-sub')?.textContent ?? '') ?? [])[1] ?? 0),
+  words: document.querySelectorAll('.rd-w').length,
+}));
+check('正文渲染了全部句子', body.sents > 0 && body.sents === body.en && body.sents === body.claim,
+  `${body.sents} 句 / 页头说 ${body.claim} 句`);
+check('正文按词切分（可点词）', body.words > body.sents * 3, `${body.words} 个词`);
+
+// —— 译文：在每句英文的下方，且贴着同一句 ——
+await page.waitForSelector('.rd-zh', { timeout: 8000 });
+const zh = await page.evaluate(() => {
+  const rows = [...document.querySelectorAll('.rd-sent')];
+  const geo = rows.map(s => {
+    const en = s.querySelector('.rd-en')?.getBoundingClientRect();
+    const zh = s.querySelector('.rd-zh')?.getBoundingClientRect();
+    return en && zh ? { below: zh.top >= en.bottom - 1, sameCol: Math.abs(zh.left - en.left) < 24, gap: Math.round(zh.top - en.bottom) } : null;
+  }).filter(Boolean);
+  return {
+    n: document.querySelectorAll('.rd-zh').length,
+    all: geo.length,
+    below: geo.every(g => g.below),
+    sameCol: geo.every(g => g.sameCol),
+    maxGap: Math.max(...geo.map(g => g.gap)),
+    sample: document.querySelector('.rd-zh')?.textContent?.slice(0, 30) ?? '',
+  };
+});
+check('每句都配了译文', zh.n === body.sents, `${zh.n} / ${body.sents}`);
+check('译文在对应英文句子的下方', zh.below, `最大间距 ${zh.maxGap}px`);
+check('译文与英文左对齐在同一栏', zh.sameCol, zh.sample);
+
+// —— 切换中英 / 原文 ——
+await page.evaluate(() => {
+  [...document.querySelectorAll('.rd-head-acts .btn')].find(x => x.textContent.trim() === '中英')?.click();
+});
+await sleep(350);
+const off = await page.evaluate(() => ({
+  zh: document.querySelectorAll('.rd-zh').length,
+  label: [...document.querySelectorAll('.rd-head-acts .btn')].map(x => x.textContent.trim()),
+  sents: document.querySelectorAll('.rd-sent').length,
+}));
+check('关掉译文只留原文', off.zh === 0 && off.sents === body.sents, `${off.zh} 条译文 / ${off.sents} 句`);
+check('按钮切到「原文」', off.label.includes('原文'), off.label.join(' '));
+
+await page.evaluate(() => {
+  [...document.querySelectorAll('.rd-head-acts .btn')].find(x => x.textContent.trim() === '原文')?.click();
+});
+await page.waitForSelector('.rd-zh', { timeout: 4000 });
+check('再点能切回中英', (await page.evaluate(() => document.querySelectorAll('.rd-zh').length)) === body.sents);
+
+// —— 生词标记与点词查义 ——
+const hard = await page.evaluate(() => ({
+  n: document.querySelectorAll('.rd-w.hard').length,
+  words: [...document.querySelectorAll('.rd-w.hard')].slice(0, 4).map(x => x.textContent),
+  underlined: (() => {
+    const el = document.querySelector('.rd-w.hard');
+    if (!el) return '';
+    const cs = getComputedStyle(el);
+    return `${cs.textDecorationLine} ${cs.textDecorationStyle}`;
+  })(),
+}));
+check('生词带下划线标记', hard.n > 0 && /underline/.test(hard.underlined), `${hard.n} 个 · ${hard.words.join(' ')}`);
+
+await page.evaluate(() => document.querySelector('.rd-w.hard')?.click());
+await page.waitForSelector('.card', { timeout: 4000 });
+const cardInfo = await page.evaluate(() => ({
+  shown: !!document.querySelector('.card'),
+  word: document.querySelector('.card .hw')?.textContent ?? '',
+  gloss: document.querySelector('.card .zh')?.textContent?.slice(0, 20) ?? '',
+}));
+check('点生词弹出词卡', cardInfo.shown && cardInfo.word.length > 0, `${cardInfo.word} / ${cardInfo.gloss}`);
+await page.keyboard.press('Escape');
+await sleep(250);
+
+// —— 段间导航 ——
+const beforeTitle = await page.evaluate(() => document.querySelector('.rd-title')?.textContent ?? '');
+const jumped = await page.evaluate(() => {
+  const next = document.querySelector('.rd-navbtn.next');
+  if (!next || next.disabled) return false;
+  next.click();
+  return true;
+});
+await sleep(900);
+const afterTitle = await page.evaluate(() => document.querySelector('.rd-title')?.textContent ?? '');
+check('可以顺着一本书往下读', jumped && afterTitle !== beforeTitle, `${beforeTitle.slice(0, 20)} → ${afterTitle.slice(0, 20)}`);
+
+// —— 从阅读页进打字 ——
+await page.evaluate(() => {
+  [...document.querySelectorAll('.rd-head-acts .btn')].find(x => x.textContent.trim() === '开始打字')?.click();
+});
+await page.waitForSelector('.stage-area', { timeout: 6000 });
+const typing = await page.evaluate(() => ({
+  stage: !!document.querySelector('.stage-area'),
+  reader: !!document.querySelector('.rd-body'),
+}));
+check('阅读页能进打字页', typing.stage && !typing.reader);
+
+// —— 返回：从阅读进来的，退出去应该回阅读页，不是回地图 ——
+await page.evaluate(() => document.querySelector('.tbar .icon-btn')?.click());
+await page.waitForSelector('.rd-body', { timeout: 6000 });
+const back = await page.evaluate(() => ({
+  reader: !!document.querySelector('.rd-body'),
+  title: document.querySelector('.rd-title')?.textContent ?? '',
+}));
+check('从阅读页进打字，退出回到阅读页', back.reader && back.title === afterTitle.slice(0, back.title.length), back.title.slice(0, 24));
+
+// 地图进来的仍然回地图
+await page.evaluate(() => {
+  [...document.querySelectorAll('.side-item')].find(x => x.textContent.includes('城市'))?.click();
+});
+await page.waitForSelector('.hero', { timeout: 6000 });
+await sleep(400);
+await page.evaluate(() => document.querySelector('.hero .btn-primary')?.click());
+await page.waitForSelector('.stage-area', { timeout: 8000 });
+await page.evaluate(() => document.querySelector('.tbar .icon-btn')?.click());
+await page.waitForSelector('.hero', { timeout: 6000 });
+check('从地图进的打字仍然回地图', await page.evaluate(() => !!document.querySelector('.hero')));
+
+console.log(`\n通过 ${pass} · 失败 ${fail}`);
+console.log('运行时错误:', errs.length ? errs.slice(0, 3) : '0');
+await b.close();
+process.exit(fail || errs.length ? 1 : 0);

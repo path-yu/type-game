@@ -34,7 +34,12 @@ try {
   await sleep(400);
   const rows = await p.evaluate(() => document.querySelectorAll('.lib-row').length);
   if (rows === 0) throw new Error('文库搜不到 Moby Dick');
+  // 文库点条目现在先进阅读页，要从那里按「开始打字」才到打字页
   await p.click('.lib-row');
+  await p.waitForSelector('.rd-body');
+  await p.evaluate(() => {
+    [...document.querySelectorAll('.rd-head-acts .btn')].find(x => x.textContent.trim() === '开始打字')?.click();
+  });
   await p.waitForSelector('.stage');
   await p.waitForSelector('.pre', { timeout: 5000 });
   await sleep(300);

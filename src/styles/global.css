@@ -1368,6 +1368,91 @@ input, textarea { font-family: inherit; }
 .lib-flag.on { color: var(--accent); }
 .lib-empty { padding: var(--sp-8); text-align: center; font-size: 13px; color: var(--fg-3); }
 
+/* ---------------- 阅读页 ---------------- */
+/* 正文不跟着 .page 的 940px：一行太长眼睛会串行，700 上下是舒适区 */
+.rd { max-width: 720px; }
+
+.rd-head { align-items: flex-start; }
+.rd-head-main { display: flex; align-items: flex-start; gap: 10px; min-width: 0; }
+.rd-head-main .icon-btn { margin-top: 5px; }
+.rd-title { font-size: var(--t-title); line-height: var(--lh-title); }
+/* 打字页的段号样式挂在 .tbar 下，阅读页不在里面，要单独给一份 */
+.rd-title .ttl-part {
+  font-family: var(--font-mono); font-style: normal;
+  font-size: 11px; color: var(--fg-3);
+  margin-left: 7px; letter-spacing: 0.02em;
+}
+.rd-head-acts { display: flex; gap: 8px; flex: none; }
+.rd-head-acts .btn { height: 32px; padding: 0 12px; font-size: 12px; }
+.rd-head-acts .btn.on { color: var(--accent); background: var(--accent-soft); border-color: var(--accent-soft-2); }
+
+.rd-notice {
+  margin-bottom: var(--sp-4); padding: 10px 12px;
+  font-size: 12px; line-height: 1.6; color: var(--fg-2);
+  background: var(--fill); border-radius: var(--r-ctl);
+}
+
+.rd-body { margin-top: var(--sp-5); }
+
+/* 一句一块：英文在上，中文贴在它下面，不隔到别处去 */
+.rd-sent { margin-bottom: 24px; }
+.rd-en {
+  font-family: var(--font-serif);
+  font-size: 17px; line-height: 1.75; color: var(--fg);
+  padding: 2px 4px; margin: 0 -4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.14s;
+}
+.rd-en:hover { background: var(--fill); }
+
+.rd-w { cursor: pointer; transition: color 0.12s; }
+.rd-w:hover { color: var(--accent); }
+/* 生词用点状下划线：不用实线，否则一整段全是实线，看起来像生词遍地 */
+.rd-w.hard {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: color-mix(in srgb, var(--accent) 62%, transparent);
+  text-underline-offset: 4px;
+}
+
+.rd-zh {
+  margin-top: 7px; padding-left: 10px;
+  font-size: 13px; line-height: 1.85; color: var(--fg-2);
+  border-left: 2px solid var(--sep-2);
+  cursor: pointer;
+  transition: border-color 0.14s;
+}
+.rd-zh:hover { border-left-color: var(--accent-soft-2); }
+
+.rd-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: var(--sp-3); margin-top: var(--sp-8); padding-top: var(--sp-4);
+  border-top: var(--hairline);
+}
+.rd-navbtn {
+  display: inline-flex; align-items: baseline; gap: 6px;
+  max-width: 46%; height: 30px; padding: 0 12px;
+  font: inherit; font-size: 12px; color: var(--fg-2);
+  background: transparent; border: var(--hairline); border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: color 0.14s, border-color 0.14s, background-color 0.14s;
+}
+.rd-navbtn > span { flex: none; white-space: nowrap; }
+.rd-navbtn > em {
+  min-width: 0; font-style: normal; color: var(--fg-3);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.rd-navbtn:hover:not(:disabled) { color: var(--accent); border-color: var(--accent-soft-2); background: var(--accent-soft); }
+.rd-navbtn:disabled { opacity: 0.38; cursor: default; }
+
+@media (max-width: 760px) {
+  .rd-head { flex-direction: column; align-items: stretch; gap: var(--sp-3); }
+  .rd-head-acts { flex-wrap: wrap; }
+  .rd-en { font-size: 16px; }
+}
+
 /* ============ 预习卡：开打之前先认一认 ============ */
 .pre {
   position: fixed; inset: 0; z-index: 60;

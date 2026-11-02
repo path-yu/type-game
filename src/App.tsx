@@ -12,6 +12,7 @@ import { SettingsScreen } from './screens/SettingsScreen';
 import { ReportScreen } from './screens/ReportScreen';
 import { ClozeScreen } from './screens/ClozeScreen';
 import { LibraryScreen } from './screens/LibraryScreen';
+import { ReaderScreen } from './screens/ReaderScreen';
 import { DialogueScreen } from './screens/DialogueScreen';
 import { IconBlank, IconBook, IconChat, IconCity, IconGear, IconMonitor, IconMoon, IconPulse, IconShelf, IconSun } from './components/Icons';
 import { reportReady } from './lib/native';
@@ -124,7 +125,7 @@ export default function App() {
               <span>夜巡</span>
               {due > 0 && <span className="badge">{due}</span>}
             </button>
-            <button className={`side-item${screen === 'library' ? ' on' : ''}`} onClick={() => go('library')}>
+            <button className={`side-item${screen === 'library' || screen === 'reader' ? ' on' : ''}`} onClick={() => go('library')}>
               <IconShelf />
               <span>文库</span>
               <span className="badge">{corpus.articles.length}</span>
@@ -173,6 +174,7 @@ export default function App() {
           {screen === 'result' && <ResultScreen />}
           {screen === 'review' && <ReviewScreen />}
           {screen === 'library' && <LibraryScreen />}
+          {screen === 'reader' && <ReaderScreen />}
           {screen === 'dialogue' && <DialogueScreen />}
           {screen === 'lexicon' && <LexiconScreen />}
           {screen === 'cloze' && <ClozeScreen />}

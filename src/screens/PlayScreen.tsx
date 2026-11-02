@@ -33,6 +33,7 @@ export function PlayScreen() {
   const progress = useGame(s => s.p);
   const finish = useGame(s => s.finish);
   const go = useGame(s => s.go);
+  const fromReader = useGame(s => s.playFrom) === 'reader';
   const markUnknown = useGame(s => s.markUnknown);
   const toggleLex = useGame(s => s.toggleLex);
   const reviewWord = useGame(s => s.review);
@@ -398,7 +399,11 @@ export function PlayScreen() {
   return (
     <div className="play">
       <div className="tbar">
-        <button className="icon-btn" onClick={() => go('map')} title="返回地图">←</button>
+        <button
+          className="icon-btn"
+          onClick={() => go(fromReader ? 'reader' : 'map')}
+          title={fromReader ? '回阅读' : '返回地图'}
+        >←</button>
         <span className="ttl">
           {article.s}
           {article.ord && article.tot ? <em className="ttl-part">· 第 {article.ord}/{article.tot} 段</em> : null}
@@ -528,7 +533,9 @@ export function PlayScreen() {
               {Math.max(0, Math.round((1 - engine.idx / engine.length) * article.w))} 个词。
             </p>
             <div className="row">
-              <button className="btn btn-ghost" style={{ flex: 1 }} onClick={() => go('map')}>回地图</button>
+              <button className="btn btn-ghost" style={{ flex: 1 }} onClick={() => go(fromReader ? 'reader' : 'map')}>
+                {fromReader ? '回阅读' : '回地图'}
+              </button>
               <button className="btn btn-primary" style={{ flex: 1 }} onClick={() => setPaused(false)}>继续</button>
             </div>
           </div>

@@ -82,11 +82,18 @@ try {
   });
   check('筛选结果全是一级', allL1);
 
-  // 点一篇能进打字界面
+  // 点一篇先进阅读页（看全文与译文），再从那里进打字
   await p.click('.lib-row');
+  await p.waitForSelector('.rd-body', { timeout: 6000 });
+  const inRead = await p.evaluate(() => document.querySelector('.rd-title')?.textContent ?? '');
+  check('点条目进入阅读页', /第\s*\d+\/\d+\s*段/.test(inRead) && !!await p.$('.rd-body'), inRead);
+
+  await p.evaluate(() => {
+    [...document.querySelectorAll('.rd-head-acts .btn')].find(x => x.textContent.trim() === '开始打字')?.click();
+  });
   await p.waitForSelector('.stage', { timeout: 6000 });
   const inPlay = await p.evaluate(() => document.querySelector('.tbar .ttl')?.textContent ?? '');
-  check('点条目进入打字界面', /第\s*\d+\/\d+\s*段/.test(inPlay), inPlay);
+  check('阅读页能进打字界面', /第\s*\d+\/\d+\s*段/.test(inPlay), inPlay);
 
   check('没有运行时错误', errs.length === 0, errs.slice(0, 2).join(' / '));
 } finally {

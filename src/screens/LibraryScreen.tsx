@@ -15,6 +15,7 @@ export function LibraryScreen() {
   const corpus = useCorpus();
   const p = useGame(s => s.p);
   const play = useGame(s => s.play);
+  const openRead = useGame(s => s.read);
   const [lv, setLv] = useState(0);
   const [q, setQ] = useState('');
 
@@ -95,7 +96,12 @@ export function LibraryScreen() {
               {g.list.map(a => {
                 const stars = p.played[a.id] ?? 0;
                 return (
-                  <button key={a.id} className={`lib-row${stars ? ' done' : ''}`} onClick={() => play(a)}>
+                  <button
+                    key={a.id}
+                    className={`lib-row${stars ? ' done' : ''}`}
+                    onClick={() => openRead(a)}
+                    title="打开阅读：看全文和译文，再决定要不要打"
+                  >
                     <span className="lib-ord">
                       {a.ord && a.tot ? `${a.ord}/${a.tot}` : '—'}
                     </span>

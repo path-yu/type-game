@@ -100,6 +100,7 @@ export interface Settings {
   clozeHint: 'none' | 'first' | 'both';   // 阅读填空的提示强度
   pretest: boolean;    // 开打前先过一遍生词（先测后学）
   ghost: boolean;      // 幽灵竞速：上一场成绩的光标，用来对比节奏
+  readerZh: boolean;   // 阅读页是否显示中文译文（英文句子下方）
 }
 
 const emptyProgress = (): Progress => ({
@@ -138,6 +139,8 @@ const defaultSettings = (): Settings => ({
   sentenceHelp: 'gloss', clozeHint: 'first', pretest: true,
   // 默认关：它每帧都在动，第一次见的人会以为光标坏了
   ghost: false,
+  // 阅读页默认带译文：这一页的用途就是先看懂，不是先打字
+  readerZh: true,
 });
 
 interface State {
@@ -156,6 +159,10 @@ interface State {
   boot: () => void;
   go: (s: Screen) => void;
   play: (a: Article) => void;
+  /** play 是从哪进去的（'map' 或 'reader'），用于决定返回键去哪 */
+  playFrom: 'map' | 'reader';
+  /** 打开阅读页（先看懂再练），和 play 分开是刻意的：两条路，两个入口 */
+  read: (a: Article) => void;
   finish: (r: RunResult) => void;
   review: (word: string, ok: boolean) => void;
   /** 阅读填空的结果：填对涨掌握度，填错记为错误并当天进夜巡 */
@@ -265,6 +272,8 @@ const initial = load();
 export const useGame = create<State>((set, get) => ({
   ready: false,
   screen: 'map',
+  // 从阅读页进的打字，返回时该回阅读页而不是地图 —— 否则读一半去练一下，回来就得重新找
+  playFrom: 'map' as 'map' | 'reader',
   article: null,
   lastResult: null,
   p: initial.p,
@@ -296,7 +305,14 @@ export const useGame = create<State>((set, get) => ({
 
   go: (screen) => set({ screen }),
 
-  play: (article) => set({ article, screen: 'play' }),
+  play: (article) => set(s => ({
+    article,
+    screen: 'play',
+    // 结算页点「再来一条」时沿用原来的来源，别把 reader 洗成 map
+    playFrom: s.screen === 'result' ? s.playFrom : s.screen === 'reader' ? 'reader' : 'map',
+  })),
+
+  read: (article) => set({ article, screen: 'reader' }),
 
   finish: (r) => {
     const { p } = get();
