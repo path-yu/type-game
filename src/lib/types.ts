@@ -70,6 +70,11 @@ export interface RunResult {
   charErr: Record<string, number>;
   beatGhost: boolean;
   prevWpm: number | null;
+  /** 一句没错的句子数 / 总句数 —— 结算页用它说「这篇有几句是干净的」 */
+  perfect?: number;
+  sentences?: number;
+  /** 本局攒到的连击峰值段落（0–3） */
+  stage?: number;
 }
 
 export interface GhostFrame {

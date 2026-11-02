@@ -8,6 +8,7 @@
 import type { Corpus } from './data';
 import type { Progress } from './store';
 import { BRANCH_KINDS } from './dialogue';
+import { TARGET_WPM } from './levels';
 
 export interface Report {
   runs: number;
@@ -51,8 +52,6 @@ export interface BranchRow {
   n: number;
   rate: number;   // 0-100
 }
-
-const TARGET_WPM = [0, 26, 30, 36, 42, 48, 54, 60];
 
 export function buildReport(p: Progress, corpus: Corpus, unlocked: number, opts: { scenes?: number } = {}): Report {
   const all = p.history ?? [];

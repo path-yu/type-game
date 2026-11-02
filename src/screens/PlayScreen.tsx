@@ -9,11 +9,15 @@ import { glossOf, sentenceAt, splitSentences } from '../lib/sentences';
 import { translationsFor } from '../lib/trans';
 import { useGame } from '../lib/store';
 import { speak, stopSpeaking } from '../lib/speech';
-import { errorThud, keyClick, resonant, setMuted } from '../lib/sfx';
+import { errorThud, flowUp, keyClick, perfect, setMuted, shieldSave } from '../lib/sfx';
+import { LEVEL_NAME, TARGET_WPM } from '../lib/levels';
 import type { RunResult } from '../lib/types';
 
-export const TARGET_WPM = [0, 26, 30, 36, 42, 48, 54, 60];
-const LEVEL_NAME = ['', 'A1.1', 'A1.2', 'A2', 'B1', 'B1+', 'B2', 'C1'];
+/** 连击的三层境界，对应 engine.flowStage() */
+const FLOW_NAME = ['', '顺 流', '共 鸣', '无 我'];
+
+/** 护盾第一次出现时说明一次，之后不再打扰 */
+const FLOW_TIP = 'typewake:flow-tip';
 
 interface CardState {
   key: string;
@@ -54,6 +58,16 @@ export function PlayScreen() {
   const hintRef = useRef<HTMLDivElement>(null);
   const doneRef = useRef(false);
   const pausedRef = useRef(false);
+  // 句末小结算 · 升段大字 · 护盾点：都直接改 DOM，不走 state —— 逐键重渲染会把节奏打散
+  const areaRef = useRef<HTMLDivElement>(null);
+  const pulseRef = useRef<HTMLDivElement>(null);
+  const flowRef = useRef<HTMLDivElement>(null);
+  const shieldRef = useRef<HTMLDivElement>(null);
+  const lastStage = useRef(0);
+  const lastShield = useRef(0);
+  // rAF 里要用 toast，又不能把它写进 effect 依赖（会让循环重建、段位清零）
+  const toastRef = useRef(pushToast);
+  toastRef.current = pushToast;
 
   const engine = useMemo(() => {
     const toks = tokenize(corpus, article.tx);
@@ -139,6 +153,9 @@ export function PlayScreen() {
     const charErr: Record<string, number> = {};
     for (const [k, n] of e.charErr) charErr[k] = n;
 
+    // 一句没错 = 完美。退格不撤销这个判定 —— 错过就是错过，不然「完美」能靠退格刷出来
+    const perfect = sents.filter(s => e.sentenceStat(s.start, s.end).errors === 0).length;
+
     return {
       articleId: article.id,
       lv: article.lv,
@@ -156,8 +173,11 @@ export function PlayScreen() {
       marks: e.tokenMarks(),
       beatGhost: prevWpm != null && wpm > prevWpm,
       prevWpm,
+      perfect,
+      sentences: sents.length,
+      stage: e.maxFlowStage(),
     };
-  }, [article, corpus, prevWpm, progress.mastery]);
+  }, [article, corpus, prevWpm, progress.mastery, sents]);
 
   useEffect(() => {
     const onKey = (ev: KeyboardEvent) => {
@@ -186,10 +206,11 @@ export function PlayScreen() {
 
       const r = e.input(ev.key);
       if (r === 'err') {
-        errorThud();
+        // 护盾顶住的错不该听起来像挨了一下 —— 换个上扬的「叮」，人才知道攒它有回报
+        if (e.shieldBroke) shieldSave();
+        else errorThud();
       } else {
         keyClick();
-        if (e.combo > 0 && e.combo % 30 === 0) resonant(e.combo / 30);
       }
       if (!started && r !== 'err') {
         setStarted(true);
@@ -224,6 +245,13 @@ export function PlayScreen() {
   useEffect(() => {
     let raf = 0;
     let frame = 0;
+    // 重开时把段位与护盾的视觉一起清掉，否则会带着上一局的余温
+    lastStage.current = 0;
+    lastShield.current = 0;
+    if (railRef.current) railRef.current.className = 'rail s0';
+    if (areaRef.current) areaRef.current.dataset.flow = '0';
+    if (shieldRef.current) shieldRef.current.innerHTML = '<i></i><i></i>';
+
     const loop = () => {
       const e = engineRef.current;
       if (e) {
@@ -236,17 +264,66 @@ export function PlayScreen() {
             clockRef.current.textContent = `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
           }
           if (railRef.current) {
-            const pct = Math.min(e.combo / 150, 1);
+            const pct = Math.min(e.combo / 120, 1);
             railRef.current.style.height = `${pct * 36}vh`;
-            railRef.current.classList.toggle('on', e.combo >= 30);
           }
         }
+
+        // 连击段位：跨过 30 / 60 / 100 时给一次明确的「你正在变强」
+        const stage = e.flowStage();
+        if (stage !== lastStage.current) {
+          const up = stage > lastStage.current;
+          lastStage.current = stage;
+          if (railRef.current) railRef.current.className = `rail s${stage}`;
+          if (areaRef.current) areaRef.current.dataset.flow = String(stage);
+          if (up && stage > 0) {
+            flowUp(stage);
+            const el = flowRef.current;
+            if (el) {
+              el.textContent = FLOW_NAME[stage];
+              el.className = `flowtag s${stage}`;
+              void el.offsetWidth;   // 强制重排，同一个动画才能连着重播
+              el.classList.add('show');
+            }
+          }
+        }
+
+        // 护盾：攒到才亮，打错时看得见地少一个
+        if (e.shield !== lastShield.current && shieldRef.current) {
+          // 头一回攒到要说明一下 —— 否则右上角凭空多出两颗点，没人知道能干什么
+          if (e.shield > lastShield.current && !localStorage.getItem(FLOW_TIP)) {
+            localStorage.setItem(FLOW_TIP, '1');
+            toastRef.current?.('护盾 · 打错时替你挡一次，连击不断');
+          }
+          lastShield.current = e.shield;
+          shieldRef.current.innerHTML = '<i class="on"></i>'.repeat(e.shield)
+            + '<i></i>'.repeat(2 - e.shield);
+        }
+
         if (ghost) {
           const gi = ghostIndex(ghost.marks, e.elapsed());
           stageRef.current?.ghost(gi);
         }
+
+        // 句末结算：每几秒给一次反馈，一篇文章就不再是一个三分钟的长镜头
         const si = sentenceAt(sentsRef.current, e.idx);
         if (si !== sIdxRef.current) {
+          const prev = sIdxRef.current;
+          const sp = sentsRef.current[prev];
+          const el = pulseRef.current;
+          // idx 真的越过这句末尾才算打完 —— 重开、跳句都不该蹦出一个小结算
+          if (el && sp && e.idx >= sp.end) {
+            const st = e.sentenceStat(sp.start, sp.end);
+            const clean = st.errors === 0;
+            el.innerHTML = `<i>第 ${prev + 1} 句</i>`
+              + (clean ? '<b>完美</b>' : '')
+              + `<u>${(st.ms / 1000).toFixed(1)}s</u>`
+              + (st.errors ? `<s>${st.errors} 处错</s>` : '');
+            el.className = `pulse ${clean ? 'ok' : 'err'}`;
+            void el.offsetWidth;
+            el.classList.add('show');
+            if (clean) perfect();
+          }
           sIdxRef.current = si;
           setSIdx(si);
         }
@@ -256,7 +333,7 @@ export function PlayScreen() {
     };
     raf = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(raf);
-  }, [ghost]);
+  }, [ghost, runId]);
 
   /* ----------------- 交互 ----------------- */
   const tipTimer = useRef<number | undefined>(undefined);
@@ -344,12 +421,17 @@ export function PlayScreen() {
         </div>
       </div>
 
-      <div className="stage-area">
+      <div className="stage-area" ref={areaRef} data-flow="0">
         <div className="rail" ref={railRef} />
+        {/* 句末小结算：每句一次，两秒后自己退场，不挡正文 */}
+        <div className="pulse" ref={pulseRef} />
+        <div className="flowtag" ref={flowRef} />
         <div className="metrics">
           <div>
             <div className="k">COMBO</div>
             <div className="v" ref={comboRef}>0</div>
+            {/* 护盾：50 连击攒一颗，打错时替死一次 */}
+            <div className="shields" ref={shieldRef}><i></i><i></i></div>
           </div>
           <div>
             <div className="k">ACCURACY</div>

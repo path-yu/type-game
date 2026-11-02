@@ -78,7 +78,8 @@ const stateNow = () => page.evaluate(() => ({
   combo: Number(document.querySelector('.metrics .v')?.textContent || 0),
   prog: document.querySelector('.progress i')?.style.width || '0%',
   caret: document.querySelector('.caret')?.style.transform || '',
-  rail: document.querySelector('.rail')?.classList.contains('on') || false,
+  // 光带按段位分 s1/s2/s3（顺流/共鸣/无我），不再是单一的 on —— 30+ 时至少是 s1
+  rail: /\bs[123]\b/.test(document.querySelector('.rail')?.className ?? ''),
   clock: document.querySelector('.clock')?.textContent || '',
 }));
 

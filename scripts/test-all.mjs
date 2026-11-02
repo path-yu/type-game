@@ -36,6 +36,7 @@ const steps = [
   { name: '资源路径', cmd: 'node', args: ['scripts/audit-assets.mjs'], desc: '构建产物里的引用是否都存在', needsServer: false },
   { name: '续读链路', cmd: 'node', args: ['scripts/test-seq.mjs'], desc: '6 项段号 / 同书续读', needsServer: true },
   { name: '预习卡', cmd: 'node', args: ['scripts/test-pretest.mjs'], desc: '12 项先测后学', needsServer: true },
+  { name: '打字手感', cmd: 'node', args: ['scripts/test-flow.mjs'], desc: '14 项连击段位 / 护盾 / 句末结算', needsServer: true },
   { name: '文库浏览', cmd: 'node', args: ['scripts/test-library.mjs'], desc: '11 项全库 / 筛选 / 进入', needsServer: true },
   { name: '场景对话', cmd: 'node', args: ['scripts/test-dialogue.mjs'], desc: '114 项语料 / 搜索 / 收藏 / 进度 / 排序 / 岔路', needsServer: true },
   { name: '自定义对话', cmd: 'node', args: ['scripts/test-custom.mjs'], desc: '49 项解析 / 岔路 / 导入 / 删除', needsServer: true },

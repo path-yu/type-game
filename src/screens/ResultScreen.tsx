@@ -6,9 +6,8 @@ import { speak } from '../lib/speech';
 import { chime } from '../lib/sfx';
 import { IconStar } from '../components/Icons';
 import { aliveDailyStreak, todayKey } from '../lib/daily';
+import { LEVEL_NAME, LEVEL_TITLE, TARGET_WPM } from '../lib/levels';
 
-const LEVEL_NAME = ['', 'A1.1', 'A1.2', 'A2', 'B1', 'B1+', 'B2', 'C1'];
-const LEVEL_TITLE = ['', '石阶巷', '灯火市集', '钟楼区', '雾港', '档案馆', '星图台', '无名塔'];
 
 export function ResultScreen() {
   const corpus = useCorpus();
@@ -43,6 +42,19 @@ export function ResultScreen() {
 
   const delta = r.prevWpm == null ? null : r.wpm - r.prevWpm;
   const doneAtLevel = p.lvDone[r.lv] ?? 0;
+
+  // 距三颗星还差什么，说成一个具体动作 —— 「继续加油」等于什么都没说
+  const target = TARGET_WPM[r.lv] ?? 30;
+  const needWpm = Math.max(0, target - r.wpm);
+  const needAcc = Math.round((98 - r.acc) * 10) / 10;
+  const goal =
+    r.stars >= 3
+      ? '这篇已经三星。换一篇同级的，看这个速度能不能稳住'
+      : needWpm > 0 && needAcc > 0
+        ? `再快 ${needWpm} WPM、准度再提 ${needAcc} 个点，就是三颗星`
+        : needWpm > 0
+          ? `准度已经够了，再快 ${needWpm} WPM 就是三颗星`
+          : `速度已经够了，准度补到 98% 就是三颗星`;
 
   const next = () => {
     if (article) {
@@ -94,6 +106,15 @@ export function ResultScreen() {
               ? '和上次一样快 · 再稳一点就能超车'
               : `比幽灵慢了 ${-delta} WPM · 它只领先一点点`}
       </div>
+
+      {r.sentences ? (
+        <div className="goal">
+          <span className="goal-k">
+            完美 {r.perfect ?? 0}/{r.sentences} 句
+          </span>
+          <span className="goal-v">{goal}</span>
+        </div>
+      ) : null}
 
       {r.newWords.length > 0 && (
         <div className="panel">

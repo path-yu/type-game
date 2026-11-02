@@ -355,7 +355,86 @@ input, textarea { font-family: inherit; }
   mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
   transition: height 0.16s ease-out, opacity 0.3s;
 }
-.rail.on { opacity: 0.3; }
+/* 连击段位：同一条线，随连击变长、变亮、变粗 —— 「比刚才更顺」要一眼看得出来 */
+.rail.s0 { opacity: 0; }
+.rail.s1 { opacity: 0.28; }
+.rail.s2 { opacity: 0.5; width: 3px; box-shadow: 0 0 10px var(--accent); }
+.rail.s3 { opacity: 0.8; width: 4px; box-shadow: 0 0 20px var(--accent); }
+
+/* 护盾：50 连击攒一颗，打错时看得见地少一个。
+   空的那颗用描边而不是暗色填充 —— 深色主题下暗色填充等于看不见，用户就不知道还能攒 */
+.shields {
+  display: flex; justify-content: flex-end; gap: 5px;
+  height: 7px; margin-top: 7px;
+}
+.shields i {
+  width: 7px; height: 7px; border-radius: 50%;
+  /* 空的那颗用描边。父级 .is-typing 会把整组压到 0.45，所以这里不再额外降透明度 ——
+     护盾是资源，不能跟着 HUD 一起淡到看不见 */
+  background: transparent; box-shadow: inset 0 0 0 1px var(--fg-2);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+.shields i.on {
+  background: var(--accent); opacity: 1;
+  box-shadow: 0 0 7px var(--accent);
+  animation: shieldPop 0.42s var(--ease-out);
+}
+
+@keyframes shieldPop {
+  0% { transform: scale(0.35); }
+  60% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* 句末结算：每句一次，两秒后自己退场，不挡正文 */
+.pulse {
+  position: absolute; right: 26px; bottom: 9%;
+  display: flex; align-items: baseline; gap: 8px;
+  font-family: var(--font-mono); font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--fg-2); opacity: 0; pointer-events: none;
+}
+.pulse.show { animation: pulseIn 1.9s var(--ease-out) both; }
+.pulse i { font-style: normal; letter-spacing: 0.03em; color: var(--fg-3); }
+.pulse b {
+  font-family: var(--font-ui); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; color: var(--accent);
+}
+.pulse u, .pulse s { text-decoration: none; }
+.pulse.ok u { color: var(--accent); }
+.pulse s { color: var(--fg-3); }
+.pulse.err i, .pulse.err u { color: var(--fg-2); }
+
+@keyframes pulseIn {
+  0% { opacity: 0; transform: translateY(6px); }
+  12% { opacity: 1; transform: translateY(0); }
+  74% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-5px); }
+}
+
+/* 升段：连击跨过一道门槛时，只在舞台上方亮一下名字 */
+.flowtag {
+  position: absolute; left: 50%; top: 11%;
+  transform: translateX(-50%);
+  font-family: var(--font-serif);
+  font-size: 26px; font-weight: 600; letter-spacing: 0.3em;
+  color: var(--accent); opacity: 0; pointer-events: none;
+  white-space: nowrap; text-indent: 0.3em;
+}
+.flowtag.s2 { font-size: 30px; }
+.flowtag.s3 { font-size: 34px; }
+.flowtag.show { animation: flowIn 1.25s var(--ease-out) both; }
+
+@keyframes flowIn {
+  0% { opacity: 0; transform: translateX(-50%) translateY(9px) scale(0.94); letter-spacing: 0.14em; }
+  22% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); letter-spacing: 0.3em; }
+  68% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-7px) scale(1); }
+}
+
+/* 段位越高，右上角的数字越暖 —— 不换字体大小，免得打字时余光被拉走 */
+.stage-area[data-flow='2'] .metrics .v { color: var(--accent); }
+.stage-area[data-flow='3'] .metrics .v { color: var(--accent); text-shadow: 0 0 12px var(--accent); }
 
 .metrics {
   position: absolute; right: 26px; top: 50%;
@@ -498,6 +577,19 @@ input, textarea { font-family: inherit; }
 .result .sub { font-size: var(--t-call); color: var(--fg-2); margin-top: var(--sp-3); }
 .result .sub b { color: var(--fg); font-weight: 500; font-variant-numeric: tabular-nums; }
 .result .delta { font-size: 12px; color: var(--ok); margin-top: 6px; }
+
+/* 完美句数 + 下一步做什么：把「还差什么」说成一个能立刻执行的动作 */
+.result .goal {
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 8px;
+  margin-top: 10px; font-size: 12px; color: var(--fg-2);
+}
+.goal-k {
+  flex: none; padding: 3px 9px; border-radius: var(--r-pill);
+  font-family: var(--font-mono); font-size: 11px; font-variant-numeric: tabular-nums;
+  color: var(--accent); background: var(--accent-soft);
+}
+.goal-v { text-align: left; }
 
 .panel {
   margin-top: var(--sp-5); padding: var(--sp-4);
@@ -892,6 +984,9 @@ input, textarea { font-family: inherit; }
   animation: none !important;
   transition: none !important;
 }
+/* 关掉动效时句子结算仍然要能读到（它带信息），升段大字纯粹是演出，直接不出现 */
+.no-motion .pulse.show { opacity: 1; }
+.no-motion .flowtag { display: none; }
 /* 夜巡顶栏可读性 */
 .rv-top { opacity: 0.72; }
 

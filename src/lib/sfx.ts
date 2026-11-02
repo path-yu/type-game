@@ -74,6 +74,71 @@ export function resonant(level: number) {
   });
 }
 
+/**
+ * 护盾挡下：两音上行的「叮」。
+ * 和 errorThud 的低沉正相反 —— 打错了但没断，声音必须听起来像「挡住了」，不是「挨了一下」。
+ */
+export function shieldSave() {
+  if (muted) return;
+  const c = ac();
+  if (!c) return;
+  const t = c.currentTime;
+  [880, 1320].forEach((f, i) => {
+    const o = c.createOscillator();
+    const g = c.createGain();
+    o.type = 'sine';
+    o.frequency.value = f;
+    const at = t + i * 0.055;
+    g.gain.setValueAtTime(0.0001, at);
+    g.gain.exponentialRampToValueAtTime(0.05 - i * 0.012, at + 0.008);
+    g.gain.exponentialRampToValueAtTime(0.0001, at + 0.24);
+    o.connect(g).connect(c.destination);
+    o.start(at);
+    o.stop(at + 0.26);
+  });
+}
+
+/** 连击升段：三个音的快琶音，比结算的 chime 更快更亮 */
+export function flowUp(stage: number) {
+  if (muted) return;
+  const c = ac();
+  if (!c) return;
+  const t = c.currentTime;
+  const root = 440 * Math.pow(2, Math.min(stage - 1, 3) / 12);
+  [1, 1.25, 1.5].forEach((mult, i) => {
+    const o = c.createOscillator();
+    const g = c.createGain();
+    o.type = 'triangle';
+    o.frequency.value = root * mult;
+    const at = t + i * 0.062;
+    g.gain.setValueAtTime(0.0001, at);
+    g.gain.exponentialRampToValueAtTime(0.045, at + 0.012);
+    g.gain.exponentialRampToValueAtTime(0.0001, at + 0.32);
+    o.connect(g).connect(c.destination);
+    o.start(at);
+    o.stop(at + 0.34);
+  });
+}
+
+/** 全对的一句：一声很轻的清脆响，落在句号上，不能盖过击键 */
+export function perfect() {
+  if (muted) return;
+  const c = ac();
+  if (!c) return;
+  const t = c.currentTime;
+  const o = c.createOscillator();
+  const g = c.createGain();
+  o.type = 'sine';
+  o.frequency.setValueAtTime(1760, t);
+  o.frequency.exponentialRampToValueAtTime(2340, t + 0.05);
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.exponentialRampToValueAtTime(0.035, t + 0.006);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + 0.17);
+  o.connect(g).connect(c.destination);
+  o.start(t);
+  o.stop(t + 0.19);
+}
+
 export function chime() {
   if (muted) return;
   const c = ac();

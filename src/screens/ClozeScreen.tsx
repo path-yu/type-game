@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { LEVEL_TITLE } from '../lib/levels';
 import { useCorpus } from '../lib/CorpusContext';
 import { tokenize } from '../lib/data';
 import { splitSentences } from '../lib/sentences';
@@ -7,7 +8,7 @@ import { useGame } from '../lib/store';
 import { speak } from '../lib/speech';
 import { translationsFor } from '../lib/trans';
 
-const LEVEL_NAME = ['', '石阶巷', '灯火市集', '钟楼区', '雾港', '档案馆', '星图台', '无名塔'];
+
 
 type Doc = ReturnType<typeof buildCloze>;
 
@@ -122,7 +123,7 @@ export function ClozeScreen() {
         <div>
           <h1 className="page-title">阅读填空</h1>
           <div className="page-sub">
-            {LEVEL_NAME[article.lv]} · {article.s} · {blanks.length} 个空
+            {LEVEL_TITLE[article.lv]} · {article.s} · {blanks.length} 个空
           </div>
         </div>
         <div className="cloze-tools">
@@ -133,7 +134,7 @@ export function ClozeScreen() {
             aria-label="选择城区"
           >
             {Array.from({ length: Math.min(7, Math.max(1, p.unlocked)) }, (_, i) => i + 1).map(n => (
-              <option key={n} value={n}>{LEVEL_NAME[n]}</option>
+              <option key={n} value={n}>{LEVEL_TITLE[n]}</option>
             ))}
           </select>
           <div className="seg">

@@ -16,6 +16,8 @@ export interface Snapshot {
   elapsed: number;
   done: boolean;
   tick: number;
+  shield: number;
+  stage: 0 | 1 | 2 | 3;
 }
 
 /**
@@ -42,6 +44,48 @@ export class TypingEngine {
   tick = 0;
   startAt = 0;
   endAt = 0;
+
+  /**
+   * 护盾：每 50 连击攒一个（上限 2），打错时顶掉一次、连击不断。
+   *
+   * 加它是因为原来的连击「只会掉、不会涨出东西」——玩家没有可失去的，
+   * 也就没有保住它的紧张感。有了护盾，50 连击之后人才会真的开始屏住呼吸。
+   */
+  shield = 0;
+  /** 这一下打错是被护盾顶掉的（combo 未减），UI 据此换个音效与颜色 */
+  shieldBroke = false;
+  /** 每次打错时的字符下标，用来做句子级「有无错」判定 */
+  readonly errorAt: number[] = [];
+
+  private stageOf(combo: number): 0 | 1 | 2 | 3 {
+    if (combo >= 100) return 3;
+    if (combo >= 60) return 2;
+    if (combo >= 30) return 1;
+    return 0;
+  }
+
+  /** 连击段位：0 平常 · 1 顺流 · 2 共鸣 · 3 无我 */
+  flowStage(): 0 | 1 | 2 | 3 {
+    return this.stageOf(this.combo);
+  }
+
+  /** 本局最高到过哪一段 —— 结算说他打到过「共鸣」，不能拿最后一键的连击去算 */
+  maxFlowStage(): 0 | 1 | 2 | 3 {
+    return this.stageOf(this.maxCombo);
+  }
+
+  /**
+   * 一句的结算：用时、错字、字数。
+   * 起点取「上一句最后一个字符完成的时间」，第一句从头算 —— 这样句子用时是真实阅读节奏，
+   * 而不是把停顿都堆到最后一句上。
+   */
+  sentenceStat(start: number, end: number): { ms: number; errors: number; chars: number } {
+    const t0 = start > 0 && this.marks[start - 1] >= 0 ? this.marks[start - 1] : 0;
+    const t1 = end > 0 && this.marks[end - 1] >= 0 ? this.marks[end - 1] : this.elapsed();
+    let errors = 0;
+    for (const i of this.errorAt) if (i >= start && i < end) errors++;
+    return { ms: Math.max(0, t1 - t0), errors, chars: end - start };
+  }
 
   /** 每打完一个整词回调（用于实时朗读） */
   onWordEnd?: (key: string, raw: string) => void;
@@ -74,6 +118,7 @@ export class TypingEngine {
     const expected = this.chars[this.idx];
     this.attempts++;
     this.tick++;
+    this.shieldBroke = false;
 
     if (ch === expected) {
       this.states[this.idx] = 1;
@@ -81,6 +126,8 @@ export class TypingEngine {
       this.correct++;
       this.combo++;
       if (this.combo > this.maxCombo) this.maxCombo = this.combo;
+      // 每 50 连击攒一个护盾：连得越久，越有本钱冒一次险
+      if (this.combo % 50 === 0 && this.shield < 2) this.shield++;
 
       const wi = this.charWord[this.idx];
       if (wi >= 0) {
@@ -108,12 +155,19 @@ export class TypingEngine {
     this.states[this.idx] = 2;
     this.marks[this.idx] = t - this.startAt;
     this.errors++;
+    this.errorAt.push(this.idx);
     {
       // 记录「本该打什么、实际打成什么」：只记字母和空格，标点噪声不入统计
       const k = `${expected}\u0000${ch}`;
       this.charErr.set(k, (this.charErr.get(k) ?? 0) + 1);
     }
-    this.combo = Math.max(0, this.combo - 30);
+    if (this.shield > 0) {
+      // 护盾顶一次：错还是记的，但连击保住 —— 这就是攒它的意义
+      this.shield--;
+      this.shieldBroke = true;
+    } else {
+      this.combo = Math.max(0, this.combo - 30);
+    }
     const wi = this.charWord[this.idx];
     if (wi >= 0) { this.wordError.add(wi); this.wordErr[wi]++; }
     return 'err';
@@ -197,6 +251,8 @@ export class TypingEngine {
       elapsed: this.elapsed(),
       done: this.idx >= this.length,
       tick: this.tick,
+      shield: this.shield,
+      stage: this.flowStage(),
     };
   }
 
