@@ -19,6 +19,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { normSwap } from './dlg/_dsl.mjs';
+import { EXTRA } from './dlg/_extra.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'scripts/dlg');
@@ -40,6 +41,29 @@ for (const f of files) {
     continue;
   }
   packs.push({ file: f, ...pack });
+}
+
+/*
+ * 补第二种岔路。
+ *
+ * 204 个情境里有 202 个只有一种岔路，同一情境的 5~7 个变体练六遍都是同一种意外。
+ * 补齐时不想在 10 个骨架文件里做字符串手术（改错一个引号就整份语料挂了），
+ * 所以把「加一条岔路 + 指定哪几个变体走它」集中放在 scripts/dlg/_extra.mjs，
+ * 这里统一贴上去。骨架文件保持原样，能被复核的只有这一个文件。
+ */
+for (const pack of packs) {
+  for (const item of pack.items) {
+    const ex = EXTRA[item.id];
+    if (!ex) continue;
+    if (!Array.isArray(item.branches)) item.branches = [];
+    const idx = item.branches.length;
+    item.branches.push(ex.branch);
+    let hit = 0;
+    for (const v of item.variants ?? []) {
+      if (ex.for.includes(v.tag)) { v.br = idx; hit++; }
+    }
+    if (!hit) warn(`_extra：${item.id} 的新岔路没有变体指向它`);
+  }
 }
 
 /* --------------------------- 展开 --------------------------- */
