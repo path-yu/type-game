@@ -109,7 +109,7 @@ const seed = {
 };
 
 try {
-  await page.goto('http://localhost:4173/', { waitUntil: 'networkidle2' });
+  await page.goto(`http://localhost:${process.env.PORT || 4173}/`, { waitUntil: 'networkidle2' });
   await page.evaluate(d => {
     localStorage.clear();
     localStorage.setItem('typewake:theme', 'light');

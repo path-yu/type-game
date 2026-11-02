@@ -1,6 +1,6 @@
 /**
  * 体检报告：先打三次（故意打错若干键），再看报告是否给出有效结论。
- * 用法：node scripts/test-report.mjs（预览服务需在 4173）
+ * 用法：node scripts/test-report.mjs（预览服务默认 4173，可用 PORT 覆盖）
  */
 import puppeteer from 'puppeteer-core';
 import * as esbuild from 'esbuild';
@@ -12,6 +12,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const TMP = path.join(ROOT, 'node_modules', '.tmp-report.mjs');
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// 场次总数从数据里读，不要写死 —— 语料从 10 场长到一千多场，写死就会假失败
+const BANK = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/dialogues.json'), 'utf8'));
 let pass = 0, fail = 0;
 const check = (n, ok, d = '') => { ok ? pass++ : fail++; console.log(`  ${ok ? '✓' : '✗'} ${n}${d ? '  ' + d : ''}`); };
 
@@ -106,7 +109,7 @@ const page = await b.newPage();
 const errs = [];
 page.on('pageerror', e => errs.push(e.message));
 
-await page.goto('http://localhost:4173/', { waitUntil: 'networkidle2' });
+await page.goto(`http://localhost:${process.env.PORT || 4173}/`, { waitUntil: 'networkidle2' });
 await page.evaluate(() => {
   localStorage.clear();
   // 预习卡会盖住打字区，这几项测试只关心打字与结算，先关掉；它有专属测试
@@ -221,7 +224,9 @@ const talk = await page.evaluate(() => {
   };
 });
 check('练过对话后出现对话块', talk.has);
-check('统计口径写清楚', /3 \/ 10 场/.test(talk.head) && /实战 3 场/.test(talk.head), talk.head.trim());
+check('统计口径写清楚',
+  new RegExp(`3 / ${BANK.scenes.length} 场`).test(talk.head) && /实战 3 场/.test(talk.head),
+  talk.head.trim());
 check('两个数据卡片', talk.cards.length === 2 && /说台词/.test(talk.cards[0]) && /实战接住率/.test(talk.cards[1]),
   talk.cards.join(' | '));
 check('给出差距结论', /临场/.test(talk.note), talk.note);

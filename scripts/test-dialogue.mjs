@@ -171,6 +171,12 @@ try {
   check('每组先摊开两场，其余折叠', list.cards === Math.min(bank.scenes.length, list.groups * 2), `${list.cards} 张卡`);
   check('折叠的组给出展开入口', list.more > 0, `${list.more} 个「还有 n 种情形」`);
 
+  // 一千场平铺，开头如果是 L4 的报警场景，新手第一眼就劝退
+  const headLv = await p.evaluate(() =>
+    [...document.querySelectorAll('.dg-group-meta')].slice(0, 4)
+      .map(x => (x.textContent.match(/[ABC][12]\+?/) ?? ['?'])[0]));
+  check('列表从最简单的场景开始', headLv.every(x => /^A[12]/.test(x)), headLv.join(','));
+
   // 搜英文台词也能定位到场景
   await p.type('.dg-search', 'cash back');
   await sleep(300);

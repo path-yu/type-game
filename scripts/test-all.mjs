@@ -13,6 +13,7 @@
  * 因为 e2e 断言的是交互，不看译文；改了组件只跑 verify 也会全绿。两条都得跑才算验过。
  */
 import { spawn, spawnSync } from 'node:child_process';
+import fs from 'node:fs';
 import http from 'node:http';
 import path from 'node:path';
 
@@ -33,7 +34,7 @@ const steps = [
   { name: '续读链路', cmd: 'node', args: ['scripts/test-seq.mjs'], desc: '6 项段号 / 同书续读', needsServer: true },
   { name: '预习卡', cmd: 'node', args: ['scripts/test-pretest.mjs'], desc: '12 项先测后学', needsServer: true },
   { name: '文库浏览', cmd: 'node', args: ['scripts/test-library.mjs'], desc: '11 项全库 / 筛选 / 进入', needsServer: true },
-  { name: '场景对话', cmd: 'node', args: ['scripts/test-dialogue.mjs'], desc: '98 项语料 / 搜索排序 / 岔路 / 双角色 / 跟读', needsServer: true },
+  { name: '场景对话', cmd: 'node', args: ['scripts/test-dialogue.mjs'], desc: '99 项语料 / 搜索排序 / 难度序 / 岔路 / 双角色', needsServer: true },
   { name: '自定义对话', cmd: 'node', args: ['scripts/test-custom.mjs'], desc: '49 项解析 / 岔路 / 导入 / 删除', needsServer: true },
   { name: '句型复习', cmd: 'node', args: ['scripts/test-phrase.mjs'], desc: '25 项收池 / 到期 / 复习', needsServer: true },
   { name: '夜巡扩容', cmd: 'node', args: ['scripts/test-review.mjs'], desc: '38 项混排 / 轮次 / 回写', needsServer: true },
@@ -56,6 +57,60 @@ const reachable = () => new Promise(resolve => {
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+/** 目录里最新的修改时间（用来判断构建产物是不是比源码旧） */
+function newestMtime(dir) {
+  let max = 0;
+  let ents = [];
+  try { ents = fs.readdirSync(dir, { withFileTypes: true }); } catch { return 0; }
+  for (const ent of ents) {
+    const p = path.join(dir, ent.name);
+    if (ent.isDirectory()) max = Math.max(max, newestMtime(p));
+    else {
+      try { max = Math.max(max, fs.statSync(p).mtimeMs); } catch { /* 忽略 */ }
+    }
+  }
+  return max;
+}
+
+/**
+ * 界面测试跑的是 vite preview，也就是 dist/ 里的构建产物 —— 不是源码。
+ *
+ * 这件事踩过一次：public/data/dialogues.json 已经一千多场，dist 里还是十场的旧版本，
+ * 于是三个依赖真实语料的测试全部失败，看起来像代码坏了，其实只是没重新构建。
+ * 所以每次跑测试前先比对时间戳，旧了就构建，构建失败直接退出（继续跑没有意义）。
+ */
+function ensureBuild() {
+  if (process.env.SKIP_BUILD === '1') return true;
+  const distHtml = path.join(ROOT, 'dist/index.html');
+  const distData = path.join(ROOT, 'dist/data/dialogues.json');
+  const builtAt = Math.min(
+    fs.existsSync(distHtml) ? fs.statSync(distHtml).mtimeMs : 0,
+    fs.existsSync(distData) ? fs.statSync(distData).mtimeMs : 0,
+  );
+  const srcAt = Math.max(
+    newestMtime(path.join(ROOT, 'src')),
+    newestMtime(path.join(ROOT, 'public')),
+    newestMtime(path.join(ROOT, 'index.html')),
+  );
+  if (builtAt && srcAt <= builtAt + 1000) return true;
+
+  console.log(
+    builtAt === 0
+      ? '· 还没有构建产物，先构建（界面测试要跑 dist，不是源码）'
+      : '· 构建产物比源码旧，先重新构建',
+  );
+  const r = spawnSync(
+    process.platform === 'win32' ? 'npm.cmd' : 'npm',
+    ['run', 'build'],
+    { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' },
+  );
+  if (r.status !== 0) {
+    console.log('· 构建失败，界面测试会跑在旧产物上 —— 先修编译错误');
+    return false;
+  }
+  return true;
+}
+
 /** 单次探测可能受连接排队影响，连续试 3 次再判定 */
 async function reachableRetry() {
   for (let i = 0; i < 3; i++) {
@@ -66,6 +121,7 @@ async function reachableRetry() {
 }
 
 async function main() {
+  const built = ensureBuild();
   let server = null;
   if (!(await reachable())) {
     console.log(`· 预览服务未启动，正在拉起 vite preview（:${PORT}）`);
@@ -92,6 +148,11 @@ async function main() {
     console.log(`\n▶ ${s.name} —— ${s.desc}`);
     const r = spawnSync(s.cmd, s.args, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' });
     results.push({ ...s, ok: r.status === 0 });
+  }
+
+  if (!built) {
+    console.log('\n注意：本次构建失败，界面相关结果是旧产物跑出来的。');
+    process.exitCode = 1;
   }
 
   if (server) {

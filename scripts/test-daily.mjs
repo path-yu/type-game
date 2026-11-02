@@ -17,7 +17,7 @@ const page = await b.newPage();
 const errs = [];
 page.on('pageerror', e => errs.push(e.message));
 
-await page.goto('http://localhost:4173/', { waitUntil: 'networkidle2' });
+await page.goto(`http://localhost:${process.env.PORT || 4173}/`, { waitUntil: 'networkidle2' });
 await page.evaluate(() => {
   localStorage.clear();
   // 预习卡会盖住打字区，这几项测试只关心打字与结算，先关掉；它有专属测试

@@ -5,7 +5,7 @@
 import puppeteer from 'puppeteer-core';
 
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
-const URL = process.env.URL || 'http://localhost:4173/';
+const URL = process.env.URL || `http://localhost:${process.env.PORT || 4173}/`;
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 let pass = 0, fail = 0;

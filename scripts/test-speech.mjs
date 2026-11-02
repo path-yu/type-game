@@ -23,7 +23,7 @@ await p.evaluateOnNewDocument(() => {
   window.SpeechSynthesisUtterance = class { constructor(t) { this.text = t; } };
 });
 
-await p.goto('http://localhost:4173/', { waitUntil:'networkidle2' });
+await p.goto(`http://localhost:${process.env.PORT || 4173}/`, { waitUntil:'networkidle2' });
 await p.waitForSelector('.dist-list'); await sleep(500);
 
 console.log('[朗读全文]');

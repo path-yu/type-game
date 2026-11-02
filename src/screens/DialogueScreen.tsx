@@ -117,8 +117,18 @@ export function DialogueScreen() {
       if (list) list.push(s);
       else m.set(key, [s]);
     }
-    return [...m].map(([key, list]) => ({ key, list }));
-  }, [matched, customIds]);
+    const arr = [...m].map(([key, list]) => ({ key, list }));
+    // 没有搜索时按难度升序：一千场平铺，开头就跑出 L4 的「报警报失」会劝退新手。
+    // 有搜索时保持相关度顺序（matched 已经排好），别再打乱。
+    if (!q.trim()) {
+      // 自建对话始终在最前 —— 那是用户自己导入的，不该被难度挤到中间
+      const rank = (g: { key: string }) => (g.key === '__custom' ? 0 : 1);
+      arr.sort((a, b) =>
+        (rank(a) - rank(b))
+        || (Math.min(...a.list.map(s => s.lv)) - Math.min(...b.list.map(s => s.lv))));
+    }
+    return arr;
+  }, [matched, customIds, q]);
 
   const shown = groups.slice(0, page * 12);
 
@@ -384,7 +394,7 @@ function SceneCard({
         </div>
       </button>
       {custom && (
-        <button className="dg-del" title="删除这场对话" onClick={onDelete}>✕</button>
+        <button className="dg-del" title="删除这场对话" aria-label="删除这场对话" onClick={onDelete}>✕</button>
       )}
     </div>
   );

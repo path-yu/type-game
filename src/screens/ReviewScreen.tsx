@@ -187,7 +187,7 @@ export function ReviewScreen() {
     return (
       <div className="review">
         <div className="rv-top">
-          <button className="icon-btn" onClick={() => go('map')}>✕</button>
+          <button className="icon-btn" onClick={() => go('map')} aria-label="退出夜巡">✕</button>
           <span>夜巡</span>
         </div>
       </div>
@@ -199,7 +199,7 @@ export function ReviewScreen() {
     return (
       <div className="review">
         <div className="rv-top">
-          <button className="icon-btn" onClick={() => go('map')}>✕</button>
+          <button className="icon-btn" onClick={() => go('map')} aria-label="退出夜巡">✕</button>
           <span>夜巡</span>
         </div>
         <div className="empty">
@@ -218,7 +218,7 @@ export function ReviewScreen() {
     return (
       <div className="review">
         <div className="rv-top">
-          <button className="icon-btn" onClick={() => go('map')}>✕</button>
+          <button className="icon-btn" onClick={() => go('map')} aria-label="退出夜巡">✕</button>
           <span>夜巡 · 第 {round + 1} 轮结束</span>
         </div>
         <div className="rv-body">
@@ -262,7 +262,7 @@ export function ReviewScreen() {
   return (
     <div className="review">
       <div className="rv-top">
-        <button className="icon-btn" onClick={() => go('map')}>✕</button>
+        <button className="icon-btn" onClick={() => go('map')} aria-label="退出夜巡">✕</button>
         <span style={{ fontFamily: 'var(--font-mono)' }}>{i + 1} / {queue.length}</span>
         <span style={{ opacity: 0.7 }}>{isPhrase ? '句型' : '听写'}</span>
         <div className="dots">

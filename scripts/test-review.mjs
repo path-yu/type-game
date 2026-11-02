@@ -94,7 +94,7 @@ page.on('pageerror', e => errs.push(e.message));
 const stat = (dueDay, m = 50) => ({ m, s: 1, d: 5, due: dueDay, last: 0, reps: 1, lapses: 0, seen: 1, ok: 1, er: 0 });
 
 try {
-  await page.goto('http://localhost:4173/', { waitUntil: 'networkidle2' });
+  await page.goto(`http://localhost:${process.env.PORT || 4173}/`, { waitUntil: 'networkidle2' });
   await page.evaluate(data => {
     localStorage.clear();
     localStorage.setItem('typewake:theme', 'light');
