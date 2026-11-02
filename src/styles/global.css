@@ -1399,6 +1399,17 @@ input, textarea { font-family: inherit; }
 .dg-chip.on { color: var(--accent); background: var(--accent-soft); border-color: var(--accent-soft-2); }
 .dg-chip.on em { color: var(--accent); opacity: 0.7; }
 
+.dg-hint { margin: -6px 0 var(--sp-4); padding-left: 2px; font-size: 11.5px; color: var(--fg-3); }
+.dg-why {
+  font-size: 11.5px; line-height: 1.55; color: var(--fg-2);
+  padding-left: 8px; border-left: 2px solid var(--accent-soft-2);
+  margin-top: 2px;
+}
+.dg-hl {
+  background: var(--accent-soft); color: var(--accent);
+  border-radius: 3px; padding: 0 2px;
+}
+
 .dg-group { margin-bottom: var(--sp-6); }
 .dg-group-head {
   display: flex; align-items: baseline; gap: 8px;

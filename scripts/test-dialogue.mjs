@@ -176,6 +176,19 @@ try {
   await sleep(300);
   const found = await p.evaluate(() => [...document.querySelectorAll('.dg-card')].map(x => x.dataset.scene));
   check('搜台词能定位场景', found.includes('grocery'), found.slice(0, 4).join(','));
+
+  const why = await p.evaluate(() => document.querySelector('.dg-why')?.textContent ?? '');
+  check('命中台词时卡片给出出处', /cash back/i.test(why), why.slice(0, 44));
+  const marks = await p.evaluate(() => document.querySelectorAll('.dg-hl').length);
+  check('命中处高亮', marks > 0, `${marks} 处`);
+
+  // 名字命中要排在台词命中前面，否则一千场里等于没排序
+  await p.click('.dg-search');
+  await p.keyboard.down('Control'); await p.keyboard.press('a'); await p.keyboard.up('Control');
+  await p.type('.dg-search', '赶时间');
+  await sleep(350);
+  const topName = await p.evaluate(() => document.querySelector('.dg-card .dg-name')?.textContent ?? '');
+  check('名字命中排在台词命中前面', topName.includes('赶时间'), topName);
   // 分页只渲染前 12 组，用搜索把目标场调出来再点
   const first = bank.scenes.find(x => x.id === 'cafe') ?? bank.scenes[0];
   await p.click('.dg-search');

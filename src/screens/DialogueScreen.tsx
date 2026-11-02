@@ -82,17 +82,30 @@ export function DialogueScreen() {
     return [...m].sort((a, b) => b[1] - a[1]);
   }, [all]);
 
+  /**
+   * 搜索要「排序」，不只是过滤。
+   * 一千场里按文件顺序返回结果，等于让用户自己翻；命中位置分三级：
+   * 情境名 > 场景描述/类别 > 台词原文。同分保持原顺序（V8 的 sort 是稳定的）。
+   */
   const matched = useMemo(() => {
     const k = q.trim().toLowerCase();
-    return all.filter(s =>
-      (cat === '全部' || s.cat === cat)
-      && (lv === 0 || s.lv === lv)
-      && (!k
-        || s.name.toLowerCase().includes(k)
-        || s.cat.includes(k)
-        || s.setting.toLowerCase().includes(k)
-        || s.lines.some(l => l.en.toLowerCase().includes(k) || l.zh.includes(k)))
-    );
+    const base = all.filter(s =>
+      (cat === '全部' || s.cat === cat) && (lv === 0 || s.lv === lv));
+    if (!k) return base;
+
+    const scored: { s: Scene; hit: number }[] = [];
+    for (const s of base) {
+      const inName = s.name.toLowerCase().includes(k);
+      const inSet = s.setting.toLowerCase().includes(k);
+      const inCat = s.cat.includes(k);
+      const inLine = s.lines.some(l => l.en.toLowerCase().includes(k) || l.zh.includes(k));
+      if (!inName && !inSet && !inCat && !inLine) continue;
+      scored.push({
+        s,
+        hit: (inName ? 8 : 0) + (inSet ? 4 : 0) + (inCat ? 2 : 0) + (inLine ? 1 : 0),
+      });
+    }
+    return scored.sort((a, b) => b.hit - a.hit).map(x => x.s);
   }, [all, cat, lv, q]);
 
   // 同一段情境骨架的变体收成一组：一千张平铺的卡片没法浏览
@@ -224,7 +237,16 @@ export function DialogueScreen() {
         </div>
       </div>
 
-      {shown.length === 0 && <div className="dg-empty">没有匹配的场景，换个词试试。</div>}
+      {q.trim() && matched.length > 0 && (
+        <div className="dg-hint">「{q.trim()}」命中 {matched.length} 场 · 按相关性排序</div>
+      )}
+
+      {shown.length === 0 && (
+        <div className="dg-empty">
+          没有匹配的场景。搜索认三种：情境名（点单 / 面试）、场景描述里的话（赶时间 / 没货），
+          以及台词原文（cash back / sold out）。
+        </div>
+      )}
 
       {shown.map(({ key, list }) => {
         const isOpen = !!open[key] || !!q.trim();
@@ -246,6 +268,7 @@ export function DialogueScreen() {
                 <SceneCard
                   key={sc.id}
                   scene={sc}
+                  q={q.trim()}
                   stat={p.scenes[sc.id]}
                   custom={customIds.has(sc.id)}
                   solo={list.length === 1}
@@ -285,6 +308,20 @@ export function DialogueScreen() {
   );
 }
 
+/** 把命中的那段包起来。只标第一处，多了反而花 */
+function hl(text: string, q: string) {
+  if (!q) return text;
+  const i = text.toLowerCase().indexOf(q.toLowerCase());
+  if (i < 0) return text;
+  return (
+    <>
+      {text.slice(0, i)}
+      <mark className="dg-hl">{text.slice(i, i + q.length)}</mark>
+      {text.slice(i + q.length)}
+    </>
+  );
+}
+
 /** 组头用骨架名，卡片用变体名（「咖啡店点单」/「想坐一会儿」） */
 function baseName(s: Scene): string {
   const i = s.name.indexOf(' · ');
@@ -295,10 +332,22 @@ function tagName(s: Scene): string {
   return i < 0 ? s.name : s.name.slice(i + 3);
 }
 
+/** 命中在名字或描述里时卡片本身就有高亮；只有命中台词时才需要额外说明 */
+function quotedHit(scene: Scene, q: string): string | null {
+  if (!q) return null;
+  const k = q.toLowerCase();
+  if (scene.name.toLowerCase().includes(k)
+    || scene.setting.toLowerCase().includes(k)
+    || scene.cat.includes(k)) return null;
+  const line = scene.lines.find(l => l.en.toLowerCase().includes(k) || l.zh.includes(k));
+  return line ? line.en : null;
+}
+
 function SceneCard({
-  scene, stat, custom, solo, onOpen, onDelete,
+  scene, stat, custom, solo, q, onOpen, onDelete,
 }: {
   scene: Scene;
+  q: string;
   stat: { best: number; swapBest?: number | null; liveBest?: number | null } | undefined;
   custom: boolean;
   solo: boolean;
@@ -306,6 +355,7 @@ function SceneCard({
   onDelete: () => void;
 }) {
   const mine = yourLines(scene).length;
+  const why = quotedHit(scene, q);
   return (
     <div className="dg-cell">
       <button className={`dg-card${stat ? ' done' : ''}`} data-scene={scene.id} onClick={onOpen}>
@@ -318,8 +368,9 @@ function SceneCard({
             </span>
           )}
         </div>
-        <div className="dg-name">{tagName(scene)}</div>
-        <div className="dg-set">{scene.setting}</div>
+        <div className="dg-name">{hl(tagName(scene), q)}</div>
+        <div className="dg-set">{hl(scene.setting, q)}</div>
+        {why && <div className="dg-why">{hl(why, q)}</div>}
         <div className="dg-card-foot">
           <span>
             {mine} 句你的台词
