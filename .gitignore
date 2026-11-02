@@ -17,6 +17,10 @@ data/tr-inbox/
 data/src-*.txt
 # 每批译文的中间文件，写完就已经进 tr-work，不必留
 data/tr-in/
+# shift.mjs 校验用的旧底稿副本
+data/tmp/
+# shift.mjs 校验用的旧底稿副本
+data/tmp/
 shots/
 
 # 工具与编辑器

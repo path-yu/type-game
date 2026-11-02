@@ -52,6 +52,11 @@ export const slugOf = title => title
  */
 const START_AT = {
   'little-women': 7,
+  // 安妮：4 段是书名重复、5 段是 "CHAPTER I. Mrs. Rachel Lynde Is Surprised"（41 字符，被跳过）
+  'anne-of-green-gables': 4,
+  // 双城记：10 段是 "Book the First--Recalled to Life"，11 段是 "CHAPTER I. / The Period."，
+  // 两段都不到 200 字符，被自动判据跳过 —— 全书第一章的标题就这么没了
+  'a-tale-of-two-cities': 10,
 };
 
 /** --only=<slug>：只重建一本，别动其他 19 本的编号 */
