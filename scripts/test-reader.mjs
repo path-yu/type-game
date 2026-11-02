@@ -54,6 +54,7 @@ const entered = await page.evaluate(() => ({
 }));
 check('从文库点进去是阅读页，不是打字页', entered.reader && !entered.typing, entered.title.slice(0, 28));
 check('标题显示书名与段号', /第 \d+\/\d+ 段/.test(entered.title), entered.title);
+check('标题里的书名是中文', /[\u4e00-\u9fa5]/.test(entered.title.split('·')[0]), entered.title.split('·')[0].trim());
 
 // 全文：句数要和页头自报的一致
 const body = await page.evaluate(() => ({

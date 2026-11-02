@@ -6,6 +6,7 @@ import type { Article } from '../lib/types';
 import { aliveDailyStreak, peekTomorrow, pickDaily, pickDailyScene, todayKey } from '../lib/daily';
 import { loadDialogues, type Scene } from '../lib/dialogue';
 import { DISTRICTS, THEME } from '../lib/districts';
+import { bookZh } from '../lib/book-titles';
 
 const TARGET = [0, 26, 30, 36, 42, 48, 54, 60];
 
@@ -113,8 +114,8 @@ export function MapScreen() {
       <div className="hero">
         <div className="h-body">
           <div className="h-label">接着打</div>
-          <div className="h-title">
-            {next.s}
+          <div className="h-title" title={next.s}>
+            {bookZh(next.s)}
             {next.ord && next.tot ? <em className="h-part">· 第 {next.ord}/{next.tot} 段</em> : null}
           </div>
           <div className="h-meta">
@@ -138,14 +139,14 @@ export function MapScreen() {
             今日卷轴 · {today}
             {dailyStreak > 0 && <em className="daily-streak">连续 {dailyStreak} 天</em>}
           </span>
-          <span className="daily-title">{daily.s}</span>
+          <span className="daily-title">{bookZh(daily.s)}</span>
           <span className="daily-meta">
             {DISTRICTS[daily.lv - 1].name} · {THEME[daily.th] ?? '阅读'} · {daily.w} 词 · 生词 {dailyInfo.unknown.length}
             {daily.ord && daily.tot ? ` · 第 ${daily.ord}/${daily.tot} 段` : ''}
             {/* 上限保护：正常人手打不会超过 300 WPM，超出多半是脚本或无头测试 */}
             {dailyDone && p.dailyWpm > 0 && p.dailyWpm <= 300 ? ` · 今日最好 ${p.dailyWpm} WPM` : ''}
           </span>
-          {dailyDone && <span className="daily-next">明日 · {tomorrow.s}</span>}
+          {dailyDone && <span className="daily-next">明日 · {bookZh(tomorrow.s)}</span>}
         </span>
         <span className="daily-go">{dailyDone ? '再打一次' : '开始'}</span>
       </button>

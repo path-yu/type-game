@@ -1333,6 +1333,12 @@ input, textarea { font-family: inherit; }
   padding-bottom: 8px; margin-bottom: 6px; border-bottom: 1px solid var(--line);
 }
 .lib-book-title { font-family: var(--font-serif); font-size: 15px; font-weight: 600; }
+/* 英文原名做副标：学英语的人需要知道原文叫什么，但不该和中文名抢主位 */
+.lib-book-en {
+  margin-left: 8px;
+  font-family: var(--font-ui); font-size: 11px; font-weight: 400;
+  font-style: normal; color: var(--fg-3);
+}
 .lib-book-count { font-family: var(--font-mono); font-size: 10.5px; color: var(--fg-3); }
 .lib-book-theme {
   margin-left: auto; font-size: 10.5px; color: var(--fg-3);
@@ -1376,6 +1382,12 @@ input, textarea { font-family: inherit; }
 .rd-head-main { display: flex; align-items: flex-start; gap: 10px; min-width: 0; }
 .rd-head-main .icon-btn { margin-top: 5px; }
 .rd-title { font-size: var(--t-title); line-height: var(--lh-title); }
+/* 阅读页标题同样中英并列：中文认书，英文认原文 */
+.rd-en-title {
+  margin-left: 8px;
+  font-family: var(--font-ui); font-size: 12px; font-weight: 400;
+  font-style: normal; color: var(--fg-3); letter-spacing: 0;
+}
 /* 打字页的段号样式挂在 .tbar 下，阅读页不在里面，要单独给一份 */
 .rd-title .ttl-part {
   font-family: var(--font-mono); font-style: normal;

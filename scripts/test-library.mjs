@@ -82,6 +82,40 @@ try {
   });
   check('筛选结果全是一级', allL1);
 
+  // —— 书名要能看懂：中文为主，英文原名做副标 ——
+  // 回到「全部」：要在全库口径下检查 44 本都有中文名
+  await p.evaluate(() => {
+    const el = document.querySelector('.lib-search');
+    el.value = '';
+    el.dispatchEvent(new Event('input', { bubbles: true }));
+    document.querySelector('.lib-chip')?.click();
+  });
+  await sleep(600);
+  const shelf = await p.evaluate(() => ({
+    titles: [...document.querySelectorAll('.lib-book-title')].map(x => x.textContent.trim()),
+    head: document.querySelector('.page-sub')?.textContent ?? '',
+  }));
+  const noZh = shelf.titles.filter(t => !/[\u4e00-\u9fa5]/.test(t));
+  check('每本书都有中文名', noZh.length === 0, noZh.slice(0, 3).join(' / ') || `${shelf.titles.length} 本全有`);
+  check('页头说的是「书」不是「来源」', /\d+ 本书/.test(shelf.head), shelf.head.trim());
+  check('英文原名保留为副标',
+    shelf.titles.some(t => /[A-Za-z]{4,}/.test(t)), shelf.titles[0]);
+
+  // 中文书名也要搜得到
+  await p.type('.lib-search', '绿野仙踪');
+  await sleep(500);
+  const zhHit = await p.evaluate(() => ({
+    books: [...document.querySelectorAll('.lib-book-title')].map(x => x.textContent.trim()),
+    rows: document.querySelectorAll('.lib-row').length,
+  }));
+  check('搜中文书名能命中', zhHit.books.length === 1 && /绿野仙踪/.test(zhHit.books[0]), `${zhHit.books[0]} · ${zhHit.rows} 行`);
+  await p.evaluate(() => {
+    const el = document.querySelector('.lib-search');
+    el.value = '';
+    el.dispatchEvent(new Event('input', { bubbles: true }));
+  });
+  await sleep(400);
+
   // 点一篇先进阅读页（看全文与译文），再从那里进打字
   await p.click('.lib-row');
   await p.waitForSelector('.rd-body', { timeout: 6000 });

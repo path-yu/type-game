@@ -4,6 +4,7 @@ import { DISTRICTS, THEME } from '../lib/districts';
 import { recommend } from '../lib/data';
 import { useGame } from '../lib/store';
 import type { Article } from '../lib/types';
+import { bookHasZh, bookMatches, bookZh } from '../lib/book-titles';
 
 /**
  * 文库：把库里全部文章摊开。
@@ -26,7 +27,7 @@ export function LibraryScreen() {
       if (!bookOrder.has(a.s)) bookOrder.set(a.s, bookOrder.size);
     }
     const pool = corpus.articles.filter(a =>
-      (lv === 0 || a.lv === lv) && (!q || a.s.toLowerCase().includes(q.toLowerCase()))
+      (lv === 0 || a.lv === lv) && bookMatches(a.s, q)
     );
     const byBook = new Map<string, Article[]>();
     for (const a of pool) {
@@ -42,6 +43,8 @@ export function LibraryScreen() {
   }, [corpus, lv, q]);
 
   const total = corpus.articles.length;
+  // 书的本数用全库口径：筛选后 groups 只剩几本，页头写「13 本书 · 1179 篇」会自相矛盾
+  const allBooks = useMemo(() => new Set(corpus.articles.map(a => a.s)).size, [corpus]);
   const read = Object.keys(p.played).length;
   const shown = groups.reduce((s, g) => s + g.list.length, 0);
   const next = useMemo(() => recommend(corpus, p.mastery, Math.min(7, p.unlocked), p.recent), [corpus, p.mastery, p.unlocked, p.recent]);
@@ -52,7 +55,7 @@ export function LibraryScreen() {
         <div>
           <h1 className="page-title">文库</h1>
           <div className="page-sub">
-            共 {total} 篇 · 已读 {read} 篇 · {groups.length} 个来源
+            {allBooks} 本书 · {total} 篇 · 练过 {read} 篇
             {shown !== total && ` · 当前筛选 ${shown} 篇`}
           </div>
         </div>
@@ -88,7 +91,10 @@ export function LibraryScreen() {
         {groups.map(g => (
           <section key={g.title} className="lib-book">
             <header className="lib-book-head">
-              <span className="lib-book-title">{g.title}</span>
+              <span className="lib-book-title">
+                {bookZh(g.title)}
+                {bookHasZh(g.title) && <em className="lib-book-en">{g.title}</em>}
+              </span>
               <span className="lib-book-count">{g.list.length} 篇</span>
               <span className="lib-book-theme">{THEME[g.list[0].th] ?? '阅读'}</span>
             </header>

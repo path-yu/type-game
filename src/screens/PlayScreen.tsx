@@ -11,6 +11,7 @@ import { useGame } from '../lib/store';
 import { speak, stopSpeaking } from '../lib/speech';
 import { errorThud, flowUp, keyClick, perfect, setMuted, shieldSave } from '../lib/sfx';
 import { LEVEL_NAME, TARGET_WPM } from '../lib/levels';
+import { bookZh } from '../lib/book-titles';
 import type { RunResult } from '../lib/types';
 
 /** 连击的三层境界，对应 engine.flowStage() */
@@ -404,8 +405,8 @@ export function PlayScreen() {
           onClick={() => go(fromReader ? 'reader' : 'map')}
           title={fromReader ? '回阅读' : '返回地图'}
         >←</button>
-        <span className="ttl">
-          {article.s}
+        <span className="ttl" title={article.s}>
+          {bookZh(article.s)}
           {article.ord && article.tot ? <em className="ttl-part">· 第 {article.ord}/{article.tot} 段</em> : null}
         </span>
         <span className="pill-badge">{LEVEL_NAME[article.lv]}</span>

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { LEVEL_TITLE } from '../lib/levels';
+import { bookZh } from '../lib/book-titles';
 import { useCorpus } from '../lib/CorpusContext';
 import { tokenize } from '../lib/data';
 import { splitSentences } from '../lib/sentences';
@@ -123,7 +124,7 @@ export function ClozeScreen() {
         <div>
           <h1 className="page-title">阅读填空</h1>
           <div className="page-sub">
-            {LEVEL_TITLE[article.lv]} · {article.s} · {blanks.length} 个空
+            {LEVEL_TITLE[article.lv]} · {bookZh(article.s)} · {blanks.length} 个空
           </div>
         </div>
         <div className="cloze-tools">

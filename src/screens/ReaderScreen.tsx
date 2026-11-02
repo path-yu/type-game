@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useCorpus } from '../lib/CorpusContext';
 import { lookup, masteryOf, tokenize, type Corpus, type Token } from '../lib/data';
 import { LEVEL_NAME } from '../lib/levels';
+import { bookHasZh, bookZh } from '../lib/book-titles';
 import { splitSentences } from '../lib/sentences';
 import { speak, stopSpeaking } from '../lib/speech';
 import { useGame } from '../lib/store';
@@ -129,7 +130,8 @@ export function ReaderScreen() {
           <button className="icon-btn" onClick={() => go('library')} title="回文库">←</button>
           <div>
             <h1 className="page-title rd-title">
-              {article.s}
+              {bookZh(article.s)}
+              {bookHasZh(article.s) && <em className="rd-en-title">{article.s}</em>}
               {article.ord && article.tot ? <em className="ttl-part">· 第 {article.ord}/{article.tot} 段</em> : null}
             </h1>
             <div className="page-sub">
