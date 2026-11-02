@@ -21,6 +21,26 @@ const OUT = path.join(ROOT, 'public/data/full');
 fs.mkdirSync(OUT, { recursive: true });
 
 const meta = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/tr-meta.json'), 'utf8'));
+
+/*
+ * 导出时要丢掉的句子区间（半开区间 [from, to)）。
+ *
+ * 只用于"切句切进来的非正文"：目录、插图清单这类东西翻译了也是垃圾，
+ * 留在全书里，读者翻到第 3 页会看见五页"狐狸和葡萄。／下金蛋的鹅。／……"。
+ *
+ * 不能去改 build.mjs —— 那会重排句子编号，已译的句子全部错位。
+ * 这里按编号丢，译文与英文同进同退，对位不受影响。
+ */
+const DROP = {
+  // 62 起是 CONTENTS，347 起是 LIST OF ILLUSTRATIONS，正文从 409 那一条的后半开始
+  'the-aesop-for-children': [[62, 409]],
+};
+
+const dropSet = (slug) => {
+  const set = new Set();
+  for (const [from, to] of DROP[slug] ?? []) for (let i = from; i < to; i++) set.add(i);
+  return set;
+};
 const index = { v: 1, books: {} };
 let exported = 0, skipped = [];
 
@@ -32,19 +52,23 @@ for (const [slug, m] of Object.entries(meta)) {
 
   const src = fs.readFileSync(path.join(SRC, `${slug}.jsonl`), 'utf8')
     .split('\n').filter(Boolean).map(l => JSON.parse(l).en);
-  const tr = src.map((_, i) => work[i]);
-  if (tr.some(t => !t || !/[\u4e00-\u9fa5]/.test(t))) {
+  const skip = dropSet(slug);
+  const keep = src.map((_, i) => i).filter(i => !skip.has(i));
+  const srcKept = keep.map(i => src[i]);
+  const trKept = keep.map(i => work[i]);
+  if (trKept.some(t => !t || !/[\u4e00-\u9fa5]/.test(t))) {
     console.error(`✗ ${m.title}：有译文不合格，跳过导出`);
     skipped.push(slug);
     continue;
   }
 
   const file = path.join(OUT, `${slug}.json`);
-  const body = JSON.stringify({ s: m.title, n: m.n, src, tr });
+  const body = JSON.stringify({ s: m.title, n: srcKept.length, src: srcKept, tr: trKept });
   fs.writeFileSync(file, body);
-  index.books[slug] = { title: m.title, n: m.n, kb: Math.round(Buffer.byteLength(body) / 1024) };
+  index.books[slug] = { title: m.title, n: srcKept.length, kb: Math.round(Buffer.byteLength(body) / 1024) };
   exported++;
-  console.log(`  ✓ ${m.title}  ${m.n} 句  ${index.books[slug].kb} KB`);
+  const cut = skip.size ? `（略去 ${skip.size} 句目录/插图清单）` : '';
+  console.log(`  ✓ ${m.title}  ${srcKept.length} 句  ${index.books[slug].kb} KB${cut}`);
 }
 
 fs.writeFileSync(path.join(OUT, 'index.json'), JSON.stringify(index));
