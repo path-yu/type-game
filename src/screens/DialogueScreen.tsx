@@ -111,6 +111,12 @@ export function DialogueScreen() {
     [all, customIds],
   );
 
+  // 只列真有的等级：L7 一场都没有，留着按钮只会让人点到一片空
+  const lvs = useMemo(
+    () => [...new Set(all.map(s => s.lv))].sort((a, b) => a - b),
+    [all],
+  );
+
   const cats = useMemo(() => {
     const m = new Map<string, number>();
     for (const s of all) m.set(s.cat, (m.get(s.cat) ?? 0) + 1);
@@ -356,9 +362,10 @@ export function DialogueScreen() {
         </div>
         <div className="dg-chips dg-chips-lv">
           <button className={`dg-chip${lv === 0 ? ' on' : ''}`} onClick={() => { setLv(0); setPage(1); }}>全部难度</button>
-          {[1, 2, 3, 4, 5, 6, 7].map(n => (
+          {lvs.map(n => (
             <button key={n} className={`dg-chip${lv === n ? ' on' : ''}`} onClick={() => { setLv(n); setPage(1); }}>
               L{n}
+              <em>{all.filter(s => s.lv === n).length}</em>
             </button>
           ))}
         </div>

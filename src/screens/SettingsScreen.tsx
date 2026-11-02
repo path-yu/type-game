@@ -181,7 +181,7 @@ export function SettingsScreen({ mode, onMode }: Props) {
         <div className="set-group-title">关于</div>
         <div className="set-about">
           <div><span>文本来源</span><em>Project Gutenberg（公有领域）· Simple English Wikipedia（CC BY-SA 3.0）</em></div>
-          <div><span>词库</span><em>ECDICT（MIT）· 7200 词，含音标、柯林斯星级与考试标签</em></div>
+          <div><span>词库</span><em>ECDICT（MIT）· 7584 词，含音标、考试标签与 384 条场景补充词</em></div>
           <div><span>发音</span><em>系统语音合成（Web Speech API）</em></div>
         </div>
       </div>

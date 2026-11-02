@@ -177,6 +177,14 @@ try {
       .map(x => (x.textContent.match(/[ABC][12]\+?/) ?? ['?'])[0]));
   check('列表从最简单的场景开始', headLv.every(x => /^A[12]/.test(x)), headLv.join(','));
 
+  // 难度筛选只列真有的等级：L7 一场都没有，按钮留着只会点到一片空
+  const lvChips = await p.evaluate(() =>
+    [...document.querySelectorAll('.dg-chips-lv .dg-chip')].map(x => x.textContent));
+  const lvNums = lvChips.map(t => Number((t.match(/L(\d)/) ?? [])[1])).filter(Boolean);
+  const bankLvs = [...new Set(bank.scenes.map(s => s.lv))].sort((a, b) => a - b);
+  check('难度筛选只列有场次的等级', JSON.stringify(lvNums) === JSON.stringify(bankLvs), lvChips.join(' '));
+  check('每一级标出实际场次', lvChips.slice(1).every(t => /\d+$/.test(t.trim())), lvChips.slice(1, 4).join(' '));
+
   // 收藏：一千多场里「找回来」靠它，不靠记性
   const favId = await p.evaluate(() => {
     const card = document.querySelectorAll('.dg-card')[0];
