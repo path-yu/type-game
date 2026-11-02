@@ -37902,6 +37902,4147 @@
    ]
   },
   {
+   "id": "takeaway-missing",
+   "g": "takeaway-missing",
+   "name": "外卖少送了 · 少了饭和汤",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你等了四十分钟，打开袋子发现主食没来。",
+   "roles": [
+    "你",
+    "骑手"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Delivery for 7421? That is you, right?",
+     "zh": "7421 的单？是您吧？"
+    },
+    {
+     "r": 0,
+     "en": "It is. Thanks. Wait, the bag feels light.",
+     "zh": "是。谢谢。等一下，袋子有点轻。"
+    },
+    {
+     "r": 1,
+     "en": "There were only two items on my list.",
+     "zh": "我单子上只有两样。"
+    },
+    {
+     "r": 0,
+     "en": "There should be rice and a soup as well.",
+     "zh": "还应该有米饭和一个汤。"
+    },
+    {
+     "r": 1,
+     "en": "The restaurant may have packed them separately.",
+     "zh": "餐厅可能分开打包了。"
+    },
+    {
+     "r": 0,
+     "en": "There is no second bag. Could you check with them?",
+     "zh": "没有第二个袋子。能问一下餐厅吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will call. If they missed it, they send another rider.",
+     "zh": "我打一下。要是漏了，他们再派一个人送。"
+    },
+    {
+     "r": 0,
+     "en": "Please do. We have not eaten yet.",
+     "zh": "麻烦你了。我们还没吃。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "骑手把责任推给餐厅，你要把事推进",
+    "prompt": {
+     "en": "The restaurant says everything was in the bag.",
+     "zh": "餐厅说都装进去了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then something came out on the way. Can you check your box?",
+       "zh": "那可能路上掉了。你能看下车箱吗？"
+      },
+      "react": {
+       "en": "Let me look. There is a container rolling around.",
+       "zh": "我看一下。有个餐盒在滚。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather not argue. Can you ask them to resend?",
+       "zh": "我不想争。能请他们补送吗？"
+      },
+      "react": {
+       "en": "I will call the manager now.",
+       "zh": "我现在打给店长。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The bag feels light.",
+     "zh": "袋子有点轻。"
+    },
+    {
+     "en": "There should be rice as well.",
+     "zh": "还应该有米饭。"
+    },
+    {
+     "en": "Could you check with them?",
+     "zh": "能问一下他们吗？"
+    }
+   ]
+  },
+  {
+   "id": "takeaway-missing-2",
+   "g": "takeaway-missing",
+   "name": "外卖少送了 · 送错单",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "整袋都是别人的。",
+   "roles": [
+    "你",
+    "骑手"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Delivery for 7421? That is you, right?",
+     "zh": "7421 的单？是您吧？"
+    },
+    {
+     "r": 0,
+     "en": "This is not my order. The name on the bag is someone else.",
+     "zh": "这不是我的单。袋子上的名字是别人。"
+    },
+    {
+     "r": 1,
+     "en": "Let me look. You are right, wrong bag.",
+     "zh": "我看一下。你说得对，拿错了。"
+    },
+    {
+     "r": 0,
+     "en": "Can you bring mine back? I already paid.",
+     "zh": "能把我那份拿回来吗？我已经付了。"
+    },
+    {
+     "r": 1,
+     "en": "The restaurant may have packed them separately.",
+     "zh": "餐厅可能分开打包了。"
+    },
+    {
+     "r": 0,
+     "en": "There is no second bag. Could you check with them?",
+     "zh": "没有第二个袋子。能问一下餐厅吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will call. If they missed it, they send another rider.",
+     "zh": "我打一下。要是漏了，他们再派一个人送。"
+    },
+    {
+     "r": 0,
+     "en": "Please do. We have not eaten yet.",
+     "zh": "麻烦你了。我们还没吃。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "骑手把责任推给餐厅，你要把事推进",
+    "prompt": {
+     "en": "The restaurant says everything was in the bag.",
+     "zh": "餐厅说都装进去了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then something came out on the way. Can you check your box?",
+       "zh": "那可能路上掉了。你能看下车箱吗？"
+      },
+      "react": {
+       "en": "Let me look. There is a container rolling around.",
+       "zh": "我看一下。有个餐盒在滚。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather not argue. Can you ask them to resend?",
+       "zh": "我不想争。能请他们补送吗？"
+      },
+      "react": {
+       "en": "I will call the manager now.",
+       "zh": "我现在打给店长。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The bag feels light.",
+     "zh": "袋子有点轻。"
+    },
+    {
+     "en": "There should be rice as well.",
+     "zh": "还应该有米饭。"
+    },
+    {
+     "en": "Could you check with them?",
+     "zh": "能问一下他们吗？"
+    }
+   ]
+  },
+  {
+   "id": "takeaway-missing-3",
+   "g": "takeaway-missing",
+   "name": "外卖少送了 · 全凉了",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "饭到了但是凉的。",
+   "roles": [
+    "你",
+    "骑手"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Delivery for 7421? That is you, right?",
+     "zh": "7421 的单？是您吧？"
+    },
+    {
+     "r": 0,
+     "en": "It is here, but everything is cold.",
+     "zh": "到了，但都凉了。"
+    },
+    {
+     "r": 1,
+     "en": "It waited at the restaurant for a while.",
+     "zh": "在餐厅放了一会儿。"
+    },
+    {
+     "r": 0,
+     "en": "Could I get the delivery fee back?",
+     "zh": "配送费能退吗？"
+    },
+    {
+     "r": 1,
+     "en": "The restaurant may have packed them separately.",
+     "zh": "餐厅可能分开打包了。"
+    },
+    {
+     "r": 0,
+     "en": "There is no second bag. Could you check with them?",
+     "zh": "没有第二个袋子。能问一下餐厅吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will call. If they missed it, they send another rider.",
+     "zh": "我打一下。要是漏了，他们再派一个人送。"
+    },
+    {
+     "r": 0,
+     "en": "Please do. We have not eaten yet.",
+     "zh": "麻烦你了。我们还没吃。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "骑手把责任推给餐厅，你要把事推进",
+    "prompt": {
+     "en": "The restaurant says everything was in the bag.",
+     "zh": "餐厅说都装进去了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then something came out on the way. Can you check your box?",
+       "zh": "那可能路上掉了。你能看下车箱吗？"
+      },
+      "react": {
+       "en": "Let me look. There is a container rolling around.",
+       "zh": "我看一下。有个餐盒在滚。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather not argue. Can you ask them to resend?",
+       "zh": "我不想争。能请他们补送吗？"
+      },
+      "react": {
+       "en": "I will call the manager now.",
+       "zh": "我现在打给店长。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The bag feels light.",
+     "zh": "袋子有点轻。"
+    },
+    {
+     "en": "There should be rice as well.",
+     "zh": "还应该有米饭。"
+    },
+    {
+     "en": "Could you check with them?",
+     "zh": "能问一下他们吗？"
+    }
+   ]
+  },
+  {
+   "id": "takeaway-missing-4",
+   "g": "takeaway-missing",
+   "name": "外卖少送了 · 迟到五十分钟",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你等得快要取消。",
+   "roles": [
+    "你",
+    "骑手"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Delivery for 7421? That is you, right?",
+     "zh": "7421 的单？是您吧？"
+    },
+    {
+     "r": 0,
+     "en": "You are fifty minutes late. I nearly cancelled.",
+     "zh": "你晚了五十分钟。我差点取消。"
+    },
+    {
+     "r": 1,
+     "en": "Sorry, the app sent me to the wrong street.",
+     "zh": "抱歉，app 把我导到别的街了。"
+    },
+    {
+     "r": 0,
+     "en": "It was the right street. I watched you go past twice.",
+     "zh": "地址是对的。我看着你过去两次。"
+    },
+    {
+     "r": 1,
+     "en": "The restaurant may have packed them separately.",
+     "zh": "餐厅可能分开打包了。"
+    },
+    {
+     "r": 0,
+     "en": "There is no second bag. Could you check with them?",
+     "zh": "没有第二个袋子。能问一下餐厅吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will call. If they missed it, they send another rider.",
+     "zh": "我打一下。要是漏了，他们再派一个人送。"
+    },
+    {
+     "r": 0,
+     "en": "Please do. We have not eaten yet.",
+     "zh": "麻烦你了。我们还没吃。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "骑手把责任推给餐厅，你要把事推进",
+    "prompt": {
+     "en": "The restaurant says everything was in the bag.",
+     "zh": "餐厅说都装进去了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then something came out on the way. Can you check your box?",
+       "zh": "那可能路上掉了。你能看下车箱吗？"
+      },
+      "react": {
+       "en": "Let me look. There is a container rolling around.",
+       "zh": "我看一下。有个餐盒在滚。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather not argue. Can you ask them to resend?",
+       "zh": "我不想争。能请他们补送吗？"
+      },
+      "react": {
+       "en": "I will call the manager now.",
+       "zh": "我现在打给店长。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The bag feels light.",
+     "zh": "袋子有点轻。"
+    },
+    {
+     "en": "There should be rice as well.",
+     "zh": "还应该有米饭。"
+    },
+    {
+     "en": "Could you check with them?",
+     "zh": "能问一下他们吗？"
+    }
+   ]
+  },
+  {
+   "id": "takeaway-missing-5",
+   "g": "takeaway-missing",
+   "name": "外卖少送了 · 显示送达没收到",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "app 说送到了，门口什么都没有。",
+   "roles": [
+    "你",
+    "骑手"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Delivery for 7421? That is you, right?",
+     "zh": "7421 的单？是您吧？"
+    },
+    {
+     "r": 0,
+     "en": "The app says delivered, but there is nothing at my door.",
+     "zh": "app 显示已送达，但门口什么都没有。"
+    },
+    {
+     "r": 1,
+     "en": "I left it with a neighbour in number twelve.",
+     "zh": "我放在十二号邻居那儿了。"
+    },
+    {
+     "r": 0,
+     "en": "Nobody told me. Which neighbour?",
+     "zh": "没人告诉我。哪个邻居？"
+    },
+    {
+     "r": 1,
+     "en": "The restaurant may have packed them separately.",
+     "zh": "餐厅可能分开打包了。"
+    },
+    {
+     "r": 0,
+     "en": "There is no second bag. Could you check with them?",
+     "zh": "没有第二个袋子。能问一下餐厅吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will call. If they missed it, they send another rider.",
+     "zh": "我打一下。要是漏了，他们再派一个人送。"
+    },
+    {
+     "r": 0,
+     "en": "Please do. We have not eaten yet.",
+     "zh": "麻烦你了。我们还没吃。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "骑手把责任推给餐厅，你要把事推进",
+    "prompt": {
+     "en": "The restaurant says everything was in the bag.",
+     "zh": "餐厅说都装进去了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then something came out on the way. Can you check your box?",
+       "zh": "那可能路上掉了。你能看下车箱吗？"
+      },
+      "react": {
+       "en": "Let me look. There is a container rolling around.",
+       "zh": "我看一下。有个餐盒在滚。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather not argue. Can you ask them to resend?",
+       "zh": "我不想争。能请他们补送吗？"
+      },
+      "react": {
+       "en": "I will call the manager now.",
+       "zh": "我现在打给店长。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The bag feels light.",
+     "zh": "袋子有点轻。"
+    },
+    {
+     "en": "There should be rice as well.",
+     "zh": "还应该有米饭。"
+    },
+    {
+     "en": "Could you check with them?",
+     "zh": "能问一下他们吗？"
+    }
+   ]
+  },
+  {
+   "id": "parcel-damage",
+   "g": "parcel-damage",
+   "name": "快递破损索赔 · 显示器碎了",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你网购的显示器到货，外箱有明显压痕。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How can I help with the claim?",
+     "zh": "理赔这边怎么帮您？"
+    },
+    {
+     "r": 0,
+     "en": "The box arrived crushed and the screen is cracked.",
+     "zh": "箱子到的时候压扁了，屏幕是裂的。"
+    },
+    {
+     "r": 1,
+     "en": "Did anyone sign for it?",
+     "zh": "有人签收吗？"
+    },
+    {
+     "r": 0,
+     "en": "The driver left it at the door. No signature.",
+     "zh": "司机放门口了。没人签。"
+    },
+    {
+     "r": 1,
+     "en": "Do you have photos from before you opened it?",
+     "zh": "拆箱前拍照片了吗？"
+    },
+    {
+     "r": 0,
+     "en": "Four photos and a video of the unboxing.",
+     "zh": "四张照片，还有一段开箱视频。"
+    },
+    {
+     "r": 1,
+     "en": "Then I will open a damage claim now.",
+     "zh": "那我现在提一个破损索赔。"
+    },
+    {
+     "r": 0,
+     "en": "How much will you cover?",
+     "zh": "你们赔多少？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "客服质疑证据，你要补得上",
+    "prompt": {
+     "en": "Photos of the box alone do not prove it was not dropped after delivery.",
+     "zh": "只有箱子照片，不能证明不是签收后摔的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The video shows the seal intact before I cut it.",
+       "zh": "视频里封条是我剪开前完好的。"
+      },
+      "react": {
+       "en": "Then the claim should go through.",
+       "zh": "那索赔应该能过。"
+      }
+     },
+     {
+      "say": {
+       "en": "The driver photographed it at the door. Compare the two.",
+       "zh": "司机在门口拍过照。对比一下就知道。"
+      },
+      "react": {
+       "en": "I will pull his photo now.",
+       "zh": "我现在调他的照片。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The box arrived crushed.",
+     "zh": "箱子到的时候压扁了。"
+    },
+    {
+     "en": "A video of the unboxing.",
+     "zh": "一段开箱视频。"
+    },
+    {
+     "en": "Up to the declared value.",
+     "zh": "最高到申报价值。"
+    }
+   ]
+  },
+  {
+   "id": "parcel-damage-2",
+   "g": "parcel-damage",
+   "name": "快递破损索赔 · 没保价",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你没买保价。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How can I help with the claim?",
+     "zh": "理赔这边怎么帮您？"
+    },
+    {
+     "r": 0,
+     "en": "The box arrived crushed and the screen is cracked.",
+     "zh": "箱子到的时候压扁了，屏幕是裂的。"
+    },
+    {
+     "r": 1,
+     "en": "Did anyone sign for it?",
+     "zh": "有人签收吗？"
+    },
+    {
+     "r": 0,
+     "en": "The driver left it at the door. No signature.",
+     "zh": "司机放门口了。没人签。"
+    },
+    {
+     "r": 1,
+     "en": "Do you have photos from before you opened it?",
+     "zh": "拆箱前拍照片了吗？"
+    },
+    {
+     "r": 0,
+     "en": "Four photos and a video of the unboxing.",
+     "zh": "四张照片，还有一段开箱视频。"
+    },
+    {
+     "r": 1,
+     "en": "Then it is a fixed amount per kilo, usually below the value.",
+     "zh": "那按公斤定额赔，通常低于货值。"
+    },
+    {
+     "r": 0,
+     "en": "It was not insured. What does that mean for me?",
+     "zh": "没保价。那对我意味着什么？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "客服质疑证据，你要补得上",
+    "prompt": {
+     "en": "Photos of the box alone do not prove it was not dropped after delivery.",
+     "zh": "只有箱子照片，不能证明不是签收后摔的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The video shows the seal intact before I cut it.",
+       "zh": "视频里封条是我剪开前完好的。"
+      },
+      "react": {
+       "en": "Then the claim should go through.",
+       "zh": "那索赔应该能过。"
+      }
+     },
+     {
+      "say": {
+       "en": "The driver photographed it at the door. Compare the two.",
+       "zh": "司机在门口拍过照。对比一下就知道。"
+      },
+      "react": {
+       "en": "I will pull his photo now.",
+       "zh": "我现在调他的照片。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The box arrived crushed.",
+     "zh": "箱子到的时候压扁了。"
+    },
+    {
+     "en": "A video of the unboxing.",
+     "zh": "一段开箱视频。"
+    },
+    {
+     "en": "Up to the declared value.",
+     "zh": "最高到申报价值。"
+    }
+   ]
+  },
+  {
+   "id": "parcel-damage-3",
+   "g": "parcel-damage",
+   "name": "快递破损索赔 · 丢件",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "包裹显示签收但没收到。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How can I help with the claim?",
+     "zh": "理赔这边怎么帮您？"
+    },
+    {
+     "r": 0,
+     "en": "The tracking says delivered, but nothing came.",
+     "zh": "物流显示签收，但没收到。"
+    },
+    {
+     "r": 1,
+     "en": "I will ask the driver to retrace the route today.",
+     "zh": "我让司机今天回查路线。"
+    },
+    {
+     "r": 0,
+     "en": "The driver left it at the door. No signature.",
+     "zh": "司机放门口了。没人签。"
+    },
+    {
+     "r": 1,
+     "en": "Do you have photos from before you opened it?",
+     "zh": "拆箱前拍照片了吗？"
+    },
+    {
+     "r": 0,
+     "en": "Four photos and a video of the unboxing.",
+     "zh": "四张照片，还有一段开箱视频。"
+    },
+    {
+     "r": 1,
+     "en": "Then I will open a damage claim now.",
+     "zh": "那我现在提一个破损索赔。"
+    },
+    {
+     "r": 0,
+     "en": "How much will you cover?",
+     "zh": "你们赔多少？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "客服质疑证据，你要补得上",
+    "prompt": {
+     "en": "Photos of the box alone do not prove it was not dropped after delivery.",
+     "zh": "只有箱子照片，不能证明不是签收后摔的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The video shows the seal intact before I cut it.",
+       "zh": "视频里封条是我剪开前完好的。"
+      },
+      "react": {
+       "en": "Then the claim should go through.",
+       "zh": "那索赔应该能过。"
+      }
+     },
+     {
+      "say": {
+       "en": "The driver photographed it at the door. Compare the two.",
+       "zh": "司机在门口拍过照。对比一下就知道。"
+      },
+      "react": {
+       "en": "I will pull his photo now.",
+       "zh": "我现在调他的照片。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The box arrived crushed.",
+     "zh": "箱子到的时候压扁了。"
+    },
+    {
+     "en": "A video of the unboxing.",
+     "zh": "一段开箱视频。"
+    },
+    {
+     "en": "Up to the declared value.",
+     "zh": "最高到申报价值。"
+    }
+   ]
+  },
+  {
+   "id": "parcel-damage-4",
+   "g": "parcel-damage",
+   "name": "快递破损索赔 · 退货途中丢",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你寄回去的包裹消失了。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How can I help with the claim?",
+     "zh": "理赔这边怎么帮您？"
+    },
+    {
+     "r": 0,
+     "en": "I sent it back and the return parcel disappeared.",
+     "zh": "我寄回去了，退件消失了。"
+    },
+    {
+     "r": 1,
+     "en": "Did anyone sign for it?",
+     "zh": "有人签收吗？"
+    },
+    {
+     "r": 0,
+     "en": "It was scanned at the depot on Monday, then nothing.",
+     "zh": "周一在站点扫过一次，之后没了。"
+    },
+    {
+     "r": 1,
+     "en": "Do you have photos from before you opened it?",
+     "zh": "拆箱前拍照片了吗？"
+    },
+    {
+     "r": 0,
+     "en": "Four photos and a video of the unboxing.",
+     "zh": "四张照片，还有一段开箱视频。"
+    },
+    {
+     "r": 1,
+     "en": "Then I will open a damage claim now.",
+     "zh": "那我现在提一个破损索赔。"
+    },
+    {
+     "r": 0,
+     "en": "How much will you cover?",
+     "zh": "你们赔多少？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "客服质疑证据，你要补得上",
+    "prompt": {
+     "en": "Photos of the box alone do not prove it was not dropped after delivery.",
+     "zh": "只有箱子照片，不能证明不是签收后摔的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The video shows the seal intact before I cut it.",
+       "zh": "视频里封条是我剪开前完好的。"
+      },
+      "react": {
+       "en": "Then the claim should go through.",
+       "zh": "那索赔应该能过。"
+      }
+     },
+     {
+      "say": {
+       "en": "The driver photographed it at the door. Compare the two.",
+       "zh": "司机在门口拍过照。对比一下就知道。"
+      },
+      "react": {
+       "en": "I will pull his photo now.",
+       "zh": "我现在调他的照片。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The box arrived crushed.",
+     "zh": "箱子到的时候压扁了。"
+    },
+    {
+     "en": "A video of the unboxing.",
+     "zh": "一段开箱视频。"
+    },
+    {
+     "en": "Up to the declared value.",
+     "zh": "最高到申报价值。"
+    }
+   ]
+  },
+  {
+   "id": "parcel-damage-5",
+   "g": "parcel-damage",
+   "name": "快递破损索赔 · 延误",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "晚了十天，你错过了截止。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How can I help with the claim?",
+     "zh": "理赔这边怎么帮您？"
+    },
+    {
+     "r": 0,
+     "en": "It was ten days late and I missed a deadline.",
+     "zh": "晚了十天，我错过了截止日期。"
+    },
+    {
+     "r": 1,
+     "en": "Did anyone sign for it?",
+     "zh": "有人签收吗？"
+    },
+    {
+     "r": 0,
+     "en": "The driver left it at the door. No signature.",
+     "zh": "司机放门口了。没人签。"
+    },
+    {
+     "r": 1,
+     "en": "Do you have photos from before you opened it?",
+     "zh": "拆箱前拍照片了吗？"
+    },
+    {
+     "r": 0,
+     "en": "Four photos and a video of the unboxing.",
+     "zh": "四张照片，还有一段开箱视频。"
+    },
+    {
+     "r": 1,
+     "en": "Then I will open a damage claim now.",
+     "zh": "那我现在提一个破损索赔。"
+    },
+    {
+     "r": 0,
+     "en": "How much will you cover?",
+     "zh": "你们赔多少？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "客服质疑证据，你要补得上",
+    "prompt": {
+     "en": "Photos of the box alone do not prove it was not dropped after delivery.",
+     "zh": "只有箱子照片，不能证明不是签收后摔的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The video shows the seal intact before I cut it.",
+       "zh": "视频里封条是我剪开前完好的。"
+      },
+      "react": {
+       "en": "Then the claim should go through.",
+       "zh": "那索赔应该能过。"
+      }
+     },
+     {
+      "say": {
+       "en": "The driver photographed it at the door. Compare the two.",
+       "zh": "司机在门口拍过照。对比一下就知道。"
+      },
+      "react": {
+       "en": "I will pull his photo now.",
+       "zh": "我现在调他的照片。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The box arrived crushed.",
+     "zh": "箱子到的时候压扁了。"
+    },
+    {
+     "en": "A video of the unboxing.",
+     "zh": "一段开箱视频。"
+    },
+    {
+     "en": "Up to the declared value.",
+     "zh": "最高到申报价值。"
+    }
+   ]
+  },
+  {
+   "id": "parcel-damage-6",
+   "g": "parcel-damage",
+   "name": "快递破损索赔 · 证据不足",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你只拍了箱子的照片。",
+   "roles": [
+    "你",
+    "客服"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How can I help with the claim?",
+     "zh": "理赔这边怎么帮您？"
+    },
+    {
+     "r": 0,
+     "en": "The box arrived crushed and the screen is cracked.",
+     "zh": "箱子到的时候压扁了，屏幕是裂的。"
+    },
+    {
+     "r": 1,
+     "en": "Did anyone sign for it?",
+     "zh": "有人签收吗？"
+    },
+    {
+     "r": 0,
+     "en": "The driver left it at the door. No signature.",
+     "zh": "司机放门口了。没人签。"
+    },
+    {
+     "r": 1,
+     "en": "I only photographed the box, not the screen.",
+     "zh": "我只拍了箱子，没拍屏幕。"
+    },
+    {
+     "r": 0,
+     "en": "Then bring it to a depot so we can inspect it.",
+     "zh": "那拿到站点来，我们验一下。"
+    },
+    {
+     "r": 1,
+     "en": "Then I will open a damage claim now.",
+     "zh": "那我现在提一个破损索赔。"
+    },
+    {
+     "r": 0,
+     "en": "How much will you cover?",
+     "zh": "你们赔多少？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "客服质疑证据，你要补得上",
+    "prompt": {
+     "en": "Photos of the box alone do not prove it was not dropped after delivery.",
+     "zh": "只有箱子照片，不能证明不是签收后摔的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The video shows the seal intact before I cut it.",
+       "zh": "视频里封条是我剪开前完好的。"
+      },
+      "react": {
+       "en": "Then the claim should go through.",
+       "zh": "那索赔应该能过。"
+      }
+     },
+     {
+      "say": {
+       "en": "The driver photographed it at the door. Compare the two.",
+       "zh": "司机在门口拍过照。对比一下就知道。"
+      },
+      "react": {
+       "en": "I will pull his photo now.",
+       "zh": "我现在调他的照片。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The box arrived crushed.",
+     "zh": "箱子到的时候压扁了。"
+    },
+    {
+     "en": "A video of the unboxing.",
+     "zh": "一段开箱视频。"
+    },
+    {
+     "en": "Up to the declared value.",
+     "zh": "最高到申报价值。"
+    }
+   ]
+  },
+  {
+   "id": "car-service",
+   "g": "car-service",
+   "name": "汽车保养 · 九千英里保养",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "车开了两年，刹车有吱吱声。",
+   "roles": [
+    "你",
+    "修车厂"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What can we do for you?",
+     "zh": "有什么可以帮您？"
+    },
+    {
+     "r": 0,
+     "en": "It is due a service, and there is a noise when I brake.",
+     "zh": "该保养了，刹车时还有异响。"
+    },
+    {
+     "r": 1,
+     "en": "How many miles since the last one?",
+     "zh": "上次保养后跑了多少英里？"
+    },
+    {
+     "r": 0,
+     "en": "About nine thousand, mostly short trips.",
+     "zh": "大概九千，多半是短途。"
+    },
+    {
+     "r": 1,
+     "en": "We will do the oil, filters and check the brakes.",
+     "zh": "我们换机油、滤芯，再检查刹车。"
+    },
+    {
+     "r": 0,
+     "en": "Call me before doing anything extra, please.",
+     "zh": "额外项目请先打电话问我。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Nothing goes ahead without your okay.",
+     "zh": "当然。没您同意不动手。"
+    },
+    {
+     "r": 0,
+     "en": "How long will it take?",
+     "zh": "要多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "修车厂加了项目，你要判断买不买",
+    "prompt": {
+     "en": "The brake pads are down to three millimetres. We recommend changing them now.",
+     "zh": "刹车片只剩三毫米。建议现在换。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much, and is it safe to wait a month?",
+       "zh": "多少钱？等一个月安全吗？"
+      },
+      "react": {
+       "en": "Ninety fitted. A month is fine at this wear.",
+       "zh": "装好九十。这个磨损等一个月没事。"
+      }
+     },
+     {
+      "say": {
+       "en": "Just the service today. I will book the pads later.",
+       "zh": "今天只做保养。刹车片以后再约。"
+      },
+      "react": {
+       "en": "I will note it on your file.",
+       "zh": "我在您档案里记一下。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "There is a noise when I brake.",
+     "zh": "刹车时有异响。"
+    },
+    {
+     "en": "Call me before anything extra.",
+     "zh": "额外项目先打电话。"
+    },
+    {
+     "en": "Which parts are essential?",
+     "zh": "哪些是必须的？"
+    }
+   ]
+  },
+  {
+   "id": "car-service-2",
+   "g": "car-service",
+   "name": "汽车保养 · 换轮胎",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "前胎磨平了。",
+   "roles": [
+    "你",
+    "修车厂"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What can we do for you?",
+     "zh": "有什么可以帮您？"
+    },
+    {
+     "r": 0,
+     "en": "The front tyres are nearly bald. Do they need changing?",
+     "zh": "前胎快磨平了。要换吗？"
+    },
+    {
+     "r": 1,
+     "en": "The tread is at two millimetres. I would change them.",
+     "zh": "胎纹只剩两毫米。我建议换。"
+    },
+    {
+     "r": 0,
+     "en": "About nine thousand, mostly short trips.",
+     "zh": "大概九千，多半是短途。"
+    },
+    {
+     "r": 1,
+     "en": "We will do the oil, filters and check the brakes.",
+     "zh": "我们换机油、滤芯，再检查刹车。"
+    },
+    {
+     "r": 0,
+     "en": "Call me before doing anything extra, please.",
+     "zh": "额外项目请先打电话问我。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Nothing goes ahead without your okay.",
+     "zh": "当然。没您同意不动手。"
+    },
+    {
+     "r": 0,
+     "en": "How long will it take?",
+     "zh": "要多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "修车厂加了项目，你要判断买不买",
+    "prompt": {
+     "en": "The brake pads are down to three millimetres. We recommend changing them now.",
+     "zh": "刹车片只剩三毫米。建议现在换。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much, and is it safe to wait a month?",
+       "zh": "多少钱？等一个月安全吗？"
+      },
+      "react": {
+       "en": "Ninety fitted. A month is fine at this wear.",
+       "zh": "装好九十。这个磨损等一个月没事。"
+      }
+     },
+     {
+      "say": {
+       "en": "Just the service today. I will book the pads later.",
+       "zh": "今天只做保养。刹车片以后再约。"
+      },
+      "react": {
+       "en": "I will note it on your file.",
+       "zh": "我在您档案里记一下。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "There is a noise when I brake.",
+     "zh": "刹车时有异响。"
+    },
+    {
+     "en": "Call me before anything extra.",
+     "zh": "额外项目先打电话。"
+    },
+    {
+     "en": "Which parts are essential?",
+     "zh": "哪些是必须的？"
+    }
+   ]
+  },
+  {
+   "id": "car-service-3",
+   "g": "car-service",
+   "name": "汽车保养 · 故障灯",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "仪表盘亮了橙灯。",
+   "roles": [
+    "你",
+    "修车厂"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What can we do for you?",
+     "zh": "有什么可以帮您？"
+    },
+    {
+     "r": 0,
+     "en": "An orange engine light came on yesterday.",
+     "zh": "昨天发动机故障灯亮了。"
+    },
+    {
+     "r": 1,
+     "en": "We read the codes first. That is thirty.",
+     "zh": "先读故障码。三十块。"
+    },
+    {
+     "r": 0,
+     "en": "About nine thousand, mostly short trips.",
+     "zh": "大概九千，多半是短途。"
+    },
+    {
+     "r": 1,
+     "en": "We will do the oil, filters and check the brakes.",
+     "zh": "我们换机油、滤芯，再检查刹车。"
+    },
+    {
+     "r": 0,
+     "en": "Call me before doing anything extra, please.",
+     "zh": "额外项目请先打电话问我。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Nothing goes ahead without your okay.",
+     "zh": "当然。没您同意不动手。"
+    },
+    {
+     "r": 0,
+     "en": "How long will it take?",
+     "zh": "要多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "修车厂加了项目，你要判断买不买",
+    "prompt": {
+     "en": "The brake pads are down to three millimetres. We recommend changing them now.",
+     "zh": "刹车片只剩三毫米。建议现在换。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much, and is it safe to wait a month?",
+       "zh": "多少钱？等一个月安全吗？"
+      },
+      "react": {
+       "en": "Ninety fitted. A month is fine at this wear.",
+       "zh": "装好九十。这个磨损等一个月没事。"
+      }
+     },
+     {
+      "say": {
+       "en": "Just the service today. I will book the pads later.",
+       "zh": "今天只做保养。刹车片以后再约。"
+      },
+      "react": {
+       "en": "I will note it on your file.",
+       "zh": "我在您档案里记一下。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "There is a noise when I brake.",
+     "zh": "刹车时有异响。"
+    },
+    {
+     "en": "Call me before anything extra.",
+     "zh": "额外项目先打电话。"
+    },
+    {
+     "en": "Which parts are essential?",
+     "zh": "哪些是必须的？"
+    }
+   ]
+  },
+  {
+   "id": "car-service-4",
+   "g": "car-service",
+   "name": "汽车保养 · 年检",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "这个月要年检。",
+   "roles": [
+    "你",
+    "修车厂"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What can we do for you?",
+     "zh": "有什么可以帮您？"
+    },
+    {
+     "r": 0,
+     "en": "It is due a service, and there is a noise when I brake.",
+     "zh": "该保养了，刹车时还有异响。"
+    },
+    {
+     "r": 1,
+     "en": "How many miles since the last one?",
+     "zh": "上次保养后跑了多少英里？"
+    },
+    {
+     "r": 0,
+     "en": "About nine thousand, mostly short trips.",
+     "zh": "大概九千，多半是短途。"
+    },
+    {
+     "r": 1,
+     "en": "It needs an MOT this month. Can you do both at once?",
+     "zh": "这个月要年检。能一起做吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, and if it fails we retest for free.",
+     "zh": "可以，没过的话免费复检。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Nothing goes ahead without your okay.",
+     "zh": "当然。没您同意不动手。"
+    },
+    {
+     "r": 0,
+     "en": "How long will it take?",
+     "zh": "要多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "修车厂加了项目，你要判断买不买",
+    "prompt": {
+     "en": "The brake pads are down to three millimetres. We recommend changing them now.",
+     "zh": "刹车片只剩三毫米。建议现在换。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much, and is it safe to wait a month?",
+       "zh": "多少钱？等一个月安全吗？"
+      },
+      "react": {
+       "en": "Ninety fitted. A month is fine at this wear.",
+       "zh": "装好九十。这个磨损等一个月没事。"
+      }
+     },
+     {
+      "say": {
+       "en": "Just the service today. I will book the pads later.",
+       "zh": "今天只做保养。刹车片以后再约。"
+      },
+      "react": {
+       "en": "I will note it on your file.",
+       "zh": "我在您档案里记一下。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "There is a noise when I brake.",
+     "zh": "刹车时有异响。"
+    },
+    {
+     "en": "Call me before anything extra.",
+     "zh": "额外项目先打电话。"
+    },
+    {
+     "en": "Which parts are essential?",
+     "zh": "哪些是必须的？"
+    }
+   ]
+  },
+  {
+   "id": "car-service-5",
+   "g": "car-service",
+   "name": "汽车保养 · 报价太高",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "报价超出预期。",
+   "roles": [
+    "你",
+    "修车厂"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What can we do for you?",
+     "zh": "有什么可以帮您？"
+    },
+    {
+     "r": 0,
+     "en": "It is due a service, and there is a noise when I brake.",
+     "zh": "该保养了，刹车时还有异响。"
+    },
+    {
+     "r": 1,
+     "en": "How many miles since the last one?",
+     "zh": "上次保养后跑了多少英里？"
+    },
+    {
+     "r": 0,
+     "en": "About nine thousand, mostly short trips.",
+     "zh": "大概九千，多半是短途。"
+    },
+    {
+     "r": 1,
+     "en": "We will do the oil, filters and check the brakes.",
+     "zh": "我们换机油、滤芯，再检查刹车。"
+    },
+    {
+     "r": 0,
+     "en": "Call me before doing anything extra, please.",
+     "zh": "额外项目请先打电话问我。"
+    },
+    {
+     "r": 1,
+     "en": "That is more than I expected. Which parts are essential?",
+     "zh": "比我预期贵。哪些是必须的？"
+    },
+    {
+     "r": 0,
+     "en": "How long will it take?",
+     "zh": "要多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "修车厂加了项目，你要判断买不买",
+    "prompt": {
+     "en": "The brake pads are down to three millimetres. We recommend changing them now.",
+     "zh": "刹车片只剩三毫米。建议现在换。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much, and is it safe to wait a month?",
+       "zh": "多少钱？等一个月安全吗？"
+      },
+      "react": {
+       "en": "Ninety fitted. A month is fine at this wear.",
+       "zh": "装好九十。这个磨损等一个月没事。"
+      }
+     },
+     {
+      "say": {
+       "en": "Just the service today. I will book the pads later.",
+       "zh": "今天只做保养。刹车片以后再约。"
+      },
+      "react": {
+       "en": "I will note it on your file.",
+       "zh": "我在您档案里记一下。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "There is a noise when I brake.",
+     "zh": "刹车时有异响。"
+    },
+    {
+     "en": "Call me before anything extra.",
+     "zh": "额外项目先打电话。"
+    },
+    {
+     "en": "Which parts are essential?",
+     "zh": "哪些是必须的？"
+    }
+   ]
+  },
+  {
+   "id": "car-service-6",
+   "g": "car-service",
+   "name": "汽车保养 · 要代步车",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你当天要用车。",
+   "roles": [
+    "你",
+    "修车厂"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What can we do for you?",
+     "zh": "有什么可以帮您？"
+    },
+    {
+     "r": 0,
+     "en": "It is due a service, and there is a noise when I brake.",
+     "zh": "该保养了，刹车时还有异响。"
+    },
+    {
+     "r": 1,
+     "en": "How many miles since the last one?",
+     "zh": "上次保养后跑了多少英里？"
+    },
+    {
+     "r": 0,
+     "en": "About nine thousand, mostly short trips.",
+     "zh": "大概九千，多半是短途。"
+    },
+    {
+     "r": 1,
+     "en": "We will do the oil, filters and check the brakes.",
+     "zh": "我们换机油、滤芯，再检查刹车。"
+    },
+    {
+     "r": 0,
+     "en": "Call me before doing anything extra, please.",
+     "zh": "额外项目请先打电话问我。"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Nothing goes ahead without your okay.",
+     "zh": "当然。没您同意不动手。"
+    },
+    {
+     "r": 0,
+     "en": "Could I have a courtesy car for the day?",
+     "zh": "今天能借辆代步车吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "修车厂加了项目，你要判断买不买",
+    "prompt": {
+     "en": "The brake pads are down to three millimetres. We recommend changing them now.",
+     "zh": "刹车片只剩三毫米。建议现在换。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much, and is it safe to wait a month?",
+       "zh": "多少钱？等一个月安全吗？"
+      },
+      "react": {
+       "en": "Ninety fitted. A month is fine at this wear.",
+       "zh": "装好九十。这个磨损等一个月没事。"
+      }
+     },
+     {
+      "say": {
+       "en": "Just the service today. I will book the pads later.",
+       "zh": "今天只做保养。刹车片以后再约。"
+      },
+      "react": {
+       "en": "I will note it on your file.",
+       "zh": "我在您档案里记一下。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "There is a noise when I brake.",
+     "zh": "刹车时有异响。"
+    },
+    {
+     "en": "Call me before anything extra.",
+     "zh": "额外项目先打电话。"
+    },
+    {
+     "en": "Which parts are essential?",
+     "zh": "哪些是必须的？"
+    }
+   ]
+  },
+  {
+   "id": "bike-repair",
+   "g": "bike-repair",
+   "name": "修自行车 · 跳档加软刹",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "通勤车骑了三年，最近换挡总打滑。",
+   "roles": [
+    "你",
+    "修车师傅"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What is wrong with it?",
+     "zh": "车怎么了？"
+    },
+    {
+     "r": 0,
+     "en": "The gears skip, and the back brake is soft.",
+     "zh": "变速跳档，后刹很软。"
+    },
+    {
+     "r": 1,
+     "en": "When did you last change the cables?",
+     "zh": "上次换线是什么时候？"
+    },
+    {
+     "r": 0,
+     "en": "Two years, maybe three. I ride it every day.",
+     "zh": "两三年吧。我每天骑。"
+    },
+    {
+     "r": 1,
+     "en": "Cables and pads, about forty, ready tomorrow.",
+     "zh": "线管和刹车皮，四十左右，明天好。"
+    },
+    {
+     "r": 0,
+     "en": "Could you check the chain as well?",
+     "zh": "链条也帮我看一下？"
+    },
+    {
+     "r": 1,
+     "en": "It is worn. A new one is eighteen, fitted.",
+     "zh": "磨得挺厉害。新的连装十八。"
+    },
+    {
+     "r": 0,
+     "en": "Do both, then. I will collect tomorrow afternoon.",
+     "zh": "那两样都做。我明天下午来取。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "师傅建议你多换一样，你要判断",
+    "prompt": {
+     "en": "The rear wheel bearing is rough. Twenty more and it runs smooth.",
+     "zh": "后轮轴承有点涩。再加二十就顺了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Do it. I would rather not come back next month.",
+       "zh": "做吧。我不想下个月再来。"
+      },
+      "react": {
+       "en": "Smart. It takes ten minutes.",
+       "zh": "明智。十分钟的事。"
+      }
+     },
+     {
+      "say": {
+       "en": "Leave it for now. I am not sure I can feel it.",
+       "zh": "先不管。我还不确定能不能感觉到。"
+      },
+      "react": {
+       "en": "Fair. It will get worse slowly.",
+       "zh": "行。它会慢慢变差。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The gears skip.",
+     "zh": "变速跳档。"
+    },
+    {
+     "en": "The back brake is soft.",
+     "zh": "后刹很软。"
+    },
+    {
+     "en": "Could you check the chain as well?",
+     "zh": "链条也帮我看一下？"
+    }
+   ]
+  },
+  {
+   "id": "bike-repair-2",
+   "g": "bike-repair",
+   "name": "修自行车 · 爆胎",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "后胎扎了。",
+   "roles": [
+    "你",
+    "修车师傅"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What is wrong with it?",
+     "zh": "车怎么了？"
+    },
+    {
+     "r": 0,
+     "en": "The back tyre is flat. I think I ran over glass.",
+     "zh": "后胎没气了。可能轧到玻璃。"
+    },
+    {
+     "r": 1,
+     "en": "Inner tube and labour is fifteen. I can do it while you wait.",
+     "zh": "内胎加工时十五。等着就能好。"
+    },
+    {
+     "r": 0,
+     "en": "Two years, maybe three. I ride it every day.",
+     "zh": "两三年吧。我每天骑。"
+    },
+    {
+     "r": 1,
+     "en": "Cables and pads, about forty, ready tomorrow.",
+     "zh": "线管和刹车皮，四十左右，明天好。"
+    },
+    {
+     "r": 0,
+     "en": "Could you check the chain as well?",
+     "zh": "链条也帮我看一下？"
+    },
+    {
+     "r": 1,
+     "en": "It is worn. A new one is eighteen, fitted.",
+     "zh": "磨得挺厉害。新的连装十八。"
+    },
+    {
+     "r": 0,
+     "en": "Do both, then. I will collect tomorrow afternoon.",
+     "zh": "那两样都做。我明天下午来取。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "师傅建议你多换一样，你要判断",
+    "prompt": {
+     "en": "The rear wheel bearing is rough. Twenty more and it runs smooth.",
+     "zh": "后轮轴承有点涩。再加二十就顺了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Do it. I would rather not come back next month.",
+       "zh": "做吧。我不想下个月再来。"
+      },
+      "react": {
+       "en": "Smart. It takes ten minutes.",
+       "zh": "明智。十分钟的事。"
+      }
+     },
+     {
+      "say": {
+       "en": "Leave it for now. I am not sure I can feel it.",
+       "zh": "先不管。我还不确定能不能感觉到。"
+      },
+      "react": {
+       "en": "Fair. It will get worse slowly.",
+       "zh": "行。它会慢慢变差。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The gears skip.",
+     "zh": "变速跳档。"
+    },
+    {
+     "en": "The back brake is soft.",
+     "zh": "后刹很软。"
+    },
+    {
+     "en": "Could you check the chain as well?",
+     "zh": "链条也帮我看一下？"
+    }
+   ]
+  },
+  {
+   "id": "bike-repair-3",
+   "g": "bike-repair",
+   "name": "修自行车 · 轮圈变形",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "撞了路沿，轮子歪了。",
+   "roles": [
+    "你",
+    "修车师傅"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What is wrong with it?",
+     "zh": "车怎么了？"
+    },
+    {
+     "r": 0,
+     "en": "I hit a kerb and now the wheel wobbles.",
+     "zh": "我撞了路沿，轮子开始晃。"
+    },
+    {
+     "r": 1,
+     "en": "The rim is bent. I can true it, but a new wheel is stronger.",
+     "zh": "圈歪了。能校，但换新轮更结实。"
+    },
+    {
+     "r": 0,
+     "en": "Two years, maybe three. I ride it every day.",
+     "zh": "两三年吧。我每天骑。"
+    },
+    {
+     "r": 1,
+     "en": "Cables and pads, about forty, ready tomorrow.",
+     "zh": "线管和刹车皮，四十左右，明天好。"
+    },
+    {
+     "r": 0,
+     "en": "Could you check the chain as well?",
+     "zh": "链条也帮我看一下？"
+    },
+    {
+     "r": 1,
+     "en": "It is worn. A new one is eighteen, fitted.",
+     "zh": "磨得挺厉害。新的连装十八。"
+    },
+    {
+     "r": 0,
+     "en": "Do both, then. I will collect tomorrow afternoon.",
+     "zh": "那两样都做。我明天下午来取。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "师傅建议你多换一样，你要判断",
+    "prompt": {
+     "en": "The rear wheel bearing is rough. Twenty more and it runs smooth.",
+     "zh": "后轮轴承有点涩。再加二十就顺了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Do it. I would rather not come back next month.",
+       "zh": "做吧。我不想下个月再来。"
+      },
+      "react": {
+       "en": "Smart. It takes ten minutes.",
+       "zh": "明智。十分钟的事。"
+      }
+     },
+     {
+      "say": {
+       "en": "Leave it for now. I am not sure I can feel it.",
+       "zh": "先不管。我还不确定能不能感觉到。"
+      },
+      "react": {
+       "en": "Fair. It will get worse slowly.",
+       "zh": "行。它会慢慢变差。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The gears skip.",
+     "zh": "变速跳档。"
+    },
+    {
+     "en": "The back brake is soft.",
+     "zh": "后刹很软。"
+    },
+    {
+     "en": "Could you check the chain as well?",
+     "zh": "链条也帮我看一下？"
+    }
+   ]
+  },
+  {
+   "id": "bike-repair-4",
+   "g": "bike-repair",
+   "name": "修自行车 · 电助力",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "电动自行车不助力了。",
+   "roles": [
+    "你",
+    "修车师傅"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What is wrong with it?",
+     "zh": "车怎么了？"
+    },
+    {
+     "r": 0,
+     "en": "It is an e-bike. The motor cuts out on hills.",
+     "zh": "是电助力车。上坡时电机断。"
+    },
+    {
+     "r": 1,
+     "en": "When did you last change the cables?",
+     "zh": "上次换线是什么时候？"
+    },
+    {
+     "r": 0,
+     "en": "Two years, maybe three. I ride it every day.",
+     "zh": "两三年吧。我每天骑。"
+    },
+    {
+     "r": 1,
+     "en": "Cables and pads, about forty, ready tomorrow.",
+     "zh": "线管和刹车皮，四十左右，明天好。"
+    },
+    {
+     "r": 0,
+     "en": "Could you check the chain as well?",
+     "zh": "链条也帮我看一下？"
+    },
+    {
+     "r": 1,
+     "en": "It is worn. A new one is eighteen, fitted.",
+     "zh": "磨得挺厉害。新的连装十八。"
+    },
+    {
+     "r": 0,
+     "en": "Do both, then. I will collect tomorrow afternoon.",
+     "zh": "那两样都做。我明天下午来取。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "师傅建议你多换一样，你要判断",
+    "prompt": {
+     "en": "The rear wheel bearing is rough. Twenty more and it runs smooth.",
+     "zh": "后轮轴承有点涩。再加二十就顺了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Do it. I would rather not come back next month.",
+       "zh": "做吧。我不想下个月再来。"
+      },
+      "react": {
+       "en": "Smart. It takes ten minutes.",
+       "zh": "明智。十分钟的事。"
+      }
+     },
+     {
+      "say": {
+       "en": "Leave it for now. I am not sure I can feel it.",
+       "zh": "先不管。我还不确定能不能感觉到。"
+      },
+      "react": {
+       "en": "Fair. It will get worse slowly.",
+       "zh": "行。它会慢慢变差。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The gears skip.",
+     "zh": "变速跳档。"
+    },
+    {
+     "en": "The back brake is soft.",
+     "zh": "后刹很软。"
+    },
+    {
+     "en": "Could you check the chain as well?",
+     "zh": "链条也帮我看一下？"
+    }
+   ]
+  },
+  {
+   "id": "bike-repair-5",
+   "g": "bike-repair",
+   "name": "修自行车 · 事故后检查",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你被车撞了，想全面检查。",
+   "roles": [
+    "你",
+    "修车师傅"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What is wrong with it?",
+     "zh": "车怎么了？"
+    },
+    {
+     "r": 0,
+     "en": "The gears skip, and the back brake is soft.",
+     "zh": "变速跳档，后刹很软。"
+    },
+    {
+     "r": 1,
+     "en": "When did you last change the cables?",
+     "zh": "上次换线是什么时候？"
+    },
+    {
+     "r": 0,
+     "en": "Two years, maybe three. I ride it every day.",
+     "zh": "两三年吧。我每天骑。"
+    },
+    {
+     "r": 1,
+     "en": "Cables and pads, about forty, ready tomorrow.",
+     "zh": "线管和刹车皮，四十左右，明天好。"
+    },
+    {
+     "r": 0,
+     "en": "I was hit by a car. Could you check the frame?",
+     "zh": "我被车撞了。能查一下车架吗？"
+    },
+    {
+     "r": 1,
+     "en": "There is a dent. I would not ride it far.",
+     "zh": "有个凹陷。我不建议骑远。"
+    },
+    {
+     "r": 0,
+     "en": "Do both, then. I will collect tomorrow afternoon.",
+     "zh": "那两样都做。我明天下午来取。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "师傅建议你多换一样，你要判断",
+    "prompt": {
+     "en": "The rear wheel bearing is rough. Twenty more and it runs smooth.",
+     "zh": "后轮轴承有点涩。再加二十就顺了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Do it. I would rather not come back next month.",
+       "zh": "做吧。我不想下个月再来。"
+      },
+      "react": {
+       "en": "Smart. It takes ten minutes.",
+       "zh": "明智。十分钟的事。"
+      }
+     },
+     {
+      "say": {
+       "en": "Leave it for now. I am not sure I can feel it.",
+       "zh": "先不管。我还不确定能不能感觉到。"
+      },
+      "react": {
+       "en": "Fair. It will get worse slowly.",
+       "zh": "行。它会慢慢变差。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The gears skip.",
+     "zh": "变速跳档。"
+    },
+    {
+     "en": "The back brake is soft.",
+     "zh": "后刹很软。"
+    },
+    {
+     "en": "Could you check the chain as well?",
+     "zh": "链条也帮我看一下？"
+    }
+   ]
+  },
+  {
+   "id": "bike-repair-6",
+   "g": "bike-repair",
+   "name": "修自行车 · 想自己修",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你想学着自己弄。",
+   "roles": [
+    "你",
+    "修车师傅"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What is wrong with it?",
+     "zh": "车怎么了？"
+    },
+    {
+     "r": 0,
+     "en": "The gears skip, and the back brake is soft.",
+     "zh": "变速跳档，后刹很软。"
+    },
+    {
+     "r": 1,
+     "en": "When did you last change the cables?",
+     "zh": "上次换线是什么时候？"
+    },
+    {
+     "r": 0,
+     "en": "Two years, maybe three. I ride it every day.",
+     "zh": "两三年吧。我每天骑。"
+    },
+    {
+     "r": 1,
+     "en": "Cables and pads, about forty, ready tomorrow.",
+     "zh": "线管和刹车皮，四十左右，明天好。"
+    },
+    {
+     "r": 0,
+     "en": "Could you check the chain as well?",
+     "zh": "链条也帮我看一下？"
+    },
+    {
+     "r": 1,
+     "en": "It is worn. A new one is eighteen, fitted.",
+     "zh": "磨得挺厉害。新的连装十八。"
+    },
+    {
+     "r": 0,
+     "en": "Could you show me how to change the pads myself?",
+     "zh": "能教我自己换刹车皮吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "师傅建议你多换一样，你要判断",
+    "prompt": {
+     "en": "The rear wheel bearing is rough. Twenty more and it runs smooth.",
+     "zh": "后轮轴承有点涩。再加二十就顺了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Do it. I would rather not come back next month.",
+       "zh": "做吧。我不想下个月再来。"
+      },
+      "react": {
+       "en": "Smart. It takes ten minutes.",
+       "zh": "明智。十分钟的事。"
+      }
+     },
+     {
+      "say": {
+       "en": "Leave it for now. I am not sure I can feel it.",
+       "zh": "先不管。我还不确定能不能感觉到。"
+      },
+      "react": {
+       "en": "Fair. It will get worse slowly.",
+       "zh": "行。它会慢慢变差。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "The gears skip.",
+     "zh": "变速跳档。"
+    },
+    {
+     "en": "The back brake is soft.",
+     "zh": "后刹很软。"
+    },
+    {
+     "en": "Could you check the chain as well?",
+     "zh": "链条也帮我看一下？"
+    }
+   ]
+  },
+  {
+   "id": "watch-repair",
+   "g": "watch-repair",
+   "name": "修表换电池 · 石英表停了",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "手表停在两天前，你顺手想调表带。",
+   "roles": [
+    "你",
+    "钟表店"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Is it a battery or a service?",
+     "zh": "换电池还是保养？"
+    },
+    {
+     "r": 0,
+     "en": "It stopped two days ago. It is a quartz watch.",
+     "zh": "两天前停了。是石英表。"
+    },
+    {
+     "r": 1,
+     "en": "Battery is fifteen, and I can do it now.",
+     "zh": "电池十五，现在就能换。"
+    },
+    {
+     "r": 0,
+     "en": "Please. Could you also shorten the strap?",
+     "zh": "好。能顺便把表带调短吗？"
+    },
+    {
+     "r": 1,
+     "en": "Two links out, no charge.",
+     "zh": "去掉两节，不收费。"
+    },
+    {
+     "r": 0,
+     "en": "How long will the battery last?",
+     "zh": "电池能用多久？"
+    },
+    {
+     "r": 1,
+     "en": "Two to three years, depending on the model.",
+     "zh": "两到三年，看型号。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Do you reseal it afterwards?",
+     "zh": "好。之后会重新密封吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "店员问表的历史，你要说清楚",
+    "prompt": {
+     "en": "Has it ever been opened before?",
+     "zh": "以前拆开过吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Once, by a shop abroad. They scratched the back.",
+       "zh": "拆过一次，国外一家店。后盖刮花了。"
+      },
+      "react": {
+       "en": "I will use a proper tool this time.",
+       "zh": "这次我用专业工具。"
+      }
+     },
+     {
+      "say": {
+       "en": "I do not know. It was a gift.",
+       "zh": "我不知道。是别人送的。"
+      },
+      "react": {
+       "en": "Then I will check the seal first.",
+       "zh": "那我先检查密封。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stopped two days ago.",
+     "zh": "两天前停了。"
+    },
+    {
+     "en": "Could you shorten the strap?",
+     "zh": "能把表带调短吗？"
+    },
+    {
+     "en": "Do you reseal it afterwards?",
+     "zh": "之后会重新密封吗？"
+    }
+   ]
+  },
+  {
+   "id": "watch-repair-2",
+   "g": "watch-repair",
+   "name": "修表换电池 · 机械表",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "这是自动机械表。",
+   "roles": [
+    "你",
+    "钟表店"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Is it a battery or a service?",
+     "zh": "换电池还是保养？"
+    },
+    {
+     "r": 0,
+     "en": "It is automatic. It loses about five minutes a week.",
+     "zh": "是自动机械表。一周慢五分钟左右。"
+    },
+    {
+     "r": 1,
+     "en": "Then it needs a service, not a battery. That is ninety.",
+     "zh": "那要保养不是换电池。九十。"
+    },
+    {
+     "r": 0,
+     "en": "Please. Could you also shorten the strap?",
+     "zh": "好。能顺便把表带调短吗？"
+    },
+    {
+     "r": 1,
+     "en": "Two links out, no charge.",
+     "zh": "去掉两节，不收费。"
+    },
+    {
+     "r": 0,
+     "en": "How long will the battery last?",
+     "zh": "电池能用多久？"
+    },
+    {
+     "r": 1,
+     "en": "Two to three years, depending on the model.",
+     "zh": "两到三年，看型号。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Do you reseal it afterwards?",
+     "zh": "好。之后会重新密封吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "店员问表的历史，你要说清楚",
+    "prompt": {
+     "en": "Has it ever been opened before?",
+     "zh": "以前拆开过吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Once, by a shop abroad. They scratched the back.",
+       "zh": "拆过一次，国外一家店。后盖刮花了。"
+      },
+      "react": {
+       "en": "I will use a proper tool this time.",
+       "zh": "这次我用专业工具。"
+      }
+     },
+     {
+      "say": {
+       "en": "I do not know. It was a gift.",
+       "zh": "我不知道。是别人送的。"
+      },
+      "react": {
+       "en": "Then I will check the seal first.",
+       "zh": "那我先检查密封。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stopped two days ago.",
+     "zh": "两天前停了。"
+    },
+    {
+     "en": "Could you shorten the strap?",
+     "zh": "能把表带调短吗？"
+    },
+    {
+     "en": "Do you reseal it afterwards?",
+     "zh": "之后会重新密封吗？"
+    }
+   ]
+  },
+  {
+   "id": "watch-repair-3",
+   "g": "watch-repair",
+   "name": "修表换电池 · 换表带",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "表带断了。",
+   "roles": [
+    "你",
+    "钟表店"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The strap broke. Can you fit a new one?",
+     "zh": "表带断了。能换一条吗？"
+    },
+    {
+     "r": 0,
+     "en": "Leather is twenty-five, steel is forty.",
+     "zh": "皮带二十五，钢带四十。"
+    },
+    {
+     "r": 1,
+     "en": "Battery is fifteen, and I can do it now.",
+     "zh": "电池十五，现在就能换。"
+    },
+    {
+     "r": 0,
+     "en": "Please. Could you also shorten the strap?",
+     "zh": "好。能顺便把表带调短吗？"
+    },
+    {
+     "r": 1,
+     "en": "Two links out, no charge.",
+     "zh": "去掉两节，不收费。"
+    },
+    {
+     "r": 0,
+     "en": "How long will the battery last?",
+     "zh": "电池能用多久？"
+    },
+    {
+     "r": 1,
+     "en": "Two to three years, depending on the model.",
+     "zh": "两到三年，看型号。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Do you reseal it afterwards?",
+     "zh": "好。之后会重新密封吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "店员问表的历史，你要说清楚",
+    "prompt": {
+     "en": "Has it ever been opened before?",
+     "zh": "以前拆开过吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Once, by a shop abroad. They scratched the back.",
+       "zh": "拆过一次，国外一家店。后盖刮花了。"
+      },
+      "react": {
+       "en": "I will use a proper tool this time.",
+       "zh": "这次我用专业工具。"
+      }
+     },
+     {
+      "say": {
+       "en": "I do not know. It was a gift.",
+       "zh": "我不知道。是别人送的。"
+      },
+      "react": {
+       "en": "Then I will check the seal first.",
+       "zh": "那我先检查密封。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stopped two days ago.",
+     "zh": "两天前停了。"
+    },
+    {
+     "en": "Could you shorten the strap?",
+     "zh": "能把表带调短吗？"
+    },
+    {
+     "en": "Do you reseal it afterwards?",
+     "zh": "之后会重新密封吗？"
+    }
+   ]
+  },
+  {
+   "id": "watch-repair-4",
+   "g": "watch-repair",
+   "name": "修表换电池 · 玻璃裂了",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "表镜有裂纹。",
+   "roles": [
+    "你",
+    "钟表店"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Is it a battery or a service?",
+     "zh": "换电池还是保养？"
+    },
+    {
+     "r": 0,
+     "en": "It stopped two days ago. It is a quartz watch.",
+     "zh": "两天前停了。是石英表。"
+    },
+    {
+     "r": 1,
+     "en": "Battery is fifteen, and I can do it now.",
+     "zh": "电池十五，现在就能换。"
+    },
+    {
+     "r": 0,
+     "en": "There is a crack in the glass. Can it be replaced?",
+     "zh": "表镜裂了。能换吗？"
+    },
+    {
+     "r": 1,
+     "en": "Two links out, no charge.",
+     "zh": "去掉两节，不收费。"
+    },
+    {
+     "r": 0,
+     "en": "How long will the battery last?",
+     "zh": "电池能用多久？"
+    },
+    {
+     "r": 1,
+     "en": "Two to three years, depending on the model.",
+     "zh": "两到三年，看型号。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Do you reseal it afterwards?",
+     "zh": "好。之后会重新密封吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "店员问表的历史，你要说清楚",
+    "prompt": {
+     "en": "Has it ever been opened before?",
+     "zh": "以前拆开过吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Once, by a shop abroad. They scratched the back.",
+       "zh": "拆过一次，国外一家店。后盖刮花了。"
+      },
+      "react": {
+       "en": "I will use a proper tool this time.",
+       "zh": "这次我用专业工具。"
+      }
+     },
+     {
+      "say": {
+       "en": "I do not know. It was a gift.",
+       "zh": "我不知道。是别人送的。"
+      },
+      "react": {
+       "en": "Then I will check the seal first.",
+       "zh": "那我先检查密封。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stopped two days ago.",
+     "zh": "两天前停了。"
+    },
+    {
+     "en": "Could you shorten the strap?",
+     "zh": "能把表带调短吗？"
+    },
+    {
+     "en": "Do you reseal it afterwards?",
+     "zh": "之后会重新密封吗？"
+    }
+   ]
+  },
+  {
+   "id": "watch-repair-5",
+   "g": "watch-repair",
+   "name": "修表换电池 · 进水",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "表里有雾。",
+   "roles": [
+    "你",
+    "钟表店"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Is it a battery or a service?",
+     "zh": "换电池还是保养？"
+    },
+    {
+     "r": 0,
+     "en": "There is condensation inside.",
+     "zh": "里面有水汽。"
+    },
+    {
+     "r": 1,
+     "en": "That needs a full strip down. Sixty, one week.",
+     "zh": "那要全拆。六十，一周。"
+    },
+    {
+     "r": 0,
+     "en": "Please. Could you also shorten the strap?",
+     "zh": "好。能顺便把表带调短吗？"
+    },
+    {
+     "r": 1,
+     "en": "Two links out, no charge.",
+     "zh": "去掉两节，不收费。"
+    },
+    {
+     "r": 0,
+     "en": "How long will the battery last?",
+     "zh": "电池能用多久？"
+    },
+    {
+     "r": 1,
+     "en": "Two to three years, depending on the model.",
+     "zh": "两到三年，看型号。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Do you reseal it afterwards?",
+     "zh": "好。之后会重新密封吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "店员问表的历史，你要说清楚",
+    "prompt": {
+     "en": "Has it ever been opened before?",
+     "zh": "以前拆开过吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Once, by a shop abroad. They scratched the back.",
+       "zh": "拆过一次，国外一家店。后盖刮花了。"
+      },
+      "react": {
+       "en": "I will use a proper tool this time.",
+       "zh": "这次我用专业工具。"
+      }
+     },
+     {
+      "say": {
+       "en": "I do not know. It was a gift.",
+       "zh": "我不知道。是别人送的。"
+      },
+      "react": {
+       "en": "Then I will check the seal first.",
+       "zh": "那我先检查密封。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stopped two days ago.",
+     "zh": "两天前停了。"
+    },
+    {
+     "en": "Could you shorten the strap?",
+     "zh": "能把表带调短吗？"
+    },
+    {
+     "en": "Do you reseal it afterwards?",
+     "zh": "之后会重新密封吗？"
+    }
+   ]
+  },
+  {
+   "id": "watch-repair-6",
+   "g": "watch-repair",
+   "name": "修表换电池 · 古董表",
+   "cat": "服务",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "这是祖父留下的表。",
+   "roles": [
+    "你",
+    "钟表店"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "It was my grandfather. I do not want to change anything.",
+     "zh": "这是我祖父的表。我不想改任何东西。"
+    },
+    {
+     "r": 0,
+     "en": "It stopped two days ago. It is a quartz watch.",
+     "zh": "两天前停了。是石英表。"
+    },
+    {
+     "r": 1,
+     "en": "Battery is fifteen, and I can do it now.",
+     "zh": "电池十五，现在就能换。"
+    },
+    {
+     "r": 0,
+     "en": "Please. Could you also shorten the strap?",
+     "zh": "好。能顺便把表带调短吗？"
+    },
+    {
+     "r": 1,
+     "en": "Two links out, no charge.",
+     "zh": "去掉两节，不收费。"
+    },
+    {
+     "r": 0,
+     "en": "How long will the battery last?",
+     "zh": "电池能用多久？"
+    },
+    {
+     "r": 1,
+     "en": "Two to three years, depending on the model.",
+     "zh": "两到三年，看型号。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Do you reseal it afterwards?",
+     "zh": "好。之后会重新密封吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "店员问表的历史，你要说清楚",
+    "prompt": {
+     "en": "Has it ever been opened before?",
+     "zh": "以前拆开过吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Once, by a shop abroad. They scratched the back.",
+       "zh": "拆过一次，国外一家店。后盖刮花了。"
+      },
+      "react": {
+       "en": "I will use a proper tool this time.",
+       "zh": "这次我用专业工具。"
+      }
+     },
+     {
+      "say": {
+       "en": "I do not know. It was a gift.",
+       "zh": "我不知道。是别人送的。"
+      },
+      "react": {
+       "en": "Then I will check the seal first.",
+       "zh": "那我先检查密封。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It stopped two days ago.",
+     "zh": "两天前停了。"
+    },
+    {
+     "en": "Could you shorten the strap?",
+     "zh": "能把表带调短吗？"
+    },
+    {
+     "en": "Do you reseal it afterwards?",
+     "zh": "之后会重新密封吗？"
+    }
+   ]
+  },
+  {
+   "id": "appliance-install",
+   "g": "appliance-install",
+   "name": "装洗衣机 · 换洗衣机",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "旧机用了十年，新机当天送到。",
+   "roles": [
+    "你",
+    "安装工"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Delivery and install for the washing machine?",
+     "zh": "洗衣机送货加安装？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. It is replacing an old one, first floor, no lift.",
+     "zh": "是。替换旧的，二楼，没电梯。"
+    },
+    {
+     "r": 1,
+     "en": "We need to disconnect the old one. Is the valve working?",
+     "zh": "要先拆旧的。水阀好用吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is. I turned it off yesterday and nothing leaked.",
+     "zh": "好用。我昨天关了，没漏。"
+    },
+    {
+     "r": 1,
+     "en": "Good. We can take the old one away for fifteen.",
+     "zh": "好。旧机我们可以带走，十五。"
+    },
+    {
+     "r": 0,
+     "en": "Please do. Do you need a parking space?",
+     "zh": "那就带走。需要停车位吗？"
+    },
+    {
+     "r": 1,
+     "en": "The van needs ten minutes. There is a bay outside?",
+     "zh": "货车停十分钟。外面有位子吗？"
+    },
+    {
+     "r": 0,
+     "en": "There is, but it is a loading bay until six.",
+     "zh": "有，但六点前是卸货区。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "change",
+    "task": "安装条件比你预期复杂，要改方案",
+    "prompt": {
+     "en": "The old machine is plumbed in with fixed copper pipe. We cannot disconnect it.",
+     "zh": "旧机是固定铜管接的。我们拆不了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then leave it and fit the new one beside it?",
+       "zh": "那别拆，把新的装在旁边？"
+      },
+      "react": {
+       "en": "There is not enough width. You need a plumber.",
+       "zh": "宽度不够。得找水管工。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can you come back after the plumber?",
+       "zh": "水管工弄完你们能再来吗？"
+      },
+      "react": {
+       "en": "We can, but there is a second call-out fee.",
+       "zh": "可以，但要再收一次上门费。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It is replacing an old one.",
+     "zh": "是替换旧的。"
+    },
+    {
+     "en": "We can take the old one away.",
+     "zh": "旧机可以带走。"
+    },
+    {
+     "en": "Is the installation covered?",
+     "zh": "安装有保修吗？"
+    }
+   ]
+  },
+  {
+   "id": "appliance-install-2",
+   "g": "appliance-install",
+   "name": "装洗衣机 · 装洗碗机",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "厨房没有预留接口。",
+   "roles": [
+    "你",
+    "安装工"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Delivery and install for the washing machine?",
+     "zh": "洗衣机送货加安装？"
+    },
+    {
+     "r": 0,
+     "en": "It is a dishwasher, and there is no plumbing under the sink.",
+     "zh": "是洗碗机，水槽下面没留接口。"
+    },
+    {
+     "r": 1,
+     "en": "Then a plumber has to come first. We cannot do that.",
+     "zh": "那得先让水管工来。这个我们做不了。"
+    },
+    {
+     "r": 0,
+     "en": "It is. I turned it off yesterday and nothing leaked.",
+     "zh": "好用。我昨天关了，没漏。"
+    },
+    {
+     "r": 1,
+     "en": "Good. We can take the old one away for fifteen.",
+     "zh": "好。旧机我们可以带走，十五。"
+    },
+    {
+     "r": 0,
+     "en": "Please do. Do you need a parking space?",
+     "zh": "那就带走。需要停车位吗？"
+    },
+    {
+     "r": 1,
+     "en": "The van needs ten minutes. There is a bay outside?",
+     "zh": "货车停十分钟。外面有位子吗？"
+    },
+    {
+     "r": 0,
+     "en": "There is, but it is a loading bay until six.",
+     "zh": "有，但六点前是卸货区。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "change",
+    "task": "安装条件比你预期复杂，要改方案",
+    "prompt": {
+     "en": "The old machine is plumbed in with fixed copper pipe. We cannot disconnect it.",
+     "zh": "旧机是固定铜管接的。我们拆不了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then leave it and fit the new one beside it?",
+       "zh": "那别拆，把新的装在旁边？"
+      },
+      "react": {
+       "en": "There is not enough width. You need a plumber.",
+       "zh": "宽度不够。得找水管工。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can you come back after the plumber?",
+       "zh": "水管工弄完你们能再来吗？"
+      },
+      "react": {
+       "en": "We can, but there is a second call-out fee.",
+       "zh": "可以，但要再收一次上门费。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It is replacing an old one.",
+     "zh": "是替换旧的。"
+    },
+    {
+     "en": "We can take the old one away.",
+     "zh": "旧机可以带走。"
+    },
+    {
+     "en": "Is the installation covered?",
+     "zh": "安装有保修吗？"
+    }
+   ]
+  },
+  {
+   "id": "appliance-install-3",
+   "g": "appliance-install",
+   "name": "装洗衣机 · 旧机没搬走",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "送货只放到门口。",
+   "roles": [
+    "你",
+    "安装工"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Delivery and install for the washing machine?",
+     "zh": "洗衣机送货加安装？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. It is replacing an old one, first floor, no lift.",
+     "zh": "是。替换旧的，二楼，没电梯。"
+    },
+    {
+     "r": 1,
+     "en": "We need to disconnect the old one. Is the valve working?",
+     "zh": "要先拆旧的。水阀好用吗？"
+    },
+    {
+     "r": 0,
+     "en": "They left it in the hall. Nobody connected it.",
+     "zh": "他们放在走廊就走了。没人接。"
+    },
+    {
+     "r": 1,
+     "en": "That is a different job. I will book an installer.",
+     "zh": "那是另一项。我给您约安装。"
+    },
+    {
+     "r": 0,
+     "en": "Please do. Do you need a parking space?",
+     "zh": "那就带走。需要停车位吗？"
+    },
+    {
+     "r": 1,
+     "en": "The van needs ten minutes. There is a bay outside?",
+     "zh": "货车停十分钟。外面有位子吗？"
+    },
+    {
+     "r": 0,
+     "en": "There is, but it is a loading bay until six.",
+     "zh": "有，但六点前是卸货区。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "change",
+    "task": "安装条件比你预期复杂，要改方案",
+    "prompt": {
+     "en": "The old machine is plumbed in with fixed copper pipe. We cannot disconnect it.",
+     "zh": "旧机是固定铜管接的。我们拆不了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then leave it and fit the new one beside it?",
+       "zh": "那别拆，把新的装在旁边？"
+      },
+      "react": {
+       "en": "There is not enough width. You need a plumber.",
+       "zh": "宽度不够。得找水管工。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can you come back after the plumber?",
+       "zh": "水管工弄完你们能再来吗？"
+      },
+      "react": {
+       "en": "We can, but there is a second call-out fee.",
+       "zh": "可以，但要再收一次上门费。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It is replacing an old one.",
+     "zh": "是替换旧的。"
+    },
+    {
+     "en": "We can take the old one away.",
+     "zh": "旧机可以带走。"
+    },
+    {
+     "en": "Is the installation covered?",
+     "zh": "安装有保修吗？"
+    }
+   ]
+  },
+  {
+   "id": "appliance-install-4",
+   "g": "appliance-install",
+   "name": "装洗衣机 · 改管",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "位置要挪半米。",
+   "roles": [
+    "你",
+    "安装工"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Delivery and install for the washing machine?",
+     "zh": "洗衣机送货加安装？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. It is replacing an old one, first floor, no lift.",
+     "zh": "是。替换旧的，二楼，没电梯。"
+    },
+    {
+     "r": 1,
+     "en": "We need to disconnect the old one. Is the valve working?",
+     "zh": "要先拆旧的。水阀好用吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is. I turned it off yesterday and nothing leaked.",
+     "zh": "好用。我昨天关了，没漏。"
+    },
+    {
+     "r": 1,
+     "en": "Good. We can take the old one away for fifteen.",
+     "zh": "好。旧机我们可以带走，十五。"
+    },
+    {
+     "r": 0,
+     "en": "Could you move the connection half a metre?",
+     "zh": "能把接口挪半米吗？"
+    },
+    {
+     "r": 1,
+     "en": "The van needs ten minutes. There is a bay outside?",
+     "zh": "货车停十分钟。外面有位子吗？"
+    },
+    {
+     "r": 0,
+     "en": "There is, but it is a loading bay until six.",
+     "zh": "有，但六点前是卸货区。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "change",
+    "task": "安装条件比你预期复杂，要改方案",
+    "prompt": {
+     "en": "The old machine is plumbed in with fixed copper pipe. We cannot disconnect it.",
+     "zh": "旧机是固定铜管接的。我们拆不了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then leave it and fit the new one beside it?",
+       "zh": "那别拆，把新的装在旁边？"
+      },
+      "react": {
+       "en": "There is not enough width. You need a plumber.",
+       "zh": "宽度不够。得找水管工。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can you come back after the plumber?",
+       "zh": "水管工弄完你们能再来吗？"
+      },
+      "react": {
+       "en": "We can, but there is a second call-out fee.",
+       "zh": "可以，但要再收一次上门费。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It is replacing an old one.",
+     "zh": "是替换旧的。"
+    },
+    {
+     "en": "We can take the old one away.",
+     "zh": "旧机可以带走。"
+    },
+    {
+     "en": "Is the installation covered?",
+     "zh": "安装有保修吗？"
+    }
+   ]
+  },
+  {
+   "id": "appliance-install-5",
+   "g": "appliance-install",
+   "name": "装洗衣机 · 装坏了",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "装完地上一滩水。",
+   "roles": [
+    "你",
+    "安装工"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Delivery and install for the washing machine?",
+     "zh": "洗衣机送货加安装？"
+    },
+    {
+     "r": 0,
+     "en": "It leaked on the first wash. The hose is loose.",
+     "zh": "第一次洗就漏了。管子没接紧。"
+    },
+    {
+     "r": 1,
+     "en": "We need to disconnect the old one. Is the valve working?",
+     "zh": "要先拆旧的。水阀好用吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is. I turned it off yesterday and nothing leaked.",
+     "zh": "好用。我昨天关了，没漏。"
+    },
+    {
+     "r": 1,
+     "en": "Good. We can take the old one away for fifteen.",
+     "zh": "好。旧机我们可以带走，十五。"
+    },
+    {
+     "r": 0,
+     "en": "Please do. Do you need a parking space?",
+     "zh": "那就带走。需要停车位吗？"
+    },
+    {
+     "r": 1,
+     "en": "The van needs ten minutes. There is a bay outside?",
+     "zh": "货车停十分钟。外面有位子吗？"
+    },
+    {
+     "r": 0,
+     "en": "There is, but it is a loading bay until six.",
+     "zh": "有，但六点前是卸货区。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "change",
+    "task": "安装条件比你预期复杂，要改方案",
+    "prompt": {
+     "en": "The old machine is plumbed in with fixed copper pipe. We cannot disconnect it.",
+     "zh": "旧机是固定铜管接的。我们拆不了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then leave it and fit the new one beside it?",
+       "zh": "那别拆，把新的装在旁边？"
+      },
+      "react": {
+       "en": "There is not enough width. You need a plumber.",
+       "zh": "宽度不够。得找水管工。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can you come back after the plumber?",
+       "zh": "水管工弄完你们能再来吗？"
+      },
+      "react": {
+       "en": "We can, but there is a second call-out fee.",
+       "zh": "可以，但要再收一次上门费。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It is replacing an old one.",
+     "zh": "是替换旧的。"
+    },
+    {
+     "en": "We can take the old one away.",
+     "zh": "旧机可以带走。"
+    },
+    {
+     "en": "Is the installation covered?",
+     "zh": "安装有保修吗？"
+    }
+   ]
+  },
+  {
+   "id": "appliance-install-6",
+   "g": "appliance-install",
+   "name": "装洗衣机 · 问保修",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想确认安装也有保修。",
+   "roles": [
+    "你",
+    "安装工"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Delivery and install for the washing machine?",
+     "zh": "洗衣机送货加安装？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. It is replacing an old one, first floor, no lift.",
+     "zh": "是。替换旧的，二楼，没电梯。"
+    },
+    {
+     "r": 1,
+     "en": "We need to disconnect the old one. Is the valve working?",
+     "zh": "要先拆旧的。水阀好用吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is. I turned it off yesterday and nothing leaked.",
+     "zh": "好用。我昨天关了，没漏。"
+    },
+    {
+     "r": 1,
+     "en": "Good. We can take the old one away for fifteen.",
+     "zh": "好。旧机我们可以带走，十五。"
+    },
+    {
+     "r": 0,
+     "en": "Please do. Do you need a parking space?",
+     "zh": "那就带走。需要停车位吗？"
+    },
+    {
+     "r": 1,
+     "en": "The van needs ten minutes. There is a bay outside?",
+     "zh": "货车停十分钟。外面有位子吗？"
+    },
+    {
+     "r": 0,
+     "en": "Is the installation covered if something goes wrong?",
+     "zh": "安装出问题有保修吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "change",
+    "task": "安装条件比你预期复杂，要改方案",
+    "prompt": {
+     "en": "The old machine is plumbed in with fixed copper pipe. We cannot disconnect it.",
+     "zh": "旧机是固定铜管接的。我们拆不了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then leave it and fit the new one beside it?",
+       "zh": "那别拆，把新的装在旁边？"
+      },
+      "react": {
+       "en": "There is not enough width. You need a plumber.",
+       "zh": "宽度不够。得找水管工。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can you come back after the plumber?",
+       "zh": "水管工弄完你们能再来吗？"
+      },
+      "react": {
+       "en": "We can, but there is a second call-out fee.",
+       "zh": "可以，但要再收一次上门费。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It is replacing an old one.",
+     "zh": "是替换旧的。"
+    },
+    {
+     "en": "We can take the old one away.",
+     "zh": "旧机可以带走。"
+    },
+    {
+     "en": "Is the installation covered?",
+     "zh": "安装有保修吗？"
+    }
+   ]
+  },
+  {
+   "id": "pest-control",
+   "g": "pest-control",
+   "name": "找灭虫公司 · 厨房有老鼠",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你半夜听见水槽下面有动静，面粉被咬开了。",
+   "roles": [
+    "你",
+    "灭虫公司"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What have you seen?",
+     "zh": "您看到了什么？"
+    },
+    {
+     "r": 0,
+     "en": "Droppings under the sink, and something moving at night.",
+     "zh": "水槽下面有粪便，晚上有东西在动。"
+    },
+    {
+     "r": 1,
+     "en": "Any damage to food packaging?",
+     "zh": "食品包装有被咬吗？"
+    },
+    {
+     "r": 0,
+     "en": "Two bags of flour were chewed open.",
+     "zh": "两袋面粉被咬开了。"
+    },
+    {
+     "r": 1,
+     "en": "That sounds like mice. We can treat this week.",
+     "zh": "听起来是老鼠。这周就能处理。"
+    },
+    {
+     "r": 0,
+     "en": "Is it safe with a cat in the flat?",
+     "zh": "家里有猫，安全吗？"
+    },
+    {
+     "r": 1,
+     "en": "Traps in the kitchen, bait only in locked boxes.",
+     "zh": "厨房用夹子，诱饵只放在锁盒里。"
+    },
+    {
+     "r": 0,
+     "en": "How long until they are gone?",
+     "zh": "多久能清干净？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方问你环境细节，你要给准确信息",
+    "prompt": {
+     "en": "Have you seen any gaps where pipes come in?",
+     "zh": "管道进来的地方有缝吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "There is a gap behind the sink cabinet.",
+       "zh": "水槽柜后面有个缝。"
+      },
+      "react": {
+       "en": "That is the entry point. We will seal it.",
+       "zh": "那就是入口。我们会封上。"
+      }
+     },
+     {
+      "say": {
+       "en": "I have not looked. Should I check now?",
+       "zh": "我没看过。现在看一下？"
+      },
+      "react": {
+       "en": "Take a photo and send it before we come.",
+       "zh": "来之前拍张照发我。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Droppings under the sink.",
+     "zh": "水槽下面有粪便。"
+    },
+    {
+     "en": "Chewed open.",
+     "zh": "被咬开了。"
+    },
+    {
+     "en": "Is it safe with a cat?",
+     "zh": "有猫安全吗？"
+    }
+   ]
+  },
+  {
+   "id": "pest-control-2",
+   "g": "pest-control",
+   "name": "找灭虫公司 · 蟑螂",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "晚上开灯看到蟑螂。",
+   "roles": [
+    "你",
+    "灭虫公司"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What have you seen?",
+     "zh": "您看到了什么？"
+    },
+    {
+     "r": 0,
+     "en": "I see cockroaches when I turn the kitchen light on at night.",
+     "zh": "晚上开厨房灯能看到蟑螂。"
+    },
+    {
+     "r": 1,
+     "en": "Gel treatment works best. Two visits, ten days apart.",
+     "zh": "胶饵最有效。两次，间隔十天。"
+    },
+    {
+     "r": 0,
+     "en": "Two bags of flour were chewed open.",
+     "zh": "两袋面粉被咬开了。"
+    },
+    {
+     "r": 1,
+     "en": "That sounds like mice. We can treat this week.",
+     "zh": "听起来是老鼠。这周就能处理。"
+    },
+    {
+     "r": 0,
+     "en": "Is it safe with a cat in the flat?",
+     "zh": "家里有猫，安全吗？"
+    },
+    {
+     "r": 1,
+     "en": "Traps in the kitchen, bait only in locked boxes.",
+     "zh": "厨房用夹子，诱饵只放在锁盒里。"
+    },
+    {
+     "r": 0,
+     "en": "How long until they are gone?",
+     "zh": "多久能清干净？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方问你环境细节，你要给准确信息",
+    "prompt": {
+     "en": "Have you seen any gaps where pipes come in?",
+     "zh": "管道进来的地方有缝吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "There is a gap behind the sink cabinet.",
+       "zh": "水槽柜后面有个缝。"
+      },
+      "react": {
+       "en": "That is the entry point. We will seal it.",
+       "zh": "那就是入口。我们会封上。"
+      }
+     },
+     {
+      "say": {
+       "en": "I have not looked. Should I check now?",
+       "zh": "我没看过。现在看一下？"
+      },
+      "react": {
+       "en": "Take a photo and send it before we come.",
+       "zh": "来之前拍张照发我。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Droppings under the sink.",
+     "zh": "水槽下面有粪便。"
+    },
+    {
+     "en": "Chewed open.",
+     "zh": "被咬开了。"
+    },
+    {
+     "en": "Is it safe with a cat?",
+     "zh": "有猫安全吗？"
+    }
+   ]
+  },
+  {
+   "id": "pest-control-3",
+   "g": "pest-control",
+   "name": "找灭虫公司 · 蚂蚁",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "窗台一排蚂蚁。",
+   "roles": [
+    "你",
+    "灭虫公司"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What have you seen?",
+     "zh": "您看到了什么？"
+    },
+    {
+     "r": 0,
+     "en": "There is a line of ants along the kitchen window.",
+     "zh": "厨房窗台有一排蚂蚁。"
+    },
+    {
+     "r": 1,
+     "en": "Any damage to food packaging?",
+     "zh": "食品包装有被咬吗？"
+    },
+    {
+     "r": 0,
+     "en": "Two bags of flour were chewed open.",
+     "zh": "两袋面粉被咬开了。"
+    },
+    {
+     "r": 1,
+     "en": "That sounds like mice. We can treat this week.",
+     "zh": "听起来是老鼠。这周就能处理。"
+    },
+    {
+     "r": 0,
+     "en": "Is it safe with a cat in the flat?",
+     "zh": "家里有猫，安全吗？"
+    },
+    {
+     "r": 1,
+     "en": "Traps in the kitchen, bait only in locked boxes.",
+     "zh": "厨房用夹子，诱饵只放在锁盒里。"
+    },
+    {
+     "r": 0,
+     "en": "How long until they are gone?",
+     "zh": "多久能清干净？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方问你环境细节，你要给准确信息",
+    "prompt": {
+     "en": "Have you seen any gaps where pipes come in?",
+     "zh": "管道进来的地方有缝吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "There is a gap behind the sink cabinet.",
+       "zh": "水槽柜后面有个缝。"
+      },
+      "react": {
+       "en": "That is the entry point. We will seal it.",
+       "zh": "那就是入口。我们会封上。"
+      }
+     },
+     {
+      "say": {
+       "en": "I have not looked. Should I check now?",
+       "zh": "我没看过。现在看一下？"
+      },
+      "react": {
+       "en": "Take a photo and send it before we come.",
+       "zh": "来之前拍张照发我。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Droppings under the sink.",
+     "zh": "水槽下面有粪便。"
+    },
+    {
+     "en": "Chewed open.",
+     "zh": "被咬开了。"
+    },
+    {
+     "en": "Is it safe with a cat?",
+     "zh": "有猫安全吗？"
+    }
+   ]
+  },
+  {
+   "id": "pest-control-4",
+   "g": "pest-control",
+   "name": "找灭虫公司 · 臭虫",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你怀疑床上有臭虫。",
+   "roles": [
+    "你",
+    "灭虫公司"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What have you seen?",
+     "zh": "您看到了什么？"
+    },
+    {
+     "r": 0,
+     "en": "I wake up with bites in a line on my arm.",
+     "zh": "我醒来手臂上有一排咬痕。"
+    },
+    {
+     "r": 1,
+     "en": "That is usually bedbugs. It needs two treatments.",
+     "zh": "一般是臭虫。要做两次。"
+    },
+    {
+     "r": 0,
+     "en": "Two bags of flour were chewed open.",
+     "zh": "两袋面粉被咬开了。"
+    },
+    {
+     "r": 1,
+     "en": "That sounds like mice. We can treat this week.",
+     "zh": "听起来是老鼠。这周就能处理。"
+    },
+    {
+     "r": 0,
+     "en": "Is it safe with a cat in the flat?",
+     "zh": "家里有猫，安全吗？"
+    },
+    {
+     "r": 1,
+     "en": "Traps in the kitchen, bait only in locked boxes.",
+     "zh": "厨房用夹子，诱饵只放在锁盒里。"
+    },
+    {
+     "r": 0,
+     "en": "How long until they are gone?",
+     "zh": "多久能清干净？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方问你环境细节，你要给准确信息",
+    "prompt": {
+     "en": "Have you seen any gaps where pipes come in?",
+     "zh": "管道进来的地方有缝吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "There is a gap behind the sink cabinet.",
+       "zh": "水槽柜后面有个缝。"
+      },
+      "react": {
+       "en": "That is the entry point. We will seal it.",
+       "zh": "那就是入口。我们会封上。"
+      }
+     },
+     {
+      "say": {
+       "en": "I have not looked. Should I check now?",
+       "zh": "我没看过。现在看一下？"
+      },
+      "react": {
+       "en": "Take a photo and send it before we come.",
+       "zh": "来之前拍张照发我。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Droppings under the sink.",
+     "zh": "水槽下面有粪便。"
+    },
+    {
+     "en": "Chewed open.",
+     "zh": "被咬开了。"
+    },
+    {
+     "en": "Is it safe with a cat?",
+     "zh": "有猫安全吗？"
+    }
+   ]
+  },
+  {
+   "id": "pest-control-5",
+   "g": "pest-control",
+   "name": "找灭虫公司 · 房东责任",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "这是租的房子。",
+   "roles": [
+    "你",
+    "灭虫公司"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What have you seen?",
+     "zh": "您看到了什么？"
+    },
+    {
+     "r": 0,
+     "en": "Droppings under the sink, and something moving at night.",
+     "zh": "水槽下面有粪便，晚上有东西在动。"
+    },
+    {
+     "r": 1,
+     "en": "Any damage to food packaging?",
+     "zh": "食品包装有被咬吗？"
+    },
+    {
+     "r": 0,
+     "en": "Two bags of flour were chewed open.",
+     "zh": "两袋面粉被咬开了。"
+    },
+    {
+     "r": 1,
+     "en": "That sounds like mice. We can treat this week.",
+     "zh": "听起来是老鼠。这周就能处理。"
+    },
+    {
+     "r": 0,
+     "en": "The landlord should pay for this. Can you bill them directly?",
+     "zh": "这个该房东出钱。能直接开票给他们吗？"
+    },
+    {
+     "r": 1,
+     "en": "Traps in the kitchen, bait only in locked boxes.",
+     "zh": "厨房用夹子，诱饵只放在锁盒里。"
+    },
+    {
+     "r": 0,
+     "en": "How long until they are gone?",
+     "zh": "多久能清干净？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方问你环境细节，你要给准确信息",
+    "prompt": {
+     "en": "Have you seen any gaps where pipes come in?",
+     "zh": "管道进来的地方有缝吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "There is a gap behind the sink cabinet.",
+       "zh": "水槽柜后面有个缝。"
+      },
+      "react": {
+       "en": "That is the entry point. We will seal it.",
+       "zh": "那就是入口。我们会封上。"
+      }
+     },
+     {
+      "say": {
+       "en": "I have not looked. Should I check now?",
+       "zh": "我没看过。现在看一下？"
+      },
+      "react": {
+       "en": "Take a photo and send it before we come.",
+       "zh": "来之前拍张照发我。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Droppings under the sink.",
+     "zh": "水槽下面有粪便。"
+    },
+    {
+     "en": "Chewed open.",
+     "zh": "被咬开了。"
+    },
+    {
+     "en": "Is it safe with a cat?",
+     "zh": "有猫安全吗？"
+    }
+   ]
+  },
+  {
+   "id": "pest-control-6",
+   "g": "pest-control",
+   "name": "找灭虫公司 · 问安全",
+   "cat": "服务",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你有小孩。",
+   "roles": [
+    "你",
+    "灭虫公司"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What have you seen?",
+     "zh": "您看到了什么？"
+    },
+    {
+     "r": 0,
+     "en": "Droppings under the sink, and something moving at night.",
+     "zh": "水槽下面有粪便，晚上有东西在动。"
+    },
+    {
+     "r": 1,
+     "en": "Any damage to food packaging?",
+     "zh": "食品包装有被咬吗？"
+    },
+    {
+     "r": 0,
+     "en": "Two bags of flour were chewed open.",
+     "zh": "两袋面粉被咬开了。"
+    },
+    {
+     "r": 1,
+     "en": "That sounds like mice. We can treat this week.",
+     "zh": "听起来是老鼠。这周就能处理。"
+    },
+    {
+     "r": 0,
+     "en": "Is it safe with a cat in the flat?",
+     "zh": "家里有猫，安全吗？"
+    },
+    {
+     "r": 1,
+     "en": "We have a two-year-old. How long do we stay out?",
+     "zh": "我们有个两岁孩子。要离开多久？"
+    },
+    {
+     "r": 0,
+     "en": "How long until they are gone?",
+     "zh": "多久能清干净？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方问你环境细节，你要给准确信息",
+    "prompt": {
+     "en": "Have you seen any gaps where pipes come in?",
+     "zh": "管道进来的地方有缝吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "There is a gap behind the sink cabinet.",
+       "zh": "水槽柜后面有个缝。"
+      },
+      "react": {
+       "en": "That is the entry point. We will seal it.",
+       "zh": "那就是入口。我们会封上。"
+      }
+     },
+     {
+      "say": {
+       "en": "I have not looked. Should I check now?",
+       "zh": "我没看过。现在看一下？"
+      },
+      "react": {
+       "en": "Take a photo and send it before we come.",
+       "zh": "来之前拍张照发我。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Droppings under the sink.",
+     "zh": "水槽下面有粪便。"
+    },
+    {
+     "en": "Chewed open.",
+     "zh": "被咬开了。"
+    },
+    {
+     "en": "Is it safe with a cat?",
+     "zh": "有猫安全吗？"
+    }
+   ]
+  },
+  {
    "id": "shopping",
    "g": "shopping",
    "name": "退换货 · 拉链坏了",
@@ -46700,6 +50841,4188 @@
     {
      "en": "Anything I can take off your plate?",
      "zh": "有什么我能替你分担的吗？"
+    }
+   ]
+  },
+  {
+   "id": "wedding-invite",
+   "g": "wedding-invite",
+   "name": "婚礼出席与随礼 · 收到请柬",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "同事结婚，请柬上写着 RSVP。",
+   "roles": [
+    "你",
+    "新人"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Are you coming to the wedding?",
+     "zh": "婚礼你来吗？"
+    },
+    {
+     "r": 0,
+     "en": "We are. Is there a gift list anywhere?",
+     "zh": "来。有礼物清单吗？"
+    },
+    {
+     "r": 1,
+     "en": "There is, but honestly we have too much kitchen stuff.",
+     "zh": "有，但说实话厨房东西太多了。"
+    },
+    {
+     "r": 0,
+     "en": "Then we will contribute to the honeymoon fund.",
+     "zh": "那我们出蜜月的份子。"
+    },
+    {
+     "r": 1,
+     "en": "That is very kind. Are you staying for the evening?",
+     "zh": "太客气了。晚上留到最后吗？"
+    },
+    {
+     "r": 0,
+     "en": "We are, but we need to leave by ten for the last train.",
+     "zh": "留，但十点前得走，赶末班车。"
+    },
+    {
+     "r": 1,
+     "en": "The band starts at nine, so that works.",
+     "zh": "乐队九点开始，来得及。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Should we book a taxi in advance?",
+     "zh": "好。要提前订出租车吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "新人提出一个安排，你要判断合不合适",
+    "prompt": {
+     "en": "We are putting a few people up at the hotel. Do you want a room?",
+     "zh": "我们给几个人在酒店订了房。你要一间吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That would save us the last train. Yes, please.",
+       "zh": "那就不用赶末班车了。要。"
+      },
+      "react": {
+       "en": "I will add you to the booking.",
+       "zh": "我把你加进预订。"
+      }
+     },
+     {
+      "say": {
+       "en": "We would rather get home. But thank you.",
+       "zh": "我们还是想回家。不过谢谢。"
+      },
+      "react": {
+       "en": "Then let me book you a taxi at ten.",
+       "zh": "那我给你订十点的车。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Is there a gift list?",
+     "zh": "有礼物清单吗？"
+    },
+    {
+     "en": "Contribute to the honeymoon fund.",
+     "zh": "出蜜月份子。"
+    },
+    {
+     "en": "What is the dress code?",
+     "zh": "着装要求是什么？"
+    }
+   ]
+  },
+  {
+   "id": "wedding-invite-2",
+   "g": "wedding-invite",
+   "name": "婚礼出席与随礼 · 不能去",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你那天出差。",
+   "roles": [
+    "你",
+    "新人"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I am afraid we cannot make it. I am away that weekend.",
+     "zh": "恐怕我们去不了。那个周末我出差。"
+    },
+    {
+     "r": 0,
+     "en": "That is a shame. We will send you photos.",
+     "zh": "真可惜。我们给你发照片。"
+    },
+    {
+     "r": 1,
+     "en": "There is, but honestly we have too much kitchen stuff.",
+     "zh": "有，但说实话厨房东西太多了。"
+    },
+    {
+     "r": 0,
+     "en": "Then we will contribute to the honeymoon fund.",
+     "zh": "那我们出蜜月的份子。"
+    },
+    {
+     "r": 1,
+     "en": "That is very kind. Are you staying for the evening?",
+     "zh": "太客气了。晚上留到最后吗？"
+    },
+    {
+     "r": 0,
+     "en": "We are, but we need to leave by ten for the last train.",
+     "zh": "留，但十点前得走，赶末班车。"
+    },
+    {
+     "r": 1,
+     "en": "The band starts at nine, so that works.",
+     "zh": "乐队九点开始，来得及。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Should we book a taxi in advance?",
+     "zh": "好。要提前订出租车吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "新人提出一个安排，你要判断合不合适",
+    "prompt": {
+     "en": "We are putting a few people up at the hotel. Do you want a room?",
+     "zh": "我们给几个人在酒店订了房。你要一间吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That would save us the last train. Yes, please.",
+       "zh": "那就不用赶末班车了。要。"
+      },
+      "react": {
+       "en": "I will add you to the booking.",
+       "zh": "我把你加进预订。"
+      }
+     },
+     {
+      "say": {
+       "en": "We would rather get home. But thank you.",
+       "zh": "我们还是想回家。不过谢谢。"
+      },
+      "react": {
+       "en": "Then let me book you a taxi at ten.",
+       "zh": "那我给你订十点的车。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Is there a gift list?",
+     "zh": "有礼物清单吗？"
+    },
+    {
+     "en": "Contribute to the honeymoon fund.",
+     "zh": "出蜜月份子。"
+    },
+    {
+     "en": "What is the dress code?",
+     "zh": "着装要求是什么？"
+    }
+   ]
+  },
+  {
+   "id": "wedding-invite-3",
+   "g": "wedding-invite",
+   "name": "婚礼出席与随礼 · 带不带孩子",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "请柬上没写。",
+   "roles": [
+    "你",
+    "新人"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Are you coming to the wedding?",
+     "zh": "婚礼你来吗？"
+    },
+    {
+     "r": 0,
+     "en": "We are. Is there a gift list anywhere?",
+     "zh": "来。有礼物清单吗？"
+    },
+    {
+     "r": 1,
+     "en": "There is, but honestly we have too much kitchen stuff.",
+     "zh": "有，但说实话厨房东西太多了。"
+    },
+    {
+     "r": 0,
+     "en": "Then we will contribute to the honeymoon fund.",
+     "zh": "那我们出蜜月的份子。"
+    },
+    {
+     "r": 1,
+     "en": "Is it an adults-only evening? We have a six-year-old.",
+     "zh": "晚上是只限成人吗？我们有个六岁的孩子。"
+    },
+    {
+     "r": 0,
+     "en": "There is a children table until eight, then a sitter.",
+     "zh": "八点前有儿童桌，之后有看护。"
+    },
+    {
+     "r": 1,
+     "en": "The band starts at nine, so that works.",
+     "zh": "乐队九点开始，来得及。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Should we book a taxi in advance?",
+     "zh": "好。要提前订出租车吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "新人提出一个安排，你要判断合不合适",
+    "prompt": {
+     "en": "We are putting a few people up at the hotel. Do you want a room?",
+     "zh": "我们给几个人在酒店订了房。你要一间吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That would save us the last train. Yes, please.",
+       "zh": "那就不用赶末班车了。要。"
+      },
+      "react": {
+       "en": "I will add you to the booking.",
+       "zh": "我把你加进预订。"
+      }
+     },
+     {
+      "say": {
+       "en": "We would rather get home. But thank you.",
+       "zh": "我们还是想回家。不过谢谢。"
+      },
+      "react": {
+       "en": "Then let me book you a taxi at ten.",
+       "zh": "那我给你订十点的车。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Is there a gift list?",
+     "zh": "有礼物清单吗？"
+    },
+    {
+     "en": "Contribute to the honeymoon fund.",
+     "zh": "出蜜月份子。"
+    },
+    {
+     "en": "What is the dress code?",
+     "zh": "着装要求是什么？"
+    }
+   ]
+  },
+  {
+   "id": "wedding-invite-4",
+   "g": "wedding-invite",
+   "name": "婚礼出席与随礼 · 穿什么",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你不确定着装要求。",
+   "roles": [
+    "你",
+    "新人"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Are you coming to the wedding?",
+     "zh": "婚礼你来吗？"
+    },
+    {
+     "r": 0,
+     "en": "We are. Is there a gift list anywhere?",
+     "zh": "来。有礼物清单吗？"
+    },
+    {
+     "r": 1,
+     "en": "There is, but honestly we have too much kitchen stuff.",
+     "zh": "有，但说实话厨房东西太多了。"
+    },
+    {
+     "r": 0,
+     "en": "Then we will contribute to the honeymoon fund.",
+     "zh": "那我们出蜜月的份子。"
+    },
+    {
+     "r": 1,
+     "en": "That is very kind. Are you staying for the evening?",
+     "zh": "太客气了。晚上留到最后吗？"
+    },
+    {
+     "r": 0,
+     "en": "We are, but we need to leave by ten for the last train.",
+     "zh": "留，但十点前得走，赶末班车。"
+    },
+    {
+     "r": 1,
+     "en": "What is the dress code? The invitation only says smart.",
+     "zh": "着装要求是什么？请柬只写了「正式」。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Should we book a taxi in advance?",
+     "zh": "好。要提前订出租车吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "新人提出一个安排，你要判断合不合适",
+    "prompt": {
+     "en": "We are putting a few people up at the hotel. Do you want a room?",
+     "zh": "我们给几个人在酒店订了房。你要一间吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That would save us the last train. Yes, please.",
+       "zh": "那就不用赶末班车了。要。"
+      },
+      "react": {
+       "en": "I will add you to the booking.",
+       "zh": "我把你加进预订。"
+      }
+     },
+     {
+      "say": {
+       "en": "We would rather get home. But thank you.",
+       "zh": "我们还是想回家。不过谢谢。"
+      },
+      "react": {
+       "en": "Then let me book you a taxi at ten.",
+       "zh": "那我给你订十点的车。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Is there a gift list?",
+     "zh": "有礼物清单吗？"
+    },
+    {
+     "en": "Contribute to the honeymoon fund.",
+     "zh": "出蜜月份子。"
+    },
+    {
+     "en": "What is the dress code?",
+     "zh": "着装要求是什么？"
+    }
+   ]
+  },
+  {
+   "id": "wedding-invite-5",
+   "g": "wedding-invite",
+   "name": "婚礼出席与随礼 · 随礼金额",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你不知道给多少合适。",
+   "roles": [
+    "你",
+    "新人"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Are you coming to the wedding?",
+     "zh": "婚礼你来吗？"
+    },
+    {
+     "r": 0,
+     "en": "We are. Is there a gift list anywhere?",
+     "zh": "来。有礼物清单吗？"
+    },
+    {
+     "r": 1,
+     "en": "There is, but honestly we have too much kitchen stuff.",
+     "zh": "有，但说实话厨房东西太多了。"
+    },
+    {
+     "r": 0,
+     "en": "Is there a suggested amount for the fund? We do not want to be rude.",
+     "zh": "蜜月基金有建议金额吗？我们不想失礼。"
+    },
+    {
+     "r": 1,
+     "en": "That is very kind. Are you staying for the evening?",
+     "zh": "太客气了。晚上留到最后吗？"
+    },
+    {
+     "r": 0,
+     "en": "We are, but we need to leave by ten for the last train.",
+     "zh": "留，但十点前得走，赶末班车。"
+    },
+    {
+     "r": 1,
+     "en": "The band starts at nine, so that works.",
+     "zh": "乐队九点开始，来得及。"
+    },
+    {
+     "r": 0,
+     "en": "Good. Should we book a taxi in advance?",
+     "zh": "好。要提前订出租车吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "新人提出一个安排，你要判断合不合适",
+    "prompt": {
+     "en": "We are putting a few people up at the hotel. Do you want a room?",
+     "zh": "我们给几个人在酒店订了房。你要一间吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That would save us the last train. Yes, please.",
+       "zh": "那就不用赶末班车了。要。"
+      },
+      "react": {
+       "en": "I will add you to the booking.",
+       "zh": "我把你加进预订。"
+      }
+     },
+     {
+      "say": {
+       "en": "We would rather get home. But thank you.",
+       "zh": "我们还是想回家。不过谢谢。"
+      },
+      "react": {
+       "en": "Then let me book you a taxi at ten.",
+       "zh": "那我给你订十点的车。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Is there a gift list?",
+     "zh": "有礼物清单吗？"
+    },
+    {
+     "en": "Contribute to the honeymoon fund.",
+     "zh": "出蜜月份子。"
+    },
+    {
+     "en": "What is the dress code?",
+     "zh": "着装要求是什么？"
+    }
+   ]
+  },
+  {
+   "id": "wedding-invite-6",
+   "g": "wedding-invite",
+   "name": "婚礼出席与随礼 · 帮忙",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你想问需不需要帮手。",
+   "roles": [
+    "你",
+    "新人"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Are you coming to the wedding?",
+     "zh": "婚礼你来吗？"
+    },
+    {
+     "r": 0,
+     "en": "We are. Is there a gift list anywhere?",
+     "zh": "来。有礼物清单吗？"
+    },
+    {
+     "r": 1,
+     "en": "There is, but honestly we have too much kitchen stuff.",
+     "zh": "有，但说实话厨房东西太多了。"
+    },
+    {
+     "r": 0,
+     "en": "Then we will contribute to the honeymoon fund.",
+     "zh": "那我们出蜜月的份子。"
+    },
+    {
+     "r": 1,
+     "en": "That is very kind. Are you staying for the evening?",
+     "zh": "太客气了。晚上留到最后吗？"
+    },
+    {
+     "r": 0,
+     "en": "We are, but we need to leave by ten for the last train.",
+     "zh": "留，但十点前得走，赶末班车。"
+    },
+    {
+     "r": 1,
+     "en": "The band starts at nine, so that works.",
+     "zh": "乐队九点开始，来得及。"
+    },
+    {
+     "r": 0,
+     "en": "Do you need anyone to help on the day?",
+     "zh": "当天需要人帮忙吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "新人提出一个安排，你要判断合不合适",
+    "prompt": {
+     "en": "We are putting a few people up at the hotel. Do you want a room?",
+     "zh": "我们给几个人在酒店订了房。你要一间吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That would save us the last train. Yes, please.",
+       "zh": "那就不用赶末班车了。要。"
+      },
+      "react": {
+       "en": "I will add you to the booking.",
+       "zh": "我把你加进预订。"
+      }
+     },
+     {
+      "say": {
+       "en": "We would rather get home. But thank you.",
+       "zh": "我们还是想回家。不过谢谢。"
+      },
+      "react": {
+       "en": "Then let me book you a taxi at ten.",
+       "zh": "那我给你订十点的车。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Is there a gift list?",
+     "zh": "有礼物清单吗？"
+    },
+    {
+     "en": "Contribute to the honeymoon fund.",
+     "zh": "出蜜月份子。"
+    },
+    {
+     "en": "What is the dress code?",
+     "zh": "着装要求是什么？"
+    }
+   ]
+  },
+  {
+   "id": "hallway-bike",
+   "g": "hallway-bike",
+   "name": "楼道堆放被投诉 · 自行车挡道",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "邻居来敲门，说楼道里的车挡了消防通道。",
+   "roles": [
+    "你",
+    "邻居"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Is this your bike in the hallway?",
+     "zh": "楼道里这辆自行车是你的吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is. There is nowhere else to put it.",
+     "zh": "是。没别的地方放。"
+    },
+    {
+     "r": 1,
+     "en": "It blocks the fire exit. The management have complained.",
+     "zh": "它挡了消防通道。物业投诉了。"
+    },
+    {
+     "r": 0,
+     "en": "I did not know that. Where do others keep theirs?",
+     "zh": "我不知道。别人的放哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "In the bike store at the back. It is free.",
+     "zh": "后面有自行车库。免费的。"
+    },
+    {
+     "r": 0,
+     "en": "I do not have a key. How do I get one?",
+     "zh": "我没有钥匙。怎么拿？"
+    },
+    {
+     "r": 1,
+     "en": "Ask the concierge. It takes a day.",
+     "zh": "找前台。一天就好。"
+    },
+    {
+     "r": 0,
+     "en": "I will move it tonight and get the key tomorrow.",
+     "zh": "我今晚挪走，明天去拿钥匙。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "邻居追问你什么时候处理，你要给出时间表",
+    "prompt": {
+     "en": "When can you move it? The inspection is on Friday.",
+     "zh": "什么时候能挪？周五检查。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Tonight. I will carry it down before dinner.",
+       "zh": "今晚。晚饭前搬下去。"
+      },
+      "react": {
+       "en": "Then we are fine. Thanks for being quick.",
+       "zh": "那就没问题。谢谢你痛快。"
+      }
+     },
+     {
+      "say": {
+       "en": "Friday morning at the latest.",
+       "zh": "最晚周五早上。"
+      },
+      "react": {
+       "en": "Make it Thursday, in case they come early.",
+       "zh": "周四吧，万一他们早来。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It blocks the fire exit.",
+     "zh": "它挡了消防通道。"
+    },
+    {
+     "en": "Where do others keep theirs?",
+     "zh": "别人的放哪儿？"
+    },
+    {
+     "en": "I should have asked before leaving it there.",
+     "zh": "我该先问一声。"
+    }
+   ]
+  },
+  {
+   "id": "hallway-bike-2",
+   "g": "hallway-bike",
+   "name": "楼道堆放被投诉 · 婴儿车",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你放的是婴儿车。",
+   "roles": [
+    "你",
+    "邻居"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Is this your bike in the hallway?",
+     "zh": "楼道里这辆自行车是你的吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is a pram, not a bike. I cannot carry it up four flights.",
+     "zh": "是婴儿车，不是自行车。我抱不上四楼。"
+    },
+    {
+     "r": 1,
+     "en": "I understand, but it still blocks the exit.",
+     "zh": "我理解，但它还是挡着出口。"
+    },
+    {
+     "r": 0,
+     "en": "I did not know that. Where do others keep theirs?",
+     "zh": "我不知道。别人的放哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "In the bike store at the back. It is free.",
+     "zh": "后面有自行车库。免费的。"
+    },
+    {
+     "r": 0,
+     "en": "I do not have a key. How do I get one?",
+     "zh": "我没有钥匙。怎么拿？"
+    },
+    {
+     "r": 1,
+     "en": "Ask the concierge. It takes a day.",
+     "zh": "找前台。一天就好。"
+    },
+    {
+     "r": 0,
+     "en": "I will move it tonight and get the key tomorrow.",
+     "zh": "我今晚挪走，明天去拿钥匙。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "邻居追问你什么时候处理，你要给出时间表",
+    "prompt": {
+     "en": "When can you move it? The inspection is on Friday.",
+     "zh": "什么时候能挪？周五检查。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Tonight. I will carry it down before dinner.",
+       "zh": "今晚。晚饭前搬下去。"
+      },
+      "react": {
+       "en": "Then we are fine. Thanks for being quick.",
+       "zh": "那就没问题。谢谢你痛快。"
+      }
+     },
+     {
+      "say": {
+       "en": "Friday morning at the latest.",
+       "zh": "最晚周五早上。"
+      },
+      "react": {
+       "en": "Make it Thursday, in case they come early.",
+       "zh": "周四吧，万一他们早来。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It blocks the fire exit.",
+     "zh": "它挡了消防通道。"
+    },
+    {
+     "en": "Where do others keep theirs?",
+     "zh": "别人的放哪儿？"
+    },
+    {
+     "en": "I should have asked before leaving it there.",
+     "zh": "我该先问一声。"
+    }
+   ]
+  },
+  {
+   "id": "hallway-bike-3",
+   "g": "hallway-bike",
+   "name": "楼道堆放被投诉 · 鞋柜",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你在门口放了鞋柜。",
+   "roles": [
+    "你",
+    "邻居"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Is the shoe rack a problem too? It is only ten centimetres deep.",
+     "zh": "鞋柜也有问题吗？只有十厘米厚。"
+    },
+    {
+     "r": 0,
+     "en": "It is. There is nowhere else to put it.",
+     "zh": "是。没别的地方放。"
+    },
+    {
+     "r": 1,
+     "en": "It blocks the fire exit. The management have complained.",
+     "zh": "它挡了消防通道。物业投诉了。"
+    },
+    {
+     "r": 0,
+     "en": "I did not know that. Where do others keep theirs?",
+     "zh": "我不知道。别人的放哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "In the bike store at the back. It is free.",
+     "zh": "后面有自行车库。免费的。"
+    },
+    {
+     "r": 0,
+     "en": "I do not have a key. How do I get one?",
+     "zh": "我没有钥匙。怎么拿？"
+    },
+    {
+     "r": 1,
+     "en": "Ask the concierge. It takes a day.",
+     "zh": "找前台。一天就好。"
+    },
+    {
+     "r": 0,
+     "en": "I will move it tonight and get the key tomorrow.",
+     "zh": "我今晚挪走，明天去拿钥匙。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "邻居追问你什么时候处理，你要给出时间表",
+    "prompt": {
+     "en": "When can you move it? The inspection is on Friday.",
+     "zh": "什么时候能挪？周五检查。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Tonight. I will carry it down before dinner.",
+       "zh": "今晚。晚饭前搬下去。"
+      },
+      "react": {
+       "en": "Then we are fine. Thanks for being quick.",
+       "zh": "那就没问题。谢谢你痛快。"
+      }
+     },
+     {
+      "say": {
+       "en": "Friday morning at the latest.",
+       "zh": "最晚周五早上。"
+      },
+      "react": {
+       "en": "Make it Thursday, in case they come early.",
+       "zh": "周四吧，万一他们早来。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It blocks the fire exit.",
+     "zh": "它挡了消防通道。"
+    },
+    {
+     "en": "Where do others keep theirs?",
+     "zh": "别人的放哪儿？"
+    },
+    {
+     "en": "I should have asked before leaving it there.",
+     "zh": "我该先问一声。"
+    }
+   ]
+  },
+  {
+   "id": "hallway-bike-4",
+   "g": "hallway-bike",
+   "name": "楼道堆放被投诉 · 对方也堆",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "邻居自己也放东西。",
+   "roles": [
+    "你",
+    "邻居"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Is this your bike in the hallway?",
+     "zh": "楼道里这辆自行车是你的吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is. There is nowhere else to put it.",
+     "zh": "是。没别的地方放。"
+    },
+    {
+     "r": 1,
+     "en": "Your boxes have been there since March. Should we both clear them?",
+     "zh": "你的箱子从三月就在那儿。要不清一起清？"
+    },
+    {
+     "r": 0,
+     "en": "Fair. I will take mine down this week.",
+     "zh": "有道理。我这周把我的收走。"
+    },
+    {
+     "r": 1,
+     "en": "In the bike store at the back. It is free.",
+     "zh": "后面有自行车库。免费的。"
+    },
+    {
+     "r": 0,
+     "en": "I do not have a key. How do I get one?",
+     "zh": "我没有钥匙。怎么拿？"
+    },
+    {
+     "r": 1,
+     "en": "Ask the concierge. It takes a day.",
+     "zh": "找前台。一天就好。"
+    },
+    {
+     "r": 0,
+     "en": "I will move it tonight and get the key tomorrow.",
+     "zh": "我今晚挪走，明天去拿钥匙。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "邻居追问你什么时候处理，你要给出时间表",
+    "prompt": {
+     "en": "When can you move it? The inspection is on Friday.",
+     "zh": "什么时候能挪？周五检查。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Tonight. I will carry it down before dinner.",
+       "zh": "今晚。晚饭前搬下去。"
+      },
+      "react": {
+       "en": "Then we are fine. Thanks for being quick.",
+       "zh": "那就没问题。谢谢你痛快。"
+      }
+     },
+     {
+      "say": {
+       "en": "Friday morning at the latest.",
+       "zh": "最晚周五早上。"
+      },
+      "react": {
+       "en": "Make it Thursday, in case they come early.",
+       "zh": "周四吧，万一他们早来。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It blocks the fire exit.",
+     "zh": "它挡了消防通道。"
+    },
+    {
+     "en": "Where do others keep theirs?",
+     "zh": "别人的放哪儿？"
+    },
+    {
+     "en": "I should have asked before leaving it there.",
+     "zh": "我该先问一声。"
+    }
+   ]
+  },
+  {
+   "id": "hallway-bike-5",
+   "g": "hallway-bike",
+   "name": "楼道堆放被投诉 · 被投诉到物业",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "物业发了正式通知。",
+   "roles": [
+    "你",
+    "邻居"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Is this your bike in the hallway?",
+     "zh": "楼道里这辆自行车是你的吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is. There is nowhere else to put it.",
+     "zh": "是。没别的地方放。"
+    },
+    {
+     "r": 1,
+     "en": "It blocks the fire exit. The management have complained.",
+     "zh": "它挡了消防通道。物业投诉了。"
+    },
+    {
+     "r": 0,
+     "en": "I did not know that. Where do others keep theirs?",
+     "zh": "我不知道。别人的放哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "In the bike store at the back. It is free.",
+     "zh": "后面有自行车库。免费的。"
+    },
+    {
+     "r": 0,
+     "en": "I got a letter from the management. Is there a deadline?",
+     "zh": "我收到物业的信。有截止日期吗？"
+    },
+    {
+     "r": 1,
+     "en": "Ask the concierge. It takes a day.",
+     "zh": "找前台。一天就好。"
+    },
+    {
+     "r": 0,
+     "en": "I will move it tonight and get the key tomorrow.",
+     "zh": "我今晚挪走，明天去拿钥匙。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "邻居追问你什么时候处理，你要给出时间表",
+    "prompt": {
+     "en": "When can you move it? The inspection is on Friday.",
+     "zh": "什么时候能挪？周五检查。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Tonight. I will carry it down before dinner.",
+       "zh": "今晚。晚饭前搬下去。"
+      },
+      "react": {
+       "en": "Then we are fine. Thanks for being quick.",
+       "zh": "那就没问题。谢谢你痛快。"
+      }
+     },
+     {
+      "say": {
+       "en": "Friday morning at the latest.",
+       "zh": "最晚周五早上。"
+      },
+      "react": {
+       "en": "Make it Thursday, in case they come early.",
+       "zh": "周四吧，万一他们早来。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It blocks the fire exit.",
+     "zh": "它挡了消防通道。"
+    },
+    {
+     "en": "Where do others keep theirs?",
+     "zh": "别人的放哪儿？"
+    },
+    {
+     "en": "I should have asked before leaving it there.",
+     "zh": "我该先问一声。"
+    }
+   ]
+  },
+  {
+   "id": "hallway-bike-6",
+   "g": "hallway-bike",
+   "name": "楼道堆放被投诉 · 道歉",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你意识到是自己的问题。",
+   "roles": [
+    "你",
+    "邻居"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Is this your bike in the hallway?",
+     "zh": "楼道里这辆自行车是你的吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is. There is nowhere else to put it.",
+     "zh": "是。没别的地方放。"
+    },
+    {
+     "r": 1,
+     "en": "It blocks the fire exit. The management have complained.",
+     "zh": "它挡了消防通道。物业投诉了。"
+    },
+    {
+     "r": 0,
+     "en": "I did not know that. Where do others keep theirs?",
+     "zh": "我不知道。别人的放哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "In the bike store at the back. It is free.",
+     "zh": "后面有自行车库。免费的。"
+    },
+    {
+     "r": 0,
+     "en": "I do not have a key. How do I get one?",
+     "zh": "我没有钥匙。怎么拿？"
+    },
+    {
+     "r": 1,
+     "en": "Ask the concierge. It takes a day.",
+     "zh": "找前台。一天就好。"
+    },
+    {
+     "r": 0,
+     "en": "I am sorry. I should have asked before leaving it there.",
+     "zh": "抱歉。我该先问一声再放。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "邻居追问你什么时候处理，你要给出时间表",
+    "prompt": {
+     "en": "When can you move it? The inspection is on Friday.",
+     "zh": "什么时候能挪？周五检查。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Tonight. I will carry it down before dinner.",
+       "zh": "今晚。晚饭前搬下去。"
+      },
+      "react": {
+       "en": "Then we are fine. Thanks for being quick.",
+       "zh": "那就没问题。谢谢你痛快。"
+      }
+     },
+     {
+      "say": {
+       "en": "Friday morning at the latest.",
+       "zh": "最晚周五早上。"
+      },
+      "react": {
+       "en": "Make it Thursday, in case they come early.",
+       "zh": "周四吧，万一他们早来。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It blocks the fire exit.",
+     "zh": "它挡了消防通道。"
+    },
+    {
+     "en": "Where do others keep theirs?",
+     "zh": "别人的放哪儿？"
+    },
+    {
+     "en": "I should have asked before leaving it there.",
+     "zh": "我该先问一声。"
+    }
+   ]
+  },
+  {
+   "id": "group-plan",
+   "g": "group-plan",
+   "name": "群聊约周末 · 被拉去攀岩",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "群里临时组局，你谁都不太熟。",
+   "roles": [
+    "你",
+    "朋友"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Are you free Saturday? A few of us are going climbing.",
+     "zh": "周六有空吗？我们几个人去攀岩。"
+    },
+    {
+     "r": 0,
+     "en": "I am, but I have never climbed outdoors.",
+     "zh": "有空，但我没在户外爬过。"
+    },
+    {
+     "r": 1,
+     "en": "You can come and watch, or try the easy routes.",
+     "zh": "你可以来看，或者试试简单的线路。"
+    },
+    {
+     "r": 0,
+     "en": "What gear do I need?",
+     "zh": "需要什么装备？"
+    },
+    {
+     "r": 1,
+     "en": "Shoes and a helmet. We have spares.",
+     "zh": "鞋和头盔。我们有备用的。"
+    },
+    {
+     "r": 0,
+     "en": "What time are you meeting?",
+     "zh": "几点集合？"
+    },
+    {
+     "r": 1,
+     "en": "Eight at the car park. It is an hour away.",
+     "zh": "八点停车场。开过去一小时。"
+    },
+    {
+     "r": 0,
+     "en": "Count me in. I will bring coffee.",
+     "zh": "算我一个。我带咖啡。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方问你的体力情况，你要如实说",
+    "prompt": {
+     "en": "Can you do a two-hour walk with some uphill?",
+     "zh": "两小时带点上坡的徒步你行吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I can, but slowly. I will not hold anyone up if I start early.",
+       "zh": "行，但慢。我早点出发就不拖人。"
+      },
+      "react": {
+       "en": "That is the right attitude.",
+       "zh": "这态度就对。"
+      }
+     },
+     {
+      "say": {
+       "en": "Honestly, I am not sure. Is there a shorter option?",
+       "zh": "说实话不确定。有短一点的吗？"
+      },
+      "react": {
+       "en": "You can turn back at the ridge. Nobody minds.",
+       "zh": "到山脊可以折返。没人介意。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Count me in.",
+     "zh": "算我一个。"
+    },
+    {
+     "en": "Can I get a lift?",
+     "zh": "能搭个车吗？"
+    },
+    {
+     "en": "Are we still going?",
+     "zh": "还去吗？"
+    }
+   ]
+  },
+  {
+   "id": "group-plan-2",
+   "g": "group-plan",
+   "name": "群聊约周末 · 不想去但想社交",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你不想攀岩，但想认识人。",
+   "roles": [
+    "你",
+    "朋友"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Are you free Saturday? A few of us are going climbing.",
+     "zh": "周六有空吗？我们几个人去攀岩。"
+    },
+    {
+     "r": 0,
+     "en": "I am, but I have never climbed outdoors.",
+     "zh": "有空，但我没在户外爬过。"
+    },
+    {
+     "r": 1,
+     "en": "I would rather not climb. Is there a walking route nearby?",
+     "zh": "我不太想爬。附近有徒步路线吗？"
+    },
+    {
+     "r": 0,
+     "en": "There is a loop around the lake. Two hours, flat.",
+     "zh": "湖边有个环线。两小时，平路。"
+    },
+    {
+     "r": 1,
+     "en": "Shoes and a helmet. We have spares.",
+     "zh": "鞋和头盔。我们有备用的。"
+    },
+    {
+     "r": 0,
+     "en": "What time are you meeting?",
+     "zh": "几点集合？"
+    },
+    {
+     "r": 1,
+     "en": "Eight at the car park. It is an hour away.",
+     "zh": "八点停车场。开过去一小时。"
+    },
+    {
+     "r": 0,
+     "en": "Count me in. I will bring coffee.",
+     "zh": "算我一个。我带咖啡。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方问你的体力情况，你要如实说",
+    "prompt": {
+     "en": "Can you do a two-hour walk with some uphill?",
+     "zh": "两小时带点上坡的徒步你行吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I can, but slowly. I will not hold anyone up if I start early.",
+       "zh": "行，但慢。我早点出发就不拖人。"
+      },
+      "react": {
+       "en": "That is the right attitude.",
+       "zh": "这态度就对。"
+      }
+     },
+     {
+      "say": {
+       "en": "Honestly, I am not sure. Is there a shorter option?",
+       "zh": "说实话不确定。有短一点的吗？"
+      },
+      "react": {
+       "en": "You can turn back at the ridge. Nobody minds.",
+       "zh": "到山脊可以折返。没人介意。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Count me in.",
+     "zh": "算我一个。"
+    },
+    {
+     "en": "Can I get a lift?",
+     "zh": "能搭个车吗？"
+    },
+    {
+     "en": "Are we still going?",
+     "zh": "还去吗？"
+    }
+   ]
+  },
+  {
+   "id": "group-plan-3",
+   "g": "group-plan",
+   "name": "群聊约周末 · 改时间",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你周六上午有事。",
+   "roles": [
+    "你",
+    "朋友"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Could we do the afternoon instead? I have a viewing at ten.",
+     "zh": "能改下午吗？我十点要看房。"
+    },
+    {
+     "r": 0,
+     "en": "I am, but I have never climbed outdoors.",
+     "zh": "有空，但我没在户外爬过。"
+    },
+    {
+     "r": 1,
+     "en": "You can come and watch, or try the easy routes.",
+     "zh": "你可以来看，或者试试简单的线路。"
+    },
+    {
+     "r": 0,
+     "en": "What gear do I need?",
+     "zh": "需要什么装备？"
+    },
+    {
+     "r": 1,
+     "en": "Shoes and a helmet. We have spares.",
+     "zh": "鞋和头盔。我们有备用的。"
+    },
+    {
+     "r": 0,
+     "en": "What time are you meeting?",
+     "zh": "几点集合？"
+    },
+    {
+     "r": 1,
+     "en": "Eight at the car park. It is an hour away.",
+     "zh": "八点停车场。开过去一小时。"
+    },
+    {
+     "r": 0,
+     "en": "Count me in. I will bring coffee.",
+     "zh": "算我一个。我带咖啡。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方问你的体力情况，你要如实说",
+    "prompt": {
+     "en": "Can you do a two-hour walk with some uphill?",
+     "zh": "两小时带点上坡的徒步你行吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I can, but slowly. I will not hold anyone up if I start early.",
+       "zh": "行，但慢。我早点出发就不拖人。"
+      },
+      "react": {
+       "en": "That is the right attitude.",
+       "zh": "这态度就对。"
+      }
+     },
+     {
+      "say": {
+       "en": "Honestly, I am not sure. Is there a shorter option?",
+       "zh": "说实话不确定。有短一点的吗？"
+      },
+      "react": {
+       "en": "You can turn back at the ridge. Nobody minds.",
+       "zh": "到山脊可以折返。没人介意。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Count me in.",
+     "zh": "算我一个。"
+    },
+    {
+     "en": "Can I get a lift?",
+     "zh": "能搭个车吗？"
+    },
+    {
+     "en": "Are we still going?",
+     "zh": "还去吗？"
+    }
+   ]
+  },
+  {
+   "id": "group-plan-4",
+   "g": "group-plan",
+   "name": "群聊约周末 · 交通",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你没有车。",
+   "roles": [
+    "你",
+    "朋友"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Are you free Saturday? A few of us are going climbing.",
+     "zh": "周六有空吗？我们几个人去攀岩。"
+    },
+    {
+     "r": 0,
+     "en": "I am, but I have never climbed outdoors.",
+     "zh": "有空，但我没在户外爬过。"
+    },
+    {
+     "r": 1,
+     "en": "You can come and watch, or try the easy routes.",
+     "zh": "你可以来看，或者试试简单的线路。"
+    },
+    {
+     "r": 0,
+     "en": "What gear do I need?",
+     "zh": "需要什么装备？"
+    },
+    {
+     "r": 1,
+     "en": "Shoes and a helmet. We have spares.",
+     "zh": "鞋和头盔。我们有备用的。"
+    },
+    {
+     "r": 0,
+     "en": "I do not have a car. Can I get a lift?",
+     "zh": "我没车。能搭个顺风车吗？"
+    },
+    {
+     "r": 1,
+     "en": "Sam is driving and has two seats.",
+     "zh": "Sam 开车，还有两个位子。"
+    },
+    {
+     "r": 0,
+     "en": "Count me in. I will bring coffee.",
+     "zh": "算我一个。我带咖啡。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方问你的体力情况，你要如实说",
+    "prompt": {
+     "en": "Can you do a two-hour walk with some uphill?",
+     "zh": "两小时带点上坡的徒步你行吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I can, but slowly. I will not hold anyone up if I start early.",
+       "zh": "行，但慢。我早点出发就不拖人。"
+      },
+      "react": {
+       "en": "That is the right attitude.",
+       "zh": "这态度就对。"
+      }
+     },
+     {
+      "say": {
+       "en": "Honestly, I am not sure. Is there a shorter option?",
+       "zh": "说实话不确定。有短一点的吗？"
+      },
+      "react": {
+       "en": "You can turn back at the ridge. Nobody minds.",
+       "zh": "到山脊可以折返。没人介意。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Count me in.",
+     "zh": "算我一个。"
+    },
+    {
+     "en": "Can I get a lift?",
+     "zh": "能搭个车吗？"
+    },
+    {
+     "en": "Are we still going?",
+     "zh": "还去吗？"
+    }
+   ]
+  },
+  {
+   "id": "group-plan-5",
+   "g": "group-plan",
+   "name": "群聊约周末 · 天气",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "预报有雨。",
+   "roles": [
+    "你",
+    "朋友"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Are you free Saturday? A few of us are going climbing.",
+     "zh": "周六有空吗？我们几个人去攀岩。"
+    },
+    {
+     "r": 0,
+     "en": "I am, but I have never climbed outdoors.",
+     "zh": "有空，但我没在户外爬过。"
+    },
+    {
+     "r": 1,
+     "en": "You can come and watch, or try the easy routes.",
+     "zh": "你可以来看，或者试试简单的线路。"
+    },
+    {
+     "r": 0,
+     "en": "What gear do I need?",
+     "zh": "需要什么装备？"
+    },
+    {
+     "r": 1,
+     "en": "Shoes and a helmet. We have spares.",
+     "zh": "鞋和头盔。我们有备用的。"
+    },
+    {
+     "r": 0,
+     "en": "What time are you meeting?",
+     "zh": "几点集合？"
+    },
+    {
+     "r": 1,
+     "en": "Eight at the car park. It is an hour away.",
+     "zh": "八点停车场。开过去一小时。"
+    },
+    {
+     "r": 0,
+     "en": "The forecast says rain. Are we still going?",
+     "zh": "预报有雨。还去吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方问你的体力情况，你要如实说",
+    "prompt": {
+     "en": "Can you do a two-hour walk with some uphill?",
+     "zh": "两小时带点上坡的徒步你行吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I can, but slowly. I will not hold anyone up if I start early.",
+       "zh": "行，但慢。我早点出发就不拖人。"
+      },
+      "react": {
+       "en": "That is the right attitude.",
+       "zh": "这态度就对。"
+      }
+     },
+     {
+      "say": {
+       "en": "Honestly, I am not sure. Is there a shorter option?",
+       "zh": "说实话不确定。有短一点的吗？"
+      },
+      "react": {
+       "en": "You can turn back at the ridge. Nobody minds.",
+       "zh": "到山脊可以折返。没人介意。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Count me in.",
+     "zh": "算我一个。"
+    },
+    {
+     "en": "Can I get a lift?",
+     "zh": "能搭个车吗？"
+    },
+    {
+     "en": "Are we still going?",
+     "zh": "还去吗？"
+    }
+   ]
+  },
+  {
+   "id": "group-plan-6",
+   "g": "group-plan",
+   "name": "群聊约周末 · 带人",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你想带朋友。",
+   "roles": [
+    "你",
+    "朋友"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Are you free Saturday? A few of us are going climbing.",
+     "zh": "周六有空吗？我们几个人去攀岩。"
+    },
+    {
+     "r": 0,
+     "en": "I am, but I have never climbed outdoors.",
+     "zh": "有空，但我没在户外爬过。"
+    },
+    {
+     "r": 1,
+     "en": "You can come and watch, or try the easy routes.",
+     "zh": "你可以来看，或者试试简单的线路。"
+    },
+    {
+     "r": 0,
+     "en": "Can I bring someone who has never tried it?",
+     "zh": "我能带个没试过的人吗？"
+    },
+    {
+     "r": 1,
+     "en": "Shoes and a helmet. We have spares.",
+     "zh": "鞋和头盔。我们有备用的。"
+    },
+    {
+     "r": 0,
+     "en": "What time are you meeting?",
+     "zh": "几点集合？"
+    },
+    {
+     "r": 1,
+     "en": "Eight at the car park. It is an hour away.",
+     "zh": "八点停车场。开过去一小时。"
+    },
+    {
+     "r": 0,
+     "en": "Count me in. I will bring coffee.",
+     "zh": "算我一个。我带咖啡。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方问你的体力情况，你要如实说",
+    "prompt": {
+     "en": "Can you do a two-hour walk with some uphill?",
+     "zh": "两小时带点上坡的徒步你行吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I can, but slowly. I will not hold anyone up if I start early.",
+       "zh": "行，但慢。我早点出发就不拖人。"
+      },
+      "react": {
+       "en": "That is the right attitude.",
+       "zh": "这态度就对。"
+      }
+     },
+     {
+      "say": {
+       "en": "Honestly, I am not sure. Is there a shorter option?",
+       "zh": "说实话不确定。有短一点的吗？"
+      },
+      "react": {
+       "en": "You can turn back at the ridge. Nobody minds.",
+       "zh": "到山脊可以折返。没人介意。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Count me in.",
+     "zh": "算我一个。"
+    },
+    {
+     "en": "Can I get a lift?",
+     "zh": "能搭个车吗？"
+    },
+    {
+     "en": "Are we still going?",
+     "zh": "还去吗？"
+    }
+   ]
+  },
+  {
+   "id": "street-survey",
+   "g": "street-survey",
+   "name": "街头被拦下 · 赶时间被拦",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你赶着去面试，路口被调查员拦住。",
+   "roles": [
+    "你",
+    "调查员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Excuse me, do you have a minute for a quick survey?",
+     "zh": "打扰一下，有空做个简短问卷吗？"
+    },
+    {
+     "r": 0,
+     "en": "Sorry, I am on my way to an appointment.",
+     "zh": "抱歉，我赶着赴约。"
+    },
+    {
+     "r": 1,
+     "en": "It is only two minutes. It is about local transport.",
+     "zh": "只要两分钟。关于本地交通。"
+    },
+    {
+     "r": 0,
+     "en": "I would rather not. I have been stopped three times today.",
+     "zh": "还是不了。我今天已经被拦了三次。"
+    },
+    {
+     "r": 1,
+     "en": "No problem. Have a good day.",
+     "zh": "没问题。祝您今天顺利。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Good luck with the rest.",
+     "zh": "谢谢。剩下的人也顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方继续劝，你要坚持又不失礼",
+    "prompt": {
+     "en": "It really is two minutes. We get paid by the form.",
+     "zh": "真的只要两分钟。我们按份数拿钱。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I understand, but I am late. Try the queue at the bus stop.",
+       "zh": "我理解，但我要迟到了。试试公交站排队的人。"
+      },
+      "react": {
+       "en": "Fair enough. Thanks anyway.",
+       "zh": "行。还是谢谢。"
+      }
+     },
+     {
+      "say": {
+       "en": "I will do it on my way back if you are still here.",
+       "zh": "回来的时候你还在，我就填。"
+      },
+      "react": {
+       "en": "I will be here until six.",
+       "zh": "我会待到六点。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am on my way to an appointment.",
+     "zh": "我赶着赴约。"
+    },
+    {
+     "en": "I would rather not.",
+     "zh": "还是不了。"
+    },
+    {
+     "en": "Who is this for?",
+     "zh": "这是给谁的？"
+    }
+   ]
+  },
+  {
+   "id": "street-survey-2",
+   "g": "street-survey",
+   "name": "街头被拦下 · 愿意配合",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你正好有时间。",
+   "roles": [
+    "你",
+    "调查员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Excuse me, do you have a minute for a quick survey?",
+     "zh": "打扰一下，有空做个简短问卷吗？"
+    },
+    {
+     "r": 0,
+     "en": "Sorry, I am on my way to an appointment.",
+     "zh": "抱歉，我赶着赴约。"
+    },
+    {
+     "r": 1,
+     "en": "It is only two minutes. It is about local transport.",
+     "zh": "只要两分钟。关于本地交通。"
+    },
+    {
+     "r": 0,
+     "en": "Actually, I have five minutes. What do you need to know?",
+     "zh": "其实我有五分钟。你想问什么？"
+    },
+    {
+     "r": 1,
+     "en": "Just how often you use the bus, and what would make it better.",
+     "zh": "就问您多久坐一次公交，什么能让它更好。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Good luck with the rest.",
+     "zh": "谢谢。剩下的人也顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方继续劝，你要坚持又不失礼",
+    "prompt": {
+     "en": "It really is two minutes. We get paid by the form.",
+     "zh": "真的只要两分钟。我们按份数拿钱。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I understand, but I am late. Try the queue at the bus stop.",
+       "zh": "我理解，但我要迟到了。试试公交站排队的人。"
+      },
+      "react": {
+       "en": "Fair enough. Thanks anyway.",
+       "zh": "行。还是谢谢。"
+      }
+     },
+     {
+      "say": {
+       "en": "I will do it on my way back if you are still here.",
+       "zh": "回来的时候你还在，我就填。"
+      },
+      "react": {
+       "en": "I will be here until six.",
+       "zh": "我会待到六点。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am on my way to an appointment.",
+     "zh": "我赶着赴约。"
+    },
+    {
+     "en": "I would rather not.",
+     "zh": "还是不了。"
+    },
+    {
+     "en": "Who is this for?",
+     "zh": "这是给谁的？"
+    }
+   ]
+  },
+  {
+   "id": "street-survey-3",
+   "g": "street-survey",
+   "name": "街头被拦下 · 募捐",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "对方在募捐。",
+   "roles": [
+    "你",
+    "调查员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Excuse me, do you have a minute for a quick survey?",
+     "zh": "打扰一下，有空做个简短问卷吗？"
+    },
+    {
+     "r": 0,
+     "en": "Would you like to support the food bank?",
+     "zh": "愿意支持一下食物银行吗？"
+    },
+    {
+     "r": 1,
+     "en": "I already give monthly, but thank you.",
+     "zh": "我已经每月捐了，不过谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "I would rather not. I have been stopped three times today.",
+     "zh": "还是不了。我今天已经被拦了三次。"
+    },
+    {
+     "r": 1,
+     "en": "No problem. Have a good day.",
+     "zh": "没问题。祝您今天顺利。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Good luck with the rest.",
+     "zh": "谢谢。剩下的人也顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方继续劝，你要坚持又不失礼",
+    "prompt": {
+     "en": "It really is two minutes. We get paid by the form.",
+     "zh": "真的只要两分钟。我们按份数拿钱。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I understand, but I am late. Try the queue at the bus stop.",
+       "zh": "我理解，但我要迟到了。试试公交站排队的人。"
+      },
+      "react": {
+       "en": "Fair enough. Thanks anyway.",
+       "zh": "行。还是谢谢。"
+      }
+     },
+     {
+      "say": {
+       "en": "I will do it on my way back if you are still here.",
+       "zh": "回来的时候你还在，我就填。"
+      },
+      "react": {
+       "en": "I will be here until six.",
+       "zh": "我会待到六点。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am on my way to an appointment.",
+     "zh": "我赶着赴约。"
+    },
+    {
+     "en": "I would rather not.",
+     "zh": "还是不了。"
+    },
+    {
+     "en": "Who is this for?",
+     "zh": "这是给谁的？"
+    }
+   ]
+  },
+  {
+   "id": "street-survey-4",
+   "g": "street-survey",
+   "name": "街头被拦下 · 推销",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "对方在推销宽带。",
+   "roles": [
+    "你",
+    "调查员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I am not switching providers. Thanks anyway.",
+     "zh": "我不打算换运营商。还是谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Sorry, I am on my way to an appointment.",
+     "zh": "抱歉，我赶着赴约。"
+    },
+    {
+     "r": 1,
+     "en": "It is only two minutes. It is about local transport.",
+     "zh": "只要两分钟。关于本地交通。"
+    },
+    {
+     "r": 0,
+     "en": "I would rather not. I have been stopped three times today.",
+     "zh": "还是不了。我今天已经被拦了三次。"
+    },
+    {
+     "r": 1,
+     "en": "No problem. Have a good day.",
+     "zh": "没问题。祝您今天顺利。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Good luck with the rest.",
+     "zh": "谢谢。剩下的人也顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方继续劝，你要坚持又不失礼",
+    "prompt": {
+     "en": "It really is two minutes. We get paid by the form.",
+     "zh": "真的只要两分钟。我们按份数拿钱。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I understand, but I am late. Try the queue at the bus stop.",
+       "zh": "我理解，但我要迟到了。试试公交站排队的人。"
+      },
+      "react": {
+       "en": "Fair enough. Thanks anyway.",
+       "zh": "行。还是谢谢。"
+      }
+     },
+     {
+      "say": {
+       "en": "I will do it on my way back if you are still here.",
+       "zh": "回来的时候你还在，我就填。"
+      },
+      "react": {
+       "en": "I will be here until six.",
+       "zh": "我会待到六点。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am on my way to an appointment.",
+     "zh": "我赶着赴约。"
+    },
+    {
+     "en": "I would rather not.",
+     "zh": "还是不了。"
+    },
+    {
+     "en": "Who is this for?",
+     "zh": "这是给谁的？"
+    }
+   ]
+  },
+  {
+   "id": "street-survey-5",
+   "g": "street-survey",
+   "name": "街头被拦下 · 问用途",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你想知道信息给谁。",
+   "roles": [
+    "你",
+    "调查员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Excuse me, do you have a minute for a quick survey?",
+     "zh": "打扰一下，有空做个简短问卷吗？"
+    },
+    {
+     "r": 0,
+     "en": "Sorry, I am on my way to an appointment.",
+     "zh": "抱歉，我赶着赴约。"
+    },
+    {
+     "r": 1,
+     "en": "Who is this for, and will my name be on it?",
+     "zh": "这是给谁的？会记我名字吗？"
+    },
+    {
+     "r": 0,
+     "en": "I would rather not. I have been stopped three times today.",
+     "zh": "还是不了。我今天已经被拦了三次。"
+    },
+    {
+     "r": 1,
+     "en": "No problem. Have a good day.",
+     "zh": "没问题。祝您今天顺利。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Good luck with the rest.",
+     "zh": "谢谢。剩下的人也顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方继续劝，你要坚持又不失礼",
+    "prompt": {
+     "en": "It really is two minutes. We get paid by the form.",
+     "zh": "真的只要两分钟。我们按份数拿钱。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I understand, but I am late. Try the queue at the bus stop.",
+       "zh": "我理解，但我要迟到了。试试公交站排队的人。"
+      },
+      "react": {
+       "en": "Fair enough. Thanks anyway.",
+       "zh": "行。还是谢谢。"
+      }
+     },
+     {
+      "say": {
+       "en": "I will do it on my way back if you are still here.",
+       "zh": "回来的时候你还在，我就填。"
+      },
+      "react": {
+       "en": "I will be here until six.",
+       "zh": "我会待到六点。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am on my way to an appointment.",
+     "zh": "我赶着赴约。"
+    },
+    {
+     "en": "I would rather not.",
+     "zh": "还是不了。"
+    },
+    {
+     "en": "Who is this for?",
+     "zh": "这是给谁的？"
+    }
+   ]
+  },
+  {
+   "id": "street-survey-6",
+   "g": "street-survey",
+   "name": "街头被拦下 · 被缠住",
+   "cat": "社交",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "对方不肯放你走。",
+   "roles": [
+    "你",
+    "调查员"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Excuse me, do you have a minute for a quick survey?",
+     "zh": "打扰一下，有空做个简短问卷吗？"
+    },
+    {
+     "r": 0,
+     "en": "Sorry, I am on my way to an appointment.",
+     "zh": "抱歉，我赶着赴约。"
+    },
+    {
+     "r": 1,
+     "en": "It is only two minutes. It is about local transport.",
+     "zh": "只要两分钟。关于本地交通。"
+    },
+    {
+     "r": 0,
+     "en": "I have said no twice. Please let me pass.",
+     "zh": "我已经说了两次不用。请让我过去。"
+    },
+    {
+     "r": 1,
+     "en": "No problem. Have a good day.",
+     "zh": "没问题。祝您今天顺利。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Good luck with the rest.",
+     "zh": "谢谢。剩下的人也顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方继续劝，你要坚持又不失礼",
+    "prompt": {
+     "en": "It really is two minutes. We get paid by the form.",
+     "zh": "真的只要两分钟。我们按份数拿钱。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I understand, but I am late. Try the queue at the bus stop.",
+       "zh": "我理解，但我要迟到了。试试公交站排队的人。"
+      },
+      "react": {
+       "en": "Fair enough. Thanks anyway.",
+       "zh": "行。还是谢谢。"
+      }
+     },
+     {
+      "say": {
+       "en": "I will do it on my way back if you are still here.",
+       "zh": "回来的时候你还在，我就填。"
+      },
+      "react": {
+       "en": "I will be here until six.",
+       "zh": "我会待到六点。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am on my way to an appointment.",
+     "zh": "我赶着赴约。"
+    },
+    {
+     "en": "I would rather not.",
+     "zh": "还是不了。"
+    },
+    {
+     "en": "Who is this for?",
+     "zh": "这是给谁的？"
+    }
+   ]
+  },
+  {
+   "id": "book-club",
+   "g": "book-club",
+   "name": "读书会聊书 · 没读完",
+   "cat": "社交",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "读书会前一天，你只读到一半。",
+   "roles": [
+    "你",
+    "书友"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Did you finish the book?",
+     "zh": "书看完了吗？"
+    },
+    {
+     "r": 0,
+     "en": "I did, but I skimmed the last hundred pages.",
+     "zh": "看完了，但最后一百页是跳着读的。"
+    },
+    {
+     "r": 1,
+     "en": "Honestly, so did I. What did you make of the ending?",
+     "zh": "说实话我也是。你觉得结尾怎么样？"
+    },
+    {
+     "r": 0,
+     "en": "It felt rushed. The father was the interesting part.",
+     "zh": "有点仓促。父亲那条线才有意思。"
+    },
+    {
+     "r": 1,
+     "en": "That is what I thought. Will you say that on Thursday?",
+     "zh": "我也这么觉得。周四你会说吗？"
+    },
+    {
+     "r": 0,
+     "en": "I will, as long as nobody takes it personally.",
+     "zh": "会说，只要没人往心里去。"
+    },
+    {
+     "r": 1,
+     "en": "The chair does. Say it gently.",
+     "zh": "主持人会。说得缓和点。"
+    },
+    {
+     "r": 0,
+     "en": "I will say I wanted more of the father.",
+     "zh": "我就说我希望父亲那条线多一点。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方提醒你说话方式，你要接受",
+    "prompt": {
+     "en": "The chair loves this book. Be prepared for an argument.",
+     "zh": "主持人很喜欢这本书。做好争论的准备。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I will keep it to one point and one example.",
+       "zh": "我只说一点，举一个例子。"
+      },
+      "react": {
+       "en": "That is the way to do it.",
+       "zh": "就该这样。"
+      }
+     },
+     {
+      "say": {
+       "en": "I am not there to win. I want to hear the other side.",
+       "zh": "我不是去赢的。我想听另一面。"
+      },
+      "react": {
+       "en": "Then you will enjoy it.",
+       "zh": "那你会享受的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I skimmed the last hundred pages.",
+     "zh": "最后一百页我跳着读的。"
+    },
+    {
+     "en": "What did you make of it?",
+     "zh": "你觉得怎么样？"
+    },
+    {
+     "en": "Nobody takes it personally.",
+     "zh": "没人往心里去。"
+    }
+   ]
+  },
+  {
+   "id": "book-club-2",
+   "g": "book-club",
+   "name": "读书会聊书 · 不喜欢这本书",
+   "cat": "社交",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你觉得这本书被高估了。",
+   "roles": [
+    "你",
+    "书友"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Did you finish the book?",
+     "zh": "书看完了吗？"
+    },
+    {
+     "r": 0,
+     "en": "I did, but I skimmed the last hundred pages.",
+     "zh": "看完了，但最后一百页是跳着读的。"
+    },
+    {
+     "r": 1,
+     "en": "Honestly, so did I. What did you make of the ending?",
+     "zh": "说实话我也是。你觉得结尾怎么样？"
+    },
+    {
+     "r": 0,
+     "en": "I did not enjoy it. The prose is beautiful, the plot is thin.",
+     "zh": "我不太喜欢。文笔好，情节薄。"
+    },
+    {
+     "r": 1,
+     "en": "That is a fair criticism. Say it with an example.",
+     "zh": "这个批评站得住。举个例子说。"
+    },
+    {
+     "r": 0,
+     "en": "I will, as long as nobody takes it personally.",
+     "zh": "会说，只要没人往心里去。"
+    },
+    {
+     "r": 1,
+     "en": "The chair does. Say it gently.",
+     "zh": "主持人会。说得缓和点。"
+    },
+    {
+     "r": 0,
+     "en": "I will say I wanted more of the father.",
+     "zh": "我就说我希望父亲那条线多一点。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方提醒你说话方式，你要接受",
+    "prompt": {
+     "en": "The chair loves this book. Be prepared for an argument.",
+     "zh": "主持人很喜欢这本书。做好争论的准备。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I will keep it to one point and one example.",
+       "zh": "我只说一点，举一个例子。"
+      },
+      "react": {
+       "en": "That is the way to do it.",
+       "zh": "就该这样。"
+      }
+     },
+     {
+      "say": {
+       "en": "I am not there to win. I want to hear the other side.",
+       "zh": "我不是去赢的。我想听另一面。"
+      },
+      "react": {
+       "en": "Then you will enjoy it.",
+       "zh": "那你会享受的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I skimmed the last hundred pages.",
+     "zh": "最后一百页我跳着读的。"
+    },
+    {
+     "en": "What did you make of it?",
+     "zh": "你觉得怎么样？"
+    },
+    {
+     "en": "Nobody takes it personally.",
+     "zh": "没人往心里去。"
+    }
+   ]
+  },
+  {
+   "id": "book-club-3",
+   "g": "book-club",
+   "name": "读书会聊书 · 第一次来",
+   "cat": "社交",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你是新成员。",
+   "roles": [
+    "你",
+    "书友"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Did you finish the book?",
+     "zh": "书看完了吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is my first time. How does the discussion usually run?",
+     "zh": "我第一次来。讨论一般怎么进行？"
+    },
+    {
+     "r": 1,
+     "en": "One person leads, then we go round. No pressure to speak.",
+     "zh": "一个人主持，然后轮流。不想说也没关系。"
+    },
+    {
+     "r": 0,
+     "en": "It felt rushed. The father was the interesting part.",
+     "zh": "有点仓促。父亲那条线才有意思。"
+    },
+    {
+     "r": 1,
+     "en": "That is what I thought. Will you say that on Thursday?",
+     "zh": "我也这么觉得。周四你会说吗？"
+    },
+    {
+     "r": 0,
+     "en": "I will, as long as nobody takes it personally.",
+     "zh": "会说，只要没人往心里去。"
+    },
+    {
+     "r": 1,
+     "en": "The chair does. Say it gently.",
+     "zh": "主持人会。说得缓和点。"
+    },
+    {
+     "r": 0,
+     "en": "I will say I wanted more of the father.",
+     "zh": "我就说我希望父亲那条线多一点。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方提醒你说话方式，你要接受",
+    "prompt": {
+     "en": "The chair loves this book. Be prepared for an argument.",
+     "zh": "主持人很喜欢这本书。做好争论的准备。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I will keep it to one point and one example.",
+       "zh": "我只说一点，举一个例子。"
+      },
+      "react": {
+       "en": "That is the way to do it.",
+       "zh": "就该这样。"
+      }
+     },
+     {
+      "say": {
+       "en": "I am not there to win. I want to hear the other side.",
+       "zh": "我不是去赢的。我想听另一面。"
+      },
+      "react": {
+       "en": "Then you will enjoy it.",
+       "zh": "那你会享受的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I skimmed the last hundred pages.",
+     "zh": "最后一百页我跳着读的。"
+    },
+    {
+     "en": "What did you make of it?",
+     "zh": "你觉得怎么样？"
+    },
+    {
+     "en": "Nobody takes it personally.",
+     "zh": "没人往心里去。"
+    }
+   ]
+  },
+  {
+   "id": "book-club-4",
+   "g": "book-club",
+   "name": "读书会聊书 · 推荐下一本",
+   "cat": "社交",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想提一本。",
+   "roles": [
+    "你",
+    "书友"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Did you finish the book?",
+     "zh": "书看完了吗？"
+    },
+    {
+     "r": 0,
+     "en": "I did, but I skimmed the last hundred pages.",
+     "zh": "看完了，但最后一百页是跳着读的。"
+    },
+    {
+     "r": 1,
+     "en": "Honestly, so did I. What did you make of the ending?",
+     "zh": "说实话我也是。你觉得结尾怎么样？"
+    },
+    {
+     "r": 0,
+     "en": "It felt rushed. The father was the interesting part.",
+     "zh": "有点仓促。父亲那条线才有意思。"
+    },
+    {
+     "r": 1,
+     "en": "That is what I thought. Will you say that on Thursday?",
+     "zh": "我也这么觉得。周四你会说吗？"
+    },
+    {
+     "r": 0,
+     "en": "Could I suggest the next book? It is short and translated.",
+     "zh": "下一本我能推荐吗？很短，是译本。"
+    },
+    {
+     "r": 1,
+     "en": "The chair does. Say it gently.",
+     "zh": "主持人会。说得缓和点。"
+    },
+    {
+     "r": 0,
+     "en": "I will say I wanted more of the father.",
+     "zh": "我就说我希望父亲那条线多一点。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方提醒你说话方式，你要接受",
+    "prompt": {
+     "en": "The chair loves this book. Be prepared for an argument.",
+     "zh": "主持人很喜欢这本书。做好争论的准备。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I will keep it to one point and one example.",
+       "zh": "我只说一点，举一个例子。"
+      },
+      "react": {
+       "en": "That is the way to do it.",
+       "zh": "就该这样。"
+      }
+     },
+     {
+      "say": {
+       "en": "I am not there to win. I want to hear the other side.",
+       "zh": "我不是去赢的。我想听另一面。"
+      },
+      "react": {
+       "en": "Then you will enjoy it.",
+       "zh": "那你会享受的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I skimmed the last hundred pages.",
+     "zh": "最后一百页我跳着读的。"
+    },
+    {
+     "en": "What did you make of it?",
+     "zh": "你觉得怎么样？"
+    },
+    {
+     "en": "Nobody takes it personally.",
+     "zh": "没人往心里去。"
+    }
+   ]
+  },
+  {
+   "id": "book-club-5",
+   "g": "book-club",
+   "name": "读书会聊书 · 线上参加",
+   "cat": "社交",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你要远程加入。",
+   "roles": [
+    "你",
+    "书友"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Did you finish the book?",
+     "zh": "书看完了吗？"
+    },
+    {
+     "r": 0,
+     "en": "I did, but I skimmed the last hundred pages.",
+     "zh": "看完了，但最后一百页是跳着读的。"
+    },
+    {
+     "r": 1,
+     "en": "Honestly, so did I. What did you make of the ending?",
+     "zh": "说实话我也是。你觉得结尾怎么样？"
+    },
+    {
+     "r": 0,
+     "en": "It felt rushed. The father was the interesting part.",
+     "zh": "有点仓促。父亲那条线才有意思。"
+    },
+    {
+     "r": 1,
+     "en": "That is what I thought. Will you say that on Thursday?",
+     "zh": "我也这么觉得。周四你会说吗？"
+    },
+    {
+     "r": 0,
+     "en": "I will, as long as nobody takes it personally.",
+     "zh": "会说，只要没人往心里去。"
+    },
+    {
+     "r": 1,
+     "en": "Can I join online? I am travelling that week.",
+     "zh": "能线上参加吗？那周我在外地。"
+    },
+    {
+     "r": 0,
+     "en": "I will say I wanted more of the father.",
+     "zh": "我就说我希望父亲那条线多一点。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方提醒你说话方式，你要接受",
+    "prompt": {
+     "en": "The chair loves this book. Be prepared for an argument.",
+     "zh": "主持人很喜欢这本书。做好争论的准备。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I will keep it to one point and one example.",
+       "zh": "我只说一点，举一个例子。"
+      },
+      "react": {
+       "en": "That is the way to do it.",
+       "zh": "就该这样。"
+      }
+     },
+     {
+      "say": {
+       "en": "I am not there to win. I want to hear the other side.",
+       "zh": "我不是去赢的。我想听另一面。"
+      },
+      "react": {
+       "en": "Then you will enjoy it.",
+       "zh": "那你会享受的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I skimmed the last hundred pages.",
+     "zh": "最后一百页我跳着读的。"
+    },
+    {
+     "en": "What did you make of it?",
+     "zh": "你觉得怎么样？"
+    },
+    {
+     "en": "Nobody takes it personally.",
+     "zh": "没人往心里去。"
+    }
+   ]
+  },
+  {
+   "id": "book-club-6",
+   "g": "book-club",
+   "name": "读书会聊书 · 观点冲突",
+   "cat": "社交",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "有人强烈反对你的看法。",
+   "roles": [
+    "你",
+    "书友"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Did you finish the book?",
+     "zh": "书看完了吗？"
+    },
+    {
+     "r": 0,
+     "en": "I did, but I skimmed the last hundred pages.",
+     "zh": "看完了，但最后一百页是跳着读的。"
+    },
+    {
+     "r": 1,
+     "en": "Honestly, so did I. What did you make of the ending?",
+     "zh": "说实话我也是。你觉得结尾怎么样？"
+    },
+    {
+     "r": 0,
+     "en": "It felt rushed. The father was the interesting part.",
+     "zh": "有点仓促。父亲那条线才有意思。"
+    },
+    {
+     "r": 1,
+     "en": "That is what I thought. Will you say that on Thursday?",
+     "zh": "我也这么觉得。周四你会说吗？"
+    },
+    {
+     "r": 0,
+     "en": "I will, as long as nobody takes it personally.",
+     "zh": "会说，只要没人往心里去。"
+    },
+    {
+     "r": 1,
+     "en": "The chair does. Say it gently.",
+     "zh": "主持人会。说得缓和点。"
+    },
+    {
+     "r": 0,
+     "en": "I see it differently, but I am not trying to change your mind.",
+     "zh": "我看法不同，但没想说服你。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方提醒你说话方式，你要接受",
+    "prompt": {
+     "en": "The chair loves this book. Be prepared for an argument.",
+     "zh": "主持人很喜欢这本书。做好争论的准备。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I will keep it to one point and one example.",
+       "zh": "我只说一点，举一个例子。"
+      },
+      "react": {
+       "en": "That is the way to do it.",
+       "zh": "就该这样。"
+      }
+     },
+     {
+      "say": {
+       "en": "I am not there to win. I want to hear the other side.",
+       "zh": "我不是去赢的。我想听另一面。"
+      },
+      "react": {
+       "en": "Then you will enjoy it.",
+       "zh": "那你会享受的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I skimmed the last hundred pages.",
+     "zh": "最后一百页我跳着读的。"
+    },
+    {
+     "en": "What did you make of it?",
+     "zh": "你觉得怎么样？"
+    },
+    {
+     "en": "Nobody takes it personally.",
+     "zh": "没人往心里去。"
+    }
+   ]
+  },
+  {
+   "id": "volunteer",
+   "g": "volunteer",
+   "name": "第一次做志愿者 · 食物银行分拣",
+   "cat": "社交",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你第一次做志愿者，提前十分钟到。",
+   "roles": [
+    "你",
+    "负责人"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "First time here?",
+     "zh": "第一次来？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. I signed up for the food bank.",
+     "zh": "是。我报名了食物银行。"
+    },
+    {
+     "r": 1,
+     "en": "Good. We sort donations, then pack bags.",
+     "zh": "好。我们分拣捐赠，然后装袋。"
+    },
+    {
+     "r": 0,
+     "en": "How long is a shift?",
+     "zh": "一班多久？"
+    },
+    {
+     "r": 1,
+     "en": "Two hours, but stay longer if you like.",
+     "zh": "两小时，想多待也行。"
+    },
+    {
+     "r": 0,
+     "en": "What should I wear?",
+     "zh": "穿什么？"
+    },
+    {
+     "r": 1,
+     "en": "Closed shoes. It gets cold in the back.",
+     "zh": "包脚的鞋。后面挺冷。"
+    },
+    {
+     "r": 0,
+     "en": "Understood. Where do I put my bag?",
+     "zh": "明白。包放哪儿？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "负责人问你有没有别的能力，你要如实回应",
+    "prompt": {
+     "en": "We are short of drivers this week. Do you have a car?",
+     "zh": "这周缺司机。你有车吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I do, but not insured for deliveries.",
+       "zh": "有，但没上配送险。"
+      },
+      "react": {
+       "en": "Then we cannot use it. Thanks for saying.",
+       "zh": "那就不能用。谢谢你如实说。"
+      }
+     },
+     {
+      "say": {
+       "en": "No car, but I can do the early shift.",
+       "zh": "没车，但我能上早班。"
+      },
+      "react": {
+       "en": "That helps just as much.",
+       "zh": "那也一样帮得上。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I signed up for the food bank.",
+     "zh": "我报名了食物银行。"
+    },
+    {
+     "en": "How long is a shift?",
+     "zh": "一班多久？"
+    },
+    {
+     "en": "Closed shoes.",
+     "zh": "穿包脚的鞋。"
+    }
+   ]
+  },
+  {
+   "id": "volunteer-2",
+   "g": "volunteer",
+   "name": "第一次做志愿者 · 带东西来",
+   "cat": "社交",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你想捐一些。",
+   "roles": [
+    "你",
+    "负责人"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I brought some tins. Where should they go?",
+     "zh": "我带了几罐罐头。放哪儿？"
+    },
+    {
+     "r": 0,
+     "en": "On the blue table. We check dates before sorting.",
+     "zh": "蓝桌子上。分拣前我们会看日期。"
+    },
+    {
+     "r": 1,
+     "en": "Good. We sort donations, then pack bags.",
+     "zh": "好。我们分拣捐赠，然后装袋。"
+    },
+    {
+     "r": 0,
+     "en": "How long is a shift?",
+     "zh": "一班多久？"
+    },
+    {
+     "r": 1,
+     "en": "Two hours, but stay longer if you like.",
+     "zh": "两小时，想多待也行。"
+    },
+    {
+     "r": 0,
+     "en": "What should I wear?",
+     "zh": "穿什么？"
+    },
+    {
+     "r": 1,
+     "en": "Closed shoes. It gets cold in the back.",
+     "zh": "包脚的鞋。后面挺冷。"
+    },
+    {
+     "r": 0,
+     "en": "Understood. Where do I put my bag?",
+     "zh": "明白。包放哪儿？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "负责人问你有没有别的能力，你要如实回应",
+    "prompt": {
+     "en": "We are short of drivers this week. Do you have a car?",
+     "zh": "这周缺司机。你有车吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I do, but not insured for deliveries.",
+       "zh": "有，但没上配送险。"
+      },
+      "react": {
+       "en": "Then we cannot use it. Thanks for saying.",
+       "zh": "那就不能用。谢谢你如实说。"
+      }
+     },
+     {
+      "say": {
+       "en": "No car, but I can do the early shift.",
+       "zh": "没车，但我能上早班。"
+      },
+      "react": {
+       "en": "That helps just as much.",
+       "zh": "那也一样帮得上。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I signed up for the food bank.",
+     "zh": "我报名了食物银行。"
+    },
+    {
+     "en": "How long is a shift?",
+     "zh": "一班多久？"
+    },
+    {
+     "en": "Closed shoes.",
+     "zh": "穿包脚的鞋。"
+    }
+   ]
+  },
+  {
+   "id": "volunteer-3",
+   "g": "volunteer",
+   "name": "第一次做志愿者 · 想固定来",
+   "cat": "社交",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你想每周都来。",
+   "roles": [
+    "你",
+    "负责人"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "First time here?",
+     "zh": "第一次来？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. I signed up for the food bank.",
+     "zh": "是。我报名了食物银行。"
+    },
+    {
+     "r": 1,
+     "en": "Good. We sort donations, then pack bags.",
+     "zh": "好。我们分拣捐赠，然后装袋。"
+    },
+    {
+     "r": 0,
+     "en": "How long is a shift?",
+     "zh": "一班多久？"
+    },
+    {
+     "r": 1,
+     "en": "Could I come every Tuesday? I have the mornings free.",
+     "zh": "我能每周二来吗？上午有空。"
+    },
+    {
+     "r": 0,
+     "en": "What should I wear?",
+     "zh": "穿什么？"
+    },
+    {
+     "r": 1,
+     "en": "Closed shoes. It gets cold in the back.",
+     "zh": "包脚的鞋。后面挺冷。"
+    },
+    {
+     "r": 0,
+     "en": "Understood. Where do I put my bag?",
+     "zh": "明白。包放哪儿？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "负责人问你有没有别的能力，你要如实回应",
+    "prompt": {
+     "en": "We are short of drivers this week. Do you have a car?",
+     "zh": "这周缺司机。你有车吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I do, but not insured for deliveries.",
+       "zh": "有，但没上配送险。"
+      },
+      "react": {
+       "en": "Then we cannot use it. Thanks for saying.",
+       "zh": "那就不能用。谢谢你如实说。"
+      }
+     },
+     {
+      "say": {
+       "en": "No car, but I can do the early shift.",
+       "zh": "没车，但我能上早班。"
+      },
+      "react": {
+       "en": "That helps just as much.",
+       "zh": "那也一样帮得上。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I signed up for the food bank.",
+     "zh": "我报名了食物银行。"
+    },
+    {
+     "en": "How long is a shift?",
+     "zh": "一班多久？"
+    },
+    {
+     "en": "Closed shoes.",
+     "zh": "穿包脚的鞋。"
+    }
+   ]
+  },
+  {
+   "id": "volunteer-4",
+   "g": "volunteer",
+   "name": "第一次做志愿者 · 带孩子",
+   "cat": "社交",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你想带孩子一起。",
+   "roles": [
+    "你",
+    "负责人"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "First time here?",
+     "zh": "第一次来？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. I signed up for the food bank.",
+     "zh": "是。我报名了食物银行。"
+    },
+    {
+     "r": 1,
+     "en": "Good. We sort donations, then pack bags.",
+     "zh": "好。我们分拣捐赠，然后装袋。"
+    },
+    {
+     "r": 0,
+     "en": "How long is a shift?",
+     "zh": "一班多久？"
+    },
+    {
+     "r": 1,
+     "en": "Two hours, but stay longer if you like.",
+     "zh": "两小时，想多待也行。"
+    },
+    {
+     "r": 0,
+     "en": "Can I bring my son? He is twelve.",
+     "zh": "我能带儿子来吗？他十二岁。"
+    },
+    {
+     "r": 1,
+     "en": "Closed shoes. It gets cold in the back.",
+     "zh": "包脚的鞋。后面挺冷。"
+    },
+    {
+     "r": 0,
+     "en": "Understood. Where do I put my bag?",
+     "zh": "明白。包放哪儿？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "负责人问你有没有别的能力，你要如实回应",
+    "prompt": {
+     "en": "We are short of drivers this week. Do you have a car?",
+     "zh": "这周缺司机。你有车吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I do, but not insured for deliveries.",
+       "zh": "有，但没上配送险。"
+      },
+      "react": {
+       "en": "Then we cannot use it. Thanks for saying.",
+       "zh": "那就不能用。谢谢你如实说。"
+      }
+     },
+     {
+      "say": {
+       "en": "No car, but I can do the early shift.",
+       "zh": "没车，但我能上早班。"
+      },
+      "react": {
+       "en": "That helps just as much.",
+       "zh": "那也一样帮得上。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I signed up for the food bank.",
+     "zh": "我报名了食物银行。"
+    },
+    {
+     "en": "How long is a shift?",
+     "zh": "一班多久？"
+    },
+    {
+     "en": "Closed shoes.",
+     "zh": "穿包脚的鞋。"
+    }
+   ]
+  },
+  {
+   "id": "volunteer-5",
+   "g": "volunteer",
+   "name": "第一次做志愿者 · 想多做",
+   "cat": "社交",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你想承担更多。",
+   "roles": [
+    "你",
+    "负责人"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "First time here?",
+     "zh": "第一次来？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. I signed up for the food bank.",
+     "zh": "是。我报名了食物银行。"
+    },
+    {
+     "r": 1,
+     "en": "Good. We sort donations, then pack bags.",
+     "zh": "好。我们分拣捐赠，然后装袋。"
+    },
+    {
+     "r": 0,
+     "en": "How long is a shift?",
+     "zh": "一班多久？"
+    },
+    {
+     "r": 1,
+     "en": "Two hours, but stay longer if you like.",
+     "zh": "两小时，想多待也行。"
+    },
+    {
+     "r": 0,
+     "en": "What should I wear?",
+     "zh": "穿什么？"
+    },
+    {
+     "r": 1,
+     "en": "Is there anything else I could help with, not just packing?",
+     "zh": "除了装袋，还有别的我能帮的吗？"
+    },
+    {
+     "r": 0,
+     "en": "Understood. Where do I put my bag?",
+     "zh": "明白。包放哪儿？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "负责人问你有没有别的能力，你要如实回应",
+    "prompt": {
+     "en": "We are short of drivers this week. Do you have a car?",
+     "zh": "这周缺司机。你有车吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I do, but not insured for deliveries.",
+       "zh": "有，但没上配送险。"
+      },
+      "react": {
+       "en": "Then we cannot use it. Thanks for saying.",
+       "zh": "那就不能用。谢谢你如实说。"
+      }
+     },
+     {
+      "say": {
+       "en": "No car, but I can do the early shift.",
+       "zh": "没车，但我能上早班。"
+      },
+      "react": {
+       "en": "That helps just as much.",
+       "zh": "那也一样帮得上。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I signed up for the food bank.",
+     "zh": "我报名了食物银行。"
+    },
+    {
+     "en": "How long is a shift?",
+     "zh": "一班多久？"
+    },
+    {
+     "en": "Closed shoes.",
+     "zh": "穿包脚的鞋。"
+    }
+   ]
+  },
+  {
+   "id": "volunteer-6",
+   "g": "volunteer",
+   "name": "第一次做志愿者 · 问证明",
+   "cat": "社交",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你需要志愿时长证明。",
+   "roles": [
+    "你",
+    "负责人"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "First time here?",
+     "zh": "第一次来？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. I signed up for the food bank.",
+     "zh": "是。我报名了食物银行。"
+    },
+    {
+     "r": 1,
+     "en": "Good. We sort donations, then pack bags.",
+     "zh": "好。我们分拣捐赠，然后装袋。"
+    },
+    {
+     "r": 0,
+     "en": "How long is a shift?",
+     "zh": "一班多久？"
+    },
+    {
+     "r": 1,
+     "en": "Two hours, but stay longer if you like.",
+     "zh": "两小时，想多待也行。"
+    },
+    {
+     "r": 0,
+     "en": "What should I wear?",
+     "zh": "穿什么？"
+    },
+    {
+     "r": 1,
+     "en": "Closed shoes. It gets cold in the back.",
+     "zh": "包脚的鞋。后面挺冷。"
+    },
+    {
+     "r": 0,
+     "en": "Could you sign a form for my volunteering hours?",
+     "zh": "能帮我签一份志愿时长证明吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "offer",
+    "task": "负责人问你有没有别的能力，你要如实回应",
+    "prompt": {
+     "en": "We are short of drivers this week. Do you have a car?",
+     "zh": "这周缺司机。你有车吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I do, but not insured for deliveries.",
+       "zh": "有，但没上配送险。"
+      },
+      "react": {
+       "en": "Then we cannot use it. Thanks for saying.",
+       "zh": "那就不能用。谢谢你如实说。"
+      }
+     },
+     {
+      "say": {
+       "en": "No car, but I can do the early shift.",
+       "zh": "没车，但我能上早班。"
+      },
+      "react": {
+       "en": "That helps just as much.",
+       "zh": "那也一样帮得上。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I signed up for the food bank.",
+     "zh": "我报名了食物银行。"
+    },
+    {
+     "en": "How long is a shift?",
+     "zh": "一班多久？"
+    },
+    {
+     "en": "Closed shoes.",
+     "zh": "穿包脚的鞋。"
+    }
+   ]
+  },
+  {
+   "id": "community-meeting",
+   "g": "community-meeting",
+   "name": "社区听证会发言 · 自行车道听证",
+   "cat": "社交",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "社区中心，来了六十多人，气氛不轻松。",
+   "roles": [
+    "你",
+    "主持"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The council is proposing a new cycle lane.",
+     "zh": "市政提议修一条新的自行车道。"
+    },
+    {
+     "r": 0,
+     "en": "Where exactly?",
+     "zh": "具体在哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "Along the high street, replacing some parking.",
+     "zh": "沿大街走，替换掉一部分停车位。"
+    },
+    {
+     "r": 0,
+     "en": "That will hurt the shops. Have they modelled delivery times?",
+     "zh": "那会影响店铺。他们做过送货时间模拟吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. That is what tonight is for.",
+     "zh": "还没有。今晚就是为这个。"
+    },
+    {
+     "r": 0,
+     "en": "Then I would like to speak. How long do I get?",
+     "zh": "那我想发言。有几分钟？"
+    },
+    {
+     "r": 1,
+     "en": "Three minutes, and you need to sign in first.",
+     "zh": "三分钟，要先登记。"
+    },
+    {
+     "r": 0,
+     "en": "I will sign in now.",
+     "zh": "我现在去登记。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "主持人限制你的发言，你要在规则内争取",
+    "prompt": {
+     "en": "You have three minutes, and no questions to the panel.",
+     "zh": "三分钟，不能向小组提问。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then I will keep to two points and leave the rest in writing.",
+       "zh": "那我讲两点，其余书面提交。"
+      },
+      "react": {
+       "en": "That is noted. Please come to the microphone.",
+       "zh": "记下了。请到麦克风前。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I at least ask one factual question?",
+       "zh": "至少能问一个事实性问题吗？"
+      },
+      "react": {
+       "en": "One, at the end, if time allows.",
+       "zh": "最后可以问一个，如果时间允许。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Have they modelled delivery times?",
+     "zh": "他们做过送货时间模拟吗？"
+    },
+    {
+     "en": "Could the decision be deferred?",
+     "zh": "能延后决定吗？"
+    },
+    {
+     "en": "I am speaking for six residents.",
+     "zh": "我代表六位居民发言。"
+    }
+   ]
+  },
+  {
+   "id": "community-meeting-2",
+   "g": "community-meeting",
+   "name": "社区听证会发言 · 支持方",
+   "cat": "社交",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你支持这个提案。",
+   "roles": [
+    "你",
+    "主持"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The council is proposing a new cycle lane.",
+     "zh": "市政提议修一条新的自行车道。"
+    },
+    {
+     "r": 0,
+     "en": "Where exactly?",
+     "zh": "具体在哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "Along the high street, replacing some parking.",
+     "zh": "沿大街走，替换掉一部分停车位。"
+    },
+    {
+     "r": 0,
+     "en": "I support it. Two of my staff cycle and cannot use that road safely.",
+     "zh": "我支持。我有两个员工骑车，那条路不安全。"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. That is what tonight is for.",
+     "zh": "还没有。今晚就是为这个。"
+    },
+    {
+     "r": 0,
+     "en": "Then I would like to speak. How long do I get?",
+     "zh": "那我想发言。有几分钟？"
+    },
+    {
+     "r": 1,
+     "en": "Three minutes, and you need to sign in first.",
+     "zh": "三分钟，要先登记。"
+    },
+    {
+     "r": 0,
+     "en": "I will sign in now.",
+     "zh": "我现在去登记。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "主持人限制你的发言，你要在规则内争取",
+    "prompt": {
+     "en": "You have three minutes, and no questions to the panel.",
+     "zh": "三分钟，不能向小组提问。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then I will keep to two points and leave the rest in writing.",
+       "zh": "那我讲两点，其余书面提交。"
+      },
+      "react": {
+       "en": "That is noted. Please come to the microphone.",
+       "zh": "记下了。请到麦克风前。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I at least ask one factual question?",
+       "zh": "至少能问一个事实性问题吗？"
+      },
+      "react": {
+       "en": "One, at the end, if time allows.",
+       "zh": "最后可以问一个，如果时间允许。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Have they modelled delivery times?",
+     "zh": "他们做过送货时间模拟吗？"
+    },
+    {
+     "en": "Could the decision be deferred?",
+     "zh": "能延后决定吗？"
+    },
+    {
+     "en": "I am speaking for six residents.",
+     "zh": "我代表六位居民发言。"
+    }
+   ]
+  },
+  {
+   "id": "community-meeting-3",
+   "g": "community-meeting",
+   "name": "社区听证会发言 · 反对方",
+   "cat": "社交",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你担心生意。",
+   "roles": [
+    "你",
+    "主持"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The council is proposing a new cycle lane.",
+     "zh": "市政提议修一条新的自行车道。"
+    },
+    {
+     "r": 0,
+     "en": "Where exactly?",
+     "zh": "具体在哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "Along the high street, replacing some parking.",
+     "zh": "沿大街走，替换掉一部分停车位。"
+    },
+    {
+     "r": 0,
+     "en": "Forty percent of my customers park on that side. Where do they go?",
+     "zh": "我四成客人停在那一边。他们去哪儿停？"
+    },
+    {
+     "r": 1,
+     "en": "That is the question the traffic study should answer.",
+     "zh": "这正是交通研究该回答的。"
+    },
+    {
+     "r": 0,
+     "en": "Then I would like to speak. How long do I get?",
+     "zh": "那我想发言。有几分钟？"
+    },
+    {
+     "r": 1,
+     "en": "Three minutes, and you need to sign in first.",
+     "zh": "三分钟，要先登记。"
+    },
+    {
+     "r": 0,
+     "en": "I will sign in now.",
+     "zh": "我现在去登记。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "主持人限制你的发言，你要在规则内争取",
+    "prompt": {
+     "en": "You have three minutes, and no questions to the panel.",
+     "zh": "三分钟，不能向小组提问。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then I will keep to two points and leave the rest in writing.",
+       "zh": "那我讲两点，其余书面提交。"
+      },
+      "react": {
+       "en": "That is noted. Please come to the microphone.",
+       "zh": "记下了。请到麦克风前。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I at least ask one factual question?",
+       "zh": "至少能问一个事实性问题吗？"
+      },
+      "react": {
+       "en": "One, at the end, if time allows.",
+       "zh": "最后可以问一个，如果时间允许。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Have they modelled delivery times?",
+     "zh": "他们做过送货时间模拟吗？"
+    },
+    {
+     "en": "Could the decision be deferred?",
+     "zh": "能延后决定吗？"
+    },
+    {
+     "en": "I am speaking for six residents.",
+     "zh": "我代表六位居民发言。"
+    }
+   ]
+  },
+  {
+   "id": "community-meeting-4",
+   "g": "community-meeting",
+   "name": "社区听证会发言 · 要求延期",
+   "cat": "社交",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你觉得材料不足。",
+   "roles": [
+    "你",
+    "主持"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The council is proposing a new cycle lane.",
+     "zh": "市政提议修一条新的自行车道。"
+    },
+    {
+     "r": 0,
+     "en": "Where exactly?",
+     "zh": "具体在哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "Along the high street, replacing some parking.",
+     "zh": "沿大街走，替换掉一部分停车位。"
+    },
+    {
+     "r": 0,
+     "en": "That will hurt the shops. Have they modelled delivery times?",
+     "zh": "那会影响店铺。他们做过送货时间模拟吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. That is what tonight is for.",
+     "zh": "还没有。今晚就是为这个。"
+    },
+    {
+     "r": 0,
+     "en": "Could the decision be deferred until the study is published?",
+     "zh": "能等研究公布后再决定吗？"
+    },
+    {
+     "r": 1,
+     "en": "Three minutes, and you need to sign in first.",
+     "zh": "三分钟，要先登记。"
+    },
+    {
+     "r": 0,
+     "en": "I will sign in now.",
+     "zh": "我现在去登记。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "主持人限制你的发言，你要在规则内争取",
+    "prompt": {
+     "en": "You have three minutes, and no questions to the panel.",
+     "zh": "三分钟，不能向小组提问。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then I will keep to two points and leave the rest in writing.",
+       "zh": "那我讲两点，其余书面提交。"
+      },
+      "react": {
+       "en": "That is noted. Please come to the microphone.",
+       "zh": "记下了。请到麦克风前。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I at least ask one factual question?",
+       "zh": "至少能问一个事实性问题吗？"
+      },
+      "react": {
+       "en": "One, at the end, if time allows.",
+       "zh": "最后可以问一个，如果时间允许。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Have they modelled delivery times?",
+     "zh": "他们做过送货时间模拟吗？"
+    },
+    {
+     "en": "Could the decision be deferred?",
+     "zh": "能延后决定吗？"
+    },
+    {
+     "en": "I am speaking for six residents.",
+     "zh": "我代表六位居民发言。"
+    }
+   ]
+  },
+  {
+   "id": "community-meeting-5",
+   "g": "community-meeting",
+   "name": "社区听证会发言 · 代表他人",
+   "cat": "社交",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你替邻居发言。",
+   "roles": [
+    "你",
+    "主持"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I am speaking for six residents on my street who cannot attend.",
+     "zh": "我代表我们街六位来不了的居民发言。"
+    },
+    {
+     "r": 0,
+     "en": "Where exactly?",
+     "zh": "具体在哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "Along the high street, replacing some parking.",
+     "zh": "沿大街走，替换掉一部分停车位。"
+    },
+    {
+     "r": 0,
+     "en": "That will hurt the shops. Have they modelled delivery times?",
+     "zh": "那会影响店铺。他们做过送货时间模拟吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. That is what tonight is for.",
+     "zh": "还没有。今晚就是为这个。"
+    },
+    {
+     "r": 0,
+     "en": "Then I would like to speak. How long do I get?",
+     "zh": "那我想发言。有几分钟？"
+    },
+    {
+     "r": 1,
+     "en": "Three minutes, and you need to sign in first.",
+     "zh": "三分钟，要先登记。"
+    },
+    {
+     "r": 0,
+     "en": "I will sign in now.",
+     "zh": "我现在去登记。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "主持人限制你的发言，你要在规则内争取",
+    "prompt": {
+     "en": "You have three minutes, and no questions to the panel.",
+     "zh": "三分钟，不能向小组提问。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then I will keep to two points and leave the rest in writing.",
+       "zh": "那我讲两点，其余书面提交。"
+      },
+      "react": {
+       "en": "That is noted. Please come to the microphone.",
+       "zh": "记下了。请到麦克风前。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I at least ask one factual question?",
+       "zh": "至少能问一个事实性问题吗？"
+      },
+      "react": {
+       "en": "One, at the end, if time allows.",
+       "zh": "最后可以问一个，如果时间允许。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Have they modelled delivery times?",
+     "zh": "他们做过送货时间模拟吗？"
+    },
+    {
+     "en": "Could the decision be deferred?",
+     "zh": "能延后决定吗？"
+    },
+    {
+     "en": "I am speaking for six residents.",
+     "zh": "我代表六位居民发言。"
+    }
+   ]
+  },
+  {
+   "id": "community-meeting-6",
+   "g": "community-meeting",
+   "name": "社区听证会发言 · 时间不够",
+   "cat": "社交",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "三分钟不够讲。",
+   "roles": [
+    "你",
+    "主持"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The council is proposing a new cycle lane.",
+     "zh": "市政提议修一条新的自行车道。"
+    },
+    {
+     "r": 0,
+     "en": "Where exactly?",
+     "zh": "具体在哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "Along the high street, replacing some parking.",
+     "zh": "沿大街走，替换掉一部分停车位。"
+    },
+    {
+     "r": 0,
+     "en": "That will hurt the shops. Have they modelled delivery times?",
+     "zh": "那会影响店铺。他们做过送货时间模拟吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. That is what tonight is for.",
+     "zh": "还没有。今晚就是为这个。"
+    },
+    {
+     "r": 0,
+     "en": "Then I would like to speak. How long do I get?",
+     "zh": "那我想发言。有几分钟？"
+    },
+    {
+     "r": 1,
+     "en": "Three minutes, and you need to sign in first.",
+     "zh": "三分钟，要先登记。"
+    },
+    {
+     "r": 0,
+     "en": "Three minutes is not enough for this. Can I submit it in writing?",
+     "zh": "三分钟讲不完。能书面提交吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "主持人限制你的发言，你要在规则内争取",
+    "prompt": {
+     "en": "You have three minutes, and no questions to the panel.",
+     "zh": "三分钟，不能向小组提问。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then I will keep to two points and leave the rest in writing.",
+       "zh": "那我讲两点，其余书面提交。"
+      },
+      "react": {
+       "en": "That is noted. Please come to the microphone.",
+       "zh": "记下了。请到麦克风前。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I at least ask one factual question?",
+       "zh": "至少能问一个事实性问题吗？"
+      },
+      "react": {
+       "en": "One, at the end, if time allows.",
+       "zh": "最后可以问一个，如果时间允许。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Have they modelled delivery times?",
+     "zh": "他们做过送货时间模拟吗？"
+    },
+    {
+     "en": "Could the decision be deferred?",
+     "zh": "能延后决定吗？"
+    },
+    {
+     "en": "I am speaking for six residents.",
+     "zh": "我代表六位居民发言。"
     }
    ]
   },
