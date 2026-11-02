@@ -13,8 +13,10 @@ data/backup/
 data/cache/
 data/qa/
 data/tr-inbox/
-data/src-*.txt      # dump-book 导出的待译句子，随时可重生成
-data/tr-in/         # 每批译文的中间文件，写完就已经进 tr-work，不必留
+# dump-book 导出的待译句子，随时可重生成
+data/src-*.txt
+# 每批译文的中间文件，写完就已经进 tr-work，不必留
+data/tr-in/
 shots/
 
 # 工具与编辑器

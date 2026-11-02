@@ -5,6 +5,8 @@ import { recommend } from '../lib/data';
 import { useGame } from '../lib/store';
 import type { Article } from '../lib/types';
 import { bookHasZh, bookMatches, bookZh } from '../lib/book-titles';
+import { loadFullIndex, type FullBookInfo } from '../lib/fullbooks';
+import { FullBookReader } from './FullBookReader';
 
 /**
  * 文库：先看书架，再翻目录，最后才是一段一段读。
@@ -26,6 +28,19 @@ export function LibraryScreen() {
   const [q, setQ] = useState('');
   const [open, setOpen] = useState<string | null>(null);
   const [covers, setCovers] = useState<Record<string, string>>({});
+  const [full, setFull] = useState<Record<string, FullBookInfo>>({});
+  const [fullOpen, setFullOpen] = useState<string | null>(null);
+
+  /*
+   * 全书译文索引。
+   * 书架是最先看到的地方 —— 哪本书能整本读下去，必须在挑书时就看得见，
+   * 而不是点进阅读页才发现多个按钮。
+   */
+  useEffect(() => {
+    let alive = true;
+    void loadFullIndex().then(b => { if (alive) setFull(b); });
+    return () => { alive = false; };
+  }, []);
 
   useEffect(() => {
     let alive = true;
@@ -73,7 +88,33 @@ export function LibraryScreen() {
   const shown = groups.reduce((s, g) => s + g.list.length, 0);
   const next = useMemo(() => recommend(corpus, p.mastery, Math.min(7, p.unlocked), p.recent), [corpus, p.mastery, p.unlocked, p.recent]);
 
+  /* 书名 → 全书数据。index 以 slug 为键，这里按 title 反查一次即可 */
+  const fullOf = useMemo(() => {
+    const m = new Map<string, FullBookInfo>();
+    for (const b of Object.values(full)) m.set(b.title, b);
+    return m;
+  }, [full]);
+
+  /*
+   * 书架的排法：能整本读的排前面。
+   * 按篇数排的话，读到第 40 本才会遇到一本"全书" —— 那等于把这次做的事藏起来了。
+   * 全书内部按句子多少排（短的在前，容易开头）。
+   */
+  const shelf = useMemo(() => {
+    const of = (t: string) => fullOf.get(t)?.n ?? 0;
+    return [...groups].sort((x, y) => {
+      const fx = of(x.title) > 0, fy = of(y.title) > 0;
+      if (fx !== fy) return fx ? -1 : 1;
+      if (fx && fy) return of(x.title) - of(y.title);
+      return 0;
+    });
+  }, [groups, fullOf]);
+
   const book = open ? groups.find(g => g.title === open) ?? null : null;
+  const bookFull = book ? fullOf.get(book.title) ?? null : null;
+
+  /* 读全书：整本通读，退出后回到目录 */
+  if (fullOpen) return <FullBookReader title={fullOpen} onExit={() => setFullOpen(null)} />;
   const coverOf = (title: string) => `${import.meta.env.BASE_URL || '/'}covers/${covers[title] ?? ''}`;
 
   return (
@@ -128,8 +169,14 @@ export function LibraryScreen() {
                 {book.theme} · {book.list.length} 篇 · L{book.lvMin}
                 {book.lvMax !== book.lvMin && `–${book.lvMax}`}
                 {book.done > 0 && ` · 已练 ${book.done} 篇`}
+                {bookFull && ` · 全书 ${bookFull.n} 句已译`}
               </div>
             </div>
+            {bookFull && (
+              <button className="btn btn-ghost" onClick={() => setFullOpen(book.title)}>
+                读全书
+              </button>
+            )}
             <button
               className="btn btn-primary"
               onClick={() => {
@@ -168,7 +215,7 @@ export function LibraryScreen() {
         </section>
       ) : (
         <div className="lib-shelf">
-          {groups.map(g => (
+          {shelf.map(g => (
             <button
               key={g.title}
               className="lib-book"
@@ -179,6 +226,7 @@ export function LibraryScreen() {
                 {/* 不做懒加载：52 张封面加起来 600 KB 上下，本地读几乎不花时间，
                     而懒加载会在滚动时一格一格地闪白 —— 书架最不该有的就是这个 */}
                 <img src={coverOf(g.title)} alt="" decoding="async" />
+                {fullOf.has(g.title) && <span className="lib-full">全书</span>}
                 {g.done > 0 && (
                   <span className="lib-cover-bar">
                     <i style={{ width: `${Math.round((g.done / g.list.length) * 100)}%` }} />
@@ -190,7 +238,8 @@ export function LibraryScreen() {
                 {bookHasZh(g.title) && <em className="lib-book-en">{g.title}</em>}
               </span>
               <span className="lib-book-meta">
-                {g.list.length} 篇 · L{g.lvMin}
+                {fullOf.has(g.title) ? `全书 ${fullOf.get(g.title)!.n} 句` : `${g.list.length} 篇`}
+                {' · '}L{g.lvMin}
                 {g.lvMax !== g.lvMin && `–${g.lvMax}`}
               </span>
             </button>
