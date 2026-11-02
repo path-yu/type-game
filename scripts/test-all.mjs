@@ -33,6 +33,7 @@ const steps = [
   { name: '对话语料体检', cmd: 'node', args: ['scripts/audit-dialogue.mjs'], desc: '重复句 / 难度失真 / 岔路覆盖 / 体积', needsServer: false },
   { name: '词库覆盖', cmd: 'node', args: ['scripts/audit-words.mjs'], desc: '对话台词 100% 有释义', needsServer: false },
   { name: '场景等级', cmd: 'node', args: ['scripts/audit-level.mjs'], desc: '等级分布 / 词汇画像 / 阈值', needsServer: false },
+  { name: '资源路径', cmd: 'node', args: ['scripts/audit-assets.mjs'], desc: '构建产物里的引用是否都存在', needsServer: false },
   { name: '续读链路', cmd: 'node', args: ['scripts/test-seq.mjs'], desc: '6 项段号 / 同书续读', needsServer: true },
   { name: '预习卡', cmd: 'node', args: ['scripts/test-pretest.mjs'], desc: '12 项先测后学', needsServer: true },
   { name: '文库浏览', cmd: 'node', args: ['scripts/test-library.mjs'], desc: '11 项全库 / 筛选 / 进入', needsServer: true },

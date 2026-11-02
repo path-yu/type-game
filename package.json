@@ -35,7 +35,8 @@
     "audit:cloze": "node scripts/audit-cloze.mjs",
     "audit:gloss": "node scripts/audit-gloss.mjs",
     "audit:dialogue": "node scripts/audit-dialogue.mjs",
-    "audit:words": "node scripts/audit-words.mjs"
+    "audit:words": "node scripts/audit-words.mjs",
+    "audit:assets": "node scripts/audit-assets.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

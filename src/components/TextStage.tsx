@@ -47,14 +47,18 @@ export const TextStage = forwardRef<StageHandle, Props>(function TextStage(
     while (i < chars.length) {
       const w = words[wi];
       if (w && i === w.start) {
+        // 标点跟着前面的词走。`.w` 是 nowrap，标点单独成 span 的话，
+        // 行尾放不下会在空格处断行，句号就被挤到下一行行首（" . You do not..."）。
+        let end = w.end;
+        while (end < chars.length && !isSpace[end] && !/[A-Za-z0-9]/.test(chars[end])) end++;
         const kids: React.ReactNode[] = [];
-        for (let c = w.start; c < w.end; c++) kids.push(chSpan(c));
+        for (let c = w.start; c < end; c++) kids.push(chSpan(c));
         out.push(
           <span key={`w${w.start}`} className="w" data-key={w.key} data-word={w.raw}>
             {kids}
           </span>
         );
-        i = w.end;
+        i = end;
         wi++;
       } else {
         out.push(chSpan(i));
