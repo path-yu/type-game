@@ -8,6 +8,8 @@ import { speak, stopSpeaking } from '../lib/speech';
 import { useGame } from '../lib/store';
 import { translationsFor } from '../lib/trans';
 import { WordCard } from '../components/WordCard';
+import { hasFullBook } from '../lib/fullbooks';
+import { FullBookReader } from './FullBookReader';
 
 /**
  * 阅读页：先把文章看完，再决定要不要打。
@@ -38,6 +40,8 @@ export function ReaderScreen() {
   const [pages, setPages] = useState(1);
   const [box, setBox] = useState({ w: 0, h: 0 });
   const [trTried, setTrTried] = useState(false);
+  const [fullOk, setFullOk] = useState(false);
+  const [fullOpen, setFullOpen] = useState(false);
   const [reading, setReading] = useState(false);
   const [card, setCard] = useState<{
     key: string; surface: string; anchor: { x: number; y: number; w: number; b: number }; saved: boolean;
@@ -73,6 +77,14 @@ export function ReaderScreen() {
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
+
+  /* 这本书有没有全书译文：决定要不要给「读全书」入口 */
+  useEffect(() => {
+    let alive = true;
+    if (!article) return;
+    void hasFullBook(article.s).then(ok => { if (alive) setFullOk(ok); });
+    return () => { alive = false; };
+  }, [article?.s]);
 
   const sents = useMemo(() => (article ? splitSentences(article.tx) : []), [article]);
   const toks = useMemo(() => (article ? tokenize(corpus, article.tx) : []), [corpus, article]);
@@ -181,6 +193,9 @@ export function ReaderScreen() {
 
   const showZh = settings.readerZh;
   const noTr = trTried && !tr;
+
+  /* 全书模式：整本通读（只对翻完的书开放） */
+  if (fullOpen) return <FullBookReader title={article.s} onExit={() => setFullOpen(false)} />;
   const entry = lookup(corpus, card?.key ?? '');
 
   return (
@@ -212,6 +227,11 @@ export function ReaderScreen() {
           >
             {showZh ? '中英' : '原文'}
           </button>
+          {fullOk && (
+            <button className="btn btn-ghost" onClick={() => setFullOpen(true)} title="整本通读，全部句子都有译文">
+              读全书
+            </button>
+          )}
           <button className="btn btn-primary" onClick={() => play(article)}>开始打字</button>
         </div>
       </div>

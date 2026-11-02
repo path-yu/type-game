@@ -224,6 +224,49 @@ await page.evaluate(() => document.querySelector('.tbar .icon-btn')?.click());
 await page.waitForSelector('.hero', { timeout: 6000 });
 check('从地图进的打字仍然回地图', await page.evaluate(() => !!document.querySelector('.hero')));
 
+// —— 全书阅读：只对 100% 翻完的书开放 ——
+await page.evaluate(() => {
+  [...document.querySelectorAll('.side-item')].find(x => x.textContent.includes('文库'))?.click();
+});
+await page.waitForSelector('.lib-shelf', { timeout: 6000 });
+await page.evaluate(() => {
+  [...document.querySelectorAll('.lib-book')].find(x => /爱丽丝/.test(x.textContent))?.click();
+});
+await page.waitForSelector('.lib-row', { timeout: 4000 });
+await page.evaluate(() => document.querySelector('.lib-row')?.click());
+await page.waitForSelector('.rd-page', { timeout: 6000 });
+await sleep(700);
+
+const hasEntry = await page.evaluate(() =>
+  [...document.querySelectorAll('.rd-head-acts .btn')].some(x => x.textContent.trim() === '读全书'));
+check('翻完的书有「读全书」入口', hasEntry);
+
+await page.evaluate(() => {
+  [...document.querySelectorAll('.rd-head-acts .btn')].find(x => x.textContent.trim() === '读全书')?.click();
+});
+await page.waitForSelector('.rd-page', { timeout: 8000 });
+await sleep(1200);
+
+const full = await page.evaluate(() => ({
+  title: document.querySelector('.rd-title')?.textContent?.trim() ?? '',
+  run: document.querySelector('.rd-run')?.textContent?.replace(/\s+/g, ' ').trim() ?? '',
+  sents: document.querySelectorAll('.rd-sent').length,
+  zh: document.querySelectorAll('.rd-zh').length,
+  pages: document.querySelector('.rd-pageno')?.textContent?.trim() ?? '',
+  flowW: document.querySelector('.rd-body')?.scrollWidth ?? 0,
+  viewW: document.querySelector('.rd-page')?.clientWidth ?? 1,
+}));
+const pageN = +(full.pages.split('/')[1] ?? 0);
+check('全书模式载入了整本句子', full.sents > 1000, `${full.sents} 句`);
+check('全书每句都配了译文', full.zh === full.sents, `${full.zh} / ${full.sents}`);
+check('全书分成了很多页', pageN > 50, full.pages);
+check('书眉标出这是全书', /全书/.test(full.run), full.run.slice(0, 24));
+
+await page.keyboard.press('ArrowRight');
+await sleep(400);
+const turned = await page.evaluate(() => document.querySelector('.rd-pageno')?.textContent?.trim() ?? '');
+check('全书模式能翻页', turned !== full.pages, `${full.pages} → ${turned}`);
+
 console.log(`\n通过 ${pass} · 失败 ${fail}`);
 console.log('运行时错误:', errs.length ? errs.slice(0, 3) : '0');
 await b.close();
