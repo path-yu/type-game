@@ -871,6 +871,20 @@ input, textarea { font-family: inherit; }
 
 .theme-btn.on { background: var(--accent-soft); color: var(--accent); }
 
+/* 数据目录：路径要能一眼看清是哪一层，允许换行 */
+.dir-path {
+  font-family: var(--font-mono); font-size: 11px;
+  word-break: break-all; user-select: text;
+}
+.dir-acts { display: flex; flex-wrap: wrap; gap: 6px; flex: none; }
+.dir-acts .btn { height: 28px; padding: 0 10px; font-size: 11.5px; }
+.set-msg {
+  margin: 0 var(--sp-4) 12px; padding: 8px 10px;
+  font-size: 11.5px; line-height: 1.6; border-radius: var(--r-ctl);
+}
+.set-msg.ok { color: var(--accent); background: var(--accent-soft); }
+.set-msg.err { color: var(--err); background: color-mix(in srgb, var(--err) 12%, transparent); }
+
 /* 减少动效（设置项真正生效） */
 .no-motion *, .no-motion *::before, .no-motion *::after {
   animation: none !important;

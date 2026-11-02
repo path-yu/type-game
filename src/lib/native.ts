@@ -36,16 +36,50 @@ export interface AppInfo {
   version: string;
   platform: string;
   arch: string;
+  /** 当前生效的数据目录 */
   dataDir: string;
+  /** 默认位置，用于「恢复默认」时对照 */
+  defaultDir: string;
+  /** 用户是否改过目录 */
+  custom: boolean;
   firstRun: boolean;
 }
 
 export async function appInfo(): Promise<AppInfo | null> {
   const r = await invoke<{
-    version: string; platform: string; arch: string; data_dir: string; first_run: boolean;
+    version: string; platform: string; arch: string;
+    data_dir: string; default_dir: string; custom: boolean; first_run: boolean;
   }>('app_info');
   if (!r) return null;
-  return { version: r.version, platform: r.platform, arch: r.arch, dataDir: r.data_dir, firstRun: r.first_run };
+  return {
+    version: r.version,
+    platform: r.platform,
+    arch: r.arch,
+    dataDir: r.data_dir,
+    defaultDir: r.default_dir,
+    custom: r.custom,
+    firstRun: r.first_run,
+  };
+}
+
+/** 弹系统选目录框；取消返回 null */
+export async function pickDataDir(): Promise<string | null> {
+  return invoke<string | null>('pick_data_dir');
+}
+
+/** 换数据目录（会把现有进度复制过去，旧文件保留） */
+export async function setDataDir(dir: string): Promise<string | null> {
+  return invoke<string>('set_data_dir', { path: dir });
+}
+
+/** 回到默认目录（不动文件，只改指向） */
+export async function resetDataDir(): Promise<string | null> {
+  return invoke<string>('reset_data_dir');
+}
+
+/** 在文件管理器里打开 */
+export async function openDataDir(): Promise<string | null> {
+  return invoke<string>('open_data_dir');
 }
 
 export async function loadNativeProgress(): Promise<unknown | null> {

@@ -24,6 +24,8 @@ serde_json = "1"
 # schemars 0.8（tauri 传递依赖）用的是 indexmap 1.x，且关掉了 default features。
 # 不显式打开 std，indexmap 的 `S = RandomState` 默认泛型会消失，schemars 直接编译失败。
 indexmap = { version = "1.9", features = ["std"] }
+# 选目录用（数据目录可以改到别处）
+tauri-plugin-dialog = "2"
 
 [profile.release]
 panic = "abort"

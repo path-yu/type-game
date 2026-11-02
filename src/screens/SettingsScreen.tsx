@@ -1,5 +1,6 @@
 import { useGame } from '../lib/store';
 import { BackupGroup } from '../components/BackupGroup';
+import { DataDirGroup } from '../components/DataDirGroup';
 import { apply, MODE_LABEL, type ThemeMode } from '../lib/theme';
 import { speak } from '../lib/speech';
 import { setMuted } from '../lib/sfx';
@@ -176,6 +177,7 @@ export function SettingsScreen({ mode, onMode }: Props) {
       </div>
 
       <BackupGroup />
+      <DataDirGroup />
 
       <div className="set-group">
         <div className="set-group-title">关于</div>
