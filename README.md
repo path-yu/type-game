@@ -15,8 +15,9 @@ npm run tauri:dev      # 桌面端开发模式（自动起 vite）
 npm run tauri:build    # 打包安装程序（nsis / msi）
 ```
 
-> 想直接跑现成的可执行文件：`src-tauri/target/release/typewake.exe`
-> （约 4.3 MB，已内嵌全部文本与词库，双击即可）。
+> 想直接跑现成的可执行文件：**[`release/TypeWake-0.1.0-win-x64.exe`](release/TypeWake-0.1.0-win-x64.exe)**
+> （3.1 MB，单文件，已内嵌全部文本与词库，双击即可，不需要装 Node 或 Rust）。
+> 这是某次构建的快照；代码更新后自己重新构建一次，产物在 `src-tauri/target/release/typewake.exe`。
 
 桌面端首次启动会在 `%APPDATA%\com.typewake.app\` 生成 `ready.json`，
 内容形如 `{"articles":1179,"words":7584}`。**如果这个文件没出现，说明资源加载通路有问题**，
