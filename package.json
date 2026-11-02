@@ -36,7 +36,11 @@
     "audit:gloss": "node scripts/audit-gloss.mjs",
     "audit:dialogue": "node scripts/audit-dialogue.mjs",
     "audit:words": "node scripts/audit-words.mjs",
-    "audit:assets": "node scripts/audit-assets.mjs"
+    "audit:assets": "node scripts/audit-assets.mjs",
+    "tr:build": "node scripts/tr/build.mjs",
+    "tr:status": "node scripts/tr/status.mjs",
+    "tr:next": "node scripts/tr/next.mjs",
+    "tr:export": "node scripts/tr/export.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
