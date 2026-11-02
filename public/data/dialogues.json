@@ -34450,31 +34450,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "probe",
-    "task": "验光师建议一项附加服务，你要判断",
+    "kind": "cost",
+    "task": "想只换镜片，可镜架没了",
     "prompt": {
-     "en": "I would add the anti-fatigue coating. It helps with screens.",
-     "zh": "我建议加抗疲劳镀膜。对屏幕有帮助。"
+     "en": "New lenses in the same frame is ninety, but your frame is discontinued. A new one starts at a hundred and forty.",
+     "zh": "原镜架换镜片九十，可你这副停产了。新镜架一百四起。"
     },
     "options": [
      {
       "say": {
-       "en": "How much extra?",
-       "zh": "加多少钱？"
+       "en": "Ninety plus a frame is a lot. Is there a cheaper line?",
+       "zh": "九十再加镜架太贵。有便宜的系列吗？"
       },
       "react": {
-       "en": "Thirty. It lasts as long as the lenses.",
-       "zh": "三十。跟镜片一样耐用。"
+       "en": "The basic range starts at sixty.",
+       "zh": "基础系列六十起。"
       }
      },
      {
       "say": {
-       "en": "Does it actually work, or is it marketing?",
-       "zh": "真有用还是营销？"
+       "en": "Then fix the lenses in my old frame however you can.",
+       "zh": "那想办法把镜片装回我这副旧的。"
       },
       "react": {
-       "en": "It helps some people. Not everyone notices.",
-       "zh": "对部分人有用。不是人人有感。"
+       "en": "I can, if the screws hold. Two days.",
+       "zh": "可以，只要螺丝还吃得住。两天。"
       }
      }
     ]
@@ -34551,31 +34551,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "probe",
-    "task": "验光师建议一项附加服务，你要判断",
+    "kind": "cost",
+    "task": "想只换镜片，可镜架没了",
     "prompt": {
-     "en": "I would add the anti-fatigue coating. It helps with screens.",
-     "zh": "我建议加抗疲劳镀膜。对屏幕有帮助。"
+     "en": "New lenses in the same frame is ninety, but your frame is discontinued. A new one starts at a hundred and forty.",
+     "zh": "原镜架换镜片九十，可你这副停产了。新镜架一百四起。"
     },
     "options": [
      {
       "say": {
-       "en": "How much extra?",
-       "zh": "加多少钱？"
+       "en": "Ninety plus a frame is a lot. Is there a cheaper line?",
+       "zh": "九十再加镜架太贵。有便宜的系列吗？"
       },
       "react": {
-       "en": "Thirty. It lasts as long as the lenses.",
-       "zh": "三十。跟镜片一样耐用。"
+       "en": "The basic range starts at sixty.",
+       "zh": "基础系列六十起。"
       }
      },
      {
       "say": {
-       "en": "Does it actually work, or is it marketing?",
-       "zh": "真有用还是营销？"
+       "en": "Then fix the lenses in my old frame however you can.",
+       "zh": "那想办法把镜片装回我这副旧的。"
       },
       "react": {
-       "en": "It helps some people. Not everyone notices.",
-       "zh": "对部分人有用。不是人人有感。"
+       "en": "I can, if the screws hold. Two days.",
+       "zh": "可以，只要螺丝还吃得住。两天。"
       }
      }
     ]
@@ -34652,31 +34652,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "probe",
-    "task": "医生问你生活习惯，你要如实答",
+    "kind": "offer",
+    "task": "医生主动提一个额外资源，你要判断要不要",
     "prompt": {
-     "en": "How many units of alcohol do you drink a week?",
-     "zh": "你一周喝多少酒？"
+     "en": "Less fried food and more fish. We also run a free nutrition group on Wednesdays.",
+     "zh": "少吃油炸，多吃鱼。我们周三还有个免费营养门诊。"
     },
     "options": [
      {
       "say": {
-       "en": "About ten, mostly at weekends.",
-       "zh": "大概十个单位，多在周末。"
+       "en": "Is it one-to-one or a lecture?",
+       "zh": "是一对一还是讲座？"
       },
       "react": {
-       "en": "That is within the limit, but it affects cholesterol.",
-       "zh": "在建议范围内，但会影响胆固醇。"
+       "en": "Six people, one dietitian. Forty minutes.",
+       "zh": "六个人，一个营养师。四十分钟。"
       }
      },
      {
       "say": {
-       "en": "Very little. Maybe twice a month.",
-       "zh": "很少。一个月两次。"
+       "en": "I will try it. My diet is mostly guesswork.",
+       "zh": "我去试试。我吃饭基本靠猜。"
       },
       "react": {
-       "en": "Then diet is the main lever.",
-       "zh": "那饮食是主要抓手。"
+       "en": "Come at six. No booking needed.",
+       "zh": "六点来。不用预约。"
       }
      }
     ]
@@ -34753,31 +34753,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "probe",
-    "task": "医生问你生活习惯，你要如实答",
+    "kind": "offer",
+    "task": "医生主动提一个额外资源，你要判断要不要",
     "prompt": {
-     "en": "How many units of alcohol do you drink a week?",
-     "zh": "你一周喝多少酒？"
+     "en": "Less fried food and more fish. We also run a free nutrition group on Wednesdays.",
+     "zh": "少吃油炸，多吃鱼。我们周三还有个免费营养门诊。"
     },
     "options": [
      {
       "say": {
-       "en": "About ten, mostly at weekends.",
-       "zh": "大概十个单位，多在周末。"
+       "en": "Is it one-to-one or a lecture?",
+       "zh": "是一对一还是讲座？"
       },
       "react": {
-       "en": "That is within the limit, but it affects cholesterol.",
-       "zh": "在建议范围内，但会影响胆固醇。"
+       "en": "Six people, one dietitian. Forty minutes.",
+       "zh": "六个人，一个营养师。四十分钟。"
       }
      },
      {
       "say": {
-       "en": "Very little. Maybe twice a month.",
-       "zh": "很少。一个月两次。"
+       "en": "I will try it. My diet is mostly guesswork.",
+       "zh": "我去试试。我吃饭基本靠猜。"
       },
       "react": {
-       "en": "Then diet is the main lever.",
-       "zh": "那饮食是主要抓手。"
+       "en": "Come at six. No booking needed.",
+       "zh": "六点来。不用预约。"
       }
      }
     ]
@@ -35561,31 +35561,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "probe",
-    "task": "理疗师要你做一个动作测试，你要说清感受",
+    "kind": "cost",
+    "task": "不用做检查，但疗程要花钱，而且预付更便宜",
     "prompt": {
-     "en": "Bend forward slowly and tell me when it pulls.",
-     "zh": "慢慢前弯，哪里拉紧就告诉我。"
+     "en": "No scans. Six sessions is four hundred, or three hundred if you pay up front.",
+     "zh": "不用做检查。六次四百，预付的话三百。"
     },
     "options": [
      {
       "say": {
-       "en": "Now, on the left, just above the hip.",
-       "zh": "现在，左边，髋部上方。"
+       "en": "What if I only need three?",
+       "zh": "只要三次呢？"
       },
       "react": {
-       "en": "That is the spot I expected.",
-       "zh": "跟我预计的位置一致。"
+       "en": "Then pay as you go, sixty-five a session.",
+       "zh": "那就单次付，一次六十五。"
       }
      },
      {
       "say": {
-       "en": "It is more of a dull ache than a pull.",
-       "zh": "更像是钝痛，不是拉紧。"
+       "en": "I will pay for six up front.",
+       "zh": "我预付六次。"
       },
       "react": {
-       "en": "Good. That changes the exercise.",
-       "zh": "好。那练的东西要换。"
+       "en": "Good. Book them now, same time each week.",
+       "zh": "好。现在约，每周同一时间。"
       }
      }
     ]
@@ -35763,31 +35763,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "probe",
-    "task": "理疗师要你做一个动作测试，你要说清感受",
+    "kind": "cost",
+    "task": "不用做检查，但疗程要花钱，而且预付更便宜",
     "prompt": {
-     "en": "Bend forward slowly and tell me when it pulls.",
-     "zh": "慢慢前弯，哪里拉紧就告诉我。"
+     "en": "No scans. Six sessions is four hundred, or three hundred if you pay up front.",
+     "zh": "不用做检查。六次四百，预付的话三百。"
     },
     "options": [
      {
       "say": {
-       "en": "Now, on the left, just above the hip.",
-       "zh": "现在，左边，髋部上方。"
+       "en": "What if I only need three?",
+       "zh": "只要三次呢？"
       },
       "react": {
-       "en": "That is the spot I expected.",
-       "zh": "跟我预计的位置一致。"
+       "en": "Then pay as you go, sixty-five a session.",
+       "zh": "那就单次付，一次六十五。"
       }
      },
      {
       "say": {
-       "en": "It is more of a dull ache than a pull.",
-       "zh": "更像是钝痛，不是拉紧。"
+       "en": "I will pay for six up front.",
+       "zh": "我预付六次。"
       },
       "react": {
-       "en": "Good. That changes the exercise.",
-       "zh": "好。那练的东西要换。"
+       "en": "Good. Book them now, same time each week.",
+       "zh": "好。现在约，每周同一时间。"
       }
      }
     ]
@@ -66565,32 +66565,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "cost",
-    "task": "对方报了一个你没算到的价，你要判断值不值",
+    "at": 1,
+    "kind": "change",
+    "task": "规矩变了，你要问清新规矩怎么执行",
     "prompt": {
-     "en": "Twelve pounds on top, and the seats are in the quiet coach.",
-     "zh": "加十二镑，座位在静音车厢。"
+     "en": "That changed last month. You cannot board this service without a reservation now.",
+     "zh": "上个月改了。这趟车没订座不让上。"
     },
     "options": [
      {
       "say": {
-       "en": "Quiet coach is worth twelve. Do it.",
-       "zh": "静音车厢值这十二块。订吧。"
+       "en": "So the cheap fare is useless without another twelve pounds?",
+       "zh": "那这便宜票不加十二镑就白买了？"
       },
       "react": {
-       "en": "You will have a table too.",
-       "zh": "还有一张桌子。"
+       "en": "For this route, yes. Regional trains are still open.",
+       "zh": "这条线是这样。区域车还不用。"
       }
      },
      {
       "say": {
-       "en": "Twelve is too much. Which leg is busiest?",
-       "zh": "十二太贵。哪一段最挤？"
+       "en": "Can I reserve at the platform instead?",
+       "zh": "能在站台再订吗？"
       },
       "react": {
-       "en": "The middle one. Reserve that and stand on the short one.",
-       "zh": "中间那段。订那段，短的那段站着。"
+       "en": "Only if seats are left. Today there are four.",
+       "zh": "有余座才行。今天还剩四个。"
       }
      }
     ]
@@ -66666,32 +66666,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "cost",
-    "task": "对方报了一个你没算到的价，你要判断值不值",
+    "at": 1,
+    "kind": "change",
+    "task": "规矩变了，你要问清新规矩怎么执行",
     "prompt": {
-     "en": "Twelve pounds on top, and the seats are in the quiet coach.",
-     "zh": "加十二镑，座位在静音车厢。"
+     "en": "That changed last month. You cannot board this service without a reservation now.",
+     "zh": "上个月改了。这趟车没订座不让上。"
     },
     "options": [
      {
       "say": {
-       "en": "Quiet coach is worth twelve. Do it.",
-       "zh": "静音车厢值这十二块。订吧。"
+       "en": "So the cheap fare is useless without another twelve pounds?",
+       "zh": "那这便宜票不加十二镑就白买了？"
       },
       "react": {
-       "en": "You will have a table too.",
-       "zh": "还有一张桌子。"
+       "en": "For this route, yes. Regional trains are still open.",
+       "zh": "这条线是这样。区域车还不用。"
       }
      },
      {
       "say": {
-       "en": "Twelve is too much. Which leg is busiest?",
-       "zh": "十二太贵。哪一段最挤？"
+       "en": "Can I reserve at the platform instead?",
+       "zh": "能在站台再订吗？"
       },
       "react": {
-       "en": "The middle one. Reserve that and stand on the short one.",
-       "zh": "中间那段。订那段，短的那段站着。"
+       "en": "Only if seats are left. Today there are four.",
+       "zh": "有余座才行。今天还剩四个。"
       }
      }
     ]
@@ -69596,31 +69596,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "cost",
-    "task": "账单多出一笔，你要判断是不是你该付的",
+    "kind": "change",
+    "task": "当场退不了，要走另一条路",
     "prompt": {
-     "en": "The airport fee is in the rate, but it is charged on arrival here.",
-     "zh": "机场费含在费率里，但到店才收。"
+     "en": "I cannot take it off here. It was charged at booking, so you claim it back afterwards.",
+     "zh": "我这儿退不了。预订时就扣了，你事后申请退回。"
     },
     "options": [
      {
       "say": {
-       "en": "Then it should not appear twice. Show me the rate sheet.",
-       "zh": "那不该收两次。把费率表给我看。"
+       "en": "How do I claim it back?",
+       "zh": "怎么申请？"
       },
       "react": {
-       "en": "You are right. The rate already includes it.",
-       "zh": "您说得对。费率已含。"
+       "en": "Online, with the licence photo. Ten working days.",
+       "zh": "网上，附驾照照片。十个工作日。"
       }
      },
      {
       "say": {
-       "en": "Fine, I will pay it, but note my objection.",
-       "zh": "行，我付，但把我的异议记下来。"
+       "en": "Then I want it noted on the contract now.",
+       "zh": "那现在就在合同上写清楚。"
       },
       "react": {
-       "en": "I will add a note to the contract.",
-       "zh": "我在合同上加备注。"
+       "en": "I will write it and sign it. Keep your copy.",
+       "zh": "我写上并签字。你留一份。"
       }
      }
     ]
@@ -70101,31 +70101,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "cost",
-    "task": "账单多出一笔，你要判断是不是你该付的",
+    "kind": "change",
+    "task": "当场退不了，要走另一条路",
     "prompt": {
-     "en": "The airport fee is in the rate, but it is charged on arrival here.",
-     "zh": "机场费含在费率里，但到店才收。"
+     "en": "I cannot take it off here. It was charged at booking, so you claim it back afterwards.",
+     "zh": "我这儿退不了。预订时就扣了，你事后申请退回。"
     },
     "options": [
      {
       "say": {
-       "en": "Then it should not appear twice. Show me the rate sheet.",
-       "zh": "那不该收两次。把费率表给我看。"
+       "en": "How do I claim it back?",
+       "zh": "怎么申请？"
       },
       "react": {
-       "en": "You are right. The rate already includes it.",
-       "zh": "您说得对。费率已含。"
+       "en": "Online, with the licence photo. Ten working days.",
+       "zh": "网上，附驾照照片。十个工作日。"
       }
      },
      {
       "say": {
-       "en": "Fine, I will pay it, but note my objection.",
-       "zh": "行，我付，但把我的异议记下来。"
+       "en": "Then I want it noted on the contract now.",
+       "zh": "那现在就在合同上写清楚。"
       },
       "react": {
-       "en": "I will add a note to the contract.",
-       "zh": "我在合同上加备注。"
+       "en": "I will write it and sign it. Keep your copy.",
+       "zh": "我写上并签字。你留一份。"
       }
      }
     ]
@@ -70201,32 +70201,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "cost",
-    "task": "对方要收一笔钱，你要判断该不该你出",
+    "at": 3,
+    "kind": "change",
+    "task": "政策有个你没算到的时间条件",
     "prompt": {
-     "en": "The system charges a change fee because the booking is non-refundable.",
-     "zh": "系统收改签费，因为这票不可退。"
+     "en": "If we cancelled, the change is free, but it must be rebooked within a year. That was fourteen months ago.",
+     "zh": "我们取消的免费改，但要在一年内重订。那已经是十四个月前了。"
     },
     "options": [
      {
       "say": {
-       "en": "Non-refundable does not mean non-changeable. Read the fare rules.",
-       "zh": "不可退不等于不可改。看运价规则。"
+       "en": "Nobody told me about the year. Can it be extended?",
+       "zh": "没人跟我说过一年这回事。能延吗？"
       },
       "react": {
-       "en": "The rules say forty, not sixty.",
-       "zh": "规则上写四十，不是六十。"
+       "en": "I can ask a supervisor. It is not automatic.",
+       "zh": "我可以问主管。不是自动的。"
       }
      },
      {
       "say": {
-       "en": "I will pay forty, not sixty, and I want the rule quoted.",
-       "zh": "我付四十，不是六十，并把条款引用给我。"
+       "en": "Then book the cheapest flight and I will pay the difference.",
+       "zh": "那就订最便宜的，差价我付。"
       },
       "react": {
-       "en": "I will send the fare rule with the receipt.",
-       "zh": "我把运价规则和收据一起发您。"
+       "en": "That I can do today. Which date?",
+       "zh": "这个今天就能办。哪天？"
       }
      }
     ]
@@ -70403,32 +70403,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "cost",
-    "task": "对方要收一笔钱，你要判断该不该你出",
+    "at": 3,
+    "kind": "change",
+    "task": "政策有个你没算到的时间条件",
     "prompt": {
-     "en": "The system charges a change fee because the booking is non-refundable.",
-     "zh": "系统收改签费，因为这票不可退。"
+     "en": "If we cancelled, the change is free, but it must be rebooked within a year. That was fourteen months ago.",
+     "zh": "我们取消的免费改，但要在一年内重订。那已经是十四个月前了。"
     },
     "options": [
      {
       "say": {
-       "en": "Non-refundable does not mean non-changeable. Read the fare rules.",
-       "zh": "不可退不等于不可改。看运价规则。"
+       "en": "Nobody told me about the year. Can it be extended?",
+       "zh": "没人跟我说过一年这回事。能延吗？"
       },
       "react": {
-       "en": "The rules say forty, not sixty.",
-       "zh": "规则上写四十，不是六十。"
+       "en": "I can ask a supervisor. It is not automatic.",
+       "zh": "我可以问主管。不是自动的。"
       }
      },
      {
       "say": {
-       "en": "I will pay forty, not sixty, and I want the rule quoted.",
-       "zh": "我付四十，不是六十，并把条款引用给我。"
+       "en": "Then book the cheapest flight and I will pay the difference.",
+       "zh": "那就订最便宜的，差价我付。"
       },
       "react": {
-       "en": "I will send the fare rule with the receipt.",
-       "zh": "我把运价规则和收据一起发您。"
+       "en": "That I can do today. Which date?",
+       "zh": "这个今天就能办。哪天？"
       }
      }
     ]
@@ -73232,31 +73232,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "cost",
-    "task": "对方按规矩收费，你要判断付钱还是改方案",
+    "kind": "short",
+    "task": "不是钱的问题，是根本没位置",
     "prompt": {
-     "en": "Two kilos over, that is forty-five, or you can move items to a coat pocket.",
-     "zh": "超两公斤，四十五，或者把东西塞进外套口袋。"
+     "en": "It is not the fee. The hold is full on this flight. We cannot take bags today.",
+     "zh": "不是钱的事。这班货舱满了，今天不收行李。"
     },
     "options": [
      {
       "say": {
-       "en": "I will move the heavy things into my pockets.",
-       "zh": "我把重的东西塞口袋。"
+       "en": "So my only option is to wear it all?",
+       "zh": "那我只能全穿身上？"
       },
       "react": {
-       "en": "Step aside and come back when you are under.",
-       "zh": "您到旁边整理，好了再过来。"
+       "en": "Or leave it with the left-luggage desk for ten.",
+       "zh": "或者存到行李寄存，十块。"
       }
      },
      {
       "say": {
-       "en": "Charge the forty-five. I am not unpacking here.",
-       "zh": "收四十五吧。我不想在这儿翻包。"
+       "en": "Can it go on the next flight and I collect it?",
+       "zh": "能走下一班，我到了再取吗？"
       },
       "react": {
-       "en": "It goes in the hold and you collect it at the belt.",
-       "zh": "托运，到转盘取。"
+       "en": "Yes, it arrives at nine tonight.",
+       "zh": "可以，今晚九点到。"
       }
      }
     ]
@@ -73535,31 +73535,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "cost",
-    "task": "对方按规矩收费，你要判断付钱还是改方案",
+    "kind": "short",
+    "task": "不是钱的问题，是根本没位置",
     "prompt": {
-     "en": "Two kilos over, that is forty-five, or you can move items to a coat pocket.",
-     "zh": "超两公斤，四十五，或者把东西塞进外套口袋。"
+     "en": "It is not the fee. The hold is full on this flight. We cannot take bags today.",
+     "zh": "不是钱的事。这班货舱满了，今天不收行李。"
     },
     "options": [
      {
       "say": {
-       "en": "I will move the heavy things into my pockets.",
-       "zh": "我把重的东西塞口袋。"
+       "en": "So my only option is to wear it all?",
+       "zh": "那我只能全穿身上？"
       },
       "react": {
-       "en": "Step aside and come back when you are under.",
-       "zh": "您到旁边整理，好了再过来。"
+       "en": "Or leave it with the left-luggage desk for ten.",
+       "zh": "或者存到行李寄存，十块。"
       }
      },
      {
       "say": {
-       "en": "Charge the forty-five. I am not unpacking here.",
-       "zh": "收四十五吧。我不想在这儿翻包。"
+       "en": "Can it go on the next flight and I collect it?",
+       "zh": "能走下一班，我到了再取吗？"
       },
       "react": {
-       "en": "It goes in the hold and you collect it at the belt.",
-       "zh": "托运，到转盘取。"
+       "en": "Yes, it arrives at nine tonight.",
+       "zh": "可以，今晚九点到。"
       }
      }
     ]
@@ -88428,32 +88428,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "short",
-    "task": "刷卡机坏了，你要想办法付钱",
+    "at": 3,
+    "kind": "change",
+    "task": "只能卖另一种票，你要让对方明白为什么",
     "prompt": {
-     "en": "Sorry, the card machine is down.",
-     "zh": "抱歉，刷卡机坏了。"
+     "en": "Sorry, the machine is down. I can only sell returns today.",
+     "zh": "抱歉，机器坏了。今天只能卖往返票。"
     },
     "options": [
      {
       "say": {
-       "en": "I have cash. Here you are.",
-       "zh": "我有现金。给你。"
+       "en": "How much more is a return?",
+       "zh": "往返贵多少？"
       },
       "react": {
-       "en": "Thanks. Keep the ticket.",
-       "zh": "谢谢。票收好。"
+       "en": "One pound twenty more. Use it coming back or not.",
+       "zh": "贵一块二。回程用不用都行。"
       }
      },
      {
       "say": {
-       "en": "Is there a cash machine near here?",
-       "zh": "附近有取款机吗？"
+       "en": "Then a return to the station.",
+       "zh": "那来一张到车站的往返。"
       },
       "react": {
-       "en": "By the door, on the right.",
-       "zh": "门口右手边。"
+       "en": "Three seventy, and keep the second half.",
+       "zh": "三块七，回程票留着。"
       }
      }
     ]
@@ -88816,32 +88816,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "short",
-    "task": "刷卡机坏了，你要想办法付钱",
+    "at": 3,
+    "kind": "change",
+    "task": "只能卖另一种票，你要让对方明白为什么",
     "prompt": {
-     "en": "Sorry, the card machine is down.",
-     "zh": "抱歉，刷卡机坏了。"
+     "en": "Sorry, the machine is down. I can only sell returns today.",
+     "zh": "抱歉，机器坏了。今天只能卖往返票。"
     },
     "options": [
      {
       "say": {
-       "en": "I have cash. Here you are.",
-       "zh": "我有现金。给你。"
+       "en": "How much more is a return?",
+       "zh": "往返贵多少？"
       },
       "react": {
-       "en": "Thanks. Keep the ticket.",
-       "zh": "谢谢。票收好。"
+       "en": "One pound twenty more. Use it coming back or not.",
+       "zh": "贵一块二。回程用不用都行。"
       }
      },
      {
       "say": {
-       "en": "Is there a cash machine near here?",
-       "zh": "附近有取款机吗？"
+       "en": "Then a return to the station.",
+       "zh": "那来一张到车站的往返。"
       },
       "react": {
-       "en": "By the door, on the right.",
-       "zh": "门口右手边。"
+       "en": "Three seventy, and keep the second half.",
+       "zh": "三块七，回程票留着。"
       }
      }
     ]
@@ -89108,31 +89108,31 @@
    ],
    "branch": {
     "at": 3,
-    "kind": "cost",
-    "task": "对方说要加钱，你要问清楚为什么",
+    "kind": "change",
+    "task": "路线改了，时效完全不同",
     "prompt": {
-     "en": "To China it is four pounds, not three.",
-     "zh": "寄到中国是四镑，不是三镑。"
+     "en": "We have stopped air mail to China. It goes by sea now, about six weeks.",
+     "zh": "到中国的空邮停了。现在走海运，大约六周。"
     },
     "options": [
      {
       "say": {
-       "en": "Four is fine. Here you are.",
-       "zh": "四镑可以。给你。"
+       "en": "Six weeks is too long. Is there a courier?",
+       "zh": "六周太久了。有快递吗？"
       },
       "react": {
-       "en": "Thanks. Keep this receipt.",
-       "zh": "谢谢。收好这张收据。"
+       "en": "Courier is twenty-eight, three days, separate counter.",
+       "zh": "快递二十八，三天，另一个柜台。"
       }
      },
      {
       "say": {
-       "en": "Why is it more?",
-       "zh": "为什么更贵？"
+       "en": "Sea is fine. It is only books.",
+       "zh": "海运可以。就是些书。"
       },
       "react": {
-       "en": "It is a different zone.",
-       "zh": "这是另一个计费区。"
+       "en": "Then two pounds eighty, and wrap it well.",
+       "zh": "那两块八。包结实点。"
       }
      }
     ]
@@ -89399,31 +89399,31 @@
    ],
    "branch": {
     "at": 3,
-    "kind": "cost",
-    "task": "对方说要加钱，你要问清楚为什么",
+    "kind": "change",
+    "task": "路线改了，时效完全不同",
     "prompt": {
-     "en": "To China it is four pounds, not three.",
-     "zh": "寄到中国是四镑，不是三镑。"
+     "en": "We have stopped air mail to China. It goes by sea now, about six weeks.",
+     "zh": "到中国的空邮停了。现在走海运，大约六周。"
     },
     "options": [
      {
       "say": {
-       "en": "Four is fine. Here you are.",
-       "zh": "四镑可以。给你。"
+       "en": "Six weeks is too long. Is there a courier?",
+       "zh": "六周太久了。有快递吗？"
       },
       "react": {
-       "en": "Thanks. Keep this receipt.",
-       "zh": "谢谢。收好这张收据。"
+       "en": "Courier is twenty-eight, three days, separate counter.",
+       "zh": "快递二十八，三天，另一个柜台。"
       }
      },
      {
       "say": {
-       "en": "Why is it more?",
-       "zh": "为什么更贵？"
+       "en": "Sea is fine. It is only books.",
+       "zh": "海运可以。就是些书。"
       },
       "react": {
-       "en": "It is a different zone.",
-       "zh": "这是另一个计费区。"
+       "en": "Then two pounds eighty, and wrap it well.",
+       "zh": "那两块八。包结实点。"
       }
      }
     ]
@@ -98825,32 +98825,32 @@
     }
    ],
    "branch": {
-    "at": 4,
-    "kind": "change",
-    "task": "转机流程有变化，你要换一条路",
+    "at": 6,
+    "kind": "short",
+    "task": "该在的地方没人了，你要问替代窗口",
     "prompt": {
-     "en": "Security for connections is closed. You have to exit and come back in.",
-     "zh": "转机安检关了。要出去再重新进。"
+     "en": "The transfer desk closed ten minutes ago. It is the ticket counter now.",
+     "zh": "转机服务台十分钟前关了。现在得去售票柜台。"
     },
     "options": [
      {
       "say": {
-       "en": "Will I still make the flight?",
-       "zh": "还赶得上吗？"
+       "en": "Where is that, and is it still open?",
+       "zh": "在哪儿，还开着吗？"
       },
       "react": {
-       "en": "It is twenty minutes extra. You have thirty.",
-       "zh": "多花二十分钟。你有三十分钟。"
+       "en": "Two floors down. Open until eleven.",
+       "zh": "下两层。开到十一点。"
       }
      },
      {
       "say": {
-       "en": "Is there another route to gate B42?",
-       "zh": "去 B42 还有别的路吗？"
+       "en": "Then I will run. Thanks.",
+       "zh": "那我跑过去。谢谢。"
       },
       "react": {
-       "en": "The walkway on level two stays open.",
-       "zh": "二楼通道还开着。"
+       "en": "Take the lift, not the escalator.",
+       "zh": "坐电梯，别走扶梯。"
       }
      }
     ]
@@ -99128,32 +99128,32 @@
     }
    ],
    "branch": {
-    "at": 4,
-    "kind": "change",
-    "task": "转机流程有变化，你要换一条路",
+    "at": 6,
+    "kind": "short",
+    "task": "该在的地方没人了，你要问替代窗口",
     "prompt": {
-     "en": "Security for connections is closed. You have to exit and come back in.",
-     "zh": "转机安检关了。要出去再重新进。"
+     "en": "The transfer desk closed ten minutes ago. It is the ticket counter now.",
+     "zh": "转机服务台十分钟前关了。现在得去售票柜台。"
     },
     "options": [
      {
       "say": {
-       "en": "Will I still make the flight?",
-       "zh": "还赶得上吗？"
+       "en": "Where is that, and is it still open?",
+       "zh": "在哪儿，还开着吗？"
       },
       "react": {
-       "en": "It is twenty minutes extra. You have thirty.",
-       "zh": "多花二十分钟。你有三十分钟。"
+       "en": "Two floors down. Open until eleven.",
+       "zh": "下两层。开到十一点。"
       }
      },
      {
       "say": {
-       "en": "Is there another route to gate B42?",
-       "zh": "去 B42 还有别的路吗？"
+       "en": "Then I will run. Thanks.",
+       "zh": "那我跑过去。谢谢。"
       },
       "react": {
-       "en": "The walkway on level two stays open.",
-       "zh": "二楼通道还开着。"
+       "en": "Take the lift, not the escalator.",
+       "zh": "坐电梯，别走扶梯。"
       }
      }
     ]
@@ -99332,31 +99332,31 @@
    ],
    "branch": {
     "at": 4,
-    "kind": "change",
-    "task": "海关要求你先出示商品，和你预期不同",
+    "kind": "cost",
+    "task": "能办，但要扣一笔，你要算清哪种划算",
     "prompt": {
-     "en": "I need to see the goods here, before the bag goes on the belt.",
-     "zh": "我要在这儿看到商品，行李过传送带之前。"
+     "en": "You can, but cash refunds carry a fifteen per cent handling charge.",
+     "zh": "可以，不过退现金要扣百分之十五的手续费。"
     },
     "options": [
      {
       "say": {
-       "en": "Then I will open the case now.",
-       "zh": "那我现在开箱。"
+       "en": "What about refunding to the card?",
+       "zh": "退到卡里呢？"
       },
       "react": {
-       "en": "Just the items on the form. This will be quick.",
-       "zh": "只要单子上的东西。很快。"
+       "en": "No charge, but four weeks. Cash is instant.",
+       "zh": "不收费，但要四周。现金当场给。"
       }
      },
      {
       "say": {
-       "en": "Can I bring the bag back after checking in?",
-       "zh": "托运后能再拿出来吗？"
+       "en": "Card, then. I am not paying fifteen per cent.",
+       "zh": "那退卡里。我可不出这百分之十五。"
       },
       "react": {
-       "en": "Once it is on the belt, no.",
-       "zh": "过了传送带就不行。"
+       "en": "Fill in the card number on the form.",
+       "zh": "在表上填卡号。"
       }
      }
     ]
@@ -99842,31 +99842,31 @@
    ],
    "branch": {
     "at": 4,
-    "kind": "change",
-    "task": "海关要求你先出示商品，和你预期不同",
+    "kind": "cost",
+    "task": "能办，但要扣一笔，你要算清哪种划算",
     "prompt": {
-     "en": "I need to see the goods here, before the bag goes on the belt.",
-     "zh": "我要在这儿看到商品，行李过传送带之前。"
+     "en": "You can, but cash refunds carry a fifteen per cent handling charge.",
+     "zh": "可以，不过退现金要扣百分之十五的手续费。"
     },
     "options": [
      {
       "say": {
-       "en": "Then I will open the case now.",
-       "zh": "那我现在开箱。"
+       "en": "What about refunding to the card?",
+       "zh": "退到卡里呢？"
       },
       "react": {
-       "en": "Just the items on the form. This will be quick.",
-       "zh": "只要单子上的东西。很快。"
+       "en": "No charge, but four weeks. Cash is instant.",
+       "zh": "不收费，但要四周。现金当场给。"
       }
      },
      {
       "say": {
-       "en": "Can I bring the bag back after checking in?",
-       "zh": "托运后能再拿出来吗？"
+       "en": "Card, then. I am not paying fifteen per cent.",
+       "zh": "那退卡里。我可不出这百分之十五。"
       },
       "react": {
-       "en": "Once it is on the belt, no.",
-       "zh": "过了传送带就不行。"
+       "en": "Fill in the card number on the form.",
+       "zh": "在表上填卡号。"
       }
      }
     ]
@@ -99937,32 +99937,32 @@
     }
    ],
    "branch": {
-    "at": 3,
-    "kind": "probe",
-    "task": "店员不认账，你要拿证据",
+    "at": 5,
+    "kind": "cost",
+    "task": "本来以为没事了，又冒出一笔",
     "prompt": {
-     "en": "The sheet is not signed. It does not prove anything.",
-     "zh": "单子没签字。证明不了什么。"
+     "en": "The fuel is fine. There is a thirty-pound cleaning charge, the seats are marked.",
+     "zh": "油没问题。还有三十镑清洁费，座椅上有印子。"
     },
     "options": [
      {
       "say": {
-       "en": "My photos carry a timestamp from the car park.",
-       "zh": "我的照片带停车场的时间戳。"
+       "en": "That is mud from the car park. Can I clean it now?",
+       "zh": "那是停车场的泥。我现在擦掉行吗？"
       },
       "react": {
-       "en": "Let me see them. All right, no charge.",
-       "zh": "我看看。好，不收费。"
+       "en": "If it comes off, I will drop the charge.",
+       "zh": "擦得掉就不收。"
       }
      },
      {
       "say": {
-       "en": "Then call the branch and ask who checked the car out.",
-       "zh": "那打给门店，问是谁办的交车。"
+       "en": "Show me the marks before you charge me.",
+       "zh": "收钱之前先给我看印子。"
       },
       "react": {
-       "en": "I will do that. Please wait.",
-       "zh": "我去问。请稍等。"
+       "en": "Come round to the rear seat with me.",
+       "zh": "跟我到后排看。"
       }
      }
     ]
@@ -100417,32 +100417,32 @@
     }
    ],
    "branch": {
-    "at": 3,
-    "kind": "probe",
-    "task": "店员不认账，你要拿证据",
+    "at": 5,
+    "kind": "cost",
+    "task": "本来以为没事了，又冒出一笔",
     "prompt": {
-     "en": "The sheet is not signed. It does not prove anything.",
-     "zh": "单子没签字。证明不了什么。"
+     "en": "The fuel is fine. There is a thirty-pound cleaning charge, the seats are marked.",
+     "zh": "油没问题。还有三十镑清洁费，座椅上有印子。"
     },
     "options": [
      {
       "say": {
-       "en": "My photos carry a timestamp from the car park.",
-       "zh": "我的照片带停车场的时间戳。"
+       "en": "That is mud from the car park. Can I clean it now?",
+       "zh": "那是停车场的泥。我现在擦掉行吗？"
       },
       "react": {
-       "en": "Let me see them. All right, no charge.",
-       "zh": "我看看。好，不收费。"
+       "en": "If it comes off, I will drop the charge.",
+       "zh": "擦得掉就不收。"
       }
      },
      {
       "say": {
-       "en": "Then call the branch and ask who checked the car out.",
-       "zh": "那打给门店，问是谁办的交车。"
+       "en": "Show me the marks before you charge me.",
+       "zh": "收钱之前先给我看印子。"
       },
       "react": {
-       "en": "I will do that. Please wait.",
-       "zh": "我去问。请稍等。"
+       "en": "Come round to the rear seat with me.",
+       "zh": "跟我到后排看。"
       }
      }
     ]
@@ -100514,31 +100514,31 @@
    ],
    "branch": {
     "at": 3,
-    "kind": "short",
-    "task": "屋里少了东西，你要先解决再安顿",
+    "kind": "change",
+    "task": "房间还不能用，你要问清什么时候能用",
     "prompt": {
-     "en": "There are no towels in the bathroom.",
-     "zh": "浴室里没有毛巾。"
+     "en": "Ah, the cleaner has not been yet. The flat will be ready at four.",
+     "zh": "啊，保洁还没来。房间四点才能好。"
     },
     "options": [
      {
       "say": {
-       "en": "Could someone bring them tonight?",
-       "zh": "今晚能送过来吗？"
+       "en": "It is two now. Where can I leave my bags?",
+       "zh": "现在两点。我行李能放哪儿？"
       },
       "react": {
-       "en": "I will drop them at nine.",
-       "zh": "我九点送过来。"
+       "en": "The cafe downstairs holds them for free.",
+       "zh": "楼下咖啡店免费寄存。"
       }
      },
      {
       "say": {
-       "en": "Are they in the cupboard?",
-       "zh": "在柜子里吗？"
+       "en": "Four is fine. I will go and eat something.",
+       "zh": "四点可以。我去吃点东西。"
       },
       "react": {
-       "en": "Top shelf, behind the spare pillows.",
-       "zh": "最上层，备用枕头后面。"
+       "en": "I will text you the moment she leaves.",
+       "zh": "她一走我就发消息。"
       }
      }
     ]
@@ -100706,31 +100706,31 @@
    ],
    "branch": {
     "at": 3,
-    "kind": "short",
-    "task": "屋里少了东西，你要先解决再安顿",
+    "kind": "change",
+    "task": "房间还不能用，你要问清什么时候能用",
     "prompt": {
-     "en": "There are no towels in the bathroom.",
-     "zh": "浴室里没有毛巾。"
+     "en": "Ah, the cleaner has not been yet. The flat will be ready at four.",
+     "zh": "啊，保洁还没来。房间四点才能好。"
     },
     "options": [
      {
       "say": {
-       "en": "Could someone bring them tonight?",
-       "zh": "今晚能送过来吗？"
+       "en": "It is two now. Where can I leave my bags?",
+       "zh": "现在两点。我行李能放哪儿？"
       },
       "react": {
-       "en": "I will drop them at nine.",
-       "zh": "我九点送过来。"
+       "en": "The cafe downstairs holds them for free.",
+       "zh": "楼下咖啡店免费寄存。"
       }
      },
      {
       "say": {
-       "en": "Are they in the cupboard?",
-       "zh": "在柜子里吗？"
+       "en": "Four is fine. I will go and eat something.",
+       "zh": "四点可以。我去吃点东西。"
       },
       "react": {
-       "en": "Top shelf, behind the spare pillows.",
-       "zh": "最上层，备用枕头后面。"
+       "en": "I will text you the moment she leaves.",
+       "zh": "她一走我就发消息。"
       }
      }
     ]
@@ -101498,32 +101498,32 @@
     }
    ],
    "branch": {
-    "at": 4,
-    "kind": "offer",
-    "task": "售票员推销一个组合票，你要判断值不值",
+    "at": 6,
+    "kind": "short",
+    "task": "有一部分看不了，你要问清票价会不会减",
     "prompt": {
-     "en": "For four pounds more you can add the tower.",
-     "zh": "加四镑可以加塔楼。"
+     "en": "Six. But the upper floor is closed for refurbishment, ground floor only today.",
+     "zh": "六点。不过楼上在装修，今天只开一层。"
     },
     "options": [
      {
       "say": {
-       "en": "Is the view better from the tower?",
-       "zh": "塔楼视野更好吗？"
+       "en": "Is the ticket cheaper then?",
+       "zh": "那票便宜吗？"
       },
       "react": {
-       "en": "It is the only place you see the whole city.",
-       "zh": "那是唯一能看全城的地方。"
+       "en": "Eight instead of twelve. I should have said.",
+       "zh": "八块，不是十二。我该早说。"
       }
      },
      {
       "say": {
-       "en": "Not today. We are short of time.",
-       "zh": "今天不了。我们时间不够。"
+       "en": "Then I will come back next month.",
+       "zh": "那我下个月再来。"
       },
       "react": {
-       "en": "Then just the museum ticket.",
-       "zh": "那就只要博物馆票。"
+       "en": "The upper floor opens on the third.",
+       "zh": "楼上三号开。"
       }
      }
     ]
@@ -101599,32 +101599,32 @@
     }
    ],
    "branch": {
-    "at": 4,
-    "kind": "offer",
-    "task": "售票员推销一个组合票，你要判断值不值",
+    "at": 6,
+    "kind": "short",
+    "task": "有一部分看不了，你要问清票价会不会减",
     "prompt": {
-     "en": "For four pounds more you can add the tower.",
-     "zh": "加四镑可以加塔楼。"
+     "en": "Six. But the upper floor is closed for refurbishment, ground floor only today.",
+     "zh": "六点。不过楼上在装修，今天只开一层。"
     },
     "options": [
      {
       "say": {
-       "en": "Is the view better from the tower?",
-       "zh": "塔楼视野更好吗？"
+       "en": "Is the ticket cheaper then?",
+       "zh": "那票便宜吗？"
       },
       "react": {
-       "en": "It is the only place you see the whole city.",
-       "zh": "那是唯一能看全城的地方。"
+       "en": "Eight instead of twelve. I should have said.",
+       "zh": "八块，不是十二。我该早说。"
       }
      },
      {
       "say": {
-       "en": "Not today. We are short of time.",
-       "zh": "今天不了。我们时间不够。"
+       "en": "Then I will come back next month.",
+       "zh": "那我下个月再来。"
       },
       "react": {
-       "en": "Then just the museum ticket.",
-       "zh": "那就只要博物馆票。"
+       "en": "The upper floor opens on the third.",
+       "zh": "楼上三号开。"
       }
      }
     ]

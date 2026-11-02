@@ -305,6 +305,147 @@ export const EXTRA = {
     for: ['孩子推了人', '约面谈'],
   },
 
+  /* ---------------- 火车票：没订座不让上车 ---------------- */
+  'seat-reservation': {
+    // at 1 = "So I can buy the ticket but not sit down?"
+    branch: B(1, 'change', '规矩变了，你要问清新规矩怎么执行',
+      S('That changed last month. You cannot board this service without a reservation now.', '上个月改了。这趟车没订座不让上。'),
+      [O(S('So the cheap fare is useless without another twelve pounds?', '那这便宜票不加十二镑就白买了？'), S('For this route, yes. Regional trains are still open.', '这条线是这样。区域车还不用。')),
+       O(S('Can I reserve at the platform instead?', '能在站台再订吗？'), S('Only if seats are left. Today there are four.', '有余座才行。今天还剩四个。'))]),
+    for: ['便宜票不含座', '长途'],
+  },
+
+  /* ---------------- 租车：费用在预订时就扣了 ---------------- */
+  'rental-fees': {
+    // at 5 = "Then remove it. My licence is on the counter."
+    branch: B(5, 'change', '当场退不了，要走另一条路',
+      S('I cannot take it off here. It was charged at booking, so you claim it back afterwards.', '我这儿退不了。预订时就扣了，你事后申请退回。'),
+      [O(S('How do I claim it back?', '怎么申请？'), S('Online, with the licence photo. Ten working days.', '网上，附驾照照片。十个工作日。')),
+       O(S('Then I want it noted on the contract now.', '那现在就在合同上写清楚。'), S('I will write it and sign it. Keep your copy.', '我写上并签字。你留一份。'))]),
+    for: ['多出年轻驾驶员费', '拒付'],
+  },
+
+  /* ---------------- 改签：期限过了 ---------------- */
+  'flight-change-fee': {
+    // at 3 = "The airline cancelled my first booking. Do I still pay?"
+    branch: B(3, 'change', '政策有个你没算到的时间条件',
+      S('If we cancelled, the change is free, but it must be rebooked within a year. That was fourteen months ago.', '我们取消的免费改，但要在一年内重订。那已经是十四个月前了。'),
+      [O(S('Nobody told me about the year. Can it be extended?', '没人跟我说过一年这回事。能延吗？'), S('I can ask a supervisor. It is not automatic.', '我可以问主管。不是自动的。')),
+       O(S('Then book the cheapest flight and I will pay the difference.', '那就订最便宜的，差价我付。'), S('That I can do today. Which date?', '这个今天就能办。哪天？'))]),
+    for: ['航班取消', '被收改签费'],
+  },
+
+  /* ---------------- 随身行李：货舱满了 ---------------- */
+  'baggage-weight': {
+    // at 5 = "Forty-five for two kilos seems steep."
+    branch: B(5, 'short', '不是钱的问题，是根本没位置',
+      S('It is not the fee. The hold is full on this flight. We cannot take bags today.', '不是钱的事。这班货舱满了，今天不收行李。'),
+      [O(S('So my only option is to wear it all?', '那我只能全穿身上？'), S('Or leave it with the left-luggage desk for ten.', '或者存到行李寄存，十块。')),
+       O(S('Can it go on the next flight and I collect it?', '能走下一班，我到了再取吗？'), S('Yes, it arrives at nine tonight.', '可以，今晚九点到。'))]),
+    for: ['随身超两公斤', '拒付'],
+  },
+
+  /* ---------------- 买车票：售票机坏了，只卖往返 ---------------- */
+  busticket: {
+    // at 3 = "Single, please."（这一场你是乘客，you=1 —— 别按角色下标 0 去数）
+    branch: B(3, 'change', '只能卖另一种票，你要让对方明白为什么',
+      S('Sorry, the machine is down. I can only sell returns today.', '抱歉，机器坏了。今天只能卖往返票。'),
+      [O(S('How much more is a return?', '往返贵多少？'), S('One pound twenty more. Use it coming back or not.', '贵一块二。回程用不用都行。')),
+       O(S('Then a return to the station.', '那来一张到车站的往返。'), S('Three seventy, and keep the second half.', '三块七，回程票留着。'))]),
+    for: ['单程去车站', '一日票'],
+  },
+
+  /* ---------------- 寄包裹：空邮停了 ---------------- */
+  'parcel-basic': {
+    // at 3 = "To China."（这一场你是寄件人，you=1）
+    branch: B(3, 'change', '路线改了，时效完全不同',
+      S('We have stopped air mail to China. It goes by sea now, about six weeks.', '到中国的空邮停了。现在走海运，大约六周。'),
+      [O(S('Six weeks is too long. Is there a courier?', '六周太久了。有快递吗？'), S('Courier is twenty-eight, three days, separate counter.', '快递二十八，三天，另一个柜台。')),
+       O(S('Sea is fine. It is only books.', '海运可以。就是些书。'), S('Then two pounds eighty, and wrap it well.', '那两块八。包结实点。'))]),
+    // 不给「寄一封信」：这条岔路说的是"包结实点"，配信件不合适
+    for: ['寄小包裹', '要快的'],
+  },
+
+  /* ---------------- 转机：服务台关了 ---------------- */
+  transit: {
+    // at 6 = "And if I miss it, where do I rebook?"
+    branch: B(6, 'short', '该在的地方没人了，你要问替代窗口',
+      S('The transfer desk closed ten minutes ago. It is the ticket counter now.', '转机服务台十分钟前关了。现在得去售票柜台。'),
+      [O(S('Where is that, and is it still open?', '在哪儿，还开着吗？'), S('Two floors down. Open until eleven.', '下两层。开到十一点。')),
+       O(S('Then I will run. Thanks.', '那我跑过去。谢谢。'), S('Take the lift, not the escalator.', '坐电梯，别走扶梯。'))]),
+    for: ['已经错过', '要换航站楼'],
+  },
+
+  /* ---------------- 退税：现金要扣手续费 ---------------- */
+  'tax-refund': {
+    // at 4 = "In the suitcase. Should I bring them out?"
+    branch: B(4, 'cost', '能办，但要扣一笔，你要算清哪种划算',
+      S('You can, but cash refunds carry a fifteen per cent handling charge.', '可以，不过退现金要扣百分之十五的手续费。'),
+      [O(S('What about refunding to the card?', '退到卡里呢？'), S('No charge, but four weeks. Cash is instant.', '不收费，但要四周。现金当场给。')),
+       O(S('Card, then. I am not paying fifteen per cent.', '那退卡里。我可不出这百分之十五。'), S('Fill in the card number on the form.', '在表上填卡号。'))]),
+    for: ['服装和电子产品', '现金退税'],
+  },
+
+  /* ---------------- 还车：多一笔清洁费 ---------------- */
+  'return-car': {
+    // at 5 = "What about the fuel? I filled it up ten minutes ago."
+    branch: B(5, 'cost', '本来以为没事了，又冒出一笔',
+      S('The fuel is fine. There is a thirty-pound cleaning charge, the seats are marked.', '油没问题。还有三十镑清洁费，座椅上有印子。'),
+      [O(S('That is mud from the car park. Can I clean it now?', '那是停车场的泥。我现在擦掉行吗？'), S('If it comes off, I will drop the charge.', '擦得掉就不收。')),
+       O(S('Show me the marks before you charge me.', '收钱之前先给我看印子。'), S('Come round to the rear seat with me.', '跟我到后排看。'))]),
+    for: ['划痕争议', '押金'],
+  },
+
+  /* ---------------- 民宿：还没打扫 ---------------- */
+  'airbnb-checkin': {
+    // at 3 = "It opened. Thank you. Where is the wifi password?"
+    branch: B(3, 'change', '房间还不能用，你要问清什么时候能用',
+      S('Ah, the cleaner has not been yet. The flat will be ready at four.', '啊，保洁还没来。房间四点才能好。'),
+      [O(S('It is two now. Where can I leave my bags?', '现在两点。我行李能放哪儿？'), S('The cafe downstairs holds them for free.', '楼下咖啡店免费寄存。')),
+       O(S('Four is fine. I will go and eat something.', '四点可以。我去吃点东西。'), S('I will text you the moment she leaves.', '她一走我就发消息。'))]),
+    for: ['房间没打扫', '密码盒打不开'],
+  },
+
+  /* ---------------- 景点：楼上在装修 ---------------- */
+  attraction: {
+    // at 6 = "What time does it close?"
+    branch: B(6, 'short', '有一部分看不了，你要问清票价会不会减',
+      S('Six. But the upper floor is closed for refurbishment, ground floor only today.', '六点。不过楼上在装修，今天只开一层。'),
+      [O(S('Is the ticket cheaper then?', '那票便宜吗？'), S('Eight instead of twelve. I should have said.', '八块，不是十二。我该早说。')),
+       O(S('Then I will come back next month.', '那我下个月再来。'), S('The upper floor opens on the third.', '楼上三号开。'))]),
+    for: ['闭馆', '导览'],
+  },
+
+  /* ---------------- 配眼镜：镜架停产了 ---------------- */
+  glasses: {
+    // at 5 = "Do I need new glasses, or just new lenses?"
+    branch: B(5, 'cost', '想只换镜片，可镜架没了',
+      S('New lenses in the same frame is ninety, but your frame is discontinued. A new one starts at a hundred and forty.', '原镜架换镜片九十，可你这副停产了。新镜架一百四起。'),
+      [O(S('Ninety plus a frame is a lot. Is there a cheaper line?', '九十再加镜架太贵。有便宜的系列吗？'), S('The basic range starts at sixty.', '基础系列六十起。')),
+       O(S('Then fix the lenses in my old frame however you can.', '那想办法把镜片装回我这副旧的。'), S('I can, if the screws hold. Two days.', '可以，只要螺丝还吃得住。两天。'))]),
+    for: ['问价格', '镜片划伤'],
+  },
+
+  /* ---------------- 体检报告：有个营养门诊 ---------------- */
+  'checkup-report': {
+    // at 5 = "What should I change in my diet?"
+    branch: B(5, 'offer', '医生主动提一个额外资源，你要判断要不要',
+      S('Less fried food and more fish. We also run a free nutrition group on Wednesdays.', '少吃油炸，多吃鱼。我们周三还有个免费营养门诊。'),
+      [O(S('Is it one-to-one or a lecture?', '是一对一还是讲座？'), S('Six people, one dietitian. Forty minutes.', '六个人，一个营养师。四十分钟。')),
+       O(S('I will try it. My diet is mostly guesswork.', '我去试试。我吃饭基本靠猜。'), S('Come at six. No booking needed.', '六点来。不用预约。'))]),
+    for: ['胆固醇偏高', '血糖偏高'],
+  },
+
+  /* ---------------- 理疗：疗程要预付 ---------------- */
+  physio: {
+    // at 5 = "Will I need scans?"
+    branch: B(5, 'cost', '不用做检查，但疗程要花钱，而且预付更便宜',
+      S('No scans. Six sessions is four hundred, or three hundred if you pay up front.', '不用做检查。六次四百，预付的话三百。'),
+      [O(S('What if I only need three?', '只要三次呢？'), S('Then pay as you go, sixty-five a session.', '那就单次付，一次六十五。')),
+       O(S('I will pay for six up front.', '我预付六次。'), S('Good. Book them now, same time each week.', '好。现在约，每周同一时间。'))]),
+    for: ['问费用', '术后康复'],
+  },
+
   /* ---------------- 贷款：钱要花在哪 ---------------- */
   loan: {
     // at 2 = "Five thousand, over two years."

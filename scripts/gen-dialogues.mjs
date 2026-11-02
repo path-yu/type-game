@@ -63,6 +63,19 @@ for (const pack of packs) {
       if (ex.for.includes(v.tag)) { v.br = idx; hit++; }
     }
     if (!hit) warn(`_extra：${item.id} 的新岔路没有变体指向它`);
+
+    /*
+     * 位置自检。
+     *
+     * 这里的坑很实在：有些场景「我」是第二个角色（you=1，比如在售票窗口你是乘客），
+     * 照 0 去数就会把岔路放到对方台词上。生成器原本会自动前移 + 警告，
+     * 但那样产出的是一场读起来别扭的对话，不会崩 —— 所以对 _extra 的条目直接判错。
+     */
+    const you = item.you ?? 0;
+    const L = item.lines ?? [];
+    const at = ex.branch.at;
+    if (L[at]?.r !== you) say(`_extra:${item.id}`, `岔路 at ${at} 不在你的台词上（you=${you}）`);
+    else if (L[at + 1]?.r === you) say(`_extra:${item.id}`, '岔路后面应该是对方的台词');
   }
 }
 
