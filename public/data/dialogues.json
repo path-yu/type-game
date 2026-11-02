@@ -61191,6 +61191,6066 @@
      "zh": "半年后做到什么才能批？"
     }
    ]
+  },
+  {
+   "id": "first-day",
+   "g": "first-day",
+   "name": "入职第一天 · 第一天到办公室",
+   "cat": "职场",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你换了新公司，第一天提前二十分钟到。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Welcome. Let me show you around the floor.",
+     "zh": "欢迎。我带你转一圈。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Where should I sit?",
+     "zh": "谢谢。我坐哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "By the window, next to Sam. He will set up your laptop.",
+     "zh": "窗边，Sam 旁边。他帮你配电脑。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need to do any paperwork today?",
+     "zh": "今天要办什么手续吗？"
+    },
+    {
+     "r": 1,
+     "en": "HR will email you. Bank details and next of kin.",
+     "zh": "人事会给你发邮件。银行信息和紧急联系人。"
+    },
+    {
+     "r": 0,
+     "en": "Who do I ask if I get stuck?",
+     "zh": "卡住了问谁？"
+    },
+    {
+     "r": 1,
+     "en": "Sam for anything technical, me for anything else.",
+     "zh": "技术问题找 Sam，其它找我。"
+    },
+    {
+     "r": 0,
+     "en": "Got it. Is there a standup I should join today?",
+     "zh": "明白。今天有站会我要参加吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "主管问你的预期，你要说得具体",
+    "prompt": {
+     "en": "What do you want to be doing in six months?",
+     "zh": "你半年后想做到什么程度？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Owning one service end to end, without help.",
+       "zh": "独立负责一个服务，不用人帮。"
+      },
+      "react": {
+       "en": "That is a clear goal. We can plan around it.",
+       "zh": "目标很清楚。可以围着它排。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather find out first, then decide.",
+       "zh": "我想先看看，再定。"
+      },
+      "react": {
+       "en": "Fair. Ask me again in a month.",
+       "zh": "合理。一个月后再问我。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Where should I sit?",
+     "zh": "我坐哪儿？"
+    },
+    {
+     "en": "Who do I ask if I get stuck?",
+     "zh": "卡住了问谁？"
+    },
+    {
+     "en": "What does a normal week look like?",
+     "zh": "正常一周是什么样？"
+    }
+   ]
+  },
+  {
+   "id": "first-day-2",
+   "g": "first-day",
+   "name": "入职第一天 · 远程入职",
+   "cat": "职场",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "团队在三个城市，你远程入职。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Welcome. Let me show you around the floor.",
+     "zh": "欢迎。我带你转一圈。"
+    },
+    {
+     "r": 0,
+     "en": "I am remote. How do I get my laptop?",
+     "zh": "我远程办公。电脑怎么拿？"
+    },
+    {
+     "r": 1,
+     "en": "It ships today. Until then, use your own machine with a VPN.",
+     "zh": "今天就寄。在那之前用你自己的电脑连 VPN。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need to do any paperwork today?",
+     "zh": "今天要办什么手续吗？"
+    },
+    {
+     "r": 1,
+     "en": "HR will email you. Bank details and next of kin.",
+     "zh": "人事会给你发邮件。银行信息和紧急联系人。"
+    },
+    {
+     "r": 0,
+     "en": "Who do I ask if I get stuck?",
+     "zh": "卡住了问谁？"
+    },
+    {
+     "r": 1,
+     "en": "Sam for anything technical, me for anything else.",
+     "zh": "技术问题找 Sam，其它找我。"
+    },
+    {
+     "r": 0,
+     "en": "Got it. Is there a standup I should join today?",
+     "zh": "明白。今天有站会我要参加吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "主管问你的预期，你要说得具体",
+    "prompt": {
+     "en": "What do you want to be doing in six months?",
+     "zh": "你半年后想做到什么程度？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Owning one service end to end, without help.",
+       "zh": "独立负责一个服务，不用人帮。"
+      },
+      "react": {
+       "en": "That is a clear goal. We can plan around it.",
+       "zh": "目标很清楚。可以围着它排。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather find out first, then decide.",
+       "zh": "我想先看看，再定。"
+      },
+      "react": {
+       "en": "Fair. Ask me again in a month.",
+       "zh": "合理。一个月后再问我。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Where should I sit?",
+     "zh": "我坐哪儿？"
+    },
+    {
+     "en": "Who do I ask if I get stuck?",
+     "zh": "卡住了问谁？"
+    },
+    {
+     "en": "What does a normal week look like?",
+     "zh": "正常一周是什么样？"
+    }
+   ]
+  },
+  {
+   "id": "first-day-3",
+   "g": "first-day",
+   "name": "入职第一天 · 换组",
+   "cat": "职场",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你在公司内部转组。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I am moving over from the payments team. Who do I hand my old work to?",
+     "zh": "我从支付组转过来。旧工作交给谁？"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Where should I sit?",
+     "zh": "谢谢。我坐哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "By the window, next to Sam. He will set up your laptop.",
+     "zh": "窗边，Sam 旁边。他帮你配电脑。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need to do any paperwork today?",
+     "zh": "今天要办什么手续吗？"
+    },
+    {
+     "r": 1,
+     "en": "HR will email you. Bank details and next of kin.",
+     "zh": "人事会给你发邮件。银行信息和紧急联系人。"
+    },
+    {
+     "r": 0,
+     "en": "Who do I ask if I get stuck?",
+     "zh": "卡住了问谁？"
+    },
+    {
+     "r": 1,
+     "en": "Sam for anything technical, me for anything else.",
+     "zh": "技术问题找 Sam，其它找我。"
+    },
+    {
+     "r": 0,
+     "en": "Got it. Is there a standup I should join today?",
+     "zh": "明白。今天有站会我要参加吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "主管问你的预期，你要说得具体",
+    "prompt": {
+     "en": "What do you want to be doing in six months?",
+     "zh": "你半年后想做到什么程度？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Owning one service end to end, without help.",
+       "zh": "独立负责一个服务，不用人帮。"
+      },
+      "react": {
+       "en": "That is a clear goal. We can plan around it.",
+       "zh": "目标很清楚。可以围着它排。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather find out first, then decide.",
+       "zh": "我想先看看，再定。"
+      },
+      "react": {
+       "en": "Fair. Ask me again in a month.",
+       "zh": "合理。一个月后再问我。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Where should I sit?",
+     "zh": "我坐哪儿？"
+    },
+    {
+     "en": "Who do I ask if I get stuck?",
+     "zh": "卡住了问谁？"
+    },
+    {
+     "en": "What does a normal week look like?",
+     "zh": "正常一周是什么样？"
+    }
+   ]
+  },
+  {
+   "id": "first-day-4",
+   "g": "first-day",
+   "name": "入职第一天 · 实习生",
+   "cat": "职场",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你是实习生。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Welcome. Let me show you around the floor.",
+     "zh": "欢迎。我带你转一圈。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Where should I sit?",
+     "zh": "谢谢。我坐哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "By the window, next to Sam. He will set up your laptop.",
+     "zh": "窗边，Sam 旁边。他帮你配电脑。"
+    },
+    {
+     "r": 0,
+     "en": "Is there a buddy I should shadow for the first week?",
+     "zh": "第一周有带我的人吗？"
+    },
+    {
+     "r": 1,
+     "en": "Tom. Sit with him and take notes, even if it is boring.",
+     "zh": "Tom。跟他坐着记笔记，无聊也记。"
+    },
+    {
+     "r": 0,
+     "en": "Who do I ask if I get stuck?",
+     "zh": "卡住了问谁？"
+    },
+    {
+     "r": 1,
+     "en": "Sam for anything technical, me for anything else.",
+     "zh": "技术问题找 Sam，其它找我。"
+    },
+    {
+     "r": 0,
+     "en": "Got it. Is there a standup I should join today?",
+     "zh": "明白。今天有站会我要参加吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "主管问你的预期，你要说得具体",
+    "prompt": {
+     "en": "What do you want to be doing in six months?",
+     "zh": "你半年后想做到什么程度？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Owning one service end to end, without help.",
+       "zh": "独立负责一个服务，不用人帮。"
+      },
+      "react": {
+       "en": "That is a clear goal. We can plan around it.",
+       "zh": "目标很清楚。可以围着它排。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather find out first, then decide.",
+       "zh": "我想先看看，再定。"
+      },
+      "react": {
+       "en": "Fair. Ask me again in a month.",
+       "zh": "合理。一个月后再问我。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Where should I sit?",
+     "zh": "我坐哪儿？"
+    },
+    {
+     "en": "Who do I ask if I get stuck?",
+     "zh": "卡住了问谁？"
+    },
+    {
+     "en": "What does a normal week look like?",
+     "zh": "正常一周是什么样？"
+    }
+   ]
+  },
+  {
+   "id": "first-day-5",
+   "g": "first-day",
+   "name": "入职第一天 · 回聘",
+   "cat": "职场",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你之前在这家公司待过。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I worked here three years ago. Do my old accounts still exist?",
+     "zh": "我三年前在这儿待过。旧账号还在吗？"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Where should I sit?",
+     "zh": "谢谢。我坐哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "By the window, next to Sam. He will set up your laptop.",
+     "zh": "窗边，Sam 旁边。他帮你配电脑。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need to do any paperwork today?",
+     "zh": "今天要办什么手续吗？"
+    },
+    {
+     "r": 1,
+     "en": "HR will email you. Bank details and next of kin.",
+     "zh": "人事会给你发邮件。银行信息和紧急联系人。"
+    },
+    {
+     "r": 0,
+     "en": "Who do I ask if I get stuck?",
+     "zh": "卡住了问谁？"
+    },
+    {
+     "r": 1,
+     "en": "Sam for anything technical, me for anything else.",
+     "zh": "技术问题找 Sam，其它找我。"
+    },
+    {
+     "r": 0,
+     "en": "Got it. Is there a standup I should join today?",
+     "zh": "明白。今天有站会我要参加吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "主管问你的预期，你要说得具体",
+    "prompt": {
+     "en": "What do you want to be doing in six months?",
+     "zh": "你半年后想做到什么程度？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Owning one service end to end, without help.",
+       "zh": "独立负责一个服务，不用人帮。"
+      },
+      "react": {
+       "en": "That is a clear goal. We can plan around it.",
+       "zh": "目标很清楚。可以围着它排。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather find out first, then decide.",
+       "zh": "我想先看看，再定。"
+      },
+      "react": {
+       "en": "Fair. Ask me again in a month.",
+       "zh": "合理。一个月后再问我。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Where should I sit?",
+     "zh": "我坐哪儿？"
+    },
+    {
+     "en": "Who do I ask if I get stuck?",
+     "zh": "卡住了问谁？"
+    },
+    {
+     "en": "What does a normal week look like?",
+     "zh": "正常一周是什么样？"
+    }
+   ]
+  },
+  {
+   "id": "first-day-6",
+   "g": "first-day",
+   "name": "入职第一天 · 问流程",
+   "cat": "职场",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你想知道日常节奏。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Welcome. Let me show you around the floor.",
+     "zh": "欢迎。我带你转一圈。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Where should I sit?",
+     "zh": "谢谢。我坐哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "By the window, next to Sam. He will set up your laptop.",
+     "zh": "窗边，Sam 旁边。他帮你配电脑。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need to do any paperwork today?",
+     "zh": "今天要办什么手续吗？"
+    },
+    {
+     "r": 1,
+     "en": "HR will email you. Bank details and next of kin.",
+     "zh": "人事会给你发邮件。银行信息和紧急联系人。"
+    },
+    {
+     "r": 0,
+     "en": "Who do I ask if I get stuck?",
+     "zh": "卡住了问谁？"
+    },
+    {
+     "r": 1,
+     "en": "What does a normal week look like? Meetings, or mostly heads down?",
+     "zh": "正常一周是什么样？会议多还是埋头干？"
+    },
+    {
+     "r": 0,
+     "en": "Got it. Is there a standup I should join today?",
+     "zh": "明白。今天有站会我要参加吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "主管问你的预期，你要说得具体",
+    "prompt": {
+     "en": "What do you want to be doing in six months?",
+     "zh": "你半年后想做到什么程度？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Owning one service end to end, without help.",
+       "zh": "独立负责一个服务，不用人帮。"
+      },
+      "react": {
+       "en": "That is a clear goal. We can plan around it.",
+       "zh": "目标很清楚。可以围着它排。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather find out first, then decide.",
+       "zh": "我想先看看，再定。"
+      },
+      "react": {
+       "en": "Fair. Ask me again in a month.",
+       "zh": "合理。一个月后再问我。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Where should I sit?",
+     "zh": "我坐哪儿？"
+    },
+    {
+     "en": "Who do I ask if I get stuck?",
+     "zh": "卡住了问谁？"
+    },
+    {
+     "en": "What does a normal week look like?",
+     "zh": "正常一周是什么样？"
+    }
+   ]
+  },
+  {
+   "id": "conflict",
+   "g": "conflict",
+   "name": "和同事意见冲突 · 该不该这周上线",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "上线前一天的评审会，两个人意见相反。",
+   "roles": [
+    "你",
+    "同事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I do not think we should ship this week.",
+     "zh": "我觉得这周不该上线。"
+    },
+    {
+     "r": 0,
+     "en": "Why not? QA signed off yesterday.",
+     "zh": "为什么？测试昨天签了。"
+    },
+    {
+     "r": 1,
+     "en": "They signed off the old build. The fix went in after.",
+     "zh": "他们签的是旧构建。修复是之后才进去的。"
+    },
+    {
+     "r": 0,
+     "en": "Then we ship the old build and patch on Monday.",
+     "zh": "那就发旧构建，周一打补丁。"
+    },
+    {
+     "r": 1,
+     "en": "That is two releases in three days. Support will hate it.",
+     "zh": "三天两个版本。客服会疯。"
+    },
+    {
+     "r": 0,
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    {
+     "r": 1,
+     "en": "Wait until Thursday and ship once.",
+     "zh": "等到周四，一次发完。"
+    },
+    {
+     "r": 0,
+     "en": "Fine by me, but I want that in writing to the client.",
+     "zh": "我没问题，但你要写下来发给客户。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "同事把球踢回给你，你要给出可执行的方案",
+    "prompt": {
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Ship behind a flag, turn it on Tuesday.",
+       "zh": "带开关上线，周二再打开。"
+      },
+      "react": {
+       "en": "That works. Support gets one release.",
+       "zh": "这个行。客服只面对一个版本。"
+      }
+     },
+     {
+      "say": {
+       "en": "Let us ask the client which risk they prefer.",
+       "zh": "问客户他们更愿意承担哪个风险。"
+      },
+      "react": {
+       "en": "I would rather decide ourselves.",
+       "zh": "我更希望我们自己定。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "QA signed off yesterday.",
+     "zh": "测试昨天签了。"
+    },
+    {
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    {
+     "en": "I want that in writing.",
+     "zh": "我要书面确认。"
+    }
+   ]
+  },
+  {
+   "id": "conflict-2",
+   "g": "conflict",
+   "name": "和同事意见冲突 · 设计争议",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你和设计师对布局意见不同。",
+   "roles": [
+    "你",
+    "同事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I think the button belongs at the top. Data says people miss it.",
+     "zh": "我觉得按钮该放上面。数据显示有人找不到。"
+    },
+    {
+     "r": 0,
+     "en": "It breaks the visual hierarchy. Let us test both next week.",
+     "zh": "那会破坏视觉层级。下周两个都测。"
+    },
+    {
+     "r": 1,
+     "en": "They signed off the old build. The fix went in after.",
+     "zh": "他们签的是旧构建。修复是之后才进去的。"
+    },
+    {
+     "r": 0,
+     "en": "Then we ship the old build and patch on Monday.",
+     "zh": "那就发旧构建，周一打补丁。"
+    },
+    {
+     "r": 1,
+     "en": "That is two releases in three days. Support will hate it.",
+     "zh": "三天两个版本。客服会疯。"
+    },
+    {
+     "r": 0,
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    {
+     "r": 1,
+     "en": "Wait until Thursday and ship once.",
+     "zh": "等到周四，一次发完。"
+    },
+    {
+     "r": 0,
+     "en": "Fine by me, but I want that in writing to the client.",
+     "zh": "我没问题，但你要写下来发给客户。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "同事把球踢回给你，你要给出可执行的方案",
+    "prompt": {
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Ship behind a flag, turn it on Tuesday.",
+       "zh": "带开关上线，周二再打开。"
+      },
+      "react": {
+       "en": "That works. Support gets one release.",
+       "zh": "这个行。客服只面对一个版本。"
+      }
+     },
+     {
+      "say": {
+       "en": "Let us ask the client which risk they prefer.",
+       "zh": "问客户他们更愿意承担哪个风险。"
+      },
+      "react": {
+       "en": "I would rather decide ourselves.",
+       "zh": "我更希望我们自己定。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "QA signed off yesterday.",
+     "zh": "测试昨天签了。"
+    },
+    {
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    {
+     "en": "I want that in writing.",
+     "zh": "我要书面确认。"
+    }
+   ]
+  },
+  {
+   "id": "conflict-3",
+   "g": "conflict",
+   "name": "和同事意见冲突 · 优先级",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "两个需求撞车。",
+   "roles": [
+    "你",
+    "同事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "We cannot do both this sprint. Which one matters more?",
+     "zh": "这个迭代做不完两个。哪个更要紧？"
+    },
+    {
+     "r": 0,
+     "en": "The refund bug. Money is leaking every day.",
+     "zh": "退款那个 bug。每天都在漏钱。"
+    },
+    {
+     "r": 1,
+     "en": "They signed off the old build. The fix went in after.",
+     "zh": "他们签的是旧构建。修复是之后才进去的。"
+    },
+    {
+     "r": 0,
+     "en": "Then we ship the old build and patch on Monday.",
+     "zh": "那就发旧构建，周一打补丁。"
+    },
+    {
+     "r": 1,
+     "en": "That is two releases in three days. Support will hate it.",
+     "zh": "三天两个版本。客服会疯。"
+    },
+    {
+     "r": 0,
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    {
+     "r": 1,
+     "en": "Wait until Thursday and ship once.",
+     "zh": "等到周四，一次发完。"
+    },
+    {
+     "r": 0,
+     "en": "Fine by me, but I want that in writing to the client.",
+     "zh": "我没问题，但你要写下来发给客户。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "同事把球踢回给你，你要给出可执行的方案",
+    "prompt": {
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Ship behind a flag, turn it on Tuesday.",
+       "zh": "带开关上线，周二再打开。"
+      },
+      "react": {
+       "en": "That works. Support gets one release.",
+       "zh": "这个行。客服只面对一个版本。"
+      }
+     },
+     {
+      "say": {
+       "en": "Let us ask the client which risk they prefer.",
+       "zh": "问客户他们更愿意承担哪个风险。"
+      },
+      "react": {
+       "en": "I would rather decide ourselves.",
+       "zh": "我更希望我们自己定。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "QA signed off yesterday.",
+     "zh": "测试昨天签了。"
+    },
+    {
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    {
+     "en": "I want that in writing.",
+     "zh": "我要书面确认。"
+    }
+   ]
+  },
+  {
+   "id": "conflict-4",
+   "g": "conflict",
+   "name": "和同事意见冲突 · 测试环境",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你俩抢同一个测试环境。",
+   "roles": [
+    "你",
+    "同事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I do not think we should ship this week.",
+     "zh": "我觉得这周不该上线。"
+    },
+    {
+     "r": 0,
+     "en": "Why not? QA signed off yesterday.",
+     "zh": "为什么？测试昨天签了。"
+    },
+    {
+     "r": 1,
+     "en": "They signed off the old build. The fix went in after.",
+     "zh": "他们签的是旧构建。修复是之后才进去的。"
+    },
+    {
+     "r": 0,
+     "en": "Then we ship the old build and patch on Monday.",
+     "zh": "那就发旧构建，周一打补丁。"
+    },
+    {
+     "r": 1,
+     "en": "I need staging this afternoon. Can you take it tomorrow?",
+     "zh": "我下午要用测试环境。你能明天吗？"
+    },
+    {
+     "r": 0,
+     "en": "I have a demo at four. Take it after five.",
+     "zh": "我四点有个演示。五点后归你。"
+    },
+    {
+     "r": 1,
+     "en": "Wait until Thursday and ship once.",
+     "zh": "等到周四，一次发完。"
+    },
+    {
+     "r": 0,
+     "en": "Fine by me, but I want that in writing to the client.",
+     "zh": "我没问题，但你要写下来发给客户。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "同事把球踢回给你，你要给出可执行的方案",
+    "prompt": {
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Ship behind a flag, turn it on Tuesday.",
+       "zh": "带开关上线，周二再打开。"
+      },
+      "react": {
+       "en": "That works. Support gets one release.",
+       "zh": "这个行。客服只面对一个版本。"
+      }
+     },
+     {
+      "say": {
+       "en": "Let us ask the client which risk they prefer.",
+       "zh": "问客户他们更愿意承担哪个风险。"
+      },
+      "react": {
+       "en": "I would rather decide ourselves.",
+       "zh": "我更希望我们自己定。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "QA signed off yesterday.",
+     "zh": "测试昨天签了。"
+    },
+    {
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    {
+     "en": "I want that in writing.",
+     "zh": "我要书面确认。"
+    }
+   ]
+  },
+  {
+   "id": "conflict-5",
+   "g": "conflict",
+   "name": "和同事意见冲突 · 回滚",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "线上出问题了，该不该回滚。",
+   "roles": [
+    "你",
+    "同事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Error rate doubled after the release. I am rolling back.",
+     "zh": "发布后错误率翻倍。我要回滚。"
+    },
+    {
+     "r": 0,
+     "en": "Give it ten minutes. It may be the cache warming.",
+     "zh": "再等十分钟。可能是缓存预热。"
+    },
+    {
+     "r": 1,
+     "en": "They signed off the old build. The fix went in after.",
+     "zh": "他们签的是旧构建。修复是之后才进去的。"
+    },
+    {
+     "r": 0,
+     "en": "Then we ship the old build and patch on Monday.",
+     "zh": "那就发旧构建，周一打补丁。"
+    },
+    {
+     "r": 1,
+     "en": "That is two releases in three days. Support will hate it.",
+     "zh": "三天两个版本。客服会疯。"
+    },
+    {
+     "r": 0,
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    {
+     "r": 1,
+     "en": "Wait until Thursday and ship once.",
+     "zh": "等到周四，一次发完。"
+    },
+    {
+     "r": 0,
+     "en": "Fine by me, but I want that in writing to the client.",
+     "zh": "我没问题，但你要写下来发给客户。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "同事把球踢回给你，你要给出可执行的方案",
+    "prompt": {
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Ship behind a flag, turn it on Tuesday.",
+       "zh": "带开关上线，周二再打开。"
+      },
+      "react": {
+       "en": "That works. Support gets one release.",
+       "zh": "这个行。客服只面对一个版本。"
+      }
+     },
+     {
+      "say": {
+       "en": "Let us ask the client which risk they prefer.",
+       "zh": "问客户他们更愿意承担哪个风险。"
+      },
+      "react": {
+       "en": "I would rather decide ourselves.",
+       "zh": "我更希望我们自己定。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "QA signed off yesterday.",
+     "zh": "测试昨天签了。"
+    },
+    {
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    {
+     "en": "I want that in writing.",
+     "zh": "我要书面确认。"
+    }
+   ]
+  },
+  {
+   "id": "conflict-6",
+   "g": "conflict",
+   "name": "和同事意见冲突 · 会后",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你想把结论固定下来。",
+   "roles": [
+    "你",
+    "同事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I do not think we should ship this week.",
+     "zh": "我觉得这周不该上线。"
+    },
+    {
+     "r": 0,
+     "en": "Why not? QA signed off yesterday.",
+     "zh": "为什么？测试昨天签了。"
+    },
+    {
+     "r": 1,
+     "en": "They signed off the old build. The fix went in after.",
+     "zh": "他们签的是旧构建。修复是之后才进去的。"
+    },
+    {
+     "r": 0,
+     "en": "Then we ship the old build and patch on Monday.",
+     "zh": "那就发旧构建，周一打补丁。"
+    },
+    {
+     "r": 1,
+     "en": "That is two releases in three days. Support will hate it.",
+     "zh": "三天两个版本。客服会疯。"
+    },
+    {
+     "r": 0,
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    {
+     "r": 1,
+     "en": "Wait until Thursday and ship once.",
+     "zh": "等到周四，一次发完。"
+    },
+    {
+     "r": 0,
+     "en": "Let us write down what we agreed, so nobody reopens it.",
+     "zh": "把结论写下来吧，免得再翻。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "同事把球踢回给你，你要给出可执行的方案",
+    "prompt": {
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Ship behind a flag, turn it on Tuesday.",
+       "zh": "带开关上线，周二再打开。"
+      },
+      "react": {
+       "en": "That works. Support gets one release.",
+       "zh": "这个行。客服只面对一个版本。"
+      }
+     },
+     {
+      "say": {
+       "en": "Let us ask the client which risk they prefer.",
+       "zh": "问客户他们更愿意承担哪个风险。"
+      },
+      "react": {
+       "en": "I would rather decide ourselves.",
+       "zh": "我更希望我们自己定。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "QA signed off yesterday.",
+     "zh": "测试昨天签了。"
+    },
+    {
+     "en": "What would you do instead?",
+     "zh": "那你想怎么办？"
+    },
+    {
+     "en": "I want that in writing.",
+     "zh": "我要书面确认。"
+    }
+   ]
+  },
+  {
+   "id": "performance-review",
+   "g": "performance-review",
+   "name": "绩效面谈 · 年度达标",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "年度评估，你等这个结论等了两个月。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Let us go through the year. Overall, you are on track.",
+     "zh": "过一下这一年。整体你是达标的。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Where do you think I could do better?",
+     "zh": "谢谢。你觉得我哪儿能做得更好？"
+    },
+    {
+     "r": 1,
+     "en": "You are strong technically, but you work quietly.",
+     "zh": "技术很强，但你太安静了。"
+    },
+    {
+     "r": 0,
+     "en": "Meaning I do not flag risks early enough?",
+     "zh": "是说我没有及时报风险？"
+    },
+    {
+     "r": 1,
+     "en": "Partly. People only hear from you when it is done.",
+     "zh": "一部分是。大家只在完成时听到你。"
+    },
+    {
+     "r": 0,
+     "en": "I can send a short weekly note. Would that help?",
+     "zh": "我可以每周发一份简短进展。有用吗？"
+    },
+    {
+     "r": 1,
+     "en": "It would. Keep it to five lines.",
+     "zh": "有用。控制在五行。"
+    },
+    {
+     "r": 0,
+     "en": "Understood. And what would a promotion case look like?",
+     "zh": "明白。那升职需要什么条件？"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "主管的反馈很含糊，你要追到具体",
+    "prompt": {
+     "en": "You could be more visible in the team.",
+     "zh": "你在团队里可以更显眼一些。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Visible how? Reviews, demos, or writing?",
+       "zh": "怎么显眼？评审、演示，还是写文档？"
+      },
+      "react": {
+       "en": "Writing. Your design notes are the best in the team.",
+       "zh": "写文档。你的设计笔记是全组最好的。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather ship than present.",
+       "zh": "我更愿意做事而不是讲。"
+      },
+      "react": {
+       "en": "Then write more. Same effect, less stage.",
+       "zh": "那就多写。效果一样，不用上台。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Where could I do better?",
+     "zh": "我哪儿能做得更好？"
+    },
+    {
+     "en": "People only hear from you when it is done.",
+     "zh": "大家只在完成时听到你。"
+    },
+    {
+     "en": "What would a promotion case look like?",
+     "zh": "升职需要什么条件？"
+    }
+   ]
+  },
+  {
+   "id": "performance-review-2",
+   "g": "performance-review",
+   "name": "绩效面谈 · 超预期",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你今年带了一个新人还接了新客户。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I took on a new client and mentored someone. Does that change the rating?",
+     "zh": "我接了个新客户还带了个新人。评级会变吗？"
+    },
+    {
+     "r": 0,
+     "en": "It puts you in the top band, but the budget is set.",
+     "zh": "能进最高一档，但预算已经定了。"
+    },
+    {
+     "r": 1,
+     "en": "You are strong technically, but you work quietly.",
+     "zh": "技术很强，但你太安静了。"
+    },
+    {
+     "r": 0,
+     "en": "Meaning I do not flag risks early enough?",
+     "zh": "是说我没有及时报风险？"
+    },
+    {
+     "r": 1,
+     "en": "Partly. People only hear from you when it is done.",
+     "zh": "一部分是。大家只在完成时听到你。"
+    },
+    {
+     "r": 0,
+     "en": "I can send a short weekly note. Would that help?",
+     "zh": "我可以每周发一份简短进展。有用吗？"
+    },
+    {
+     "r": 1,
+     "en": "It would. Keep it to five lines.",
+     "zh": "有用。控制在五行。"
+    },
+    {
+     "r": 0,
+     "en": "Understood. And what would a promotion case look like?",
+     "zh": "明白。那升职需要什么条件？"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "主管的反馈很含糊，你要追到具体",
+    "prompt": {
+     "en": "You could be more visible in the team.",
+     "zh": "你在团队里可以更显眼一些。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Visible how? Reviews, demos, or writing?",
+       "zh": "怎么显眼？评审、演示，还是写文档？"
+      },
+      "react": {
+       "en": "Writing. Your design notes are the best in the team.",
+       "zh": "写文档。你的设计笔记是全组最好的。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather ship than present.",
+       "zh": "我更愿意做事而不是讲。"
+      },
+      "react": {
+       "en": "Then write more. Same effect, less stage.",
+       "zh": "那就多写。效果一样，不用上台。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Where could I do better?",
+     "zh": "我哪儿能做得更好？"
+    },
+    {
+     "en": "People only hear from you when it is done.",
+     "zh": "大家只在完成时听到你。"
+    },
+    {
+     "en": "What would a promotion case look like?",
+     "zh": "升职需要什么条件？"
+    }
+   ]
+  },
+  {
+   "id": "performance-review-3",
+   "g": "performance-review",
+   "name": "绩效面谈 · 需要改进",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你的评级是「部分达标」。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The rating says partially met. Which part?",
+     "zh": "评级是部分达标。哪部分？"
+    },
+    {
+     "r": 0,
+     "en": "Two deadlines slipped. The work was good, the timing was not.",
+     "zh": "两次延期。活干得好，时间没守住。"
+    },
+    {
+     "r": 1,
+     "en": "You are strong technically, but you work quietly.",
+     "zh": "技术很强，但你太安静了。"
+    },
+    {
+     "r": 0,
+     "en": "Meaning I do not flag risks early enough?",
+     "zh": "是说我没有及时报风险？"
+    },
+    {
+     "r": 1,
+     "en": "Partly. People only hear from you when it is done.",
+     "zh": "一部分是。大家只在完成时听到你。"
+    },
+    {
+     "r": 0,
+     "en": "I can send a short weekly note. Would that help?",
+     "zh": "我可以每周发一份简短进展。有用吗？"
+    },
+    {
+     "r": 1,
+     "en": "It would. Keep it to five lines.",
+     "zh": "有用。控制在五行。"
+    },
+    {
+     "r": 0,
+     "en": "Understood. And what would a promotion case look like?",
+     "zh": "明白。那升职需要什么条件？"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "主管的反馈很含糊，你要追到具体",
+    "prompt": {
+     "en": "You could be more visible in the team.",
+     "zh": "你在团队里可以更显眼一些。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Visible how? Reviews, demos, or writing?",
+       "zh": "怎么显眼？评审、演示，还是写文档？"
+      },
+      "react": {
+       "en": "Writing. Your design notes are the best in the team.",
+       "zh": "写文档。你的设计笔记是全组最好的。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather ship than present.",
+       "zh": "我更愿意做事而不是讲。"
+      },
+      "react": {
+       "en": "Then write more. Same effect, less stage.",
+       "zh": "那就多写。效果一样，不用上台。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Where could I do better?",
+     "zh": "我哪儿能做得更好？"
+    },
+    {
+     "en": "People only hear from you when it is done.",
+     "zh": "大家只在完成时听到你。"
+    },
+    {
+     "en": "What would a promotion case look like?",
+     "zh": "升职需要什么条件？"
+    }
+   ]
+  },
+  {
+   "id": "performance-review-4",
+   "g": "performance-review",
+   "name": "绩效面谈 · 试用期",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你还在试用期。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Let us go through the year. Overall, you are on track.",
+     "zh": "过一下这一年。整体你是达标的。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Where do you think I could do better?",
+     "zh": "谢谢。你觉得我哪儿能做得更好？"
+    },
+    {
+     "r": 1,
+     "en": "You are strong technically, but you work quietly.",
+     "zh": "技术很强，但你太安静了。"
+    },
+    {
+     "r": 0,
+     "en": "Meaning I do not flag risks early enough?",
+     "zh": "是说我没有及时报风险？"
+    },
+    {
+     "r": 1,
+     "en": "Partly. People only hear from you when it is done.",
+     "zh": "一部分是。大家只在完成时听到你。"
+    },
+    {
+     "r": 0,
+     "en": "I can send a short weekly note. Would that help?",
+     "zh": "我可以每周发一份简短进展。有用吗？"
+    },
+    {
+     "r": 1,
+     "en": "What has to be true for the probation to pass?",
+     "zh": "试用期通过的标准是什么？"
+    },
+    {
+     "r": 0,
+     "en": "Own one feature end to end by month five.",
+     "zh": "第五个月前独立负责一个功能。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "主管的反馈很含糊，你要追到具体",
+    "prompt": {
+     "en": "You could be more visible in the team.",
+     "zh": "你在团队里可以更显眼一些。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Visible how? Reviews, demos, or writing?",
+       "zh": "怎么显眼？评审、演示，还是写文档？"
+      },
+      "react": {
+       "en": "Writing. Your design notes are the best in the team.",
+       "zh": "写文档。你的设计笔记是全组最好的。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather ship than present.",
+       "zh": "我更愿意做事而不是讲。"
+      },
+      "react": {
+       "en": "Then write more. Same effect, less stage.",
+       "zh": "那就多写。效果一样，不用上台。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Where could I do better?",
+     "zh": "我哪儿能做得更好？"
+    },
+    {
+     "en": "People only hear from you when it is done.",
+     "zh": "大家只在完成时听到你。"
+    },
+    {
+     "en": "What would a promotion case look like?",
+     "zh": "升职需要什么条件？"
+    }
+   ]
+  },
+  {
+   "id": "performance-review-5",
+   "g": "performance-review",
+   "name": "绩效面谈 · 目标调整",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你想改明年的目标。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Let us go through the year. Overall, you are on track.",
+     "zh": "过一下这一年。整体你是达标的。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Where do you think I could do better?",
+     "zh": "谢谢。你觉得我哪儿能做得更好？"
+    },
+    {
+     "r": 1,
+     "en": "You are strong technically, but you work quietly.",
+     "zh": "技术很强，但你太安静了。"
+    },
+    {
+     "r": 0,
+     "en": "Meaning I do not flag risks early enough?",
+     "zh": "是说我没有及时报风险？"
+    },
+    {
+     "r": 1,
+     "en": "Partly. People only hear from you when it is done.",
+     "zh": "一部分是。大家只在完成时听到你。"
+    },
+    {
+     "r": 0,
+     "en": "I can send a short weekly note. Would that help?",
+     "zh": "我可以每周发一份简短进展。有用吗？"
+    },
+    {
+     "r": 1,
+     "en": "It would. Keep it to five lines.",
+     "zh": "有用。控制在五行。"
+    },
+    {
+     "r": 0,
+     "en": "Could next year goal be about depth, not volume?",
+     "zh": "明年目标能定在深度而不是数量上吗？"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "主管的反馈很含糊，你要追到具体",
+    "prompt": {
+     "en": "You could be more visible in the team.",
+     "zh": "你在团队里可以更显眼一些。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Visible how? Reviews, demos, or writing?",
+       "zh": "怎么显眼？评审、演示，还是写文档？"
+      },
+      "react": {
+       "en": "Writing. Your design notes are the best in the team.",
+       "zh": "写文档。你的设计笔记是全组最好的。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather ship than present.",
+       "zh": "我更愿意做事而不是讲。"
+      },
+      "react": {
+       "en": "Then write more. Same effect, less stage.",
+       "zh": "那就多写。效果一样，不用上台。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Where could I do better?",
+     "zh": "我哪儿能做得更好？"
+    },
+    {
+     "en": "People only hear from you when it is done.",
+     "zh": "大家只在完成时听到你。"
+    },
+    {
+     "en": "What would a promotion case look like?",
+     "zh": "升职需要什么条件？"
+    }
+   ]
+  },
+  {
+   "id": "performance-review-6",
+   "g": "performance-review",
+   "name": "绩效面谈 · 问薪资",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你想把评级和钱挂钩。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Let us go through the year. Overall, you are on track.",
+     "zh": "过一下这一年。整体你是达标的。"
+    },
+    {
+     "r": 0,
+     "en": "Thanks. Where do you think I could do better?",
+     "zh": "谢谢。你觉得我哪儿能做得更好？"
+    },
+    {
+     "r": 1,
+     "en": "You are strong technically, but you work quietly.",
+     "zh": "技术很强，但你太安静了。"
+    },
+    {
+     "r": 0,
+     "en": "Meaning I do not flag risks early enough?",
+     "zh": "是说我没有及时报风险？"
+    },
+    {
+     "r": 1,
+     "en": "Partly. People only hear from you when it is done.",
+     "zh": "一部分是。大家只在完成时听到你。"
+    },
+    {
+     "r": 0,
+     "en": "I can send a short weekly note. Would that help?",
+     "zh": "我可以每周发一份简短进展。有用吗？"
+    },
+    {
+     "r": 1,
+     "en": "Does the rating translate into a raise this cycle?",
+     "zh": "这个评级这轮会带调薪吗？"
+    },
+    {
+     "r": 0,
+     "en": "Understood. And what would a promotion case look like?",
+     "zh": "明白。那升职需要什么条件？"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "主管的反馈很含糊，你要追到具体",
+    "prompt": {
+     "en": "You could be more visible in the team.",
+     "zh": "你在团队里可以更显眼一些。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Visible how? Reviews, demos, or writing?",
+       "zh": "怎么显眼？评审、演示，还是写文档？"
+      },
+      "react": {
+       "en": "Writing. Your design notes are the best in the team.",
+       "zh": "写文档。你的设计笔记是全组最好的。"
+      }
+     },
+     {
+      "say": {
+       "en": "I would rather ship than present.",
+       "zh": "我更愿意做事而不是讲。"
+      },
+      "react": {
+       "en": "Then write more. Same effect, less stage.",
+       "zh": "那就多写。效果一样，不用上台。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Where could I do better?",
+     "zh": "我哪儿能做得更好？"
+    },
+    {
+     "en": "People only hear from you when it is done.",
+     "zh": "大家只在完成时听到你。"
+    },
+    {
+     "en": "What would a promotion case look like?",
+     "zh": "升职需要什么条件？"
+    }
+   ]
+  },
+  {
+   "id": "layoff",
+   "g": "layoff",
+   "name": "被裁员沟通 · 岗位被取消",
+   "cat": "职场",
+   "lv": 6,
+   "cefr": "B2",
+   "setting": "公司重组，你在名单里。",
+   "roles": [
+    "你",
+    "人事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I have difficult news. Your role is being cut.",
+     "zh": "我有个坏消息。你的岗位被取消了。"
+    },
+    {
+     "r": 0,
+     "en": "I see. Is this effective immediately?",
+     "zh": "明白。是立即生效吗？"
+    },
+    {
+     "r": 1,
+     "en": "Your last day is the end of the month. From today you are on garden leave.",
+     "zh": "最后一天是月底。从今天起你带薪离岗。"
+    },
+    {
+     "r": 0,
+     "en": "What is the package?",
+     "zh": "补偿是什么？"
+    },
+    {
+     "r": 1,
+     "en": "Three months pay, plus outplacement support.",
+     "zh": "三个月工资，加求职辅导。"
+    },
+    {
+     "r": 0,
+     "en": "Can I have that in writing before I sign anything?",
+     "zh": "签任何东西之前能给我书面版本吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Take it home and read it.",
+     "zh": "当然。带回去读。"
+    },
+    {
+     "r": 0,
+     "en": "My visa depends on this job. What are my options?",
+     "zh": "我的签证靠这份工作。我有什么选择？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "人事催你当场签，你要争取时间",
+    "prompt": {
+     "en": "The package is better if you sign today.",
+     "zh": "今天签的话补偿更高。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much better? I need the number before I decide.",
+       "zh": "高多少？我要看到数字再决定。"
+      },
+      "react": {
+       "en": "One extra month, if signed by five.",
+       "zh": "多一个月，五点前签。"
+      }
+     },
+     {
+      "say": {
+       "en": "I am not signing anything today. I will take advice first.",
+       "zh": "我今天不签。我要先咨询。"
+      },
+      "react": {
+       "en": "That is your right. I will hold the offer until Friday.",
+       "zh": "这是您的权利。我把方案留到周五。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Is this effective immediately?",
+     "zh": "是立即生效吗？"
+    },
+    {
+     "en": "Can I have that in writing?",
+     "zh": "能给我书面版本吗？"
+    },
+    {
+     "en": "This is not about your work.",
+     "zh": "这跟你的表现无关。"
+    }
+   ]
+  },
+  {
+   "id": "layoff-2",
+   "g": "layoff",
+   "name": "被裁员沟通 · 整个团队",
+   "cat": "职场",
+   "lv": 6,
+   "cefr": "B2",
+   "setting": "整个团队都被裁。",
+   "roles": [
+    "你",
+    "人事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I have difficult news. Your role is being cut.",
+     "zh": "我有个坏消息。你的岗位被取消了。"
+    },
+    {
+     "r": 0,
+     "en": "The whole team is affected. This is not about your work.",
+     "zh": "整个团队都受影响。这跟你的工作表现无关。"
+    },
+    {
+     "r": 1,
+     "en": "That is some comfort. Who else is in the meeting today?",
+     "zh": "这算点安慰。今天还有谁被谈？"
+    },
+    {
+     "r": 0,
+     "en": "What is the package?",
+     "zh": "补偿是什么？"
+    },
+    {
+     "r": 1,
+     "en": "Three months pay, plus outplacement support.",
+     "zh": "三个月工资，加求职辅导。"
+    },
+    {
+     "r": 0,
+     "en": "Can I have that in writing before I sign anything?",
+     "zh": "签任何东西之前能给我书面版本吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Take it home and read it.",
+     "zh": "当然。带回去读。"
+    },
+    {
+     "r": 0,
+     "en": "My visa depends on this job. What are my options?",
+     "zh": "我的签证靠这份工作。我有什么选择？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "人事催你当场签，你要争取时间",
+    "prompt": {
+     "en": "The package is better if you sign today.",
+     "zh": "今天签的话补偿更高。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much better? I need the number before I decide.",
+       "zh": "高多少？我要看到数字再决定。"
+      },
+      "react": {
+       "en": "One extra month, if signed by five.",
+       "zh": "多一个月，五点前签。"
+      }
+     },
+     {
+      "say": {
+       "en": "I am not signing anything today. I will take advice first.",
+       "zh": "我今天不签。我要先咨询。"
+      },
+      "react": {
+       "en": "That is your right. I will hold the offer until Friday.",
+       "zh": "这是您的权利。我把方案留到周五。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Is this effective immediately?",
+     "zh": "是立即生效吗？"
+    },
+    {
+     "en": "Can I have that in writing?",
+     "zh": "能给我书面版本吗？"
+    },
+    {
+     "en": "This is not about your work.",
+     "zh": "这跟你的表现无关。"
+    }
+   ]
+  },
+  {
+   "id": "layoff-3",
+   "g": "layoff",
+   "name": "被裁员沟通 · 自愿离职",
+   "cat": "职场",
+   "lv": 6,
+   "cefr": "B2",
+   "setting": "公司在征集自愿离职。",
+   "roles": [
+    "你",
+    "人事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Is the voluntary scheme still open? What does it pay?",
+     "zh": "自愿离职方案还开着吗？给多少？"
+    },
+    {
+     "r": 0,
+     "en": "Four months, and it closes on Friday.",
+     "zh": "四个月，周五截止。"
+    },
+    {
+     "r": 1,
+     "en": "Your last day is the end of the month. From today you are on garden leave.",
+     "zh": "最后一天是月底。从今天起你带薪离岗。"
+    },
+    {
+     "r": 0,
+     "en": "What is the package?",
+     "zh": "补偿是什么？"
+    },
+    {
+     "r": 1,
+     "en": "Three months pay, plus outplacement support.",
+     "zh": "三个月工资，加求职辅导。"
+    },
+    {
+     "r": 0,
+     "en": "Can I have that in writing before I sign anything?",
+     "zh": "签任何东西之前能给我书面版本吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Take it home and read it.",
+     "zh": "当然。带回去读。"
+    },
+    {
+     "r": 0,
+     "en": "My visa depends on this job. What are my options?",
+     "zh": "我的签证靠这份工作。我有什么选择？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "人事催你当场签，你要争取时间",
+    "prompt": {
+     "en": "The package is better if you sign today.",
+     "zh": "今天签的话补偿更高。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much better? I need the number before I decide.",
+       "zh": "高多少？我要看到数字再决定。"
+      },
+      "react": {
+       "en": "One extra month, if signed by five.",
+       "zh": "多一个月，五点前签。"
+      }
+     },
+     {
+      "say": {
+       "en": "I am not signing anything today. I will take advice first.",
+       "zh": "我今天不签。我要先咨询。"
+      },
+      "react": {
+       "en": "That is your right. I will hold the offer until Friday.",
+       "zh": "这是您的权利。我把方案留到周五。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Is this effective immediately?",
+     "zh": "是立即生效吗？"
+    },
+    {
+     "en": "Can I have that in writing?",
+     "zh": "能给我书面版本吗？"
+    },
+    {
+     "en": "This is not about your work.",
+     "zh": "这跟你的表现无关。"
+    }
+   ]
+  },
+  {
+   "id": "layoff-4",
+   "g": "layoff",
+   "name": "被裁员沟通 · 绩效为由",
+   "cat": "职场",
+   "lv": 6,
+   "cefr": "B2",
+   "setting": "对方说是因为绩效。",
+   "roles": [
+    "你",
+    "人事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The letter says performance. I have no written warnings.",
+     "zh": "信上写的是绩效。我从没收到过书面警告。"
+    },
+    {
+     "r": 0,
+     "en": "Then we should say role redundancy instead.",
+     "zh": "那我们该写岗位裁撤。"
+    },
+    {
+     "r": 1,
+     "en": "Your last day is the end of the month. From today you are on garden leave.",
+     "zh": "最后一天是月底。从今天起你带薪离岗。"
+    },
+    {
+     "r": 0,
+     "en": "What is the package?",
+     "zh": "补偿是什么？"
+    },
+    {
+     "r": 1,
+     "en": "Three months pay, plus outplacement support.",
+     "zh": "三个月工资，加求职辅导。"
+    },
+    {
+     "r": 0,
+     "en": "Can I have that in writing before I sign anything?",
+     "zh": "签任何东西之前能给我书面版本吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Take it home and read it.",
+     "zh": "当然。带回去读。"
+    },
+    {
+     "r": 0,
+     "en": "My visa depends on this job. What are my options?",
+     "zh": "我的签证靠这份工作。我有什么选择？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "人事催你当场签，你要争取时间",
+    "prompt": {
+     "en": "The package is better if you sign today.",
+     "zh": "今天签的话补偿更高。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much better? I need the number before I decide.",
+       "zh": "高多少？我要看到数字再决定。"
+      },
+      "react": {
+       "en": "One extra month, if signed by five.",
+       "zh": "多一个月，五点前签。"
+      }
+     },
+     {
+      "say": {
+       "en": "I am not signing anything today. I will take advice first.",
+       "zh": "我今天不签。我要先咨询。"
+      },
+      "react": {
+       "en": "That is your right. I will hold the offer until Friday.",
+       "zh": "这是您的权利。我把方案留到周五。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Is this effective immediately?",
+     "zh": "是立即生效吗？"
+    },
+    {
+     "en": "Can I have that in writing?",
+     "zh": "能给我书面版本吗？"
+    },
+    {
+     "en": "This is not about your work.",
+     "zh": "这跟你的表现无关。"
+    }
+   ]
+  },
+  {
+   "id": "layoff-5",
+   "g": "layoff",
+   "name": "被裁员沟通 · 远程被通知",
+   "cat": "职场",
+   "lv": 6,
+   "cefr": "B2",
+   "setting": "你在视频会议里被告知。",
+   "roles": [
+    "你",
+    "人事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I would rather have had this conversation in person.",
+     "zh": "我更希望这个对话是当面进行的。"
+    },
+    {
+     "r": 0,
+     "en": "I see. Is this effective immediately?",
+     "zh": "明白。是立即生效吗？"
+    },
+    {
+     "r": 1,
+     "en": "Your last day is the end of the month. From today you are on garden leave.",
+     "zh": "最后一天是月底。从今天起你带薪离岗。"
+    },
+    {
+     "r": 0,
+     "en": "What is the package?",
+     "zh": "补偿是什么？"
+    },
+    {
+     "r": 1,
+     "en": "Three months pay, plus outplacement support.",
+     "zh": "三个月工资，加求职辅导。"
+    },
+    {
+     "r": 0,
+     "en": "Can I have that in writing before I sign anything?",
+     "zh": "签任何东西之前能给我书面版本吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. Take it home and read it.",
+     "zh": "当然。带回去读。"
+    },
+    {
+     "r": 0,
+     "en": "My visa depends on this job. What are my options?",
+     "zh": "我的签证靠这份工作。我有什么选择？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "人事催你当场签，你要争取时间",
+    "prompt": {
+     "en": "The package is better if you sign today.",
+     "zh": "今天签的话补偿更高。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much better? I need the number before I decide.",
+       "zh": "高多少？我要看到数字再决定。"
+      },
+      "react": {
+       "en": "One extra month, if signed by five.",
+       "zh": "多一个月，五点前签。"
+      }
+     },
+     {
+      "say": {
+       "en": "I am not signing anything today. I will take advice first.",
+       "zh": "我今天不签。我要先咨询。"
+      },
+      "react": {
+       "en": "That is your right. I will hold the offer until Friday.",
+       "zh": "这是您的权利。我把方案留到周五。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Is this effective immediately?",
+     "zh": "是立即生效吗？"
+    },
+    {
+     "en": "Can I have that in writing?",
+     "zh": "能给我书面版本吗？"
+    },
+    {
+     "en": "This is not about your work.",
+     "zh": "这跟你的表现无关。"
+    }
+   ]
+  },
+  {
+   "id": "layoff-6",
+   "g": "layoff",
+   "name": "被裁员沟通 · 问设备",
+   "cat": "职场",
+   "lv": 6,
+   "cefr": "B2",
+   "setting": "你想知道设备和交接。",
+   "roles": [
+    "你",
+    "人事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I have difficult news. Your role is being cut.",
+     "zh": "我有个坏消息。你的岗位被取消了。"
+    },
+    {
+     "r": 0,
+     "en": "I see. Is this effective immediately?",
+     "zh": "明白。是立即生效吗？"
+    },
+    {
+     "r": 1,
+     "en": "Your last day is the end of the month. From today you are on garden leave.",
+     "zh": "最后一天是月底。从今天起你带薪离岗。"
+    },
+    {
+     "r": 0,
+     "en": "What is the package?",
+     "zh": "补偿是什么？"
+    },
+    {
+     "r": 1,
+     "en": "Three months pay, plus outplacement support.",
+     "zh": "三个月工资，加求职辅导。"
+    },
+    {
+     "r": 0,
+     "en": "Can I have that in writing before I sign anything?",
+     "zh": "签任何东西之前能给我书面版本吗？"
+    },
+    {
+     "r": 1,
+     "en": "When do I hand back the laptop, and how do I get my files?",
+     "zh": "电脑什么时候还，我的文件怎么拿？"
+    },
+    {
+     "r": 0,
+     "en": "My visa depends on this job. What are my options?",
+     "zh": "我的签证靠这份工作。我有什么选择？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "人事催你当场签，你要争取时间",
+    "prompt": {
+     "en": "The package is better if you sign today.",
+     "zh": "今天签的话补偿更高。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much better? I need the number before I decide.",
+       "zh": "高多少？我要看到数字再决定。"
+      },
+      "react": {
+       "en": "One extra month, if signed by five.",
+       "zh": "多一个月，五点前签。"
+      }
+     },
+     {
+      "say": {
+       "en": "I am not signing anything today. I will take advice first.",
+       "zh": "我今天不签。我要先咨询。"
+      },
+      "react": {
+       "en": "That is your right. I will hold the offer until Friday.",
+       "zh": "这是您的权利。我把方案留到周五。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Is this effective immediately?",
+     "zh": "是立即生效吗？"
+    },
+    {
+     "en": "Can I have that in writing?",
+     "zh": "能给我书面版本吗？"
+    },
+    {
+     "en": "This is not about your work.",
+     "zh": "这跟你的表现无关。"
+    }
+   ]
+  },
+  {
+   "id": "reference",
+   "g": "reference",
+   "name": "请前老板做推荐人 · 请前主管",
+   "cat": "职场",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你面试到最后一轮，对方要两个推荐人。",
+   "roles": [
+    "你",
+    "前主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Would you be willing to be a reference for me?",
+     "zh": "你愿意给我做个推荐人吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. What is the role?",
+     "zh": "当然。什么岗位？"
+    },
+    {
+     "r": 0,
+     "en": "A senior engineer position at a smaller company.",
+     "zh": "一家小公司的高级工程师。"
+    },
+    {
+     "r": 1,
+     "en": "What do you want me to emphasise?",
+     "zh": "你希望我强调什么？"
+    },
+    {
+     "r": 0,
+     "en": "The migration project, and how I handled the outage.",
+     "zh": "迁移项目，还有那次故障我怎么处理的。"
+    },
+    {
+     "r": 1,
+     "en": "I remember both. Will they call or email?",
+     "zh": "两件我都记得。他们打电话还是发邮件？"
+    },
+    {
+     "r": 0,
+     "en": "A short call, probably next week.",
+     "zh": "一个短电话，大概下周。"
+    },
+    {
+     "r": 1,
+     "en": "Fine. Send me the job description so I am consistent.",
+     "zh": "行。把职位描述发我，我保持一致。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "前主管问你要强调什么，你要给出可核查的例子",
+    "prompt": {
+     "en": "What should I say about the outage?",
+     "zh": "那次故障我该怎么说？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That I owned it, wrote the post-mortem, and shipped the fix.",
+       "zh": "说我扛下来了，写了复盘，也修好了。"
+      },
+      "react": {
+       "en": "That is the version I remember too.",
+       "zh": "我记得的也是这个版本。"
+      }
+     },
+     {
+      "say": {
+       "en": "That the vendor caused it, not the team.",
+       "zh": "说是供应商的问题，不是团队。"
+      },
+      "react": {
+       "en": "I would rather not blame a vendor. I will keep it factual.",
+       "zh": "我不想甩锅给供应商。我就照实说。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Would you be willing to be a reference?",
+     "zh": "你愿意做推荐人吗？"
+    },
+    {
+     "en": "What do you want me to emphasise?",
+     "zh": "你希望我强调什么？"
+    },
+    {
+     "en": "So I am consistent.",
+     "zh": "这样我说的一致。"
+    }
+   ]
+  },
+  {
+   "id": "reference-2",
+   "g": "reference",
+   "name": "请前老板做推荐人 · 前同事",
+   "cat": "职场",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想找同级同事。",
+   "roles": [
+    "你",
+    "前主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Could you be a reference? We worked on the same team for two years.",
+     "zh": "你能做推荐人吗？我们在一个组两年。"
+    },
+    {
+     "r": 1,
+     "en": "Happy to. I can speak to how you worked with the client.",
+     "zh": "乐意。我可以讲你怎么对客户的。"
+    },
+    {
+     "r": 0,
+     "en": "A senior engineer position at a smaller company.",
+     "zh": "一家小公司的高级工程师。"
+    },
+    {
+     "r": 1,
+     "en": "What do you want me to emphasise?",
+     "zh": "你希望我强调什么？"
+    },
+    {
+     "r": 0,
+     "en": "The migration project, and how I handled the outage.",
+     "zh": "迁移项目，还有那次故障我怎么处理的。"
+    },
+    {
+     "r": 1,
+     "en": "I remember both. Will they call or email?",
+     "zh": "两件我都记得。他们打电话还是发邮件？"
+    },
+    {
+     "r": 0,
+     "en": "A short call, probably next week.",
+     "zh": "一个短电话，大概下周。"
+    },
+    {
+     "r": 1,
+     "en": "Fine. Send me the job description so I am consistent.",
+     "zh": "行。把职位描述发我，我保持一致。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "前主管问你要强调什么，你要给出可核查的例子",
+    "prompt": {
+     "en": "What should I say about the outage?",
+     "zh": "那次故障我该怎么说？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That I owned it, wrote the post-mortem, and shipped the fix.",
+       "zh": "说我扛下来了，写了复盘，也修好了。"
+      },
+      "react": {
+       "en": "That is the version I remember too.",
+       "zh": "我记得的也是这个版本。"
+      }
+     },
+     {
+      "say": {
+       "en": "That the vendor caused it, not the team.",
+       "zh": "说是供应商的问题，不是团队。"
+      },
+      "react": {
+       "en": "I would rather not blame a vendor. I will keep it factual.",
+       "zh": "我不想甩锅给供应商。我就照实说。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Would you be willing to be a reference?",
+     "zh": "你愿意做推荐人吗？"
+    },
+    {
+     "en": "What do you want me to emphasise?",
+     "zh": "你希望我强调什么？"
+    },
+    {
+     "en": "So I am consistent.",
+     "zh": "这样我说的一致。"
+    }
+   ]
+  },
+  {
+   "id": "reference-3",
+   "g": "reference",
+   "name": "请前老板做推荐人 · 学校导师",
+   "cat": "职场",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你刚毕业。",
+   "roles": [
+    "你",
+    "前主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Would my tutor be a better reference than a manager?",
+     "zh": "找导师做推荐人比找经理好吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. What is the role?",
+     "zh": "当然。什么岗位？"
+    },
+    {
+     "r": 0,
+     "en": "A senior engineer position at a smaller company.",
+     "zh": "一家小公司的高级工程师。"
+    },
+    {
+     "r": 1,
+     "en": "What do you want me to emphasise?",
+     "zh": "你希望我强调什么？"
+    },
+    {
+     "r": 0,
+     "en": "The migration project, and how I handled the outage.",
+     "zh": "迁移项目，还有那次故障我怎么处理的。"
+    },
+    {
+     "r": 1,
+     "en": "I remember both. Will they call or email?",
+     "zh": "两件我都记得。他们打电话还是发邮件？"
+    },
+    {
+     "r": 0,
+     "en": "A short call, probably next week.",
+     "zh": "一个短电话，大概下周。"
+    },
+    {
+     "r": 1,
+     "en": "Fine. Send me the job description so I am consistent.",
+     "zh": "行。把职位描述发我，我保持一致。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "前主管问你要强调什么，你要给出可核查的例子",
+    "prompt": {
+     "en": "What should I say about the outage?",
+     "zh": "那次故障我该怎么说？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That I owned it, wrote the post-mortem, and shipped the fix.",
+       "zh": "说我扛下来了，写了复盘，也修好了。"
+      },
+      "react": {
+       "en": "That is the version I remember too.",
+       "zh": "我记得的也是这个版本。"
+      }
+     },
+     {
+      "say": {
+       "en": "That the vendor caused it, not the team.",
+       "zh": "说是供应商的问题，不是团队。"
+      },
+      "react": {
+       "en": "I would rather not blame a vendor. I will keep it factual.",
+       "zh": "我不想甩锅给供应商。我就照实说。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Would you be willing to be a reference?",
+     "zh": "你愿意做推荐人吗？"
+    },
+    {
+     "en": "What do you want me to emphasise?",
+     "zh": "你希望我强调什么？"
+    },
+    {
+     "en": "So I am consistent.",
+     "zh": "这样我说的一致。"
+    }
+   ]
+  },
+  {
+   "id": "reference-4",
+   "g": "reference",
+   "name": "请前老板做推荐人 · 背调",
+   "cat": "职场",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "公司要做背景调查。",
+   "roles": [
+    "你",
+    "前主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Would you be willing to be a reference for me?",
+     "zh": "你愿意给我做个推荐人吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. What is the role?",
+     "zh": "当然。什么岗位？"
+    },
+    {
+     "r": 0,
+     "en": "A senior engineer position at a smaller company.",
+     "zh": "一家小公司的高级工程师。"
+    },
+    {
+     "r": 1,
+     "en": "What do you want me to emphasise?",
+     "zh": "你希望我强调什么？"
+    },
+    {
+     "r": 0,
+     "en": "The migration project, and how I handled the outage.",
+     "zh": "迁移项目，还有那次故障我怎么处理的。"
+    },
+    {
+     "r": 1,
+     "en": "I remember both. Will they call or email?",
+     "zh": "两件我都记得。他们打电话还是发邮件？"
+    },
+    {
+     "r": 0,
+     "en": "They will do a background check. Is there anything I should warn you about?",
+     "zh": "他们要做背调。有什么我该先跟你说的吗？"
+    },
+    {
+     "r": 1,
+     "en": "Fine. Send me the job description so I am consistent.",
+     "zh": "行。把职位描述发我，我保持一致。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "前主管问你要强调什么，你要给出可核查的例子",
+    "prompt": {
+     "en": "What should I say about the outage?",
+     "zh": "那次故障我该怎么说？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That I owned it, wrote the post-mortem, and shipped the fix.",
+       "zh": "说我扛下来了，写了复盘，也修好了。"
+      },
+      "react": {
+       "en": "That is the version I remember too.",
+       "zh": "我记得的也是这个版本。"
+      }
+     },
+     {
+      "say": {
+       "en": "That the vendor caused it, not the team.",
+       "zh": "说是供应商的问题，不是团队。"
+      },
+      "react": {
+       "en": "I would rather not blame a vendor. I will keep it factual.",
+       "zh": "我不想甩锅给供应商。我就照实说。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Would you be willing to be a reference?",
+     "zh": "你愿意做推荐人吗？"
+    },
+    {
+     "en": "What do you want me to emphasise?",
+     "zh": "你希望我强调什么？"
+    },
+    {
+     "en": "So I am consistent.",
+     "zh": "这样我说的一致。"
+    }
+   ]
+  },
+  {
+   "id": "reference-5",
+   "g": "reference",
+   "name": "请前老板做推荐人 · 前老板不太乐意",
+   "cat": "职场",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "前老板回复很冷淡。",
+   "roles": [
+    "你",
+    "前主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Would you be willing to be a reference for me?",
+     "zh": "你愿意给我做个推荐人吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. What is the role?",
+     "zh": "当然。什么岗位？"
+    },
+    {
+     "r": 0,
+     "en": "He said he is busy but could write a short note. Is that enough?",
+     "zh": "他说忙，但可以写个短评。够吗？"
+    },
+    {
+     "r": 1,
+     "en": "What do you want me to emphasise?",
+     "zh": "你希望我强调什么？"
+    },
+    {
+     "r": 0,
+     "en": "The migration project, and how I handled the outage.",
+     "zh": "迁移项目，还有那次故障我怎么处理的。"
+    },
+    {
+     "r": 1,
+     "en": "I remember both. Will they call or email?",
+     "zh": "两件我都记得。他们打电话还是发邮件？"
+    },
+    {
+     "r": 0,
+     "en": "A short call, probably next week.",
+     "zh": "一个短电话，大概下周。"
+    },
+    {
+     "r": 1,
+     "en": "Fine. Send me the job description so I am consistent.",
+     "zh": "行。把职位描述发我，我保持一致。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "前主管问你要强调什么，你要给出可核查的例子",
+    "prompt": {
+     "en": "What should I say about the outage?",
+     "zh": "那次故障我该怎么说？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That I owned it, wrote the post-mortem, and shipped the fix.",
+       "zh": "说我扛下来了，写了复盘，也修好了。"
+      },
+      "react": {
+       "en": "That is the version I remember too.",
+       "zh": "我记得的也是这个版本。"
+      }
+     },
+     {
+      "say": {
+       "en": "That the vendor caused it, not the team.",
+       "zh": "说是供应商的问题，不是团队。"
+      },
+      "react": {
+       "en": "I would rather not blame a vendor. I will keep it factual.",
+       "zh": "我不想甩锅给供应商。我就照实说。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Would you be willing to be a reference?",
+     "zh": "你愿意做推荐人吗？"
+    },
+    {
+     "en": "What do you want me to emphasise?",
+     "zh": "你希望我强调什么？"
+    },
+    {
+     "en": "So I am consistent.",
+     "zh": "这样我说的一致。"
+    }
+   ]
+  },
+  {
+   "id": "reference-6",
+   "g": "reference",
+   "name": "请前老板做推荐人 · 感谢",
+   "cat": "职场",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "对方答应了，你想表达感谢。",
+   "roles": [
+    "你",
+    "前主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Would you be willing to be a reference for me?",
+     "zh": "你愿意给我做个推荐人吗？"
+    },
+    {
+     "r": 1,
+     "en": "Of course. What is the role?",
+     "zh": "当然。什么岗位？"
+    },
+    {
+     "r": 0,
+     "en": "A senior engineer position at a smaller company.",
+     "zh": "一家小公司的高级工程师。"
+    },
+    {
+     "r": 1,
+     "en": "What do you want me to emphasise?",
+     "zh": "你希望我强调什么？"
+    },
+    {
+     "r": 0,
+     "en": "The migration project, and how I handled the outage.",
+     "zh": "迁移项目，还有那次故障我怎么处理的。"
+    },
+    {
+     "r": 1,
+     "en": "I remember both. Will they call or email?",
+     "zh": "两件我都记得。他们打电话还是发邮件？"
+    },
+    {
+     "r": 0,
+     "en": "A short call, probably next week.",
+     "zh": "一个短电话，大概下周。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you. I will send you the details and a reminder a day before.",
+     "zh": "谢谢。我把细节发你，前一天再提醒。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "前主管问你要强调什么，你要给出可核查的例子",
+    "prompt": {
+     "en": "What should I say about the outage?",
+     "zh": "那次故障我该怎么说？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That I owned it, wrote the post-mortem, and shipped the fix.",
+       "zh": "说我扛下来了，写了复盘，也修好了。"
+      },
+      "react": {
+       "en": "That is the version I remember too.",
+       "zh": "我记得的也是这个版本。"
+      }
+     },
+     {
+      "say": {
+       "en": "That the vendor caused it, not the team.",
+       "zh": "说是供应商的问题，不是团队。"
+      },
+      "react": {
+       "en": "I would rather not blame a vendor. I will keep it factual.",
+       "zh": "我不想甩锅给供应商。我就照实说。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Would you be willing to be a reference?",
+     "zh": "你愿意做推荐人吗？"
+    },
+    {
+     "en": "What do you want me to emphasise?",
+     "zh": "你希望我强调什么？"
+    },
+    {
+     "en": "So I am consistent.",
+     "zh": "这样我说的一致。"
+    }
+   ]
+  },
+  {
+   "id": "supplier",
+   "g": "supplier",
+   "name": "和供应商谈价 · 订单翻倍要折扣",
+   "cat": "职场",
+   "lv": 6,
+   "cefr": "B2",
+   "setting": "你们把采购量翻了一倍，想重新谈价。",
+   "roles": [
+    "你",
+    "供应商"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Our price is fixed for this year.",
+     "zh": "我们的价格今年是固定的。"
+    },
+    {
+     "r": 0,
+     "en": "We doubled the order. That should move the price.",
+     "zh": "我们的订单翻倍了。价格应该能动。"
+    },
+    {
+     "r": 1,
+     "en": "How much are we talking about?",
+     "zh": "你想谈多少？"
+    },
+    {
+     "r": 0,
+     "en": "Ten percent, and net sixty instead of thirty.",
+     "zh": "十个点，账期从三十天改六十天。"
+    },
+    {
+     "r": 1,
+     "en": "Ten is too much. I can do six and net forty-five.",
+     "zh": "十太多。六，账期四十五天。"
+    },
+    {
+     "r": 0,
+     "en": "Seven and net sixty, and we sign for two years.",
+     "zh": "七，账期六十天，我们签两年。"
+    },
+    {
+     "r": 1,
+     "en": "Seven and net fifty. That is my final offer.",
+     "zh": "七，账期五十天。这是我的底线。"
+    },
+    {
+     "r": 0,
+     "en": "Agreed. Send the contract and we will sign this week.",
+     "zh": "成交。把合同发来，这周签。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "对方给了一个还价，你要判断还能不能推",
+    "prompt": {
+     "en": "Seven percent is already below our margin for this volume.",
+     "zh": "这个量下七个点已经低于我们的利润线。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then take it out of the packaging cost instead.",
+       "zh": "那从包装成本里让出来。"
+      },
+      "react": {
+       "en": "We can switch to a simpler box. That is another two.",
+       "zh": "可以换简装盒，再让两个点。"
+      }
+     },
+     {
+      "say": {
+       "en": "Seven and net sixty, and we announce it as a partnership.",
+       "zh": "七加六十天账期，我们对外说是战略合作。"
+      },
+      "react": {
+       "en": "The announcement is worth something. Done.",
+       "zh": "这个宣传有价值。成交。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "That should move the price.",
+     "zh": "价格应该能动。"
+    },
+    {
+     "en": "That is my final offer.",
+     "zh": "这是我的底线。"
+    },
+    {
+     "en": "Net sixty instead of thirty.",
+     "zh": "账期从三十天改六十天。"
+    }
+   ]
+  },
+  {
+   "id": "supplier-2",
+   "g": "supplier",
+   "name": "和供应商谈价 · 对方涨价",
+   "cat": "职场",
+   "lv": 6,
+   "cefr": "B2",
+   "setting": "供应商要涨一成五。",
+   "roles": [
+    "你",
+    "供应商"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Fifteen percent is above the index. What is driving it?",
+     "zh": "一成五高于指数。是什么原因？"
+    },
+    {
+     "r": 0,
+     "en": "Freight and the new packaging. Both went up in March.",
+     "zh": "运费和新包装。三月都涨了。"
+    },
+    {
+     "r": 1,
+     "en": "How much are we talking about?",
+     "zh": "你想谈多少？"
+    },
+    {
+     "r": 0,
+     "en": "Ten percent, and net sixty instead of thirty.",
+     "zh": "十个点，账期从三十天改六十天。"
+    },
+    {
+     "r": 1,
+     "en": "Ten is too much. I can do six and net forty-five.",
+     "zh": "十太多。六，账期四十五天。"
+    },
+    {
+     "r": 0,
+     "en": "Seven and net sixty, and we sign for two years.",
+     "zh": "七，账期六十天，我们签两年。"
+    },
+    {
+     "r": 1,
+     "en": "Seven and net fifty. That is my final offer.",
+     "zh": "七，账期五十天。这是我的底线。"
+    },
+    {
+     "r": 0,
+     "en": "Agreed. Send the contract and we will sign this week.",
+     "zh": "成交。把合同发来，这周签。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "对方给了一个还价，你要判断还能不能推",
+    "prompt": {
+     "en": "Seven percent is already below our margin for this volume.",
+     "zh": "这个量下七个点已经低于我们的利润线。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then take it out of the packaging cost instead.",
+       "zh": "那从包装成本里让出来。"
+      },
+      "react": {
+       "en": "We can switch to a simpler box. That is another two.",
+       "zh": "可以换简装盒，再让两个点。"
+      }
+     },
+     {
+      "say": {
+       "en": "Seven and net sixty, and we announce it as a partnership.",
+       "zh": "七加六十天账期，我们对外说是战略合作。"
+      },
+      "react": {
+       "en": "The announcement is worth something. Done.",
+       "zh": "这个宣传有价值。成交。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "That should move the price.",
+     "zh": "价格应该能动。"
+    },
+    {
+     "en": "That is my final offer.",
+     "zh": "这是我的底线。"
+    },
+    {
+     "en": "Net sixty instead of thirty.",
+     "zh": "账期从三十天改六十天。"
+    }
+   ]
+  },
+  {
+   "id": "supplier-3",
+   "g": "supplier",
+   "name": "和供应商谈价 · 要独家",
+   "cat": "职场",
+   "lv": 6,
+   "cefr": "B2",
+   "setting": "你想拿独家代理。",
+   "roles": [
+    "你",
+    "供应商"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Our price is fixed for this year.",
+     "zh": "我们的价格今年是固定的。"
+    },
+    {
+     "r": 0,
+     "en": "We doubled the order. That should move the price.",
+     "zh": "我们的订单翻倍了。价格应该能动。"
+    },
+    {
+     "r": 1,
+     "en": "How much are we talking about?",
+     "zh": "你想谈多少？"
+    },
+    {
+     "r": 0,
+     "en": "Ten percent, and net sixty instead of thirty.",
+     "zh": "十个点，账期从三十天改六十天。"
+    },
+    {
+     "r": 1,
+     "en": "We would want exclusivity in this region for two years.",
+     "zh": "我们想要这个区域两年独家。"
+    },
+    {
+     "r": 0,
+     "en": "Exclusivity needs a minimum volume. Double it.",
+     "zh": "独家要有最低采购量。翻倍。"
+    },
+    {
+     "r": 1,
+     "en": "Seven and net fifty. That is my final offer.",
+     "zh": "七，账期五十天。这是我的底线。"
+    },
+    {
+     "r": 0,
+     "en": "Agreed. Send the contract and we will sign this week.",
+     "zh": "成交。把合同发来，这周签。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "对方给了一个还价，你要判断还能不能推",
+    "prompt": {
+     "en": "Seven percent is already below our margin for this volume.",
+     "zh": "这个量下七个点已经低于我们的利润线。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then take it out of the packaging cost instead.",
+       "zh": "那从包装成本里让出来。"
+      },
+      "react": {
+       "en": "We can switch to a simpler box. That is another two.",
+       "zh": "可以换简装盒，再让两个点。"
+      }
+     },
+     {
+      "say": {
+       "en": "Seven and net sixty, and we announce it as a partnership.",
+       "zh": "七加六十天账期，我们对外说是战略合作。"
+      },
+      "react": {
+       "en": "The announcement is worth something. Done.",
+       "zh": "这个宣传有价值。成交。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "That should move the price.",
+     "zh": "价格应该能动。"
+    },
+    {
+     "en": "That is my final offer.",
+     "zh": "这是我的底线。"
+    },
+    {
+     "en": "Net sixty instead of thirty.",
+     "zh": "账期从三十天改六十天。"
+    }
+   ]
+  },
+  {
+   "id": "supplier-4",
+   "g": "supplier",
+   "name": "和供应商谈价 · 交付延期",
+   "cat": "职场",
+   "lv": 6,
+   "cefr": "B2",
+   "setting": "对方交期一拖再拖。",
+   "roles": [
+    "你",
+    "供应商"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The last three shipments were late. What is the plan?",
+     "zh": "最近三批都晚了。怎么解决？"
+    },
+    {
+     "r": 0,
+     "en": "We doubled the order. That should move the price.",
+     "zh": "我们的订单翻倍了。价格应该能动。"
+    },
+    {
+     "r": 1,
+     "en": "How much are we talking about?",
+     "zh": "你想谈多少？"
+    },
+    {
+     "r": 0,
+     "en": "Ten percent, and net sixty instead of thirty.",
+     "zh": "十个点，账期从三十天改六十天。"
+    },
+    {
+     "r": 1,
+     "en": "Ten is too much. I can do six and net forty-five.",
+     "zh": "十太多。六，账期四十五天。"
+    },
+    {
+     "r": 0,
+     "en": "Seven and net sixty, and we sign for two years.",
+     "zh": "七，账期六十天，我们签两年。"
+    },
+    {
+     "r": 1,
+     "en": "Seven and net fifty. That is my final offer.",
+     "zh": "七，账期五十天。这是我的底线。"
+    },
+    {
+     "r": 0,
+     "en": "Agreed. Send the contract and we will sign this week.",
+     "zh": "成交。把合同发来，这周签。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "对方给了一个还价，你要判断还能不能推",
+    "prompt": {
+     "en": "Seven percent is already below our margin for this volume.",
+     "zh": "这个量下七个点已经低于我们的利润线。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then take it out of the packaging cost instead.",
+       "zh": "那从包装成本里让出来。"
+      },
+      "react": {
+       "en": "We can switch to a simpler box. That is another two.",
+       "zh": "可以换简装盒，再让两个点。"
+      }
+     },
+     {
+      "say": {
+       "en": "Seven and net sixty, and we announce it as a partnership.",
+       "zh": "七加六十天账期，我们对外说是战略合作。"
+      },
+      "react": {
+       "en": "The announcement is worth something. Done.",
+       "zh": "这个宣传有价值。成交。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "That should move the price.",
+     "zh": "价格应该能动。"
+    },
+    {
+     "en": "That is my final offer.",
+     "zh": "这是我的底线。"
+    },
+    {
+     "en": "Net sixty instead of thirty.",
+     "zh": "账期从三十天改六十天。"
+    }
+   ]
+  },
+  {
+   "id": "supplier-5",
+   "g": "supplier",
+   "name": "和供应商谈价 · 质量索赔",
+   "cat": "职场",
+   "lv": 6,
+   "cefr": "B2",
+   "setting": "一批货有质量问题。",
+   "roles": [
+    "你",
+    "供应商"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Our price is fixed for this year.",
+     "zh": "我们的价格今年是固定的。"
+    },
+    {
+     "r": 0,
+     "en": "We doubled the order. That should move the price.",
+     "zh": "我们的订单翻倍了。价格应该能动。"
+    },
+    {
+     "r": 1,
+     "en": "How much are we talking about?",
+     "zh": "你想谈多少？"
+    },
+    {
+     "r": 0,
+     "en": "We are claiming for the faulty batch. Here is the report.",
+     "zh": "我们要为那批不良品索赔。报告在这儿。"
+    },
+    {
+     "r": 1,
+     "en": "Ten is too much. I can do six and net forty-five.",
+     "zh": "十太多。六，账期四十五天。"
+    },
+    {
+     "r": 0,
+     "en": "Seven and net sixty, and we sign for two years.",
+     "zh": "七，账期六十天，我们签两年。"
+    },
+    {
+     "r": 1,
+     "en": "Seven and net fifty. That is my final offer.",
+     "zh": "七，账期五十天。这是我的底线。"
+    },
+    {
+     "r": 0,
+     "en": "Agreed. Send the contract and we will sign this week.",
+     "zh": "成交。把合同发来，这周签。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "对方给了一个还价，你要判断还能不能推",
+    "prompt": {
+     "en": "Seven percent is already below our margin for this volume.",
+     "zh": "这个量下七个点已经低于我们的利润线。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then take it out of the packaging cost instead.",
+       "zh": "那从包装成本里让出来。"
+      },
+      "react": {
+       "en": "We can switch to a simpler box. That is another two.",
+       "zh": "可以换简装盒，再让两个点。"
+      }
+     },
+     {
+      "say": {
+       "en": "Seven and net sixty, and we announce it as a partnership.",
+       "zh": "七加六十天账期，我们对外说是战略合作。"
+      },
+      "react": {
+       "en": "The announcement is worth something. Done.",
+       "zh": "这个宣传有价值。成交。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "That should move the price.",
+     "zh": "价格应该能动。"
+    },
+    {
+     "en": "That is my final offer.",
+     "zh": "这是我的底线。"
+    },
+    {
+     "en": "Net sixty instead of thirty.",
+     "zh": "账期从三十天改六十天。"
+    }
+   ]
+  },
+  {
+   "id": "supplier-6",
+   "g": "supplier",
+   "name": "和供应商谈价 · 签长约",
+   "cat": "职场",
+   "lv": 6,
+   "cefr": "B2",
+   "setting": "你想要更长的合同。",
+   "roles": [
+    "你",
+    "供应商"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Our price is fixed for this year.",
+     "zh": "我们的价格今年是固定的。"
+    },
+    {
+     "r": 0,
+     "en": "We doubled the order. That should move the price.",
+     "zh": "我们的订单翻倍了。价格应该能动。"
+    },
+    {
+     "r": 1,
+     "en": "How much are we talking about?",
+     "zh": "你想谈多少？"
+    },
+    {
+     "r": 0,
+     "en": "Ten percent, and net sixty instead of thirty.",
+     "zh": "十个点，账期从三十天改六十天。"
+    },
+    {
+     "r": 1,
+     "en": "Ten is too much. I can do six and net forty-five.",
+     "zh": "十太多。六，账期四十五天。"
+    },
+    {
+     "r": 0,
+     "en": "Seven and net sixty, and we sign for two years.",
+     "zh": "七，账期六十天，我们签两年。"
+    },
+    {
+     "r": 1,
+     "en": "Seven and net fifty. That is my final offer.",
+     "zh": "七，账期五十天。这是我的底线。"
+    },
+    {
+     "r": 0,
+     "en": "Before we sign for two years, what happens if volumes drop?",
+     "zh": "签两年之前，如果量掉了怎么办？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "对方给了一个还价，你要判断还能不能推",
+    "prompt": {
+     "en": "Seven percent is already below our margin for this volume.",
+     "zh": "这个量下七个点已经低于我们的利润线。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then take it out of the packaging cost instead.",
+       "zh": "那从包装成本里让出来。"
+      },
+      "react": {
+       "en": "We can switch to a simpler box. That is another two.",
+       "zh": "可以换简装盒，再让两个点。"
+      }
+     },
+     {
+      "say": {
+       "en": "Seven and net sixty, and we announce it as a partnership.",
+       "zh": "七加六十天账期，我们对外说是战略合作。"
+      },
+      "react": {
+       "en": "The announcement is worth something. Done.",
+       "zh": "这个宣传有价值。成交。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "That should move the price.",
+     "zh": "价格应该能动。"
+    },
+    {
+     "en": "That is my final offer.",
+     "zh": "这是我的底线。"
+    },
+    {
+     "en": "Net sixty instead of thirty.",
+     "zh": "账期从三十天改六十天。"
+    }
+   ]
+  },
+  {
+   "id": "training",
+   "g": "training",
+   "name": "内部培训反馈 · 一次内部培训",
+   "cat": "职场",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你给团队讲了一小时工具用法，反馈刚收上来。",
+   "roles": [
+    "你",
+    "同事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Thanks for running the session. It was useful.",
+     "zh": "谢谢你的培训。挺有用。"
+    },
+    {
+     "r": 0,
+     "en": "Glad it landed. What would you change?",
+     "zh": "有用就好。哪里可以改？"
+    },
+    {
+     "r": 1,
+     "en": "The last exercise was too long. We ran over by ten minutes.",
+     "zh": "最后一个练习太长。超时十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "I will cut it in half next time.",
+     "zh": "下次我砍一半。"
+    },
+    {
+     "r": 1,
+     "en": "Could you send the slides? People asked.",
+     "zh": "能发课件吗？有人问。"
+    },
+    {
+     "r": 0,
+     "en": "I will put them on the wiki today.",
+     "zh": "我今天放到 wiki 上。"
+    },
+    {
+     "r": 1,
+     "en": "One more thing. Can we do this quarterly?",
+     "zh": "还有一件。能每季度一次吗？"
+    },
+    {
+     "r": 0,
+     "en": "If you can give me a room and an hour, yes.",
+     "zh": "你能给我一间会议室和一小时，就行。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "同事提了一个具体改进，你要接住",
+    "prompt": {
+     "en": "The last exercise was too long. We ran over by ten minutes.",
+     "zh": "最后一个练习太长。超时十分钟。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I will cut it in half and keep one worked example.",
+       "zh": "我砍一半，只留一个示例。"
+      },
+      "react": {
+       "en": "That would fix it.",
+       "zh": "那就解决了。"
+      }
+     },
+     {
+      "say": {
+       "en": "Was it the exercise or my explanation before it?",
+       "zh": "是练习长，还是我前面的讲解拖了？"
+      },
+      "react": {
+       "en": "Honestly, the explanation.",
+       "zh": "说实话，是讲解。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Glad it landed.",
+     "zh": "有用就好。"
+    },
+    {
+     "en": "We ran over by ten minutes.",
+     "zh": "我们超时十分钟。"
+    },
+    {
+     "en": "Should I send a pre-read?",
+     "zh": "要发预读材料吗？"
+    }
+   ]
+  },
+  {
+   "id": "training-2",
+   "g": "training",
+   "name": "内部培训反馈 · 新人培训",
+   "cat": "职场",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你要给新入职的人讲。",
+   "roles": [
+    "你",
+    "同事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "What do new joiners struggle with most in week one?",
+     "zh": "新人第一周最容易卡在哪儿？"
+    },
+    {
+     "r": 0,
+     "en": "Access and environment setup. Two days lost, usually.",
+     "zh": "权限和环境配置。一般浪费两天。"
+    },
+    {
+     "r": 1,
+     "en": "The last exercise was too long. We ran over by ten minutes.",
+     "zh": "最后一个练习太长。超时十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "I will cut it in half next time.",
+     "zh": "下次我砍一半。"
+    },
+    {
+     "r": 1,
+     "en": "Could you send the slides? People asked.",
+     "zh": "能发课件吗？有人问。"
+    },
+    {
+     "r": 0,
+     "en": "I will put them on the wiki today.",
+     "zh": "我今天放到 wiki 上。"
+    },
+    {
+     "r": 1,
+     "en": "One more thing. Can we do this quarterly?",
+     "zh": "还有一件。能每季度一次吗？"
+    },
+    {
+     "r": 0,
+     "en": "If you can give me a room and an hour, yes.",
+     "zh": "你能给我一间会议室和一小时，就行。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "同事提了一个具体改进，你要接住",
+    "prompt": {
+     "en": "The last exercise was too long. We ran over by ten minutes.",
+     "zh": "最后一个练习太长。超时十分钟。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I will cut it in half and keep one worked example.",
+       "zh": "我砍一半，只留一个示例。"
+      },
+      "react": {
+       "en": "That would fix it.",
+       "zh": "那就解决了。"
+      }
+     },
+     {
+      "say": {
+       "en": "Was it the exercise or my explanation before it?",
+       "zh": "是练习长，还是我前面的讲解拖了？"
+      },
+      "react": {
+       "en": "Honestly, the explanation.",
+       "zh": "说实话，是讲解。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Glad it landed.",
+     "zh": "有用就好。"
+    },
+    {
+     "en": "We ran over by ten minutes.",
+     "zh": "我们超时十分钟。"
+    },
+    {
+     "en": "Should I send a pre-read?",
+     "zh": "要发预读材料吗？"
+    }
+   ]
+  },
+  {
+   "id": "training-3",
+   "g": "training",
+   "name": "内部培训反馈 · 客户培训",
+   "cat": "职场",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你要给客户做培训。",
+   "roles": [
+    "你",
+    "同事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Thanks for running the session. It was useful.",
+     "zh": "谢谢你的培训。挺有用。"
+    },
+    {
+     "r": 0,
+     "en": "Glad it landed. What would you change?",
+     "zh": "有用就好。哪里可以改？"
+    },
+    {
+     "r": 1,
+     "en": "The customer wants a session for twenty people. Do we charge?",
+     "zh": "客户想要二十人的培训。收费吗？"
+    },
+    {
+     "r": 0,
+     "en": "I will cut it in half next time.",
+     "zh": "下次我砍一半。"
+    },
+    {
+     "r": 1,
+     "en": "Could you send the slides? People asked.",
+     "zh": "能发课件吗？有人问。"
+    },
+    {
+     "r": 0,
+     "en": "I will put them on the wiki today.",
+     "zh": "我今天放到 wiki 上。"
+    },
+    {
+     "r": 1,
+     "en": "One more thing. Can we do this quarterly?",
+     "zh": "还有一件。能每季度一次吗？"
+    },
+    {
+     "r": 0,
+     "en": "If you can give me a room and an hour, yes.",
+     "zh": "你能给我一间会议室和一小时，就行。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "同事提了一个具体改进，你要接住",
+    "prompt": {
+     "en": "The last exercise was too long. We ran over by ten minutes.",
+     "zh": "最后一个练习太长。超时十分钟。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I will cut it in half and keep one worked example.",
+       "zh": "我砍一半，只留一个示例。"
+      },
+      "react": {
+       "en": "That would fix it.",
+       "zh": "那就解决了。"
+      }
+     },
+     {
+      "say": {
+       "en": "Was it the exercise or my explanation before it?",
+       "zh": "是练习长，还是我前面的讲解拖了？"
+      },
+      "react": {
+       "en": "Honestly, the explanation.",
+       "zh": "说实话，是讲解。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Glad it landed.",
+     "zh": "有用就好。"
+    },
+    {
+     "en": "We ran over by ten minutes.",
+     "zh": "我们超时十分钟。"
+    },
+    {
+     "en": "Should I send a pre-read?",
+     "zh": "要发预读材料吗？"
+    }
+   ]
+  },
+  {
+   "id": "training-4",
+   "g": "training",
+   "name": "内部培训反馈 · 线上培训",
+   "cat": "职场",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "培训改成线上。",
+   "roles": [
+    "你",
+    "同事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Thanks for running the session. It was useful.",
+     "zh": "谢谢你的培训。挺有用。"
+    },
+    {
+     "r": 0,
+     "en": "Glad it landed. What would you change?",
+     "zh": "有用就好。哪里可以改？"
+    },
+    {
+     "r": 1,
+     "en": "The last exercise was too long. We ran over by ten minutes.",
+     "zh": "最后一个练习太长。超时十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "I will cut it in half next time.",
+     "zh": "下次我砍一半。"
+    },
+    {
+     "r": 1,
+     "en": "Online works, but the exercises need breaking into smaller parts.",
+     "zh": "线上可以，但练习要拆得更小。"
+    },
+    {
+     "r": 0,
+     "en": "I will put them on the wiki today.",
+     "zh": "我今天放到 wiki 上。"
+    },
+    {
+     "r": 1,
+     "en": "One more thing. Can we do this quarterly?",
+     "zh": "还有一件。能每季度一次吗？"
+    },
+    {
+     "r": 0,
+     "en": "If you can give me a room and an hour, yes.",
+     "zh": "你能给我一间会议室和一小时，就行。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "同事提了一个具体改进，你要接住",
+    "prompt": {
+     "en": "The last exercise was too long. We ran over by ten minutes.",
+     "zh": "最后一个练习太长。超时十分钟。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I will cut it in half and keep one worked example.",
+       "zh": "我砍一半，只留一个示例。"
+      },
+      "react": {
+       "en": "That would fix it.",
+       "zh": "那就解决了。"
+      }
+     },
+     {
+      "say": {
+       "en": "Was it the exercise or my explanation before it?",
+       "zh": "是练习长，还是我前面的讲解拖了？"
+      },
+      "react": {
+       "en": "Honestly, the explanation.",
+       "zh": "说实话，是讲解。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Glad it landed.",
+     "zh": "有用就好。"
+    },
+    {
+     "en": "We ran over by ten minutes.",
+     "zh": "我们超时十分钟。"
+    },
+    {
+     "en": "Should I send a pre-read?",
+     "zh": "要发预读材料吗？"
+    }
+   ]
+  },
+  {
+   "id": "training-5",
+   "g": "training",
+   "name": "内部培训反馈 · 讲得太快",
+   "cat": "职场",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "有人反馈跟不上。",
+   "roles": [
+    "你",
+    "同事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Thanks for running the session. It was useful.",
+     "zh": "谢谢你的培训。挺有用。"
+    },
+    {
+     "r": 0,
+     "en": "Glad it landed. What would you change?",
+     "zh": "有用就好。哪里可以改？"
+    },
+    {
+     "r": 1,
+     "en": "The last exercise was too long. We ran over by ten minutes.",
+     "zh": "最后一个练习太长。超时十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Two people said it went too fast. Should I add a second session?",
+     "zh": "两个人说太快了。要加一场吗？"
+    },
+    {
+     "r": 1,
+     "en": "Could you send the slides? People asked.",
+     "zh": "能发课件吗？有人问。"
+    },
+    {
+     "r": 0,
+     "en": "I will put them on the wiki today.",
+     "zh": "我今天放到 wiki 上。"
+    },
+    {
+     "r": 1,
+     "en": "One more thing. Can we do this quarterly?",
+     "zh": "还有一件。能每季度一次吗？"
+    },
+    {
+     "r": 0,
+     "en": "If you can give me a room and an hour, yes.",
+     "zh": "你能给我一间会议室和一小时，就行。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "同事提了一个具体改进，你要接住",
+    "prompt": {
+     "en": "The last exercise was too long. We ran over by ten minutes.",
+     "zh": "最后一个练习太长。超时十分钟。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I will cut it in half and keep one worked example.",
+       "zh": "我砍一半，只留一个示例。"
+      },
+      "react": {
+       "en": "That would fix it.",
+       "zh": "那就解决了。"
+      }
+     },
+     {
+      "say": {
+       "en": "Was it the exercise or my explanation before it?",
+       "zh": "是练习长，还是我前面的讲解拖了？"
+      },
+      "react": {
+       "en": "Honestly, the explanation.",
+       "zh": "说实话，是讲解。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Glad it landed.",
+     "zh": "有用就好。"
+    },
+    {
+     "en": "We ran over by ten minutes.",
+     "zh": "我们超时十分钟。"
+    },
+    {
+     "en": "Should I send a pre-read?",
+     "zh": "要发预读材料吗？"
+    }
+   ]
+  },
+  {
+   "id": "training-6",
+   "g": "training",
+   "name": "内部培训反馈 · 要材料",
+   "cat": "职场",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你想让学员提前准备。",
+   "roles": [
+    "你",
+    "同事"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Thanks for running the session. It was useful.",
+     "zh": "谢谢你的培训。挺有用。"
+    },
+    {
+     "r": 0,
+     "en": "Glad it landed. What would you change?",
+     "zh": "有用就好。哪里可以改？"
+    },
+    {
+     "r": 1,
+     "en": "The last exercise was too long. We ran over by ten minutes.",
+     "zh": "最后一个练习太长。超时十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "I will cut it in half next time.",
+     "zh": "下次我砍一半。"
+    },
+    {
+     "r": 1,
+     "en": "Could you send the slides? People asked.",
+     "zh": "能发课件吗？有人问。"
+    },
+    {
+     "r": 0,
+     "en": "I will put them on the wiki today.",
+     "zh": "我今天放到 wiki 上。"
+    },
+    {
+     "r": 1,
+     "en": "Should I send a short pre-read? It would save twenty minutes.",
+     "zh": "要发一份预读吗？能省二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "If you can give me a room and an hour, yes.",
+     "zh": "你能给我一间会议室和一小时，就行。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "同事提了一个具体改进，你要接住",
+    "prompt": {
+     "en": "The last exercise was too long. We ran over by ten minutes.",
+     "zh": "最后一个练习太长。超时十分钟。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I will cut it in half and keep one worked example.",
+       "zh": "我砍一半，只留一个示例。"
+      },
+      "react": {
+       "en": "That would fix it.",
+       "zh": "那就解决了。"
+      }
+     },
+     {
+      "say": {
+       "en": "Was it the exercise or my explanation before it?",
+       "zh": "是练习长，还是我前面的讲解拖了？"
+      },
+      "react": {
+       "en": "Honestly, the explanation.",
+       "zh": "说实话，是讲解。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Glad it landed.",
+     "zh": "有用就好。"
+    },
+    {
+     "en": "We ran over by ten minutes.",
+     "zh": "我们超时十分钟。"
+    },
+    {
+     "en": "Should I send a pre-read?",
+     "zh": "要发预读材料吗？"
+    }
+   ]
+  },
+  {
+   "id": "one-on-one",
+   "g": "one-on-one",
+   "name": "一对一沟通 · 一个人扛三个项目",
+   "cat": "职场",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "月度一对一，你准备了三件事要说。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How are things? Anything on your mind?",
+     "zh": "怎么样？有什么想聊的？"
+    },
+    {
+     "r": 0,
+     "en": "I am stretched. Three projects, and I am the only one who knows the billing code.",
+     "zh": "我有点撑不住。三个项目，而且只有我一个人懂计费那块代码。"
+    },
+    {
+     "r": 1,
+     "en": "That is a bus factor of one. Let us fix it.",
+     "zh": "那是一个人扛一个系统。得解决。"
+    },
+    {
+     "r": 0,
+     "en": "I could pair with Tom for a week.",
+     "zh": "我可以跟 Tom 结对一周。"
+    },
+    {
+     "r": 1,
+     "en": "Do that. Drop the reporting project until then.",
+     "zh": "那就这么办。报表项目先放一放。"
+    },
+    {
+     "r": 0,
+     "en": "Will the client accept a delay?",
+     "zh": "客户能接受延期吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will tell them myself.",
+     "zh": "我去跟他们说。"
+    },
+    {
+     "r": 0,
+     "en": "Then that unblocks me. Thanks.",
+     "zh": "那我就松口气了。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "主管问你具体怎么解决，你要给方案",
+    "prompt": {
+     "en": "How would you fix the bus factor?",
+     "zh": "你怎么解决这个问题？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Pair for a week, then let Tom own the next release.",
+       "zh": "结对一周，然后让 Tom 负责下个版本。"
+      },
+      "react": {
+       "en": "That is a real plan. Book the time now.",
+       "zh": "这是实操方案。现在就把时间订了。"
+      }
+     },
+     {
+      "say": {
+       "en": "Write the runbook first, then hand over.",
+       "zh": "先写操作手册，再交接。"
+      },
+      "react": {
+       "en": "Good. Two weeks, and I will check in.",
+       "zh": "好。两周，我来跟进。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am stretched.",
+     "zh": "我有点撑不住。"
+    },
+    {
+     "en": "A bus factor of one.",
+     "zh": "只有一个人懂。"
+    },
+    {
+     "en": "That unblocks me.",
+     "zh": "那我就通了。"
+    }
+   ]
+  },
+  {
+   "id": "one-on-one-2",
+   "g": "one-on-one",
+   "name": "一对一沟通 · 想换项目",
+   "cat": "职场",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想离开现在的项目。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I would like to move off the reporting work. It has no future for me.",
+     "zh": "我想离开报表那块。对我来说没前景。"
+    },
+    {
+     "r": 0,
+     "en": "Let us finish the quarter and move you in July.",
+     "zh": "先把这个季度做完，七月调你。"
+    },
+    {
+     "r": 1,
+     "en": "That is a bus factor of one. Let us fix it.",
+     "zh": "那是一个人扛一个系统。得解决。"
+    },
+    {
+     "r": 0,
+     "en": "I could pair with Tom for a week.",
+     "zh": "我可以跟 Tom 结对一周。"
+    },
+    {
+     "r": 1,
+     "en": "Do that. Drop the reporting project until then.",
+     "zh": "那就这么办。报表项目先放一放。"
+    },
+    {
+     "r": 0,
+     "en": "Will the client accept a delay?",
+     "zh": "客户能接受延期吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will tell them myself.",
+     "zh": "我去跟他们说。"
+    },
+    {
+     "r": 0,
+     "en": "Then that unblocks me. Thanks.",
+     "zh": "那我就松口气了。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "主管问你具体怎么解决，你要给方案",
+    "prompt": {
+     "en": "How would you fix the bus factor?",
+     "zh": "你怎么解决这个问题？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Pair for a week, then let Tom own the next release.",
+       "zh": "结对一周，然后让 Tom 负责下个版本。"
+      },
+      "react": {
+       "en": "That is a real plan. Book the time now.",
+       "zh": "这是实操方案。现在就把时间订了。"
+      }
+     },
+     {
+      "say": {
+       "en": "Write the runbook first, then hand over.",
+       "zh": "先写操作手册，再交接。"
+      },
+      "react": {
+       "en": "Good. Two weeks, and I will check in.",
+       "zh": "好。两周，我来跟进。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am stretched.",
+     "zh": "我有点撑不住。"
+    },
+    {
+     "en": "A bus factor of one.",
+     "zh": "只有一个人懂。"
+    },
+    {
+     "en": "That unblocks me.",
+     "zh": "那我就通了。"
+    }
+   ]
+  },
+  {
+   "id": "one-on-one-3",
+   "g": "one-on-one",
+   "name": "一对一沟通 · 想升职",
+   "cat": "职场",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你在准备升职材料。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I would like to be considered for senior next cycle. What is missing?",
+     "zh": "下个周期我想评高级。还差什么？"
+    },
+    {
+     "r": 0,
+     "en": "I am stretched. Three projects, and I am the only one who knows the billing code.",
+     "zh": "我有点撑不住。三个项目，而且只有我一个人懂计费那块代码。"
+    },
+    {
+     "r": 1,
+     "en": "That is a bus factor of one. Let us fix it.",
+     "zh": "那是一个人扛一个系统。得解决。"
+    },
+    {
+     "r": 0,
+     "en": "I could pair with Tom for a week.",
+     "zh": "我可以跟 Tom 结对一周。"
+    },
+    {
+     "r": 1,
+     "en": "Do that. Drop the reporting project until then.",
+     "zh": "那就这么办。报表项目先放一放。"
+    },
+    {
+     "r": 0,
+     "en": "Will the client accept a delay?",
+     "zh": "客户能接受延期吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will tell them myself.",
+     "zh": "我去跟他们说。"
+    },
+    {
+     "r": 0,
+     "en": "Then that unblocks me. Thanks.",
+     "zh": "那我就松口气了。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "主管问你具体怎么解决，你要给方案",
+    "prompt": {
+     "en": "How would you fix the bus factor?",
+     "zh": "你怎么解决这个问题？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Pair for a week, then let Tom own the next release.",
+       "zh": "结对一周，然后让 Tom 负责下个版本。"
+      },
+      "react": {
+       "en": "That is a real plan. Book the time now.",
+       "zh": "这是实操方案。现在就把时间订了。"
+      }
+     },
+     {
+      "say": {
+       "en": "Write the runbook first, then hand over.",
+       "zh": "先写操作手册，再交接。"
+      },
+      "react": {
+       "en": "Good. Two weeks, and I will check in.",
+       "zh": "好。两周，我来跟进。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am stretched.",
+     "zh": "我有点撑不住。"
+    },
+    {
+     "en": "A bus factor of one.",
+     "zh": "只有一个人懂。"
+    },
+    {
+     "en": "That unblocks me.",
+     "zh": "那我就通了。"
+    }
+   ]
+  },
+  {
+   "id": "one-on-one-4",
+   "g": "one-on-one",
+   "name": "一对一沟通 · 家庭原因",
+   "cat": "职场",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你要调整工作时间。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I need to start at eight and finish at four for a few months.",
+     "zh": "接下来几个月我需要八点到四点。"
+    },
+    {
+     "r": 0,
+     "en": "That is fine as long as the overlap with the team stays.",
+     "zh": "只要和团队有重叠时间就行。"
+    },
+    {
+     "r": 1,
+     "en": "That is a bus factor of one. Let us fix it.",
+     "zh": "那是一个人扛一个系统。得解决。"
+    },
+    {
+     "r": 0,
+     "en": "I could pair with Tom for a week.",
+     "zh": "我可以跟 Tom 结对一周。"
+    },
+    {
+     "r": 1,
+     "en": "Do that. Drop the reporting project until then.",
+     "zh": "那就这么办。报表项目先放一放。"
+    },
+    {
+     "r": 0,
+     "en": "Will the client accept a delay?",
+     "zh": "客户能接受延期吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will tell them myself.",
+     "zh": "我去跟他们说。"
+    },
+    {
+     "r": 0,
+     "en": "Then that unblocks me. Thanks.",
+     "zh": "那我就松口气了。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "主管问你具体怎么解决，你要给方案",
+    "prompt": {
+     "en": "How would you fix the bus factor?",
+     "zh": "你怎么解决这个问题？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Pair for a week, then let Tom own the next release.",
+       "zh": "结对一周，然后让 Tom 负责下个版本。"
+      },
+      "react": {
+       "en": "That is a real plan. Book the time now.",
+       "zh": "这是实操方案。现在就把时间订了。"
+      }
+     },
+     {
+      "say": {
+       "en": "Write the runbook first, then hand over.",
+       "zh": "先写操作手册，再交接。"
+      },
+      "react": {
+       "en": "Good. Two weeks, and I will check in.",
+       "zh": "好。两周，我来跟进。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am stretched.",
+     "zh": "我有点撑不住。"
+    },
+    {
+     "en": "A bus factor of one.",
+     "zh": "只有一个人懂。"
+    },
+    {
+     "en": "That unblocks me.",
+     "zh": "那我就通了。"
+    }
+   ]
+  },
+  {
+   "id": "one-on-one-5",
+   "g": "one-on-one",
+   "name": "一对一沟通 · 人际摩擦",
+   "cat": "职场",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你和另一个同事合不来。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I am finding it hard to work with Sam. Can you help?",
+     "zh": "我和 Sam 配合有点难。能帮一下吗？"
+    },
+    {
+     "r": 0,
+     "en": "I am stretched. Three projects, and I am the only one who knows the billing code.",
+     "zh": "我有点撑不住。三个项目，而且只有我一个人懂计费那块代码。"
+    },
+    {
+     "r": 1,
+     "en": "That is a bus factor of one. Let us fix it.",
+     "zh": "那是一个人扛一个系统。得解决。"
+    },
+    {
+     "r": 0,
+     "en": "I could pair with Tom for a week.",
+     "zh": "我可以跟 Tom 结对一周。"
+    },
+    {
+     "r": 1,
+     "en": "Do that. Drop the reporting project until then.",
+     "zh": "那就这么办。报表项目先放一放。"
+    },
+    {
+     "r": 0,
+     "en": "Will the client accept a delay?",
+     "zh": "客户能接受延期吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will tell them myself.",
+     "zh": "我去跟他们说。"
+    },
+    {
+     "r": 0,
+     "en": "Then that unblocks me. Thanks.",
+     "zh": "那我就松口气了。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "主管问你具体怎么解决，你要给方案",
+    "prompt": {
+     "en": "How would you fix the bus factor?",
+     "zh": "你怎么解决这个问题？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Pair for a week, then let Tom own the next release.",
+       "zh": "结对一周，然后让 Tom 负责下个版本。"
+      },
+      "react": {
+       "en": "That is a real plan. Book the time now.",
+       "zh": "这是实操方案。现在就把时间订了。"
+      }
+     },
+     {
+      "say": {
+       "en": "Write the runbook first, then hand over.",
+       "zh": "先写操作手册，再交接。"
+      },
+      "react": {
+       "en": "Good. Two weeks, and I will check in.",
+       "zh": "好。两周，我来跟进。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am stretched.",
+     "zh": "我有点撑不住。"
+    },
+    {
+     "en": "A bus factor of one.",
+     "zh": "只有一个人懂。"
+    },
+    {
+     "en": "That unblocks me.",
+     "zh": "那我就通了。"
+    }
+   ]
+  },
+  {
+   "id": "one-on-one-6",
+   "g": "one-on-one",
+   "name": "一对一沟通 · 问反馈",
+   "cat": "职场",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想要更直接的反馈。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How are things? Anything on your mind?",
+     "zh": "怎么样？有什么想聊的？"
+    },
+    {
+     "r": 0,
+     "en": "I am stretched. Three projects, and I am the only one who knows the billing code.",
+     "zh": "我有点撑不住。三个项目，而且只有我一个人懂计费那块代码。"
+    },
+    {
+     "r": 1,
+     "en": "That is a bus factor of one. Let us fix it.",
+     "zh": "那是一个人扛一个系统。得解决。"
+    },
+    {
+     "r": 0,
+     "en": "I could pair with Tom for a week.",
+     "zh": "我可以跟 Tom 结对一周。"
+    },
+    {
+     "r": 1,
+     "en": "Do that. Drop the reporting project until then.",
+     "zh": "那就这么办。报表项目先放一放。"
+    },
+    {
+     "r": 0,
+     "en": "Will the client accept a delay?",
+     "zh": "客户能接受延期吗？"
+    },
+    {
+     "r": 1,
+     "en": "I will tell them myself.",
+     "zh": "我去跟他们说。"
+    },
+    {
+     "r": 0,
+     "en": "Could you tell me one thing I should stop doing?",
+     "zh": "能告诉我一件我该停止做的事吗？"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "主管问你具体怎么解决，你要给方案",
+    "prompt": {
+     "en": "How would you fix the bus factor?",
+     "zh": "你怎么解决这个问题？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Pair for a week, then let Tom own the next release.",
+       "zh": "结对一周，然后让 Tom 负责下个版本。"
+      },
+      "react": {
+       "en": "That is a real plan. Book the time now.",
+       "zh": "这是实操方案。现在就把时间订了。"
+      }
+     },
+     {
+      "say": {
+       "en": "Write the runbook first, then hand over.",
+       "zh": "先写操作手册，再交接。"
+      },
+      "react": {
+       "en": "Good. Two weeks, and I will check in.",
+       "zh": "好。两周，我来跟进。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I am stretched.",
+     "zh": "我有点撑不住。"
+    },
+    {
+     "en": "A bus factor of one.",
+     "zh": "只有一个人懂。"
+    },
+    {
+     "en": "That unblocks me.",
+     "zh": "那我就通了。"
+    }
+   ]
+  },
+  {
+   "id": "deadline-talk",
+   "g": "deadline-talk",
+   "name": "推掉不合理截止期 · 客户要周五交",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "客户经理转来一个不可能的日期。",
+   "roles": [
+    "你",
+    "客户经理"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The client wants this by Friday.",
+     "zh": "客户想周五要。"
+    },
+    {
+     "r": 0,
+     "en": "Friday is not realistic. The migration alone is three days.",
+     "zh": "周五不现实。光迁移就三天。"
+    },
+    {
+     "r": 1,
+     "en": "They have a board meeting on Monday.",
+     "zh": "他们周一开董事会。"
+    },
+    {
+     "r": 0,
+     "en": "Then we send the dashboard and leave the export for the week after.",
+     "zh": "那就先交看板，导出放下一周。"
+    },
+    {
+     "r": 1,
+     "en": "Can you do the export by Wednesday?",
+     "zh": "导出能周三吗？"
+    },
+    {
+     "r": 0,
+     "en": "Wednesday is possible if the schema is signed off today.",
+     "zh": "今天能把表结构定下来，周三可以。"
+    },
+    {
+     "r": 1,
+     "en": "I will get the sign-off this afternoon.",
+     "zh": "我下午去要签字。"
+    },
+    {
+     "r": 0,
+     "en": "Then Wednesday is on, and I will write it in the plan.",
+     "zh": "那周三算数，我写进计划。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方追问你的前提，你要说清依赖",
+    "prompt": {
+     "en": "What has to happen for Wednesday to be real?",
+     "zh": "周三要成立，前提是什么？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Schema signed off today, and one tester free on Monday.",
+       "zh": "今天定表结构，周一有一个测试空闲。"
+      },
+      "react": {
+       "en": "You will have both. I will confirm by five.",
+       "zh": "两样都给你。我五点前确认。"
+      }
+     },
+     {
+      "say": {
+       "en": "No new requirements after Monday.",
+       "zh": "周一之后不加需求。"
+      },
+      "react": {
+       "en": "I will put that in the email.",
+       "zh": "我写进邮件里。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "That is not realistic.",
+     "zh": "这不现实。"
+    },
+    {
+     "en": "We need to cut or extend.",
+     "zh": "要么砍要么延。"
+    },
+    {
+     "en": "Wednesday is on, if…",
+     "zh": "周三可以，前提是……"
+    }
+   ]
+  },
+  {
+   "id": "deadline-talk-2",
+   "g": "deadline-talk",
+   "name": "推掉不合理截止期 · 范围太大",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "需求比预估大三倍。",
+   "roles": [
+    "你",
+    "客户经理"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The scope is three times the estimate. We need to cut or extend.",
+     "zh": "范围是估算的三倍。要么砍要么延。"
+    },
+    {
+     "r": 0,
+     "en": "Which half matters to the board?",
+     "zh": "董事会更在意哪一半？"
+    },
+    {
+     "r": 1,
+     "en": "They have a board meeting on Monday.",
+     "zh": "他们周一开董事会。"
+    },
+    {
+     "r": 0,
+     "en": "Then we send the dashboard and leave the export for the week after.",
+     "zh": "那就先交看板，导出放下一周。"
+    },
+    {
+     "r": 1,
+     "en": "Can you do the export by Wednesday?",
+     "zh": "导出能周三吗？"
+    },
+    {
+     "r": 0,
+     "en": "Wednesday is possible if the schema is signed off today.",
+     "zh": "今天能把表结构定下来，周三可以。"
+    },
+    {
+     "r": 1,
+     "en": "I will get the sign-off this afternoon.",
+     "zh": "我下午去要签字。"
+    },
+    {
+     "r": 0,
+     "en": "Then Wednesday is on, and I will write it in the plan.",
+     "zh": "那周三算数，我写进计划。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方追问你的前提，你要说清依赖",
+    "prompt": {
+     "en": "What has to happen for Wednesday to be real?",
+     "zh": "周三要成立，前提是什么？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Schema signed off today, and one tester free on Monday.",
+       "zh": "今天定表结构，周一有一个测试空闲。"
+      },
+      "react": {
+       "en": "You will have both. I will confirm by five.",
+       "zh": "两样都给你。我五点前确认。"
+      }
+     },
+     {
+      "say": {
+       "en": "No new requirements after Monday.",
+       "zh": "周一之后不加需求。"
+      },
+      "react": {
+       "en": "I will put that in the email.",
+       "zh": "我写进邮件里。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "That is not realistic.",
+     "zh": "这不现实。"
+    },
+    {
+     "en": "We need to cut or extend.",
+     "zh": "要么砍要么延。"
+    },
+    {
+     "en": "Wednesday is on, if…",
+     "zh": "周三可以，前提是……"
+    }
+   ]
+  },
+  {
+   "id": "deadline-talk-3",
+   "g": "deadline-talk",
+   "name": "推掉不合理截止期 · 缺人",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "两个同事在休假。",
+   "roles": [
+    "你",
+    "客户经理"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Two of the team are on leave. Friday would mean overtime for everyone.",
+     "zh": "组里两个人在休假。周五意味着所有人加班。"
+    },
+    {
+     "r": 0,
+     "en": "Friday is not realistic. The migration alone is three days.",
+     "zh": "周五不现实。光迁移就三天。"
+    },
+    {
+     "r": 1,
+     "en": "They have a board meeting on Monday.",
+     "zh": "他们周一开董事会。"
+    },
+    {
+     "r": 0,
+     "en": "Then we send the dashboard and leave the export for the week after.",
+     "zh": "那就先交看板，导出放下一周。"
+    },
+    {
+     "r": 1,
+     "en": "Can you do the export by Wednesday?",
+     "zh": "导出能周三吗？"
+    },
+    {
+     "r": 0,
+     "en": "Wednesday is possible if the schema is signed off today.",
+     "zh": "今天能把表结构定下来，周三可以。"
+    },
+    {
+     "r": 1,
+     "en": "I will get the sign-off this afternoon.",
+     "zh": "我下午去要签字。"
+    },
+    {
+     "r": 0,
+     "en": "Then Wednesday is on, and I will write it in the plan.",
+     "zh": "那周三算数，我写进计划。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方追问你的前提，你要说清依赖",
+    "prompt": {
+     "en": "What has to happen for Wednesday to be real?",
+     "zh": "周三要成立，前提是什么？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Schema signed off today, and one tester free on Monday.",
+       "zh": "今天定表结构，周一有一个测试空闲。"
+      },
+      "react": {
+       "en": "You will have both. I will confirm by five.",
+       "zh": "两样都给你。我五点前确认。"
+      }
+     },
+     {
+      "say": {
+       "en": "No new requirements after Monday.",
+       "zh": "周一之后不加需求。"
+      },
+      "react": {
+       "en": "I will put that in the email.",
+       "zh": "我写进邮件里。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "That is not realistic.",
+     "zh": "这不现实。"
+    },
+    {
+     "en": "We need to cut or extend.",
+     "zh": "要么砍要么延。"
+    },
+    {
+     "en": "Wednesday is on, if…",
+     "zh": "周三可以，前提是……"
+    }
+   ]
+  },
+  {
+   "id": "deadline-talk-4",
+   "g": "deadline-talk",
+   "name": "推掉不合理截止期 · 依赖外部",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "等第三方接口。",
+   "roles": [
+    "你",
+    "客户经理"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The client wants this by Friday.",
+     "zh": "客户想周五要。"
+    },
+    {
+     "r": 0,
+     "en": "Friday is not realistic. The migration alone is three days.",
+     "zh": "周五不现实。光迁移就三天。"
+    },
+    {
+     "r": 1,
+     "en": "We are waiting on their API key. Nothing moves until it arrives.",
+     "zh": "我们在等他们的接口密钥。到了才能动。"
+    },
+    {
+     "r": 0,
+     "en": "Then we send the dashboard and leave the export for the week after.",
+     "zh": "那就先交看板，导出放下一周。"
+    },
+    {
+     "r": 1,
+     "en": "Can you do the export by Wednesday?",
+     "zh": "导出能周三吗？"
+    },
+    {
+     "r": 0,
+     "en": "Wednesday is possible if the schema is signed off today.",
+     "zh": "今天能把表结构定下来，周三可以。"
+    },
+    {
+     "r": 1,
+     "en": "I will get the sign-off this afternoon.",
+     "zh": "我下午去要签字。"
+    },
+    {
+     "r": 0,
+     "en": "Then Wednesday is on, and I will write it in the plan.",
+     "zh": "那周三算数，我写进计划。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方追问你的前提，你要说清依赖",
+    "prompt": {
+     "en": "What has to happen for Wednesday to be real?",
+     "zh": "周三要成立，前提是什么？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Schema signed off today, and one tester free on Monday.",
+       "zh": "今天定表结构，周一有一个测试空闲。"
+      },
+      "react": {
+       "en": "You will have both. I will confirm by five.",
+       "zh": "两样都给你。我五点前确认。"
+      }
+     },
+     {
+      "say": {
+       "en": "No new requirements after Monday.",
+       "zh": "周一之后不加需求。"
+      },
+      "react": {
+       "en": "I will put that in the email.",
+       "zh": "我写进邮件里。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "That is not realistic.",
+     "zh": "这不现实。"
+    },
+    {
+     "en": "We need to cut or extend.",
+     "zh": "要么砍要么延。"
+    },
+    {
+     "en": "Wednesday is on, if…",
+     "zh": "周三可以，前提是……"
+    }
+   ]
+  },
+  {
+   "id": "deadline-talk-5",
+   "g": "deadline-talk",
+   "name": "推掉不合理截止期 · 已经延期一次",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "上次已经延过。",
+   "roles": [
+    "你",
+    "客户经理"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "We moved this once already. Another delay needs a real reason.",
+     "zh": "这个已经延过一次。再延要有真理由。"
+    },
+    {
+     "r": 0,
+     "en": "Friday is not realistic. The migration alone is three days.",
+     "zh": "周五不现实。光迁移就三天。"
+    },
+    {
+     "r": 1,
+     "en": "They have a board meeting on Monday.",
+     "zh": "他们周一开董事会。"
+    },
+    {
+     "r": 0,
+     "en": "Then we send the dashboard and leave the export for the week after.",
+     "zh": "那就先交看板，导出放下一周。"
+    },
+    {
+     "r": 1,
+     "en": "Can you do the export by Wednesday?",
+     "zh": "导出能周三吗？"
+    },
+    {
+     "r": 0,
+     "en": "Wednesday is possible if the schema is signed off today.",
+     "zh": "今天能把表结构定下来，周三可以。"
+    },
+    {
+     "r": 1,
+     "en": "I will get the sign-off this afternoon.",
+     "zh": "我下午去要签字。"
+    },
+    {
+     "r": 0,
+     "en": "Then Wednesday is on, and I will write it in the plan.",
+     "zh": "那周三算数，我写进计划。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方追问你的前提，你要说清依赖",
+    "prompt": {
+     "en": "What has to happen for Wednesday to be real?",
+     "zh": "周三要成立，前提是什么？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Schema signed off today, and one tester free on Monday.",
+       "zh": "今天定表结构，周一有一个测试空闲。"
+      },
+      "react": {
+       "en": "You will have both. I will confirm by five.",
+       "zh": "两样都给你。我五点前确认。"
+      }
+     },
+     {
+      "say": {
+       "en": "No new requirements after Monday.",
+       "zh": "周一之后不加需求。"
+      },
+      "react": {
+       "en": "I will put that in the email.",
+       "zh": "我写进邮件里。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "That is not realistic.",
+     "zh": "这不现实。"
+    },
+    {
+     "en": "We need to cut or extend.",
+     "zh": "要么砍要么延。"
+    },
+    {
+     "en": "Wednesday is on, if…",
+     "zh": "周三可以，前提是……"
+    }
+   ]
+  },
+  {
+   "id": "deadline-talk-6",
+   "g": "deadline-talk",
+   "name": "推掉不合理截止期 · 给替代方案",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你想主动给选项。",
+   "roles": [
+    "你",
+    "客户经理"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The client wants this by Friday.",
+     "zh": "客户想周五要。"
+    },
+    {
+     "r": 0,
+     "en": "Friday is not realistic. The migration alone is three days.",
+     "zh": "周五不现实。光迁移就三天。"
+    },
+    {
+     "r": 1,
+     "en": "They have a board meeting on Monday.",
+     "zh": "他们周一开董事会。"
+    },
+    {
+     "r": 0,
+     "en": "Then we send the dashboard and leave the export for the week after.",
+     "zh": "那就先交看板，导出放下一周。"
+    },
+    {
+     "r": 1,
+     "en": "Can you do the export by Wednesday?",
+     "zh": "导出能周三吗？"
+    },
+    {
+     "r": 0,
+     "en": "Wednesday is possible if the schema is signed off today.",
+     "zh": "今天能把表结构定下来，周三可以。"
+    },
+    {
+     "r": 1,
+     "en": "I can give you a working demo Friday, and the full thing Wednesday.",
+     "zh": "周五能给可跑的演示，完整版周三。"
+    },
+    {
+     "r": 0,
+     "en": "Then Wednesday is on, and I will write it in the plan.",
+     "zh": "那周三算数，我写进计划。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "对方追问你的前提，你要说清依赖",
+    "prompt": {
+     "en": "What has to happen for Wednesday to be real?",
+     "zh": "周三要成立，前提是什么？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Schema signed off today, and one tester free on Monday.",
+       "zh": "今天定表结构，周一有一个测试空闲。"
+      },
+      "react": {
+       "en": "You will have both. I will confirm by five.",
+       "zh": "两样都给你。我五点前确认。"
+      }
+     },
+     {
+      "say": {
+       "en": "No new requirements after Monday.",
+       "zh": "周一之后不加需求。"
+      },
+      "react": {
+       "en": "I will put that in the email.",
+       "zh": "我写进邮件里。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "That is not realistic.",
+     "zh": "这不现实。"
+    },
+    {
+     "en": "We need to cut or extend.",
+     "zh": "要么砍要么延。"
+    },
+    {
+     "en": "Wednesday is on, if…",
+     "zh": "周三可以，前提是……"
+    }
+   ]
+  },
+  {
+   "id": "resignation",
+   "g": "resignation",
+   "name": "提离职 · 去另一家公司",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你拿到 offer，决定走。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I have decided to move on. Here is my notice.",
+     "zh": "我决定走了。这是我的辞职信。"
+    },
+    {
+     "r": 1,
+     "en": "I am sorry to hear it. Where are you going?",
+     "zh": "很遗憾。去哪儿？"
+    },
+    {
+     "r": 0,
+     "en": "A smaller team, closer to home. Nothing personal.",
+     "zh": "一个更小的团队，离家近。跟公司无关。"
+    },
+    {
+     "r": 1,
+     "en": "When is your last day?",
+     "zh": "最后一天是哪天？"
+    },
+    {
+     "r": 0,
+     "en": "Four weeks from Friday, as my contract says.",
+     "zh": "按合同，周五起四周后。"
+    },
+    {
+     "r": 1,
+     "en": "Can we keep you for the handover?",
+     "zh": "交接能多留一段吗？"
+    },
+    {
+     "r": 0,
+     "en": "I will write the runbook and do two weeks of pairing.",
+     "zh": "我会写操作手册，再结对两周。"
+    },
+    {
+     "r": 1,
+     "en": "Then let us plan the transition this week.",
+     "zh": "那这周把过渡计划定下来。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "主管想留你，你要在不撕破脸的前提下拒绝",
+    "prompt": {
+     "en": "Give me two weeks to find you something better here.",
+     "zh": "给我两周，我在这儿给你找个更好的位置。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I appreciate it, but my mind is made up.",
+       "zh": "谢谢，但我已经决定了。"
+      },
+      "react": {
+       "en": "Then I will make the handover as easy as I can.",
+       "zh": "那我把交接尽量做顺。"
+      }
+     },
+     {
+      "say": {
+       "en": "I will listen, but I am not staying.",
+       "zh": "我可以听，但我不会留下。"
+      },
+      "react": {
+       "en": "Fair. Let us talk on Monday anyway.",
+       "zh": "行。周一还是聊聊。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Here is my notice.",
+     "zh": "这是我的辞职信。"
+    },
+    {
+     "en": "Nothing personal.",
+     "zh": "跟公司无关。"
+    },
+    {
+     "en": "I will write the runbook.",
+     "zh": "我会写操作手册。"
+    }
+   ]
+  },
+  {
+   "id": "resignation-2",
+   "g": "resignation",
+   "name": "提离职 · 对方加薪挽留",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "主管当场提出加薪。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I have decided to move on. Here is my notice.",
+     "zh": "我决定走了。这是我的辞职信。"
+    },
+    {
+     "r": 1,
+     "en": "I am sorry to hear it. Where are you going?",
+     "zh": "很遗憾。去哪儿？"
+    },
+    {
+     "r": 0,
+     "en": "A smaller team, closer to home. Nothing personal.",
+     "zh": "一个更小的团队，离家近。跟公司无关。"
+    },
+    {
+     "r": 1,
+     "en": "When is your last day?",
+     "zh": "最后一天是哪天？"
+    },
+    {
+     "r": 0,
+     "en": "Four weeks from Friday, as my contract says.",
+     "zh": "按合同，周五起四周后。"
+    },
+    {
+     "r": 1,
+     "en": "Would more money change your mind?",
+     "zh": "加钱能改变主意吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is not about the money. I have already signed.",
+     "zh": "不是钱的问题。我已经签了。"
+    },
+    {
+     "r": 1,
+     "en": "Then let us plan the transition this week.",
+     "zh": "那这周把过渡计划定下来。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "主管想留你，你要在不撕破脸的前提下拒绝",
+    "prompt": {
+     "en": "Give me two weeks to find you something better here.",
+     "zh": "给我两周，我在这儿给你找个更好的位置。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I appreciate it, but my mind is made up.",
+       "zh": "谢谢，但我已经决定了。"
+      },
+      "react": {
+       "en": "Then I will make the handover as easy as I can.",
+       "zh": "那我把交接尽量做顺。"
+      }
+     },
+     {
+      "say": {
+       "en": "I will listen, but I am not staying.",
+       "zh": "我可以听，但我不会留下。"
+      },
+      "react": {
+       "en": "Fair. Let us talk on Monday anyway.",
+       "zh": "行。周一还是聊聊。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Here is my notice.",
+     "zh": "这是我的辞职信。"
+    },
+    {
+     "en": "Nothing personal.",
+     "zh": "跟公司无关。"
+    },
+    {
+     "en": "I will write the runbook.",
+     "zh": "我会写操作手册。"
+    }
+   ]
+  },
+  {
+   "id": "resignation-3",
+   "g": "resignation",
+   "name": "提离职 · 内部转岗",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你想转去别的部门。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I would like to move to the platform team rather than leave.",
+     "zh": "我想转去平台组，而不是离职。"
+    },
+    {
+     "r": 1,
+     "en": "That is easier. Let me speak to their manager.",
+     "zh": "那好办。我跟他们经理谈。"
+    },
+    {
+     "r": 0,
+     "en": "A smaller team, closer to home. Nothing personal.",
+     "zh": "一个更小的团队，离家近。跟公司无关。"
+    },
+    {
+     "r": 1,
+     "en": "When is your last day?",
+     "zh": "最后一天是哪天？"
+    },
+    {
+     "r": 0,
+     "en": "Four weeks from Friday, as my contract says.",
+     "zh": "按合同，周五起四周后。"
+    },
+    {
+     "r": 1,
+     "en": "Can we keep you for the handover?",
+     "zh": "交接能多留一段吗？"
+    },
+    {
+     "r": 0,
+     "en": "I will write the runbook and do two weeks of pairing.",
+     "zh": "我会写操作手册，再结对两周。"
+    },
+    {
+     "r": 1,
+     "en": "Then let us plan the transition this week.",
+     "zh": "那这周把过渡计划定下来。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "主管想留你，你要在不撕破脸的前提下拒绝",
+    "prompt": {
+     "en": "Give me two weeks to find you something better here.",
+     "zh": "给我两周，我在这儿给你找个更好的位置。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I appreciate it, but my mind is made up.",
+       "zh": "谢谢，但我已经决定了。"
+      },
+      "react": {
+       "en": "Then I will make the handover as easy as I can.",
+       "zh": "那我把交接尽量做顺。"
+      }
+     },
+     {
+      "say": {
+       "en": "I will listen, but I am not staying.",
+       "zh": "我可以听，但我不会留下。"
+      },
+      "react": {
+       "en": "Fair. Let us talk on Monday anyway.",
+       "zh": "行。周一还是聊聊。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Here is my notice.",
+     "zh": "这是我的辞职信。"
+    },
+    {
+     "en": "Nothing personal.",
+     "zh": "跟公司无关。"
+    },
+    {
+     "en": "I will write the runbook.",
+     "zh": "我会写操作手册。"
+    }
+   ]
+  },
+  {
+   "id": "resignation-4",
+   "g": "resignation",
+   "name": "提离职 · 合同期未满",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你的合同要求两个月。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I have decided to move on. Here is my notice.",
+     "zh": "我决定走了。这是我的辞职信。"
+    },
+    {
+     "r": 1,
+     "en": "I am sorry to hear it. Where are you going?",
+     "zh": "很遗憾。去哪儿？"
+    },
+    {
+     "r": 0,
+     "en": "A smaller team, closer to home. Nothing personal.",
+     "zh": "一个更小的团队，离家近。跟公司无关。"
+    },
+    {
+     "r": 1,
+     "en": "My contract asks for two months. Can we agree on six weeks?",
+     "zh": "合同要求两个月。能定六周吗？"
+    },
+    {
+     "r": 0,
+     "en": "Four weeks from Friday, as my contract says.",
+     "zh": "按合同，周五起四周后。"
+    },
+    {
+     "r": 1,
+     "en": "Can we keep you for the handover?",
+     "zh": "交接能多留一段吗？"
+    },
+    {
+     "r": 0,
+     "en": "I will write the runbook and do two weeks of pairing.",
+     "zh": "我会写操作手册，再结对两周。"
+    },
+    {
+     "r": 1,
+     "en": "Then let us plan the transition this week.",
+     "zh": "那这周把过渡计划定下来。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "主管想留你，你要在不撕破脸的前提下拒绝",
+    "prompt": {
+     "en": "Give me two weeks to find you something better here.",
+     "zh": "给我两周，我在这儿给你找个更好的位置。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I appreciate it, but my mind is made up.",
+       "zh": "谢谢，但我已经决定了。"
+      },
+      "react": {
+       "en": "Then I will make the handover as easy as I can.",
+       "zh": "那我把交接尽量做顺。"
+      }
+     },
+     {
+      "say": {
+       "en": "I will listen, but I am not staying.",
+       "zh": "我可以听，但我不会留下。"
+      },
+      "react": {
+       "en": "Fair. Let us talk on Monday anyway.",
+       "zh": "行。周一还是聊聊。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Here is my notice.",
+     "zh": "这是我的辞职信。"
+    },
+    {
+     "en": "Nothing personal.",
+     "zh": "跟公司无关。"
+    },
+    {
+     "en": "I will write the runbook.",
+     "zh": "我会写操作手册。"
+    }
+   ]
+  },
+  {
+   "id": "resignation-5",
+   "g": "resignation",
+   "name": "提离职 · 带走客户",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "对方担心你带走客户。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I have decided to move on. Here is my notice.",
+     "zh": "我决定走了。这是我的辞职信。"
+    },
+    {
+     "r": 1,
+     "en": "I am sorry to hear it. Where are you going?",
+     "zh": "很遗憾。去哪儿？"
+    },
+    {
+     "r": 0,
+     "en": "A smaller team, closer to home. Nothing personal.",
+     "zh": "一个更小的团队，离家近。跟公司无关。"
+    },
+    {
+     "r": 1,
+     "en": "When is your last day?",
+     "zh": "最后一天是哪天？"
+    },
+    {
+     "r": 0,
+     "en": "Four weeks from Friday, as my contract says.",
+     "zh": "按合同，周五起四周后。"
+    },
+    {
+     "r": 1,
+     "en": "Can we keep you for the handover?",
+     "zh": "交接能多留一段吗？"
+    },
+    {
+     "r": 0,
+     "en": "I will not approach any client for twelve months. Put it in writing.",
+     "zh": "十二个月内我不接触任何客户。可以写进协议。"
+    },
+    {
+     "r": 1,
+     "en": "Then let us plan the transition this week.",
+     "zh": "那这周把过渡计划定下来。"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "主管想留你，你要在不撕破脸的前提下拒绝",
+    "prompt": {
+     "en": "Give me two weeks to find you something better here.",
+     "zh": "给我两周，我在这儿给你找个更好的位置。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I appreciate it, but my mind is made up.",
+       "zh": "谢谢，但我已经决定了。"
+      },
+      "react": {
+       "en": "Then I will make the handover as easy as I can.",
+       "zh": "那我把交接尽量做顺。"
+      }
+     },
+     {
+      "say": {
+       "en": "I will listen, but I am not staying.",
+       "zh": "我可以听，但我不会留下。"
+      },
+      "react": {
+       "en": "Fair. Let us talk on Monday anyway.",
+       "zh": "行。周一还是聊聊。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Here is my notice.",
+     "zh": "这是我的辞职信。"
+    },
+    {
+     "en": "Nothing personal.",
+     "zh": "跟公司无关。"
+    },
+    {
+     "en": "I will write the runbook.",
+     "zh": "我会写操作手册。"
+    }
+   ]
+  },
+  {
+   "id": "resignation-6",
+   "g": "resignation",
+   "name": "提离职 · 问推荐信",
+   "cat": "职场",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你想要一封推荐信。",
+   "roles": [
+    "你",
+    "主管"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I have decided to move on. Here is my notice.",
+     "zh": "我决定走了。这是我的辞职信。"
+    },
+    {
+     "r": 1,
+     "en": "I am sorry to hear it. Where are you going?",
+     "zh": "很遗憾。去哪儿？"
+    },
+    {
+     "r": 0,
+     "en": "A smaller team, closer to home. Nothing personal.",
+     "zh": "一个更小的团队，离家近。跟公司无关。"
+    },
+    {
+     "r": 1,
+     "en": "When is your last day?",
+     "zh": "最后一天是哪天？"
+    },
+    {
+     "r": 0,
+     "en": "Four weeks from Friday, as my contract says.",
+     "zh": "按合同，周五起四周后。"
+    },
+    {
+     "r": 1,
+     "en": "Can we keep you for the handover?",
+     "zh": "交接能多留一段吗？"
+    },
+    {
+     "r": 0,
+     "en": "I will write the runbook and do two weeks of pairing.",
+     "zh": "我会写操作手册，再结对两周。"
+    },
+    {
+     "r": 1,
+     "en": "Would you write me a short reference before I go?",
+     "zh": "走之前能给我写份简短的推荐吗？"
+    }
+   ],
+   "branch": {
+    "at": 4,
+    "kind": "probe",
+    "task": "主管想留你，你要在不撕破脸的前提下拒绝",
+    "prompt": {
+     "en": "Give me two weeks to find you something better here.",
+     "zh": "给我两周，我在这儿给你找个更好的位置。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I appreciate it, but my mind is made up.",
+       "zh": "谢谢，但我已经决定了。"
+      },
+      "react": {
+       "en": "Then I will make the handover as easy as I can.",
+       "zh": "那我把交接尽量做顺。"
+      }
+     },
+     {
+      "say": {
+       "en": "I will listen, but I am not staying.",
+       "zh": "我可以听，但我不会留下。"
+      },
+      "react": {
+       "en": "Fair. Let us talk on Monday anyway.",
+       "zh": "行。周一还是聊聊。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Here is my notice.",
+     "zh": "这是我的辞职信。"
+    },
+    {
+     "en": "Nothing personal.",
+     "zh": "跟公司无关。"
+    },
+    {
+     "en": "I will write the runbook.",
+     "zh": "我会写操作手册。"
+    }
+   ]
   }
  ]
 }
