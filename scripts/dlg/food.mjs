@@ -40,6 +40,12 @@ export default {
         V('名字总被写错', '你的名字在这家店被写错过三次，这次你决定直接拼出来。', {
           9: ['It is Wen. W-E-N. Short for Wenjing.', 'Wen，W-E-N，是 Wenjing 的简称。', '报名字时一个字母一个字母说，是最省事的救场动作。'],
         }),
+        V('只要可颂和水', '你不喝咖啡，只想吃点东西垫一下。', {
+          1: ['Could I get just a croissant and a glass of water?', '就要一个可颂和一杯水。'],
+          2: ['Sure. Anything to drink with that?', '可以。要喝的吗？'],
+          3: ['Just water, please.', '水就行。'],
+          5: ['That is all, thanks.', '就这些，谢谢。'],
+        }),
       ],
       branches: [
         {
@@ -109,6 +115,10 @@ export default {
         }),
         V('吃不完打包', '菜量比你想的大，你吃了一半就饱了，不想浪费。', {
           9: ['Card, please. And could you box up what is left?', '刷卡。剩下的能打包吗？', 'box up / wrap it up 都是打包；to go box 是打包盒。'],
+        }),
+        V('两个人分一份', '你们两个人都不太饿，想分一份主菜。', {
+          3: ['We will share the salmon. Could you bring two plates?', '我们分一份三文鱼。能给两个盘子吗？'],
+          5: ['Sparkling water for both of us, please.', '两杯气泡水，谢谢。'],
         }),
       ],
     },

@@ -45,7 +45,9 @@ for (const f of files) {
 /* --------------------------- 展开 --------------------------- */
 
 const bad = [];
+const warnings = [];
 const say = (where, msg) => bad.push(`${where} ${msg}`);
+const warn = msg => warnings.push(msg);
 
 /** 校验一句台词（与 src/lib/dialogue.ts 的 validate 口径一致） */
 function checkSay(where, s, needNote = false) {
@@ -107,13 +109,25 @@ function expand(item, cat, file) {
       const b = branches[bi];
       if (!b) say(tag, `岔路下标越界：${bi}`);
       else {
-        if (!(b.at >= 0 && b.at < lines.length)) say(tag, `岔路位置越界：${b.at}`);
+        // 岔路必须接在「你的台词」之后。语料里偶尔会把 at 写到对方那一行上
+        // （不同骨架的开头角色不一样），这里前移到最后一句你说的话，
+        // 而不是整篇作废 —— 但会记一条警告，方便回头修语料。
+        let at = b.at;
+        if (lines[at] && lines[at].r !== you) {
+          let k = at;
+          while (k > 0 && lines[k].r !== you) k--;
+          if (lines[k].r === you) {
+            warn(`${tag} 岔路位置 ${at} 落在对方台词上，已前移到 ${k}`);
+            at = k;
+          }
+        }
+        if (!(at >= 0 && at < lines.length)) say(tag, `岔路位置越界：${b.at}`);
         else {
-          if (lines[b.at].r !== you) say(tag, '岔路必须接在你的台词之后');
-          const next = lines[b.at + 1];
+          if (lines[at].r !== you) say(tag, '岔路必须接在你的台词之后');
+          const next = lines[at + 1];
           if (!next) say(tag, '岔路后没有可被顶替的台词');
           else if (next.r === you) say(tag, '岔路后面应该是对方的台词');
-          const back = lines[b.at + 2];
+          const back = lines[at + 2];
           if (back && back.r !== you) say(tag, '岔路结束后应接回你的台词');
         }
         const KINDS = ['short', 'cost', 'change', 'probe', 'offer', 'other'];
@@ -126,7 +140,7 @@ function expand(item, cat, file) {
           checkSay(`${tag}opt${k}.react`, o.react);
         });
         branch = {
-          at: b.at, kind: b.kind, task: b.task,
+          at, kind: b.kind, task: b.task,
           prompt: pick(b.prompt), options: b.options.map(o => ({ say: pick(o.say), react: pick(o.react) })),
         };
       }
@@ -191,6 +205,11 @@ console.log(`  骨架 ${groups.size} 个 × 变体 → 场景 ${scenes.length} �
 console.log(`  台词 ${nLines} 句（其中「你」的 ${nMine} 句）· 岔路 ${nBranch} 处 · 句型 ${nPhrase} 条`);
 console.log(`  类别 ${[...byCat].map(([k, v]) => `${k} ${v}`).join(' / ')}`);
 console.log(`  难度 ${[...byLv].sort((a, b) => a[0] - b[0]).map(([k, v]) => `L${k} ${v}`).join(' / ')}`);
+
+if (warnings.length) {
+  console.log(`\n  ⚠ ${warnings.length} 处岔路位置自动前移（不影响结果，语料可以再对齐）`);
+  for (const w of warnings.slice(0, 6)) console.log(`    ${w}`);
+}
 
 if (bad.length) {
   console.error(`\n  ✗ ${bad.length} 处问题：`);
