@@ -16,12 +16,17 @@ npm run tauri:build    # 打包安装程序（nsis / msi）
 ```
 
 > 想直接跑现成的可执行文件：**[`release/TypeWake-0.1.0-win-x64.exe`](release/TypeWake-0.1.0-win-x64.exe)**
-> （3.1 MB，单文件，已内嵌全部文本与词库，双击即可，不需要装 Node 或 Rust）。
-> 这是某次构建的快照；代码更新后自己重新构建一次，产物在 `src-tauri/target/release/typewake.exe`。
+> （4.6 MB，单文件，已内嵌全部文本与词库，双击即可，不需要装 Node 或 Rust）。
+> 这是某次构建的快照；代码更新后跑 `npm run exe` 重新构建。
+>
+> 注意：**必须用 `npm run exe`（内部走 `tauri build --no-bundle`）**，
+> 直接 `cargo build --release` 编出来的是 dev 壳 —— 它去连 `localhost:5183`，
+> 本机开着 vite 时看着正常，换台电脑就是一片空白。
 
 桌面端首次启动会在 `%APPDATA%\com.typewake.app\` 生成 `ready.json`，
-内容形如 `{"articles":1179,"words":7584}`。**如果这个文件没出现，说明资源加载通路有问题**，
-可以直接据此排查白屏。
+内容形如 `{"articles":1179,"words":7584}`。它由 Rust 侧在启动时写入，
+**只能说明后端读到了数据，不能说明界面渲染出来了** —— 白屏时这个文件照样会生成。
+判断界面是否正常，看窗口里有没有出现侧边栏和「今日卷轴」。
 
 首次运行需要数据。仓库已包含构建产物（`public/data/`），如需重新生成：
 

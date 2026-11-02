@@ -1,10 +1,16 @@
 /**
- * 一条命令做出可执行的 exe，并放到仓库里的 release/。
+ * 一条命令做出可执行的 exe，并放进仓库里的 release/。
  *
- * 为什么不用 `tauri build`：它会在 Windows 上顺便打 nsis 和 msi，
- * 需要下载 WiX/NSIS，慢且容易失败；而我们要的只是一个双击就能跑的单文件。
- * 所以这里走 `npm run build` + `cargo build --release`，
- * Tauri 会把 dist 整个嵌进二进制，产物就是那个 exe。
+ * ⚠️ 必须走 `tauri build`，不能直接 `cargo build --release`。
+ *
+ * 踩过这个坑：用 cargo 直接编出来的 exe 只有 3.1 MB，是个空壳 ——
+ * 它编成了 dev 模式，运行时去连 tauri.conf.json 里的 devUrl（localhost:5183）。
+ * 本机开着 vite 时看着正常，**换台电脑就是「无法访问此页面 ERR_CONNECTION_REFUSED」**。
+ * tauri CLI 会设好环境变量，让 tauri-build 把 dist 整个嵌进二进制，
+ * 体积因此涨到 4.6 MB，但双击就能跑，不依赖任何本地服务。
+ *
+ * 用 --no-bundle 跳过 nsis/msi：那一步要下 WiX/NSIS，慢且容易失败，
+ * 而这里只需要一个单文件。
  *
  * 用法：node scripts/make-exe.mjs
  */
@@ -18,31 +24,37 @@ const NAME = 'TypeWake-0.1.0-win-x64.exe';
 const EXE = path.join(ROOT, 'src-tauri/target/release/typewake.exe');
 const OUT = path.join(ROOT, 'release', NAME);
 
-const run = (cmd, args, cwd) => {
+// 空壳的体量在这个数量级；低于它多半是没嵌入 dist
+const MIN_MB = 4;
+
+const run = (cmd, args) => {
   console.log(`\n· ${cmd} ${args.join(' ')}`);
-  const r = spawnSync(cmd, args, { cwd, stdio: 'inherit', shell: process.platform === 'win32' });
+  const r = spawnSync(cmd, args, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' });
   if (r.status !== 0) {
     console.error(`\n✗ 失败：${cmd}（退出码 ${r.status}）`);
     process.exit(1);
   }
 };
 
-// 1) 前端产物先进 dist —— Tauri 在编译期把它嵌进二进制，
-//    顺序反了就会打进上一次的 dist，看起来「改了没生效」
-run('npm', ['run', 'build'], ROOT);
-
-// 2) 编译 exe（release profile 已经开了 lto + strip，体积可控）
-run('cargo', ['build', '--release'], path.join(ROOT, 'src-tauri'));
+// tauri build 自己会跑 beforeBuildCommand（npm run build），不用单独构建前端
+run('npx', ['tauri', 'build', '--no-bundle']);
 
 if (!fs.existsSync(EXE)) {
   console.error(`\n✗ 没找到 ${EXE}`);
   process.exit(1);
 }
 
-// 3) 复制到 release/，那里不被 .gitignore 排除，能跟着仓库走
+const size = fs.statSync(EXE).size;
+const mb = size / 1048576;
+if (mb < MIN_MB) {
+  console.error(
+    `\n✗ 产物只有 ${mb.toFixed(2)} MB，低于 ${MIN_MB} MB —— 多半没嵌入前端资源，`
+    + '换台电脑会打开一片空白。检查是不是走了 cargo build。',
+  );
+  process.exit(1);
+}
+
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.copyFileSync(EXE, OUT);
-
-const mb = (fs.statSync(OUT).size / 1048576).toFixed(2);
-console.log(`\n✓ release/${NAME}  ${mb} MB`);
-console.log('  提交前建议双击跑一次，确认不是白屏。');
+console.log(`\n✓ release/${NAME}  ${mb.toFixed(2)} MB`);
+console.log('  换台电脑验证过再提交：把 exe 单独拷到另一个目录，双击看能不能进主界面。');
