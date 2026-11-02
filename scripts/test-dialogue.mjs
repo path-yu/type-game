@@ -185,6 +185,21 @@ try {
   check('难度筛选只列有场次的等级', JSON.stringify(lvNums) === JSON.stringify(bankLvs), lvChips.join(' '));
   check('每一级标出实际场次', lvChips.slice(1).every(t => /\d+$/.test(t.trim())), lvChips.slice(1, 4).join(' '));
 
+  // 同一级内按句长排：句子越短越容易开口，入门场景该在最前面
+  const gNames = await p.evaluate(() =>
+    [...document.querySelectorAll('.dg-group-name')].map(x => x.textContent));
+  const stat = name => {
+    const list = bank.scenes.filter(s => s.name.split(' · ')[0] === name);
+    const chars = list.reduce((n, s) => n + s.lines.reduce((m, l) => m + l.en.length, 0), 0);
+    const cnt = list.reduce((n, s) => n + s.lines.length, 0);
+    return { lv: Math.min(...list.map(s => s.lv)), avg: chars / cnt };
+  };
+  const head = gNames.slice(0, 5).map(stat);
+  const ordered = head.every((x, i) => i === 0
+    || head[i - 1].lv < x.lv
+    || (head[i - 1].lv === x.lv && head[i - 1].avg <= x.avg + 0.01));
+  check('同级内短句排前面', ordered, head.map(x => `L${x.lv}/${x.avg.toFixed(0)}`).join(' '));
+
   // 收藏：一千多场里「找回来」靠它，不靠记性
   const favId = await p.evaluate(() => {
     const card = document.querySelectorAll('.dg-card')[0];

@@ -178,12 +178,22 @@ export function DialogueScreen() {
         const at = p.scenes[s.id]?.at;
         return at ? dayNoOfKey(at) : -1;
       }));
+      // 同一级内按平均句长排：句子越短越容易开口，「和人打招呼」该排在三句一段的
+      // 面包店前面。用字符数近似，不必分词。
+      const avgLen = (g: { list: Scene[] }) => {
+        let chars = 0, n = 0;
+        for (const s of g.list) {
+          for (const l of s.lines) { chars += l.en.length; n++; }
+        }
+        return n ? chars / n : 0;
+      };
       arr.sort((a, b) => {
         const byRank = rank(a) - rank(b);
         if (byRank) return byRank;
         if (status === 'done') return recent(b) - recent(a);
         if (status === 'due') return recent(a) - recent(b);
-        return Math.min(...a.list.map(s => s.lv)) - Math.min(...b.list.map(s => s.lv));
+        const byLv = Math.min(...a.list.map(s => s.lv)) - Math.min(...b.list.map(s => s.lv));
+        return byLv || (avgLen(a) - avgLen(b));
       });
     }
     return arr;

@@ -83752,6 +83752,5792 @@
    ]
   },
   {
+   "id": "greet",
+   "g": "greet",
+   "name": "和人打招呼 · 新邻居",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你刚搬来一周。在楼道里遇到隔壁的人，他先开口了。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Are you new here?",
+     "zh": "你好。你是新来的吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. I moved in last week.",
+     "zh": "是的。我上周搬来的。",
+     "note": "moved in 是「搬进来」，比 I came here 准确。"
+    },
+    {
+     "r": 0,
+     "en": "I am Anna. What is your name?",
+     "zh": "我叫 Anna。你怎么称呼？"
+    },
+    {
+     "r": 1,
+     "en": "I am Wen. Nice to meet you.",
+     "zh": "我叫 Wen。很高兴认识你。"
+    },
+    {
+     "r": 0,
+     "en": "Do you need anything?",
+     "zh": "你需要什么吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, I am fine. Thank you.",
+     "zh": "不用，我挺好的。谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. See you around.",
+     "zh": "好。回头见。"
+    },
+    {
+     "r": 1,
+     "en": "See you. Have a good day.",
+     "zh": "回头见。祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方没听清你的名字，你要再说一遍",
+    "prompt": {
+     "en": "Sorry, what was your name?",
+     "zh": "抱歉，你叫什么名字？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Wen. It is spelled W-E-N.",
+       "zh": "Wen。拼写是 W-E-N。"
+      },
+      "react": {
+       "en": "Got it. Wen.",
+       "zh": "记住了。Wen。"
+      }
+     },
+     {
+      "say": {
+       "en": "It is Wen. W-E-N.",
+       "zh": "我叫 Wen。W-E-N。"
+      },
+      "react": {
+       "en": "Thanks. I will remember.",
+       "zh": "谢谢。我会记住。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Nice to meet you.",
+     "zh": "很高兴认识你。"
+    },
+    {
+     "en": "I am fine, thank you.",
+     "zh": "我很好，谢谢。"
+    }
+   ]
+  },
+  {
+   "id": "greet-2",
+   "g": "greet",
+   "name": "和人打招呼 · 新同事",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "入职第一天，你在茶水间遇到同组的人。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. You must be the new one.",
+     "zh": "你好。你就是新来的吧。"
+    },
+    {
+     "r": 1,
+     "en": "Yes. I started today.",
+     "zh": "是的。我今天入职。",
+     "note": "moved in 是「搬进来」，比 I came here 准确。"
+    },
+    {
+     "r": 0,
+     "en": "I am Anna. What is your name?",
+     "zh": "我叫 Anna。你怎么称呼？"
+    },
+    {
+     "r": 1,
+     "en": "I am Wen. Nice to meet you.",
+     "zh": "我叫 Wen。很高兴认识你。"
+    },
+    {
+     "r": 0,
+     "en": "Do you need anything?",
+     "zh": "你需要什么吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, I am fine. Thank you.",
+     "zh": "不用，我挺好的。谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. See you around.",
+     "zh": "好。回头见。"
+    },
+    {
+     "r": 1,
+     "en": "See you. Have a good day.",
+     "zh": "回头见。祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方没听清你的名字，你要再说一遍",
+    "prompt": {
+     "en": "Sorry, what was your name?",
+     "zh": "抱歉，你叫什么名字？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Wen. It is spelled W-E-N.",
+       "zh": "Wen。拼写是 W-E-N。"
+      },
+      "react": {
+       "en": "Got it. Wen.",
+       "zh": "记住了。Wen。"
+      }
+     },
+     {
+      "say": {
+       "en": "It is Wen. W-E-N.",
+       "zh": "我叫 Wen。W-E-N。"
+      },
+      "react": {
+       "en": "Thanks. I will remember.",
+       "zh": "谢谢。我会记住。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Nice to meet you.",
+     "zh": "很高兴认识你。"
+    },
+    {
+     "en": "I am fine, thank you.",
+     "zh": "我很好，谢谢。"
+    }
+   ]
+  },
+  {
+   "id": "greet-3",
+   "g": "greet",
+   "name": "和人打招呼 · 房东",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "房东来送钥匙，你们第一次见面。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Are you the new tenant?",
+     "zh": "你好。你是新租客吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. I moved in on Monday.",
+     "zh": "是的。我周一搬进来的。",
+     "note": "moved in 是「搬进来」，比 I came here 准确。"
+    },
+    {
+     "r": 0,
+     "en": "I am Anna. What is your name?",
+     "zh": "我叫 Anna。你怎么称呼？"
+    },
+    {
+     "r": 1,
+     "en": "I am Wen. Nice to meet you.",
+     "zh": "我叫 Wen。很高兴认识你。"
+    },
+    {
+     "r": 0,
+     "en": "Do you need anything?",
+     "zh": "你需要什么吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, I am fine. Thank you.",
+     "zh": "不用，我挺好的。谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. See you around.",
+     "zh": "好。回头见。"
+    },
+    {
+     "r": 1,
+     "en": "See you. Have a good day.",
+     "zh": "回头见。祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方没听清你的名字，你要再说一遍",
+    "prompt": {
+     "en": "Sorry, what was your name?",
+     "zh": "抱歉，你叫什么名字？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Wen. It is spelled W-E-N.",
+       "zh": "Wen。拼写是 W-E-N。"
+      },
+      "react": {
+       "en": "Got it. Wen.",
+       "zh": "记住了。Wen。"
+      }
+     },
+     {
+      "say": {
+       "en": "It is Wen. W-E-N.",
+       "zh": "我叫 Wen。W-E-N。"
+      },
+      "react": {
+       "en": "Thanks. I will remember.",
+       "zh": "谢谢。我会记住。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Nice to meet you.",
+     "zh": "很高兴认识你。"
+    },
+    {
+     "en": "I am fine, thank you.",
+     "zh": "我很好，谢谢。"
+    }
+   ]
+  },
+  {
+   "id": "greet-4",
+   "g": "greet",
+   "name": "和人打招呼 · 同班同学",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "第一节课后，旁边的同学转过身来。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Is this your first class here?",
+     "zh": "你好。你是第一次上这课吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. It is my first day.",
+     "zh": "是的。这是我第一天。",
+     "note": "moved in 是「搬进来」，比 I came here 准确。"
+    },
+    {
+     "r": 0,
+     "en": "I am Anna. What is your name?",
+     "zh": "我叫 Anna。你怎么称呼？"
+    },
+    {
+     "r": 1,
+     "en": "I am Wen. Nice to meet you.",
+     "zh": "我叫 Wen。很高兴认识你。"
+    },
+    {
+     "r": 0,
+     "en": "Do you need anything?",
+     "zh": "你需要什么吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, I am fine. Thank you.",
+     "zh": "不用，我挺好的。谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. See you around.",
+     "zh": "好。回头见。"
+    },
+    {
+     "r": 1,
+     "en": "See you. Have a good day.",
+     "zh": "回头见。祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方没听清你的名字，你要再说一遍",
+    "prompt": {
+     "en": "Sorry, what was your name?",
+     "zh": "抱歉，你叫什么名字？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Wen. It is spelled W-E-N.",
+       "zh": "Wen。拼写是 W-E-N。"
+      },
+      "react": {
+       "en": "Got it. Wen.",
+       "zh": "记住了。Wen。"
+      }
+     },
+     {
+      "say": {
+       "en": "It is Wen. W-E-N.",
+       "zh": "我叫 Wen。W-E-N。"
+      },
+      "react": {
+       "en": "Thanks. I will remember.",
+       "zh": "谢谢。我会记住。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Nice to meet you.",
+     "zh": "很高兴认识你。"
+    },
+    {
+     "en": "I am fine, thank you.",
+     "zh": "我很好，谢谢。"
+    }
+   ]
+  },
+  {
+   "id": "greet-5",
+   "g": "greet",
+   "name": "和人打招呼 · 健身房",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你第一次来这家健身房，前台的人跟你打招呼。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. First time here?",
+     "zh": "你好。第一次来吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. I just joined.",
+     "zh": "是的。我刚办卡。",
+     "note": "moved in 是「搬进来」，比 I came here 准确。"
+    },
+    {
+     "r": 0,
+     "en": "I am Anna. What is your name?",
+     "zh": "我叫 Anna。你怎么称呼？"
+    },
+    {
+     "r": 1,
+     "en": "I am Wen. Nice to meet you.",
+     "zh": "我叫 Wen。很高兴认识你。"
+    },
+    {
+     "r": 0,
+     "en": "Do you need anything?",
+     "zh": "你需要什么吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, I am fine. Thank you.",
+     "zh": "不用，我挺好的。谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. See you around.",
+     "zh": "好。回头见。"
+    },
+    {
+     "r": 1,
+     "en": "See you. Have a good day.",
+     "zh": "回头见。祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方没听清你的名字，你要再说一遍",
+    "prompt": {
+     "en": "Sorry, what was your name?",
+     "zh": "抱歉，你叫什么名字？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Wen. It is spelled W-E-N.",
+       "zh": "Wen。拼写是 W-E-N。"
+      },
+      "react": {
+       "en": "Got it. Wen.",
+       "zh": "记住了。Wen。"
+      }
+     },
+     {
+      "say": {
+       "en": "It is Wen. W-E-N.",
+       "zh": "我叫 Wen。W-E-N。"
+      },
+      "react": {
+       "en": "Thanks. I will remember.",
+       "zh": "谢谢。我会记住。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Nice to meet you.",
+     "zh": "很高兴认识你。"
+    },
+    {
+     "en": "I am fine, thank you.",
+     "zh": "我很好，谢谢。"
+    }
+   ]
+  },
+  {
+   "id": "greet-6",
+   "g": "greet",
+   "name": "和人打招呼 · 遛狗",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你在公园遛狗，另一个遛狗的人停下来。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Is your dog friendly?",
+     "zh": "你好。你的狗温和吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. He is very friendly.",
+     "zh": "是的。他很温和。",
+     "note": "moved in 是「搬进来」，比 I came here 准确。"
+    },
+    {
+     "r": 0,
+     "en": "I am Anna. What is your name?",
+     "zh": "我叫 Anna。你怎么称呼？"
+    },
+    {
+     "r": 1,
+     "en": "I am Wen. Nice to meet you.",
+     "zh": "我叫 Wen。很高兴认识你。"
+    },
+    {
+     "r": 0,
+     "en": "Do you need anything?",
+     "zh": "你需要什么吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, I am fine. Thank you.",
+     "zh": "不用，我挺好的。谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. See you around.",
+     "zh": "好。回头见。"
+    },
+    {
+     "r": 1,
+     "en": "See you. Have a good day.",
+     "zh": "回头见。祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方没听清你的名字，你要再说一遍",
+    "prompt": {
+     "en": "Sorry, what was your name?",
+     "zh": "抱歉，你叫什么名字？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Wen. It is spelled W-E-N.",
+       "zh": "Wen。拼写是 W-E-N。"
+      },
+      "react": {
+       "en": "Got it. Wen.",
+       "zh": "记住了。Wen。"
+      }
+     },
+     {
+      "say": {
+       "en": "It is Wen. W-E-N.",
+       "zh": "我叫 Wen。W-E-N。"
+      },
+      "react": {
+       "en": "Thanks. I will remember.",
+       "zh": "谢谢。我会记住。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Nice to meet you.",
+     "zh": "很高兴认识你。"
+    },
+    {
+     "en": "I am fine, thank you.",
+     "zh": "我很好，谢谢。"
+    }
+   ]
+  },
+  {
+   "id": "thanks",
+   "g": "thanks",
+   "name": "道谢和回应 · 有人替你挡门",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你两手都是购物袋，前面的人替你顶住了门。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Here you go. Let me hold the door.",
+     "zh": "给你。我帮你挡着门。",
+     "note": "hold the door 是「扶着门让人过」，不是「关门」。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you. That is very kind.",
+     "zh": "谢谢。你真好。"
+    },
+    {
+     "r": 0,
+     "en": "No problem at all.",
+     "zh": "完全没事。"
+    },
+    {
+     "r": 1,
+     "en": "No, that is all. Thanks again.",
+     "zh": "没有了。再说一次谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Have a nice day.",
+     "zh": "好。祝你今天愉快。"
+    },
+    {
+     "r": 1,
+     "en": "You too. Thanks a lot.",
+     "zh": "你也是。非常感谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "offer",
+    "task": "对方要再帮你一次，你要决定接受还是拒绝",
+    "prompt": {
+     "en": "I can carry one up for you.",
+     "zh": "我可以帮你拿一个上去。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That would be great. Thank you.",
+       "zh": "那太好了。谢谢。"
+      },
+      "react": {
+       "en": "Which floor?",
+       "zh": "几楼？"
+      }
+     },
+     {
+      "say": {
+       "en": "I am okay, but thank you.",
+       "zh": "我可以的，不过谢谢你。"
+      },
+      "react": {
+       "en": "All right. Take care.",
+       "zh": "好。慢走。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "You did not have to do that.",
+     "zh": "你其实不用这样的。"
+    },
+    {
+     "en": "I owe you one.",
+     "zh": "我欠你一次。"
+    }
+   ]
+  },
+  {
+   "id": "thanks-2",
+   "g": "thanks",
+   "name": "道谢和回应 · 邻居帮你收快递",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你不在家，邻居替你收了包裹，你上门去取。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Here is your parcel. It came this morning.",
+     "zh": "这是你的包裹。今早送来的。",
+     "note": "hold the door 是「扶着门让人过」，不是「关门」。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you. That is very kind.",
+     "zh": "谢谢。你太好了。"
+    },
+    {
+     "r": 0,
+     "en": "No problem at all.",
+     "zh": "完全没事。"
+    },
+    {
+     "r": 1,
+     "en": "You saved me a trip to the depot.",
+     "zh": "你替我跑了一趟取件点。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Have a nice day.",
+     "zh": "好。祝你今天愉快。"
+    },
+    {
+     "r": 1,
+     "en": "You too. Thanks a lot.",
+     "zh": "你也是。非常感谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "offer",
+    "task": "对方要再帮你一次，你要决定接受还是拒绝",
+    "prompt": {
+     "en": "I can carry one up for you.",
+     "zh": "我可以帮你拿一个上去。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That would be great. Thank you.",
+       "zh": "那太好了。谢谢。"
+      },
+      "react": {
+       "en": "Which floor?",
+       "zh": "几楼？"
+      }
+     },
+     {
+      "say": {
+       "en": "I am okay, but thank you.",
+       "zh": "我可以的，不过谢谢你。"
+      },
+      "react": {
+       "en": "All right. Take care.",
+       "zh": "好。慢走。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "You did not have to do that.",
+     "zh": "你其实不用这样的。"
+    },
+    {
+     "en": "I owe you one.",
+     "zh": "我欠你一次。"
+    }
+   ]
+  },
+  {
+   "id": "thanks-3",
+   "g": "thanks",
+   "name": "道谢和回应 · 同事替你顶班",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你临时有事，同事替你值了半小时。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "I covered your desk. Nothing happened.",
+     "zh": "我替你看了工位。没出什么事。",
+     "note": "hold the door 是「扶着门让人过」，不是「关门」。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you. I owe you one.",
+     "zh": "谢谢。我欠你一次。"
+    },
+    {
+     "r": 0,
+     "en": "No problem at all.",
+     "zh": "完全没事。"
+    },
+    {
+     "r": 1,
+     "en": "Next coffee is on me.",
+     "zh": "下杯咖啡我请。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Have a nice day.",
+     "zh": "好。祝你今天愉快。"
+    },
+    {
+     "r": 1,
+     "en": "You too. Thanks a lot.",
+     "zh": "你也是。非常感谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "offer",
+    "task": "对方要再帮你一次，你要决定接受还是拒绝",
+    "prompt": {
+     "en": "I can carry one up for you.",
+     "zh": "我可以帮你拿一个上去。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That would be great. Thank you.",
+       "zh": "那太好了。谢谢。"
+      },
+      "react": {
+       "en": "Which floor?",
+       "zh": "几楼？"
+      }
+     },
+     {
+      "say": {
+       "en": "I am okay, but thank you.",
+       "zh": "我可以的，不过谢谢你。"
+      },
+      "react": {
+       "en": "All right. Take care.",
+       "zh": "好。慢走。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "You did not have to do that.",
+     "zh": "你其实不用这样的。"
+    },
+    {
+     "en": "I owe you one.",
+     "zh": "我欠你一次。"
+    }
+   ]
+  },
+  {
+   "id": "thanks-4",
+   "g": "thanks",
+   "name": "道谢和回应 · 老师多讲了一遍",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你没听懂，老师课后又给你讲了一遍。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Did that help?",
+     "zh": "这样讲清楚了吗？",
+     "note": "hold the door 是「扶着门让人过」，不是「关门」。"
+    },
+    {
+     "r": 1,
+     "en": "Yes. Thank you for your time.",
+     "zh": "清楚了。谢谢您花时间。"
+    },
+    {
+     "r": 0,
+     "en": "No problem at all.",
+     "zh": "完全没事。"
+    },
+    {
+     "r": 1,
+     "en": "I understand it now.",
+     "zh": "我现在懂了。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Have a nice day.",
+     "zh": "好。祝你今天愉快。"
+    },
+    {
+     "r": 1,
+     "en": "You too. Thanks a lot.",
+     "zh": "你也是。非常感谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "offer",
+    "task": "对方要再帮你一次，你要决定接受还是拒绝",
+    "prompt": {
+     "en": "I can carry one up for you.",
+     "zh": "我可以帮你拿一个上去。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That would be great. Thank you.",
+       "zh": "那太好了。谢谢。"
+      },
+      "react": {
+       "en": "Which floor?",
+       "zh": "几楼？"
+      }
+     },
+     {
+      "say": {
+       "en": "I am okay, but thank you.",
+       "zh": "我可以的，不过谢谢你。"
+      },
+      "react": {
+       "en": "All right. Take care.",
+       "zh": "好。慢走。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "You did not have to do that.",
+     "zh": "你其实不用这样的。"
+    },
+    {
+     "en": "I owe you one.",
+     "zh": "我欠你一次。"
+    }
+   ]
+  },
+  {
+   "id": "thanks-5",
+   "g": "thanks",
+   "name": "道谢和回应 · 陌生人带路",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你在街上问路，对方带你走了一段。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "It is just here. See the blue door?",
+     "zh": "就在这儿。看到那扇蓝门了吗？",
+     "note": "hold the door 是「扶着门让人过」，不是「关门」。"
+    },
+    {
+     "r": 1,
+     "en": "Yes. Thank you for walking me here.",
+     "zh": "看到了。谢谢你带我过来。"
+    },
+    {
+     "r": 0,
+     "en": "No problem at all.",
+     "zh": "完全没事。"
+    },
+    {
+     "r": 1,
+     "en": "You did not have to do that.",
+     "zh": "你其实不用特意带路的。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Have a nice day.",
+     "zh": "好。祝你今天愉快。"
+    },
+    {
+     "r": 1,
+     "en": "You too. Thanks a lot.",
+     "zh": "你也是。非常感谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "offer",
+    "task": "对方要再帮你一次，你要决定接受还是拒绝",
+    "prompt": {
+     "en": "I can carry one up for you.",
+     "zh": "我可以帮你拿一个上去。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That would be great. Thank you.",
+       "zh": "那太好了。谢谢。"
+      },
+      "react": {
+       "en": "Which floor?",
+       "zh": "几楼？"
+      }
+     },
+     {
+      "say": {
+       "en": "I am okay, but thank you.",
+       "zh": "我可以的，不过谢谢你。"
+      },
+      "react": {
+       "en": "All right. Take care.",
+       "zh": "好。慢走。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "You did not have to do that.",
+     "zh": "你其实不用这样的。"
+    },
+    {
+     "en": "I owe you one.",
+     "zh": "我欠你一次。"
+    }
+   ]
+  },
+  {
+   "id": "thanks-6",
+   "g": "thanks",
+   "name": "道谢和回应 · 收到礼物",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "朋友送你一件小礼物，你觉得太客气了。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "It is only small. I hope you like it.",
+     "zh": "东西不大。希望你喜欢。",
+     "note": "hold the door 是「扶着门让人过」，不是「关门」。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you. You did not have to.",
+     "zh": "谢谢。你太客气了。"
+    },
+    {
+     "r": 0,
+     "en": "No problem at all.",
+     "zh": "完全没事。"
+    },
+    {
+     "r": 1,
+     "en": "I will use it every day.",
+     "zh": "我每天都会用。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Have a nice day.",
+     "zh": "好。祝你今天愉快。"
+    },
+    {
+     "r": 1,
+     "en": "You too. Thanks a lot.",
+     "zh": "你也是。非常感谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "offer",
+    "task": "对方要再帮你一次，你要决定接受还是拒绝",
+    "prompt": {
+     "en": "I can carry one up for you.",
+     "zh": "我可以帮你拿一个上去。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That would be great. Thank you.",
+       "zh": "那太好了。谢谢。"
+      },
+      "react": {
+       "en": "Which floor?",
+       "zh": "几楼？"
+      }
+     },
+     {
+      "say": {
+       "en": "I am okay, but thank you.",
+       "zh": "我可以的，不过谢谢你。"
+      },
+      "react": {
+       "en": "All right. Take care.",
+       "zh": "好。慢走。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "You did not have to do that.",
+     "zh": "你其实不用这样的。"
+    },
+    {
+     "en": "I owe you one.",
+     "zh": "我欠你一次。"
+    }
+   ]
+  },
+  {
+   "id": "sorry",
+   "g": "sorry",
+   "name": "道歉 · 上课迟到",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你迟到了十分钟，教室里已经安静下来。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "You are late.",
+     "zh": "你迟到了。"
+    },
+    {
+     "r": 1,
+     "en": "I am sorry. The bus was slow.",
+     "zh": "对不起。公交车很慢。"
+    },
+    {
+     "r": 0,
+     "en": "It is okay. These things happen.",
+     "zh": "没关系。这种事难免。"
+    },
+    {
+     "r": 1,
+     "en": "It will not happen again.",
+     "zh": "不会再这样了。"
+    },
+    {
+     "r": 0,
+     "en": "Do not worry about it.",
+     "zh": "别放在心上。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you for waiting.",
+     "zh": "谢谢你等我。"
+    },
+    {
+     "r": 0,
+     "en": "All right. Let us start.",
+     "zh": "好。我们开始吧。"
+    },
+    {
+     "r": 1,
+     "en": "Okay. I am ready.",
+     "zh": "好。我准备好了。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方问原因，你要说清楚而不是找借口",
+    "prompt": {
+     "en": "Why were you late?",
+     "zh": "你为什么迟到？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The bus did not come. I should have left earlier.",
+       "zh": "公交车没来。我应该早点出门。"
+      },
+      "react": {
+       "en": "It happens. Try to be on time.",
+       "zh": "会有的。尽量准时就行。"
+      }
+     },
+     {
+      "say": {
+       "en": "I woke up late. I am sorry.",
+       "zh": "我起晚了。对不起。"
+      },
+      "react": {
+       "en": "Thanks for being honest.",
+       "zh": "谢谢你实话实说。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It will not happen again.",
+     "zh": "不会再这样了。"
+    },
+    {
+     "en": "I should have left earlier.",
+     "zh": "我应该早点出门的。"
+    }
+   ]
+  },
+  {
+   "id": "sorry-2",
+   "g": "sorry",
+   "name": "道歉 · 开会迟到",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "组会已经开始，你推门进去。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "You are late. We started five minutes ago.",
+     "zh": "你迟到了。我们五分钟前开始。"
+    },
+    {
+     "r": 1,
+     "en": "I am sorry. The bus was slow.",
+     "zh": "对不起。公交车很慢。"
+    },
+    {
+     "r": 0,
+     "en": "It is okay. These things happen.",
+     "zh": "没关系。这种事难免。"
+    },
+    {
+     "r": 1,
+     "en": "It will not happen again.",
+     "zh": "不会再这样了。"
+    },
+    {
+     "r": 0,
+     "en": "Do not worry about it.",
+     "zh": "别放在心上。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you for waiting.",
+     "zh": "谢谢你等我。"
+    },
+    {
+     "r": 0,
+     "en": "All right. Let us start.",
+     "zh": "好。我们开始吧。"
+    },
+    {
+     "r": 1,
+     "en": "Okay. I am ready.",
+     "zh": "好。我准备好了。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方问原因，你要说清楚而不是找借口",
+    "prompt": {
+     "en": "Why were you late?",
+     "zh": "你为什么迟到？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The bus did not come. I should have left earlier.",
+       "zh": "公交车没来。我应该早点出门。"
+      },
+      "react": {
+       "en": "It happens. Try to be on time.",
+       "zh": "会有的。尽量准时就行。"
+      }
+     },
+     {
+      "say": {
+       "en": "I woke up late. I am sorry.",
+       "zh": "我起晚了。对不起。"
+      },
+      "react": {
+       "en": "Thanks for being honest.",
+       "zh": "谢谢你实话实说。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It will not happen again.",
+     "zh": "不会再这样了。"
+    },
+    {
+     "en": "I should have left earlier.",
+     "zh": "我应该早点出门的。"
+    }
+   ]
+  },
+  {
+   "id": "sorry-3",
+   "g": "sorry",
+   "name": "道歉 · 忘带材料",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你把要交的材料忘在家里了。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Do you have the form?",
+     "zh": "表格带了吗？"
+    },
+    {
+     "r": 1,
+     "en": "I am sorry. I left it at home.",
+     "zh": "抱歉。我忘在家里了。"
+    },
+    {
+     "r": 0,
+     "en": "It is okay. These things happen.",
+     "zh": "没关系。这种事难免。"
+    },
+    {
+     "r": 1,
+     "en": "Can I bring it tomorrow?",
+     "zh": "我明天带来可以吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, tomorrow is fine.",
+     "zh": "可以，明天行。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you for understanding.",
+     "zh": "谢谢你理解。"
+    },
+    {
+     "r": 0,
+     "en": "All right. Let us start.",
+     "zh": "好。我们开始吧。"
+    },
+    {
+     "r": 1,
+     "en": "Okay. I am ready.",
+     "zh": "好。我准备好了。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方问原因，你要说清楚而不是找借口",
+    "prompt": {
+     "en": "Why were you late?",
+     "zh": "你为什么迟到？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The bus did not come. I should have left earlier.",
+       "zh": "公交车没来。我应该早点出门。"
+      },
+      "react": {
+       "en": "It happens. Try to be on time.",
+       "zh": "会有的。尽量准时就行。"
+      }
+     },
+     {
+      "say": {
+       "en": "I woke up late. I am sorry.",
+       "zh": "我起晚了。对不起。"
+      },
+      "react": {
+       "en": "Thanks for being honest.",
+       "zh": "谢谢你实话实说。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It will not happen again.",
+     "zh": "不会再这样了。"
+    },
+    {
+     "en": "I should have left earlier.",
+     "zh": "我应该早点出门的。"
+    }
+   ]
+  },
+  {
+   "id": "sorry-4",
+   "g": "sorry",
+   "name": "道歉 · 记错时间",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你把见面时间记错了一小时，到的时候对方已经等了很久。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "You are an hour late.",
+     "zh": "你晚了一小时。"
+    },
+    {
+     "r": 1,
+     "en": "I am sorry. I wrote down the wrong time.",
+     "zh": "抱歉。我把时间记错了。"
+    },
+    {
+     "r": 0,
+     "en": "It is okay. These things happen.",
+     "zh": "没关系。这种事难免。"
+    },
+    {
+     "r": 1,
+     "en": "It will not happen again.",
+     "zh": "不会再这样了。"
+    },
+    {
+     "r": 0,
+     "en": "Do not worry about it.",
+     "zh": "别放在心上。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you for waiting.",
+     "zh": "谢谢你等我。"
+    },
+    {
+     "r": 0,
+     "en": "All right. Let us start.",
+     "zh": "好。我们开始吧。"
+    },
+    {
+     "r": 1,
+     "en": "Okay. I am ready.",
+     "zh": "好。我准备好了。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方问原因，你要说清楚而不是找借口",
+    "prompt": {
+     "en": "Why were you late?",
+     "zh": "你为什么迟到？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The bus did not come. I should have left earlier.",
+       "zh": "公交车没来。我应该早点出门。"
+      },
+      "react": {
+       "en": "It happens. Try to be on time.",
+       "zh": "会有的。尽量准时就行。"
+      }
+     },
+     {
+      "say": {
+       "en": "I woke up late. I am sorry.",
+       "zh": "我起晚了。对不起。"
+      },
+      "react": {
+       "en": "Thanks for being honest.",
+       "zh": "谢谢你实话实说。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It will not happen again.",
+     "zh": "不会再这样了。"
+    },
+    {
+     "en": "I should have left earlier.",
+     "zh": "我应该早点出门的。"
+    }
+   ]
+  },
+  {
+   "id": "sorry-5",
+   "g": "sorry",
+   "name": "道歉 · 交晚了",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "作业没按时交，你想多要一天。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Do you have the essay?",
+     "zh": "文章带了吗？"
+    },
+    {
+     "r": 1,
+     "en": "I am sorry. I need one more day.",
+     "zh": "抱歉。我还需要一天。"
+    },
+    {
+     "r": 0,
+     "en": "It is okay. These things happen.",
+     "zh": "没关系。这种事难免。"
+    },
+    {
+     "r": 1,
+     "en": "It will be done tomorrow.",
+     "zh": "明天一定写完。"
+    },
+    {
+     "r": 0,
+     "en": "Do not worry about it.",
+     "zh": "别放在心上。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you for understanding.",
+     "zh": "谢谢你理解。"
+    },
+    {
+     "r": 0,
+     "en": "All right. Let us start.",
+     "zh": "好。我们开始吧。"
+    },
+    {
+     "r": 1,
+     "en": "Okay. I am ready.",
+     "zh": "好。我准备好了。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方问原因，你要说清楚而不是找借口",
+    "prompt": {
+     "en": "Why were you late?",
+     "zh": "你为什么迟到？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The bus did not come. I should have left earlier.",
+       "zh": "公交车没来。我应该早点出门。"
+      },
+      "react": {
+       "en": "It happens. Try to be on time.",
+       "zh": "会有的。尽量准时就行。"
+      }
+     },
+     {
+      "say": {
+       "en": "I woke up late. I am sorry.",
+       "zh": "我起晚了。对不起。"
+      },
+      "react": {
+       "en": "Thanks for being honest.",
+       "zh": "谢谢你实话实说。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It will not happen again.",
+     "zh": "不会再这样了。"
+    },
+    {
+     "en": "I should have left earlier.",
+     "zh": "我应该早点出门的。"
+    }
+   ]
+  },
+  {
+   "id": "sorry-6",
+   "g": "sorry",
+   "name": "道歉 · 说话太冲",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你刚才回话有点冲，现在想收回。",
+   "roles": [
+    "对方",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "That was a bit sharp.",
+     "zh": "刚才那话有点冲。"
+    },
+    {
+     "r": 1,
+     "en": "I am sorry. I was not thinking.",
+     "zh": "对不起。我没过脑子。"
+    },
+    {
+     "r": 0,
+     "en": "It is okay. These things happen.",
+     "zh": "没关系。这种事难免。"
+    },
+    {
+     "r": 1,
+     "en": "It was not about you.",
+     "zh": "不是针对你。"
+    },
+    {
+     "r": 0,
+     "en": "Do not worry about it.",
+     "zh": "别放在心上。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you for saying that.",
+     "zh": "谢谢你这么说。"
+    },
+    {
+     "r": 0,
+     "en": "All right. Let us start.",
+     "zh": "好。我们开始吧。"
+    },
+    {
+     "r": 1,
+     "en": "Okay. I am ready.",
+     "zh": "好。我准备好了。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "probe",
+    "task": "对方问原因，你要说清楚而不是找借口",
+    "prompt": {
+     "en": "Why were you late?",
+     "zh": "你为什么迟到？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "The bus did not come. I should have left earlier.",
+       "zh": "公交车没来。我应该早点出门。"
+      },
+      "react": {
+       "en": "It happens. Try to be on time.",
+       "zh": "会有的。尽量准时就行。"
+      }
+     },
+     {
+      "say": {
+       "en": "I woke up late. I am sorry.",
+       "zh": "我起晚了。对不起。"
+      },
+      "react": {
+       "en": "Thanks for being honest.",
+       "zh": "谢谢你实话实说。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "It will not happen again.",
+     "zh": "不会再这样了。"
+    },
+    {
+     "en": "I should have left earlier.",
+     "zh": "我应该早点出门的。"
+    }
+   ]
+  },
+  {
+   "id": "howmuch",
+   "g": "howmuch",
+   "name": "问价格 · 看中一件",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你在小店看中一件东西，但标签掉了，不知道多少钱。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Can I help you?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. How much is this?",
+     "zh": "是的。这个多少钱？"
+    },
+    {
+     "r": 0,
+     "en": "It is twelve.",
+     "zh": "十二。"
+    },
+    {
+     "r": 1,
+     "en": "Okay. Do you have a smaller one?",
+     "zh": "好。有小一点的吗？"
+    },
+    {
+     "r": 0,
+     "en": "Let me see. Yes, this one.",
+     "zh": "我看看。有，这个。"
+    },
+    {
+     "r": 1,
+     "en": "I will take it. Can I pay by card?",
+     "zh": "我要这个。能刷卡吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, of course.",
+     "zh": "当然可以。"
+    },
+    {
+     "r": 1,
+     "en": "Great. Thank you.",
+     "zh": "好。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "价格和你想的不一样，你要决定买不买",
+    "prompt": {
+     "en": "That is fifteen, not twelve. The small one costs more.",
+     "zh": "这是十五，不是十二。小号的更贵。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Fifteen is fine. I will take it.",
+       "zh": "十五也行。我要了。"
+      },
+      "react": {
+       "en": "Great. Card or cash?",
+       "zh": "好。刷卡还是现金？"
+      }
+     },
+     {
+      "say": {
+       "en": "Then I will take the big one.",
+       "zh": "那我要大的那个。"
+      },
+      "react": {
+       "en": "Good choice. It is twelve.",
+       "zh": "好选择。那个十二。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "How much is this?",
+     "zh": "这个多少钱？"
+    },
+    {
+     "en": "Do you have a smaller one?",
+     "zh": "有小一点的吗？"
+    }
+   ]
+  },
+  {
+   "id": "howmuch-2",
+   "g": "howmuch",
+   "name": "问价格 · 想买小一号",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "衣服好看，但挂着的那件太大。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Can I help you?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. How much is this?",
+     "zh": "是的。这个多少钱？"
+    },
+    {
+     "r": 0,
+     "en": "It is twelve.",
+     "zh": "十二。"
+    },
+    {
+     "r": 1,
+     "en": "Do you have a smaller size?",
+     "zh": "有小一号的吗？"
+    },
+    {
+     "r": 0,
+     "en": "This is the smallest we have.",
+     "zh": "这是我们最小的了。"
+    },
+    {
+     "r": 1,
+     "en": "I will take it. Can I pay by card?",
+     "zh": "我要这个。能刷卡吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, of course.",
+     "zh": "当然可以。"
+    },
+    {
+     "r": 1,
+     "en": "Great. Thank you.",
+     "zh": "好。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "价格和你想的不一样，你要决定买不买",
+    "prompt": {
+     "en": "That is fifteen, not twelve. The small one costs more.",
+     "zh": "这是十五，不是十二。小号的更贵。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Fifteen is fine. I will take it.",
+       "zh": "十五也行。我要了。"
+      },
+      "react": {
+       "en": "Great. Card or cash?",
+       "zh": "好。刷卡还是现金？"
+      }
+     },
+     {
+      "say": {
+       "en": "Then I will take the big one.",
+       "zh": "那我要大的那个。"
+      },
+      "react": {
+       "en": "Good choice. It is twelve.",
+       "zh": "好选择。那个十二。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "How much is this?",
+     "zh": "这个多少钱？"
+    },
+    {
+     "en": "Do you have a smaller one?",
+     "zh": "有小一点的吗？"
+    }
+   ]
+  },
+  {
+   "id": "howmuch-3",
+   "g": "howmuch",
+   "name": "问价格 · 只有现金",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你只带了现金，怕店里不收。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Can I help you?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. How much is this?",
+     "zh": "是的。这个多少钱？"
+    },
+    {
+     "r": 0,
+     "en": "It is twelve.",
+     "zh": "十二。"
+    },
+    {
+     "r": 1,
+     "en": "Okay. Do you have a smaller one?",
+     "zh": "好。有小一点的吗？"
+    },
+    {
+     "r": 0,
+     "en": "Let me see. Yes, this one.",
+     "zh": "我看看。有，这个。"
+    },
+    {
+     "r": 1,
+     "en": "I will take it. Do you take cash?",
+     "zh": "我要了。你们收现金吗？"
+    },
+    {
+     "r": 0,
+     "en": "Cash is fine. Any change?",
+     "zh": "现金可以。有零钱吗？"
+    },
+    {
+     "r": 1,
+     "en": "Great. Thank you.",
+     "zh": "好。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "价格和你想的不一样，你要决定买不买",
+    "prompt": {
+     "en": "That is fifteen, not twelve. The small one costs more.",
+     "zh": "这是十五，不是十二。小号的更贵。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Fifteen is fine. I will take it.",
+       "zh": "十五也行。我要了。"
+      },
+      "react": {
+       "en": "Great. Card or cash?",
+       "zh": "好。刷卡还是现金？"
+      }
+     },
+     {
+      "say": {
+       "en": "Then I will take the big one.",
+       "zh": "那我要大的那个。"
+      },
+      "react": {
+       "en": "Good choice. It is twelve.",
+       "zh": "好选择。那个十二。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "How much is this?",
+     "zh": "这个多少钱？"
+    },
+    {
+     "en": "Do you have a smaller one?",
+     "zh": "有小一点的吗？"
+    }
+   ]
+  },
+  {
+   "id": "howmuch-4",
+   "g": "howmuch",
+   "name": "问价格 · 问能不能退",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你想买，但不确定不合适能不能退。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Can I help you?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. How much is this?",
+     "zh": "是的。这个多少钱？"
+    },
+    {
+     "r": 0,
+     "en": "It is twelve.",
+     "zh": "十二。"
+    },
+    {
+     "r": 1,
+     "en": "Okay. Do you have a smaller one?",
+     "zh": "好。有小一点的吗？"
+    },
+    {
+     "r": 0,
+     "en": "Let me see. Yes, this one.",
+     "zh": "我看看。有，这个。"
+    },
+    {
+     "r": 1,
+     "en": "I will take it. Can I return it?",
+     "zh": "我要了。可以退吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, with the receipt, in two weeks.",
+     "zh": "可以，带收据，两周内。"
+    },
+    {
+     "r": 1,
+     "en": "Great. Thank you.",
+     "zh": "好。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "价格和你想的不一样，你要决定买不买",
+    "prompt": {
+     "en": "That is fifteen, not twelve. The small one costs more.",
+     "zh": "这是十五，不是十二。小号的更贵。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Fifteen is fine. I will take it.",
+       "zh": "十五也行。我要了。"
+      },
+      "react": {
+       "en": "Great. Card or cash?",
+       "zh": "好。刷卡还是现金？"
+      }
+     },
+     {
+      "say": {
+       "en": "Then I will take the big one.",
+       "zh": "那我要大的那个。"
+      },
+      "react": {
+       "en": "Good choice. It is twelve.",
+       "zh": "好选择。那个十二。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "How much is this?",
+     "zh": "这个多少钱？"
+    },
+    {
+     "en": "Do you have a smaller one?",
+     "zh": "有小一点的吗？"
+    }
+   ]
+  },
+  {
+   "id": "howmuch-5",
+   "g": "howmuch",
+   "name": "问价格 · 两个都要",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你犹豫的两件都想要，问问有没有优惠。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Can I help you?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. How much is this?",
+     "zh": "是的。这个多少钱？"
+    },
+    {
+     "r": 0,
+     "en": "It is twelve.",
+     "zh": "十二。"
+    },
+    {
+     "r": 1,
+     "en": "I like both. Is there a discount for two?",
+     "zh": "两件我都喜欢。买两件有优惠吗？"
+    },
+    {
+     "r": 0,
+     "en": "I can do twenty for both.",
+     "zh": "两件二十。"
+    },
+    {
+     "r": 1,
+     "en": "I will take both. Can I pay by card?",
+     "zh": "两件都要。能刷卡吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, of course.",
+     "zh": "当然可以。"
+    },
+    {
+     "r": 1,
+     "en": "Great. Thank you.",
+     "zh": "好。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "价格和你想的不一样，你要决定买不买",
+    "prompt": {
+     "en": "That is fifteen, not twelve. The small one costs more.",
+     "zh": "这是十五，不是十二。小号的更贵。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Fifteen is fine. I will take it.",
+       "zh": "十五也行。我要了。"
+      },
+      "react": {
+       "en": "Great. Card or cash?",
+       "zh": "好。刷卡还是现金？"
+      }
+     },
+     {
+      "say": {
+       "en": "Then I will take the big one.",
+       "zh": "那我要大的那个。"
+      },
+      "react": {
+       "en": "Good choice. It is twelve.",
+       "zh": "好选择。那个十二。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "How much is this?",
+     "zh": "这个多少钱？"
+    },
+    {
+     "en": "Do you have a smaller one?",
+     "zh": "有小一点的吗？"
+    }
+   ]
+  },
+  {
+   "id": "howmuch-6",
+   "g": "howmuch",
+   "name": "问价格 · 帮朋友带",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你替朋友买，她比你高，你要问尺码。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Can I help you?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. How much is this?",
+     "zh": "是的。这个多少钱？"
+    },
+    {
+     "r": 0,
+     "en": "It is twelve.",
+     "zh": "十二。"
+    },
+    {
+     "r": 1,
+     "en": "Okay. It is for a friend. She is taller than me.",
+     "zh": "好。这是帮朋友买的。她比我高。"
+    },
+    {
+     "r": 0,
+     "en": "Then try this one. It is the same price.",
+     "zh": "那试试这件。价格一样。"
+    },
+    {
+     "r": 1,
+     "en": "I will take it. Can I pay by card?",
+     "zh": "我要这个。能刷卡吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, of course.",
+     "zh": "当然可以。"
+    },
+    {
+     "r": 1,
+     "en": "Great. Thank you.",
+     "zh": "好。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "价格和你想的不一样，你要决定买不买",
+    "prompt": {
+     "en": "That is fifteen, not twelve. The small one costs more.",
+     "zh": "这是十五，不是十二。小号的更贵。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Fifteen is fine. I will take it.",
+       "zh": "十五也行。我要了。"
+      },
+      "react": {
+       "en": "Great. Card or cash?",
+       "zh": "好。刷卡还是现金？"
+      }
+     },
+     {
+      "say": {
+       "en": "Then I will take the big one.",
+       "zh": "那我要大的那个。"
+      },
+      "react": {
+       "en": "Good choice. It is twelve.",
+       "zh": "好选择。那个十二。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "How much is this?",
+     "zh": "这个多少钱？"
+    },
+    {
+     "en": "Do you have a smaller one?",
+     "zh": "有小一点的吗？"
+    }
+   ]
+  },
+  {
+   "id": "wheretoilet",
+   "g": "wheretoilet",
+   "name": "问路（最简单的） · 找厕所",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你在商场里，想找洗手间，看到一个店员。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Can I help you?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Excuse me. Where is the toilet?",
+     "zh": "打扰一下。洗手间在哪儿？",
+     "note": "Excuse me 开头是打断陌生人的标准说法。"
+    },
+    {
+     "r": 0,
+     "en": "Go straight, then turn left.",
+     "zh": "直走，然后左转。"
+    },
+    {
+     "r": 1,
+     "en": "Straight, then left. Got it.",
+     "zh": "直走，然后左转。记住了。"
+    },
+    {
+     "r": 0,
+     "en": "Yes. You will see it.",
+     "zh": "对。你会看到的。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "No problem.",
+     "zh": "不客气。"
+    },
+    {
+     "r": 1,
+     "en": "Have a good day.",
+     "zh": "祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "short",
+    "task": "对方说的那条路走不通，你要换个问法",
+    "prompt": {
+     "en": "The left one is closed. Use the one upstairs.",
+     "zh": "左边那个关了。用楼上的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How do I get upstairs?",
+       "zh": "怎么上楼？"
+      },
+      "react": {
+       "en": "Take the stairs behind you.",
+       "zh": "走你后面的楼梯。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is there another one on this floor?",
+       "zh": "这层还有别的吗？"
+      },
+      "react": {
+       "en": "Only the one at the back.",
+       "zh": "只有后面那一个。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Excuse me. Where is the toilet?",
+     "zh": "打扰一下，洗手间在哪儿？"
+    },
+    {
+     "en": "Go straight, then turn left.",
+     "zh": "直走，然后左转。"
+    }
+   ]
+  },
+  {
+   "id": "wheretoilet-2",
+   "g": "wheretoilet",
+   "name": "问路（最简单的） · 找出口",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你在车站里绕晕了，想找出口。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Can I help you?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Excuse me. Where is the exit?",
+     "zh": "打扰一下。出口在哪儿？",
+     "note": "Excuse me 开头是打断陌生人的标准说法。"
+    },
+    {
+     "r": 0,
+     "en": "Go straight, then turn left.",
+     "zh": "直走，然后左转。"
+    },
+    {
+     "r": 1,
+     "en": "Straight, then left. Got it.",
+     "zh": "直走，然后左转。记住了。"
+    },
+    {
+     "r": 0,
+     "en": "Yes. You will see it.",
+     "zh": "对。你会看到的。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "No problem.",
+     "zh": "不客气。"
+    },
+    {
+     "r": 1,
+     "en": "Have a good day.",
+     "zh": "祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "short",
+    "task": "对方说的那条路走不通，你要换个问法",
+    "prompt": {
+     "en": "The left one is closed. Use the one upstairs.",
+     "zh": "左边那个关了。用楼上的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How do I get upstairs?",
+       "zh": "怎么上楼？"
+      },
+      "react": {
+       "en": "Take the stairs behind you.",
+       "zh": "走你后面的楼梯。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is there another one on this floor?",
+       "zh": "这层还有别的吗？"
+      },
+      "react": {
+       "en": "Only the one at the back.",
+       "zh": "只有后面那一个。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Excuse me. Where is the toilet?",
+     "zh": "打扰一下，洗手间在哪儿？"
+    },
+    {
+     "en": "Go straight, then turn left.",
+     "zh": "直走，然后左转。"
+    }
+   ]
+  },
+  {
+   "id": "wheretoilet-3",
+   "g": "wheretoilet",
+   "name": "问路（最简单的） · 找电梯",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你推着行李箱，想找电梯而不是扶梯。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Can I help you?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Excuse me. Where is the lift?",
+     "zh": "打扰一下。电梯在哪儿？",
+     "note": "lift 是英式，美式说 elevator。"
+    },
+    {
+     "r": 0,
+     "en": "Go straight, then turn left.",
+     "zh": "直走，然后左转。"
+    },
+    {
+     "r": 1,
+     "en": "Straight, then left. Got it.",
+     "zh": "直走，然后左转。记住了。"
+    },
+    {
+     "r": 0,
+     "en": "Yes. You will see it.",
+     "zh": "对。你会看到的。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "No problem.",
+     "zh": "不客气。"
+    },
+    {
+     "r": 1,
+     "en": "Have a good day.",
+     "zh": "祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "short",
+    "task": "对方说的那条路走不通，你要换个问法",
+    "prompt": {
+     "en": "The left one is closed. Use the one upstairs.",
+     "zh": "左边那个关了。用楼上的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How do I get upstairs?",
+       "zh": "怎么上楼？"
+      },
+      "react": {
+       "en": "Take the stairs behind you.",
+       "zh": "走你后面的楼梯。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is there another one on this floor?",
+       "zh": "这层还有别的吗？"
+      },
+      "react": {
+       "en": "Only the one at the back.",
+       "zh": "只有后面那一个。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Excuse me. Where is the toilet?",
+     "zh": "打扰一下，洗手间在哪儿？"
+    },
+    {
+     "en": "Go straight, then turn left.",
+     "zh": "直走，然后左转。"
+    }
+   ]
+  },
+  {
+   "id": "wheretoilet-4",
+   "g": "wheretoilet",
+   "name": "问路（最简单的） · 找收银台",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你买完东西找不到在哪儿付钱。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Can I help you?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Excuse me. Where do I pay?",
+     "zh": "打扰一下。在哪儿付款？",
+     "note": "Excuse me 开头是打断陌生人的标准说法。"
+    },
+    {
+     "r": 0,
+     "en": "Go straight, then turn left.",
+     "zh": "直走，然后左转。"
+    },
+    {
+     "r": 1,
+     "en": "Straight, then left. Got it.",
+     "zh": "直走，然后左转。记住了。"
+    },
+    {
+     "r": 0,
+     "en": "Yes. You will see it.",
+     "zh": "对。你会看到的。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "No problem.",
+     "zh": "不客气。"
+    },
+    {
+     "r": 1,
+     "en": "Have a good day.",
+     "zh": "祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "short",
+    "task": "对方说的那条路走不通，你要换个问法",
+    "prompt": {
+     "en": "The left one is closed. Use the one upstairs.",
+     "zh": "左边那个关了。用楼上的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How do I get upstairs?",
+       "zh": "怎么上楼？"
+      },
+      "react": {
+       "en": "Take the stairs behind you.",
+       "zh": "走你后面的楼梯。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is there another one on this floor?",
+       "zh": "这层还有别的吗？"
+      },
+      "react": {
+       "en": "Only the one at the back.",
+       "zh": "只有后面那一个。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Excuse me. Where is the toilet?",
+     "zh": "打扰一下，洗手间在哪儿？"
+    },
+    {
+     "en": "Go straight, then turn left.",
+     "zh": "直走，然后左转。"
+    }
+   ]
+  },
+  {
+   "id": "wheretoilet-5",
+   "g": "wheretoilet",
+   "name": "问路（最简单的） · 找公交站",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你出了地铁站，不知道公交站在哪个方向。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Can I help you?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Excuse me. Where is the bus stop?",
+     "zh": "打扰一下。公交站在哪儿？",
+     "note": "Excuse me 开头是打断陌生人的标准说法。"
+    },
+    {
+     "r": 0,
+     "en": "Go straight, then turn left.",
+     "zh": "直走，然后左转。"
+    },
+    {
+     "r": 1,
+     "en": "Straight, then left. Got it.",
+     "zh": "直走，然后左转。记住了。"
+    },
+    {
+     "r": 0,
+     "en": "Yes. You will see it.",
+     "zh": "对。你会看到的。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "No problem.",
+     "zh": "不客气。"
+    },
+    {
+     "r": 1,
+     "en": "Have a good day.",
+     "zh": "祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "short",
+    "task": "对方说的那条路走不通，你要换个问法",
+    "prompt": {
+     "en": "The left one is closed. Use the one upstairs.",
+     "zh": "左边那个关了。用楼上的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How do I get upstairs?",
+       "zh": "怎么上楼？"
+      },
+      "react": {
+       "en": "Take the stairs behind you.",
+       "zh": "走你后面的楼梯。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is there another one on this floor?",
+       "zh": "这层还有别的吗？"
+      },
+      "react": {
+       "en": "Only the one at the back.",
+       "zh": "只有后面那一个。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Excuse me. Where is the toilet?",
+     "zh": "打扰一下，洗手间在哪儿？"
+    },
+    {
+     "en": "Go straight, then turn left.",
+     "zh": "直走，然后左转。"
+    }
+   ]
+  },
+  {
+   "id": "wheretoilet-6",
+   "g": "wheretoilet",
+   "name": "问路（最简单的） · 找失物招领",
+   "cat": "日常",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你把伞落在店里，想问在哪儿取。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Can I help you?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Excuse me. Where is lost and found?",
+     "zh": "打扰一下。失物招领在哪儿？",
+     "note": "Excuse me 开头是打断陌生人的标准说法。"
+    },
+    {
+     "r": 0,
+     "en": "Go straight, then turn left.",
+     "zh": "直走，然后左转。"
+    },
+    {
+     "r": 1,
+     "en": "Straight, then left. Got it.",
+     "zh": "直走，然后左转。记住了。"
+    },
+    {
+     "r": 0,
+     "en": "Yes. You will see it.",
+     "zh": "对。你会看到的。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "No problem.",
+     "zh": "不客气。"
+    },
+    {
+     "r": 1,
+     "en": "Have a good day.",
+     "zh": "祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "short",
+    "task": "对方说的那条路走不通，你要换个问法",
+    "prompt": {
+     "en": "The left one is closed. Use the one upstairs.",
+     "zh": "左边那个关了。用楼上的。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How do I get upstairs?",
+       "zh": "怎么上楼？"
+      },
+      "react": {
+       "en": "Take the stairs behind you.",
+       "zh": "走你后面的楼梯。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is there another one on this floor?",
+       "zh": "这层还有别的吗？"
+      },
+      "react": {
+       "en": "Only the one at the back.",
+       "zh": "只有后面那一个。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Excuse me. Where is the toilet?",
+     "zh": "打扰一下，洗手间在哪儿？"
+    },
+    {
+     "en": "Go straight, then turn left.",
+     "zh": "直走，然后左转。"
+    }
+   ]
+  },
+  {
+   "id": "ask-time",
+   "g": "ask-time",
+   "name": "问时间和几点 · 街上问时间",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你没带手机，在街边想确认现在几点。",
+   "roles": [
+    "路人",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Do you need help?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. What time is it?",
+     "zh": "是的。现在几点？"
+    },
+    {
+     "r": 0,
+     "en": "It is half past three.",
+     "zh": "三点半。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Anything else?",
+     "zh": "还有别的吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, that is all.",
+     "zh": "没有了。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Have a good day.",
+     "zh": "好。祝你今天顺利。"
+    },
+    {
+     "r": 1,
+     "en": "You too. Thank you.",
+     "zh": "你也是。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 1,
+    "kind": "probe",
+    "task": "对方反问回来，你要说清楚只是问时间",
+    "prompt": {
+     "en": "Sorry, do you mean the time now?",
+     "zh": "抱歉，你是问现在几点吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Yes. Just the time.",
+       "zh": "对。就是现在几点。"
+      },
+      "react": {
+       "en": "It is ten to four.",
+       "zh": "差十分四点。"
+      }
+     },
+     {
+      "say": {
+       "en": "Yes. And when the shop closes.",
+       "zh": "对。还有商店几点关门。"
+      },
+      "react": {
+       "en": "Six. It is on the door.",
+       "zh": "六点。门上写着。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "What time is it?",
+     "zh": "现在几点？"
+    },
+    {
+     "en": "When does it close?",
+     "zh": "它几点关门？"
+    }
+   ]
+  },
+  {
+   "id": "ask-time-2",
+   "g": "ask-time",
+   "name": "问时间和几点 · 问今天几号",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "填表要写日期，你不确定今天几号。",
+   "roles": [
+    "路人",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Do you need help?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Sorry. What is the date today?",
+     "zh": "抱歉。今天几号？"
+    },
+    {
+     "r": 0,
+     "en": "It is the third.",
+     "zh": "三号。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Anything else?",
+     "zh": "还有别的吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, that is all.",
+     "zh": "没有了。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Have a good day.",
+     "zh": "好。祝你今天顺利。"
+    },
+    {
+     "r": 1,
+     "en": "You too. Thank you.",
+     "zh": "你也是。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 1,
+    "kind": "probe",
+    "task": "对方反问回来，你要说清楚只是问时间",
+    "prompt": {
+     "en": "Sorry, do you mean the time now?",
+     "zh": "抱歉，你是问现在几点吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Yes. Just the time.",
+       "zh": "对。就是现在几点。"
+      },
+      "react": {
+       "en": "It is ten to four.",
+       "zh": "差十分四点。"
+      }
+     },
+     {
+      "say": {
+       "en": "Yes. And when the shop closes.",
+       "zh": "对。还有商店几点关门。"
+      },
+      "react": {
+       "en": "Six. It is on the door.",
+       "zh": "六点。门上写着。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "What time is it?",
+     "zh": "现在几点？"
+    },
+    {
+     "en": "When does it close?",
+     "zh": "它几点关门？"
+    }
+   ]
+  },
+  {
+   "id": "ask-time-3",
+   "g": "ask-time",
+   "name": "问时间和几点 · 问末班车",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "天快黑了，你想知道最后一班车几点。",
+   "roles": [
+    "路人",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Do you need help?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Sorry. What time is the last bus?",
+     "zh": "抱歉。末班车几点？"
+    },
+    {
+     "r": 0,
+     "en": "At eleven. You still have time.",
+     "zh": "十一点。你还有时间。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Anything else?",
+     "zh": "还有别的吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, that is all.",
+     "zh": "没有了。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Have a good day.",
+     "zh": "好。祝你今天顺利。"
+    },
+    {
+     "r": 1,
+     "en": "You too. Thank you.",
+     "zh": "你也是。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 1,
+    "kind": "probe",
+    "task": "对方反问回来，你要说清楚只是问时间",
+    "prompt": {
+     "en": "Sorry, do you mean the time now?",
+     "zh": "抱歉，你是问现在几点吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Yes. Just the time.",
+       "zh": "对。就是现在几点。"
+      },
+      "react": {
+       "en": "It is ten to four.",
+       "zh": "差十分四点。"
+      }
+     },
+     {
+      "say": {
+       "en": "Yes. And when the shop closes.",
+       "zh": "对。还有商店几点关门。"
+      },
+      "react": {
+       "en": "Six. It is on the door.",
+       "zh": "六点。门上写着。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "What time is it?",
+     "zh": "现在几点？"
+    },
+    {
+     "en": "When does it close?",
+     "zh": "它几点关门？"
+    }
+   ]
+  },
+  {
+   "id": "ask-time-4",
+   "g": "ask-time",
+   "name": "问时间和几点 · 问银行开门",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你周一要去银行，想知道它几点开门。",
+   "roles": [
+    "路人",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Do you need help?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Sorry. What time does the bank open?",
+     "zh": "抱歉。银行几点开门？"
+    },
+    {
+     "r": 0,
+     "en": "At nine, Monday to Friday.",
+     "zh": "九点，周一到周五。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Anything else?",
+     "zh": "还有别的吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, that is all.",
+     "zh": "没有了。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Have a good day.",
+     "zh": "好。祝你今天顺利。"
+    },
+    {
+     "r": 1,
+     "en": "You too. Thank you.",
+     "zh": "你也是。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 1,
+    "kind": "probe",
+    "task": "对方反问回来，你要说清楚只是问时间",
+    "prompt": {
+     "en": "Sorry, do you mean the time now?",
+     "zh": "抱歉，你是问现在几点吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Yes. Just the time.",
+       "zh": "对。就是现在几点。"
+      },
+      "react": {
+       "en": "It is ten to four.",
+       "zh": "差十分四点。"
+      }
+     },
+     {
+      "say": {
+       "en": "Yes. And when the shop closes.",
+       "zh": "对。还有商店几点关门。"
+      },
+      "react": {
+       "en": "Six. It is on the door.",
+       "zh": "六点。门上写着。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "What time is it?",
+     "zh": "现在几点？"
+    },
+    {
+     "en": "When does it close?",
+     "zh": "它几点关门？"
+    }
+   ]
+  },
+  {
+   "id": "ask-time-5",
+   "g": "ask-time",
+   "name": "问时间和几点 · 问药房关门",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你下班赶去药房，怕它已经关了。",
+   "roles": [
+    "路人",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Do you need help?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Sorry. What time does the pharmacy close?",
+     "zh": "抱歉。药房几点关？"
+    },
+    {
+     "r": 0,
+     "en": "At seven. You have twenty minutes.",
+     "zh": "七点。你还有二十分钟。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Anything else?",
+     "zh": "还有别的吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, that is all.",
+     "zh": "没有了。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Have a good day.",
+     "zh": "好。祝你今天顺利。"
+    },
+    {
+     "r": 1,
+     "en": "You too. Thank you.",
+     "zh": "你也是。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 1,
+    "kind": "probe",
+    "task": "对方反问回来，你要说清楚只是问时间",
+    "prompt": {
+     "en": "Sorry, do you mean the time now?",
+     "zh": "抱歉，你是问现在几点吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Yes. Just the time.",
+       "zh": "对。就是现在几点。"
+      },
+      "react": {
+       "en": "It is ten to four.",
+       "zh": "差十分四点。"
+      }
+     },
+     {
+      "say": {
+       "en": "Yes. And when the shop closes.",
+       "zh": "对。还有商店几点关门。"
+      },
+      "react": {
+       "en": "Six. It is on the door.",
+       "zh": "六点。门上写着。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "What time is it?",
+     "zh": "现在几点？"
+    },
+    {
+     "en": "When does it close?",
+     "zh": "它几点关门？"
+    }
+   ]
+  },
+  {
+   "id": "ask-time-6",
+   "g": "ask-time",
+   "name": "问时间和几点 · 问还要等多久",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你在站台等车，想知道下一班还有多久。",
+   "roles": [
+    "路人",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Do you need help?",
+     "zh": "你好。需要帮忙吗？"
+    },
+    {
+     "r": 1,
+     "en": "Sorry. How long until the next train?",
+     "zh": "抱歉。下一班车还有多久？"
+    },
+    {
+     "r": 0,
+     "en": "About ten minutes.",
+     "zh": "大概十分钟。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Anything else?",
+     "zh": "还有别的吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, that is all.",
+     "zh": "没有了。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Have a good day.",
+     "zh": "好。祝你今天顺利。"
+    },
+    {
+     "r": 1,
+     "en": "You too. Thank you.",
+     "zh": "你也是。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 1,
+    "kind": "probe",
+    "task": "对方反问回来，你要说清楚只是问时间",
+    "prompt": {
+     "en": "Sorry, do you mean the time now?",
+     "zh": "抱歉，你是问现在几点吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Yes. Just the time.",
+       "zh": "对。就是现在几点。"
+      },
+      "react": {
+       "en": "It is ten to four.",
+       "zh": "差十分四点。"
+      }
+     },
+     {
+      "say": {
+       "en": "Yes. And when the shop closes.",
+       "zh": "对。还有商店几点关门。"
+      },
+      "react": {
+       "en": "Six. It is on the door.",
+       "zh": "六点。门上写着。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "What time is it?",
+     "zh": "现在几点？"
+    },
+    {
+     "en": "When does it close?",
+     "zh": "它几点关门？"
+    }
+   ]
+  },
+  {
+   "id": "water",
+   "g": "water",
+   "name": "要点喝的 · 只要一杯水",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你不喝咖啡也不喝茶，只想喝口水。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. What can I get you?",
+     "zh": "你好。要点什么？"
+    },
+    {
+     "r": 1,
+     "en": "Just water, please.",
+     "zh": "就要水，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Still or sparkling?",
+     "zh": "不带气的还是带气的？"
+    },
+    {
+     "r": 1,
+     "en": "Still, please.",
+     "zh": "不带气的。",
+     "note": "still water 是不带气的，不是「还」水。"
+    },
+    {
+     "r": 0,
+     "en": "Large or small?",
+     "zh": "大杯还是小杯？"
+    },
+    {
+     "r": 1,
+     "en": "Small is fine.",
+     "zh": "小杯就行。"
+    },
+    {
+     "r": 0,
+     "en": "That is two pounds.",
+     "zh": "两镑。"
+    },
+    {
+     "r": 1,
+     "en": "Here you go. Thank you.",
+     "zh": "给你。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 1,
+    "kind": "cost",
+    "task": "对方说要收杯子钱，你要决定还要不要",
+    "prompt": {
+     "en": "A cup is one pound extra. Is that okay?",
+     "zh": "杯子要加一镑。可以吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That is fine.",
+       "zh": "可以。"
+      },
+      "react": {
+       "en": "Thanks. Card or cash?",
+       "zh": "谢谢。刷卡还是现金？"
+      }
+     },
+     {
+      "say": {
+       "en": "Then no cup. I will drink here.",
+       "zh": "那不要杯子。我在这儿喝。"
+      },
+      "react": {
+       "en": "Good. Then it is free.",
+       "zh": "好。那就不收费。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Just water, please.",
+     "zh": "就要水，谢谢。"
+    },
+    {
+     "en": "Is that extra?",
+     "zh": "那个要另外加钱吗？"
+    }
+   ]
+  },
+  {
+   "id": "water-2",
+   "g": "water",
+   "name": "要点喝的 · 要两杯",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你和朋友一起，两杯都要水。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. What can I get you?",
+     "zh": "你好。要点什么？"
+    },
+    {
+     "r": 1,
+     "en": "Two waters, please.",
+     "zh": "两杯水，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Still or sparkling?",
+     "zh": "不带气的还是带气的？"
+    },
+    {
+     "r": 1,
+     "en": "Still, please.",
+     "zh": "不带气的。",
+     "note": "still water 是不带气的，不是「还」水。"
+    },
+    {
+     "r": 0,
+     "en": "Large or small?",
+     "zh": "大杯还是小杯？"
+    },
+    {
+     "r": 1,
+     "en": "Two small ones, please.",
+     "zh": "两个小杯的。"
+    },
+    {
+     "r": 0,
+     "en": "That is two pounds.",
+     "zh": "两镑。"
+    },
+    {
+     "r": 1,
+     "en": "Here you go. Thank you.",
+     "zh": "给你。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 1,
+    "kind": "cost",
+    "task": "对方说要收杯子钱，你要决定还要不要",
+    "prompt": {
+     "en": "A cup is one pound extra. Is that okay?",
+     "zh": "杯子要加一镑。可以吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That is fine.",
+       "zh": "可以。"
+      },
+      "react": {
+       "en": "Thanks. Card or cash?",
+       "zh": "谢谢。刷卡还是现金？"
+      }
+     },
+     {
+      "say": {
+       "en": "Then no cup. I will drink here.",
+       "zh": "那不要杯子。我在这儿喝。"
+      },
+      "react": {
+       "en": "Good. Then it is free.",
+       "zh": "好。那就不收费。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Just water, please.",
+     "zh": "就要水，谢谢。"
+    },
+    {
+     "en": "Is that extra?",
+     "zh": "那个要另外加钱吗？"
+    }
+   ]
+  },
+  {
+   "id": "water-3",
+   "g": "water",
+   "name": "要点喝的 · 只要热水",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "天冷，你想喝热的。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. What can I get you?",
+     "zh": "你好。要点什么？"
+    },
+    {
+     "r": 1,
+     "en": "A hot water, please.",
+     "zh": "一杯热水，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Just hot water? No tea?",
+     "zh": "就要热水？不要茶？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. No ice, please.",
+     "zh": "对。不要冰。",
+     "note": "still water 是不带气的，不是「还」水。"
+    },
+    {
+     "r": 0,
+     "en": "Large or small?",
+     "zh": "大杯还是小杯？"
+    },
+    {
+     "r": 1,
+     "en": "Small is fine.",
+     "zh": "小杯就行。"
+    },
+    {
+     "r": 0,
+     "en": "That is two pounds.",
+     "zh": "两镑。"
+    },
+    {
+     "r": 1,
+     "en": "Here you go. Thank you.",
+     "zh": "给你。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 1,
+    "kind": "cost",
+    "task": "对方说要收杯子钱，你要决定还要不要",
+    "prompt": {
+     "en": "A cup is one pound extra. Is that okay?",
+     "zh": "杯子要加一镑。可以吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That is fine.",
+       "zh": "可以。"
+      },
+      "react": {
+       "en": "Thanks. Card or cash?",
+       "zh": "谢谢。刷卡还是现金？"
+      }
+     },
+     {
+      "say": {
+       "en": "Then no cup. I will drink here.",
+       "zh": "那不要杯子。我在这儿喝。"
+      },
+      "react": {
+       "en": "Good. Then it is free.",
+       "zh": "好。那就不收费。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Just water, please.",
+     "zh": "就要水，谢谢。"
+    },
+    {
+     "en": "Is that extra?",
+     "zh": "那个要另外加钱吗？"
+    }
+   ]
+  },
+  {
+   "id": "water-4",
+   "g": "water",
+   "name": "要点喝的 · 要加柠檬",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你想要一杯加柠檬的水，但不知道要不要加钱。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. What can I get you?",
+     "zh": "你好。要点什么？"
+    },
+    {
+     "r": 1,
+     "en": "Just water, please.",
+     "zh": "就要水，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Still or sparkling?",
+     "zh": "不带气的还是带气的？"
+    },
+    {
+     "r": 1,
+     "en": "Still, with lemon. Is that extra?",
+     "zh": "不带气的，加柠檬。要加钱吗？",
+     "note": "still water 是不带气的，不是「还」水。"
+    },
+    {
+     "r": 0,
+     "en": "No, lemon is free. Large or small?",
+     "zh": "不用，柠檬免费。大杯还是小杯？"
+    },
+    {
+     "r": 1,
+     "en": "Small, please.",
+     "zh": "小杯，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "That is two pounds.",
+     "zh": "两镑。"
+    },
+    {
+     "r": 1,
+     "en": "Here you go. Thank you.",
+     "zh": "给你。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 1,
+    "kind": "cost",
+    "task": "对方说要收杯子钱，你要决定还要不要",
+    "prompt": {
+     "en": "A cup is one pound extra. Is that okay?",
+     "zh": "杯子要加一镑。可以吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That is fine.",
+       "zh": "可以。"
+      },
+      "react": {
+       "en": "Thanks. Card or cash?",
+       "zh": "谢谢。刷卡还是现金？"
+      }
+     },
+     {
+      "say": {
+       "en": "Then no cup. I will drink here.",
+       "zh": "那不要杯子。我在这儿喝。"
+      },
+      "react": {
+       "en": "Good. Then it is free.",
+       "zh": "好。那就不收费。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Just water, please.",
+     "zh": "就要水，谢谢。"
+    },
+    {
+     "en": "Is that extra?",
+     "zh": "那个要另外加钱吗？"
+    }
+   ]
+  },
+  {
+   "id": "water-5",
+   "g": "water",
+   "name": "要点喝的 · 带走一杯冰水",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "外面很热，你想带一杯冰水走。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. What can I get you?",
+     "zh": "你好。要点什么？"
+    },
+    {
+     "r": 1,
+     "en": "A cold water to go, please.",
+     "zh": "一杯冰水带走。"
+    },
+    {
+     "r": 0,
+     "en": "Still or sparkling?",
+     "zh": "不带气的还是带气的？"
+    },
+    {
+     "r": 1,
+     "en": "Still, please.",
+     "zh": "不带气的。",
+     "note": "still water 是不带气的，不是「还」水。"
+    },
+    {
+     "r": 0,
+     "en": "Large or small?",
+     "zh": "大杯还是小杯？"
+    },
+    {
+     "r": 1,
+     "en": "Large, please. It is hot today.",
+     "zh": "大杯。今天太热了。"
+    },
+    {
+     "r": 0,
+     "en": "That is two pounds.",
+     "zh": "两镑。"
+    },
+    {
+     "r": 1,
+     "en": "Here you go. Thank you.",
+     "zh": "给你。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 1,
+    "kind": "cost",
+    "task": "对方说要收杯子钱，你要决定还要不要",
+    "prompt": {
+     "en": "A cup is one pound extra. Is that okay?",
+     "zh": "杯子要加一镑。可以吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That is fine.",
+       "zh": "可以。"
+      },
+      "react": {
+       "en": "Thanks. Card or cash?",
+       "zh": "谢谢。刷卡还是现金？"
+      }
+     },
+     {
+      "say": {
+       "en": "Then no cup. I will drink here.",
+       "zh": "那不要杯子。我在这儿喝。"
+      },
+      "react": {
+       "en": "Good. Then it is free.",
+       "zh": "好。那就不收费。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Just water, please.",
+     "zh": "就要水，谢谢。"
+    },
+    {
+     "en": "Is that extra?",
+     "zh": "那个要另外加钱吗？"
+    }
+   ]
+  },
+  {
+   "id": "water-6",
+   "g": "water",
+   "name": "要点喝的 · 再来一杯",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你喝完了，走过去想再要一杯。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. What can I get you?",
+     "zh": "你好。要点什么？"
+    },
+    {
+     "r": 1,
+     "en": "Another water, please.",
+     "zh": "再来一杯水。"
+    },
+    {
+     "r": 0,
+     "en": "Still or sparkling?",
+     "zh": "不带气的还是带气的？"
+    },
+    {
+     "r": 1,
+     "en": "Still, please.",
+     "zh": "不带气的。",
+     "note": "still water 是不带气的，不是「还」水。"
+    },
+    {
+     "r": 0,
+     "en": "Large or small?",
+     "zh": "大杯还是小杯？"
+    },
+    {
+     "r": 1,
+     "en": "Small again, please.",
+     "zh": "再来一个小杯。"
+    },
+    {
+     "r": 0,
+     "en": "That is another two pounds.",
+     "zh": "那再加两镑。"
+    },
+    {
+     "r": 1,
+     "en": "Here you go. Thank you.",
+     "zh": "给你。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 1,
+    "kind": "cost",
+    "task": "对方说要收杯子钱，你要决定还要不要",
+    "prompt": {
+     "en": "A cup is one pound extra. Is that okay?",
+     "zh": "杯子要加一镑。可以吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "That is fine.",
+       "zh": "可以。"
+      },
+      "react": {
+       "en": "Thanks. Card or cash?",
+       "zh": "谢谢。刷卡还是现金？"
+      }
+     },
+     {
+      "say": {
+       "en": "Then no cup. I will drink here.",
+       "zh": "那不要杯子。我在这儿喝。"
+      },
+      "react": {
+       "en": "Good. Then it is free.",
+       "zh": "好。那就不收费。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Just water, please.",
+     "zh": "就要水，谢谢。"
+    },
+    {
+     "en": "Is that extra?",
+     "zh": "那个要另外加钱吗？"
+    }
+   ]
+  },
+  {
+   "id": "takeout",
+   "g": "takeout",
+   "name": "带走还是堂食 · 带走",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你赶时间，想拿了就走。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Is that to eat in or take away?",
+     "zh": "你好。在这儿吃还是带走？"
+    },
+    {
+     "r": 1,
+     "en": "Take away, please.",
+     "zh": "带走，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. It will be five minutes.",
+     "zh": "好。五分钟就好。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. I will wait.",
+     "zh": "没问题。我等。"
+    },
+    {
+     "r": 0,
+     "en": "Do you want a bag?",
+     "zh": "要袋子吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes, please.",
+     "zh": "要，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Here you are.",
+     "zh": "给您。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you. Have a good day.",
+     "zh": "谢谢。祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "change",
+    "task": "对方说你要的那个没有了，你要换一个",
+    "prompt": {
+     "en": "We are out of that one today.",
+     "zh": "那个今天没有了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then the same thing, without sauce.",
+       "zh": "那就要一样的，不加酱。"
+      },
+      "react": {
+       "en": "Good. No sauce.",
+       "zh": "好。不加酱。"
+      }
+     },
+     {
+      "say": {
+       "en": "What else is quick?",
+       "zh": "还有什么快的？"
+      },
+      "react": {
+       "en": "The soup is ready now.",
+       "zh": "汤现在就好。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Take away, please.",
+     "zh": "带走，谢谢。"
+    },
+    {
+     "en": "How long will it take?",
+     "zh": "要多久？"
+    }
+   ]
+  },
+  {
+   "id": "takeout-2",
+   "g": "takeout",
+   "name": "带走还是堂食 · 堂食",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你有一天假，想坐下来吃。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Is that to eat in or take away?",
+     "zh": "你好。在这儿吃还是带走？"
+    },
+    {
+     "r": 1,
+     "en": "To eat in, please.",
+     "zh": "在这儿吃。",
+     "note": "eat in 是堂食，美式也说 for here。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. It will be five minutes.",
+     "zh": "好。五分钟就好。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. I will wait.",
+     "zh": "没问题。我等。"
+    },
+    {
+     "r": 0,
+     "en": "I will bring it to your table.",
+     "zh": "我给您送到桌上。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you.",
+     "zh": "谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Here you are.",
+     "zh": "给您。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you. Have a good day.",
+     "zh": "谢谢。祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "change",
+    "task": "对方说你要的那个没有了，你要换一个",
+    "prompt": {
+     "en": "We are out of that one today.",
+     "zh": "那个今天没有了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then the same thing, without sauce.",
+       "zh": "那就要一样的，不加酱。"
+      },
+      "react": {
+       "en": "Good. No sauce.",
+       "zh": "好。不加酱。"
+      }
+     },
+     {
+      "say": {
+       "en": "What else is quick?",
+       "zh": "还有什么快的？"
+      },
+      "react": {
+       "en": "The soup is ready now.",
+       "zh": "汤现在就好。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Take away, please.",
+     "zh": "带走，谢谢。"
+    },
+    {
+     "en": "How long will it take?",
+     "zh": "要多久？"
+    }
+   ]
+  },
+  {
+   "id": "takeout-3",
+   "g": "takeout",
+   "name": "带走还是堂食 · 要个盒子打包",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你吃不完，想剩下的带走。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Is that to eat in or take away?",
+     "zh": "你好。在这儿吃还是带走？"
+    },
+    {
+     "r": 1,
+     "en": "Take away, please.",
+     "zh": "带走，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. It will be five minutes.",
+     "zh": "好。五分钟就好。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. I will wait.",
+     "zh": "没问题。我等。"
+    },
+    {
+     "r": 0,
+     "en": "Do you want a bag?",
+     "zh": "要袋子吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes, please. And can I have a box?",
+     "zh": "要袋子。另外能给我一个盒子吗？"
+    },
+    {
+     "r": 0,
+     "en": "Sure. I will bring one.",
+     "zh": "可以。我拿一个来。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you. Have a good day.",
+     "zh": "谢谢。祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "change",
+    "task": "对方说你要的那个没有了，你要换一个",
+    "prompt": {
+     "en": "We are out of that one today.",
+     "zh": "那个今天没有了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then the same thing, without sauce.",
+       "zh": "那就要一样的，不加酱。"
+      },
+      "react": {
+       "en": "Good. No sauce.",
+       "zh": "好。不加酱。"
+      }
+     },
+     {
+      "say": {
+       "en": "What else is quick?",
+       "zh": "还有什么快的？"
+      },
+      "react": {
+       "en": "The soup is ready now.",
+       "zh": "汤现在就好。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Take away, please.",
+     "zh": "带走，谢谢。"
+    },
+    {
+     "en": "How long will it take?",
+     "zh": "要多久？"
+    }
+   ]
+  },
+  {
+   "id": "takeout-4",
+   "g": "takeout",
+   "name": "带走还是堂食 · 不要袋子",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你自己带了袋子，不想多拿一个。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Is that to eat in or take away?",
+     "zh": "你好。在这儿吃还是带走？"
+    },
+    {
+     "r": 1,
+     "en": "Take away, please.",
+     "zh": "带走，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. It will be five minutes.",
+     "zh": "好。五分钟就好。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. I will wait.",
+     "zh": "没问题。我等。"
+    },
+    {
+     "r": 0,
+     "en": "Do you want a bag?",
+     "zh": "要袋子吗？"
+    },
+    {
+     "r": 1,
+     "en": "No bag, thanks. I have one.",
+     "zh": "不要袋子，谢谢。我带了。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. Here is your food.",
+     "zh": "好。这是您的东西。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you. Have a good day.",
+     "zh": "谢谢。祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "change",
+    "task": "对方说你要的那个没有了，你要换一个",
+    "prompt": {
+     "en": "We are out of that one today.",
+     "zh": "那个今天没有了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then the same thing, without sauce.",
+       "zh": "那就要一样的，不加酱。"
+      },
+      "react": {
+       "en": "Good. No sauce.",
+       "zh": "好。不加酱。"
+      }
+     },
+     {
+      "say": {
+       "en": "What else is quick?",
+       "zh": "还有什么快的？"
+      },
+      "react": {
+       "en": "The soup is ready now.",
+       "zh": "汤现在就好。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Take away, please.",
+     "zh": "带走，谢谢。"
+    },
+    {
+     "en": "How long will it take?",
+     "zh": "要多久？"
+    }
+   ]
+  },
+  {
+   "id": "takeout-5",
+   "g": "takeout",
+   "name": "带走还是堂食 · 要餐具",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你带回酒店吃，需要一把叉子。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Is that to eat in or take away?",
+     "zh": "你好。在这儿吃还是带走？"
+    },
+    {
+     "r": 1,
+     "en": "Take away, please.",
+     "zh": "带走，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Okay. It will be five minutes.",
+     "zh": "好。五分钟就好。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. I will wait.",
+     "zh": "没问题。我等。"
+    },
+    {
+     "r": 0,
+     "en": "Do you want a bag?",
+     "zh": "要袋子吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. And a fork, please.",
+     "zh": "要袋子。另外给我一把叉子。"
+    },
+    {
+     "r": 0,
+     "en": "Here you are. Anything else?",
+     "zh": "给你。还有别的吗？"
+    },
+    {
+     "r": 1,
+     "en": "No, thank you.",
+     "zh": "没有了，谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "change",
+    "task": "对方说你要的那个没有了，你要换一个",
+    "prompt": {
+     "en": "We are out of that one today.",
+     "zh": "那个今天没有了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then the same thing, without sauce.",
+       "zh": "那就要一样的，不加酱。"
+      },
+      "react": {
+       "en": "Good. No sauce.",
+       "zh": "好。不加酱。"
+      }
+     },
+     {
+      "say": {
+       "en": "What else is quick?",
+       "zh": "还有什么快的？"
+      },
+      "react": {
+       "en": "The soup is ready now.",
+       "zh": "汤现在就好。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Take away, please.",
+     "zh": "带走，谢谢。"
+    },
+    {
+     "en": "How long will it take?",
+     "zh": "要多久？"
+    }
+   ]
+  },
+  {
+   "id": "takeout-6",
+   "g": "takeout",
+   "name": "带走还是堂食 · 没听清",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "店里有点吵，你没听清店员问什么。",
+   "roles": [
+    "店员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hi. Is that to eat in or take away?",
+     "zh": "你好。在这儿吃还是带走？"
+    },
+    {
+     "r": 1,
+     "en": "Sorry, what was that?",
+     "zh": "抱歉，你说什么？"
+    },
+    {
+     "r": 0,
+     "en": "Eat in or take away?",
+     "zh": "在这儿吃还是带走？"
+    },
+    {
+     "r": 1,
+     "en": "Take away, please.",
+     "zh": "带走。"
+    },
+    {
+     "r": 0,
+     "en": "Do you want a bag?",
+     "zh": "要袋子吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes, please.",
+     "zh": "要，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Here you are.",
+     "zh": "给您。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you. Have a good day.",
+     "zh": "谢谢。祝你今天顺利。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "change",
+    "task": "对方说你要的那个没有了，你要换一个",
+    "prompt": {
+     "en": "We are out of that one today.",
+     "zh": "那个今天没有了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Then the same thing, without sauce.",
+       "zh": "那就要一样的，不加酱。"
+      },
+      "react": {
+       "en": "Good. No sauce.",
+       "zh": "好。不加酱。"
+      }
+     },
+     {
+      "say": {
+       "en": "What else is quick?",
+       "zh": "还有什么快的？"
+      },
+      "react": {
+       "en": "The soup is ready now.",
+       "zh": "汤现在就好。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Take away, please.",
+     "zh": "带走，谢谢。"
+    },
+    {
+     "en": "How long will it take?",
+     "zh": "要多久？"
+    }
+   ]
+  },
+  {
+   "id": "busticket",
+   "g": "busticket",
+   "name": "买一张票 · 单程去车站",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你在公交总站，想买单程票去火车站。",
+   "roles": [
+    "售票员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Where to?",
+     "zh": "你好。去哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "To the station, please.",
+     "zh": "去车站，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Single or return?",
+     "zh": "单程还是往返？"
+    },
+    {
+     "r": 1,
+     "en": "Single, please.",
+     "zh": "单程。"
+    },
+    {
+     "r": 0,
+     "en": "That is two fifty.",
+     "zh": "两块五。"
+    },
+    {
+     "r": 1,
+     "en": "Can I pay by card?",
+     "zh": "能刷卡吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, of course.",
+     "zh": "当然可以。"
+    },
+    {
+     "r": 1,
+     "en": "Here you go. Thank you.",
+     "zh": "给你。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "short",
+    "task": "刷卡机坏了，你要想办法付钱",
+    "prompt": {
+     "en": "Sorry, the card machine is down.",
+     "zh": "抱歉，刷卡机坏了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I have cash. Here you are.",
+       "zh": "我有现金。给你。"
+      },
+      "react": {
+       "en": "Thanks. Keep the ticket.",
+       "zh": "谢谢。票收好。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is there a cash machine near here?",
+       "zh": "附近有取款机吗？"
+      },
+      "react": {
+       "en": "By the door, on the right.",
+       "zh": "门口右手边。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Single or return?",
+     "zh": "单程还是往返？"
+    },
+    {
+     "en": "Can I pay by card?",
+     "zh": "能刷卡吗？"
+    }
+   ]
+  },
+  {
+   "id": "busticket-2",
+   "g": "busticket",
+   "name": "买一张票 · 往返票",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你要当天去当天回，往返更便宜。",
+   "roles": [
+    "售票员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Where to?",
+     "zh": "你好。去哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "To the station, please.",
+     "zh": "去车站，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Single or return?",
+     "zh": "单程还是往返？"
+    },
+    {
+     "r": 1,
+     "en": "Return, please. I am coming back today.",
+     "zh": "往返票。我今天就回来。"
+    },
+    {
+     "r": 0,
+     "en": "Return is four pounds.",
+     "zh": "往返四镑。"
+    },
+    {
+     "r": 1,
+     "en": "Can I pay by card?",
+     "zh": "能刷卡吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, of course.",
+     "zh": "当然可以。"
+    },
+    {
+     "r": 1,
+     "en": "Here you go. Thank you.",
+     "zh": "给你。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "short",
+    "task": "刷卡机坏了，你要想办法付钱",
+    "prompt": {
+     "en": "Sorry, the card machine is down.",
+     "zh": "抱歉，刷卡机坏了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I have cash. Here you are.",
+       "zh": "我有现金。给你。"
+      },
+      "react": {
+       "en": "Thanks. Keep the ticket.",
+       "zh": "谢谢。票收好。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is there a cash machine near here?",
+       "zh": "附近有取款机吗？"
+      },
+      "react": {
+       "en": "By the door, on the right.",
+       "zh": "门口右手边。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Single or return?",
+     "zh": "单程还是往返？"
+    },
+    {
+     "en": "Can I pay by card?",
+     "zh": "能刷卡吗？"
+    }
+   ]
+  },
+  {
+   "id": "busticket-3",
+   "g": "busticket",
+   "name": "买一张票 · 去机场",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你要去机场，怕坐过站。",
+   "roles": [
+    "售票员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Where to?",
+     "zh": "你好。去哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "To the airport, please.",
+     "zh": "去机场。"
+    },
+    {
+     "r": 0,
+     "en": "Single or return?",
+     "zh": "单程还是往返？"
+    },
+    {
+     "r": 1,
+     "en": "Single, please. Which stop is the airport?",
+     "zh": "单程。哪一站是机场？"
+    },
+    {
+     "r": 0,
+     "en": "The last stop. Two fifty.",
+     "zh": "最后一站。两块五。"
+    },
+    {
+     "r": 1,
+     "en": "Can I pay by card?",
+     "zh": "能刷卡吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, of course.",
+     "zh": "当然可以。"
+    },
+    {
+     "r": 1,
+     "en": "Here you go. Thank you.",
+     "zh": "给你。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "short",
+    "task": "刷卡机坏了，你要想办法付钱",
+    "prompt": {
+     "en": "Sorry, the card machine is down.",
+     "zh": "抱歉，刷卡机坏了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I have cash. Here you are.",
+       "zh": "我有现金。给你。"
+      },
+      "react": {
+       "en": "Thanks. Keep the ticket.",
+       "zh": "谢谢。票收好。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is there a cash machine near here?",
+       "zh": "附近有取款机吗？"
+      },
+      "react": {
+       "en": "By the door, on the right.",
+       "zh": "门口右手边。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Single or return?",
+     "zh": "单程还是往返？"
+    },
+    {
+     "en": "Can I pay by card?",
+     "zh": "能刷卡吗？"
+    }
+   ]
+  },
+  {
+   "id": "busticket-4",
+   "g": "busticket",
+   "name": "买一张票 · 学生票",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你有学生证，想问问有没有学生价。",
+   "roles": [
+    "售票员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Where to?",
+     "zh": "你好。去哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "To the station, please.",
+     "zh": "去车站，谢谢。"
+    },
+    {
+     "r": 0,
+     "en": "Single or return?",
+     "zh": "单程还是往返？"
+    },
+    {
+     "r": 1,
+     "en": "Single, please. Is there a student price?",
+     "zh": "单程。有学生价吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, with a student card it is one fifty.",
+     "zh": "有，凭学生证一块五。"
+    },
+    {
+     "r": 1,
+     "en": "Can I pay by card?",
+     "zh": "能刷卡吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, of course.",
+     "zh": "当然可以。"
+    },
+    {
+     "r": 1,
+     "en": "Here you go. Thank you.",
+     "zh": "给你。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "short",
+    "task": "刷卡机坏了，你要想办法付钱",
+    "prompt": {
+     "en": "Sorry, the card machine is down.",
+     "zh": "抱歉，刷卡机坏了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I have cash. Here you are.",
+       "zh": "我有现金。给你。"
+      },
+      "react": {
+       "en": "Thanks. Keep the ticket.",
+       "zh": "谢谢。票收好。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is there a cash machine near here?",
+       "zh": "附近有取款机吗？"
+      },
+      "react": {
+       "en": "By the door, on the right.",
+       "zh": "门口右手边。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Single or return?",
+     "zh": "单程还是往返？"
+    },
+    {
+     "en": "Can I pay by card?",
+     "zh": "能刷卡吗？"
+    }
+   ]
+  },
+  {
+   "id": "busticket-5",
+   "g": "busticket",
+   "name": "买一张票 · 一日票",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你今天要坐好几趟，想买一日票。",
+   "roles": [
+    "售票员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Where to?",
+     "zh": "你好。去哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "A day ticket, please.",
+     "zh": "一张一日票。"
+    },
+    {
+     "r": 0,
+     "en": "Just for today?",
+     "zh": "就今天一天吗？"
+    },
+    {
+     "r": 1,
+     "en": "Yes. Today only.",
+     "zh": "对。就今天。"
+    },
+    {
+     "r": 0,
+     "en": "A day ticket is six pounds.",
+     "zh": "一日票六镑。"
+    },
+    {
+     "r": 1,
+     "en": "Can I pay by card?",
+     "zh": "能刷卡吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, of course.",
+     "zh": "当然可以。"
+    },
+    {
+     "r": 1,
+     "en": "Here you go. Thank you.",
+     "zh": "给你。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "short",
+    "task": "刷卡机坏了，你要想办法付钱",
+    "prompt": {
+     "en": "Sorry, the card machine is down.",
+     "zh": "抱歉，刷卡机坏了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I have cash. Here you are.",
+       "zh": "我有现金。给你。"
+      },
+      "react": {
+       "en": "Thanks. Keep the ticket.",
+       "zh": "谢谢。票收好。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is there a cash machine near here?",
+       "zh": "附近有取款机吗？"
+      },
+      "react": {
+       "en": "By the door, on the right.",
+       "zh": "门口右手边。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Single or return?",
+     "zh": "单程还是往返？"
+    },
+    {
+     "en": "Can I pay by card?",
+     "zh": "能刷卡吗？"
+    }
+   ]
+  },
+  {
+   "id": "busticket-6",
+   "g": "busticket",
+   "name": "买一张票 · 问有几站",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你要去博物馆，还想知道坐几站。",
+   "roles": [
+    "售票员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Hello. Where to?",
+     "zh": "你好。去哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "To the museum, please.",
+     "zh": "去博物馆。"
+    },
+    {
+     "r": 0,
+     "en": "Single or return?",
+     "zh": "单程还是往返？"
+    },
+    {
+     "r": 1,
+     "en": "Single, please. How many stops?",
+     "zh": "单程。有几站？"
+    },
+    {
+     "r": 0,
+     "en": "Three stops. Two fifty.",
+     "zh": "三站。两块五。"
+    },
+    {
+     "r": 1,
+     "en": "Can I pay by card?",
+     "zh": "能刷卡吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. And I will tell you when to get off.",
+     "zh": "可以。到站我叫您。"
+    },
+    {
+     "r": 1,
+     "en": "Here you go. Thank you.",
+     "zh": "给你。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "short",
+    "task": "刷卡机坏了，你要想办法付钱",
+    "prompt": {
+     "en": "Sorry, the card machine is down.",
+     "zh": "抱歉，刷卡机坏了。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I have cash. Here you are.",
+       "zh": "我有现金。给你。"
+      },
+      "react": {
+       "en": "Thanks. Keep the ticket.",
+       "zh": "谢谢。票收好。"
+      }
+     },
+     {
+      "say": {
+       "en": "Is there a cash machine near here?",
+       "zh": "附近有取款机吗？"
+      },
+      "react": {
+       "en": "By the door, on the right.",
+       "zh": "门口右手边。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Single or return?",
+     "zh": "单程还是往返？"
+    },
+    {
+     "en": "Can I pay by card?",
+     "zh": "能刷卡吗？"
+    }
+   ]
+  },
+  {
+   "id": "parcel-basic",
+   "g": "parcel-basic",
+   "name": "寄信和寄包裹 · 寄一封信",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你第一次进邮局，只想寄一封普通的信。",
+   "roles": [
+    "邮局职员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Next, please.",
+     "zh": "下一位。"
+    },
+    {
+     "r": 1,
+     "en": "I want to send this letter.",
+     "zh": "我想寄这封信。"
+    },
+    {
+     "r": 0,
+     "en": "Where to?",
+     "zh": "寄到哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "To China.",
+     "zh": "寄到中国。"
+    },
+    {
+     "r": 0,
+     "en": "It will be three pounds.",
+     "zh": "三镑。"
+    },
+    {
+     "r": 1,
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    },
+    {
+     "r": 0,
+     "en": "About two weeks.",
+     "zh": "大概两周。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Thank you.",
+     "zh": "可以。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "cost",
+    "task": "对方说要加钱，你要问清楚为什么",
+    "prompt": {
+     "en": "To China it is four pounds, not three.",
+     "zh": "寄到中国是四镑，不是三镑。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Four is fine. Here you are.",
+       "zh": "四镑可以。给你。"
+      },
+      "react": {
+       "en": "Thanks. Keep this receipt.",
+       "zh": "谢谢。收好这张收据。"
+      }
+     },
+     {
+      "say": {
+       "en": "Why is it more?",
+       "zh": "为什么更贵？"
+      },
+      "react": {
+       "en": "It is a different zone.",
+       "zh": "这是另一个计费区。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I want to send this letter.",
+     "zh": "我想寄这封信。"
+    },
+    {
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    }
+   ]
+  },
+  {
+   "id": "parcel-basic-2",
+   "g": "parcel-basic",
+   "name": "寄信和寄包裹 · 寄小包裹",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你要把一件小东西寄给朋友。",
+   "roles": [
+    "邮局职员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Next, please.",
+     "zh": "下一位。"
+    },
+    {
+     "r": 1,
+     "en": "I want to send this parcel.",
+     "zh": "我想寄这个包裹。"
+    },
+    {
+     "r": 0,
+     "en": "Where to?",
+     "zh": "寄到哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "To China. It is light, under one kilo.",
+     "zh": "寄到中国。很轻，不到一公斤。"
+    },
+    {
+     "r": 0,
+     "en": "It will be three pounds.",
+     "zh": "三镑。"
+    },
+    {
+     "r": 1,
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    },
+    {
+     "r": 0,
+     "en": "About two weeks.",
+     "zh": "大概两周。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Thank you.",
+     "zh": "可以。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "cost",
+    "task": "对方说要加钱，你要问清楚为什么",
+    "prompt": {
+     "en": "To China it is four pounds, not three.",
+     "zh": "寄到中国是四镑，不是三镑。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Four is fine. Here you are.",
+       "zh": "四镑可以。给你。"
+      },
+      "react": {
+       "en": "Thanks. Keep this receipt.",
+       "zh": "谢谢。收好这张收据。"
+      }
+     },
+     {
+      "say": {
+       "en": "Why is it more?",
+       "zh": "为什么更贵？"
+      },
+      "react": {
+       "en": "It is a different zone.",
+       "zh": "这是另一个计费区。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I want to send this letter.",
+     "zh": "我想寄这封信。"
+    },
+    {
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    }
+   ]
+  },
+  {
+   "id": "parcel-basic-3",
+   "g": "parcel-basic",
+   "name": "寄信和寄包裹 · 挂号信",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "信里有重要材料，你想要能查单号的那种。",
+   "roles": [
+    "邮局职员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Next, please.",
+     "zh": "下一位。"
+    },
+    {
+     "r": 1,
+     "en": "I want to send this letter. Registered, please.",
+     "zh": "我想寄这封信。挂号。"
+    },
+    {
+     "r": 0,
+     "en": "Where to?",
+     "zh": "寄到哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "To China.",
+     "zh": "寄到中国。"
+    },
+    {
+     "r": 0,
+     "en": "Registered is four pounds.",
+     "zh": "挂号四镑。"
+    },
+    {
+     "r": 1,
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    },
+    {
+     "r": 0,
+     "en": "About two weeks.",
+     "zh": "大概两周。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Thank you.",
+     "zh": "可以。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "cost",
+    "task": "对方说要加钱，你要问清楚为什么",
+    "prompt": {
+     "en": "To China it is four pounds, not three.",
+     "zh": "寄到中国是四镑，不是三镑。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Four is fine. Here you are.",
+       "zh": "四镑可以。给你。"
+      },
+      "react": {
+       "en": "Thanks. Keep this receipt.",
+       "zh": "谢谢。收好这张收据。"
+      }
+     },
+     {
+      "say": {
+       "en": "Why is it more?",
+       "zh": "为什么更贵？"
+      },
+      "react": {
+       "en": "It is a different zone.",
+       "zh": "这是另一个计费区。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I want to send this letter.",
+     "zh": "我想寄这封信。"
+    },
+    {
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    }
+   ]
+  },
+  {
+   "id": "parcel-basic-4",
+   "g": "parcel-basic",
+   "name": "寄信和寄包裹 · 问要不要填单",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你怕填错单子，先问清楚。",
+   "roles": [
+    "邮局职员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Next, please.",
+     "zh": "下一位。"
+    },
+    {
+     "r": 1,
+     "en": "I want to send this letter.",
+     "zh": "我想寄这封信。"
+    },
+    {
+     "r": 0,
+     "en": "Where to?",
+     "zh": "寄到哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "To China. Do I need a form?",
+     "zh": "寄到中国。要填单子吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, this small one. And it is three pounds.",
+     "zh": "要，这张小的。邮费三镑。"
+    },
+    {
+     "r": 1,
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    },
+    {
+     "r": 0,
+     "en": "About two weeks.",
+     "zh": "大概两周。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Thank you.",
+     "zh": "可以。谢谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "cost",
+    "task": "对方说要加钱，你要问清楚为什么",
+    "prompt": {
+     "en": "To China it is four pounds, not three.",
+     "zh": "寄到中国是四镑，不是三镑。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Four is fine. Here you are.",
+       "zh": "四镑可以。给你。"
+      },
+      "react": {
+       "en": "Thanks. Keep this receipt.",
+       "zh": "谢谢。收好这张收据。"
+      }
+     },
+     {
+      "say": {
+       "en": "Why is it more?",
+       "zh": "为什么更贵？"
+      },
+      "react": {
+       "en": "It is a different zone.",
+       "zh": "这是另一个计费区。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I want to send this letter.",
+     "zh": "我想寄这封信。"
+    },
+    {
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    }
+   ]
+  },
+  {
+   "id": "parcel-basic-5",
+   "g": "parcel-basic",
+   "name": "寄信和寄包裹 · 要快的",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "对方说两周太久，你想快一点。",
+   "roles": [
+    "邮局职员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Next, please.",
+     "zh": "下一位。"
+    },
+    {
+     "r": 1,
+     "en": "I want to send this letter.",
+     "zh": "我想寄这封信。"
+    },
+    {
+     "r": 0,
+     "en": "Where to?",
+     "zh": "寄到哪儿？"
+    },
+    {
+     "r": 1,
+     "en": "To China.",
+     "zh": "寄到中国。"
+    },
+    {
+     "r": 0,
+     "en": "It will be three pounds.",
+     "zh": "三镑。"
+    },
+    {
+     "r": 1,
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    },
+    {
+     "r": 0,
+     "en": "Two weeks. Express is five days.",
+     "zh": "两周。快递五天。"
+    },
+    {
+     "r": 1,
+     "en": "Then express, please.",
+     "zh": "那寄快递。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "cost",
+    "task": "对方说要加钱，你要问清楚为什么",
+    "prompt": {
+     "en": "To China it is four pounds, not three.",
+     "zh": "寄到中国是四镑，不是三镑。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Four is fine. Here you are.",
+       "zh": "四镑可以。给你。"
+      },
+      "react": {
+       "en": "Thanks. Keep this receipt.",
+       "zh": "谢谢。收好这张收据。"
+      }
+     },
+     {
+      "say": {
+       "en": "Why is it more?",
+       "zh": "为什么更贵？"
+      },
+      "react": {
+       "en": "It is a different zone.",
+       "zh": "这是另一个计费区。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I want to send this letter.",
+     "zh": "我想寄这封信。"
+    },
+    {
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    }
+   ]
+  },
+  {
+   "id": "parcel-basic-6",
+   "g": "parcel-basic",
+   "name": "寄信和寄包裹 · 取包裹",
+   "cat": "出行",
+   "lv": 1,
+   "cefr": "A1",
+   "setting": "你不是来寄东西，是来取一个包裹。",
+   "roles": [
+    "邮局职员",
+    "你"
+   ],
+   "you": 1,
+   "lines": [
+    {
+     "r": 0,
+     "en": "Next, please.",
+     "zh": "下一位。"
+    },
+    {
+     "r": 1,
+     "en": "I am here to pick up a parcel.",
+     "zh": "我来取包裹。",
+     "note": "pick up 是取件，send 是寄件。"
+    },
+    {
+     "r": 0,
+     "en": "What is your name?",
+     "zh": "您叫什么？"
+    },
+    {
+     "r": 1,
+     "en": "Wen. Here is the card.",
+     "zh": "Wen。这是取件单。"
+    },
+    {
+     "r": 0,
+     "en": "Yes, I have it here. Please sign.",
+     "zh": "有，在我这儿。请签个字。"
+    },
+    {
+     "r": 1,
+     "en": "Thank you. Where do I sign?",
+     "zh": "谢谢。在哪儿签？"
+    },
+    {
+     "r": 0,
+     "en": "Right here.",
+     "zh": "就在这儿。"
+    },
+    {
+     "r": 1,
+     "en": "Okay. Thanks a lot.",
+     "zh": "好。非常感谢。"
+    }
+   ],
+   "branch": {
+    "at": 3,
+    "kind": "cost",
+    "task": "对方说要加钱，你要问清楚为什么",
+    "prompt": {
+     "en": "To China it is four pounds, not three.",
+     "zh": "寄到中国是四镑，不是三镑。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Four is fine. Here you are.",
+       "zh": "四镑可以。给你。"
+      },
+      "react": {
+       "en": "Thanks. Keep this receipt.",
+       "zh": "谢谢。收好这张收据。"
+      }
+     },
+     {
+      "say": {
+       "en": "Why is it more?",
+       "zh": "为什么更贵？"
+      },
+      "react": {
+       "en": "It is a different zone.",
+       "zh": "这是另一个计费区。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I want to send this letter.",
+     "zh": "我想寄这封信。"
+    },
+    {
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    }
+   ]
+  },
+  {
    "id": "enroll",
    "g": "enroll",
    "name": "报名语言班 · 报通用英语班",
