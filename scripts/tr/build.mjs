@@ -40,11 +40,37 @@ export const slugOf = title => title
   .replace(/^-|-$/g, '')
   .slice(0, 48);
 
+/*
+ * 手动指定正文起点（段落下标）。
+ *
+ * 自动判定用的是"第一段 ≥200 字符"，对《小妇人》这种开头连着几句短对白的书会判错：
+ * 前面 0–6 段是书名、目录、"PART 1"、章题，第 7 段才是那句
+ * "Christmas won't be Christmas without any presents"，只有 83 字符 ——
+ * 于是"感谢火光映亮四张年轻的脸"成了第 0 句，全书最有名的那句开场白被切掉了。
+ *
+ * 这里按书钉住起点。改这个值会重排该书编号，已译内容必须跟着整体平移（见下面的偏移脚本）。
+ */
+const START_AT = {
+  'little-women': 7,
+};
+
+/** --only=<slug>：只重建一本，别动其他 19 本的编号 */
+const ONLY = (process.argv.find(a => a.startsWith('--only=')) ?? '').slice(7);
+
 const meta = {};
 let made = 0;
 
 for (const [title, gid] of gidOf) {
   const slug = slugOf(title);
+  if (ONLY && slug !== ONLY) {
+    // 非目标书：沿用旧 meta，避免把整份 meta 写丢
+    if (fs.existsSync(path.join(ROOT, 'data/tr-meta.json'))) {
+      const old = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/tr-meta.json'), 'utf8'));
+      if (old[slug]) meta[slug] = old[slug];
+    }
+    continue;
+  }
+
   const rawFile = path.join(RAW, `${gid}.txt`);
   if (!fs.existsSync(rawFile)) {
     console.log(`  ⚠ ${title}: 原文没下载（${gid}.txt），跳过`);
@@ -83,6 +109,7 @@ for (const [title, gid] of gidOf) {
   const isBoiler = p => /^(A Millennium Fulcrum Edition|Transcriber|Produced by|E-?text prepared|First Printing|Second Printing|Copyright|Published|This text is a combination)/i.test(p);
   let cut = paras.findIndex(p => !isToc(p) && !isBoiler(p) && p.length >= 200);
   if (cut < 0) cut = 0;
+  if (START_AT[slug] !== undefined) cut = START_AT[slug];
 
   /*
    * 段落清一遍再切句。三件事：
