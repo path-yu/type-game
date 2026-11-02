@@ -26,6 +26,9 @@ export const BOOK_ZH: Record<string, string> = {
   'Black Beauty': '黑骏马',
   'The Railway Children': '铁路边的孩子们',
   'The Story of Doctor Dolittle': '怪医杜立德',
+  'The Thirty-Nine Steps': '三十九级台阶',
+  'The Time Machine': '时间机器',
+  'Little Women': '小妇人',
 
   // —— 维基条目 ——
   'Volcano': '火山',

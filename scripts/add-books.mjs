@@ -23,21 +23,15 @@ const log = (...a) => console.log('[add]', ...a);
 /** 新书单。cap 是入库段数，均匀取样，不是从头截一段 */
 const NEW_BOOKS = [
   {
-    id: 271, key: 'beauty', title: 'Black Beauty', theme: 'novel', lic: 'PD', cap: 30,
+    id: 558, key: 'steps', title: 'The Thirty-Nine Steps', theme: 'novel', lic: 'PD', cap: 30,
+    // 前面是目录（"Chapter I  The Man Who Died" 带标题那行），正文那行只有一个句点
+    after: /^Chapter I\.\s*$/m,
   },
+  { id: 35, key: 'timemachine', title: 'The Time Machine', theme: 'novel', lic: 'PD', cap: 30 },
   {
-    id: 1874, key: 'railway', title: 'The Railway Children', theme: 'novel', lic: 'PD', cap: 30,
-    // 从第一章正文切起，前面的目录与献词不入库
-    after: /^Chapter\s+I\b/m,
-  },
-  {
-    id: 501, key: 'dolittle', title: 'The Story of Doctor Dolittle', theme: 'novel', lic: 'PD', cap: 30,
-    // Gutenberg 版前面有一篇 Hugh Walpole 的序，讲儿童文学，不是故事本身
-    after: /^_THE FIRST CHAPTER_/m,
-    // 布姆波王子这条线整个跳过。原著里他求医生把自己"变成白人"，才好去娶睡美人。
-    // 这是 1920 年的情节，抽出来单独成页，就成了一则"黑皮肤被嫌弃"的童话 ——
-    // 给孩子看的读物不必背这个包袱。每页都是独立选段，跳过不影响别的情节。
-    block: /\bBumpo\b|turn (me|him) white/i,
+    id: 514, key: 'littlewomen', title: 'Little Women', theme: 'novel', lic: 'PD', cap: 30,
+    // 目录里是"CHAPTER ONE PLAYING PILGRIMS"，正文那行只有"CHAPTER ONE"
+    after: /^CHAPTER ONE\s*$/m,
   },
 ];
 
@@ -46,8 +40,11 @@ const NEW_BOOKS = [
  *
  * 这些书写于一百年前，个别段子带着当年的种族偏见（《杜立德》里有一句催促狮子干活的话，
  * 《黑骏马》里也有一处）。留着不改是篡改原文，改了是伪造原文，所以整段不入库。
+ *
+ * 只挡真正的蔑称。"savage" 不在此列 —— 这些老书里它九成是在说野兽或"野蛮时代"，
+ * 是形容词不是称呼；一律挡掉会把《时间机器》里好几段好文字误伤。
  */
-const BLOCK = /\b(nigger|negro|savages?|heathens?)\b/i;
+const BLOCK = /\b(nigger|negro|heathens?)\b/i;
 
 const dry = process.argv.includes('--dry');
 const onlyArg = process.argv.find(a => a.startsWith('--only='));

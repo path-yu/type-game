@@ -1,0 +1,218 @@
+
+@@ steps-0000  L3  6句
+1. I returned from the City about three o'clock on that May afternoon pretty well disgusted with life.
+2. I had been three months in the Old Country, and was fed up with it.
+3. If anyone had told me a year ago that I would have been feeling like that I should have laughed at him; but there was the fact.
+4. The weather made me liverish, the talk of the ordinary Englishman made me sick.
+5. I couldn't get enough exercise, and the amusements of London seemed as flat as soda-water that has been standing in the sun.
+6. "Richard Hannay," I kept telling myself, "you have got into the wrong ditch, my friend, and you had better climb out."
+
+@@ steps-0001  L7  2句
+1. He told me some queer things that explained a lot that had puzzled me-things that happened in the Balkan War, how one state suddenly came out on top, why alliances were made and broken, why certain men disappeared, and where the sinews of war came from.
+2. The aim of the whole conspiracy was to get Russia and Germany at loggerheads.
+
+@@ steps-0002  L3  6句
+1. He was my size, and I judged had perished from too much alcohol, so I put some spirits handy about the place.
+2. The jaw was the weak point in the likeness, so I blew it away with a revolver.
+3. I daresay there will be somebody tomorrow to swear to having heard a shot, but there are no neighbours on my floor, and I guessed I could risk it.
+4. So I left the body in bed dressed up in my pyjamas, with a revolver lying on the bed-clothes and a considerable mess around.
+5. Then I got into a suit of clothes I had kept waiting for emergencies.
+6. I didn't dare to shave for fear of leaving tracks, and besides, it wasn't any kind of use my trying to get into the streets.
+
+@@ steps-0003  L1  8句
+1. I did not give him very close attention.
+2. The fact is, I was more interested in his own adventures than in his high politics.
+3. I reckoned that Karolides and his affairs were not my business, leaving all that to him.
+4. So a lot that he said slipped clean out of my memory.
+5. I remember that he was very clear that the danger to Karolides would not begin till he had got to London, and would come from the very highest quarters, where there would be no thought of suspicion.
+6. He mentioned the name of a woman-Julia Czechenyi-as having something to do with the danger.
+7. She would be the decoy, I gathered, to get Karolides out of the care of his guards.
+8. He talked, too, about a Black Stone and a man that lisped in his speech, and he described very particularly somebody that he never referred to without a shudder-an old man with a young voice who could hood his eyes like a hawk.
+
+@@ steps-0004  L6  3句
+1. I went round the flat and found that everything had been ransacked-the inside of books, drawers, cupboards, boxes, even the pockets of the clothes in my wardrobe, and the sideboard in the dining-room.
+2. There was no trace of the book.
+3. Most likely the enemy had found it, but they had not found it on Scudder's body.
+
+@@ steps-0005  L6  4句
+1. Three minutes later, as we were roaring through the northern tunnels, an irate guard interviewed me.
+2. He wrote out for me a ticket to Newton-Stewart, a name which had suddenly come back to my memory, and he conducted me from the first-class compartment where I had ensconced myself to a third-class smoker, occupied by a sailor and a stout woman with a child.
+3. He went off grumbling, and as I mopped my brow I observed to my companions in my broadest Scots that it was a sore job catching trains.
+4. I had already entered upon my part.
+
+@@ steps-0006  L6  6句
+1. It was the same jolly, clear spring weather, and I simply could not contrive to feel careworn.
+2. Indeed I was in better spirits than I had been for months.
+3. Over a long ridge of moorland I took my road, skirting the side of a high hill which the herd had called Cairnsmore of Fleet.
+4. Nesting curlews and plovers were crying everywhere, and the links of green pasture by the streams were dotted with young lambs.
+5. All the slackness of the past months was slipping from my bones, and I stepped out like a four-year-old.
+6. By-and-by I came to a swell of moorland which dipped to the vale of a little river, and a mile away in the heather I saw the smoke of a train.
+
+@@ steps-0007  L2  5句
+1. Low down in the south a monoplane was climbing into the heavens.
+2. I was as certain as if I had been told that that aeroplane was looking for me, and that it did not belong to the police.
+3. For an hour or two I watched it from a pit of heather.
+4. It flew low along the hill-tops, and then in narrow circles over the valley up which I had come.
+5. Then it seemed to change its mind, rose to a great height, and flew away back to the south.
+
+@@ steps-0008  L1  7句
+1. Now I'll tell you what I want you to do," I said.
+2. "Get on your bicycle and go off to Newton-Stewart to the Chief Constable.
+3. Describe the two men, and say you suspect them of having had something to do with the London murder.
+4. You can invent reasons.
+5. The two will come back, never fear.
+6. Not tonight, for they'll follow me forty miles along the road, but first thing tomorrow morning.
+7. Tell the police to be here bright and early."
+
+@@ steps-0009  L5  5句
+1. But all this depended upon the third thing, which was due to happen on June 15th.
+2. I would never have grasped this if I hadn't once happened to meet a French staff officer, coming back from West Africa, who had told me a lot of things.
+3. One was that, in spite of all the nonsense talked in Parliament, there was a real working alliance between France and Britain, and that the two General Staffs met every now and then, and made plans for joint action in case of war.
+4. Well, in June a very great swell was coming over from Paris, and he was going to get nothing less than a statement of the disposition of the British Home Fleet on mobilization.
+5. At least I gathered it was something like that; anyhow, it was something uncommonly important.
+
+@@ steps-0010  L6  4句
+1. But there I was mistaken.
+2. My car slithered through the hedge like butter, and then gave a sickening plunge forward.
+3. I saw what was coming, leapt on the seat and would have jumped out.
+4. But a branch of hawthorn got me in the chest, lifted me up and held me, while a ton or two of expensive metal slipped below me, bucked and pitched, and then dropped with an almighty smash fifty feet to the bed of the stream.
+
+@@ steps-0011  L2  4句
+1. I didn't get on so badly when it came to my turn.
+2. I simply told them all I could remember about Australia, praying there should be no Australian there-all about its labour party and emigration and universal service.
+3. I doubt if I remembered to mention Free Trade, but I said there were no Tories in Australia, only Labour and Liberals.
+4. That fetched a cheer, and I woke them up a bit when I started in to tell them the kind of glorious business I thought could be made out of the Empire if we really put our backs into it.
+
+@@ steps-0012  L4  4句
+1. I have said there was not cover in the whole place to hide a rat.
+2. As the day advanced it was flooded with soft fresh light till it had the fragrant sunniness of the South African veld.
+3. At other times I would have liked the place, but now it seemed to suffocate me.
+4. The free moorlands were prison walls, and the keen hill air was the breath of a dungeon.
+
+@@ steps-0013  L3  5句
+1. Now and then a sheep wandered off the heather to stare at me.
+2. A heron flopped down to a pool in the stream and started to fish, taking no more notice of me than if I had been a milestone.
+3. On I went, trundling my loads of stone, with the heavy step of the professional.
+4. Soon I grew warm, and the dust on my face changed into solid and abiding grit.
+5. I was already counting the hours till evening should put a limit to Mr Turnbull's monotonous toil.
+
+@@ steps-0014  L5  4句
+1. As the dark fell I turned up a side glen which, as I remember from the map, led into an unfrequented corner of the hills.
+2. Soon the villages were left behind, then the farms, and then even the wayside cottage.
+3. Presently we came to a lonely moor where the night was blackening the sunset gleam in the bog pools.
+4. Here we stopped, and I obligingly reversed the car and restored to Mr Jopley his belongings.
+
+@@ steps-0015  L4  4句
+1. I put on a great spurt and got off my ridge and down into the moor before any figures appeared on the skyline behind me.
+2. I crossed a burn, and came out on a highroad which made a pass between two glens.
+3. All in front of me was a big field of heather sloping up to a crest which was crowned with an odd feather of trees.
+4. In the dyke by the roadside was a gate, from which a grass-grown track led over the first wave of the moor.
+
+@@ steps-0016  L4  4句
+1. As he spoke his eyelids seemed to tremble and to fall a little over his keen grey eyes.
+2. In a flash the phrase of Scudder's came back to me, when he had described the man he most dreaded in the world.
+3. He had said that he "could hood his eyes like a hawk".
+4. Then I saw that I had walked straight into the enemy's headquarters.
+
+@@ steps-0017  L2  6句
+1. The more I thought of it the angrier I grew, and I had to get up and move about the room.
+2. I tried the shutters, but they were the kind that lock with a key, and I couldn't move them.
+3. From the outside came the faint clucking of hens in the warm sun.
+4. Then I groped among the sacks and boxes.
+5. I couldn't open the latter, and the sacks seemed to be full of things like dog-biscuits that smelt of cinnamon.
+6. But, as I circumnavigated the room, I found a handle in the wall which seemed worth investigating.
+
+@@ steps-0018  L5  6句
+1. My stupor can scarcely have lasted beyond a few seconds.
+2. I felt myself being choked by thick yellow fumes, and struggled out of the debris to my feet.
+3. Somewhere behind me I felt fresh air.
+4. The jambs of the window had fallen, and through the ragged rent the smoke was pouring out to the summer noon.
+5. I stepped over the broken lintel, and found myself standing in a yard in a dense and acrid fog.
+6. I felt very sick and ill, but I could move my limbs, and I staggered blindly forward away from the house.
+
+@@ steps-0019  L3  6句
+1. Then I reflected that if that aeroplane came back the chances were ten to one that I would be discovered.
+2. So through the afternoon I lay and prayed for the coming of darkness, and glad I was when the sun went down over the big western hills and the twilight haze crept over the moor.
+3. The aeroplane was late.
+4. The gloaming was far advanced when I heard the beat of wings and saw it volplaning downward to its home in the wood.
+5. Lights twinkled for a bit and there was much coming and going from the house.
+6. Then the dark fell, and silence.
+
+@@ steps-0020  L2  7句
+1. I pass over the miseries of that night among the wet hills.
+2. There were no stars to steer by, and I had to do the best I could from my memory of the map.
+3. Twice I lost my way, and I had some nasty falls into peat-bogs.
+4. I had only about ten miles to go as the crow flies, but my mistakes made it nearer twenty.
+5. The last bit was completed with set teeth and a very light and dizzy head.
+6. But I managed it, and in the early dawn I was knocking at Mr Turnbull's door.
+7. The mist lay close and thick, and from the cottage I could not see the highroad.
+
+@@ steps-0021  L3  5句
+1. I got some dinner in a humble Moffat public-house, and walked the two miles to the junction on the main line.
+2. The night express for the south was not due till near midnight, and to fill up the time I went up on the hillside and fell asleep, for the walk had tired me.
+3. I all but slept too long, and had to run to the station and catch the train with two minutes to spare.
+4. The feel of the hard third-class cushions and the smell of stale tobacco cheered me up wonderfully.
+5. At any rate, I felt now that I was getting to grips with my job.
+
+@@ steps-0022  L2  8句
+1. Nothing.
+2. Merely that he was in danger, but had found shelter with a good friend, and that I would hear from him before the 15th of June.
+3. He gave me no address, but said he was living near Portland Place.
+4. I think his object was to clear you if anything happened.
+5. When I got it I went to Scotland Yard, went over the details of the inquest, and concluded that you were the friend.
+6. We made inquiries about you, Mr Hannay, and found you were respectable.
+7. I thought I knew the motives for your disappearance-not only the police, the other one too-and when I got Harry's scrawl I guessed at the rest.
+8. I have been expecting you any time this past week."
+
+@@ steps-0023  L2  6句
+1. I felt curiously at a loose end.
+2. At first it was very pleasant to be a free man, able to go where I wanted without fearing anything.
+3. I had only been a month under the ban of the law, and it was quite enough for me.
+4. I went to the Savoy and ordered very carefully a very good luncheon, and then smoked the best cigar the house could provide.
+5. But I was still feeling nervous.
+6. When I saw anybody look at me in the lounge, I grew shy, and wondered if they were thinking about the murder.
+
+@@ steps-0024  L2  4句
+1. For twenty minutes I sat there, wondering what I was to do next.
+2. I was still perfectly convinced that I was wanted, but when or how I had no notion.
+3. I kept looking at my watch, and as the time crept on to half-past ten I began to think that the conference must soon end.
+4. In a quarter of an hour Royer should be speeding along the road to Portsmouth....
+
+@@ steps-0025  L1  5句
+1. I took my head in my hands and thought.
+2. There must be some way of reading this riddle.
+3. What did Scudder mean by steps?
+4. I thought of dock steps, but if he had meant that I didn't think he would have mentioned the number.
+5. It must be some place where there were several staircases, and one marked out from the others by having thirty-nine steps.
+
+@@ steps-0026  L3  2句
+1. The cook was not the gossiping kind, and had pretty soon shut the door in his face, but Scaife said he was positive she knew nothing.
+2. Next door there was a new house building which would give good cover for observation, and the villa on the other side was to let, and its garden was rough and shrubby.
+
+@@ steps-0027  L3  8句
+1. Presently a third figure arrived, a young man on a bicycle, with a bag of golf-clubs slung on his back.
+2. He strolled round to the tennis lawn and was welcomed riotously by the players.
+3. Evidently they were chaffing him, and their chaff sounded horribly English.
+4. Then the plump man, mopping his brow with a silk handkerchief, announced that he must have a tub.
+5. I heard his very words-"I've got into a proper lather," he said.
+6. "This will bring down my weight and my handicap, Bob.
+7. I'll take you on tomorrow and give you a stroke a hole."
+8. You couldn't find anything much more English than that.
+
+@@ steps-0028  L3  7句
+1. On the way I got a piece of solid comfort from the sight of a greyhound that was swinging along at a nursemaid's heels.
+2. He reminded me of a dog I used to have in Rhodesia, and of the time when I took him hunting with me in the Pali hills.
+3. We were after rhebok, the dun kind, and I recollected how we had followed one beast, and both he and I had clean lost it.
+4. A greyhound works by sight, and my eyes are good enough, but that buck simply leaked out of the landscape.
+5. Afterwards I found out how it managed it.
+6. Against the grey rock of the kopjes it showed no more than a crow against a thundercloud.
+7. It didn't need to run away; all it had to do was to stand still and melt into the background.
+
+@@ steps-0029  L3  5句
+1. It couldn't be acting, it was too confoundedly genuine.
+2. My heart went into my boots, and my first impulse was to apologize and clear out.
+3. But I told myself I must see it through, even though I was to be the laughing-stock of Britain.
+4. The light from the dinner-table candlesticks was not very good, and to cover my confusion I got up, walked to the door and switched on the electric light.
+5. The sudden glare made them blink, and I stood scanning the three faces.
+
+== 30 篇 / 156 句

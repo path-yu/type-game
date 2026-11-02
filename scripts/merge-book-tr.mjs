@@ -14,7 +14,10 @@ import { BEAUTY_TR } from './lib/tr-beauty.mjs';
 import { CALL_TR } from './lib/tr-call.mjs';
 import { CAROL_TR } from './lib/tr-carol.mjs';
 import { DOLITTLE_TR } from './lib/tr-dolittle.mjs';
+import { LITTLEWOMEN_TR } from './lib/tr-littlewomen.mjs';
 import { RAILWAY_TR } from './lib/tr-railway.mjs';
+import { STEPS_TR } from './lib/tr-steps.mjs';
+import { TIMEMACHINE_TR } from './lib/tr-timemachine.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')), '..');
 const DATA = path.join(ROOT, 'public/data');
@@ -22,7 +25,10 @@ const DATA = path.join(ROOT, 'public/data');
 const articles = JSON.parse(fs.readFileSync(path.join(DATA, 'articles.json'), 'utf8'));
 const tr = JSON.parse(fs.readFileSync(path.join(DATA, 'tr.json'), 'utf8'));
 
-const incoming = { ...CALL_TR, ...CAROL_TR, ...DOLITTLE_TR, ...BEAUTY_TR, ...RAILWAY_TR };
+const incoming = {
+  ...CALL_TR, ...CAROL_TR, ...DOLITTLE_TR, ...BEAUTY_TR, ...RAILWAY_TR,
+  ...STEPS_TR, ...TIMEMACHINE_TR, ...LITTLEWOMEN_TR,
+};
 const bad = [];
 let n = 0;
 
