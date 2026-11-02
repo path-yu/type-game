@@ -6072,32 +6072,32 @@
     }
    ],
    "branch": {
-    "at": 4,
-    "kind": "probe",
-    "task": "协会问你的打算，你要说得具体",
+    "at": 2,
+    "kind": "short",
+    "task": "你想要的那种没有，只能接受更大的或排更久的队",
     "prompt": {
-     "en": "What would you grow in the first year?",
-     "zh": "第一年打算种什么？"
+     "en": "Only full plots now. We stopped splitting them two years ago.",
+     "zh": "现在只有整块地。两年前就不分半块了。"
     },
     "options": [
      {
       "say": {
-       "en": "Potatoes and beans, to break up the ground.",
-       "zh": "土豆和豆子，先把土翻松。"
+       "en": "Five rods is a lot for one person, but I will take it.",
+       "zh": "五杆对一个人是多了点，那我也租。"
       },
       "react": {
-       "en": "That is the right answer. The plot is rough.",
-       "zh": "这答案对。这块地很粗。"
+       "en": "You can share the digging with a neighbour.",
+       "zh": "你可以跟隔壁分着翻地。"
       }
      },
      {
       "say": {
-       "en": "I have not decided. Is that a problem?",
-       "zh": "还没想好。有问题吗？"
+       "en": "Can I go on the list for a half plot?",
+       "zh": "能排半块地的队吗？"
       },
       "react": {
-       "en": "Not for us, but people who plan keep them longer.",
-       "zh": "对我们没问题，但有计划的人留得久。"
+       "en": "That list is closed. Full plots only.",
+       "zh": "那个队已经停了。只租整块。"
       }
      }
     ]
@@ -6174,32 +6174,32 @@
     }
    ],
    "branch": {
-    "at": 4,
-    "kind": "probe",
-    "task": "协会问你的打算，你要说得具体",
+    "at": 2,
+    "kind": "short",
+    "task": "你想要的那种没有，只能接受更大的或排更久的队",
     "prompt": {
-     "en": "What would you grow in the first year?",
-     "zh": "第一年打算种什么？"
+     "en": "Only full plots now. We stopped splitting them two years ago.",
+     "zh": "现在只有整块地。两年前就不分半块了。"
     },
     "options": [
      {
       "say": {
-       "en": "Potatoes and beans, to break up the ground.",
-       "zh": "土豆和豆子，先把土翻松。"
+       "en": "Five rods is a lot for one person, but I will take it.",
+       "zh": "五杆对一个人是多了点，那我也租。"
       },
       "react": {
-       "en": "That is the right answer. The plot is rough.",
-       "zh": "这答案对。这块地很粗。"
+       "en": "You can share the digging with a neighbour.",
+       "zh": "你可以跟隔壁分着翻地。"
       }
      },
      {
       "say": {
-       "en": "I have not decided. Is that a problem?",
-       "zh": "还没想好。有问题吗？"
+       "en": "Can I go on the list for a half plot?",
+       "zh": "能排半块地的队吗？"
       },
       "react": {
-       "en": "Not for us, but people who plan keep them longer.",
-       "zh": "对我们没问题，但有计划的人留得久。"
+       "en": "That list is closed. Full plots only.",
+       "zh": "那个队已经停了。只租整块。"
       }
      }
     ]
@@ -6684,31 +6684,31 @@
    ],
    "branch": {
     "at": 4,
-    "kind": "probe",
-    "task": "维修工要判断破损程度，你要给信息",
+    "kind": "cost",
+    "task": "报价里有一项要另算，你要问清总额再让他动手",
     "prompt": {
-     "en": "Is the water running over the edge, or leaking at a joint?",
-     "zh": "水是漫过边沿，还是接头漏？"
+     "en": "It is, but if the pipe is broken, replacing it is sixty on top.",
+     "zh": "包在内。可管道要是破了，换一根再加六十。"
     },
     "options": [
      {
       "say": {
-       "en": "Over the edge, at the corner above the door.",
-       "zh": "漫过边沿，在门上方那个角。"
+       "en": "Check the pipe first and tell me before replacing.",
+       "zh": "先看看管道，换之前告我一声。"
       },
       "react": {
-       "en": "That is a blockage, not a break. Good.",
-       "zh": "那是堵塞，不是断裂。好。"
+       "en": "I will photograph it and ring you from the roof.",
+       "zh": "我拍照，在屋顶上给你打电话。"
       }
      },
      {
       "say": {
-       "en": "It drips down the wall in the middle.",
-       "zh": "在中间顺墙往下滴。"
+       "en": "Do it all. I would rather not call you back next month.",
+       "zh": "都弄了吧。不想下个月再叫你。"
       },
       "react": {
-       "en": "Then a joint has gone. I will bring a spare section.",
-       "zh": "那是接口坏了。我带一段备件。"
+       "en": "Then a hundred and fifty, parts included.",
+       "zh": "那就算一百五，含材料。"
       }
      }
     ]
@@ -6987,31 +6987,31 @@
    ],
    "branch": {
     "at": 4,
-    "kind": "probe",
-    "task": "维修工要判断破损程度，你要给信息",
+    "kind": "cost",
+    "task": "报价里有一项要另算，你要问清总额再让他动手",
     "prompt": {
-     "en": "Is the water running over the edge, or leaking at a joint?",
-     "zh": "水是漫过边沿，还是接头漏？"
+     "en": "It is, but if the pipe is broken, replacing it is sixty on top.",
+     "zh": "包在内。可管道要是破了，换一根再加六十。"
     },
     "options": [
      {
       "say": {
-       "en": "Over the edge, at the corner above the door.",
-       "zh": "漫过边沿，在门上方那个角。"
+       "en": "Check the pipe first and tell me before replacing.",
+       "zh": "先看看管道，换之前告我一声。"
       },
       "react": {
-       "en": "That is a blockage, not a break. Good.",
-       "zh": "那是堵塞，不是断裂。好。"
+       "en": "I will photograph it and ring you from the roof.",
+       "zh": "我拍照，在屋顶上给你打电话。"
       }
      },
      {
       "say": {
-       "en": "It drips down the wall in the middle.",
-       "zh": "在中间顺墙往下滴。"
+       "en": "Do it all. I would rather not call you back next month.",
+       "zh": "都弄了吧。不想下个月再叫你。"
       },
       "react": {
-       "en": "Then a joint has gone. I will bring a spare section.",
-       "zh": "那是接口坏了。我带一段备件。"
+       "en": "Then a hundred and fifty, parts included.",
+       "zh": "那就算一百五，含材料。"
       }
      }
     ]
@@ -7390,32 +7390,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "probe",
-    "task": "客服问你的观看方式，你要说准",
+    "at": 1,
+    "kind": "change",
+    "task": "规则改了，你要问清新规则对自己算不算",
     "prompt": {
-     "en": "Do you watch anything as it is broadcast, on any device?",
-     "zh": "您在任何设备上看直播吗？"
+     "en": "From April the rule changes. Streaming-only households need one too.",
+     "zh": "四月起规则变了，只看流媒体的家庭也要交。"
     },
     "options": [
      {
       "say": {
-       "en": "The news, sometimes, on my phone.",
-       "zh": "新闻，偶尔，在手机上看。"
+       "en": "So everyone pays, whether they watch live or not?",
+       "zh": "那就是谁都逃不掉了？"
       },
       "react": {
-       "en": "Then a licence is required, phones included.",
-       "zh": "那需要执照，手机也算。"
+       "en": "Everyone who uses the player. It is the same fee.",
+       "zh": "用播放平台的都算。价钱一样。"
       }
      },
      {
       "say": {
-       "en": "Only recorded programmes.",
-       "zh": "只看录播。"
+       "en": "When does that start, exactly?",
+       "zh": "具体从什么时候开始？"
       },
       "react": {
-       "en": "Then you may not need one. Fill in the declaration.",
-       "zh": "那可能不需要。填一份声明。"
+       "en": "The first of April. The letter goes out in March.",
+       "zh": "四月一号。信三月寄出。"
       }
      }
     ]
@@ -7491,32 +7491,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "probe",
-    "task": "客服问你的观看方式，你要说准",
+    "at": 1,
+    "kind": "change",
+    "task": "规则改了，你要问清新规则对自己算不算",
     "prompt": {
-     "en": "Do you watch anything as it is broadcast, on any device?",
-     "zh": "您在任何设备上看直播吗？"
+     "en": "From April the rule changes. Streaming-only households need one too.",
+     "zh": "四月起规则变了，只看流媒体的家庭也要交。"
     },
     "options": [
      {
       "say": {
-       "en": "The news, sometimes, on my phone.",
-       "zh": "新闻，偶尔，在手机上看。"
+       "en": "So everyone pays, whether they watch live or not?",
+       "zh": "那就是谁都逃不掉了？"
       },
       "react": {
-       "en": "Then a licence is required, phones included.",
-       "zh": "那需要执照，手机也算。"
+       "en": "Everyone who uses the player. It is the same fee.",
+       "zh": "用播放平台的都算。价钱一样。"
       }
      },
      {
       "say": {
-       "en": "Only recorded programmes.",
-       "zh": "只看录播。"
+       "en": "When does that start, exactly?",
+       "zh": "具体从什么时候开始？"
       },
       "react": {
-       "en": "Then you may not need one. Fill in the declaration.",
-       "zh": "那可能不需要。填一份声明。"
+       "en": "The first of April. The letter goes out in March.",
+       "zh": "四月一号。信三月寄出。"
       }
      }
     ]
@@ -7896,31 +7896,31 @@
    ],
    "branch": {
     "at": 4,
-    "kind": "probe",
-    "task": "对方问狗的情况，你要说清",
+    "kind": "change",
+    "task": "规定变了，你要问清变化对你要做什么",
     "prompt": {
-     "en": "Has he been assessed around children and other dogs?",
-     "zh": "评估过跟孩子和其他狗的相处吗？"
+     "en": "The rules changed in April. The chip transfer is free now, but you must register with us too.",
+     "zh": "四月起规定改了。芯片过户现在免费，但你还要在本地登记。"
     },
     "options": [
      {
       "say": {
-       "en": "The rescue tested him with both. Calm, a bit shy.",
-       "zh": "救助站都测过。温和，有点怕生。"
+       "en": "Is the local register free as well?",
+       "zh": "本地登记也免费吗？"
       },
       "react": {
-       "en": "Then register him and keep the assessment letter.",
-       "zh": "那登记吧，评估信留着。"
+       "en": "Twelve a year, and it covers the park bins.",
+       "zh": "一年十二，含公园的垃圾桶。"
       }
      },
      {
       "say": {
-       "en": "Not that I know of.",
-       "zh": "据我所知没有。"
+       "en": "What happens if I do not register?",
+       "zh": "不登记会怎样？"
       },
       "react": {
-       "en": "Then walk him on a lead until you are sure.",
-       "zh": "那在确定之前都牵绳。"
+       "en": "A fixed penalty, eighty. It is cheaper to register.",
+       "zh": "定额罚款八十。登记更便宜。"
       }
      }
     ]
@@ -8300,31 +8300,31 @@
    ],
    "branch": {
     "at": 4,
-    "kind": "probe",
-    "task": "对方问狗的情况，你要说清",
+    "kind": "change",
+    "task": "规定变了，你要问清变化对你要做什么",
     "prompt": {
-     "en": "Has he been assessed around children and other dogs?",
-     "zh": "评估过跟孩子和其他狗的相处吗？"
+     "en": "The rules changed in April. The chip transfer is free now, but you must register with us too.",
+     "zh": "四月起规定改了。芯片过户现在免费，但你还要在本地登记。"
     },
     "options": [
      {
       "say": {
-       "en": "The rescue tested him with both. Calm, a bit shy.",
-       "zh": "救助站都测过。温和，有点怕生。"
+       "en": "Is the local register free as well?",
+       "zh": "本地登记也免费吗？"
       },
       "react": {
-       "en": "Then register him and keep the assessment letter.",
-       "zh": "那登记吧，评估信留着。"
+       "en": "Twelve a year, and it covers the park bins.",
+       "zh": "一年十二，含公园的垃圾桶。"
       }
      },
      {
       "say": {
-       "en": "Not that I know of.",
-       "zh": "据我所知没有。"
+       "en": "What happens if I do not register?",
+       "zh": "不登记会怎样？"
       },
       "react": {
-       "en": "Then walk him on a lead until you are sure.",
-       "zh": "那在确定之前都牵绳。"
+       "en": "A fixed penalty, eighty. It is cheaper to register.",
+       "zh": "定额罚款八十。登记更便宜。"
       }
      }
     ]
@@ -14462,31 +14462,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "probe",
-    "task": "对方问你湿度敏感的物品，你要说清",
+    "kind": "short",
+    "task": "你要的那一档租不到，只能等或降级",
     "prompt": {
-     "en": "Anything that reacts to damp, like paper or leather?",
-     "zh": "有怕潮的东西吗，比如纸或皮革？"
+     "en": "The ten-metre heated units are all taken until March.",
+     "zh": "十平米的暖气仓都租出去了，要到三月。"
     },
     "options": [
      {
       "say": {
-       "en": "Books and a leather jacket.",
-       "zh": "书和一件皮衣。"
+       "en": "Then give me the cold one and I will pack the books in plastic.",
+       "zh": "那给我不带暖气的，我把书用塑料包起来。"
       },
       "react": {
-       "en": "Then take the heated unit, or add a dehumidifier.",
-       "zh": "那要带暖气的，或者加个除湿机。"
+       "en": "That works. Five metres, fifty a month.",
+       "zh": "行。五平米，一月五十。"
       }
      },
      {
       "say": {
-       "en": "Just furniture and a bike.",
-       "zh": "只有家具和自行车。"
+       "en": "Can you call me if one comes free?",
+       "zh": "有空出来的能给我打电话吗？"
       },
       "react": {
-       "en": "Then the cheap unit is fine.",
-       "zh": "那便宜的就够。"
+       "en": "I will put you on the list. It moves fast.",
+       "zh": "我给你排上。那队走得快。"
       }
      }
     ]
@@ -14765,31 +14765,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "probe",
-    "task": "对方问你湿度敏感的物品，你要说清",
+    "kind": "short",
+    "task": "你要的那一档租不到，只能等或降级",
     "prompt": {
-     "en": "Anything that reacts to damp, like paper or leather?",
-     "zh": "有怕潮的东西吗，比如纸或皮革？"
+     "en": "The ten-metre heated units are all taken until March.",
+     "zh": "十平米的暖气仓都租出去了，要到三月。"
     },
     "options": [
      {
       "say": {
-       "en": "Books and a leather jacket.",
-       "zh": "书和一件皮衣。"
+       "en": "Then give me the cold one and I will pack the books in plastic.",
+       "zh": "那给我不带暖气的，我把书用塑料包起来。"
       },
       "react": {
-       "en": "Then take the heated unit, or add a dehumidifier.",
-       "zh": "那要带暖气的，或者加个除湿机。"
+       "en": "That works. Five metres, fifty a month.",
+       "zh": "行。五平米，一月五十。"
       }
      },
      {
       "say": {
-       "en": "Just furniture and a bike.",
-       "zh": "只有家具和自行车。"
+       "en": "Can you call me if one comes free?",
+       "zh": "有空出来的能给我打电话吗？"
       },
       "react": {
-       "en": "Then the cheap unit is fine.",
-       "zh": "那便宜的就够。"
+       "en": "I will put you on the list. It moves fast.",
+       "zh": "我给你排上。那队走得快。"
       }
      }
     ]
@@ -14967,31 +14967,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "offer",
-    "task": "对方给了一个挽留方案，你要判断",
+    "kind": "cost",
+    "task": "能退，但要付一笔，你要判断值不值",
     "prompt": {
-     "en": "I can move you to the off-peak rate, twenty a month.",
-     "zh": "可以给您转非高峰价，一个月二十。"
+     "en": "We can cancel today, but there is a thirty-pound early release fee.",
+     "zh": "今天就能退，不过提前解约有三十镑的费用。"
     },
     "options": [
      {
       "say": {
-       "en": "Would I still be able to swim at six in the morning?",
-       "zh": "早上六点还能游吗？"
+       "en": "Thirty is less than two months of fees. Do it.",
+       "zh": "三十比两个月的会费少。退吧。"
       },
       "react": {
-       "en": "That is peak. You would need the full rate.",
-       "zh": "那是高峰。得按全价。"
+       "en": "Done. No further payments.",
+       "zh": "办好了。之后不再扣款。"
       }
      },
      {
       "say": {
-       "en": "Twenty is fair. Let us do that.",
-       "zh": "二十可以。就这个吧。"
+       "en": "Is there a way to avoid the fee?",
+       "zh": "有没有办法免掉？"
       },
       "react": {
-       "en": "I will switch it from next month.",
-       "zh": "下月起给您转。"
+       "en": "Freeze it for three months instead. No fee.",
+       "zh": "改成冻结三个月。不收费。"
       }
      }
     ]
@@ -15472,31 +15472,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "offer",
-    "task": "对方给了一个挽留方案，你要判断",
+    "kind": "cost",
+    "task": "能退，但要付一笔，你要判断值不值",
     "prompt": {
-     "en": "I can move you to the off-peak rate, twenty a month.",
-     "zh": "可以给您转非高峰价，一个月二十。"
+     "en": "We can cancel today, but there is a thirty-pound early release fee.",
+     "zh": "今天就能退，不过提前解约有三十镑的费用。"
     },
     "options": [
      {
       "say": {
-       "en": "Would I still be able to swim at six in the morning?",
-       "zh": "早上六点还能游吗？"
+       "en": "Thirty is less than two months of fees. Do it.",
+       "zh": "三十比两个月的会费少。退吧。"
       },
       "react": {
-       "en": "That is peak. You would need the full rate.",
-       "zh": "那是高峰。得按全价。"
+       "en": "Done. No further payments.",
+       "zh": "办好了。之后不再扣款。"
       }
      },
      {
       "say": {
-       "en": "Twenty is fair. Let us do that.",
-       "zh": "二十可以。就这个吧。"
+       "en": "Is there a way to avoid the fee?",
+       "zh": "有没有办法免掉？"
       },
       "react": {
-       "en": "I will switch it from next month.",
-       "zh": "下月起给您转。"
+       "en": "Freeze it for three months instead. No fee.",
+       "zh": "改成冻结三个月。不收费。"
       }
      }
     ]
@@ -15674,31 +15674,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "probe",
-    "task": "柜台问你有没有前租客的信，你要决定",
+    "kind": "cost",
+    "task": "想加的东西要另付，你要问清单价",
     "prompt": {
-     "en": "Do you want their names on the redirect too? It costs six more.",
-     "zh": "要把他们的名字也加上吗？多六镑。"
+     "en": "You can, but each extra name is five pounds.",
+     "zh": "可以，不过每加一个名字五镑。"
     },
     "options": [
      {
       "say": {
-       "en": "Yes. Their bank letters keep coming.",
-       "zh": "加。他们的银行信一直来。"
+       "en": "Just the one name, then.",
+       "zh": "那就加一个。"
       },
       "react": {
-       "en": "That will stop most of it.",
-       "zh": "这样能挡掉大半。"
+       "en": "Added. The redirect starts on the sixth.",
+       "zh": "加好了。转寄六号开始。"
       }
      },
      {
       "say": {
-       "en": "No. I will return anything that is not mine.",
-       "zh": "不用。不是我的我退回。"
+       "en": "Do I really need it?",
+       "zh": "真有必要吗？"
       },
       "react": {
-       "en": "Write return to sender on them.",
-       "zh": "在上面写「退回寄件人」。"
+       "en": "It stops the bank writing to them by mistake.",
+       "zh": "能防止银行错寄给他们。"
       }
      }
     ]
@@ -15876,31 +15876,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "probe",
-    "task": "柜台问你有没有前租客的信，你要决定",
+    "kind": "cost",
+    "task": "想加的东西要另付，你要问清单价",
     "prompt": {
-     "en": "Do you want their names on the redirect too? It costs six more.",
-     "zh": "要把他们的名字也加上吗？多六镑。"
+     "en": "You can, but each extra name is five pounds.",
+     "zh": "可以，不过每加一个名字五镑。"
     },
     "options": [
      {
       "say": {
-       "en": "Yes. Their bank letters keep coming.",
-       "zh": "加。他们的银行信一直来。"
+       "en": "Just the one name, then.",
+       "zh": "那就加一个。"
       },
       "react": {
-       "en": "That will stop most of it.",
-       "zh": "这样能挡掉大半。"
+       "en": "Added. The redirect starts on the sixth.",
+       "zh": "加好了。转寄六号开始。"
       }
      },
      {
       "say": {
-       "en": "No. I will return anything that is not mine.",
-       "zh": "不用。不是我的我退回。"
+       "en": "Do I really need it?",
+       "zh": "真有必要吗？"
       },
       "react": {
-       "en": "Write return to sender on them.",
-       "zh": "在上面写「退回寄件人」。"
+       "en": "It stops the bank writing to them by mistake.",
+       "zh": "能防止银行错寄给他们。"
       }
      }
     ]
@@ -16380,32 +16380,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "probe",
-    "task": "客服问你住处情况，你要说清",
+    "at": 3,
+    "kind": "change",
+    "task": "报数的方式变了，你要问清怎么弄",
     "prompt": {
-     "en": "Is the property metered, or is it a fixed charge?",
-     "zh": "这套房是装表计量，还是固定收费？"
+     "en": "From this month we only take readings by photo in the app. No phone readings.",
+     "zh": "这个月起只收 app 里拍照报数。电话报的不算了。"
     },
     "options": [
      {
       "say": {
-       "en": "Metered. I can read it now if you wait.",
-       "zh": "装表。你等我一下，我现在能读。"
+       "en": "I do not have the app. Can I email a photo?",
+       "zh": "我没装那个 app。能邮件发照片吗？"
       },
       "react": {
-       "en": "I will hold. Read the black numbers only.",
-       "zh": "我等着。只读黑色数字。"
+       "en": "Email works this month, while the app is new.",
+       "zh": "这个月邮件也行，app 刚上。"
       }
      },
      {
       "say": {
-       "en": "I do not know. The bill says cubic metres.",
-       "zh": "我不知道。账单上写的是立方米。"
+       "en": "Fine, I will download it now.",
+       "zh": "行，我现在就下。"
       },
       "react": {
-       "en": "Then it is metered. The meter is usually outside.",
-       "zh": "那是装表的。表一般在外面。"
+       "en": "Take the photo in daylight, digits clear.",
+       "zh": "白天拍，数字要清楚。"
       }
      }
     ]
@@ -16481,32 +16481,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "probe",
-    "task": "客服问你住处情况，你要说清",
+    "at": 3,
+    "kind": "change",
+    "task": "报数的方式变了，你要问清怎么弄",
     "prompt": {
-     "en": "Is the property metered, or is it a fixed charge?",
-     "zh": "这套房是装表计量，还是固定收费？"
+     "en": "From this month we only take readings by photo in the app. No phone readings.",
+     "zh": "这个月起只收 app 里拍照报数。电话报的不算了。"
     },
     "options": [
      {
       "say": {
-       "en": "Metered. I can read it now if you wait.",
-       "zh": "装表。你等我一下，我现在能读。"
+       "en": "I do not have the app. Can I email a photo?",
+       "zh": "我没装那个 app。能邮件发照片吗？"
       },
       "react": {
-       "en": "I will hold. Read the black numbers only.",
-       "zh": "我等着。只读黑色数字。"
+       "en": "Email works this month, while the app is new.",
+       "zh": "这个月邮件也行，app 刚上。"
       }
      },
      {
       "say": {
-       "en": "I do not know. The bill says cubic metres.",
-       "zh": "我不知道。账单上写的是立方米。"
+       "en": "Fine, I will download it now.",
+       "zh": "行，我现在就下。"
       },
       "react": {
-       "en": "Then it is metered. The meter is usually outside.",
-       "zh": "那是装表的。表一般在外面。"
+       "en": "Take the photo in daylight, digits clear.",
+       "zh": "白天拍，数字要清楚。"
       }
      }
     ]
@@ -16784,32 +16784,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "probe",
-    "task": "热线要确认位置，你要说准",
+    "at": 1,
+    "kind": "short",
+    "task": "负责的人手没有，要么等、要么换个说法催",
     "prompt": {
-     "en": "Is the lamp on the road side or the pavement side?",
-     "zh": "灯在车道那边还是人行道那边？"
+     "en": "We have no lighting engineer this week. That work goes to a contractor.",
+     "zh": "这周没有路灯的电工。那种活得转给外包。"
     },
     "options": [
      {
       "say": {
-       "en": "Pavement side, right above the crossing.",
-       "zh": "人行道那边，就在人行横道上方。"
+       "en": "How long does the contractor take?",
+       "zh": "外包要多久？"
       },
       "react": {
-       "en": "That one has been reported twice today.",
-       "zh": "那盏今天已经报过两次了。"
+       "en": "Ten days, unless it is marked dangerous.",
+       "zh": "十天，除非标成危险。"
       }
      },
      {
       "say": {
-       "en": "I am not sure. It is the one that flickers.",
-       "zh": "我不确定。就是那盏一直闪的。"
+       "en": "A school is on that corner. Can you mark it dangerous?",
+       "zh": "那个转角有学校。能标成危险吗？"
       },
       "react": {
-       "en": "Then I know the one. Thank you.",
-       "zh": "那我知道是哪盏了。谢谢。"
+       "en": "I can. That puts it at three days.",
+       "zh": "可以。那样就三天。"
       }
      }
     ]
@@ -17289,32 +17289,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "probe",
-    "task": "热线要确认位置，你要说准",
+    "at": 1,
+    "kind": "short",
+    "task": "负责的人手没有，要么等、要么换个说法催",
     "prompt": {
-     "en": "Is the lamp on the road side or the pavement side?",
-     "zh": "灯在车道那边还是人行道那边？"
+     "en": "We have no lighting engineer this week. That work goes to a contractor.",
+     "zh": "这周没有路灯的电工。那种活得转给外包。"
     },
     "options": [
      {
       "say": {
-       "en": "Pavement side, right above the crossing.",
-       "zh": "人行道那边，就在人行横道上方。"
+       "en": "How long does the contractor take?",
+       "zh": "外包要多久？"
       },
       "react": {
-       "en": "That one has been reported twice today.",
-       "zh": "那盏今天已经报过两次了。"
+       "en": "Ten days, unless it is marked dangerous.",
+       "zh": "十天，除非标成危险。"
       }
      },
      {
       "say": {
-       "en": "I am not sure. It is the one that flickers.",
-       "zh": "我不确定。就是那盏一直闪的。"
+       "en": "A school is on that corner. Can you mark it dangerous?",
+       "zh": "那个转角有学校。能标成危险吗？"
       },
       "react": {
-       "en": "Then I know the one. Thank you.",
-       "zh": "那我知道是哪盏了。谢谢。"
+       "en": "I can. That puts it at three days.",
+       "zh": "可以。那样就三天。"
       }
      }
     ]
@@ -17592,32 +17592,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "probe",
-    "task": "店员问你的预算，你要说范围",
+    "at": 3,
+    "kind": "change",
+    "task": "做法变了，你要问清时间和替代办法",
     "prompt": {
-     "en": "Do you want the full list now, or start with the essentials?",
-     "zh": "现在买全套，还是先买必需的？"
+     "en": "This year the badge is sewn on by the supplier. Six weeks from order.",
+     "zh": "今年校徽由供应商缝。下单起六周。"
     },
     "options": [
      {
       "say": {
-       "en": "Essentials first. The rest after the first week.",
-       "zh": "先买必需的。其余开学一周后再补。"
+       "en": "Six weeks? School starts in four.",
+       "zh": "六周？开学只剩四周。"
       },
       "react": {
-       "en": "Then two shirts and one blazer today.",
-       "zh": "那今天两件衬衫加一件外套。"
+       "en": "Order today and it arrives the second week.",
+       "zh": "今天下单，第二周能到。"
       }
      },
      {
       "say": {
-       "en": "The full list. I would rather not come back.",
-       "zh": "全套吧。我不想再来一趟。"
+       "en": "Can I sew it on myself and save the wait?",
+       "zh": "我自己缝能省这时间吗？"
       },
       "react": {
-       "en": "I will tick everything off as we go.",
-       "zh": "我们一条条勾掉。"
+       "en": "You can, but the stitch has to match.",
+       "zh": "可以，但针脚要对得上。"
       }
      }
     ]
@@ -17895,32 +17895,32 @@
     }
    ],
    "branch": {
-    "at": 5,
-    "kind": "probe",
-    "task": "店员问你的预算，你要说范围",
+    "at": 3,
+    "kind": "change",
+    "task": "做法变了，你要问清时间和替代办法",
     "prompt": {
-     "en": "Do you want the full list now, or start with the essentials?",
-     "zh": "现在买全套，还是先买必需的？"
+     "en": "This year the badge is sewn on by the supplier. Six weeks from order.",
+     "zh": "今年校徽由供应商缝。下单起六周。"
     },
     "options": [
      {
       "say": {
-       "en": "Essentials first. The rest after the first week.",
-       "zh": "先买必需的。其余开学一周后再补。"
+       "en": "Six weeks? School starts in four.",
+       "zh": "六周？开学只剩四周。"
       },
       "react": {
-       "en": "Then two shirts and one blazer today.",
-       "zh": "那今天两件衬衫加一件外套。"
+       "en": "Order today and it arrives the second week.",
+       "zh": "今天下单，第二周能到。"
       }
      },
      {
       "say": {
-       "en": "The full list. I would rather not come back.",
-       "zh": "全套吧。我不想再来一趟。"
+       "en": "Can I sew it on myself and save the wait?",
+       "zh": "我自己缝能省这时间吗？"
       },
       "react": {
-       "en": "I will tick everything off as we go.",
-       "zh": "我们一条条勾掉。"
+       "en": "You can, but the stitch has to match.",
+       "zh": "可以，但针脚要对得上。"
       }
      }
     ]
@@ -18602,32 +18602,32 @@
     }
    ],
    "branch": {
-    "at": 3,
-    "kind": "probe",
-    "task": "对方说了句真心话，你要接得合适",
+    "at": 1,
+    "kind": "offer",
+    "task": "对方提出一个你没想过的安排，你要判断接不接受",
     "prompt": {
-     "en": "Honestly, some days I regret how much this changed everything.",
-     "zh": "说实话，有些天我后悔这一切改变得太多了。"
+     "en": "Tired. Look, we have a spare key. Drop round any time you need an hour.",
+     "zh": "累。这样，我们有把备用钥匙。你想歇一小时随时来。"
     },
     "options": [
      {
       "say": {
-       "en": "That sounds normal, and nobody says it out loud.",
-       "zh": "这很正常，只是没人说出口。"
+       "en": "Are you sure? That is a lot to offer.",
+       "zh": "你们确定？这可不是小事。"
       },
       "react": {
-       "en": "Thank you for not saying it gets easier.",
-       "zh": "谢谢你没说「会好起来的」。"
+       "en": "You are the third person we have offered it to.",
+       "zh": "你是第三个了。"
       }
      },
      {
       "say": {
-       "en": "Do you want to talk about it, or would you rather not?",
-       "zh": "你想聊，还是不想聊？"
+       "en": "I will take it, but I will text first.",
+       "zh": "我拿着，但来之前一定发消息。"
       },
       "react": {
-       "en": "Not today. Ask me in a month.",
-       "zh": "今天不聊。一个月后再问。"
+       "en": "Please do. Mornings are easier.",
+       "zh": "一定。上午比较方便。"
       }
      }
     ]
@@ -18804,32 +18804,32 @@
     }
    ],
    "branch": {
-    "at": 3,
-    "kind": "probe",
-    "task": "对方说了句真心话，你要接得合适",
+    "at": 1,
+    "kind": "offer",
+    "task": "对方提出一个你没想过的安排，你要判断接不接受",
     "prompt": {
-     "en": "Honestly, some days I regret how much this changed everything.",
-     "zh": "说实话，有些天我后悔这一切改变得太多了。"
+     "en": "Tired. Look, we have a spare key. Drop round any time you need an hour.",
+     "zh": "累。这样，我们有把备用钥匙。你想歇一小时随时来。"
     },
     "options": [
      {
       "say": {
-       "en": "That sounds normal, and nobody says it out loud.",
-       "zh": "这很正常，只是没人说出口。"
+       "en": "Are you sure? That is a lot to offer.",
+       "zh": "你们确定？这可不是小事。"
       },
       "react": {
-       "en": "Thank you for not saying it gets easier.",
-       "zh": "谢谢你没说「会好起来的」。"
+       "en": "You are the third person we have offered it to.",
+       "zh": "你是第三个了。"
       }
      },
      {
       "say": {
-       "en": "Do you want to talk about it, or would you rather not?",
-       "zh": "你想聊，还是不想聊？"
+       "en": "I will take it, but I will text first.",
+       "zh": "我拿着，但来之前一定发消息。"
       },
       "react": {
-       "en": "Not today. Ask me in a month.",
-       "zh": "今天不聊。一个月后再问。"
+       "en": "Please do. Mornings are easier.",
+       "zh": "一定。上午比较方便。"
       }
      }
     ]
@@ -19209,31 +19209,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "probe",
-    "task": "老师问你的处理方式，你要表态",
+    "kind": "change",
+    "task": "处理方式变了，你要问清后面会怎样",
     "prompt": {
-     "en": "How do you usually handle this at home?",
-     "zh": "你们在家一般怎么处理这种情况？"
+     "en": "It goes on record now. A second incident means a meeting with the head.",
+     "zh": "这次要记录在案。再有第二次就要见校长。"
     },
     "options": [
      {
       "say": {
-       "en": "We talk about what he could have done instead.",
-       "zh": "我们聊他本可以怎么做。"
+       "en": "Is that on both children or only mine?",
+       "zh": "两个孩子都记，还是只记我家这个？"
       },
       "react": {
-       "en": "That is consistent with what we do here.",
-       "zh": "跟我们这边的做法一致。"
+       "en": "Both. It is the same entry.",
+       "zh": "都记。同一条记录。"
       }
      },
      {
       "say": {
-       "en": "I am not sure. This is new for us.",
-       "zh": "我不太确定。这对我们是新情况。"
+       "en": "Understood. I would rather know now than later.",
+       "zh": "明白。早知道比晚知道好。"
       },
       "react": {
-       "en": "Then let us agree on one line to use with her.",
-       "zh": "那我们统一一句对她说的话。"
+       "en": "That is the right attitude. We will tell you either way.",
+       "zh": "这态度对。有事我们都会告诉你。"
       }
      }
     ]
@@ -19714,31 +19714,31 @@
    ],
    "branch": {
     "at": 5,
-    "kind": "probe",
-    "task": "老师问你的处理方式，你要表态",
+    "kind": "change",
+    "task": "处理方式变了，你要问清后面会怎样",
     "prompt": {
-     "en": "How do you usually handle this at home?",
-     "zh": "你们在家一般怎么处理这种情况？"
+     "en": "It goes on record now. A second incident means a meeting with the head.",
+     "zh": "这次要记录在案。再有第二次就要见校长。"
     },
     "options": [
      {
       "say": {
-       "en": "We talk about what he could have done instead.",
-       "zh": "我们聊他本可以怎么做。"
+       "en": "Is that on both children or only mine?",
+       "zh": "两个孩子都记，还是只记我家这个？"
       },
       "react": {
-       "en": "That is consistent with what we do here.",
-       "zh": "跟我们这边的做法一致。"
+       "en": "Both. It is the same entry.",
+       "zh": "都记。同一条记录。"
       }
      },
      {
       "say": {
-       "en": "I am not sure. This is new for us.",
-       "zh": "我不太确定。这对我们是新情况。"
+       "en": "Understood. I would rather know now than later.",
+       "zh": "明白。早知道比晚知道好。"
       },
       "react": {
-       "en": "Then let us agree on one line to use with her.",
-       "zh": "那我们统一一句对她说的话。"
+       "en": "That is the right attitude. We will tell you either way.",
+       "zh": "这态度对。有事我们都会告诉你。"
       }
      }
     ]
@@ -42537,31 +42537,31 @@
    ],
    "branch": {
     "at": 4,
-    "kind": "cost",
-    "task": "对方提示还有一笔费用，你要算总成本",
+    "kind": "change",
+    "task": "时效变了，你要重新安排",
     "prompt": {
-     "en": "The receiving bank may charge a fee at their end as well.",
-     "zh": "收款行那边可能也收费。"
+     "en": "We changed provider last month. It is two to three working days now.",
+     "zh": "上个月换了渠道。现在要两到三个工作日。"
     },
     "options": [
      {
       "say": {
-       "en": "Then the total could be twenty pounds. Is there a cheaper option?",
-       "zh": "那总共可能二十镑。有更便宜的吗？"
+       "en": "That is slower than before. Is there a faster option?",
+       "zh": "比从前慢了。有更快的吗？"
       },
       "react": {
-       "en": "The online service is six, but takes two days.",
-       "zh": "线上六镑，但要两天。"
+       "en": "Express is twenty-five pounds and arrives tomorrow.",
+       "zh": "加急二十五镑，明天到。"
       }
      },
      {
       "say": {
-       "en": "Do you know how much they charge?",
-       "zh": "你知道他们收多少吗？"
+       "en": "Two days is fine. My parents are not in a hurry.",
+       "zh": "两天可以。我父母不着急。"
       },
       "react": {
-       "en": "Usually the equivalent of two or three pounds.",
-       "zh": "一般折合两三镑。"
+       "en": "Then standard it is. Keep the receipt.",
+       "zh": "那就普通。收好回执。"
       }
      }
     ]
@@ -42941,31 +42941,31 @@
    ],
    "branch": {
     "at": 4,
-    "kind": "cost",
-    "task": "对方提示还有一笔费用，你要算总成本",
+    "kind": "change",
+    "task": "时效变了，你要重新安排",
     "prompt": {
-     "en": "The receiving bank may charge a fee at their end as well.",
-     "zh": "收款行那边可能也收费。"
+     "en": "We changed provider last month. It is two to three working days now.",
+     "zh": "上个月换了渠道。现在要两到三个工作日。"
     },
     "options": [
      {
       "say": {
-       "en": "Then the total could be twenty pounds. Is there a cheaper option?",
-       "zh": "那总共可能二十镑。有更便宜的吗？"
+       "en": "That is slower than before. Is there a faster option?",
+       "zh": "比从前慢了。有更快的吗？"
       },
       "react": {
-       "en": "The online service is six, but takes two days.",
-       "zh": "线上六镑，但要两天。"
+       "en": "Express is twenty-five pounds and arrives tomorrow.",
+       "zh": "加急二十五镑，明天到。"
       }
      },
      {
       "say": {
-       "en": "Do you know how much they charge?",
-       "zh": "你知道他们收多少吗？"
+       "en": "Two days is fine. My parents are not in a hurry.",
+       "zh": "两天可以。我父母不着急。"
       },
       "react": {
-       "en": "Usually the equivalent of two or three pounds.",
-       "zh": "一般折合两三镑。"
+       "en": "Then standard it is. Keep the receipt.",
+       "zh": "那就普通。收好回执。"
       }
      }
     ]
@@ -43445,32 +43445,32 @@
     }
    ],
    "branch": {
-    "at": 4,
-    "kind": "probe",
-    "task": "客服要确认卡在你手上，你要配合",
+    "at": 6,
+    "kind": "offer",
+    "task": "对方主动加一件你没提的事，你要判断要不要",
     "prompt": {
-     "en": "Can you confirm the last three transactions on the card?",
-     "zh": "能确认一下这张卡最近三笔消费吗？"
+     "en": "You will. And we can courier a new card to you tomorrow.",
+     "zh": "会的。而且明天可以用快递给你寄张新卡。"
     },
     "options": [
      {
       "say": {
-       "en": "Groceries on Monday, a bus ticket, and coffee this morning.",
-       "zh": "周一超市、一张车票、今早咖啡。"
+       "en": "Yes please. I need it before the weekend.",
+       "zh": "要。周末前得拿到。"
       },
       "react": {
-       "en": "That matches. Freezing it now.",
-       "zh": "对上了。现在冻结。"
+       "en": "Before nine tomorrow, signed for.",
+       "zh": "明天九点前，要签收。"
       }
      },
      {
       "say": {
-       "en": "I do not remember the exact amounts.",
-       "zh": "我不记得具体金额。"
+       "en": "I will keep this one until the dispute is settled.",
+       "zh": "我先用这张，等争议处理完再说。"
       },
       "react": {
-       "en": "Then I will ask you to check the app while I wait.",
-       "zh": "那请你看一下 app，我等着。"
+       "en": "Then keep it frozen for online payments.",
+       "zh": "那先冻结它的线上支付。"
       }
      }
     ]
@@ -43647,32 +43647,32 @@
     }
    ],
    "branch": {
-    "at": 4,
-    "kind": "probe",
-    "task": "客服要确认卡在你手上，你要配合",
+    "at": 6,
+    "kind": "offer",
+    "task": "对方主动加一件你没提的事，你要判断要不要",
     "prompt": {
-     "en": "Can you confirm the last three transactions on the card?",
-     "zh": "能确认一下这张卡最近三笔消费吗？"
+     "en": "You will. And we can courier a new card to you tomorrow.",
+     "zh": "会的。而且明天可以用快递给你寄张新卡。"
     },
     "options": [
      {
       "say": {
-       "en": "Groceries on Monday, a bus ticket, and coffee this morning.",
-       "zh": "周一超市、一张车票、今早咖啡。"
+       "en": "Yes please. I need it before the weekend.",
+       "zh": "要。周末前得拿到。"
       },
       "react": {
-       "en": "That matches. Freezing it now.",
-       "zh": "对上了。现在冻结。"
+       "en": "Before nine tomorrow, signed for.",
+       "zh": "明天九点前，要签收。"
       }
      },
      {
       "say": {
-       "en": "I do not remember the exact amounts.",
-       "zh": "我不记得具体金额。"
+       "en": "I will keep this one until the dispute is settled.",
+       "zh": "我先用这张，等争议处理完再说。"
       },
       "react": {
-       "en": "Then I will ask you to check the app while I wait.",
-       "zh": "那请你看一下 app，我等着。"
+       "en": "Then keep it frozen for online payments.",
+       "zh": "那先冻结它的线上支付。"
       }
      }
     ]

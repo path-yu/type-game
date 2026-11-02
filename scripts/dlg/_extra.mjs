@@ -163,6 +163,148 @@ export const EXTRA = {
     for: ['租四小时搬沙发', '超高'],
   },
 
+  /* ---------------- 租菜地：只能整块租 ---------------- */
+  allotment: {
+    // at 2 = "Yes. What size are the plots?"
+    branch: B(2, 'short', '你想要的那种没有，只能接受更大的或排更久的队',
+      S('Only full plots now. We stopped splitting them two years ago.', '现在只有整块地。两年前就不分半块了。'),
+      [O(S('Five rods is a lot for one person, but I will take it.', '五杆对一个人是多了点，那我也租。'), S('You can share the digging with a neighbour.', '你可以跟隔壁分着翻地。')),
+       O(S('Can I go on the list for a half plot?', '能排半块地的队吗？'), S('That list is closed. Full plots only.', '那个队已经停了。只租整块。'))]),
+    for: ['半块地', '排队租菜地'],
+  },
+
+  /* ---------------- 清排水槽：管道另算 ---------------- */
+  gutter: {
+    // at 4 = "Is that including the downpipe?"
+    // 不能放在 at 2：那句话后面对方正好报出"九十包管道"，
+    // 岔路若在这里先说了管道的价钱，下一页你又问"包不包管道"，就成了自问自答。
+    branch: B(4, 'cost', '报价里有一项要另算，你要问清总额再让他动手',
+      S('It is, but if the pipe is broken, replacing it is sixty on top.', '包在内。可管道要是破了，换一根再加六十。'),
+      [O(S('Check the pipe first and tell me before replacing.', '先看看管道，换之前告我一声。'), S('I will photograph it and ring you from the roof.', '我拍照，在屋顶上给你打电话。')),
+       O(S('Do it all. I would rather not call you back next month.', '都弄了吧。不想下个月再叫你。'), S('Then a hundred and fifty, parts included.', '那就算一百五，含材料。'))]),
+    for: ['报价', '排水槽溢出'],
+  },
+
+  /* ---------------- 电视执照：规则要变 ---------------- */
+  'tv-licence': {
+    // at 1 = "Mostly streaming, but I watch the news live."
+    branch: B(1, 'change', '规则改了，你要问清新规则对自己算不算',
+      S('From April the rule changes. Streaming-only households need one too.', '四月起规则变了，只看流媒体的家庭也要交。'),
+      [O(S('So everyone pays, whether they watch live or not?', '那就是谁都逃不掉了？'), S('Everyone who uses the player. It is the same fee.', '用播放平台的都算。价钱一样。')),
+       O(S('When does that start, exactly?', '具体从什么时候开始？'), S('The first of April. The letter goes out in March.', '四月一号。信三月寄出。'))]),
+    for: ['只看流媒体', '学生宿舍'],
+  },
+
+  /* ---------------- 狗登记：法规改过 ---------------- */
+  'dog-register': {
+    // at 4 = "Do I need a licence as well?"
+    branch: B(4, 'change', '规定变了，你要问清变化对你要做什么',
+      S('The rules changed in April. The chip transfer is free now, but you must register with us too.', '四月起规定改了。芯片过户现在免费，但你还要在本地登记。'),
+      [O(S('Is the local register free as well?', '本地登记也免费吗？'), S('Twelve a year, and it covers the park bins.', '一年十二，含公园的垃圾桶。')),
+       O(S('What happens if I do not register?', '不登记会怎样？'), S('A fixed penalty, eighty. It is cheaper to register.', '定额罚款八十。登记更便宜。'))]),
+    for: ['领养狗要登记', '攻击'],
+  },
+
+  /* ---------------- 自助仓储：带暖气的租不到 ---------------- */
+  storage: {
+    // at 5 = "What does that cost?"
+    branch: B(5, 'short', '你要的那一档租不到，只能等或降级',
+      S('The ten-metre heated units are all taken until March.', '十平米的暖气仓都租出去了，要到三月。'),
+      [O(S('Then give me the cold one and I will pack the books in plastic.', '那给我不带暖气的，我把书用塑料包起来。'), S('That works. Five metres, fifty a month.', '行。五平米，一月五十。')),
+       O(S('Can you call me if one comes free?', '有空出来的能给我打电话吗？'), S('I will put you on the list. It moves fast.', '我给你排上。那队走得快。'))]),
+    for: ['要暖气', '大件'],
+  },
+
+  /* ---------------- 退健身房：提前解约要付费 ---------------- */
+  'gym-cancel': {
+    // at 5 = "I checked. It has no pool, and that is why I joined."
+    branch: B(5, 'cost', '能退，但要付一笔，你要判断值不值',
+      S('We can cancel today, but there is a thirty-pound early release fee.', '今天就能退，不过提前解约有三十镑的费用。'),
+      [O(S('Thirty is less than two months of fees. Do it.', '三十比两个月的会费少。退吧。'), S('Done. No further payments.', '办好了。之后不再扣款。')),
+       O(S('Is there a way to avoid the fee?', '有没有办法免掉？'), S('Freeze it for three months instead. No fee.', '改成冻结三个月。不收费。'))]),
+    for: ['搬家离太远', '扣款'],
+  },
+
+  /* ---------------- 跨境汇款：换了渠道，慢了 ---------------- */
+  remittance: {
+    // at 4 = "When will it arrive?"
+    branch: B(4, 'change', '时效变了，你要重新安排',
+      S('We changed provider last month. It is two to three working days now.', '上个月换了渠道。现在要两到三个工作日。'),
+      [O(S('That is slower than before. Is there a faster option?', '比从前慢了。有更快的吗？'), S('Express is twenty-five pounds and arrives tomorrow.', '加急二十五镑，明天到。')),
+       O(S('Two days is fine. My parents are not in a hurry.', '两天可以。我父母不着急。'), S('Then standard it is. Keep the receipt.', '那就普通。收好回执。'))]),
+    for: ['要更快', '限额'],
+  },
+
+  /* ---------------- 争议款：给你寄新卡 ---------------- */
+  'card-dispute': {
+    // at 6 = "Will I get the money back while you investigate?"
+    branch: B(6, 'offer', '对方主动加一件你没提的事，你要判断要不要',
+      S('You will. And we can courier a new card to you tomorrow.', '会的。而且明天可以用快递给你寄张新卡。'),
+      [O(S('Yes please. I need it before the weekend.', '要。周末前得拿到。'), S('Before nine tomorrow, signed for.', '明天九点前，要签收。')),
+       O(S('I will keep this one until the dispute is settled.', '我先用这张，等争议处理完再说。'), S('Then keep it frozen for online payments.', '那先冻结它的线上支付。'))]),
+    for: ['新卡', '境外盗刷'],
+  },
+
+  /* ---------------- 邮件转寄：加名字要钱 ---------------- */
+  'mail-redirect': {
+    // at 5 = "Can I add the old tenant names?"
+    branch: B(5, 'cost', '想加的东西要另付，你要问清单价',
+      S('You can, but each extra name is five pounds.', '可以，不过每加一个名字五镑。'),
+      [O(S('Just the one name, then.', '那就加一个。'), S('Added. The redirect starts on the sixth.', '加好了。转寄六号开始。')),
+       O(S('Do I really need it?', '真有必要吗？'), S('It stops the bank writing to them by mistake.', '能防止银行错寄给他们。'))]),
+    for: ['期限', '改地址'],
+  },
+
+  /* ---------------- 水费：只能拍照报数 ---------------- */
+  'water-bill': {
+    // at 3 = "No. It says estimated on the bill."
+    branch: B(3, 'change', '报数的方式变了，你要问清怎么弄',
+      S('From this month we only take readings by photo in the app. No phone readings.', '这个月起只收 app 里拍照报数。电话报的不算了。'),
+      [O(S('I do not have the app. Can I email a photo?', '我没装那个 app。能邮件发照片吗？'), S('Email works this month, while the app is new.', '这个月邮件也行，app 刚上。')),
+       O(S('Fine, I will download it now.', '行，我现在就下。'), S('Take the photo in daylight, digits clear.', '白天拍，数字要清楚。'))]),
+    for: ['换表', '新住户'],
+  },
+
+  /* ---------------- 路灯：这周没有电工 ---------------- */
+  'street-light': {
+    // at 1 = "Elm Road, outside number fourteen. Dark for a week."
+    branch: B(1, 'short', '负责的人手没有，要么等、要么换个说法催',
+      S('We have no lighting engineer this week. That work goes to a contractor.', '这周没有路灯的电工。那种活得转给外包。'),
+      [O(S('How long does the contractor take?', '外包要多久？'), S('Ten days, unless it is marked dangerous.', '十天，除非标成危险。')),
+       O(S('A school is on that corner. Can you mark it dangerous?', '那个转角有学校。能标成危险吗？'), S('I can. That puts it at three days.', '可以。那样就三天。'))]),
+    for: ['路灯坏了一周', '跟进'],
+  },
+
+  /* ---------------- 买校服：校徽改由供应商缝 ---------------- */
+  'school-uniform': {
+    // at 3 = "Do the blazers come with the badge?"
+    branch: B(3, 'change', '做法变了，你要问清时间和替代办法',
+      S('This year the badge is sewn on by the supplier. Six weeks from order.', '今年校徽由供应商缝。下单起六周。'),
+      [O(S('Six weeks? School starts in four.', '六周？开学只剩四周。'), S('Order today and it arrives the second week.', '今天下单，第二周能到。')),
+       O(S('Can I sew it on myself and save the wait?', '我自己缝能省这时间吗？'), S('You can, but the stitch has to match.', '可以，但针脚要对得上。'))]),
+    for: ['刺绣', '尺码'],
+  },
+
+  /* ---------------- 看新生儿：对方主动给钥匙 ---------------- */
+  'baby-visit': {
+    // at 1 = "Congratulations. How are you holding up?"
+    branch: B(1, 'offer', '对方提出一个你没想过的安排，你要判断接不接受',
+      S('Tired. Look, we have a spare key. Drop round any time you need an hour.', '累。这样，我们有把备用钥匙。你想歇一小时随时来。'),
+      [O(S('Are you sure? That is a lot to offer.', '你们确定？这可不是小事。'), S('You are the third person we have offered it to.', '你是第三个了。')),
+       O(S('I will take it, but I will text first.', '我拿着，但来之前一定发消息。'), S('Please do. Mornings are easier.', '一定。上午比较方便。'))]),
+    for: ['第一次探望', '别待太久'],
+  },
+
+  /* ---------------- 接孩子：第二次就要见校长 ---------------- */
+  'school-pickup': {
+    // at 5 = "What happens now?"
+    branch: B(5, 'change', '处理方式变了，你要问清后面会怎样',
+      S('It goes on record now. A second incident means a meeting with the head.', '这次要记录在案。再有第二次就要见校长。'),
+      [O(S('Is that on both children or only mine?', '两个孩子都记，还是只记我家这个？'), S('Both. It is the same entry.', '都记。同一条记录。')),
+       O(S('Understood. I would rather know now than later.', '明白。早知道比晚知道好。'), S('That is the right attitude. We will tell you either way.', '这态度对。有事我们都会告诉你。'))]),
+    for: ['孩子推了人', '约面谈'],
+  },
+
   /* ---------------- 贷款：钱要花在哪 ---------------- */
   loan: {
     // at 2 = "Five thousand, over two years."
