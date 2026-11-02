@@ -54,6 +54,8 @@ export function WordDrill({ pool, onExit }: { pool: DrillWord[]; onExit: () => v
   const [hintOn, setHintOn] = useState(false);
   const [heard, setHeard] = useState('');
   const [sayRate, setSayRate] = useState<number | null>(null);
+  // 识别过程中的半成品：让用户看见「它在听」，而不是盯着一个不动的按钮
+  const [interim, setInterim] = useState('');
   const [listening, setListening] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
   const [marks, setMarks] = useState<{ w: string; ok: boolean }[]>([]);
@@ -61,6 +63,7 @@ export function WordDrill({ pool, onExit }: { pool: DrillWord[]; onExit: () => v
   const inputRef = useRef<HTMLInputElement>(null);
   const rec = useRef<AsrHandles | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const waitTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const canSay = useMemo(() => asrSupported(), []);
 
   const cur = queue[i];
@@ -69,6 +72,7 @@ export function WordDrill({ pool, onExit }: { pool: DrillWord[]; onExit: () => v
   useEffect(() => () => {
     rec.current?.abort();
     if (timer.current) clearTimeout(timer.current);
+    if (waitTimer.current) clearTimeout(waitTimer.current);
     stopSpeaking();
   }, []);
 
@@ -118,45 +122,74 @@ export function WordDrill({ pool, onExit }: { pool: DrillWord[]; onExit: () => v
     setTyped('');
     setHintOn(false);
     setHeard('');
+    setInterim('');
     setSayRate(null);
     setMsg(null);
+    if (waitTimer.current) { clearTimeout(waitTimer.current); waitTimer.current = null; }
   }, [i, queue.length]);
 
   /* ---------------- 跟读 ---------------- */
   const listen = () => {
-    if (!cur || listening) return;
+    if (!cur) return;
+    // 再点一下 = 说完了。不等静音检测，短词经常等不到自动结束
+    if (listening) { rec.current?.stop(); return; }
+    if (phase !== 'ask') return;
+
     stopSpeaking();
     setMsg(null);
     setSayRate(null);
     setHeard('');
+    setInterim('');
+
+    let settled = false;
+    const settle = () => {
+      settled = true;
+      if (waitTimer.current) { clearTimeout(waitTimer.current); waitTimer.current = null; }
+    };
 
     const h = createAsr({
       accent: settings.voice,
-      onResult: text => {
+      onInterim: text => setInterim(text),
+      onResult: (text, alts) => {
+        settle();
+        setInterim('');
         setHeard(text);
-        const cands = text.toLowerCase().replace(/[^a-z' ]/g, ' ').split(/\s+/).filter(Boolean);
+        // 同一个音识别器可能听成好几个词，全都拿去比对 —— 只看第一个会白白判错
+        const cands = [...new Set(
+          alts.flatMap(a => a.toLowerCase().replace(/[^a-z' ]/g, ' ').split(/\s+/).filter(Boolean)),
+        )];
         const target = norm(cur.w);
         // 长词容一个字母的偏差：识别器对 -ed / -s 尾巴很不稳，不该因此判错
         const hit = cands.some(c => c === target || (target.length >= 5 && editDistance(c, target, 1) <= 1));
         setSayRate(hit ? 1 : 0);
+        setPhase(hit ? 'right' : 'wrong');
+        setMarks(ms => [...ms, { w: cur.w, ok: hit }]);
+        review(cur.w, hit);
         if (hit) {
-          setPhase('right');
-          setMarks(ms => [...ms, { w: cur.w, ok: true }]);
-          review(cur.w, true);
+          speak(cur.w, { accent: settings.voice, rate: 0.9 });
           timer.current = setTimeout(next, 1200);
-        } else {
-          setPhase('wrong');
-          setMarks(ms => [...ms, { w: cur.w, ok: false }]);
-          review(cur.w, false);
         }
       },
-      onError: code => { if (code !== 'aborted') setMsg(asrMessage(code)); },
-      onEnd: () => setListening(false),
+      onError: code => {
+        settle();
+        setInterim('');
+        if (code !== 'aborted') setMsg(asrMessage(code));
+      },
+      onEnd: () => {
+        setListening(false);
+        settle();
+      },
     });
+
     rec.current = h;
     if (!h) { setMsg('这个环境没有语音识别'); return; }
     setListening(true);
     h.start();
+
+    // 一直没动静要说一声：麦克风静音时页面本身是察觉不到的
+    waitTimer.current = setTimeout(() => {
+      if (!settled) setMsg('还没听到声音 —— 看看系统麦克风是否静音，或在地址栏允许麦克风');
+    }, 9000);
   };
 
   /** 无语音识别环境（桌面端）的跟读：不自欺地打分，只记录「念过了」 */
@@ -298,22 +331,26 @@ export function WordDrill({ pool, onExit }: { pool: DrillWord[]; onExit: () => v
             </button>
 
             {canSay ? (
-              <>
-                <button
-                  className={`wd-mic${listening ? ' on' : ''}`}
-                  onClick={listen}
-                  disabled={listening}
-                  aria-label="开始跟读"
-                >
-                  {listening ? '正在听…' : '点一下，念出来'}
-                </button>
-                {sayRate !== null && (
-                  <div className={`wd-say${sayRate ? ' ok' : ' no'}`}>
-                    {sayRate ? '听清了' : '没听清，再说一次'}
-                    {heard && <em>（听到：{heard}）</em>}
-                  </div>
-                )}
-              </>
+              phase === 'ask' ? (
+                <>
+                  <button
+                    className={`wd-mic${listening ? ' on' : ''}`}
+                    onClick={listen}
+                    aria-label={listening ? '结束并提交' : '开始跟读'}
+                  >
+                    {listening ? '说完了 · 点一下结束' : '点一下，念出来'}
+                  </button>
+                  {listening && (
+                    <div className="wd-hearing">
+                      {interim ? <>听到：<b>{interim}</b>…</> : '正在听…'}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className={`wd-say${sayRate ? ' ok' : ' no'}`}>
+                  {sayRate ? '听清了' : <>没听清{heard ? <em>（识别成：{heard}）</em> : null}</>}
+                </div>
+              )
             ) : (
               <button className="wd-mic" onClick={readAloud}>念过了，下一个</button>
             )}

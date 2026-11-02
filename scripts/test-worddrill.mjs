@@ -217,10 +217,23 @@ const saidOk = await page.evaluate(() => ({
 check('念对了立刻判过', /ok/.test(saidOk.cls) && /听清了/.test(saidOk.say), saidOk.say);
 check('跟读判对记进进度点', saidOk.dots[0] === 'ok', saidOk.dots.join(','));
 
-// 第二题念错
+// 第二题：识别器给了多个候选，其中一个对 —— 应该算过
 await sleep(1400);
 const cur2 = await page.evaluate(() => document.querySelector('.wd-word')?.textContent?.trim() ?? '');
-await page.evaluate(() => { window.__TYPEWAKE_ASR__ = () => 'banana'; });
+await page.evaluate(w => { window.__TYPEWAKE_ASR__ = () => ['banana', w, 'river']; }, cur2);
+await page.click('.wd-mic');
+await sleep(600);
+const saidAlt = await page.evaluate(() => ({
+  say: document.querySelector('.wd-say')?.textContent?.trim() ?? '',
+  cls: document.querySelector('.wd-say')?.className ?? '',
+}));
+check('第二题确实是另一个词', cur2 !== curWord, `${curWord} → ${cur2}`);
+check('候选里有正确的那个就算对', /ok/.test(saidAlt.cls), saidAlt.say);
+
+// 第三题：候选全是别的词 —— 判不过，且要把识别结果显示出来
+await sleep(1400);
+const cur3 = await page.evaluate(() => document.querySelector('.wd-word')?.textContent?.trim() ?? '');
+await page.evaluate(() => { window.__TYPEWAKE_ASR__ = () => ['banana', 'bananas']; });
 await page.click('.wd-mic');
 await sleep(600);
 const saidNo = await page.evaluate(() => ({
@@ -228,8 +241,7 @@ const saidNo = await page.evaluate(() => ({
   cls: document.querySelector('.wd-say')?.className ?? '',
 }));
 check('念错了判不过并说清听到了什么',
-  /no/.test(saidNo.cls) && /没听清/.test(saidNo.say) && /banana/.test(saidNo.say), saidNo.say);
-check('第二题确实是另一个词', cur2 !== curWord, `${curWord} → ${cur2}`);
+  /no/.test(saidNo.cls) && /没听清/.test(saidNo.say) && /banana/.test(saidNo.say), `${cur3} · ${saidNo.say}`);
 
 // —— 桌面端（无语音识别）要老实降级，不能假装打分 ——
 const p2 = await b.newPage();

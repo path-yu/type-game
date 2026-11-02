@@ -72,9 +72,14 @@ export function Speak({ scene, accent, rate, known, role, onExit, onType, onFini
 
     const h = createAsr({
       accent,
-      onResult: (text) => {
+      onResult: (text, alts) => {
         setHeard(text);
-        const r = scoreSay(line.en, text);
+        // 识别器给的第一选择未必最贴：多候选里挑 ratio 最高的那句再判
+        let r = scoreSay(line.en, text);
+        for (const a of alts.slice(1)) {
+          const t = scoreSay(line.en, a);
+          if (t.ratio > r.ratio) r = t;
+        }
         setRes(r);
         if (r.pass) {
           passedRef.current += 1;

@@ -7,6 +7,10 @@
  * 跟读在桌面端会退化成「听原句 + 打字」，不能给个按钮点了没反应。
  */
 
+interface RecAlt { transcript: string; confidence?: number }
+interface RecResult { isFinal: boolean; length: number; [k: number]: RecAlt }
+interface RecEvent { resultIndex: number; results: { length: number; [k: number]: RecResult } }
+
 interface Recognition {
   lang: string;
   continuous: boolean;
@@ -15,7 +19,7 @@ interface Recognition {
   start(): void;
   stop(): void;
   abort(): void;
-  onresult: ((e: { results: { [k: number]: { [k: number]: { transcript: string } } } }) => void) | null;
+  onresult: ((e: RecEvent) => void) | null;
   onerror: ((e: { error: string }) => void) | null;
   onend: (() => void) | null;
 }
@@ -30,7 +34,10 @@ export interface AsrHandles {
 
 export interface AsrOpts {
   accent: 'us' | 'uk';
-  onResult: (text: string) => void;
+  /** 最终结果。alts 是识别器给的多个候选，同一个音常被听成不同的词，都拿去比对能少判错 */
+  onResult: (text: string, alts: string[]) => void;
+  /** 说话过程中的半成品，只用来显示「它在听」，不要拿去判定 */
+  onInterim?: (text: string) => void;
   onError: (code: string) => void;
   onEnd: () => void;
 }
@@ -42,7 +49,7 @@ function ctor(): Ctor | null {
 }
 
 /** 测试注入点：无头浏览器既没有麦克风，也连不上识别服务 */
-type Fake = () => string | { error: string };
+type Fake = () => string | string[] | { error: string };
 
 function fake(): Fake | null {
   if (typeof window === 'undefined') return null;
@@ -51,7 +58,11 @@ function fake(): Fake | null {
 }
 
 export function asrSupported(): boolean {
-  return !!fake() || !!ctor();
+  if (fake()) return true;
+  // 非安全上下文（http 且不是 localhost）里 SpeechRecognition 存在也起不来，
+  // 与其让用户点了没反应，不如直接报不支持
+  if (typeof window !== 'undefined' && window.isSecureContext === false) return false;
+  return !!ctor();
 }
 
 /** 建一个识别会话；不支持时返回 null（调用方据此切到降级界面） */
@@ -61,9 +72,13 @@ export function createAsr(opts: AsrOpts): AsrHandles | null {
     return {
       start() {
         const said = f();
-        if (typeof said === 'string') {
+        if (Array.isArray(said)) {
+          const list = said.filter(x => x.trim());
+          if (!list.length) opts.onError('no-speech');
+          else opts.onResult(list[0], list);
+        } else if (typeof said === 'string') {
           if (!said.trim()) opts.onError('no-speech');
-          else opts.onResult(said);
+          else opts.onResult(said, [said]);
         } else {
           opts.onError(said?.error ?? 'unknown');
         }
@@ -80,22 +95,68 @@ export function createAsr(opts: AsrOpts): AsrHandles | null {
   const rec = new R();
   rec.lang = opts.accent === 'uk' ? 'en-GB' : 'en-US';
   rec.continuous = false;
-  rec.interimResults = false;
-  rec.maxAlternatives = 1;
+  // 打开中间结果：用户念的时候界面上能看到「它听到了什么」，
+  // 否则等待期间毫无反馈，麦克风没开也看不出来
+  rec.interimResults = true;
+  // 一个音常被听成好几个词（river / liver / River），多给几个候选再比对
+  rec.maxAlternatives = 5;
+
+  let got = false;      // 有没有拿到最终结果
+  let reported = false; // 已经报过错，避免 onerror 和 onend 各报一次
+  let killed = false;   // 用户主动取消，不是「没听到」
+
+  const fail = (code: string) => {
+    if (killed || reported) return;
+    reported = true;
+    opts.onError(code);
+  };
 
   rec.onresult = (e) => {
-    const text = e.results?.[0]?.[0]?.transcript ?? '';
-    opts.onResult(text);
+    const r = e.results?.[e.results.length - 1];
+    if (!r) return;
+    const alts: string[] = [];
+    for (let i = 0; i < r.length; i++) {
+      const t = r[i]?.transcript;
+      if (t && t.trim()) alts.push(t.trim());
+    }
+    if (!alts.length) return;
+    if (!r.isFinal) {
+      opts.onInterim?.(alts[0]);
+      return;
+    }
+    got = true;
+    opts.onResult(alts[0], alts);
   };
-  rec.onerror = (e) => opts.onError(e?.error ?? 'unknown');
-  rec.onend = () => opts.onEnd();
+
+  rec.onerror = (e) => {
+    const code = e?.error ?? 'unknown';
+    if (code === 'aborted') { killed = true; return; }
+    fail(code);
+  };
+
+  rec.onend = () => {
+    // 说完了、但一个字都没识别出来 —— 这时 onerror 不会触发，
+    // 不打这一枪的话界面只会从「正在听」悄悄变回去，看起来像点了没反应
+    if (!got && !killed) fail('no-speech');
+    opts.onEnd();
+  };
 
   return {
     start() {
-      try { rec.start(); } catch { /* 已在监听时会抛，忽略 */ }
+      try {
+        rec.start();
+      } catch {
+        // 起不来（权限被系统挡住、设备被占用）时不能装作在听：
+        // 否则按钮停在「正在听…」，用户等到最后也不知道发生了什么
+        fail('audio-capture');
+      }
     },
+    /** 主动结束：不等静音检测，立刻把已说的部分定稿 */
     stop() { try { rec.stop(); } catch { /* ignore */ } },
-    abort() { try { rec.abort(); } catch { /* ignore */ } },
+    abort() {
+      killed = true;
+      try { rec.abort(); } catch { /* ignore */ }
+    },
   };
 }
 
@@ -106,7 +167,7 @@ export function asrMessage(code: string): string {
     case 'service-not-allowed':
       return '麦克风被拒绝了，需要在浏览器地址栏允许麦克风';
     case 'no-speech':
-      return '没听到声音，再按一次试试';
+      return '这次没识别到 —— 可能麦克风被静音、说话太轻，或识别服务没响应。再说一次';
     case 'audio-capture':
       return '没找到麦克风';
     case 'network':
