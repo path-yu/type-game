@@ -176,14 +176,12 @@ try {
   await sleep(300);
   const found = await p.evaluate(() => [...document.querySelectorAll('.dg-card')].map(x => x.dataset.scene));
   check('搜台词能定位场景', found.includes('grocery'), found.slice(0, 4).join(','));
+  // 分页只渲染前 12 组，用搜索把目标场调出来再点
+  const first = bank.scenes.find(x => x.id === 'cafe') ?? bank.scenes[0];
   await p.click('.dg-search');
   await p.keyboard.down('Control'); await p.keyboard.press('a'); await p.keyboard.up('Control');
-  await p.keyboard.press('Backspace');
-  await sleep(300);
-
-  // 进第一场
-  // 语料按类别分文件，scenes[0] 会随文件顺序变；测试点定 cafe（10 句、有岔路）
-  const first = bank.scenes.find(x => x.id === 'cafe') ?? bank.scenes[0];
+  await p.type('.dg-search', 'latte');
+  await sleep(350);
   await p.click(`[data-scene="${first.id}"]`);
   await p.waitForSelector('.dg-thread', { timeout: 5000 });
   await sleep(300);

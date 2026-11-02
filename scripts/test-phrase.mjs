@@ -80,6 +80,9 @@ try {
   check('没练过对话时没有复习入口', !(await page.evaluate(() => !!document.querySelector('.dg-pe'))));
 
   // 用背打把第一场走完（看答案 → 回车）
+  // 分页只渲染前 12 组，先搜索把目标场调出来
+  await page.type('.dg-search', 'latte');
+  await sleep(300);
   await page.click(`[data-scene="${cafe.id}"]`);
   await page.waitForSelector('.dg-thread');
   await page.evaluate(() => [...document.querySelectorAll('.dg-tabs button')].find(x => x.textContent === '背打')?.click());
