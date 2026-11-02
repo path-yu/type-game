@@ -178,7 +178,8 @@ const pick = s => (s ? { en: s.en, zh: s.zh, ...(s.note ? { note: s.note } : {})
 
 const scenes = [];
 for (const p of packs) {
-  for (const item of p.items) scenes.push(...expand(item, p.cat, p.file));
+  // 允许条目自己带 cat：一个文件里可以混几类场景，不必为每个类别开一个文件
+  for (const item of p.items) scenes.push(...expand(item, item.cat ?? p.cat, p.file));
 }
 
 // id 唯一
