@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useCorpus } from '../lib/CorpusContext';
 import { estimateVocab, newWordRate, recommend } from '../lib/data';
-import { useGame } from '../lib/store';
+import { dayNo, dayNoOfKey, sceneStale, useGame } from '../lib/store';
 import type { Article } from '../lib/types';
 import { aliveDailyStreak, peekTomorrow, pickDaily, pickDailyScene, todayKey } from '../lib/daily';
 import { loadDialogues, type Scene } from '../lib/dialogue';
@@ -18,6 +18,7 @@ export function MapScreen() {
 
   const ensureDaily = useGame(s => s.ensureDaily);
   const openScene = useGame(s => s.openScene);
+  const openSceneList = useGame(s => s.openSceneList);
   const vocab = estimateVocab(p.mastery, corpus);
   const level = Math.min(7, Math.max(1, p.unlocked));
 
@@ -66,6 +67,22 @@ export function MapScreen() {
   const dailyStreak = aliveDailyStreak(p, today);
   const tomorrow = useMemo(() => peekTomorrow(corpus, p.unlocked), [corpus, p.unlocked]);
   const dailyInfo = useMemo(() => newWordRate(corpus, daily, p.mastery), [corpus, daily, p.mastery]);
+
+  /**
+   * 该重温的对话：练过、但超过 SCENE_REVIEW_DAYS 没再练。
+   * 条数只用到存档里的日期（语料没到也算得出），名字要语料到了才补，按最久没练排前面。
+   */
+  const dueIds = useMemo(() => {
+    const today = dayNo();
+    return Object.keys(p.scenes)
+      .filter(id => sceneStale(p.scenes[id], today))
+      .sort((a, b) => dayNoOfKey(p.scenes[a].at) - dayNoOfKey(p.scenes[b].at));
+  }, [p.scenes]);
+  const dueSceneN = dueIds.length;
+  const dueScenes = useMemo(
+    () => (scenes ? dueIds.map(id => scenes.find(s => s.id === id)).filter((s): s is Scene => !!s) : []),
+    [scenes, dueIds],
+  );
   const totalDone = Object.keys(p.played).length;
 
   const startAt = (lv: number) => {
@@ -151,6 +168,29 @@ export function MapScreen() {
             </span>
           </span>
           <span className="daily-go">{dailySceneDone ? '再练一次' : '去练'}</span>
+        </button>
+      )}
+
+      {dueSceneN > 0 && (
+        <button className="daily-row due" onClick={() => openSceneList('due')}>
+          <span className="daily-mark">↺</span>
+          <span className="daily-body">
+            <span className="daily-label">
+              该重温 · 对话
+              <em className="daily-streak">{dueSceneN} 场超过两周没练</em>
+            </span>
+            <span className="daily-title">
+              {dueScenes[0] ? dueScenes[0].name : '把练过的对话翻回去再过一遍'}
+              {dueScenes.length > 1 ? ` 等 ${dueScenes.length} 场` : ''}
+            </span>
+            <span className="daily-meta">
+              {dueScenes[0]
+                ? `最久的一场 ${dayNo() - dayNoOfKey(p.scenes[dueScenes[0].id].at)} 天没练 · `
+                : ''}
+              两周不开口就会生，翻回去比练新的省力
+            </span>
+          </span>
+          <span className="daily-go">翻回去</span>
         </button>
       )}
 

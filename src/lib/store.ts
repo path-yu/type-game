@@ -144,6 +144,8 @@ interface State {
   toast: string | null;
   /** 首页点「今日对话」时带过去的场景 id，进页面后清掉 */
   pendingScene: string | null;
+  /** 首页点「该重温」时带过去的筛选，进场景页后清掉 */
+  pendingSceneFilter: 'due' | 'done' | 'new' | null;
 
   boot: () => void;
   go: (s: Screen) => void;
@@ -168,6 +170,9 @@ interface State {
   ensureDaily: (id: string, sceneId?: string | null) => void;
   /** 从首页直接进某一场对话 */
   openScene: (id: string) => void;
+  /** 从首页进场景列表，并预先选好一个筛选（例如「待重温」） */
+  openSceneList: (filter: 'due' | 'done' | 'new') => void;
+  consumeSceneFilter: () => void;
   /** 句型复习：一句过一遍，和单词共用 gradedWord */
   reviewPhrase: (en: string, ok: boolean) => void;
   /** 导入一场自定义对话 */
@@ -260,6 +265,7 @@ export const useGame = create<State>((set, get) => ({
   s: initial.s,
   toast: null,
   pendingScene: null,
+  pendingSceneFilter: null,
 
   boot: () => {
     // 桌面端优先读本地档案（卸载重装不丢档）
@@ -555,6 +561,10 @@ export const useGame = create<State>((set, get) => ({
   },
 
   openScene: (id) => set({ screen: 'dialogue', pendingScene: id }),
+
+  openSceneList: (filter) => set({ screen: 'dialogue', pendingScene: null, pendingSceneFilter: filter }),
+
+  consumeSceneFilter: () => set({ pendingSceneFilter: null }),
 
   reviewPhrase: (en, ok) => {
     const { p } = get();

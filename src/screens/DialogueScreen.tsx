@@ -79,6 +79,15 @@ export function DialogueScreen() {
   // 练法提到这一层：切到下一场时不该被打回「通读」，刚在打什么就接着打什么
   const [mode, setMode] = useState<Mode>('read');
 
+  // 首页点「该重温」进来时，直接把筛选拨到「待重温」
+  const pendingFilter = useGame(s => s.pendingSceneFilter);
+  const consumeFilter = useGame(s => s.consumeSceneFilter);
+  useEffect(() => {
+    if (!pendingFilter) return;
+    setStatus(pendingFilter);
+    consumeFilter();
+  }, [pendingFilter, consumeFilter]);
+
   const fav = useMemo(() => new Set(p.favScenes), [p.favScenes]);
 
   const customIds = useMemo(() => new Set(p.customScenes.map(x => x.id)), [p.customScenes]);

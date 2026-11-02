@@ -163,6 +163,35 @@ try {
   check('只做对话也能推进每日连续', after.streak === 1 && after.last === D.todayKey(), `连续 ${after.streak} 天`);
   check('文章那项仍是未完成', after.artDone === false || after.artDone === undefined);
 
+  // —— 该重温：练过的对话放两周不用，首页要提醒，点了直接落在筛选好的列表 ——
+  await page.evaluate(() => {
+    const j = JSON.parse(localStorage.getItem('typewake:v1'));
+    const id = Object.keys(j.p.scenes)[0];
+    const d = new Date(Date.now() - 30 * 86400000);
+    const date = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    j.p.scenes[id] = { ...j.p.scenes[id], at: date };
+    localStorage.setItem('typewake:v1', JSON.stringify(j));
+  });
+  await page.reload({ waitUntil: 'networkidle2' });
+  await page.waitForSelector('.daily-row.due', { timeout: 5000 });
+  const dueRow = await page.evaluate(() => ({
+    label: document.querySelector('.daily-row.due .daily-label')?.textContent ?? '',
+    title: document.querySelector('.daily-row.due .daily-title')?.textContent ?? '',
+    meta: document.querySelector('.daily-row.due .daily-meta')?.textContent ?? '',
+  }));
+  check('两周没练的对话在首页提醒', /1 场/.test(dueRow.label), dueRow.label.trim());
+  check('提醒里点名是哪一场并说多久没练', dueRow.title.length > 0 && /30 天没练/.test(dueRow.meta), `${dueRow.title.trim()} / ${dueRow.meta.trim()}`);
+
+  await page.evaluate(() => document.querySelector('.daily-row.due').click());
+  await page.waitForSelector('.dg-chips-status', { timeout: 5000 });
+  await sleep(400);
+  const applied = await page.evaluate(() => ({
+    on: document.querySelector('.dg-chips-status .dg-chip.on')?.textContent ?? '',
+    cards: [...document.querySelectorAll('.dg-card')].map(x => x.dataset.scene),
+  }));
+  check('点进去直接落在「待重温」', /待重温/.test(applied.on), applied.on.trim());
+  check('列表就剩那一场', applied.cards.length === 1, `${applied.cards.length} 张`);
+
   check('页面无报错', errs.length === 0, errs.slice(0, 2).join(' / '));
 } finally {
   await br.close();

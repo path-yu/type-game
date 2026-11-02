@@ -1766,6 +1766,14 @@ input, textarea { font-family: inherit; }
 .daily-row.scene:not(.done) .daily-mark { color: var(--fg-3); background: var(--fill); }
 .daily-row.scene + .dist-list { margin-top: var(--sp-2); }
 
+/* 该重温：不是今日任务，所以不抢「今日 1/2」的位置，只说清楚哪一场该翻了 */
+.daily-row.due { border-style: dashed; box-shadow: none; }
+.daily-row.due .daily-mark { color: var(--fg-2); background: var(--fill); font-size: 14px; }
+.daily-row.due .daily-go { color: var(--fg-2); }
+.daily-row.due:hover { border-style: solid; border-color: var(--accent-soft-2); }
+.daily-row.due:hover .daily-go { color: var(--accent); }
+.daily-row.due + .dist-list { margin-top: var(--sp-2); }
+
 /* ============ 场景对话：自定义导入 ============ */
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
 
