@@ -22,9 +22,32 @@ const log = (...a) => console.log('[add]', ...a);
 
 /** 新书单。cap 是入库段数，均匀取样，不是从头截一段 */
 const NEW_BOOKS = [
-  { id: 215, key: 'call', title: 'The Call of the Wild', theme: 'novel', lic: 'PD', cap: 30 },
-  { id: 46, key: 'carol', title: 'A Christmas Carol', theme: 'novel', lic: 'PD', cap: 30 },
+  {
+    id: 271, key: 'beauty', title: 'Black Beauty', theme: 'novel', lic: 'PD', cap: 30,
+  },
+  {
+    id: 1874, key: 'railway', title: 'The Railway Children', theme: 'novel', lic: 'PD', cap: 30,
+    // 从第一章正文切起，前面的目录与献词不入库
+    after: /^Chapter\s+I\b/m,
+  },
+  {
+    id: 501, key: 'dolittle', title: 'The Story of Doctor Dolittle', theme: 'novel', lic: 'PD', cap: 30,
+    // Gutenberg 版前面有一篇 Hugh Walpole 的序，讲儿童文学，不是故事本身
+    after: /^_THE FIRST CHAPTER_/m,
+    // 布姆波王子这条线整个跳过。原著里他求医生把自己"变成白人"，才好去娶睡美人。
+    // 这是 1920 年的情节，抽出来单独成页，就成了一则"黑皮肤被嫌弃"的童话 ——
+    // 给孩子看的读物不必背这个包袱。每页都是独立选段，跳过不影响别的情节。
+    block: /\bBumpo\b|turn (me|him) white/i,
+  },
 ];
+
+/**
+ * 不入选的段落。
+ *
+ * 这些书写于一百年前，个别段子带着当年的种族偏见（《杜立德》里有一句催促狮子干活的话，
+ * 《黑骏马》里也有一处）。留着不改是篡改原文，改了是伪造原文，所以整段不入库。
+ */
+const BLOCK = /\b(nigger|negro|savages?|heathens?)\b/i;
 
 const dry = process.argv.includes('--dry');
 const onlyArg = process.argv.find(a => a.startsWith('--only='));
@@ -76,14 +99,22 @@ for (const src of NEW_BOOKS) {
   if (only && !only.has(src.key)) continue;
   if (data.items.some(x => x.s === src.title)) { log(`《${src.title}》已在库里，跳过`); continue; }
 
-  const raw = cleanGutenberg(await fetchBook(src.id));
+  let raw = cleanGutenberg(await fetchBook(src.id));
+  if (src.after) {
+    const m = raw.match(src.after);
+    if (!m) log(`  ⚠ ${src.title} 没找到章节起点，从全文取样`);
+    else raw = raw.slice(m.index);
+  }
   const paras = raw.split(/\n\s*\n+/).map(normalize).filter(isCleanParagraph);
 
   const chunks = [];
   for (const p of paras) chunks.push(...chunkParagraph(p, 55, 190, 125));
 
-  const picked = evenly(chunks, src.cap);
-  log(`《${src.title}》 可用 ${paras.length} 段 → 切出 ${chunks.length} 段 → 取样 ${picked.length}`);
+  const usable = chunks.filter(tx => !BLOCK.test(tx) && !(src.block && src.block.test(tx)));
+  const dropped = chunks.length - usable.length;
+  const picked = evenly(usable, src.cap);
+  log(`《${src.title}》 可用 ${paras.length} 段 → 切出 ${chunks.length} 段`
+    + (dropped ? ` → 剔除 ${dropped} 段` : '') + ` → 取样 ${picked.length}`);
 
   let n = 0;
   for (const tx of picked) {

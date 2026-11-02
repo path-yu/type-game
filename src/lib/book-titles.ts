@@ -8,7 +8,7 @@
  * 加新书时不用改这里，没译名的会退回英文原名。
  */
 export const BOOK_ZH: Record<string, string> = {
-  // —— 12 部长篇公版书 ——
+  // —— 长篇公版书 ——
   'The Aesop for Children': '伊索寓言',
   'The Wonderful Wizard of Oz': '绿野仙踪',
   "Alice's Adventures in Wonderland": '爱丽丝梦游仙境',
@@ -23,8 +23,11 @@ export const BOOK_ZH: Record<string, string> = {
   'Frankenstein': '弗兰肯斯坦',
   'The Call of the Wild': '野性的呼唤',
   'A Christmas Carol': '圣诞颂歌',
+  'Black Beauty': '黑骏马',
+  'The Railway Children': '铁路边的孩子们',
+  'The Story of Doctor Dolittle': '怪医杜立德',
 
-  // —— 32 个维基条目 ——
+  // —— 维基条目 ——
   'Volcano': '火山',
   'Silk Road': '丝绸之路',
   'Coral reef': '珊瑚礁',

@@ -88,10 +88,12 @@ for (const a of articles) {
 
     rows.push({ id: a.id, lv: a.lv, i, en, zh, enChars, zhChars, ratio });
 
-    // 整篇统计引号：英文直引号 2 个 = 一对，中文「」2 个 = 一对
+    // 整篇统计引号：英文直引号 2 个 = 一对，中文「」2 个 = 一对。
+    // 译文里一律用半角双引号（整个语料库都是这个写法），所以中文那一侧也要把它算进来 ——
+    // 早先只数「」和“”，结果 96 篇全被误报成"丢了引号"。
     const g = artAgg.get(a.id) || { id: a.id, lv: a.lv, enQ: 0, zhQ: 0, open: 0, close: 0, n: 0 };
     g.enQ += (en.match(/"/g) || []).length;
-    g.zhQ += (zh.match(/[\u300c\u300d\u201c\u201d]/g) || []).length;
+    g.zhQ += (zh.match(/["\u300c\u300d\u201c\u201d]/g) || []).length;
     g.open += (zh.match(/[\u300c\u201c]/g) || []).length;
     g.close += (zh.match(/[\u300d\u201d]/g) || []).length;
     g.n++;
@@ -196,7 +198,8 @@ for (const [zh, locs] of seenZh) {
 const quoteArticles = [];
 for (const g of artAgg.values()) {
   const gap = g.enQ - g.zhQ;            // 英文引号多于中文 → 译文丢了引号
-  const unbalanced = g.open !== g.close;
+  // 半角引号无法分左右，错位判断只对「」和“”有意义
+  const unbalanced = g.open !== g.close && g.open + g.close > 0;
   if ((g.enQ >= 4 && gap >= 4) || unbalanced) {
     quoteArticles.push({ ...g, gap, unbalanced });
   }

@@ -13,6 +13,7 @@ data/backup/
 data/cache/
 data/qa/
 data/tr-inbox/
+data/src-*.txt      # dump-book 导出的待译句子，随时可重生成
 shots/
 
 # 工具与编辑器
