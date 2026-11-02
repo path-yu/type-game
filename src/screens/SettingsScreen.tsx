@@ -174,6 +174,19 @@ export function SettingsScreen({ mode, onMode }: Props) {
             <i />
           </button>
         </div>
+        <div className="set-row">
+          <div className="set-label">
+            <b>幽灵竞速</b>
+            <span>用上一场同篇的光标标出当时的节奏，方便对比快慢</span>
+          </div>
+          <button
+            className={`switch${s.ghost ? ' on' : ''}`}
+            onClick={() => set('ghost', !s.ghost)}
+            aria-pressed={s.ghost}
+          >
+            <i />
+          </button>
+        </div>
       </div>
 
       <BackupGroup />

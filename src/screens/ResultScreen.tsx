@@ -89,7 +89,7 @@ export function ResultScreen() {
         {delta == null
           ? '第一条记录已刻下 —— 下次来追它'
           : delta > 0
-            ? `↑ 比上次快 ${delta} WPM · 你超越了昨天的自己`
+            ? `↑ 比上次快 ${delta} WPM · 你超越了上一场的自己`
             : delta === 0
               ? '和上次一样快 · 再稳一点就能超车'
               : `比幽灵慢了 ${-delta} WPM · 它只领先一点点`}

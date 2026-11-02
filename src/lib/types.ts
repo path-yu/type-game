@@ -75,6 +75,8 @@ export interface RunResult {
 export interface GhostFrame {
   marks: number[];
   wpm: number;
+  /** 这条幽灵是哪天记下的（ISO）。老档案没有这个字段，标签就只说「上次」 */
+  at?: string;
 }
 
 export type Screen = 'map' | 'play' | 'result' | 'review' | 'lexicon' | 'library' | 'report' | 'cloze' | 'dialogue' | 'settings';

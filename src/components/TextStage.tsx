@@ -4,6 +4,8 @@ import type { TypingEngine } from '../engine/TypingEngine';
 interface Props {
   engine: TypingEngine;
   ghost: number;
+  /** 幽灵标签（「3 分钟前」）；空字符串就不显示 */
+  ghostLabel: string;
   onWordClick: (el: HTMLElement, key: string, raw: string) => void;
   onWordHover: (el: HTMLElement | null, key: string) => void;
 }
@@ -16,7 +18,7 @@ export interface StageHandle {
 const LH = 60;
 
 export const TextStage = forwardRef<StageHandle, Props>(function TextStage(
-  { engine, ghost, onWordClick, onWordHover },
+  { engine, ghost, ghostLabel, onWordClick, onWordHover },
   ref
 ) {
   const els = useRef<(HTMLSpanElement | null)[]>([]);
@@ -109,7 +111,8 @@ export const TextStage = forwardRef<StageHandle, Props>(function TextStage(
     if (index < 0) { g.style.opacity = '0'; return; }
     const gt = els.current[Math.min(index, engine.chars.length - 1)];
     if (!gt) return;
-    g.style.opacity = '1';
+    // 压低存在感：它是参照物，不该和主光标抢注意力
+    g.style.opacity = '0.5';
     g.style.transform = `translate3d(${gt.offsetLeft}px, ${gt.offsetTop + 15}px, 0)`;
   };
 
@@ -151,7 +154,9 @@ export const TextStage = forwardRef<StageHandle, Props>(function TextStage(
       >
         {nodes}
         <div className="caret" ref={caretRef} />
-        <div className="ghost-caret" ref={ghostRef} style={{ opacity: 0 }} />
+        <div className="ghost-caret" ref={ghostRef} style={{ opacity: 0 }}>
+          {ghostLabel ? <span className="ghost-tag">{ghostLabel}</span> : null}
+        </div>
       </div>
     </div>
   );

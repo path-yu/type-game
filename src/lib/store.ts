@@ -99,6 +99,7 @@ export interface Settings {
   sentenceHelp: 'off' | 'gloss' | 'both'; // 打字时的句子解析
   clozeHint: 'none' | 'first' | 'both';   // 阅读填空的提示强度
   pretest: boolean;    // 开打前先过一遍生词（先测后学）
+  ghost: boolean;      // 幽灵竞速：上一场成绩的光标，用来对比节奏
 }
 
 const emptyProgress = (): Progress => ({
@@ -132,7 +133,12 @@ const emptyProgress = (): Progress => ({
   branchStats: {},
 });
 
-const defaultSettings = (): Settings => ({ voice: 'us', rate: 1, sound: true, motion: true, autoSpeak: false, sentenceHelp: 'gloss', clozeHint: 'first', pretest: true });
+const defaultSettings = (): Settings => ({
+  voice: 'us', rate: 1, sound: true, motion: true, autoSpeak: false,
+  sentenceHelp: 'gloss', clozeHint: 'first', pretest: true,
+  // 默认关：它每帧都在动，第一次见的人会以为光标坏了
+  ghost: false,
+});
 
 interface State {
   ready: boolean;
@@ -342,7 +348,7 @@ export const useGame = create<State>((set, get) => ({
     const prevWpm = p.bestWpm[r.articleId] ?? null;
     if (!prevWpm || r.wpm > prevWpm) {
       bestWpm[r.articleId] = r.wpm;
-      ghost[r.articleId] = { marks: r.marks, wpm: r.wpm };
+      ghost[r.articleId] = { marks: r.marks, wpm: r.wpm, at: new Date().toISOString() };
     }
 
     // 解锁：本城区完成 ≥8 条即可进入下一城区

@@ -87,7 +87,9 @@ export function PlayScreen() {
     () => vocab.unknown.filter(w => corpus.dict.get(w)?.z),
     [vocab.unknown, corpus]
   );
-  const ghost = progress.ghost[article.id];
+  // 幽灵竞速默认关闭：它每帧都在动，不清楚来历的人会以为光标坏了
+  const ghost = settings.ghost ? progress.ghost[article.id] : undefined;
+  const ghostLabel = useMemo(() => (ghost ? agoText(ghost.at) : ''), [ghost]);
   const prevWpm = progress.bestWpm[article.id] ?? null;
 
   pausedRef.current = paused || !!card || doneRef.current;
@@ -360,6 +362,7 @@ export function PlayScreen() {
           ref={stageRef}
           engine={engine}
           ghost={ghost ? 0 : -1}
+          ghostLabel={ghostLabel}
           onWordClick={onWordClick}
           onWordHover={onHover}
         />
@@ -463,4 +466,26 @@ export function PlayScreen() {
       )}
     </div>
   );
+}
+
+/**
+ * 幽灵标签：「3 分钟前」比「昨天」诚实。
+ *
+ * 原来的标签是 CSS 里写死的 `content: '昨天'` —— 十分钟前刚打过的也显示「昨天」，
+ * 而且 GhostFrame 当时根本没存时间，想说实话也没有依据。
+ */
+function agoText(iso?: string): string {
+  if (!iso) return '上次';
+  const t = new Date(iso).getTime();
+  if (!Number.isFinite(t)) return '上次';
+  const min = Math.max(0, Math.floor((Date.now() - t) / 60000));
+  if (min < 1) return '刚刚';
+  if (min < 60) return `${min} 分钟前`;
+  const h = Math.floor(min / 60);
+  if (h < 24) return `${h} 小时前`;
+  const d = Math.floor(h / 24);
+  if (d === 1) return '昨天';
+  if (d < 7) return `${d} 天前`;
+  if (d < 30) return `${Math.floor(d / 7)} 周前`;
+  return `${Math.floor(d / 30)} 个月前`;
 }

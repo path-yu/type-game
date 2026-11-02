@@ -333,15 +333,17 @@ input, textarea { font-family: inherit; }
 @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0.2; } }
 .caret.hit { height: 36px; }
 
+/* 幽灵光标：上一场的节奏参照。比主光标细、淡，标签说清楚是哪一次的 */
 .ghost-caret {
-  position: absolute; width: 2px; height: 26px; top: 0; left: 0;
+  position: absolute; width: 1.5px; height: 26px; top: 0; left: 0;
   background: var(--fg-3); opacity: 0;
   border-radius: 2px; pointer-events: none;
   transition: transform 0.12s linear, opacity 0.2s;
 }
-.ghost-caret::before {
-  content: '昨天'; position: absolute; top: -14px; left: -7px;
-  font-size: 8px; color: var(--fg-3); letter-spacing: 0.05em;
+.ghost-tag {
+  position: absolute; top: -14px; left: -6px;
+  font-size: 9px; line-height: 1; color: var(--fg-2);
+  letter-spacing: 0.02em; white-space: nowrap;
 }
 
 .rail {
