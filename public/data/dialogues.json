@@ -24657,6 +24657,4854 @@
    ]
   },
   {
+   "id": "glasses",
+   "g": "glasses",
+   "name": "配眼镜验光 · 三年没验光",
+   "cat": "医疗",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你晚上看屏幕总要眯眼，来配新眼镜。",
+   "roles": [
+    "你",
+    "验光师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "When did you last have your eyes tested?",
+     "zh": "上次验光是什么时候？"
+    },
+    {
+     "r": 0,
+     "en": "Three years ago. I squint at the screen by the evening.",
+     "zh": "三年前。到晚上看屏幕会眯眼。"
+    },
+    {
+     "r": 1,
+     "en": "Let us check. Read the smallest line you can.",
+     "zh": "查一下。读你能看清的最小一行。"
+    },
+    {
+     "r": 0,
+     "en": "The fourth one. The fifth is a blur.",
+     "zh": "第四行。第五行是糊的。"
+    },
+    {
+     "r": 1,
+     "en": "You are slightly short-sighted, and the astigmatism has moved.",
+     "zh": "轻度近视，散光轴位也变了。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need new glasses, or just new lenses?",
+     "zh": "要换整副，还是只换镜片？"
+    },
+    {
+     "r": 1,
+     "en": "New lenses in the same frame is cheaper.",
+     "zh": "同框换镜片便宜些。"
+    },
+    {
+     "r": 0,
+     "en": "How long will that take?",
+     "zh": "要多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "验光师建议一项附加服务，你要判断",
+    "prompt": {
+     "en": "I would add the anti-fatigue coating. It helps with screens.",
+     "zh": "我建议加抗疲劳镀膜。对屏幕有帮助。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much extra?",
+       "zh": "加多少钱？"
+      },
+      "react": {
+       "en": "Thirty. It lasts as long as the lenses.",
+       "zh": "三十。跟镜片一样耐用。"
+      }
+     },
+     {
+      "say": {
+       "en": "Does it actually work, or is it marketing?",
+       "zh": "真有用还是营销？"
+      },
+      "react": {
+       "en": "It helps some people. Not everyone notices.",
+       "zh": "对部分人有用。不是人人有感。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I squint at the screen.",
+     "zh": "我看屏幕会眯眼。"
+    },
+    {
+     "en": "The fifth is a blur.",
+     "zh": "第五行是糊的。"
+    },
+    {
+     "en": "New lenses in the same frame.",
+     "zh": "同框换镜片。"
+    }
+   ]
+  },
+  {
+   "id": "glasses-2",
+   "g": "glasses",
+   "name": "配眼镜验光 · 想配隐形",
+   "cat": "医疗",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你想试试隐形眼镜。",
+   "roles": [
+    "你",
+    "验光师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "When did you last have your eyes tested?",
+     "zh": "上次验光是什么时候？"
+    },
+    {
+     "r": 0,
+     "en": "I would like to try contact lenses.",
+     "zh": "我想试试隐形眼镜。"
+    },
+    {
+     "r": 1,
+     "en": "Then we need a separate fitting, and a trial pair.",
+     "zh": "那要单独做适配，还有一副试戴。"
+    },
+    {
+     "r": 0,
+     "en": "The fourth one. The fifth is a blur.",
+     "zh": "第四行。第五行是糊的。"
+    },
+    {
+     "r": 1,
+     "en": "You are slightly short-sighted, and the astigmatism has moved.",
+     "zh": "轻度近视，散光轴位也变了。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need new glasses, or just new lenses?",
+     "zh": "要换整副，还是只换镜片？"
+    },
+    {
+     "r": 1,
+     "en": "New lenses in the same frame is cheaper.",
+     "zh": "同框换镜片便宜些。"
+    },
+    {
+     "r": 0,
+     "en": "How long will that take?",
+     "zh": "要多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "验光师建议一项附加服务，你要判断",
+    "prompt": {
+     "en": "I would add the anti-fatigue coating. It helps with screens.",
+     "zh": "我建议加抗疲劳镀膜。对屏幕有帮助。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much extra?",
+       "zh": "加多少钱？"
+      },
+      "react": {
+       "en": "Thirty. It lasts as long as the lenses.",
+       "zh": "三十。跟镜片一样耐用。"
+      }
+     },
+     {
+      "say": {
+       "en": "Does it actually work, or is it marketing?",
+       "zh": "真有用还是营销？"
+      },
+      "react": {
+       "en": "It helps some people. Not everyone notices.",
+       "zh": "对部分人有用。不是人人有感。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I squint at the screen.",
+     "zh": "我看屏幕会眯眼。"
+    },
+    {
+     "en": "The fifth is a blur.",
+     "zh": "第五行是糊的。"
+    },
+    {
+     "en": "New lenses in the same frame.",
+     "zh": "同框换镜片。"
+    }
+   ]
+  },
+  {
+   "id": "glasses-3",
+   "g": "glasses",
+   "name": "配眼镜验光 · 孩子视力",
+   "cat": "医疗",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你带孩子来查。",
+   "roles": [
+    "你",
+    "验光师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "When did you last have your eyes tested?",
+     "zh": "上次验光是什么时候？"
+    },
+    {
+     "r": 0,
+     "en": "My son is seven and sits very close to the television.",
+     "zh": "我儿子七岁，看电视坐得很近。"
+    },
+    {
+     "r": 1,
+     "en": "Children should be tested every year. Let us start today.",
+     "zh": "孩子应该每年查。今天就开始。"
+    },
+    {
+     "r": 0,
+     "en": "The fourth one. The fifth is a blur.",
+     "zh": "第四行。第五行是糊的。"
+    },
+    {
+     "r": 1,
+     "en": "You are slightly short-sighted, and the astigmatism has moved.",
+     "zh": "轻度近视，散光轴位也变了。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need new glasses, or just new lenses?",
+     "zh": "要换整副，还是只换镜片？"
+    },
+    {
+     "r": 1,
+     "en": "New lenses in the same frame is cheaper.",
+     "zh": "同框换镜片便宜些。"
+    },
+    {
+     "r": 0,
+     "en": "How long will that take?",
+     "zh": "要多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "验光师建议一项附加服务，你要判断",
+    "prompt": {
+     "en": "I would add the anti-fatigue coating. It helps with screens.",
+     "zh": "我建议加抗疲劳镀膜。对屏幕有帮助。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much extra?",
+       "zh": "加多少钱？"
+      },
+      "react": {
+       "en": "Thirty. It lasts as long as the lenses.",
+       "zh": "三十。跟镜片一样耐用。"
+      }
+     },
+     {
+      "say": {
+       "en": "Does it actually work, or is it marketing?",
+       "zh": "真有用还是营销？"
+      },
+      "react": {
+       "en": "It helps some people. Not everyone notices.",
+       "zh": "对部分人有用。不是人人有感。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I squint at the screen.",
+     "zh": "我看屏幕会眯眼。"
+    },
+    {
+     "en": "The fifth is a blur.",
+     "zh": "第五行是糊的。"
+    },
+    {
+     "en": "New lenses in the same frame.",
+     "zh": "同框换镜片。"
+    }
+   ]
+  },
+  {
+   "id": "glasses-4",
+   "g": "glasses",
+   "name": "配眼镜验光 · 阅读镜",
+   "cat": "医疗",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你只需要看近处。",
+   "roles": [
+    "你",
+    "验光师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "When did you last have your eyes tested?",
+     "zh": "上次验光是什么时候？"
+    },
+    {
+     "r": 0,
+     "en": "Three years ago. I squint at the screen by the evening.",
+     "zh": "三年前。到晚上看屏幕会眯眼。"
+    },
+    {
+     "r": 1,
+     "en": "Let us check. Read the smallest line you can.",
+     "zh": "查一下。读你能看清的最小一行。"
+    },
+    {
+     "r": 0,
+     "en": "The fourth one. The fifth is a blur.",
+     "zh": "第四行。第五行是糊的。"
+    },
+    {
+     "r": 1,
+     "en": "You are slightly short-sighted, and the astigmatism has moved.",
+     "zh": "轻度近视，散光轴位也变了。"
+    },
+    {
+     "r": 0,
+     "en": "I only need them for reading. Can I get cheap ones?",
+     "zh": "我只需要看近用。能配便宜的吗？"
+    },
+    {
+     "r": 1,
+     "en": "Off the shelf will do, if both eyes are the same.",
+     "zh": "两眼度数一样的话，成品老花镜就行。"
+    },
+    {
+     "r": 0,
+     "en": "How long will that take?",
+     "zh": "要多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "验光师建议一项附加服务，你要判断",
+    "prompt": {
+     "en": "I would add the anti-fatigue coating. It helps with screens.",
+     "zh": "我建议加抗疲劳镀膜。对屏幕有帮助。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much extra?",
+       "zh": "加多少钱？"
+      },
+      "react": {
+       "en": "Thirty. It lasts as long as the lenses.",
+       "zh": "三十。跟镜片一样耐用。"
+      }
+     },
+     {
+      "say": {
+       "en": "Does it actually work, or is it marketing?",
+       "zh": "真有用还是营销？"
+      },
+      "react": {
+       "en": "It helps some people. Not everyone notices.",
+       "zh": "对部分人有用。不是人人有感。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I squint at the screen.",
+     "zh": "我看屏幕会眯眼。"
+    },
+    {
+     "en": "The fifth is a blur.",
+     "zh": "第五行是糊的。"
+    },
+    {
+     "en": "New lenses in the same frame.",
+     "zh": "同框换镜片。"
+    }
+   ]
+  },
+  {
+   "id": "glasses-5",
+   "g": "glasses",
+   "name": "配眼镜验光 · 镜片划伤",
+   "cat": "医疗",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "镜片花了，框还好。",
+   "roles": [
+    "你",
+    "验光师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "The lenses are scratched but the frame is fine.",
+     "zh": "镜片花了，镜框还好。"
+    },
+    {
+     "r": 0,
+     "en": "Three years ago. I squint at the screen by the evening.",
+     "zh": "三年前。到晚上看屏幕会眯眼。"
+    },
+    {
+     "r": 1,
+     "en": "Let us check. Read the smallest line you can.",
+     "zh": "查一下。读你能看清的最小一行。"
+    },
+    {
+     "r": 0,
+     "en": "The fourth one. The fifth is a blur.",
+     "zh": "第四行。第五行是糊的。"
+    },
+    {
+     "r": 1,
+     "en": "You are slightly short-sighted, and the astigmatism has moved.",
+     "zh": "轻度近视，散光轴位也变了。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need new glasses, or just new lenses?",
+     "zh": "要换整副，还是只换镜片？"
+    },
+    {
+     "r": 1,
+     "en": "New lenses in the same frame is cheaper.",
+     "zh": "同框换镜片便宜些。"
+    },
+    {
+     "r": 0,
+     "en": "How long will that take?",
+     "zh": "要多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "验光师建议一项附加服务，你要判断",
+    "prompt": {
+     "en": "I would add the anti-fatigue coating. It helps with screens.",
+     "zh": "我建议加抗疲劳镀膜。对屏幕有帮助。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much extra?",
+       "zh": "加多少钱？"
+      },
+      "react": {
+       "en": "Thirty. It lasts as long as the lenses.",
+       "zh": "三十。跟镜片一样耐用。"
+      }
+     },
+     {
+      "say": {
+       "en": "Does it actually work, or is it marketing?",
+       "zh": "真有用还是营销？"
+      },
+      "react": {
+       "en": "It helps some people. Not everyone notices.",
+       "zh": "对部分人有用。不是人人有感。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I squint at the screen.",
+     "zh": "我看屏幕会眯眼。"
+    },
+    {
+     "en": "The fifth is a blur.",
+     "zh": "第五行是糊的。"
+    },
+    {
+     "en": "New lenses in the same frame.",
+     "zh": "同框换镜片。"
+    }
+   ]
+  },
+  {
+   "id": "glasses-6",
+   "g": "glasses",
+   "name": "配眼镜验光 · 问价格",
+   "cat": "医疗",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你想知道总价。",
+   "roles": [
+    "你",
+    "验光师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "When did you last have your eyes tested?",
+     "zh": "上次验光是什么时候？"
+    },
+    {
+     "r": 0,
+     "en": "Three years ago. I squint at the screen by the evening.",
+     "zh": "三年前。到晚上看屏幕会眯眼。"
+    },
+    {
+     "r": 1,
+     "en": "Let us check. Read the smallest line you can.",
+     "zh": "查一下。读你能看清的最小一行。"
+    },
+    {
+     "r": 0,
+     "en": "The fourth one. The fifth is a blur.",
+     "zh": "第四行。第五行是糊的。"
+    },
+    {
+     "r": 1,
+     "en": "You are slightly short-sighted, and the astigmatism has moved.",
+     "zh": "轻度近视，散光轴位也变了。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need new glasses, or just new lenses?",
+     "zh": "要换整副，还是只换镜片？"
+    },
+    {
+     "r": 1,
+     "en": "New lenses in the same frame is cheaper.",
+     "zh": "同框换镜片便宜些。"
+    },
+    {
+     "r": 0,
+     "en": "What is the total with the anti-glare coating?",
+     "zh": "加防反光镀膜一共多少？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "验光师建议一项附加服务，你要判断",
+    "prompt": {
+     "en": "I would add the anti-fatigue coating. It helps with screens.",
+     "zh": "我建议加抗疲劳镀膜。对屏幕有帮助。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "How much extra?",
+       "zh": "加多少钱？"
+      },
+      "react": {
+       "en": "Thirty. It lasts as long as the lenses.",
+       "zh": "三十。跟镜片一样耐用。"
+      }
+     },
+     {
+      "say": {
+       "en": "Does it actually work, or is it marketing?",
+       "zh": "真有用还是营销？"
+      },
+      "react": {
+       "en": "It helps some people. Not everyone notices.",
+       "zh": "对部分人有用。不是人人有感。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I squint at the screen.",
+     "zh": "我看屏幕会眯眼。"
+    },
+    {
+     "en": "The fifth is a blur.",
+     "zh": "第五行是糊的。"
+    },
+    {
+     "en": "New lenses in the same frame.",
+     "zh": "同框换镜片。"
+    }
+   ]
+  },
+  {
+   "id": "checkup-report",
+   "g": "checkup-report",
+   "name": "看体检报告 · 胆固醇偏高",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "年度体检报告出来，家庭医生约你谈。",
+   "roles": [
+    "你",
+    "医生"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Your results are back. Most of it is normal.",
+     "zh": "报告出来了。大部分正常。"
+    },
+    {
+     "r": 0,
+     "en": "Most of it? What is not?",
+     "zh": "大部分？哪项不正常？"
+    },
+    {
+     "r": 1,
+     "en": "Your cholesterol is a little high, and vitamin D is low.",
+     "zh": "胆固醇偏高一点，维生素 D 偏低。"
+    },
+    {
+     "r": 0,
+     "en": "Does that need medication?",
+     "zh": "需要吃药吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. Diet and a supplement, then we retest in three months.",
+     "zh": "暂时不用。调整饮食加补充剂，三个月后复查。"
+    },
+    {
+     "r": 0,
+     "en": "What should I change in my diet?",
+     "zh": "饮食要怎么改？"
+    },
+    {
+     "r": 1,
+     "en": "Less fried food, more fish, and twenty minutes outside a day.",
+     "zh": "少吃油炸，多吃鱼，每天户外二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Can I get a copy of the numbers?",
+     "zh": "能给我一份具体数值吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "医生问你生活习惯，你要如实答",
+    "prompt": {
+     "en": "How many units of alcohol do you drink a week?",
+     "zh": "你一周喝多少酒？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "About ten, mostly at weekends.",
+       "zh": "大概十个单位，多在周末。"
+      },
+      "react": {
+       "en": "That is within the limit, but it affects cholesterol.",
+       "zh": "在建议范围内，但会影响胆固醇。"
+      }
+     },
+     {
+      "say": {
+       "en": "Very little. Maybe twice a month.",
+       "zh": "很少。一个月两次。"
+      },
+      "react": {
+       "en": "Then diet is the main lever.",
+       "zh": "那饮食是主要抓手。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Most of it is normal.",
+     "zh": "大部分正常。"
+    },
+    {
+     "en": "Does that need medication?",
+     "zh": "需要吃药吗？"
+    },
+    {
+     "en": "We retest in three months.",
+     "zh": "三个月后复查。"
+    }
+   ]
+  },
+  {
+   "id": "checkup-report-2",
+   "g": "checkup-report",
+   "name": "看体检报告 · 血糖偏高",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "空腹血糖在临界值。",
+   "roles": [
+    "你",
+    "医生"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Your results are back. Most of it is normal.",
+     "zh": "报告出来了。大部分正常。"
+    },
+    {
+     "r": 0,
+     "en": "Most of it? What is not?",
+     "zh": "大部分？哪项不正常？"
+    },
+    {
+     "r": 1,
+     "en": "My fasting glucose is borderline. Does that mean diabetes?",
+     "zh": "空腹血糖在临界值。是糖尿病吗？"
+    },
+    {
+     "r": 0,
+     "en": "Not yet. It is pre-diabetes, and it can be reversed.",
+     "zh": "还不是。是糖尿病前期，可以逆转。"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. Diet and a supplement, then we retest in three months.",
+     "zh": "暂时不用。调整饮食加补充剂，三个月后复查。"
+    },
+    {
+     "r": 0,
+     "en": "What should I change in my diet?",
+     "zh": "饮食要怎么改？"
+    },
+    {
+     "r": 1,
+     "en": "Less fried food, more fish, and twenty minutes outside a day.",
+     "zh": "少吃油炸，多吃鱼，每天户外二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Can I get a copy of the numbers?",
+     "zh": "能给我一份具体数值吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "医生问你生活习惯，你要如实答",
+    "prompt": {
+     "en": "How many units of alcohol do you drink a week?",
+     "zh": "你一周喝多少酒？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "About ten, mostly at weekends.",
+       "zh": "大概十个单位，多在周末。"
+      },
+      "react": {
+       "en": "That is within the limit, but it affects cholesterol.",
+       "zh": "在建议范围内，但会影响胆固醇。"
+      }
+     },
+     {
+      "say": {
+       "en": "Very little. Maybe twice a month.",
+       "zh": "很少。一个月两次。"
+      },
+      "react": {
+       "en": "Then diet is the main lever.",
+       "zh": "那饮食是主要抓手。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Most of it is normal.",
+     "zh": "大部分正常。"
+    },
+    {
+     "en": "Does that need medication?",
+     "zh": "需要吃药吗？"
+    },
+    {
+     "en": "We retest in three months.",
+     "zh": "三个月后复查。"
+    }
+   ]
+  },
+  {
+   "id": "checkup-report-3",
+   "g": "checkup-report",
+   "name": "看体检报告 · 甲状腺",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "TSH 偏高。",
+   "roles": [
+    "你",
+    "医生"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Your results are back. Most of it is normal.",
+     "zh": "报告出来了。大部分正常。"
+    },
+    {
+     "r": 0,
+     "en": "Most of it? What is not?",
+     "zh": "大部分？哪项不正常？"
+    },
+    {
+     "r": 1,
+     "en": "The thyroid reading is high. What does that affect?",
+     "zh": "甲状腺指标偏高。影响什么？"
+    },
+    {
+     "r": 0,
+     "en": "Does that need medication?",
+     "zh": "需要吃药吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. Diet and a supplement, then we retest in three months.",
+     "zh": "暂时不用。调整饮食加补充剂，三个月后复查。"
+    },
+    {
+     "r": 0,
+     "en": "What should I change in my diet?",
+     "zh": "饮食要怎么改？"
+    },
+    {
+     "r": 1,
+     "en": "Less fried food, more fish, and twenty minutes outside a day.",
+     "zh": "少吃油炸，多吃鱼，每天户外二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Can I get a copy of the numbers?",
+     "zh": "能给我一份具体数值吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "医生问你生活习惯，你要如实答",
+    "prompt": {
+     "en": "How many units of alcohol do you drink a week?",
+     "zh": "你一周喝多少酒？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "About ten, mostly at weekends.",
+       "zh": "大概十个单位，多在周末。"
+      },
+      "react": {
+       "en": "That is within the limit, but it affects cholesterol.",
+       "zh": "在建议范围内，但会影响胆固醇。"
+      }
+     },
+     {
+      "say": {
+       "en": "Very little. Maybe twice a month.",
+       "zh": "很少。一个月两次。"
+      },
+      "react": {
+       "en": "Then diet is the main lever.",
+       "zh": "那饮食是主要抓手。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Most of it is normal.",
+     "zh": "大部分正常。"
+    },
+    {
+     "en": "Does that need medication?",
+     "zh": "需要吃药吗？"
+    },
+    {
+     "en": "We retest in three months.",
+     "zh": "三个月后复查。"
+    }
+   ]
+  },
+  {
+   "id": "checkup-report-4",
+   "g": "checkup-report",
+   "name": "看体检报告 · 贫血",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "血红蛋白偏低。",
+   "roles": [
+    "你",
+    "医生"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Your results are back. Most of it is normal.",
+     "zh": "报告出来了。大部分正常。"
+    },
+    {
+     "r": 0,
+     "en": "Most of it? What is not?",
+     "zh": "大部分？哪项不正常？"
+    },
+    {
+     "r": 1,
+     "en": "My iron is low. Should I take tablets?",
+     "zh": "我铁偏低。要吃片剂吗？"
+    },
+    {
+     "r": 0,
+     "en": "Does that need medication?",
+     "zh": "需要吃药吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. Diet and a supplement, then we retest in three months.",
+     "zh": "暂时不用。调整饮食加补充剂，三个月后复查。"
+    },
+    {
+     "r": 0,
+     "en": "What should I change in my diet?",
+     "zh": "饮食要怎么改？"
+    },
+    {
+     "r": 1,
+     "en": "Less fried food, more fish, and twenty minutes outside a day.",
+     "zh": "少吃油炸，多吃鱼，每天户外二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Can I get a copy of the numbers?",
+     "zh": "能给我一份具体数值吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "医生问你生活习惯，你要如实答",
+    "prompt": {
+     "en": "How many units of alcohol do you drink a week?",
+     "zh": "你一周喝多少酒？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "About ten, mostly at weekends.",
+       "zh": "大概十个单位，多在周末。"
+      },
+      "react": {
+       "en": "That is within the limit, but it affects cholesterol.",
+       "zh": "在建议范围内，但会影响胆固醇。"
+      }
+     },
+     {
+      "say": {
+       "en": "Very little. Maybe twice a month.",
+       "zh": "很少。一个月两次。"
+      },
+      "react": {
+       "en": "Then diet is the main lever.",
+       "zh": "那饮食是主要抓手。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Most of it is normal.",
+     "zh": "大部分正常。"
+    },
+    {
+     "en": "Does that need medication?",
+     "zh": "需要吃药吗？"
+    },
+    {
+     "en": "We retest in three months.",
+     "zh": "三个月后复查。"
+    }
+   ]
+  },
+  {
+   "id": "checkup-report-5",
+   "g": "checkup-report",
+   "name": "看体检报告 · 全都正常",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想知道还要注意什么。",
+   "roles": [
+    "你",
+    "医生"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Everything is normal? Then why am I always tired?",
+     "zh": "都正常？那我为什么总累？"
+    },
+    {
+     "r": 0,
+     "en": "Blood tests do not explain everything. How is your sleep?",
+     "zh": "验血不能解释一切。你睡眠怎么样？"
+    },
+    {
+     "r": 1,
+     "en": "Your cholesterol is a little high, and vitamin D is low.",
+     "zh": "胆固醇偏高一点，维生素 D 偏低。"
+    },
+    {
+     "r": 0,
+     "en": "Does that need medication?",
+     "zh": "需要吃药吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. Diet and a supplement, then we retest in three months.",
+     "zh": "暂时不用。调整饮食加补充剂，三个月后复查。"
+    },
+    {
+     "r": 0,
+     "en": "What should I change in my diet?",
+     "zh": "饮食要怎么改？"
+    },
+    {
+     "r": 1,
+     "en": "Less fried food, more fish, and twenty minutes outside a day.",
+     "zh": "少吃油炸，多吃鱼，每天户外二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Can I get a copy of the numbers?",
+     "zh": "能给我一份具体数值吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "医生问你生活习惯，你要如实答",
+    "prompt": {
+     "en": "How many units of alcohol do you drink a week?",
+     "zh": "你一周喝多少酒？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "About ten, mostly at weekends.",
+       "zh": "大概十个单位，多在周末。"
+      },
+      "react": {
+       "en": "That is within the limit, but it affects cholesterol.",
+       "zh": "在建议范围内，但会影响胆固醇。"
+      }
+     },
+     {
+      "say": {
+       "en": "Very little. Maybe twice a month.",
+       "zh": "很少。一个月两次。"
+      },
+      "react": {
+       "en": "Then diet is the main lever.",
+       "zh": "那饮食是主要抓手。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Most of it is normal.",
+     "zh": "大部分正常。"
+    },
+    {
+     "en": "Does that need medication?",
+     "zh": "需要吃药吗？"
+    },
+    {
+     "en": "We retest in three months.",
+     "zh": "三个月后复查。"
+    }
+   ]
+  },
+  {
+   "id": "checkup-report-6",
+   "g": "checkup-report",
+   "name": "看体检报告 · 要转诊",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "医生建议看专科。",
+   "roles": [
+    "你",
+    "医生"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Your results are back. Most of it is normal.",
+     "zh": "报告出来了。大部分正常。"
+    },
+    {
+     "r": 0,
+     "en": "Most of it? What is not?",
+     "zh": "大部分？哪项不正常？"
+    },
+    {
+     "r": 1,
+     "en": "Your cholesterol is a little high, and vitamin D is low.",
+     "zh": "胆固醇偏高一点，维生素 D 偏低。"
+    },
+    {
+     "r": 0,
+     "en": "Does that need medication?",
+     "zh": "需要吃药吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. Diet and a supplement, then we retest in three months.",
+     "zh": "暂时不用。调整饮食加补充剂，三个月后复查。"
+    },
+    {
+     "r": 0,
+     "en": "What should I change in my diet?",
+     "zh": "饮食要怎么改？"
+    },
+    {
+     "r": 1,
+     "en": "Less fried food, more fish, and twenty minutes outside a day.",
+     "zh": "少吃油炸，多吃鱼，每天户外二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Do I need a referral, or can I book directly?",
+     "zh": "需要转诊，还是能自己约？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "医生问你生活习惯，你要如实答",
+    "prompt": {
+     "en": "How many units of alcohol do you drink a week?",
+     "zh": "你一周喝多少酒？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "About ten, mostly at weekends.",
+       "zh": "大概十个单位，多在周末。"
+      },
+      "react": {
+       "en": "That is within the limit, but it affects cholesterol.",
+       "zh": "在建议范围内，但会影响胆固醇。"
+      }
+     },
+     {
+      "say": {
+       "en": "Very little. Maybe twice a month.",
+       "zh": "很少。一个月两次。"
+      },
+      "react": {
+       "en": "Then diet is the main lever.",
+       "zh": "那饮食是主要抓手。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Most of it is normal.",
+     "zh": "大部分正常。"
+    },
+    {
+     "en": "Does that need medication?",
+     "zh": "需要吃药吗？"
+    },
+    {
+     "en": "We retest in three months.",
+     "zh": "三个月后复查。"
+    }
+   ]
+  },
+  {
+   "id": "physio",
+   "g": "physio",
+   "name": "理疗第一次 · 搬箱子闪了腰",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "搬完家腰疼六周，坐久了更难受。",
+   "roles": [
+    "你",
+    "理疗师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Where does it hurt?",
+     "zh": "哪里疼？"
+    },
+    {
+     "r": 0,
+     "en": "Lower back, mostly on the left, worse in the morning.",
+     "zh": "下背，多偏左，早上更明显。"
+    },
+    {
+     "r": 1,
+     "en": "How long has it been like this?",
+     "zh": "这样多久了？"
+    },
+    {
+     "r": 0,
+     "en": "Six weeks. It started after I moved flats.",
+     "zh": "六周。搬完家开始的。"
+    },
+    {
+     "r": 1,
+     "en": "Lifting boxes, probably. Let me test your range.",
+     "zh": "大概是搬箱子。我测一下活动度。"
+    },
+    {
+     "r": 0,
+     "en": "Will I need scans?",
+     "zh": "需要做检查吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. Six sessions of this usually settles it.",
+     "zh": "暂时不用。一般六次治疗能缓过来。"
+    },
+    {
+     "r": 0,
+     "en": "What can I do between sessions?",
+     "zh": "两次之间我能做什么？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "理疗师要你做一个动作测试，你要说清感受",
+    "prompt": {
+     "en": "Bend forward slowly and tell me when it pulls.",
+     "zh": "慢慢前弯，哪里拉紧就告诉我。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Now, on the left, just above the hip.",
+       "zh": "现在，左边，髋部上方。"
+      },
+      "react": {
+       "en": "That is the spot I expected.",
+       "zh": "跟我预计的位置一致。"
+      }
+     },
+     {
+      "say": {
+       "en": "It is more of a dull ache than a pull.",
+       "zh": "更像是钝痛，不是拉紧。"
+      },
+      "react": {
+       "en": "Good. That changes the exercise.",
+       "zh": "好。那练的东西要换。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Worse in the morning.",
+     "zh": "早上更明显。"
+    },
+    {
+     "en": "Let me test your range.",
+     "zh": "我测一下活动度。"
+    },
+    {
+     "en": "What can I do between sessions?",
+     "zh": "两次之间能做什么？"
+    }
+   ]
+  },
+  {
+   "id": "physio-2",
+   "g": "physio",
+   "name": "理疗第一次 · 膝盖疼",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你跑步后膝盖疼。",
+   "roles": [
+    "你",
+    "理疗师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Where does it hurt?",
+     "zh": "哪里疼？"
+    },
+    {
+     "r": 0,
+     "en": "My knee hurts after running, on the outside.",
+     "zh": "跑步后膝盖外侧疼。"
+    },
+    {
+     "r": 1,
+     "en": "That is usually the band, not the joint. We will work on the hip.",
+     "zh": "一般是髂胫束，不是关节。我们会练髋。"
+    },
+    {
+     "r": 0,
+     "en": "Six weeks. It started after I moved flats.",
+     "zh": "六周。搬完家开始的。"
+    },
+    {
+     "r": 1,
+     "en": "Lifting boxes, probably. Let me test your range.",
+     "zh": "大概是搬箱子。我测一下活动度。"
+    },
+    {
+     "r": 0,
+     "en": "Will I need scans?",
+     "zh": "需要做检查吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. Six sessions of this usually settles it.",
+     "zh": "暂时不用。一般六次治疗能缓过来。"
+    },
+    {
+     "r": 0,
+     "en": "What can I do between sessions?",
+     "zh": "两次之间我能做什么？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "理疗师要你做一个动作测试，你要说清感受",
+    "prompt": {
+     "en": "Bend forward slowly and tell me when it pulls.",
+     "zh": "慢慢前弯，哪里拉紧就告诉我。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Now, on the left, just above the hip.",
+       "zh": "现在，左边，髋部上方。"
+      },
+      "react": {
+       "en": "That is the spot I expected.",
+       "zh": "跟我预计的位置一致。"
+      }
+     },
+     {
+      "say": {
+       "en": "It is more of a dull ache than a pull.",
+       "zh": "更像是钝痛，不是拉紧。"
+      },
+      "react": {
+       "en": "Good. That changes the exercise.",
+       "zh": "好。那练的东西要换。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Worse in the morning.",
+     "zh": "早上更明显。"
+    },
+    {
+     "en": "Let me test your range.",
+     "zh": "我测一下活动度。"
+    },
+    {
+     "en": "What can I do between sessions?",
+     "zh": "两次之间能做什么？"
+    }
+   ]
+  },
+  {
+   "id": "physio-3",
+   "g": "physio",
+   "name": "理疗第一次 · 肩膀",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你抬不起右臂。",
+   "roles": [
+    "你",
+    "理疗师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Where does it hurt?",
+     "zh": "哪里疼？"
+    },
+    {
+     "r": 0,
+     "en": "I cannot lift my right arm above the shoulder.",
+     "zh": "我右臂抬不过肩。"
+    },
+    {
+     "r": 1,
+     "en": "How long has it been like this?",
+     "zh": "这样多久了？"
+    },
+    {
+     "r": 0,
+     "en": "Six weeks. It started after I moved flats.",
+     "zh": "六周。搬完家开始的。"
+    },
+    {
+     "r": 1,
+     "en": "Lifting boxes, probably. Let me test your range.",
+     "zh": "大概是搬箱子。我测一下活动度。"
+    },
+    {
+     "r": 0,
+     "en": "Will I need scans?",
+     "zh": "需要做检查吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. Six sessions of this usually settles it.",
+     "zh": "暂时不用。一般六次治疗能缓过来。"
+    },
+    {
+     "r": 0,
+     "en": "What can I do between sessions?",
+     "zh": "两次之间我能做什么？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "理疗师要你做一个动作测试，你要说清感受",
+    "prompt": {
+     "en": "Bend forward slowly and tell me when it pulls.",
+     "zh": "慢慢前弯，哪里拉紧就告诉我。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Now, on the left, just above the hip.",
+       "zh": "现在，左边，髋部上方。"
+      },
+      "react": {
+       "en": "That is the spot I expected.",
+       "zh": "跟我预计的位置一致。"
+      }
+     },
+     {
+      "say": {
+       "en": "It is more of a dull ache than a pull.",
+       "zh": "更像是钝痛，不是拉紧。"
+      },
+      "react": {
+       "en": "Good. That changes the exercise.",
+       "zh": "好。那练的东西要换。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Worse in the morning.",
+     "zh": "早上更明显。"
+    },
+    {
+     "en": "Let me test your range.",
+     "zh": "我测一下活动度。"
+    },
+    {
+     "en": "What can I do between sessions?",
+     "zh": "两次之间能做什么？"
+    }
+   ]
+  },
+  {
+   "id": "physio-4",
+   "g": "physio",
+   "name": "理疗第一次 · 术后康复",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你做完手术。",
+   "roles": [
+    "你",
+    "理疗师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Where does it hurt?",
+     "zh": "哪里疼？"
+    },
+    {
+     "r": 0,
+     "en": "Lower back, mostly on the left, worse in the morning.",
+     "zh": "下背，多偏左，早上更明显。"
+    },
+    {
+     "r": 1,
+     "en": "How long has it been like this?",
+     "zh": "这样多久了？"
+    },
+    {
+     "r": 0,
+     "en": "I had surgery four weeks ago. The surgeon sent me.",
+     "zh": "四周前做了手术。外科医生让我来的。"
+    },
+    {
+     "r": 1,
+     "en": "Lifting boxes, probably. Let me test your range.",
+     "zh": "大概是搬箱子。我测一下活动度。"
+    },
+    {
+     "r": 0,
+     "en": "Will I need scans?",
+     "zh": "需要做检查吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. Six sessions of this usually settles it.",
+     "zh": "暂时不用。一般六次治疗能缓过来。"
+    },
+    {
+     "r": 0,
+     "en": "What can I do between sessions?",
+     "zh": "两次之间我能做什么？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "理疗师要你做一个动作测试，你要说清感受",
+    "prompt": {
+     "en": "Bend forward slowly and tell me when it pulls.",
+     "zh": "慢慢前弯，哪里拉紧就告诉我。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Now, on the left, just above the hip.",
+       "zh": "现在，左边，髋部上方。"
+      },
+      "react": {
+       "en": "That is the spot I expected.",
+       "zh": "跟我预计的位置一致。"
+      }
+     },
+     {
+      "say": {
+       "en": "It is more of a dull ache than a pull.",
+       "zh": "更像是钝痛，不是拉紧。"
+      },
+      "react": {
+       "en": "Good. That changes the exercise.",
+       "zh": "好。那练的东西要换。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Worse in the morning.",
+     "zh": "早上更明显。"
+    },
+    {
+     "en": "Let me test your range.",
+     "zh": "我测一下活动度。"
+    },
+    {
+     "en": "What can I do between sessions?",
+     "zh": "两次之间能做什么？"
+    }
+   ]
+  },
+  {
+   "id": "physio-5",
+   "g": "physio",
+   "name": "理疗第一次 · 久坐",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你每天坐十小时。",
+   "roles": [
+    "你",
+    "理疗师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "It is from sitting. Ten hours a day at a desk.",
+     "zh": "是坐出来的。每天桌前坐十小时。"
+    },
+    {
+     "r": 0,
+     "en": "Lower back, mostly on the left, worse in the morning.",
+     "zh": "下背，多偏左，早上更明显。"
+    },
+    {
+     "r": 1,
+     "en": "How long has it been like this?",
+     "zh": "这样多久了？"
+    },
+    {
+     "r": 0,
+     "en": "Six weeks. It started after I moved flats.",
+     "zh": "六周。搬完家开始的。"
+    },
+    {
+     "r": 1,
+     "en": "Lifting boxes, probably. Let me test your range.",
+     "zh": "大概是搬箱子。我测一下活动度。"
+    },
+    {
+     "r": 0,
+     "en": "Will I need scans?",
+     "zh": "需要做检查吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. Six sessions of this usually settles it.",
+     "zh": "暂时不用。一般六次治疗能缓过来。"
+    },
+    {
+     "r": 0,
+     "en": "What can I do between sessions?",
+     "zh": "两次之间我能做什么？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "理疗师要你做一个动作测试，你要说清感受",
+    "prompt": {
+     "en": "Bend forward slowly and tell me when it pulls.",
+     "zh": "慢慢前弯，哪里拉紧就告诉我。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Now, on the left, just above the hip.",
+       "zh": "现在，左边，髋部上方。"
+      },
+      "react": {
+       "en": "That is the spot I expected.",
+       "zh": "跟我预计的位置一致。"
+      }
+     },
+     {
+      "say": {
+       "en": "It is more of a dull ache than a pull.",
+       "zh": "更像是钝痛，不是拉紧。"
+      },
+      "react": {
+       "en": "Good. That changes the exercise.",
+       "zh": "好。那练的东西要换。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Worse in the morning.",
+     "zh": "早上更明显。"
+    },
+    {
+     "en": "Let me test your range.",
+     "zh": "我测一下活动度。"
+    },
+    {
+     "en": "What can I do between sessions?",
+     "zh": "两次之间能做什么？"
+    }
+   ]
+  },
+  {
+   "id": "physio-6",
+   "g": "physio",
+   "name": "理疗第一次 · 问费用",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想知道疗程价格。",
+   "roles": [
+    "你",
+    "理疗师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Where does it hurt?",
+     "zh": "哪里疼？"
+    },
+    {
+     "r": 0,
+     "en": "Lower back, mostly on the left, worse in the morning.",
+     "zh": "下背，多偏左，早上更明显。"
+    },
+    {
+     "r": 1,
+     "en": "How long has it been like this?",
+     "zh": "这样多久了？"
+    },
+    {
+     "r": 0,
+     "en": "Six weeks. It started after I moved flats.",
+     "zh": "六周。搬完家开始的。"
+    },
+    {
+     "r": 1,
+     "en": "Lifting boxes, probably. Let me test your range.",
+     "zh": "大概是搬箱子。我测一下活动度。"
+    },
+    {
+     "r": 0,
+     "en": "Will I need scans?",
+     "zh": "需要做检查吗？"
+    },
+    {
+     "r": 1,
+     "en": "Not yet. Six sessions of this usually settles it.",
+     "zh": "暂时不用。一般六次治疗能缓过来。"
+    },
+    {
+     "r": 0,
+     "en": "How much is a session, and can I claim it back?",
+     "zh": "一次多少钱？能报销吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "理疗师要你做一个动作测试，你要说清感受",
+    "prompt": {
+     "en": "Bend forward slowly and tell me when it pulls.",
+     "zh": "慢慢前弯，哪里拉紧就告诉我。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Now, on the left, just above the hip.",
+       "zh": "现在，左边，髋部上方。"
+      },
+      "react": {
+       "en": "That is the spot I expected.",
+       "zh": "跟我预计的位置一致。"
+      }
+     },
+     {
+      "say": {
+       "en": "It is more of a dull ache than a pull.",
+       "zh": "更像是钝痛，不是拉紧。"
+      },
+      "react": {
+       "en": "Good. That changes the exercise.",
+       "zh": "好。那练的东西要换。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Worse in the morning.",
+     "zh": "早上更明显。"
+    },
+    {
+     "en": "Let me test your range.",
+     "zh": "我测一下活动度。"
+    },
+    {
+     "en": "What can I do between sessions?",
+     "zh": "两次之间能做什么？"
+    }
+   ]
+  },
+  {
+   "id": "quit-smoking",
+   "g": "quit-smoking",
+   "name": "戒烟咨询 · 一天十五支",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你咳嗽了两个月，决定戒烟。",
+   "roles": [
+    "你",
+    "戒烟顾问"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How many a day?",
+     "zh": "一天几支？"
+    },
+    {
+     "r": 0,
+     "en": "About fifteen. More at weekends.",
+     "zh": "十五支左右。周末更多。"
+    },
+    {
+     "r": 1,
+     "en": "Have you tried stopping before?",
+     "zh": "以前试过戒吗？"
+    },
+    {
+     "r": 0,
+     "en": "Twice. I lasted a week both times.",
+     "zh": "两次。都只撑了一周。"
+    },
+    {
+     "r": 1,
+     "en": "Then let us plan it, not just pick a date.",
+     "zh": "那我们来做个计划，不只是挑个日子。"
+    },
+    {
+     "r": 0,
+     "en": "What does the plan involve?",
+     "zh": "计划包括什么？"
+    },
+    {
+     "r": 1,
+     "en": "Patches, a quit date in two weeks, and someone to call.",
+     "zh": "贴片、两周后的戒烟日，还有一个能打电话的人。"
+    },
+    {
+     "r": 0,
+     "en": "Can I still come to you if I slip?",
+     "zh": "如果我破戒了还能来找你吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "顾问问你复吸的触发点，你要具体",
+    "prompt": {
+     "en": "What was happening when you started again last time?",
+     "zh": "上次复吸时是什么情况？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "A work deadline. I bought a pack at midnight.",
+       "zh": "工作截止。半夜买了一包。"
+      },
+      "react": {
+       "en": "Then we plan for that night, not just the day.",
+       "zh": "那我们针对那个晚上做准备。"
+      }
+     },
+     {
+      "say": {
+       "en": "Drinking with friends.",
+       "zh": "跟朋友喝酒。"
+      },
+      "react": {
+       "en": "We will talk about the first month of that.",
+       "zh": "我们聊聊头一个月怎么应付。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I lasted a week.",
+     "zh": "我撑了一周。"
+    },
+    {
+     "en": "Let us plan it, not just pick a date.",
+     "zh": "我们做计划，不只是挑日子。"
+    },
+    {
+     "en": "If I slip.",
+     "zh": "如果我破戒。"
+    }
+   ]
+  },
+  {
+   "id": "quit-smoking-2",
+   "g": "quit-smoking",
+   "name": "戒烟咨询 · 电子烟",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你在用电子烟过渡。",
+   "roles": [
+    "你",
+    "戒烟顾问"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I switched to vaping. Is that better or just different?",
+     "zh": "我换成电子烟了。是更好还是只是换了个方式？"
+    },
+    {
+     "r": 0,
+     "en": "Better, but the goal is still to stop nicotine.",
+     "zh": "好一些，但目标还是戒掉尼古丁。"
+    },
+    {
+     "r": 1,
+     "en": "Have you tried stopping before?",
+     "zh": "以前试过戒吗？"
+    },
+    {
+     "r": 0,
+     "en": "Twice. I lasted a week both times.",
+     "zh": "两次。都只撑了一周。"
+    },
+    {
+     "r": 1,
+     "en": "Then let us plan it, not just pick a date.",
+     "zh": "那我们来做个计划，不只是挑个日子。"
+    },
+    {
+     "r": 0,
+     "en": "What does the plan involve?",
+     "zh": "计划包括什么？"
+    },
+    {
+     "r": 1,
+     "en": "Patches, a quit date in two weeks, and someone to call.",
+     "zh": "贴片、两周后的戒烟日，还有一个能打电话的人。"
+    },
+    {
+     "r": 0,
+     "en": "Can I still come to you if I slip?",
+     "zh": "如果我破戒了还能来找你吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "顾问问你复吸的触发点，你要具体",
+    "prompt": {
+     "en": "What was happening when you started again last time?",
+     "zh": "上次复吸时是什么情况？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "A work deadline. I bought a pack at midnight.",
+       "zh": "工作截止。半夜买了一包。"
+      },
+      "react": {
+       "en": "Then we plan for that night, not just the day.",
+       "zh": "那我们针对那个晚上做准备。"
+      }
+     },
+     {
+      "say": {
+       "en": "Drinking with friends.",
+       "zh": "跟朋友喝酒。"
+      },
+      "react": {
+       "en": "We will talk about the first month of that.",
+       "zh": "我们聊聊头一个月怎么应付。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I lasted a week.",
+     "zh": "我撑了一周。"
+    },
+    {
+     "en": "Let us plan it, not just pick a date.",
+     "zh": "我们做计划，不只是挑日子。"
+    },
+    {
+     "en": "If I slip.",
+     "zh": "如果我破戒。"
+    }
+   ]
+  },
+  {
+   "id": "quit-smoking-3",
+   "g": "quit-smoking",
+   "name": "戒烟咨询 · 家人也抽",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你伴侣也抽烟。",
+   "roles": [
+    "你",
+    "戒烟顾问"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How many a day?",
+     "zh": "一天几支？"
+    },
+    {
+     "r": 0,
+     "en": "About fifteen. More at weekends.",
+     "zh": "十五支左右。周末更多。"
+    },
+    {
+     "r": 1,
+     "en": "Have you tried stopping before?",
+     "zh": "以前试过戒吗？"
+    },
+    {
+     "r": 0,
+     "en": "My partner smokes too. It is hard to stop alone.",
+     "zh": "我伴侣也抽。一个人戒很难。"
+    },
+    {
+     "r": 1,
+     "en": "Bring them to the next session. Couples do better.",
+     "zh": "下次带他来。一起戒的成功率高。"
+    },
+    {
+     "r": 0,
+     "en": "What does the plan involve?",
+     "zh": "计划包括什么？"
+    },
+    {
+     "r": 1,
+     "en": "Patches, a quit date in two weeks, and someone to call.",
+     "zh": "贴片、两周后的戒烟日，还有一个能打电话的人。"
+    },
+    {
+     "r": 0,
+     "en": "Can I still come to you if I slip?",
+     "zh": "如果我破戒了还能来找你吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "顾问问你复吸的触发点，你要具体",
+    "prompt": {
+     "en": "What was happening when you started again last time?",
+     "zh": "上次复吸时是什么情况？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "A work deadline. I bought a pack at midnight.",
+       "zh": "工作截止。半夜买了一包。"
+      },
+      "react": {
+       "en": "Then we plan for that night, not just the day.",
+       "zh": "那我们针对那个晚上做准备。"
+      }
+     },
+     {
+      "say": {
+       "en": "Drinking with friends.",
+       "zh": "跟朋友喝酒。"
+      },
+      "react": {
+       "en": "We will talk about the first month of that.",
+       "zh": "我们聊聊头一个月怎么应付。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I lasted a week.",
+     "zh": "我撑了一周。"
+    },
+    {
+     "en": "Let us plan it, not just pick a date.",
+     "zh": "我们做计划，不只是挑日子。"
+    },
+    {
+     "en": "If I slip.",
+     "zh": "如果我破戒。"
+    }
+   ]
+  },
+  {
+   "id": "quit-smoking-4",
+   "g": "quit-smoking",
+   "name": "戒烟咨询 · 压力大",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你怕戒烟后更焦虑。",
+   "roles": [
+    "你",
+    "戒烟顾问"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How many a day?",
+     "zh": "一天几支？"
+    },
+    {
+     "r": 0,
+     "en": "About fifteen. More at weekends.",
+     "zh": "十五支左右。周末更多。"
+    },
+    {
+     "r": 1,
+     "en": "Have you tried stopping before?",
+     "zh": "以前试过戒吗？"
+    },
+    {
+     "r": 0,
+     "en": "Twice. I lasted a week both times.",
+     "zh": "两次。都只撑了一周。"
+    },
+    {
+     "r": 1,
+     "en": "Then let us plan it, not just pick a date.",
+     "zh": "那我们来做个计划，不只是挑个日子。"
+    },
+    {
+     "r": 0,
+     "en": "I am worried I will be unbearable at work.",
+     "zh": "我怕上班时变得很难相处。"
+    },
+    {
+     "r": 1,
+     "en": "Patches, a quit date in two weeks, and someone to call.",
+     "zh": "贴片、两周后的戒烟日，还有一个能打电话的人。"
+    },
+    {
+     "r": 0,
+     "en": "Can I still come to you if I slip?",
+     "zh": "如果我破戒了还能来找你吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "顾问问你复吸的触发点，你要具体",
+    "prompt": {
+     "en": "What was happening when you started again last time?",
+     "zh": "上次复吸时是什么情况？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "A work deadline. I bought a pack at midnight.",
+       "zh": "工作截止。半夜买了一包。"
+      },
+      "react": {
+       "en": "Then we plan for that night, not just the day.",
+       "zh": "那我们针对那个晚上做准备。"
+      }
+     },
+     {
+      "say": {
+       "en": "Drinking with friends.",
+       "zh": "跟朋友喝酒。"
+      },
+      "react": {
+       "en": "We will talk about the first month of that.",
+       "zh": "我们聊聊头一个月怎么应付。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I lasted a week.",
+     "zh": "我撑了一周。"
+    },
+    {
+     "en": "Let us plan it, not just pick a date.",
+     "zh": "我们做计划，不只是挑日子。"
+    },
+    {
+     "en": "If I slip.",
+     "zh": "如果我破戒。"
+    }
+   ]
+  },
+  {
+   "id": "quit-smoking-5",
+   "g": "quit-smoking",
+   "name": "戒烟咨询 · 减量",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你不想一次戒断。",
+   "roles": [
+    "你",
+    "戒烟顾问"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How many a day?",
+     "zh": "一天几支？"
+    },
+    {
+     "r": 0,
+     "en": "About fifteen. More at weekends.",
+     "zh": "十五支左右。周末更多。"
+    },
+    {
+     "r": 1,
+     "en": "Have you tried stopping before?",
+     "zh": "以前试过戒吗？"
+    },
+    {
+     "r": 0,
+     "en": "Twice. I lasted a week both times.",
+     "zh": "两次。都只撑了一周。"
+    },
+    {
+     "r": 1,
+     "en": "Then let us plan it, not just pick a date.",
+     "zh": "那我们来做个计划，不只是挑个日子。"
+    },
+    {
+     "r": 0,
+     "en": "What does the plan involve?",
+     "zh": "计划包括什么？"
+    },
+    {
+     "r": 1,
+     "en": "Could I cut down first instead of stopping?",
+     "zh": "能先减量而不是直接戒吗？"
+    },
+    {
+     "r": 0,
+     "en": "Can I still come to you if I slip?",
+     "zh": "如果我破戒了还能来找你吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "顾问问你复吸的触发点，你要具体",
+    "prompt": {
+     "en": "What was happening when you started again last time?",
+     "zh": "上次复吸时是什么情况？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "A work deadline. I bought a pack at midnight.",
+       "zh": "工作截止。半夜买了一包。"
+      },
+      "react": {
+       "en": "Then we plan for that night, not just the day.",
+       "zh": "那我们针对那个晚上做准备。"
+      }
+     },
+     {
+      "say": {
+       "en": "Drinking with friends.",
+       "zh": "跟朋友喝酒。"
+      },
+      "react": {
+       "en": "We will talk about the first month of that.",
+       "zh": "我们聊聊头一个月怎么应付。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I lasted a week.",
+     "zh": "我撑了一周。"
+    },
+    {
+     "en": "Let us plan it, not just pick a date.",
+     "zh": "我们做计划，不只是挑日子。"
+    },
+    {
+     "en": "If I slip.",
+     "zh": "如果我破戒。"
+    }
+   ]
+  },
+  {
+   "id": "quit-smoking-6",
+   "g": "quit-smoking",
+   "name": "戒烟咨询 · 孕期",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你怀孕了。",
+   "roles": [
+    "你",
+    "戒烟顾问"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "How many a day?",
+     "zh": "一天几支？"
+    },
+    {
+     "r": 0,
+     "en": "I am pregnant. Is the patch safe?",
+     "zh": "我怀孕了。贴片安全吗？"
+    },
+    {
+     "r": 1,
+     "en": "Have you tried stopping before?",
+     "zh": "以前试过戒吗？"
+    },
+    {
+     "r": 0,
+     "en": "Twice. I lasted a week both times.",
+     "zh": "两次。都只撑了一周。"
+    },
+    {
+     "r": 1,
+     "en": "Then let us plan it, not just pick a date.",
+     "zh": "那我们来做个计划，不只是挑个日子。"
+    },
+    {
+     "r": 0,
+     "en": "What does the plan involve?",
+     "zh": "计划包括什么？"
+    },
+    {
+     "r": 1,
+     "en": "Patches, a quit date in two weeks, and someone to call.",
+     "zh": "贴片、两周后的戒烟日，还有一个能打电话的人。"
+    },
+    {
+     "r": 0,
+     "en": "Can I still come to you if I slip?",
+     "zh": "如果我破戒了还能来找你吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "顾问问你复吸的触发点，你要具体",
+    "prompt": {
+     "en": "What was happening when you started again last time?",
+     "zh": "上次复吸时是什么情况？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "A work deadline. I bought a pack at midnight.",
+       "zh": "工作截止。半夜买了一包。"
+      },
+      "react": {
+       "en": "Then we plan for that night, not just the day.",
+       "zh": "那我们针对那个晚上做准备。"
+      }
+     },
+     {
+      "say": {
+       "en": "Drinking with friends.",
+       "zh": "跟朋友喝酒。"
+      },
+      "react": {
+       "en": "We will talk about the first month of that.",
+       "zh": "我们聊聊头一个月怎么应付。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I lasted a week.",
+     "zh": "我撑了一周。"
+    },
+    {
+     "en": "Let us plan it, not just pick a date.",
+     "zh": "我们做计划，不只是挑日子。"
+    },
+    {
+     "en": "If I slip.",
+     "zh": "如果我破戒。"
+    }
+   ]
+  },
+  {
+   "id": "vaccine",
+   "g": "vaccine",
+   "name": "打疫苗 · 年度流感疫苗",
+   "cat": "医疗",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "十月，诊所门口贴着打流感疫苗的通知。",
+   "roles": [
+    "你",
+    "护士"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Which one are you here for?",
+     "zh": "今天打哪种？"
+    },
+    {
+     "r": 0,
+     "en": "The flu jab. I get it every year.",
+     "zh": "流感疫苗。我每年都打。"
+    },
+    {
+     "r": 1,
+     "en": "Any reaction last time?",
+     "zh": "上次有反应吗？"
+    },
+    {
+     "r": 0,
+     "en": "A sore arm for a day, nothing else.",
+     "zh": "胳膊疼了一天，别的没有。"
+    },
+    {
+     "r": 1,
+     "en": "Good. Are you on any medication?",
+     "zh": "好。在吃什么药吗？"
+    },
+    {
+     "r": 0,
+     "en": "Just blood pressure tablets.",
+     "zh": "只有降压药。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Which arm do you write with?",
+     "zh": "没问题。你哪只手写字？"
+    },
+    {
+     "r": 0,
+     "en": "The right. Use the left, then.",
+     "zh": "右手。那打左边吧。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "护士做接种前筛查，你要如实答",
+    "prompt": {
+     "en": "Any fever or infection in the last week?",
+     "zh": "最近一周有发烧或感染吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I had a cold last week but it has gone.",
+       "zh": "上周感冒，已经好了。"
+      },
+      "react": {
+       "en": "Then we can go ahead today.",
+       "zh": "那今天可以打。"
+      }
+     },
+     {
+      "say": {
+       "en": "I still have a sore throat.",
+       "zh": "我嗓子还疼。"
+      },
+      "react": {
+       "en": "Let us wait until that settles.",
+       "zh": "等它好了再来。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Any reaction last time?",
+     "zh": "上次有反应吗？"
+    },
+    {
+     "en": "Which arm do you write with?",
+     "zh": "你哪只手写字？"
+    },
+    {
+     "en": "A sore arm for a day.",
+     "zh": "胳膊疼了一天。"
+    }
+   ]
+  },
+  {
+   "id": "vaccine-2",
+   "g": "vaccine",
+   "name": "打疫苗 · 旅行疫苗",
+   "cat": "医疗",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你要去热带。",
+   "roles": [
+    "你",
+    "护士"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I am travelling to Thailand. Which jabs do I need?",
+     "zh": "我要去泰国。需要打哪些疫苗？"
+    },
+    {
+     "r": 0,
+     "en": "Hepatitis A and typhoid. Come back in six weeks for the second.",
+     "zh": "甲肝和伤寒。六周后来打第二针。"
+    },
+    {
+     "r": 1,
+     "en": "Any reaction last time?",
+     "zh": "上次有反应吗？"
+    },
+    {
+     "r": 0,
+     "en": "A sore arm for a day, nothing else.",
+     "zh": "胳膊疼了一天，别的没有。"
+    },
+    {
+     "r": 1,
+     "en": "Good. Are you on any medication?",
+     "zh": "好。在吃什么药吗？"
+    },
+    {
+     "r": 0,
+     "en": "Just blood pressure tablets.",
+     "zh": "只有降压药。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Which arm do you write with?",
+     "zh": "没问题。你哪只手写字？"
+    },
+    {
+     "r": 0,
+     "en": "The right. Use the left, then.",
+     "zh": "右手。那打左边吧。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "护士做接种前筛查，你要如实答",
+    "prompt": {
+     "en": "Any fever or infection in the last week?",
+     "zh": "最近一周有发烧或感染吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I had a cold last week but it has gone.",
+       "zh": "上周感冒，已经好了。"
+      },
+      "react": {
+       "en": "Then we can go ahead today.",
+       "zh": "那今天可以打。"
+      }
+     },
+     {
+      "say": {
+       "en": "I still have a sore throat.",
+       "zh": "我嗓子还疼。"
+      },
+      "react": {
+       "en": "Let us wait until that settles.",
+       "zh": "等它好了再来。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Any reaction last time?",
+     "zh": "上次有反应吗？"
+    },
+    {
+     "en": "Which arm do you write with?",
+     "zh": "你哪只手写字？"
+    },
+    {
+     "en": "A sore arm for a day.",
+     "zh": "胳膊疼了一天。"
+    }
+   ]
+  },
+  {
+   "id": "vaccine-3",
+   "g": "vaccine",
+   "name": "打疫苗 · 儿童疫苗",
+   "cat": "医疗",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你带孩子来补种。",
+   "roles": [
+    "你",
+    "护士"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "He missed his pre-school booster. Can he have it now?",
+     "zh": "他错过了入园加强针。现在能补吗？"
+    },
+    {
+     "r": 0,
+     "en": "The flu jab. I get it every year.",
+     "zh": "流感疫苗。我每年都打。"
+    },
+    {
+     "r": 1,
+     "en": "Any reaction last time?",
+     "zh": "上次有反应吗？"
+    },
+    {
+     "r": 0,
+     "en": "A sore arm for a day, nothing else.",
+     "zh": "胳膊疼了一天，别的没有。"
+    },
+    {
+     "r": 1,
+     "en": "Good. Are you on any medication?",
+     "zh": "好。在吃什么药吗？"
+    },
+    {
+     "r": 0,
+     "en": "Just blood pressure tablets.",
+     "zh": "只有降压药。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Which arm do you write with?",
+     "zh": "没问题。你哪只手写字？"
+    },
+    {
+     "r": 0,
+     "en": "The right. Use the left, then.",
+     "zh": "右手。那打左边吧。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "护士做接种前筛查，你要如实答",
+    "prompt": {
+     "en": "Any fever or infection in the last week?",
+     "zh": "最近一周有发烧或感染吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I had a cold last week but it has gone.",
+       "zh": "上周感冒，已经好了。"
+      },
+      "react": {
+       "en": "Then we can go ahead today.",
+       "zh": "那今天可以打。"
+      }
+     },
+     {
+      "say": {
+       "en": "I still have a sore throat.",
+       "zh": "我嗓子还疼。"
+      },
+      "react": {
+       "en": "Let us wait until that settles.",
+       "zh": "等它好了再来。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Any reaction last time?",
+     "zh": "上次有反应吗？"
+    },
+    {
+     "en": "Which arm do you write with?",
+     "zh": "你哪只手写字？"
+    },
+    {
+     "en": "A sore arm for a day.",
+     "zh": "胳膊疼了一天。"
+    }
+   ]
+  },
+  {
+   "id": "vaccine-4",
+   "g": "vaccine",
+   "name": "打疫苗 · 过敏",
+   "cat": "医疗",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你对鸡蛋过敏。",
+   "roles": [
+    "你",
+    "护士"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Which one are you here for?",
+     "zh": "今天打哪种？"
+    },
+    {
+     "r": 0,
+     "en": "The flu jab. I get it every year.",
+     "zh": "流感疫苗。我每年都打。"
+    },
+    {
+     "r": 1,
+     "en": "Any reaction last time?",
+     "zh": "上次有反应吗？"
+    },
+    {
+     "r": 0,
+     "en": "A sore arm for a day, nothing else.",
+     "zh": "胳膊疼了一天，别的没有。"
+    },
+    {
+     "r": 1,
+     "en": "I am allergic to eggs. Does that matter for this one?",
+     "zh": "我对鸡蛋过敏。这个有影响吗？"
+    },
+    {
+     "r": 0,
+     "en": "Not for this vaccine. It is grown differently now.",
+     "zh": "这个不影响。现在的工艺不一样了。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Which arm do you write with?",
+     "zh": "没问题。你哪只手写字？"
+    },
+    {
+     "r": 0,
+     "en": "The right. Use the left, then.",
+     "zh": "右手。那打左边吧。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "护士做接种前筛查，你要如实答",
+    "prompt": {
+     "en": "Any fever or infection in the last week?",
+     "zh": "最近一周有发烧或感染吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I had a cold last week but it has gone.",
+       "zh": "上周感冒，已经好了。"
+      },
+      "react": {
+       "en": "Then we can go ahead today.",
+       "zh": "那今天可以打。"
+      }
+     },
+     {
+      "say": {
+       "en": "I still have a sore throat.",
+       "zh": "我嗓子还疼。"
+      },
+      "react": {
+       "en": "Let us wait until that settles.",
+       "zh": "等它好了再来。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Any reaction last time?",
+     "zh": "上次有反应吗？"
+    },
+    {
+     "en": "Which arm do you write with?",
+     "zh": "你哪只手写字？"
+    },
+    {
+     "en": "A sore arm for a day.",
+     "zh": "胳膊疼了一天。"
+    }
+   ]
+  },
+  {
+   "id": "vaccine-5",
+   "g": "vaccine",
+   "name": "打疫苗 · 记录",
+   "cat": "医疗",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你要接种记录。",
+   "roles": [
+    "你",
+    "护士"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Which one are you here for?",
+     "zh": "今天打哪种？"
+    },
+    {
+     "r": 0,
+     "en": "The flu jab. I get it every year.",
+     "zh": "流感疫苗。我每年都打。"
+    },
+    {
+     "r": 1,
+     "en": "Any reaction last time?",
+     "zh": "上次有反应吗？"
+    },
+    {
+     "r": 0,
+     "en": "A sore arm for a day, nothing else.",
+     "zh": "胳膊疼了一天，别的没有。"
+    },
+    {
+     "r": 1,
+     "en": "Good. Are you on any medication?",
+     "zh": "好。在吃什么药吗？"
+    },
+    {
+     "r": 0,
+     "en": "Just blood pressure tablets.",
+     "zh": "只有降压药。"
+    },
+    {
+     "r": 1,
+     "en": "That is fine. Which arm do you write with?",
+     "zh": "没问题。你哪只手写字？"
+    },
+    {
+     "r": 0,
+     "en": "Could you write it in my vaccination record?",
+     "zh": "能写进我的接种记录本吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "护士做接种前筛查，你要如实答",
+    "prompt": {
+     "en": "Any fever or infection in the last week?",
+     "zh": "最近一周有发烧或感染吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I had a cold last week but it has gone.",
+       "zh": "上周感冒，已经好了。"
+      },
+      "react": {
+       "en": "Then we can go ahead today.",
+       "zh": "那今天可以打。"
+      }
+     },
+     {
+      "say": {
+       "en": "I still have a sore throat.",
+       "zh": "我嗓子还疼。"
+      },
+      "react": {
+       "en": "Let us wait until that settles.",
+       "zh": "等它好了再来。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Any reaction last time?",
+     "zh": "上次有反应吗？"
+    },
+    {
+     "en": "Which arm do you write with?",
+     "zh": "你哪只手写字？"
+    },
+    {
+     "en": "A sore arm for a day.",
+     "zh": "胳膊疼了一天。"
+    }
+   ]
+  },
+  {
+   "id": "vaccine-6",
+   "g": "vaccine",
+   "name": "打疫苗 · 晕针",
+   "cat": "医疗",
+   "lv": 2,
+   "cefr": "A2",
+   "setting": "你怕打针。",
+   "roles": [
+    "你",
+    "护士"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Which one are you here for?",
+     "zh": "今天打哪种？"
+    },
+    {
+     "r": 0,
+     "en": "The flu jab. I get it every year.",
+     "zh": "流感疫苗。我每年都打。"
+    },
+    {
+     "r": 1,
+     "en": "Any reaction last time?",
+     "zh": "上次有反应吗？"
+    },
+    {
+     "r": 0,
+     "en": "A sore arm for a day, nothing else.",
+     "zh": "胳膊疼了一天，别的没有。"
+    },
+    {
+     "r": 1,
+     "en": "Good. Are you on any medication?",
+     "zh": "好。在吃什么药吗？"
+    },
+    {
+     "r": 0,
+     "en": "Just blood pressure tablets.",
+     "zh": "只有降压药。"
+    },
+    {
+     "r": 1,
+     "en": "I faint with needles. Can I lie down?",
+     "zh": "我见针会晕。能躺着打吗？"
+    },
+    {
+     "r": 0,
+     "en": "The right. Use the left, then.",
+     "zh": "右手。那打左边吧。"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "护士做接种前筛查，你要如实答",
+    "prompt": {
+     "en": "Any fever or infection in the last week?",
+     "zh": "最近一周有发烧或感染吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "I had a cold last week but it has gone.",
+       "zh": "上周感冒，已经好了。"
+      },
+      "react": {
+       "en": "Then we can go ahead today.",
+       "zh": "那今天可以打。"
+      }
+     },
+     {
+      "say": {
+       "en": "I still have a sore throat.",
+       "zh": "我嗓子还疼。"
+      },
+      "react": {
+       "en": "Let us wait until that settles.",
+       "zh": "等它好了再来。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "Any reaction last time?",
+     "zh": "上次有反应吗？"
+    },
+    {
+     "en": "Which arm do you write with?",
+     "zh": "你哪只手写字？"
+    },
+    {
+     "en": "A sore arm for a day.",
+     "zh": "胳膊疼了一天。"
+    }
+   ]
+  },
+  {
+   "id": "blood-donate",
+   "g": "blood-donate",
+   "name": "第一次献血 · 第一次献血",
+   "cat": "医疗",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "献血车停在公司楼下，你中午下来了。",
+   "roles": [
+    "你",
+    "护士"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "First time donating?",
+     "zh": "第一次献血？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. I am a bit nervous about the needle.",
+     "zh": "是。针头有点怕。"
+    },
+    {
+     "r": 1,
+     "en": "Most people are. Have you eaten today?",
+     "zh": "多数人都怕。今天吃东西了吗？"
+    },
+    {
+     "r": 0,
+     "en": "A light breakfast, about three hours ago.",
+     "zh": "吃了点早饭，大概三小时前。"
+    },
+    {
+     "r": 1,
+     "en": "Good. Have some water and sit here.",
+     "zh": "好。喝点水，坐这儿。"
+    },
+    {
+     "r": 0,
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    },
+    {
+     "r": 1,
+     "en": "Ten minutes for the donation, twenty resting after.",
+     "zh": "采血十分钟，之后休息二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Can I drive home afterwards?",
+     "zh": "之后能开车回家吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "护士做筛查问话，你要如实答",
+    "prompt": {
+     "en": "Have you had a tattoo or piercing in the last four months?",
+     "zh": "最近四个月有纹身或穿孔吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "A piercing in June, so four months ago exactly.",
+       "zh": "六月打了个洞，正好四个月。"
+      },
+      "react": {
+       "en": "Then we wait a week to be safe.",
+       "zh": "那安全起见再等一周。"
+      }
+     },
+     {
+      "say": {
+       "en": "No, neither.",
+       "zh": "没有，都没有。"
+      },
+      "react": {
+       "en": "Good. Let us get you set up.",
+       "zh": "好。给你安排上。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "First time donating?",
+     "zh": "第一次献？"
+    },
+    {
+     "en": "I feel light-headed.",
+     "zh": "我有点头轻。"
+    },
+    {
+     "en": "The minimum is fifty kilos.",
+     "zh": "最低五十公斤。"
+    }
+   ]
+  },
+  {
+   "id": "blood-donate-2",
+   "g": "blood-donate",
+   "name": "第一次献血 · 体重不够",
+   "cat": "医疗",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你偏瘦。",
+   "roles": [
+    "你",
+    "护士"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "First time donating?",
+     "zh": "第一次献血？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. I am a bit nervous about the needle.",
+     "zh": "是。针头有点怕。"
+    },
+    {
+     "r": 1,
+     "en": "Most people are. Have you eaten today?",
+     "zh": "多数人都怕。今天吃东西了吗？"
+    },
+    {
+     "r": 0,
+     "en": "I am quite light. Does that matter?",
+     "zh": "我比较瘦。有影响吗？"
+    },
+    {
+     "r": 1,
+     "en": "The minimum is fifty kilos. Let me weigh you.",
+     "zh": "最低五十公斤。我称一下。"
+    },
+    {
+     "r": 0,
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    },
+    {
+     "r": 1,
+     "en": "Ten minutes for the donation, twenty resting after.",
+     "zh": "采血十分钟，之后休息二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Can I drive home afterwards?",
+     "zh": "之后能开车回家吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "护士做筛查问话，你要如实答",
+    "prompt": {
+     "en": "Have you had a tattoo or piercing in the last four months?",
+     "zh": "最近四个月有纹身或穿孔吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "A piercing in June, so four months ago exactly.",
+       "zh": "六月打了个洞，正好四个月。"
+      },
+      "react": {
+       "en": "Then we wait a week to be safe.",
+       "zh": "那安全起见再等一周。"
+      }
+     },
+     {
+      "say": {
+       "en": "No, neither.",
+       "zh": "没有，都没有。"
+      },
+      "react": {
+       "en": "Good. Let us get you set up.",
+       "zh": "好。给你安排上。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "First time donating?",
+     "zh": "第一次献？"
+    },
+    {
+     "en": "I feel light-headed.",
+     "zh": "我有点头轻。"
+    },
+    {
+     "en": "The minimum is fifty kilos.",
+     "zh": "最低五十公斤。"
+    }
+   ]
+  },
+  {
+   "id": "blood-donate-3",
+   "g": "blood-donate",
+   "name": "第一次献血 · 吃药",
+   "cat": "医疗",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你在服抗生素。",
+   "roles": [
+    "你",
+    "护士"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "First time donating?",
+     "zh": "第一次献血？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. I am a bit nervous about the needle.",
+     "zh": "是。针头有点怕。"
+    },
+    {
+     "r": 1,
+     "en": "Most people are. Have you eaten today?",
+     "zh": "多数人都怕。今天吃东西了吗？"
+    },
+    {
+     "r": 0,
+     "en": "A light breakfast, about three hours ago.",
+     "zh": "吃了点早饭，大概三小时前。"
+    },
+    {
+     "r": 1,
+     "en": "Good. Have some water and sit here.",
+     "zh": "好。喝点水，坐这儿。"
+    },
+    {
+     "r": 0,
+     "en": "I finished antibiotics four days ago. Am I allowed?",
+     "zh": "我四天前停的抗生素。可以献吗？"
+    },
+    {
+     "r": 1,
+     "en": "Ten minutes for the donation, twenty resting after.",
+     "zh": "采血十分钟，之后休息二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Can I drive home afterwards?",
+     "zh": "之后能开车回家吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "护士做筛查问话，你要如实答",
+    "prompt": {
+     "en": "Have you had a tattoo or piercing in the last four months?",
+     "zh": "最近四个月有纹身或穿孔吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "A piercing in June, so four months ago exactly.",
+       "zh": "六月打了个洞，正好四个月。"
+      },
+      "react": {
+       "en": "Then we wait a week to be safe.",
+       "zh": "那安全起见再等一周。"
+      }
+     },
+     {
+      "say": {
+       "en": "No, neither.",
+       "zh": "没有，都没有。"
+      },
+      "react": {
+       "en": "Good. Let us get you set up.",
+       "zh": "好。给你安排上。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "First time donating?",
+     "zh": "第一次献？"
+    },
+    {
+     "en": "I feel light-headed.",
+     "zh": "我有点头轻。"
+    },
+    {
+     "en": "The minimum is fifty kilos.",
+     "zh": "最低五十公斤。"
+    }
+   ]
+  },
+  {
+   "id": "blood-donate-4",
+   "g": "blood-donate",
+   "name": "第一次献血 · 间隔",
+   "cat": "医疗",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你三个月前刚献过。",
+   "roles": [
+    "你",
+    "护士"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "First time donating?",
+     "zh": "第一次献血？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. I am a bit nervous about the needle.",
+     "zh": "是。针头有点怕。"
+    },
+    {
+     "r": 1,
+     "en": "Most people are. Have you eaten today?",
+     "zh": "多数人都怕。今天吃东西了吗？"
+    },
+    {
+     "r": 0,
+     "en": "A light breakfast, about three hours ago.",
+     "zh": "吃了点早饭，大概三小时前。"
+    },
+    {
+     "r": 1,
+     "en": "Good. Have some water and sit here.",
+     "zh": "好。喝点水，坐这儿。"
+    },
+    {
+     "r": 0,
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    },
+    {
+     "r": 1,
+     "en": "I donated three months ago. Is that too soon?",
+     "zh": "我三个月前献过。太近了吗？"
+    },
+    {
+     "r": 0,
+     "en": "Can I drive home afterwards?",
+     "zh": "之后能开车回家吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "护士做筛查问话，你要如实答",
+    "prompt": {
+     "en": "Have you had a tattoo or piercing in the last four months?",
+     "zh": "最近四个月有纹身或穿孔吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "A piercing in June, so four months ago exactly.",
+       "zh": "六月打了个洞，正好四个月。"
+      },
+      "react": {
+       "en": "Then we wait a week to be safe.",
+       "zh": "那安全起见再等一周。"
+      }
+     },
+     {
+      "say": {
+       "en": "No, neither.",
+       "zh": "没有，都没有。"
+      },
+      "react": {
+       "en": "Good. Let us get you set up.",
+       "zh": "好。给你安排上。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "First time donating?",
+     "zh": "第一次献？"
+    },
+    {
+     "en": "I feel light-headed.",
+     "zh": "我有点头轻。"
+    },
+    {
+     "en": "The minimum is fifty kilos.",
+     "zh": "最低五十公斤。"
+    }
+   ]
+  },
+  {
+   "id": "blood-donate-5",
+   "g": "blood-donate",
+   "name": "第一次献血 · 献血证",
+   "cat": "医疗",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你想要记录。",
+   "roles": [
+    "你",
+    "护士"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "First time donating?",
+     "zh": "第一次献血？"
+    },
+    {
+     "r": 0,
+     "en": "Yes. I am a bit nervous about the needle.",
+     "zh": "是。针头有点怕。"
+    },
+    {
+     "r": 1,
+     "en": "Most people are. Have you eaten today?",
+     "zh": "多数人都怕。今天吃东西了吗？"
+    },
+    {
+     "r": 0,
+     "en": "A light breakfast, about three hours ago.",
+     "zh": "吃了点早饭，大概三小时前。"
+    },
+    {
+     "r": 1,
+     "en": "Good. Have some water and sit here.",
+     "zh": "好。喝点水，坐这儿。"
+    },
+    {
+     "r": 0,
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    },
+    {
+     "r": 1,
+     "en": "Ten minutes for the donation, twenty resting after.",
+     "zh": "采血十分钟，之后休息二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Do I get a card with my blood type?",
+     "zh": "会给我一张写血型的卡吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "护士做筛查问话，你要如实答",
+    "prompt": {
+     "en": "Have you had a tattoo or piercing in the last four months?",
+     "zh": "最近四个月有纹身或穿孔吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "A piercing in June, so four months ago exactly.",
+       "zh": "六月打了个洞，正好四个月。"
+      },
+      "react": {
+       "en": "Then we wait a week to be safe.",
+       "zh": "那安全起见再等一周。"
+      }
+     },
+     {
+      "say": {
+       "en": "No, neither.",
+       "zh": "没有，都没有。"
+      },
+      "react": {
+       "en": "Good. Let us get you set up.",
+       "zh": "好。给你安排上。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "First time donating?",
+     "zh": "第一次献？"
+    },
+    {
+     "en": "I feel light-headed.",
+     "zh": "我有点头轻。"
+    },
+    {
+     "en": "The minimum is fifty kilos.",
+     "zh": "最低五十公斤。"
+    }
+   ]
+  },
+  {
+   "id": "blood-donate-6",
+   "g": "blood-donate",
+   "name": "第一次献血 · 之后头晕",
+   "cat": "医疗",
+   "lv": 3,
+   "cefr": "B1",
+   "setting": "你拔针后有点晕。",
+   "roles": [
+    "你",
+    "护士"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "I feel light-headed. Should I lie down?",
+     "zh": "我有点头轻。要躺下吗？"
+    },
+    {
+     "r": 0,
+     "en": "Yes, feet up. It passes in a few minutes.",
+     "zh": "躺下，脚抬高。几分钟就好。"
+    },
+    {
+     "r": 1,
+     "en": "Most people are. Have you eaten today?",
+     "zh": "多数人都怕。今天吃东西了吗？"
+    },
+    {
+     "r": 0,
+     "en": "A light breakfast, about three hours ago.",
+     "zh": "吃了点早饭，大概三小时前。"
+    },
+    {
+     "r": 1,
+     "en": "Good. Have some water and sit here.",
+     "zh": "好。喝点水，坐这儿。"
+    },
+    {
+     "r": 0,
+     "en": "How long does it take?",
+     "zh": "要多久？"
+    },
+    {
+     "r": 1,
+     "en": "Ten minutes for the donation, twenty resting after.",
+     "zh": "采血十分钟，之后休息二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "Can I drive home afterwards?",
+     "zh": "之后能开车回家吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "护士做筛查问话，你要如实答",
+    "prompt": {
+     "en": "Have you had a tattoo or piercing in the last four months?",
+     "zh": "最近四个月有纹身或穿孔吗？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "A piercing in June, so four months ago exactly.",
+       "zh": "六月打了个洞，正好四个月。"
+      },
+      "react": {
+       "en": "Then we wait a week to be safe.",
+       "zh": "那安全起见再等一周。"
+      }
+     },
+     {
+      "say": {
+       "en": "No, neither.",
+       "zh": "没有，都没有。"
+      },
+      "react": {
+       "en": "Good. Let us get you set up.",
+       "zh": "好。给你安排上。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "First time donating?",
+     "zh": "第一次献？"
+    },
+    {
+     "en": "I feel light-headed.",
+     "zh": "我有点头轻。"
+    },
+    {
+     "en": "The minimum is fifty kilos.",
+     "zh": "最低五十公斤。"
+    }
+   ]
+  },
+  {
+   "id": "braces",
+   "g": "braces",
+   "name": "咨询牙齿矫正 · 成人门牙重叠",
+   "cat": "医疗",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你三十二岁，门牙越来越挤，笑起来不敢露齿。",
+   "roles": [
+    "你",
+    "正畸医生"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Have you seen an orthodontist before?",
+     "zh": "以前看过正畸医生吗？"
+    },
+    {
+     "r": 0,
+     "en": "No. My front teeth overlap and it is getting worse.",
+     "zh": "没有。我门牙重叠，越来越明显。"
+    },
+    {
+     "r": 1,
+     "en": "How old are you? Adults take longer than teenagers.",
+     "zh": "你多大？成人比青少年慢。"
+    },
+    {
+     "r": 0,
+     "en": "Thirty-two. I wish I had done it earlier.",
+     "zh": "三十二。我后悔没早点做。"
+    },
+    {
+     "r": 1,
+     "en": "Clear braces would take about eighteen months.",
+     "zh": "隐形牙套大概十八个月。"
+    },
+    {
+     "r": 0,
+     "en": "What does that cost, roughly?",
+     "zh": "大概多少钱？"
+    },
+    {
+     "r": 1,
+     "en": "Three thousand, paid monthly.",
+     "zh": "三千，可以按月付。"
+    },
+    {
+     "r": 0,
+     "en": "Is there anything cheaper?",
+     "zh": "有便宜点的吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "医生给了方案和价格，你要判断承受力",
+    "prompt": {
+     "en": "Three thousand, or two thousand two hundred for metal braces.",
+     "zh": "三千，金属托槽两千二。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "What do the extra eight hundred actually buy?",
+       "zh": "多出的八百买的是什么？"
+      },
+      "react": {
+       "en": "Discretion and fewer visits. That is mostly it.",
+       "zh": "隐蔽性和复诊次数少。基本就这些。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I start with a deposit and pay monthly?",
+       "zh": "能先付定金再按月付吗？"
+      },
+      "react": {
+       "en": "Yes, over eighteen months.",
+       "zh": "可以，分十八个月。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "My front teeth overlap.",
+     "zh": "我门牙重叠。"
+    },
+    {
+     "en": "Paid monthly.",
+     "zh": "可以按月付。"
+    },
+    {
+     "en": "What do the extra eight hundred buy?",
+     "zh": "多出的钱买什么？"
+    }
+   ]
+  },
+  {
+   "id": "braces-2",
+   "g": "braces",
+   "name": "咨询牙齿矫正 · 孩子矫正",
+   "cat": "医疗",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你带孩子来。",
+   "roles": [
+    "你",
+    "正畸医生"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Have you seen an orthodontist before?",
+     "zh": "以前看过正畸医生吗？"
+    },
+    {
+     "r": 0,
+     "en": "It is for my daughter. She is eleven.",
+     "zh": "是给我女儿看。她十一岁。"
+    },
+    {
+     "r": 1,
+     "en": "That is the right age. The jaw is still growing.",
+     "zh": "这个年龄正合适。颌骨还在长。"
+    },
+    {
+     "r": 0,
+     "en": "Thirty-two. I wish I had done it earlier.",
+     "zh": "三十二。我后悔没早点做。"
+    },
+    {
+     "r": 1,
+     "en": "Clear braces would take about eighteen months.",
+     "zh": "隐形牙套大概十八个月。"
+    },
+    {
+     "r": 0,
+     "en": "What does that cost, roughly?",
+     "zh": "大概多少钱？"
+    },
+    {
+     "r": 1,
+     "en": "Three thousand, paid monthly.",
+     "zh": "三千，可以按月付。"
+    },
+    {
+     "r": 0,
+     "en": "Is there anything cheaper?",
+     "zh": "有便宜点的吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "医生给了方案和价格，你要判断承受力",
+    "prompt": {
+     "en": "Three thousand, or two thousand two hundred for metal braces.",
+     "zh": "三千，金属托槽两千二。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "What do the extra eight hundred actually buy?",
+       "zh": "多出的八百买的是什么？"
+      },
+      "react": {
+       "en": "Discretion and fewer visits. That is mostly it.",
+       "zh": "隐蔽性和复诊次数少。基本就这些。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I start with a deposit and pay monthly?",
+       "zh": "能先付定金再按月付吗？"
+      },
+      "react": {
+       "en": "Yes, over eighteen months.",
+       "zh": "可以，分十八个月。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "My front teeth overlap.",
+     "zh": "我门牙重叠。"
+    },
+    {
+     "en": "Paid monthly.",
+     "zh": "可以按月付。"
+    },
+    {
+     "en": "What do the extra eight hundred buy?",
+     "zh": "多出的钱买什么？"
+    }
+   ]
+  },
+  {
+   "id": "braces-3",
+   "g": "braces",
+   "name": "咨询牙齿矫正 · 金属托槽",
+   "cat": "医疗",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你想选最便宜的。",
+   "roles": [
+    "你",
+    "正畸医生"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Have you seen an orthodontist before?",
+     "zh": "以前看过正畸医生吗？"
+    },
+    {
+     "r": 0,
+     "en": "No. My front teeth overlap and it is getting worse.",
+     "zh": "没有。我门牙重叠，越来越明显。"
+    },
+    {
+     "r": 1,
+     "en": "How old are you? Adults take longer than teenagers.",
+     "zh": "你多大？成人比青少年慢。"
+    },
+    {
+     "r": 0,
+     "en": "Thirty-two. I wish I had done it earlier.",
+     "zh": "三十二。我后悔没早点做。"
+    },
+    {
+     "r": 1,
+     "en": "Clear braces would take about eighteen months.",
+     "zh": "隐形牙套大概十八个月。"
+    },
+    {
+     "r": 0,
+     "en": "What does that cost, roughly?",
+     "zh": "大概多少钱？"
+    },
+    {
+     "r": 1,
+     "en": "Three thousand, paid monthly.",
+     "zh": "三千，可以按月付。"
+    },
+    {
+     "r": 0,
+     "en": "The metal ones are cheaper, right? How visible are they?",
+     "zh": "金属的便宜些吧？明显吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "医生给了方案和价格，你要判断承受力",
+    "prompt": {
+     "en": "Three thousand, or two thousand two hundred for metal braces.",
+     "zh": "三千，金属托槽两千二。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "What do the extra eight hundred actually buy?",
+       "zh": "多出的八百买的是什么？"
+      },
+      "react": {
+       "en": "Discretion and fewer visits. That is mostly it.",
+       "zh": "隐蔽性和复诊次数少。基本就这些。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I start with a deposit and pay monthly?",
+       "zh": "能先付定金再按月付吗？"
+      },
+      "react": {
+       "en": "Yes, over eighteen months.",
+       "zh": "可以，分十八个月。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "My front teeth overlap.",
+     "zh": "我门牙重叠。"
+    },
+    {
+     "en": "Paid monthly.",
+     "zh": "可以按月付。"
+    },
+    {
+     "en": "What do the extra eight hundred buy?",
+     "zh": "多出的钱买什么？"
+    }
+   ]
+  },
+  {
+   "id": "braces-4",
+   "g": "braces",
+   "name": "咨询牙齿矫正 · 保持器",
+   "cat": "医疗",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你以前做过矫正。",
+   "roles": [
+    "你",
+    "正畸医生"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Have you seen an orthodontist before?",
+     "zh": "以前看过正畸医生吗？"
+    },
+    {
+     "r": 0,
+     "en": "No. My front teeth overlap and it is getting worse.",
+     "zh": "没有。我门牙重叠，越来越明显。"
+    },
+    {
+     "r": 1,
+     "en": "How old are you? Adults take longer than teenagers.",
+     "zh": "你多大？成人比青少年慢。"
+    },
+    {
+     "r": 0,
+     "en": "I had braces as a teenager and did not wear the retainer.",
+     "zh": "我十几岁戴过牙套，没好好戴保持器。"
+    },
+    {
+     "r": 1,
+     "en": "Clear braces would take about eighteen months.",
+     "zh": "隐形牙套大概十八个月。"
+    },
+    {
+     "r": 0,
+     "en": "What does that cost, roughly?",
+     "zh": "大概多少钱？"
+    },
+    {
+     "r": 1,
+     "en": "Three thousand, paid monthly.",
+     "zh": "三千，可以按月付。"
+    },
+    {
+     "r": 0,
+     "en": "Is there anything cheaper?",
+     "zh": "有便宜点的吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "医生给了方案和价格，你要判断承受力",
+    "prompt": {
+     "en": "Three thousand, or two thousand two hundred for metal braces.",
+     "zh": "三千，金属托槽两千二。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "What do the extra eight hundred actually buy?",
+       "zh": "多出的八百买的是什么？"
+      },
+      "react": {
+       "en": "Discretion and fewer visits. That is mostly it.",
+       "zh": "隐蔽性和复诊次数少。基本就这些。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I start with a deposit and pay monthly?",
+       "zh": "能先付定金再按月付吗？"
+      },
+      "react": {
+       "en": "Yes, over eighteen months.",
+       "zh": "可以，分十八个月。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "My front teeth overlap.",
+     "zh": "我门牙重叠。"
+    },
+    {
+     "en": "Paid monthly.",
+     "zh": "可以按月付。"
+    },
+    {
+     "en": "What do the extra eight hundred buy?",
+     "zh": "多出的钱买什么？"
+    }
+   ]
+  },
+  {
+   "id": "braces-5",
+   "g": "braces",
+   "name": "咨询牙齿矫正 · 拔牙",
+   "cat": "医疗",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "医生说可能要拔牙。",
+   "roles": [
+    "你",
+    "正畸医生"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Have you seen an orthodontist before?",
+     "zh": "以前看过正畸医生吗？"
+    },
+    {
+     "r": 0,
+     "en": "No. My front teeth overlap and it is getting worse.",
+     "zh": "没有。我门牙重叠，越来越明显。"
+    },
+    {
+     "r": 1,
+     "en": "How old are you? Adults take longer than teenagers.",
+     "zh": "你多大？成人比青少年慢。"
+    },
+    {
+     "r": 0,
+     "en": "Thirty-two. I wish I had done it earlier.",
+     "zh": "三十二。我后悔没早点做。"
+    },
+    {
+     "r": 1,
+     "en": "Would I need teeth out? That worries me.",
+     "zh": "要拔牙吗？这个我担心。"
+    },
+    {
+     "r": 0,
+     "en": "Possibly two. We decide after the scan.",
+     "zh": "可能要拔两颗。扫描后再定。"
+    },
+    {
+     "r": 1,
+     "en": "Three thousand, paid monthly.",
+     "zh": "三千，可以按月付。"
+    },
+    {
+     "r": 0,
+     "en": "Is there anything cheaper?",
+     "zh": "有便宜点的吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "医生给了方案和价格，你要判断承受力",
+    "prompt": {
+     "en": "Three thousand, or two thousand two hundred for metal braces.",
+     "zh": "三千，金属托槽两千二。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "What do the extra eight hundred actually buy?",
+       "zh": "多出的八百买的是什么？"
+      },
+      "react": {
+       "en": "Discretion and fewer visits. That is mostly it.",
+       "zh": "隐蔽性和复诊次数少。基本就这些。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I start with a deposit and pay monthly?",
+       "zh": "能先付定金再按月付吗？"
+      },
+      "react": {
+       "en": "Yes, over eighteen months.",
+       "zh": "可以，分十八个月。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "My front teeth overlap.",
+     "zh": "我门牙重叠。"
+    },
+    {
+     "en": "Paid monthly.",
+     "zh": "可以按月付。"
+    },
+    {
+     "en": "What do the extra eight hundred buy?",
+     "zh": "多出的钱买什么？"
+    }
+   ]
+  },
+  {
+   "id": "braces-6",
+   "g": "braces",
+   "name": "咨询牙齿矫正 · 保险",
+   "cat": "医疗",
+   "lv": 5,
+   "cefr": "B2",
+   "setting": "你想知道能不能报。",
+   "roles": [
+    "你",
+    "正畸医生"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Have you seen an orthodontist before?",
+     "zh": "以前看过正畸医生吗？"
+    },
+    {
+     "r": 0,
+     "en": "No. My front teeth overlap and it is getting worse.",
+     "zh": "没有。我门牙重叠，越来越明显。"
+    },
+    {
+     "r": 1,
+     "en": "How old are you? Adults take longer than teenagers.",
+     "zh": "你多大？成人比青少年慢。"
+    },
+    {
+     "r": 0,
+     "en": "Thirty-two. I wish I had done it earlier.",
+     "zh": "三十二。我后悔没早点做。"
+    },
+    {
+     "r": 1,
+     "en": "Clear braces would take about eighteen months.",
+     "zh": "隐形牙套大概十八个月。"
+    },
+    {
+     "r": 0,
+     "en": "What does that cost, roughly?",
+     "zh": "大概多少钱？"
+    },
+    {
+     "r": 1,
+     "en": "Does dental insurance cover orthodontics for adults?",
+     "zh": "牙科保险报成人正畸吗？"
+    },
+    {
+     "r": 0,
+     "en": "Is there anything cheaper?",
+     "zh": "有便宜点的吗？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "cost",
+    "task": "医生给了方案和价格，你要判断承受力",
+    "prompt": {
+     "en": "Three thousand, or two thousand two hundred for metal braces.",
+     "zh": "三千，金属托槽两千二。"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "What do the extra eight hundred actually buy?",
+       "zh": "多出的八百买的是什么？"
+      },
+      "react": {
+       "en": "Discretion and fewer visits. That is mostly it.",
+       "zh": "隐蔽性和复诊次数少。基本就这些。"
+      }
+     },
+     {
+      "say": {
+       "en": "Can I start with a deposit and pay monthly?",
+       "zh": "能先付定金再按月付吗？"
+      },
+      "react": {
+       "en": "Yes, over eighteen months.",
+       "zh": "可以，分十八个月。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "My front teeth overlap.",
+     "zh": "我门牙重叠。"
+    },
+    {
+     "en": "Paid monthly.",
+     "zh": "可以按月付。"
+    },
+    {
+     "en": "What do the extra eight hundred buy?",
+     "zh": "多出的钱买什么？"
+    }
+   ]
+  },
+  {
+   "id": "hearing",
+   "g": "hearing",
+   "name": "听力检查 · 左耳听不清",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你开会总听漏，家人说你电视开太响。",
+   "roles": [
+    "你",
+    "听力师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Which ear is worse?",
+     "zh": "哪只耳朵差一些？"
+    },
+    {
+     "r": 0,
+     "en": "The left. I keep asking people to repeat themselves.",
+     "zh": "左边。我总让别人重复。"
+    },
+    {
+     "r": 1,
+     "en": "Any ringing?",
+     "zh": "有耳鸣吗？"
+    },
+    {
+     "r": 0,
+     "en": "A high tone at night, mostly when it is quiet.",
+     "zh": "晚上有高音，安静的时候明显。"
+    },
+    {
+     "r": 1,
+     "en": "Let us do a hearing test. It takes twenty minutes.",
+     "zh": "做个听力测试。二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "If I need hearing aids, are they covered?",
+     "zh": "如果需要助听器，能报吗？"
+    },
+    {
+     "r": 1,
+     "en": "Partially, through the health service. Private ones cost more.",
+     "zh": "公立的能报一部分。自费更贵。"
+    },
+    {
+     "r": 0,
+     "en": "How long do the batteries last?",
+     "zh": "电池能用多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "听力师问你的日常影响，你要给具体场景",
+    "prompt": {
+     "en": "Does it affect you at work or only at home?",
+     "zh": "影响工作还是只在家里？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Meetings. I nod and hope I heard it right.",
+       "zh": "开会。我点头，希望自己听对了。"
+      },
+      "react": {
+       "en": "That is exactly what we need to fix first.",
+       "zh": "这正是我们首先该解决的。"
+      }
+     },
+     {
+      "say": {
+       "en": "Mostly television and restaurants.",
+       "zh": "主要是电视和餐厅。"
+      },
+      "react": {
+       "en": "Restaurants are the hardest for everyone.",
+       "zh": "餐厅对所有人都是最难的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I keep asking people to repeat.",
+     "zh": "我总让别人重复。"
+    },
+    {
+     "en": "Any ringing?",
+     "zh": "有耳鸣吗？"
+    },
+    {
+     "en": "Are they covered?",
+     "zh": "能报销吗？"
+    }
+   ]
+  },
+  {
+   "id": "hearing-2",
+   "g": "hearing",
+   "name": "听力检查 · 耳鸣",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你耳鸣三个月。",
+   "roles": [
+    "你",
+    "听力师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Which ear is worse?",
+     "zh": "哪只耳朵差一些？"
+    },
+    {
+     "r": 0,
+     "en": "The left. I keep asking people to repeat themselves.",
+     "zh": "左边。我总让别人重复。"
+    },
+    {
+     "r": 1,
+     "en": "Any ringing?",
+     "zh": "有耳鸣吗？"
+    },
+    {
+     "r": 0,
+     "en": "The ringing started three months ago and never stops.",
+     "zh": "耳鸣三个月了，一直没停。"
+    },
+    {
+     "r": 1,
+     "en": "We should check for wax and for noise damage.",
+     "zh": "要查耳垢和噪声损伤。"
+    },
+    {
+     "r": 0,
+     "en": "If I need hearing aids, are they covered?",
+     "zh": "如果需要助听器，能报吗？"
+    },
+    {
+     "r": 1,
+     "en": "Partially, through the health service. Private ones cost more.",
+     "zh": "公立的能报一部分。自费更贵。"
+    },
+    {
+     "r": 0,
+     "en": "How long do the batteries last?",
+     "zh": "电池能用多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "听力师问你的日常影响，你要给具体场景",
+    "prompt": {
+     "en": "Does it affect you at work or only at home?",
+     "zh": "影响工作还是只在家里？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Meetings. I nod and hope I heard it right.",
+       "zh": "开会。我点头，希望自己听对了。"
+      },
+      "react": {
+       "en": "That is exactly what we need to fix first.",
+       "zh": "这正是我们首先该解决的。"
+      }
+     },
+     {
+      "say": {
+       "en": "Mostly television and restaurants.",
+       "zh": "主要是电视和餐厅。"
+      },
+      "react": {
+       "en": "Restaurants are the hardest for everyone.",
+       "zh": "餐厅对所有人都是最难的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I keep asking people to repeat.",
+     "zh": "我总让别人重复。"
+    },
+    {
+     "en": "Any ringing?",
+     "zh": "有耳鸣吗？"
+    },
+    {
+     "en": "Are they covered?",
+     "zh": "能报销吗？"
+    }
+   ]
+  },
+  {
+   "id": "hearing-3",
+   "g": "hearing",
+   "name": "听力检查 · 孩子",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你怀疑孩子听力。",
+   "roles": [
+    "你",
+    "听力师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "My son does not respond when I call from another room.",
+     "zh": "我在另一个房间叫他，他没反应。"
+    },
+    {
+     "r": 0,
+     "en": "The left. I keep asking people to repeat themselves.",
+     "zh": "左边。我总让别人重复。"
+    },
+    {
+     "r": 1,
+     "en": "Any ringing?",
+     "zh": "有耳鸣吗？"
+    },
+    {
+     "r": 0,
+     "en": "A high tone at night, mostly when it is quiet.",
+     "zh": "晚上有高音，安静的时候明显。"
+    },
+    {
+     "r": 1,
+     "en": "Let us do a hearing test. It takes twenty minutes.",
+     "zh": "做个听力测试。二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "If I need hearing aids, are they covered?",
+     "zh": "如果需要助听器，能报吗？"
+    },
+    {
+     "r": 1,
+     "en": "Partially, through the health service. Private ones cost more.",
+     "zh": "公立的能报一部分。自费更贵。"
+    },
+    {
+     "r": 0,
+     "en": "How long do the batteries last?",
+     "zh": "电池能用多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "听力师问你的日常影响，你要给具体场景",
+    "prompt": {
+     "en": "Does it affect you at work or only at home?",
+     "zh": "影响工作还是只在家里？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Meetings. I nod and hope I heard it right.",
+       "zh": "开会。我点头，希望自己听对了。"
+      },
+      "react": {
+       "en": "That is exactly what we need to fix first.",
+       "zh": "这正是我们首先该解决的。"
+      }
+     },
+     {
+      "say": {
+       "en": "Mostly television and restaurants.",
+       "zh": "主要是电视和餐厅。"
+      },
+      "react": {
+       "en": "Restaurants are the hardest for everyone.",
+       "zh": "餐厅对所有人都是最难的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I keep asking people to repeat.",
+     "zh": "我总让别人重复。"
+    },
+    {
+     "en": "Any ringing?",
+     "zh": "有耳鸣吗？"
+    },
+    {
+     "en": "Are they covered?",
+     "zh": "能报销吗？"
+    }
+   ]
+  },
+  {
+   "id": "hearing-4",
+   "g": "hearing",
+   "name": "听力检查 · 助听器",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你想试戴。",
+   "roles": [
+    "你",
+    "听力师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Which ear is worse?",
+     "zh": "哪只耳朵差一些？"
+    },
+    {
+     "r": 0,
+     "en": "The left. I keep asking people to repeat themselves.",
+     "zh": "左边。我总让别人重复。"
+    },
+    {
+     "r": 1,
+     "en": "Any ringing?",
+     "zh": "有耳鸣吗？"
+    },
+    {
+     "r": 0,
+     "en": "A high tone at night, mostly when it is quiet.",
+     "zh": "晚上有高音，安静的时候明显。"
+    },
+    {
+     "r": 1,
+     "en": "Let us do a hearing test. It takes twenty minutes.",
+     "zh": "做个听力测试。二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "If I need hearing aids, are they covered?",
+     "zh": "如果需要助听器，能报吗？"
+    },
+    {
+     "r": 1,
+     "en": "Could I try a pair before buying?",
+     "zh": "买之前能试戴吗？"
+    },
+    {
+     "r": 0,
+     "en": "How long do the batteries last?",
+     "zh": "电池能用多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "听力师问你的日常影响，你要给具体场景",
+    "prompt": {
+     "en": "Does it affect you at work or only at home?",
+     "zh": "影响工作还是只在家里？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Meetings. I nod and hope I heard it right.",
+       "zh": "开会。我点头，希望自己听对了。"
+      },
+      "react": {
+       "en": "That is exactly what we need to fix first.",
+       "zh": "这正是我们首先该解决的。"
+      }
+     },
+     {
+      "say": {
+       "en": "Mostly television and restaurants.",
+       "zh": "主要是电视和餐厅。"
+      },
+      "react": {
+       "en": "Restaurants are the hardest for everyone.",
+       "zh": "餐厅对所有人都是最难的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I keep asking people to repeat.",
+     "zh": "我总让别人重复。"
+    },
+    {
+     "en": "Any ringing?",
+     "zh": "有耳鸣吗？"
+    },
+    {
+     "en": "Are they covered?",
+     "zh": "能报销吗？"
+    }
+   ]
+  },
+  {
+   "id": "hearing-5",
+   "g": "hearing",
+   "name": "听力检查 · 噪声",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你在工厂工作。",
+   "roles": [
+    "你",
+    "听力师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Which ear is worse?",
+     "zh": "哪只耳朵差一些？"
+    },
+    {
+     "r": 0,
+     "en": "I work in a factory. It has been getting worse for years.",
+     "zh": "我在工厂工作。这几年越来越差。"
+    },
+    {
+     "r": 1,
+     "en": "Any ringing?",
+     "zh": "有耳鸣吗？"
+    },
+    {
+     "r": 0,
+     "en": "A high tone at night, mostly when it is quiet.",
+     "zh": "晚上有高音，安静的时候明显。"
+    },
+    {
+     "r": 1,
+     "en": "Let us do a hearing test. It takes twenty minutes.",
+     "zh": "做个听力测试。二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "If I need hearing aids, are they covered?",
+     "zh": "如果需要助听器，能报吗？"
+    },
+    {
+     "r": 1,
+     "en": "Partially, through the health service. Private ones cost more.",
+     "zh": "公立的能报一部分。自费更贵。"
+    },
+    {
+     "r": 0,
+     "en": "How long do the batteries last?",
+     "zh": "电池能用多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "听力师问你的日常影响，你要给具体场景",
+    "prompt": {
+     "en": "Does it affect you at work or only at home?",
+     "zh": "影响工作还是只在家里？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Meetings. I nod and hope I heard it right.",
+       "zh": "开会。我点头，希望自己听对了。"
+      },
+      "react": {
+       "en": "That is exactly what we need to fix first.",
+       "zh": "这正是我们首先该解决的。"
+      }
+     },
+     {
+      "say": {
+       "en": "Mostly television and restaurants.",
+       "zh": "主要是电视和餐厅。"
+      },
+      "react": {
+       "en": "Restaurants are the hardest for everyone.",
+       "zh": "餐厅对所有人都是最难的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I keep asking people to repeat.",
+     "zh": "我总让别人重复。"
+    },
+    {
+     "en": "Any ringing?",
+     "zh": "有耳鸣吗？"
+    },
+    {
+     "en": "Are they covered?",
+     "zh": "能报销吗？"
+    }
+   ]
+  },
+  {
+   "id": "hearing-6",
+   "g": "hearing",
+   "name": "听力检查 · 耳垢",
+   "cat": "医疗",
+   "lv": 4,
+   "cefr": "B1",
+   "setting": "你耳朵堵。",
+   "roles": [
+    "你",
+    "听力师"
+   ],
+   "you": 0,
+   "lines": [
+    {
+     "r": 1,
+     "en": "Which ear is worse?",
+     "zh": "哪只耳朵差一些？"
+    },
+    {
+     "r": 0,
+     "en": "The left. I keep asking people to repeat themselves.",
+     "zh": "左边。我总让别人重复。"
+    },
+    {
+     "r": 1,
+     "en": "My ear feels blocked. Is it wax?",
+     "zh": "耳朵感觉堵。是耳垢吗？"
+    },
+    {
+     "r": 0,
+     "en": "A high tone at night, mostly when it is quiet.",
+     "zh": "晚上有高音，安静的时候明显。"
+    },
+    {
+     "r": 1,
+     "en": "Let us do a hearing test. It takes twenty minutes.",
+     "zh": "做个听力测试。二十分钟。"
+    },
+    {
+     "r": 0,
+     "en": "If I need hearing aids, are they covered?",
+     "zh": "如果需要助听器，能报吗？"
+    },
+    {
+     "r": 1,
+     "en": "Partially, through the health service. Private ones cost more.",
+     "zh": "公立的能报一部分。自费更贵。"
+    },
+    {
+     "r": 0,
+     "en": "How long do the batteries last?",
+     "zh": "电池能用多久？"
+    }
+   ],
+   "branch": {
+    "at": 5,
+    "kind": "probe",
+    "task": "听力师问你的日常影响，你要给具体场景",
+    "prompt": {
+     "en": "Does it affect you at work or only at home?",
+     "zh": "影响工作还是只在家里？"
+    },
+    "options": [
+     {
+      "say": {
+       "en": "Meetings. I nod and hope I heard it right.",
+       "zh": "开会。我点头，希望自己听对了。"
+      },
+      "react": {
+       "en": "That is exactly what we need to fix first.",
+       "zh": "这正是我们首先该解决的。"
+      }
+     },
+     {
+      "say": {
+       "en": "Mostly television and restaurants.",
+       "zh": "主要是电视和餐厅。"
+      },
+      "react": {
+       "en": "Restaurants are the hardest for everyone.",
+       "zh": "餐厅对所有人都是最难的。"
+      }
+     }
+    ]
+   },
+   "phrases": [
+    {
+     "en": "I keep asking people to repeat.",
+     "zh": "我总让别人重复。"
+    },
+    {
+     "en": "Any ringing?",
+     "zh": "有耳鸣吗？"
+    },
+    {
+     "en": "Are they covered?",
+     "zh": "能报销吗？"
+    }
+   ]
+  },
+  {
    "id": "payslip",
    "g": "payslip",
    "name": "工资条看不懂 · 实发变少",
