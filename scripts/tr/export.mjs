@@ -34,6 +34,8 @@ const meta = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/tr-meta.json'), 'u
 const DROP = {
   // 62 起是 CONTENTS，347 起是 LIST OF ILLUSTRATIONS，正文从 409 那一条的后半开始
   'the-aesop-for-children': [[62, 409]],
+  // 5 起是 CONTENTS（每条还带着自己的罗马数字和页码），47 才是"PART ONE"与第一章标题
+  'treasure-island': [[5, 47]],
 };
 
 const dropSet = (slug) => {
