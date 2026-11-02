@@ -36,6 +36,18 @@ export const dayNoOfKey = (key: string) => {
   return Math.floor(Date.UTC(y, m - 1, d) / DAY);
 };
 
+/**
+ * 场景多久没练算「该重温」。
+ *
+ * 词和句型有 FSRS 排期，场景没有 —— 而且不该有：一场对话要不要重练，
+ * 取决于你多久没用过它，不是取决于遗忘曲线。两周是个够用的固定间隔。
+ */
+export const SCENE_REVIEW_DAYS = 14;
+
+/** 练过、但已经超过 SCENE_REVIEW_DAYS 没再练 */
+export const sceneStale = (stat: { at: string } | undefined, today = dayNo()) =>
+  !!stat && today - dayNoOfKey(stat.at) >= SCENE_REVIEW_DAYS;
+
 /** 旧调度阶梯，只用于把老数据迁移到 FSRS（s 曾是 0–5 的档位） */
 const LEGACY_INTERVALS = [1, 3, 7, 16, 35, 75];
 

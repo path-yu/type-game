@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useCorpus } from '../lib/CorpusContext';
-import { dayNo, useGame } from '../lib/store';
+import { SCENE_REVIEW_DAYS, dayNo, dayNoOfKey, sceneStale, useGame } from '../lib/store';
 import { loadDialogues, linesOf, validate, yourLines, type DBank, type Role, type Scene } from '../lib/dialogue';
 import { pendingCount, pickSession, unlockedPhrases, type PhraseItem } from '../lib/phrases';
 import { stopSpeaking } from '../lib/speech';
@@ -62,7 +62,6 @@ export function DialogueScreen() {
     [bank, p.customScenes],
   );
   const scene = all.find(s => s.id === openId) ?? null;
-  const done = all.filter(s => p.scenes[s.id]).length;
 
   // 句型池只收「练过的那几场」，否则 40 句一起涌进来没人扛得住
   const pool = useMemo(() => unlockedPhrases(all, p.scenes), [all, p.scenes]);
@@ -70,9 +69,11 @@ export function DialogueScreen() {
 
   /* ---- 筛选与分组：一千场之后，翻卡片找场景是不现实的 ---- */
   const [q, setQ] = useState('');
-  const [cat, setCat] = useState('全部');
+  const [cat, setCat] = useState('全类别');
   const [lv, setLv] = useState(0);
   const [favOnly, setFavOnly] = useState(false);
+  // 进度：一千场里「还差什么」比「一共有多少」重要
+  const [status, setStatus] = useState<'all' | 'new' | 'done' | 'due'>('all');
   const [open, setOpen] = useState<Record<string, boolean>>({});
   const [page, setPage] = useState(1);
   // 练法提到这一层：切到下一场时不该被打回「通读」，刚在打什么就接着打什么
@@ -81,6 +82,25 @@ export function DialogueScreen() {
   const fav = useMemo(() => new Set(p.favScenes), [p.favScenes]);
 
   const customIds = useMemo(() => new Set(p.customScenes.map(x => x.id)), [p.customScenes]);
+
+  const counts = useMemo(() => {
+    const today = dayNo();
+    let fresh = 0, did = 0, due = 0;
+    for (const s of all) {
+      const st = p.scenes[s.id];
+      if (!st) { fresh++; continue; }
+      did++;
+      if (sceneStale(st, today)) due++;
+    }
+    return { fresh, did, due };
+  }, [all, p.scenes]);
+  const done = counts.did;
+
+  // 页头的「N 个情境」说的是全库，不跟着筛选变 —— 筛选后的数量由下方标签自己说
+  const allGroupCount = useMemo(
+    () => new Set(all.map(s => s.g ?? (customIds.has(s.id) ? '__custom' : s.id))).size,
+    [all, customIds],
+  );
 
   const cats = useMemo(() => {
     const m = new Map<string, number>();
@@ -95,10 +115,17 @@ export function DialogueScreen() {
    */
   const matched = useMemo(() => {
     const k = q.trim().toLowerCase();
-    const base = all.filter(s =>
-      (cat === '全部' || s.cat === cat)
-      && (lv === 0 || s.lv === lv)
-      && (!favOnly || fav.has(s.id)));
+    const today = dayNo();
+    const base = all.filter(s => {
+      if (cat !== '全类别' && s.cat !== cat) return false;
+      if (lv !== 0 && s.lv !== lv) return false;
+      if (favOnly && !fav.has(s.id)) return false;
+      const st = p.scenes[s.id];
+      if (status === 'new' && st) return false;
+      if (status === 'done' && !st) return false;
+      if (status === 'due' && !sceneStale(st, today)) return false;
+      return true;
+    });
     if (!k) return base;
 
     const scored: { s: Scene; hit: number }[] = [];
@@ -114,7 +141,7 @@ export function DialogueScreen() {
       });
     }
     return scored.sort((a, b) => b.hit - a.hit).map(x => x.s);
-  }, [all, cat, lv, q, favOnly, fav]);
+  }, [all, cat, lv, q, favOnly, fav, status, p.scenes]);
 
   // 同一段情境骨架的变体收成一组：一千张平铺的卡片没法浏览
   const groups = useMemo(() => {
@@ -131,12 +158,21 @@ export function DialogueScreen() {
     if (!q.trim()) {
       // 自建对话始终在最前 —— 那是用户自己导入的，不该被难度挤到中间
       const rank = (g: { key: string }) => (g.key === '__custom' ? 0 : 1);
-      arr.sort((a, b) =>
-        (rank(a) - rank(b))
-        || (Math.min(...a.list.map(s => s.lv)) - Math.min(...b.list.map(s => s.lv))));
+      // 练过的看「最近一次」，没练过的看难度：用户问的是两类不同的问题
+      const recent = (g: { list: Scene[] }) => Math.max(...g.list.map(s => {
+        const at = p.scenes[s.id]?.at;
+        return at ? dayNoOfKey(at) : -1;
+      }));
+      arr.sort((a, b) => {
+        const byRank = rank(a) - rank(b);
+        if (byRank) return byRank;
+        if (status === 'done') return recent(b) - recent(a);
+        if (status === 'due') return recent(a) - recent(b);
+        return Math.min(...a.list.map(s => s.lv)) - Math.min(...b.list.map(s => s.lv));
+      });
     }
     return arr;
-  }, [matched, customIds, q]);
+  }, [matched, customIds, q, status, p.scenes]);
 
   const shown = groups.slice(0, page * 12);
 
@@ -226,8 +262,9 @@ export function DialogueScreen() {
         <div>
           <h1 className="page-title">场景对话</h1>
           <div className="page-sub">
-            {all.length} 场对话 · {groups.length} 个情境 · 已练{' '}
-            <em className="dg-em">{done}</em> 场 · 背打时打错的词，当晚进夜巡
+            {all.length} 场对话 · {allGroupCount} 个情境 · 已练{' '}
+            <em className="dg-em">{done}</em> 场
+            {counts.due > 0 ? ` · ${counts.due} 场待重温` : ''} · 背打时打错的词，当晚进夜巡
           </div>
         </div>
         <div className="dg-head-acts">
@@ -268,7 +305,25 @@ export function DialogueScreen() {
           onChange={e => { setQ(e.target.value); setPage(1); }}
           placeholder="搜场景：退换货 / 面试 / 没货 / forgot"
         />
-        <div className="dg-chips">
+        {/* 第一排是「我的状态」：练了多少、还差多少、哪些该重温、收藏了什么 */}
+        <div className="dg-chips dg-chips-status">
+          {([
+            ['all', '全部场景', all.length],
+            ['new', '未练', counts.fresh],
+            ['done', '已练', counts.did],
+            ['due', '待重温', counts.due],
+          ] as const).map(([k, label, n]) => (
+            <button
+              key={k}
+              className={`dg-chip${status === k ? ' on' : ''}`}
+              title={k === 'due' ? `练过，但超过 ${SCENE_REVIEW_DAYS} 天没再练` : undefined}
+              onClick={() => { setStatus(k); setPage(1); }}
+            >
+              {label}
+              <em>{n}</em>
+            </button>
+          ))}
+          <span className="dg-chips-sep" />
           <button
             className={`dg-chip dg-chip-fav${favOnly ? ' on' : ''}`}
             onClick={() => { setFavOnly(v => !v); setPage(1); }}
@@ -276,14 +331,17 @@ export function DialogueScreen() {
             ★ 收藏
             <em>{p.favScenes.length}</em>
           </button>
-          {['全部', ...cats.map(([k]) => k)].map(k => (
+        </div>
+
+        <div className="dg-chips">
+          {['全类别', ...cats.map(([k]) => k)].map(k => (
             <button
               key={k}
               className={`dg-chip${cat === k ? ' on' : ''}`}
               onClick={() => { setCat(k); setPage(1); }}
             >
               {k}
-              <em>{k === '全部' ? all.length : (cats.find(([c]) => c === k)?.[1] ?? 0)}</em>
+              <em>{k === '全类别' ? all.length : (cats.find(([c]) => c === k)?.[1] ?? 0)}</em>
             </button>
           ))}
         </div>
@@ -303,9 +361,13 @@ export function DialogueScreen() {
 
       {shown.length === 0 && (
         <div className="dg-empty">
-          {favOnly && p.favScenes.length === 0
-            ? '还没有收藏的场景。把鼠标移到卡片上，点右上角的 ☆ —— 练到一半被打断的那几场尤其值得留住。'
-            : '没有匹配的场景。搜索认三种：情境名（点单 / 面试）、场景描述里的话（赶时间 / 没货），以及台词原文（cash back / sold out）。'}
+          {status === 'due' && counts.due === 0
+            ? `没有该重温的场景：练过的都在 ${SCENE_REVIEW_DAYS} 天以内。`
+            : status === 'done' && counts.did === 0
+              ? '还没练过任何场景。挑一场进去，五种练法都试一遍。'
+              : favOnly && p.favScenes.length === 0
+                ? '还没有收藏的场景。卡片右上角的 ☆ 就能收藏 —— 练到一半被打断的那几场尤其值得留住。'
+                : '没有匹配的场景。搜索认三种：情境名（点单 / 面试）、场景描述里的话（赶时间 / 没货），以及台词原文（cash back / sold out）。'}
         </div>
       )}
 
@@ -320,7 +382,7 @@ export function DialogueScreen() {
                 <span className="dg-group-name">{baseName(list[0])}</span>
                 <span className="dg-group-meta">
                   {list[0].cat} · {list[0].cefr} · {list.length} 种情形
-                  {okN > 0 ? ` · 已练 ${okN}` : ''}
+                  {okN > 0 ? ` · 已练 ${okN}/${list.length}` : ''}
                 </span>
               </div>
             )}

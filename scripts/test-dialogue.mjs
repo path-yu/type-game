@@ -600,6 +600,50 @@ try {
   check('岔路结果按类型记账', bs?.ok === 1 && bs?.n === 1,
     `${first.branch.kind} ${bs?.ok}/${bs?.n}`);
 
+  // —— 进度筛选：一千场里「还差什么」比「一共有多少」重要 ——
+  await p.evaluate(() => [...document.querySelectorAll('.dg-sum-acts .btn')].find(b => b.textContent.includes('回到场景列表'))?.click());
+  await sleep(600);
+  const statusChips = await p.evaluate(() =>
+    [...document.querySelectorAll('.dg-chips-status .dg-chip')].map(x => x.textContent));
+  check('列表有进度筛选', statusChips.length === 5, statusChips.join(' | '));
+  const didN = await p.evaluate(() => Number(/(\d+)/.exec([...document.querySelectorAll('.dg-chips-status .dg-chip')][2].textContent)?.[1] ?? 0));
+  check('练过的场次记进「已练」', didN >= 1, `已练 ${didN}`);
+
+  await p.evaluate(() => [...document.querySelectorAll('.dg-chips-status .dg-chip')][2].click());
+  await sleep(400);
+  const doneIds = await p.evaluate(() => [...document.querySelectorAll('.dg-card')].map(x => x.dataset.scene));
+  const now = await store();
+  check('已练只留下练过的', doneIds.length > 0 && doneIds.every(id => !!now.p.scenes[id]),
+    `${doneIds.length} 张 / ${doneIds.slice(0, 3).join(',')}`);
+
+  // 把一场的成绩改到 30 天前 —— 该重温
+  const oldDate = (() => {
+    const d = new Date(Date.now() - 30 * 86400000);
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  })();
+  const staleId = await p.evaluate(date => {
+    const raw = JSON.parse(localStorage.getItem('typewake:v1'));
+    const id = Object.keys(raw.p.scenes)[0];
+    raw.p.scenes[id] = { ...raw.p.scenes[id], at: date };
+    localStorage.setItem('typewake:v1', JSON.stringify(raw));
+    return id;
+  }, oldDate);
+  await p.reload({ waitUntil: 'networkidle2' });
+  await sleep(1200);
+  await p.evaluate(() =>
+    [...document.querySelectorAll('.side-item')].find(x => x.textContent.includes('场景对话'))?.click());
+  await p.waitForSelector('.dg-chips-status', { timeout: 5000 });
+  await sleep(500);
+  const dueChip = await p.evaluate(() =>
+    [...document.querySelectorAll('.dg-chips-status .dg-chip')].map(x => x.textContent).find(t => t.startsWith('待重温')) ?? '');
+  check('超过两周没练标成待重温', /1/.test(dueChip.replace(/\s/g, '')), dueChip);
+
+  await p.evaluate(() =>
+    [...document.querySelectorAll('.dg-chips-status .dg-chip')].find(x => x.textContent.startsWith('待重温')).click());
+  await sleep(400);
+  const dueIds = await p.evaluate(() => [...document.querySelectorAll('.dg-card')].map(x => x.dataset.scene));
+  check('待重温里就是那一场', dueIds.length === 1 && dueIds[0] === staleId, dueIds.join(','));
+
   check('页面无报错', errs.length === 0, errs.slice(0, 2).join(' / '));
 } finally {
   await b.close();
