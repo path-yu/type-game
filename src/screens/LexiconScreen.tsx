@@ -3,6 +3,7 @@ import { useCorpus } from '../lib/CorpusContext';
 import { vocabBreakdown } from '../lib/data';
 import { useGame } from '../lib/store';
 import { speak } from '../lib/speech';
+import { WordDrill, type DrillWord } from '../components/WordDrill';
 
 const TABS = [
   { id: 'all', label: '全部' },
@@ -22,6 +23,7 @@ export function LexiconScreen() {
   const go = useGame(s => s.go);
   const toggleLex = useGame(s => s.toggleLex);
   const [tab, setTab] = useState<(typeof TABS)[number]['id']>('all');
+  const [drilling, setDrilling] = useState(false);
 
   const vb = vocabBreakdown(p.mastery, corpus);
   const vocab = vb.total;
@@ -38,6 +40,17 @@ export function LexiconScreen() {
     return filtered.sort((a, b) => b.st.m - a.st.m).slice(0, 240);
   }, [p.mastery, tab, corpus]);
 
+  // 词池就是当前筛选出来的那些词：在「已收藏」里点背单词，背的就是收藏的词
+  const pool = useMemo<DrillWord[]>(
+    () => rows.map(({ w, e }) => ({
+      w,
+      z: (e?.z || '').split('\n')[0] || '—',
+      p: e?.p,
+      t: e?.t,
+    })),
+    [rows],
+  );
+
   const tierStack = useMemo(() => {
     const counts = [0, 0, 0, 0, 0, 0];
     for (const [w, st] of Object.entries(p.mastery)) {
@@ -50,8 +63,21 @@ export function LexiconScreen() {
 
   const sum = tierStack.reduce((a, b) => a + b, 0) || 1;
 
+  if (drilling) {
+    return <WordDrill pool={pool} onExit={() => setDrilling(false)} />;
+  }
+
   return (
     <div className="vocab">
+      <div className="v-tools">
+        <button className="btn btn-primary" onClick={() => setDrilling(true)} disabled={pool.length === 0}>
+          背单词
+        </button>
+        <span className="v-tools-note">
+          跟读 / 默写 / 听写 · 从「{TABS.find(t => t.id === tab)?.label}」这 {pool.length} 个词里随机抽
+        </span>
+      </div>
+
       <div className="v-head">
         <div>
           <div className="bignum">

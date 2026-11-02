@@ -816,6 +816,164 @@ input, textarea { font-family: inherit; }
 
 /* 词汇册容器（与 .page 同宽） */
 .vocab { max-width: 940px; margin: 0 auto; padding: var(--sp-10) var(--sp-8) var(--sp-12); }
+
+/* ---------------- 背单词（藏书阁 → 跟读 / 默写 / 听写） ---------------- */
+.v-tools { display: flex; align-items: center; gap: 12px; margin-bottom: var(--sp-4); flex-wrap: wrap; }
+.v-tools .btn { height: 32px; padding: 0 16px; font-size: 12.5px; }
+.v-tools-note { font-size: 12px; color: var(--fg-3); }
+
+.wd {
+  min-height: 100%; max-width: 760px; margin: 0 auto;
+  padding: var(--sp-6) var(--sp-8) var(--sp-8);
+  display: flex; flex-direction: column;
+}
+.wd-top { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--fg-2); flex: none; }
+.wd-top-title { font-weight: 500; color: var(--fg); }
+.wd-top-note { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+.wd-dots { margin-left: auto; display: flex; gap: 4px; }
+.wd-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--sep-2); }
+.wd-dots i.ok { background: var(--accent); }
+.wd-dots i.no { background: var(--err); }
+
+.wd-body {
+  flex: 1; min-height: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; text-align: center; padding: var(--sp-6) 0;
+}
+.wd-word { font-family: var(--font-serif); font-size: 40px; font-weight: 600; line-height: 1.2; color: var(--fg); }
+.wd-word.done { color: var(--accent); }
+.wd-ipa { font-family: var(--font-mono); font-size: 13px; color: var(--fg-3); }
+.wd-zh { font-size: 14px; line-height: 1.7; color: var(--fg-2); max-width: 560px; }
+.wd-zh-big { font-size: 21px; line-height: 1.65; color: var(--fg); max-width: 560px; }
+.wd-sub { font-size: 12px; color: var(--fg-3); }
+.wd-blank { font-family: var(--font-mono); font-size: 19px; letter-spacing: 0.28em; color: var(--fg-3); }
+.wd-hint {
+  font: inherit; font-size: 11.5px; color: var(--fg-3);
+  background: none; border: none; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.wd-hint:hover { color: var(--accent); }
+
+.wd-input {
+  width: min(420px, 82vw); height: 48px;
+  text-align: center; font-family: var(--font-mono); font-size: 20px;
+  color: var(--fg); background: var(--surface);
+  border: var(--hairline); border-radius: var(--r-ctl);
+  outline: none; transition: border-color 0.14s, color 0.14s;
+}
+.wd-input:focus { border-color: var(--accent-soft-2); }
+.wd-input.ok { border-color: var(--accent); color: var(--accent); }
+.wd-input.no { border-color: var(--err); }
+.wd-fix { font-size: 12.5px; color: var(--fg-2); }
+.wd-fix s { text-decoration-color: var(--err); color: var(--fg-2); }
+.wd-msg { font-size: 12px; color: var(--err); }
+
+.wd-speak { font: inherit; font-size: 12px; color: var(--fg-2); background: none; border: none; cursor: pointer; }
+.wd-speak:hover { color: var(--accent); }
+
+.wd-mic {
+  height: 44px; padding: 0 24px; border-radius: var(--r-pill);
+  font: inherit; font-size: 13px; color: var(--bg);
+  background: var(--accent); border: none; cursor: pointer;
+  transition: transform 0.12s;
+}
+.wd-mic.on { animation: micPulse 1s infinite; }
+.wd-mic:disabled { cursor: default; }
+.wd-mic:active { transform: scale(0.98); }
+
+.wd-say { font-size: 12.5px; color: var(--fg-2); }
+.wd-say.ok { color: var(--accent); }
+.wd-say.no { color: var(--err); }
+.wd-say em { font-style: normal; color: var(--fg-3); }
+
+.wd-big-speak {
+  width: 96px; height: 96px; border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  font-size: 26px; line-height: 1; color: var(--accent);
+  background: var(--accent-soft); border: 1px solid var(--accent-soft-2);
+  cursor: pointer; transition: transform 0.12s;
+}
+.wd-big-speak span { font-size: 10px; color: var(--fg-2); }
+.wd-big-speak:active { transform: scale(0.96); }
+
+.wd-foot {
+  flex: none; min-height: 44px;
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  font-size: 12px; color: var(--fg-3);
+}
+.wd-link { font: inherit; font-size: 12px; color: var(--fg-2); background: none; border: none; cursor: pointer; }
+.wd-link:hover { color: var(--accent); }
+.wd-foot-hint { font-size: 11px; color: var(--fg-3); }
+
+/* 设置屏 */
+.wd-setup {
+  flex: 1; width: 100%; max-width: 560px; margin: 0 auto;
+  display: flex; flex-direction: column; justify-content: center; gap: var(--sp-5);
+}
+.wd-modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.wd-mode {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 14px 12px; text-align: left; font: inherit;
+  background: var(--surface); border: var(--hairline); border-radius: var(--r-card);
+  cursor: pointer;
+  transition: border-color 0.14s, background-color 0.14s;
+}
+.wd-mode b { font-size: 13px; font-weight: 600; color: var(--fg); }
+.wd-mode span { font-size: 11px; line-height: 1.5; color: var(--fg-3); }
+.wd-mode:hover { border-color: var(--sep-2); }
+.wd-mode.on { border-color: var(--accent-soft-2); background: var(--accent-soft); }
+.wd-mode.on b { color: var(--accent); }
+
+.wd-warn {
+  padding: 10px 12px; font-size: 11.5px; line-height: 1.7;
+  color: var(--fg-2); background: var(--fill); border-radius: var(--r-ctl);
+}
+.wd-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12.5px; }
+.wd-row-label { color: var(--fg-2); }
+.wd-row-val { font-size: 12px; color: var(--fg-3); }
+.wd-sizes { display: flex; gap: 6px; }
+.wd-size {
+  height: 28px; padding: 0 12px; border-radius: var(--r-pill);
+  font: inherit; font-size: 12px; color: var(--fg-2);
+  background: none; border: var(--hairline); cursor: pointer;
+}
+.wd-size.on { color: var(--accent); background: var(--accent-soft); border-color: var(--accent-soft-2); }
+.wd-size:disabled { opacity: 0.35; cursor: default; }
+.wd-go { height: 42px; }
+
+/* 结算 */
+.wd-done {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; text-align: center;
+}
+.wd-score { font-family: var(--font-mono); font-size: 52px; font-weight: 500; line-height: 1; color: var(--fg); }
+.wd-score em { font-style: normal; font-size: 20px; color: var(--fg-3); }
+.wd-score.good { color: var(--accent); }
+.wd-done-line { font-size: 13px; color: var(--fg-2); }
+.wd-bads { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 600px; margin-top: 6px; }
+.wd-bad {
+  display: flex; flex-direction: column; gap: 2px; padding: 7px 11px;
+  width: 140px; text-align: left; font: inherit;
+  background: var(--surface); border: var(--hairline); border-radius: var(--r-ctl);
+  cursor: pointer;
+}
+.wd-bad b { font-family: var(--font-mono); font-size: 12.5px; color: var(--fg); }
+/* 释义长度差得多，不截断的话一排卡片会被一个长释义撑得参差不齐 */
+.wd-bad span {
+  max-width: 132px; font-size: 10.5px; color: var(--fg-3);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.wd-bads-title { font-size: 11.5px; color: var(--fg-3); margin-top: 4px; }
+.wd-bad:hover { border-color: var(--err); }
+.wd-done-acts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+
+@media (max-width: 720px) {
+  .wd { padding: var(--sp-4) var(--sp-4) var(--sp-6); }
+  .wd-modes { grid-template-columns: 1fr; }
+  .wd-word { font-size: 32px; }
+  .wd-zh-big { font-size: 18px; }
+}
+
 @media (max-width: 900px) { .vocab { padding: var(--sp-6) var(--sp-4) var(--sp-10); } }
 
 /* 星星矢量容器 */

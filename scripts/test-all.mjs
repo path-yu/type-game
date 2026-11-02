@@ -43,6 +43,7 @@ const steps = [
   { name: '自定义对话', cmd: 'node', args: ['scripts/test-custom.mjs'], desc: '49 项解析 / 岔路 / 导入 / 删除', needsServer: true },
   { name: '句型复习', cmd: 'node', args: ['scripts/test-phrase.mjs'], desc: '25 项收池 / 到期 / 复习', needsServer: true },
   { name: '夜巡扩容', cmd: 'node', args: ['scripts/test-review.mjs'], desc: '38 项混排 / 轮次 / 回写', needsServer: true },
+  { name: '背单词', cmd: 'node', args: ['scripts/test-worddrill.mjs'], desc: '30 项跟读 / 默写 / 听写 / 写回', needsServer: true },
   { name: '阅读填空', cmd: 'node', args: ['scripts/test-cloze.mjs'], desc: '20 项出题 / 提示 / 回写', needsServer: true },
   { name: '体检报告', cmd: 'node', args: ['scripts/test-report.mjs'], desc: '40 项统计 / 诊断 / 岔路分类', needsServer: true },
   { name: '语音', cmd: 'node', args: ['scripts/test-speech.mjs'], desc: '7 项语音取消', needsServer: true },
