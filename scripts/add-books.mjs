@@ -33,6 +33,19 @@ const NEW_BOOKS = [
     // 目录里是"CHAPTER ONE PLAYING PILGRIMS"，正文那行只有"CHAPTER ONE"
     after: /^CHAPTER ONE\s*$/m,
   },
+  {
+    /*
+     * 《一九八四》：美国境内版权到 2044 年，Gutenberg 主站没有；
+     * 走澳洲站（奥威尔 1950 年去世，中澳两地均已进入公有领域）。
+     * 原文已存在 data/raw/books/1984.txt，不再联网。
+     */
+    id: 0, key: 'n1984', title: 'Nineteen Eighty-Four', theme: 'novel', lic: 'PD',
+    cap: 40,
+    file: 'data/raw/books/1984.txt',
+    after: /^PART ONE/m,
+    until: /^THE END/m,
+    u: 'gutenberg.net.au/ebooks01/0100021',
+  },
 ];
 
 /**
@@ -50,7 +63,15 @@ const dry = process.argv.includes('--dry');
 const onlyArg = process.argv.find(a => a.startsWith('--only='));
 const only = onlyArg ? new Set(onlyArg.slice(7).split(',')) : null;
 
-async function fetchBook(id) {
+async function fetchBook(id, file) {
+  // 没有 Gutenberg 编号的书（比如《一九八四》，美国境内仍受版权，只能走澳洲站）
+  // 直接读本地文件；文件由调用方事先放好
+  if (file) {
+    const f = path.join(ROOT, file);
+    if (!fs.existsSync(f)) throw new Error(`本地原文不存在：${file}`);
+    log('  读本地', file);
+    return fs.readFileSync(f, 'utf8');
+  }
   const f = path.join(BOOKS_DIR, `${id}.txt`);
   if (fs.existsSync(f) && fs.statSync(f).size > 20000) return fs.readFileSync(f, 'utf8');
   const url = `https://www.gutenberg.org/cache/epub/${id}/pg${id}.txt`;
@@ -96,11 +117,16 @@ for (const src of NEW_BOOKS) {
   if (only && !only.has(src.key)) continue;
   if (data.items.some(x => x.s === src.title)) { log(`《${src.title}》已在库里，跳过`); continue; }
 
-  let raw = cleanGutenberg(await fetchBook(src.id));
+  let raw = cleanGutenberg(await fetchBook(src.id, src.file));
   if (src.after) {
     const m = raw.match(src.after);
     if (!m) log(`  ⚠ ${src.title} 没找到章节起点，从全文取样`);
     else raw = raw.slice(m.index);
+  }
+  if (src.until) {
+    // 版权页/尾声之后的出版方脚注不属于正文，切掉
+    const m = raw.match(src.until);
+    if (m) raw = raw.slice(0, m.index);
   }
   const paras = raw.split(/\n\s*\n+/).map(normalize).filter(isCleanParagraph);
 
@@ -128,7 +154,7 @@ for (const src of NEW_BOOKS) {
       w: 0, st: 0, avg: 0, nw: 0,
       th: src.theme,
       lic: src.lic,
-      u: `gutenberg:${src.id}`,
+      u: src.u ?? `gutenberg:${src.id}`,
       ord: n + 1,
       tot: 0,
     };
