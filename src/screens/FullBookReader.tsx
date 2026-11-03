@@ -26,7 +26,13 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
   const toggleLex = useGame(s => s.toggleLex);
 
   const [slug, setSlug] = useState<string | null>(null);
+  /* 索引查完没有？没查完之前不能下「这本书没有全书译文」的结论 */
+  const [idxDone, setIdxDone] = useState(false);
   const [data, setData] = useState<{ n: number; src: string[]; tr: string[] } | null>(null);
+  /* 正文请求失败（404 / 网络断）与「本来就没有」要分开，否则一并显示成没有译文 */
+  const [loadFailed, setLoadFailed] = useState(false);
+  /* 失败后点「重试」重新拉一次 */
+  const [nonce, setNonce] = useState(0);
   const [page, setPage] = useState(0);
   const [pages, setPages] = useState(1);
   const [box, setBox] = useState({ w: 0, h: 0 });
@@ -48,35 +54,57 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
         const books = (j.books ?? {}) as Record<string, { title: string; n: number }>;
         const hit = Object.entries(books).find(([, v]) => v.title === title);
         setSlug(hit ? hit[0] : null);
+        setIdxDone(true);
       })
-      .catch(() => {});
+      .catch(() => { if (alive) setIdxDone(true); });
     return () => { alive = false; };
   }, [title, base]);
 
   useEffect(() => {
     if (!slug) return;
     let alive = true;
+    setLoadFailed(false);
     fetch(`${base}data/full/${slug}.json`)
       .then(r => (r.ok ? r.json() : null))
-      .then(j => { if (alive) setData(j); })
-      .catch(() => {});
+      .then(j => {
+        if (!alive) return;
+        if (j) setData(j);
+        else setLoadFailed(true);
+      })
+      .catch(() => { if (alive) setLoadFailed(true); });
     return () => { alive = false; };
-  }, [slug, base]);
+  }, [slug, base, nonce]);
 
   useEffect(() => () => { stopSpeaking(); }, []);
 
   const showZh = settings.readerZh;
 
-  /* 每句单独分词：全书一万句不可能每句都拿全文下标去对 */
+  /*
+   * 句子先只存纯文本，不在这里分词。
+   *
+   * 原来每句都跑一次 tokenize、渲染成一个词一个 span：一本 9000 句的书会生成
+   * 十几万个内联节点，排版一次要十几秒、内存也跟着涨。
+   * 现在只渲染 <p>文本</p>，等版面量出来、知道哪几句落在当前屏，
+   * 再只给那几句套上可点的词 span —— 一屏也就几十个。
+   */
+  /*
+   * 只挂前 MOUNT_STEP 句，翻到接近末尾再接着挂。
+   *
+   * 12 秒、421MB 的根源不是分词，是这一屏多栏布局本身：9000 句一次性流进
+   * 一个 column 容器，Chrome 要为每一栏算行盒，排版对象一大堆。
+   * 分批挂载后首屏只要几百句的排版量，没读到的部分根本不建。
+   */
+  const MOUNT_STEP = 400;
+  const [mounted, setMounted] = useState(MOUNT_STEP);
+  useEffect(() => { setMounted(MOUNT_STEP); }, [data]);
+
   const blocks = useMemo(() => {
     if (!data) return [];
-    return data.src.map((en, i) => ({
-      start: i,
-      en,
-      zh: data.tr[i] ?? '',
-      toks: tokenize(corpus, en),
-    }));
-  }, [data, corpus]);
+    return data.src.slice(0, mounted).map((en, i) => ({ start: i, en, zh: data.tr[i] ?? '' }));
+  }, [data, mounted]);
+
+  /* 每句落在第几屏：排完版量一次 offsetLeft 就知道，翻页时不用重算 */
+  const [sentPage, setSentPage] = useState<number[] | null>(null);
 
   /*
    * 量可视区。依赖 data：书页容器是在 data 到手后才渲染出来的，
@@ -100,6 +128,33 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
     setPage(v => Math.min(v, n - 1));
   }, [box.w, box.h, blocks.length, showZh]);
 
+  /*
+   * 快翻到已挂载部分的末尾了，再接一批。
+   * 追加只往后面加栏，前面已有的栏位置不变，所以 page 不用跟着挪。
+   */
+  useEffect(() => {
+    if (!data || mounted >= data.src.length) return;
+    if (pages <= 1) return;
+    if (page >= pages - 2) setMounted(m => Math.min(data.src.length, m + MOUNT_STEP));
+  }, [page, pages, mounted, data]);
+
+  /*
+   * 排完版之后记下每句在第几屏。
+   * 多栏布局里 offsetLeft 已经把栏偏移算进去了，所以不用再加 page*box.w；
+   * 这一步只跑一次（换字号/切中英/换尺寸才重来），翻页时直接查表。
+   */
+  useLayoutEffect(() => {
+    const body = pageRef.current?.querySelector('.rd-body') as HTMLElement | null;
+    if (!body || !box.w || !blocks.length) return;
+    const w = box.w;
+    const nodes = body.querySelectorAll<HTMLElement>('.rd-sent');
+    const arr = new Array(nodes.length);
+    for (let i = 0; i < nodes.length; i++) {
+      arr[i] = Math.max(0, Math.floor((nodes[i].offsetLeft + 8) / w));
+    }
+    setSentPage(arr);
+  }, [box.w, box.h, blocks, showZh]);
+
   const turn = (d: number) => setPage(v => Math.max(0, Math.min(pages - 1, v + d)));
 
   useEffect(() => {
@@ -120,10 +175,34 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
     markUnknown(key);
   };
 
+  /*
+   * 三种「还没内容」要分开说：
+   *   索引没查完 / 正文还在下载 —— 只是慢，不是没有；
+   *   索引里确实没有 —— 这本书没译完；
+   *   请求失败 —— 是出错，可以重试。
+   * 全写成「还没有全书译文」会让一本两兆的书看起来像根本没译（白等三秒还以为坏了）。
+   */
   if (!data) {
+    if (loadFailed) {
+      return (
+        <div className="page rd">
+          <div className="empty">
+            全书译文没载入成功。<a onClick={() => setNonce(n => n + 1)}>重试</a>
+            <a onClick={onExit}>回到选段</a>
+          </div>
+        </div>
+      );
+    }
+    if (idxDone && !slug) {
+      return (
+        <div className="page rd">
+          <div className="empty">这本书还没有全书译文。<a onClick={onExit}>回到选段</a></div>
+        </div>
+      );
+    }
     return (
       <div className="page rd">
-        <div className="empty">这本书还没有全书译文。<a onClick={onExit}>回到选段</a></div>
+        <div className="empty">正在载入全书译文…</div>
       </div>
     );
   }
@@ -146,7 +225,11 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
             className={`btn btn-ghost${reading ? ' on' : ''}`}
             onClick={() => {
               if (reading) { stopSpeaking(); setReading(false); return; }
-              const rest = data.src.slice(page * 6).join(' ');
+              /* 从当前这一屏的第一句念起：有了 sentPage 就不用再按「每屏 6 句」瞎猜 */
+              const from = sentPage
+                ? Math.max(0, sentPage.findIndex(v => v >= page))
+                : page * 6;
+              const rest = data.src.slice(from).join(' ');
               setReading(true);
               speak(rest.slice(0, 1200), {
                 accent: settings.voice, rate: settings.rate, onEnd: () => setReading(false),
@@ -168,7 +251,7 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
       <div className="rd-book">
         <div className="rd-run">
           <span>{bookZh(title)} · 全书</span>
-          <span>第 {page + 1} 页</span>
+          <span>第 {page + 1} 屏</span>
         </div>
 
         <div className="rd-page" ref={pageRef}>
@@ -180,28 +263,38 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
               transform: `translateX(${-page * box.w}px)`,
             }}
           >
-            {blocks.map((s, i) => (
-              /* 长句允许跨页断开：整句不许断会让长段落后面留出半页空白，翻起来很跳 */
-              <div className="rd-sent" key={s.start} style={s.en.length > 260 ? { breakInside: 'auto' } : undefined}>
-                <p
-                  className="rd-en"
-                  onClick={() => { stopSpeaking(); speak(s.en, { accent: settings.voice, rate: settings.rate }); }}
-                  title="点这一句可以朗读"
-                >
-                  {renderWords(s.en, s.toks, corpus, p.mastery, onWord)}
-                </p>
-                {showZh && s.zh && <p className="rd-zh">{s.zh}</p>}
-                {i === 0 && <span className="rd-hidden" />}
-              </div>
-            ))}
+            {blocks.map((s, i) => {
+              /*
+               * 只有当前屏（以及前后各一屏，翻页时不至于先白一下）才铺词 span，
+               * 其余句子就是纯文本。点词是读这一屏时才用得上的功能，
+               * 没必要为整本书建十几万个可点节点。
+               */
+              const near = !sentPage || Math.abs((sentPage[i] ?? -99) - page) <= 1;
+              return (
+                /* 长句允许跨页断开：整句不许断会让长段落后面留出半页空白，翻起来很跳 */
+                <div className="rd-sent" key={s.start} style={s.en.length > 260 ? { breakInside: 'auto' } : undefined}>
+                  <p
+                    className="rd-en"
+                    onClick={() => { stopSpeaking(); speak(s.en, { accent: settings.voice, rate: settings.rate }); }}
+                    title="点这一句可以朗读"
+                  >
+                    {near ? renderWords(s.en, tokenize(corpus, s.en), corpus, p.mastery, onWord) : s.en}
+                  </p>
+                  {showZh && s.zh && <p className="rd-zh">{s.zh}</p>}
+                  {i === 0 && <span className="rd-hidden" />}
+                </div>
+              );
+            })}
           </article>
           <button className="rd-turn prev" onClick={() => turn(-1)} disabled={page === 0} aria-label="上一页">‹</button>
           <button className="rd-turn next" onClick={() => turn(1)} disabled={page >= pages - 1} aria-label="下一页">›</button>
         </div>
 
         <div className="rd-pagefoot">
-          <span className="rd-pageno">{page + 1} / {pages}</span>
-          <span className="rd-hint">← → 翻页 · 点词看释义</span>
+          <span className="rd-pageno">
+            {page + 1} / {pages}{mounted < (data.src.length) ? '+' : ''}
+          </span>
+          <span className="rd-hint">← → 翻屏 · 点词看释义</span>
         </div>
       </div>
 

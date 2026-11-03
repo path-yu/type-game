@@ -1493,6 +1493,26 @@ input, textarea { font-family: inherit; }
   grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
   gap: var(--sp-5) var(--sp-4);
 }
+/* 只有全书、没有选段可练的书：单独一条，排在书架前面 */
+.lib-only { margin-bottom: var(--sp-6); }
+.lib-only-head {
+  font-size: 13px; color: var(--fg-2); margin-bottom: var(--sp-3);
+  display: flex; align-items: baseline; gap: 8px;
+}
+.lib-only-head em { font-style: normal; font-size: 12px; color: var(--fg-3); }
+.lib-only-list { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
+.lib-only-card {
+  display: flex; flex-direction: column; gap: 4px;
+  min-width: 220px; padding: var(--sp-4) var(--sp-5);
+  font: inherit; text-align: left; color: inherit; cursor: pointer;
+  background: var(--card); border: 1px solid var(--sep); border-radius: var(--r-md);
+  transition: border-color .14s, transform .14s;
+}
+.lib-only-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.lib-only-title { font-size: 15px; display: flex; align-items: baseline; gap: 7px; }
+.lib-only-title em { font-style: normal; font-size: 11px; color: var(--fg-3); }
+.lib-only-meta { font-size: 12px; color: var(--fg-2); }
+.lib-only-go { font-size: 12px; color: var(--accent); margin-top: 2px; }
 .lib-book {
   display: flex; flex-direction: column; gap: 8px;
   padding: 0; font: inherit; text-align: left; color: inherit;

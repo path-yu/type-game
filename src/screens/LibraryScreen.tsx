@@ -113,6 +113,18 @@ export function LibraryScreen() {
   const book = open ? groups.find(g => g.title === open) ?? null : null;
   const bookFull = book ? fullOf.get(book.title) ?? null : null;
 
+  /*
+   * 有全书译文、但不在 articles.json 里的书（比如后加的《一九八四》）。
+   * 它们没有选段可练，只提供整本通读 —— 单独排一条，不然书架上看不见。
+   */
+  const fullOnly = useMemo(() => {
+    const known = new Set(groups.map(g => g.title));
+    return Object.entries(full)
+      .filter(([, v]) => !known.has(v.title))
+      .sort((a, b) => a[1].n - b[1].n)
+      .map(([slug, v]) => ({ slug, title: v.title, n: v.n }));
+  }, [full, groups]);
+
   /* 读全书：整本通读，退出后回到目录 */
   if (fullOpen) return <FullBookReader title={fullOpen} onExit={() => setFullOpen(null)} />;
   const coverOf = (title: string) => `${import.meta.env.BASE_URL || '/'}covers/${covers[title] ?? ''}`;
@@ -123,7 +135,7 @@ export function LibraryScreen() {
         <div>
           <h1 className="page-title">文库</h1>
           <div className="page-sub">
-            {allBooks} 本书 · {total} 篇 · 练过 {read} 篇
+            {allBooks + fullOnly.length} 本书 · {total} 篇 · 练过 {read} 篇
             {shown !== total && ` · 当前筛选 ${shown} 篇`}
           </div>
         </div>
@@ -214,7 +226,27 @@ export function LibraryScreen() {
           </div>
         </section>
       ) : (
-        <div className="lib-shelf">
+        <>
+          {fullOnly.length > 0 && (
+            <section className="lib-only">
+              <div className="lib-only-head">
+                全书通读 <em>整本译完、但没有选段可练的书</em>
+              </div>
+              <div className="lib-only-list">
+                {fullOnly.map(b => (
+                  <button key={b.slug} className="lib-only-card" onClick={() => setFullOpen(b.title)}>
+                    <span className="lib-only-title">
+                      {bookZh(b.title)}
+                      {bookHasZh(b.title) && <em>{b.title}</em>}
+                    </span>
+                    <span className="lib-only-meta">{b.n} 句 · 整本已译</span>
+                    <span className="lib-only-go">读全书 →</span>
+                  </button>
+                ))}
+              </div>
+            </section>
+          )}
+          <div className="lib-shelf">
           {shelf.map(g => (
             <button
               key={g.title}
@@ -245,7 +277,8 @@ export function LibraryScreen() {
             </button>
           ))}
           {groups.length === 0 && <div className="lib-empty">没有匹配的书名</div>}
-        </div>
+          </div>
+        </>
       )}
     </div>
   );
