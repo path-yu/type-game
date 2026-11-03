@@ -58,6 +58,14 @@ const tr = JSON.parse(fs.readFileSync(trPath, 'utf8'));
 const arts = JSON.parse(fs.readFileSync(path.join(ROOT, 'public/data/articles.json'), 'utf8')).items
   .filter(a => a.id.startsWith(PREFIX));
 
+/*
+ * 引号体例：两层不一样，这是项目现有的分工 ——
+ *   全书译文（data/tr-work）用 “ ”，和其余 20 本一致；
+ *   选段译文（public/data/tr.json）用「」，质检也按这个查（“ ” 会被当成机翻痕迹）。
+ * 所以拼进选段时在出口处转一次，不去动全书那份，免得书里书外两边看着不一样。
+ */
+const toSegmentQuotes = zh => zh.replace(/\u201c/g, '「').replace(/\u201d/g, '」');
+
 let ok = 0;
 const bad = [];
 for (const a of arts) {
@@ -66,7 +74,7 @@ for (const a of arts) {
   const gaps = zh.filter(z => !z).length;
   if (!gaps && zh.length === sents.length) {
     ok++;
-    tr.map[a.id] = zh;
+    tr.map[a.id] = zh.map(toSegmentQuotes);
   } else {
     /*
      * 对不齐的段直接不入库，而不是留空。
