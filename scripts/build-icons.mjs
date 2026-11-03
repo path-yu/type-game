@@ -1,5 +1,5 @@
 /**
- * 从 design/icon.svg 生成 Tauri / Windows / macOS / Web 所需的全部图标资源。
+ * 从 design/icon.svg 生成桌面端（Windows .ico）与网页所需的全部图标资源。
  * 依赖 puppeteer-core + 本机 Chrome。
  */
 import puppeteer from 'puppeteer-core';
@@ -9,7 +9,7 @@ import path from 'node:path';
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const ROOT = process.cwd();
 const SVG = fs.readFileSync(path.join(ROOT, 'design/icon.svg'), 'utf8');
-const OUT = path.join(ROOT, 'src-tauri/icons');
+const OUT = path.join(ROOT, 'assets/icons');
 fs.mkdirSync(OUT, { recursive: true });
 
 const SIZES = [16, 24, 32, 48, 64, 128, 256, 512, 1024];

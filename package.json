@@ -11,10 +11,7 @@
     "data": "node scripts/build-data.mjs",
     "data:dialogues": "node scripts/gen-dialogues.mjs",
     "data:dict": "node scripts/patch-dict.mjs",
-    "tauri": "tauri",
-    "tauri:dev": "tauri dev",
-    "tauri:build": "tauri build",
-    "exe": "node scripts/make-exe.mjs",
+    "exe": "npm run desktop:build",
     "test": "node scripts/test-all.mjs",
     "test:growth": "node scripts/growth.mjs",
     "shot": "node scripts/shot.mjs",
@@ -51,7 +48,6 @@
     "zustand": "^4.5.5"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^2.1.0",
     "@types/bun": "^1.4.4",
     "@types/node": "^26.6.6",
     "@types/react": "^18.3.12",

@@ -11,17 +11,16 @@
 ```bash
 npm install
 npm run dev            # 浏览器 http://localhost:5183
-npm run tauri:dev      # 桌面端开发模式（自动起 vite）
-npm run tauri:build    # 打包安装程序（nsis / msi）
+npm run desktop:dev    # 桌面端开发模式（Electrobun + Bun）
+npm run exe            # 打包安装程序（Windows：build/stable-win-x64/）
 ```
 
-> 想直接跑现成的可执行文件：**[`release/TypeWake-0.1.0-win-x64.exe`](release/TypeWake-0.1.0-win-x64.exe)**
-> （4.6 MB，单文件，已内嵌全部文本与词库，双击即可，不需要装 Node 或 Rust）。
-> 这是某次构建的快照；代码更新后跑 `npm run exe` 重新构建。
+> 桌面端用 **Electrobun**（Bun + 系统 WebView），不再走 Tauri/Rust ——
+> Rust 那条链编一次一分多钟、峰值吃几个 G 内存。
+> 代价是安装体积变大（约 42 MB，含 Bun 运行时；Tauri 版是 10 MB）。
 >
-> 注意：**必须用 `npm run exe`（内部走 `tauri build --no-bundle`）**，
-> 直接 `cargo build --release` 编出来的是 dev 壳 —— 它去连 `localhost:5183`，
-> 本机开着 vite 时看着正常，换台电脑就是一片空白。
+> 产物在 `build/stable-win-x64/`：`词醒 TypeWake-Setup.exe` 与同名 `.tar.zst`
+> 必须一起分发。首次运行会自解压到 `%LOCALAPPDATA%`。
 
 桌面端首次启动会在 `%APPDATA%\com.typewake.app\` 生成 `ready.json`，
 内容形如 `{"articles":1239,"words":7584}`。它由 Rust 侧在启动时写入，
@@ -87,12 +86,12 @@ src/
   lib/dialogue.ts          对话的纯逻辑：归一化比对 / 逐词对齐判分 / 时间线 / 语料校验
   lib/data.ts              词库索引、词形归一、i+1 推荐
   lib/store.ts             进度持久化、掌握度模型、SRS
-  lib/native.ts            Tauri 桥（浏览器下自动降级）
+  lib/native.ts            原生桥（无桌面壳时自动降级为 no-op）
   lib/split.js             切句规则（唯一实现，脚本侧也 import 这一份）
   lib/cloze.js             填空生成（选词 / 挖空 / 判定），脚本侧可直测
-src-tauri/
-  src/lib.rs               Rust 命令：进度读写 / 导出 / 运行记录
-  icons/                   全平台图标（由 design/icon.svg 生成）
+assets/
+  app-icon.ico             桌面端图标（Windows）
+  icons/                   图标全尺寸（由 design/icon.svg 生成）
 scripts/
   build-data.mjs           数据流水线（语料 / 词库 / 分级）
   build-icons.mjs          图标栅格化 + ico/icns 打包
