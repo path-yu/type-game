@@ -98,5 +98,11 @@
   "title": "Little Women",
   "gid": 514,
   "n": 9049
+ },
+ "nineteen-eighty-four": {
+  "title": "Nineteen Eighty-Four",
+  "gid": 0,
+  "n": 6586,
+  "src": "gutenberg.net.au/ebooks01/0100021"
  }
 }
