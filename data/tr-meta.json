@@ -104,5 +104,11 @@
   "gid": 0,
   "n": 6586,
   "src": "gutenberg.net.au/ebooks01/0100021"
+ },
+ "the-great-gatsby": {
+  "title": "The Great Gatsby",
+  "gid": 64317,
+  "n": 3307,
+  "src": "data/raw/books/64317.txt"
  }
 }

@@ -29,6 +29,7 @@ export const BOOK_ZH: Record<string, string> = {
   'The Thirty-Nine Steps': '三十九级台阶',
   'The Time Machine': '时间机器',
   'Nineteen Eighty-Four': '一九八四',
+  'The Great Gatsby': '了不起的盖茨比',
   'Little Women': '小妇人',
 
   // —— 维基条目 ——
