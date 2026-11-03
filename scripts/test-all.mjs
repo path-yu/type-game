@@ -23,6 +23,7 @@ const PORT = 4173;
 const steps = [
   { name: '结构校验', cmd: 'node', args: ['scripts/verify-tr.mjs'], desc: '句数对齐 / 无空句' },
   { name: '内容质检', cmd: 'node', args: ['scripts/qa-tr.mjs', '--check'], desc: '空句 / 机翻痕迹 / 病句' },
+  { name: '全书质检', cmd: 'node', args: ['scripts/qa-full.mjs'], desc: '21 本全书译文 / 空译 / 照抄' },
   { name: '释义贴合', cmd: 'node', args: ['scripts/test-gloss.mjs'], desc: '22 项义项 / 全库哨兵' },
   { name: '推荐顺序', cmd: 'node', args: ['scripts/test-recommend.mjs'], desc: '6 项续读 / 确定性' },
   { name: '记忆调度', cmd: 'node', args: ['scripts/test-fsrs.mjs'], desc: '14 项 FSRS 行为' },
