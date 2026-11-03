@@ -25,6 +25,7 @@ const SRC = path.join(ROOT, 'data/tr-src');
 const strict = process.argv.includes('--strict');
 
 const hasCJK = s => /[\u4e00-\u9fff]/.test(s);
+const CN_NUM = /[一二三四五六七八九十百千万零〇两]/;
 
 let files = 0, sents = 0;
 const hard = [];
@@ -54,6 +55,16 @@ for (const f of fs.readdirSync(DIR).filter(x => x.endsWith('.json'))) {
     // 长串英文：多半是漏翻，也可能是原文里的拉丁文/法语引语
     if (/[A-Za-z]+(?:[ ,.';-]+[A-Za-z]+){6,}/.test(zh)) {
       soft.push(`${slug}#${k} 中文里夹长串英文: ${zh.slice(0, 48)}`);
+    }
+
+    /*
+     * 数字丢失：原文有多位数字，译文里却既没有阿拉伯数字也没有汉字数字
+     * （"1843" → "一八四三" 是正常译法，所以两边都要看）。
+     * 这是漏译里最能藏住的一种 —— 少一个年份，句子照样通顺。
+     */
+    const nums = (en.match(/\b\d{2,}\b/g) ?? []);
+    if (nums.length && !/\d/.test(zh) && !CN_NUM.test(zh)) {
+      soft.push(`${slug}#${k} 原文有数字 ${nums.join(',')}，译文里找不到: ${zh.slice(0, 40)}`);
     }
 
     const prev = byZh.get(zh);
