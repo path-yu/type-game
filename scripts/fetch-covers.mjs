@@ -54,6 +54,22 @@ const slugOf = title => title
   .replace(/^-|-$/g, '')
   .slice(0, 48);
 
+/*
+ * 只有全书译文、没有选段的书（如《一九八四》）也要有脸。
+ * 它们的书名不在 articles 里，得单独从 full/index.json 补上，
+ * 否则书架那一格就是空白 —— 空白比一张设计过的图更难看。
+ */
+try {
+  const idx = JSON.parse(fs.readFileSync(path.join(DATA, 'full/index.json'), 'utf8')).books ?? {};
+  for (const info of Object.values(idx)) {
+    if (!books.has(info.title)) {
+      books.set(info.title, { n: info.n, gid: null, th: 'novel', unit: '句' });
+    }
+  }
+} catch {
+  /* 还没导出过全书就跳过 */
+}
+
 /**
  * 配色：同一主题一个色系，书架上看起来才像一套丛书。
  * 维基条目分在 history / science / culture / geo 四类里，各有各的底色。
@@ -151,7 +167,7 @@ for (const [title, b] of books) {
   }
 
   if (!file) {
-    const meta = `${b.n} 篇 · TypeWake 文库`;
+    const meta = `${b.n} ${b.unit ?? '篇'} · TypeWake 文库`;
     fs.writeFileSync(path.join(OUT, `${slug}.svg`), svgCover(zh, title, meta, b.th));
     file = `${slug}.svg`;
     svg++;

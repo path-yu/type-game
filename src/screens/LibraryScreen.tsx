@@ -235,12 +235,17 @@ export function LibraryScreen() {
               <div className="lib-only-list">
                 {fullOnly.map(b => (
                   <button key={b.slug} className="lib-only-card" onClick={() => setFullOpen(b.title)}>
-                    <span className="lib-only-title">
-                      {bookZh(b.title)}
-                      {bookHasZh(b.title) && <em>{b.title}</em>}
+                    <span className="lib-only-cover">
+                      <img src={coverOf(b.title)} alt="" decoding="async" />
                     </span>
-                    <span className="lib-only-meta">{b.n} 句 · 整本已译</span>
-                    <span className="lib-only-go">读全书 →</span>
+                    <span className="lib-only-text">
+                      <span className="lib-only-title">
+                        {bookZh(b.title)}
+                        {bookHasZh(b.title) && <em>{b.title}</em>}
+                      </span>
+                      <span className="lib-only-meta">{b.n} 句 · 整本已译</span>
+                      <span className="lib-only-go">读全书 →</span>
+                    </span>
                   </button>
                 ))}
               </div>
