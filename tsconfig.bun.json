@@ -8,7 +8,10 @@
     "baseUrl": ".",
     "paths": {
       "electrobun": ["./.hutch/devkit/api/sdks/main/index.ts"],
-      "electrobun/main": ["./.hutch/devkit/api/sdks/main/index.ts"]
+      "electrobun/main": ["./.hutch/devkit/api/sdks/main/index.ts"],
+      // 子入口（utils 里的 openFileDialog 等）各自一个文件，缺了这条会被解析成
+      // node_modules 里那个会 throw 的壳
+      "electrobun/main/*": ["./.hutch/devkit/api/sdks/main/entries/*.ts"]
     }
   },
   "include": ["src/bun/**/*.ts", "electrobun.config.ts"],

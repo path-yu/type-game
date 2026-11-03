@@ -1,4 +1,4 @@
-import { BrowserWindow } from 'electrobun/main'
+import { BrowserWindow, Utils } from 'electrobun/main'
 import { startBridge } from './bridge'
 
 /**
@@ -10,7 +10,21 @@ import { startBridge } from './bridge'
  *
  * 窗口尺寸与旧版保持一致（1280×840），免得迁移后版式要重调。
  */
-const bridge = startBridge()
+const bridge = startBridge({
+  /*
+   * 换数据目录要弹系统对话框。桥本身不认识 UI，所以由这里注入 ——
+   * 桥只负责"选好之后把路径记住并切过去"。
+   */
+  pickDir: async (current) => {
+    const picked = await Utils.openFileDialog({
+      startingFolder: current,
+      canChooseFiles: false,
+      canChooseDirectory: true,
+      allowsMultipleSelection: false,
+    })
+    return picked[0] ?? null
+  },
+})
 
 const win = new BrowserWindow({
   title: '词醒 TypeWake',

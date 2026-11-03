@@ -60,20 +60,20 @@ export async function appInfo(): Promise<AppInfo | null> {
 }
 
 /*
- * 数据目录的「选择 / 重置」原本靠 Tauri 的目录选择框。
- * HTTP 桥没有原生对话框，这里如实返回 null ——
+ * 换目录：桌面端弹系统对话框（桥里的 pick_data_dir 由主进程注入），
+ * 网页版没有对话框，桥也不存在，这里如实返回 null ——
  * 调用方（DataDirGroup）会显示成不可用，而不是假装切过去了。
  */
 export async function pickDataDir(): Promise<string | null> {
-  return null;
+  return call<string>('pick_data_dir');
 }
 
-export async function setDataDir(_dir: string): Promise<string | null> {
-  return null;
+export async function setDataDir(dir: string): Promise<string | null> {
+  return call<string>('set_data_dir', { dir });
 }
 
 export async function resetDataDir(): Promise<string | null> {
-  return null;
+  return call<string>('reset_data_dir');
 }
 
 /** 在文件管理器里打开数据目录（返回路径，由渲染层显示给用户） */

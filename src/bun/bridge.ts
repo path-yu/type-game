@@ -15,13 +15,33 @@ import { homedir } from 'node:os';
 import { join } from 'node:path';
 
 /** 与 Tauri 版同一个目录，老用户的 ready.json 还能接着用 */
-const DATA_DIR = join(process.env.LOCALAPPDATA ?? homedir(), 'com.typewake.app');
-const PROGRESS = join(DATA_DIR, 'progress.json');
-const READY = join(DATA_DIR, 'ready.json');
-const RUNS = join(DATA_DIR, 'runs.jsonl');
+const DEFAULT_DIR = join(process.env.LOCALAPPDATA ?? homedir(), 'com.typewake.app');
+/** 改过目录的话记在这里；配置文件永远放在默认目录，否则换了目录就找不到自己 */
+const CONFIG = join(DEFAULT_DIR, 'config.json');
+
+let dataDir = DEFAULT_DIR;
+
+function readConfig(): { dataDir?: string } {
+  const raw = readText(CONFIG);
+  if (!raw) return {};
+  try { return JSON.parse(raw) as { dataDir?: string }; } catch { return {}; }
+}
+
+function saveConfig(next: { dataDir?: string }) {
+  if (!existsSync(DEFAULT_DIR)) mkdirSync(DEFAULT_DIR, { recursive: true });
+  writeFileSync(CONFIG, JSON.stringify(next, null, 2), 'utf8');
+}
+
+(() => {
+  const saved = readConfig().dataDir;
+  // 目录被删了（移动硬盘拔了）就退回默认，别让整个桌面端起不来
+  if (saved && existsSync(saved)) dataDir = saved;
+})();
+
+const fileIn = (name: string) => join(dataDir, name);
 
 function ensureDir() {
-  if (!existsSync(DATA_DIR)) mkdirSync(DATA_DIR, { recursive: true });
+  if (!existsSync(dataDir)) mkdirSync(dataDir, { recursive: true });
 }
 
 function readText(file: string): string | null {
@@ -46,7 +66,12 @@ export interface Bridge {
   close: () => void;
 }
 
-export function startBridge(): Bridge {
+export interface BridgeOptions {
+  /** 由主进程注入：弹系统目录选择框。桥自己不认识 UI */
+  pickDir?: (current: string) => Promise<string | null>;
+}
+
+export function startBridge(opts: BridgeOptions = {}): Bridge {
   const token = crypto.randomUUID();
 
   const server = Bun.serve({
@@ -75,23 +100,22 @@ export function startBridge(): Bridge {
               version: '0.1.0',
               platform: process.platform,
               arch: process.arch,
-              dataDir: DATA_DIR,
-              // 桥不支持换目录，custom 恒为 false，前端就不会显示「恢复默认」
-              custom: false,
-              defaultDir: DATA_DIR,
+              dataDir,
+              custom: dataDir !== DEFAULT_DIR,
+              defaultDir: DEFAULT_DIR,
             };
             break;
           case 'load_progress':
-            value = readText(PROGRESS);
+            value = readText(fileIn('progress.json'));
             break;
           case 'save_progress':
             ensureDir();
-            writeText(PROGRESS, String((body as { payload?: string }).payload ?? ''));
+            writeText(fileIn('progress.json'), String((body as { payload?: string }).payload ?? ''));
             break;
           case 'export_progress': {
             ensureDir();
             const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-            const out = join(DATA_DIR, `progress-${stamp}.json`);
+            const out = fileIn(`progress-${stamp}.json`);
             writeFileSync(out, String((body as { payload?: string }).payload ?? ''), 'utf8');
             value = out;
             break;
@@ -99,18 +123,49 @@ export function startBridge(): Bridge {
           case 'report_ready':
             ensureDir();
             writeFileSync(
-              READY,
+              fileIn('ready.json'),
               JSON.stringify({ ...(body as object), ts: Date.now() }, null, 2),
               'utf8',
             );
             break;
           case 'append_run':
             ensureDir();
-            appendFileSync(RUNS, `${JSON.stringify((body as { record?: unknown }).record ?? {})}\n`, 'utf8');
+            appendFileSync(fileIn('runs.jsonl'), `${JSON.stringify((body as { record?: unknown }).record ?? {})}\n`, 'utf8');
             break;
           case 'open_data_dir':
             ensureDir();
-            value = DATA_DIR;
+            value = dataDir;
+            break;
+
+          /*
+           * 换目录。桌面端才有对话框（opts.pickDir）；网页版走到这里也只会拿到 null，
+           * 前端据此保持"不可用"，而不是假装切过去了。
+           */
+          case 'pick_data_dir': {
+            const picked = await opts.pickDir?.(dataDir);
+            if (picked && existsSync(picked)) {
+              dataDir = picked;
+              saveConfig({ dataDir });
+              ensureDir();
+              value = dataDir;
+            }
+            break;
+          }
+          case 'set_data_dir': {
+            const dir = String((body as { dir?: string }).dir ?? '');
+            if (dir && existsSync(dir)) {
+              dataDir = dir;
+              saveConfig({ dataDir });
+              ensureDir();
+              value = dataDir;
+            }
+            break;
+          }
+          case 'reset_data_dir':
+            dataDir = DEFAULT_DIR;
+            saveConfig({});
+            ensureDir();
+            value = dataDir;
             break;
           default:
             return Response.json({ error: 'unknown command' }, { status: 404, headers: cors });
