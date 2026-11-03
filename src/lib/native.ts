@@ -1,31 +1,42 @@
 /**
- * 桌面端（Tauri）能力桥。
- * 浏览器环境下所有函数安全降级为 no-op —— 一套代码同时跑 Web 与桌面。
+ * 桌面端能力桥。
+ *
+ * 原来是 Tauri 的 invoke；弃用 Tauri 后改成打本机 HTTP 桥
+ * （src/bun/bridge.ts，随窗口一起起来，只监听 127.0.0.1，带一次性 token）。
+ *
+ * 判断"我在桌面壳里"只看窗口 URL 上有没有 `?api=`：
+ * 网页版没有这个参数，所有函数安全降级成 no-op，
+ * 一套代码同时跑 Web 与桌面，构建产物也不用分两份。
  */
 
-type InvokeFn = (cmd: string, args?: Record<string, unknown>) => Promise<unknown>;
-
-/**
- * Tauri v2 有两个入口：
- *  - window.__TAURI_INTERNALS__.invoke  （core 注入，需依赖 @tauri-apps/api）
- *  - window.__TAURI__.core.invoke       （withGlobalTauri 开启后可用）
- * 两个都试，任一存在就算桌面端。
- */
-function invokeFn(): InvokeFn | null {
-  const w = window as unknown as {
-    __TAURI_INTERNALS__?: { invoke?: InvokeFn };
-    __TAURI__?: { core?: { invoke?: InvokeFn } };
-  };
-  return w.__TAURI_INTERNALS__?.invoke ?? w.__TAURI__?.core?.invoke ?? null;
+interface Bridge {
+  base: string;
+  token: string;
 }
 
-export const isDesktop = (): boolean => !!invokeFn();
+function bridge(): Bridge | null {
+  if (typeof location === 'undefined') return null;
+  const q = new URLSearchParams(location.search);
+  const api = q.get('api');
+  const token = q.get('token');
+  if (!api || !token) return null;
+  return { base: `http://${api}`, token };
+}
 
-async function invoke<T>(cmd: string, args?: Record<string, unknown>): Promise<T | null> {
-  const fn = invokeFn();
-  if (!fn) return null;
+export const isDesktop = (): boolean => !!bridge();
+
+async function call<T>(cmd: string, body?: unknown): Promise<T | null> {
+  const b = bridge();
+  if (!b) return null;
   try {
-    return (await fn(cmd, args)) as T;
+    const res = await fetch(`${b.base}/${cmd}`, {
+      method: body === undefined ? 'GET' : 'POST',
+      headers: { 'content-type': 'application/json', 'x-bridge-token': b.token },
+      body: body === undefined ? undefined : JSON.stringify(body),
+    });
+    if (!res.ok) return null;
+    const json = (await res.json()) as { value?: T };
+    return (json.value ?? null) as T | null;
   } catch (e) {
     console.warn(`[native] ${cmd} 失败`, e);
     return null;
@@ -38,52 +49,40 @@ export interface AppInfo {
   arch: string;
   /** 当前生效的数据目录 */
   dataDir: string;
-  /** 默认位置，用于「恢复默认」时对照 */
-  defaultDir: string;
-  /** 用户是否改过目录 */
+  /** 用户是否改过目录（HTTP 桥不支持改，恒为 false） */
   custom: boolean;
-  firstRun: boolean;
+  /** 默认目录，用于「恢复默认」时显示 */
+  defaultDir: string;
 }
 
 export async function appInfo(): Promise<AppInfo | null> {
-  const r = await invoke<{
-    version: string; platform: string; arch: string;
-    data_dir: string; default_dir: string; custom: boolean; first_run: boolean;
-  }>('app_info');
-  if (!r) return null;
-  return {
-    version: r.version,
-    platform: r.platform,
-    arch: r.arch,
-    dataDir: r.data_dir,
-    defaultDir: r.default_dir,
-    custom: r.custom,
-    firstRun: r.first_run,
-  };
+  return call<AppInfo>('app_info');
 }
 
-/** 弹系统选目录框；取消返回 null */
+/*
+ * 数据目录的「选择 / 重置」原本靠 Tauri 的目录选择框。
+ * HTTP 桥没有原生对话框，这里如实返回 null ——
+ * 调用方（DataDirGroup）会显示成不可用，而不是假装切过去了。
+ */
 export async function pickDataDir(): Promise<string | null> {
-  return invoke<string | null>('pick_data_dir');
+  return null;
 }
 
-/** 换数据目录（会把现有进度复制过去，旧文件保留） */
-export async function setDataDir(dir: string): Promise<string | null> {
-  return invoke<string>('set_data_dir', { path: dir });
+export async function setDataDir(_dir: string): Promise<string | null> {
+  return null;
 }
 
-/** 回到默认目录（不动文件，只改指向） */
 export async function resetDataDir(): Promise<string | null> {
-  return invoke<string>('reset_data_dir');
+  return null;
 }
 
-/** 在文件管理器里打开 */
+/** 在文件管理器里打开数据目录（返回路径，由渲染层显示给用户） */
 export async function openDataDir(): Promise<string | null> {
-  return invoke<string>('open_data_dir');
+  return call<string>('open_data_dir');
 }
 
 export async function loadNativeProgress(): Promise<unknown | null> {
-  const raw = await invoke<string | null>('load_progress');
+  const raw = await call<string>('load_progress');
   if (!raw) return null;
   try {
     return JSON.parse(raw);
@@ -93,22 +92,22 @@ export async function loadNativeProgress(): Promise<unknown | null> {
 }
 
 export async function saveNativeProgress(payload: unknown): Promise<void> {
-  await invoke('save_progress', { payload: JSON.stringify(payload) });
+  await call('save_progress', { payload: JSON.stringify(payload) });
 }
 
 export async function exportProgress(payload: unknown): Promise<string | null> {
-  return invoke<string>('export_progress', { payload: JSON.stringify(payload, null, 2) });
+  return call<string>('export_progress', { payload: JSON.stringify(payload, null, 2) });
 }
 
 /** 启动自检：把实际加载到的数据量回写给桌面端，便于确认资源通路正常 */
 export async function reportReady(articles: number, words: number): Promise<void> {
-  await invoke('report_ready', { articles, words });
+  await call('report_ready', { articles, words });
 }
 
 export async function appendRun(record: {
   articleId: string; wpm: number; accuracy: number; consistency: number; stars: number; elapsedMs: number;
 }): Promise<void> {
-  await invoke('append_run', {
+  await call('append_run', {
     record: {
       article_id: record.articleId,
       wpm: record.wpm,
