@@ -256,16 +256,38 @@ const full = await page.evaluate(() => ({
   flowW: document.querySelector('.rd-body')?.scrollWidth ?? 0,
   viewW: document.querySelector('.rd-page')?.clientWidth ?? 1,
 }));
-const pageN = +(full.pages.split('/')[1] ?? 0);
-check('全书模式载入了整本句子', full.sents > 1000, `${full.sents} 句`);
+const pageN = +(full.pages.match(/\/\s*(\d+)/)?.[1] ?? 0);
+const total = +(full.title.match(/(\d+)\s*句/)?.[1] ?? 0);
+/*
+ * 全书阅读是分批挂载的：首屏只排前几百句，翻到接近末尾再接下一批。
+ * 一次性把近万句流进一个多栏容器，排版要十几秒、内存四百多兆 ——
+ * 所以这里断言的是"首屏轻、总数对、翻页会接着长"，不是"一次全渲染"。
+ */
+check('全书首批只挂一部分（首屏要快）', full.sents >= 300 && full.sents <= 600, `${full.sents} 句`);
+check('书眉报的是整本句数', total > 1000, `${total} 句`);
 check('全书每句都配了译文', full.zh === full.sents, `${full.zh} / ${full.sents}`);
-check('全书分成了很多页', pageN > 50, full.pages);
+check('全书分成了很多屏', pageN > 20, full.pages);
 check('书眉标出这是全书', /全书/.test(full.run), full.run.slice(0, 24));
 
 await page.keyboard.press('ArrowRight');
 await sleep(400);
 const turned = await page.evaluate(() => document.querySelector('.rd-pageno')?.textContent?.trim() ?? '');
 check('全书模式能翻页', turned !== full.pages, `${full.pages} → ${turned}`);
+
+/* 翻到已挂载部分的末尾，应当自动接上下一批 */
+await page.evaluate(async () => {
+  const next = document.querySelector('.rd-turn.next');
+  for (let i = 0; i < 120 && next && !next.disabled; i++) {
+    next.click();
+    await new Promise(r => setTimeout(r, 8));
+  }
+});
+await sleep(1200);
+const grown = await page.evaluate(() => ({
+  sents: document.querySelectorAll('.rd-sent').length,
+  pages: document.querySelector('.rd-pageno')?.textContent?.trim() ?? '',
+}));
+check('翻到末尾会接着挂载后面的句子', grown.sents > full.sents, `${full.sents} → ${grown.sents} 句`);
 
 console.log(`\n通过 ${pass} · 失败 ${fail}`);
 console.log('运行时错误:', errs.length ? errs.slice(0, 3) : '0');
