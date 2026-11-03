@@ -19,5 +19,8 @@
     "baseUrl": ".",
     "paths": { "@/*": ["src/*"] }
   },
-  "include": ["src"]
+  "include": ["src"],
+  // 桌面端主进程跑在 Bun 里，不是浏览器环境，单独用 tsconfig.bun.json 检查。
+  // electrobun 的类型来自 .hutch/devkit（由 hutch 投影），不该混进前端这轮编译。
+  "exclude": ["src/bun", "electrobun.config.ts", "hutch.config.ts"]
 }

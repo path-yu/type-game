@@ -1,6 +1,16 @@
 # 依赖与构建产物
 node_modules/
 dist/
+# Electrobun 产物与 devkit 投影
+build/
+artifacts/
+.hutch/
+
+# Electrobun 产物与 devkit 投影
+build/
+artifacts/
+.hutch/
+
 src-tauri/target/
 src-tauri/gen/
 

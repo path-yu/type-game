@@ -40,7 +40,10 @@
     "tr:build": "node scripts/tr/build.mjs",
     "tr:status": "node scripts/tr/status.mjs",
     "tr:next": "node scripts/tr/next.mjs",
-    "tr:export": "node scripts/tr/export.mjs"
+    "tr:export": "node scripts/tr/export.mjs",
+    "desktop:typecheck": "tsc --noEmit -p tsconfig.bun.json",
+    "desktop:dev": "hutch electrobun dev",
+    "desktop:build": "npm run build && hutch electrobun build --env=stable"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -49,9 +52,12 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.1.0",
+    "@types/bun": "^1.4.4",
+    "@types/node": "^26.6.6",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
+    "electrobun": "2.0.4",
     "puppeteer-core": "^25.16.0",
     "typescript": "^5.6.3",
     "vite": "^5.4.10"

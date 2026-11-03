@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["bun", "node"],
+    "noEmit": true,
+    // node_modules/electrobun 只是 Hutch 的引导壳（会 throw），
+    // 真正的类型与 API 在 hutch 投影出来的 .hutch/devkit 里。
+    "baseUrl": ".",
+    "paths": {
+      "electrobun": ["./.hutch/devkit/api/sdks/main/index.ts"],
+      "electrobun/main": ["./.hutch/devkit/api/sdks/main/index.ts"]
+    }
+  },
+  "include": ["src/bun/**/*.ts", "electrobun.config.ts"],
+  "exclude": ["node_modules", "dist", "build", "artifacts", ".hutch"]
+}
