@@ -2,7 +2,7 @@
 
 > 一座文字沉睡的城市，你是记述者。打字 = 唤醒。你敲下的每一个词，都会变成你真正拥有的词。
 
-英文打字训练游戏。**1239 篇分级英文文本**、**7584 词词典**、点词即查即听、连击共鸣、幽灵竞速、夜巡复习。
+英文打字训练游戏。**1489 篇分级英文文本**、**35,000 词条离线词典**（151 词精讲）、点词即查即听、连击共鸣、幽灵竞速、夜巡复习。
 
 ---
 
@@ -22,18 +22,23 @@ npm run exe            # 打包安装程序（Windows：build/stable-win-x64/）
 > 产物在 `build/stable-win-x64/`：`词醒 TypeWake-Setup.exe` 与同名 `.tar.zst`
 > 必须一起分发。首次运行会自解压到 `%LOCALAPPDATA%`。
 
-桌面端首次启动会在 `%APPDATA%\com.typewake.app\` 生成 `ready.json`，
-内容形如 `{"articles":1239,"words":7584}`。它由 Rust 侧在启动时写入，
+桌面端首次启动会在 `%LOCALAPPDATA%\com.typewake.app\` 生成 `ready.json`，
+内容形如 `{"articles":1489,"words":35000}`。它由主进程的本地桥在启动时写入，
 **只能说明后端读到了数据，不能说明界面渲染出来了** —— 白屏时这个文件照样会生成。
 判断界面是否正常，看窗口里有没有出现侧边栏和「今日卷轴」。
 
-**数据存哪里**：默认 `%APPDATA%\com.typewake.app\`，三个文件 ——
+**数据存哪里**：默认 `%LOCALAPPDATA%\com.typewake.app\`，四个文件 ——
 
 | 文件 | 内容 |
 |---|---|
 | `progress.json` | 全部学习进度（词表 / FSRS 排期 / 场景成绩 / 自建对话），十几 KB |
 | `runs.jsonl` | 每次结算的一行记录 |
 | `ready.json` | 启动自检标记 |
+| `config.json` | 数据目录指向（换过目录才有） |
+
+读取与写入走主进程里一个只监听 `127.0.0.1` 的本地桥（随机端口 + 一次性 token，
+窗口 URL 带 `?api=…&token=…`）。浏览器里没有这个参数，`src/lib/native.ts` 自动降级为 no-op，
+进度只存 localStorage —— 网页版照常能用，但换机器带不走。
 
 **可以换位置**：设置 → 数据目录 → 更换目录，挑一个文件夹（比如同步盘或移动硬盘）。
 更换时只**复制**不删除，旧文件留着；指向记在默认目录的 `config.json` 里。
@@ -42,19 +47,26 @@ npm run exe            # 打包安装程序（Windows：build/stable-win-x64/）
 首次运行需要数据。仓库已包含构建产物（`public/data/`），如需重新生成：
 
 ```bash
-npm run data         # 下载公版书 + 维基百科，重建 1239 篇文本与 7200 词词库（约 2 分钟）
-npm run data:dict    # 把对话语料的 384 条补充词条并进词库（幂等，可反复跑）
+npm run data         # 重建选段：下载公版书 + 维基百科，重算分级（约 2 分钟）
+npm run data:dict    # 把对话语料的补充词条并进老词库（幂等，可反复跑）
 npm run icons        # 从 design/icon.svg 重新生成全平台图标
 npm run translate    # 补齐句子译文（已完成全量；改语料时才需要重跑）
 npm run names        # 重新统计专名表 public/data/names.json（改语料后需重跑）
+npm run lex          # 词库进度：中文覆盖多少词次、下一批该译哪些词
+npm run lex:next     # 取 50 个待译词（义项按原文列出，供人工翻译）
 npm test             # 一键全量校验：结构 + 内容 + 界面 + 语音（改代码或数据后都跑这个）
 npm run test:data    # 只跑数据层（结构 + 质检）
 npm run test:daily   # 只跑每日卷轴（确定性 / 连续 / 预告）
 npm run test:report  # 只跑体检报告（统计与诊断）
 npm run test:cloze   # 只跑阅读填空（出题 / 判定 / 回写）
-npm run audit:cloze  # 对 1239 篇全量生成填空，检查不变量
+npm run audit:cloze  # 对全部选段生成填空，检查不变量
 npm run verify       # 只校验译文与句数对齐、无空句
 ```
+
+> **`npm run data` 会重建文章编号**（id 按等级与顺序重排），已有练习进度会全部错位。
+> 新增书请走 `scripts/add-books.mjs` —— 它只做加法：切段、按现有等级分位点落位、追加，
+> 不动已有 1489 篇的 id。加完之后还要跑一次 `scripts/attach-book-tr.mjs`，
+> 把整本译文的逐句译文按句拼回选段（详见“双语与翻译”）。
 
 ---
 
@@ -64,7 +76,7 @@ npm run verify       # 只校验译文与句数对齐、无空句
 |---|---|
 | 前端 | React 18 + TypeScript + Vite + Zustand |
 | 打字引擎 | 自研纯 TS，逐键直改 DOM，不触发 React 重渲染 |
-| 桌面端 | Tauri 2（Rust 1.77+），WebView2 |
+| 桌面端 | Electrobun（Bun + 系统 WebView），打包出一个 `Setup.exe` |
 | 数据 | 静态 JSON 分片，全量本地化，断网可玩 |
 | 音效 | WebAudio 实时合成（无音频资源，包体 0 增长） |
 | 语音 | Web Speech API，本地零延迟 |
@@ -77,14 +89,17 @@ npm run verify       # 只校验译文与句数对齐、无空句
 src/
   engine/TypingEngine.ts   打字引擎（纯逻辑，零 DOM 依赖）
   components/TextStage.tsx 文字舞台（ref 直改 DOM + 命令式光标同步）
-  components/WordCard.tsx  查词卡片
+  components/WordCard.tsx  查词卡片（释义 + 精讲 + 记忆状态）
   screens/                 地图 / 打字 / 结算 / 夜巡 / 藏书阁 / 阅读填空 / 体检报告 / 对话
+  screens/WordbookScreen.tsx  词库：搜索 / 虚拟列表 / 主题 / 词条详情
   screens/dialogue/        五种练法各一个文件（Reader / Drill / Speak / Live / Import）
   lib/custom.ts            自定义对话的解析与校验（纯函数，可直测）
   lib/phrases.ts           句型池与复习节奏（收池 / 到期 / 抽一轮）
   lib/review.ts            夜巡队列：单词排序 + 句型混排（纯函数，可直测）
   lib/dialogue.ts          对话的纯逻辑：归一化比对 / 逐词对齐判分 / 时间线 / 语料校验
   lib/data.ts              词库索引、词形归一、i+1 推荐
+  lib/route.ts             地址栏 ↔ 当前屏（#/words/miss 这类链接要能刷新还在）
+  lib/rich.ts              精讲正文里的 `**加粗**`（只支持这一种标记）
   lib/store.ts             进度持久化、掌握度模型、SRS
   lib/native.ts            原生桥（无桌面壳时自动降级为 no-op）
   lib/split.js             切句规则（唯一实现，脚本侧也 import 这一份）
@@ -93,7 +108,11 @@ assets/
   app-icon.ico             桌面端图标（Windows）
   icons/                   图标全尺寸（由 design/icon.svg 生成）
 scripts/
-  build-data.mjs           数据流水线（语料 / 词库 / 分级）
+  build-data.mjs           数据流水线（语料 / 分级）
+  build-lexicon.mjs        词库构建：WordNet + 语料 + 人工表 → public/data/lex/
+  lex/                     译前工具：next-gloss（取词）/ put-gloss（校验入库）/ status（覆盖率）
+  add-books.mjs            增量加书（切段入库，不重建文章编号）
+  attach-book-tr.mjs       把整本译文的逐句译文按句拼回选段
   build-icons.mjs          图标栅格化 + ico/icns 打包
   build-names.mjs          从语料统计专名表 public/data/names.json
   next-batch.mjs           导出待译批次到 data/tr-inbox/
@@ -154,9 +173,10 @@ docs/
     练过对话会多出一块「说台词 vs 实战接住」——两种能力的差距能看出你是背得熟还是真能接；
     下面再按岔路类型拆（东西没了 / 要加钱 / 流程变了 / 被追问 / 对方提议），
     指出你最容易卡在哪一种意外上。
-14. **文库** —— **46 本书 / 1239 篇**全部摊开，按书分组、书内按原文顺序，标段号与已读星级；
-    书名带中文（14 部长篇 + 32 个维基条目，对照表在 `src/lib/book-titles.ts`），
+14. **文库** —— **54 本书 / 1489 篇**全部摊开，按书分组、书内按原文顺序，标段号与已读星级；
+    书名带中文（长篇 + 维基条目，对照表在 `src/lib/book-titles.ts`），
     英文原名留在旁边做副标；搜索中英文都认，还能按城区筛选。城市页只推荐一篇，文库才看得到全库。
+    另有 **22 本书可整本通读**（91,403 句全译），入口在同一页的「全书通读」分区。
 15. **阅读** —— 文库点一篇先进阅读页，不是直接开打：完整全文、按句排版，
     **中文译文贴在对应英文句子的下方**（可一键切回原文），生词带点状下划线、点词即查，
     点句子听读音；读完再按「开始打字」，退出会回到这一页，不会把人扔回地图。
@@ -189,6 +209,88 @@ docs/
 
 ---
 
+## 词库
+
+侧栏「词库」是一本 **35,000 词条**的离线词典，数据在 `public/data/lex/`。
+它不是把一份词典塞进包里 —— 释义、例句、义项顺序都是按**这批书**的实际读法重排过的。
+
+### 规模与覆盖
+
+```
+35,000 词条 · 26 个字母分片（按需加载，最大 3.4MB）· 索引 857KB
+中文释义 3,271 词，覆盖语料 90.3% 的词次
+精讲 151 词 · 12 个主题 · 302 条人写例句
+```
+
+衡量「查得懂」看的是**词次覆盖**而不是词条数：3,271 个词只占词条的 9%，
+但它们占全部 136 万词次的九成。`npm run lex` 直接打这个数，以及下一批该译哪些词。
+
+### 释义怎么来的
+
+| 层 | 来源 | 说明 |
+|---|---|---|
+| 义项 | WordNet 3.1 | 按词性分开列，一个词多义项不合并 —— 「不同上下文不同意思」靠这个 |
+| 义项顺序 | WordNet 的 `index.*` 词频序 | 再叠一层「义项多的词性优先」，`see` 才不会把「主教座堂」排第一 |
+| 中文 | 人工表 + 分批翻译 | 273 个虚词/缩写/古语/复数形名词走人工，其余按语料频次分批译 |
+| 例句 | 22 本书的真实句子 | 带中译与出处，可点回原书；不是生成的 |
+| 音标 | 只收已有的 | 没有就留空，不猜 |
+
+三处必须人工介入，规则判不出来：
+
+- **WordNet 不分大小写**：`it`→IT（信息技术）、`he`→氦、`as`→砷、`thou`→thousand（一千）
+- **不收代词与冠词**：`the` `him` `myself` 这些只能手写
+- **-s 结尾的独立名词被当成动词第三人称**：`means`→意思是、`works`→运转
+
+### 精讲
+
+词认得、义选错，整句就翻了 —— 这一层专门解决它。151 个词，每条含一段解析与两条例句，
+**全部人工撰写**（`data/lex-zh/curated.json`），和自动抓的语料例句分开管理、分开显示。
+
+按问题类型分 12 个主题：财产与继承、诉讼与债务、称呼与等级、宗教与道德、古语与旧用法、
+器物与职业、景物与天气、情绪与神态、叙事动作、一词多义、搭配与句式、词义辨析。
+
+几个例子：
+
+```
+costs      the costs 是「讼费」，不是「成本」—— 赢下官司也可能被它吃光
+charity    钦定本里是 agape「爱德」，译「慈善」整段就垮了
+miss       只有长女能叫 Miss + 姓，所以「Miss Bennet」指简，不指伊丽莎白
+temper     是「脾气」，不是冶金回火 —— 词典前六条全是后者
+engagement 《傲慢与偏见》里出现 13 次，一次都不是「交战」
+```
+
+### 四层入口
+
+| 方式 | 做什么 |
+|---|---|
+| 查 | 二分搜索（前缀优先，退化为包含匹配），虚拟列表只渲染可视区 20 行 |
+| 翻 | 按主题选一组词 —— 读者往往不知道该查哪个词 |
+| 读 | 词条详情：义项（中英对照）/ 音标 / 同义·上位·反义 / 语料例句 / 我在哪读到过它 |
+| 联 | 解析正文里的其它精讲词可点；末尾列「同主题」 |
+
+### 与学习系统是同一份状态
+
+- 收藏 → 藏书阁（`mastery[w].lex`）
+- 记生词 → 夜巡复习池（`mastery[w].m = 25`，当天到期）
+- 最近查过 → 只记轨迹（`p.lookups`），不动掌握度
+
+读书时点词，卡片里直接给释义与精讲；右上「在词库细看」跳到 `#/words/<词>`，
+刷新也停在那一个词上。
+
+### 改词库
+
+```bash
+npm run lex                              # 看覆盖率与下一批待译词
+npm run lex:next                         # 取 50 个词（义项按原文列出）
+node scripts/lex/put-gloss.mjs <批.json>  # 校验：条数必须等于义项数，否则整条拒收
+node scripts/build-lexicon.mjs            # 重建 26 个分片 + 索引 + 主题 + 精讲单文件
+```
+
+**中文条数必须等于义项条数。** 少一条会整体错位，而界面上是「中文一行、英文一行」交替排的，
+错位了肉眼看不出来，只会觉得这个词翻得怪。所以宁可整条不收。
+
+---
+
 ## 数据与备份
 
 所有学习记录只存在浏览器的一个 `localStorage` 键里（`typewake:v1`）：词的掌握度与 FSRS 排期、
@@ -210,8 +312,10 @@ docs/
 
 | 来源 | 用途 | 许可 |
 |---|---|---|
-| [Project Gutenberg](https://www.gutenberg.org/)（12 部公版书） | 1112 段叙事文本 | Public Domain |
-| [Simple English Wikipedia](https://simple.wikipedia.org/) | 67 段科普文本 | CC BY-SA 3.0 |
+| [Project Gutenberg](https://www.gutenberg.org/) | 22 部公版书的全文与选段（1489 篇） | Public Domain |
+| [Project Gutenberg Australia](https://gutenberg.net.au/) | 《一九八四》原文（美国境内版权至 2044，中国地区已进入公有领域） | Public Domain（澳/中） |
+| [Simple English Wikipedia](https://simple.wikipedia.org/) | 部分科普选段 | CC BY-SA 3.0 |
+| [WordNet 3.1](https://wordnet.princeton.edu/)（普林斯顿） | 词库的义项、词性、同义/上位/反义 | WordNet License |
 | [ECDICT](https://github.com/skywind3000/ECDICT) | 音标 / 中英释义 / 柯林斯星级 / BNC+当代词频 / 考试标签 / 词形变化 | MIT |
 
 文本内容版权归原作者；Gutenberg 与维基百科内容遵循其各自许可，详见 `LICENSE-NOTICE.md`。
@@ -223,9 +327,13 @@ docs/
 - 移动端仅保证复习与浏览体验，打字为主桌面端设计。
 - **进度只在本地**：没有账号、没有服务端，换设备靠导出的 JSON 手动搬。
 - 语音走系统 TTS，音色取决于操作系统；生产环境应预烘焙单词音频（见设计文档 §5.4）。
-- **句子译文已全量覆盖**：**1239 / 1239 篇（100%）**，七个城区，共 **5719 句**（`tr.json` 0.59 MB）。
-  若改动语料需要重译：`scripts/next-batch.mjs` 导出批次 → 逐句翻译 →
-  `scripts/import-tr.mjs <批次文件>` 合并（**会比对句数，不符直接拒收**）。
+- **句子译文已全量覆盖**：选段 **1489 / 1489 篇（100%）**，另加 **22 本书共 91,403 句**的整本译文
+  （`public/data/full/`，可就整本通读）。若改动语料需要重译：`scripts/next-batch.mjs` 导出批次 →
+  逐句翻译 → `scripts/import-tr.mjs <批次文件>` 合并（**会比对句数，不符直接拒收**）。
+- **词库的中文只覆盖 90.3% 的词次**，剩下约一成散在两万多个低频词里；这些词仍有英文释义、
+  语料例句与关联词，只是没有中文。补法是流水线式的：`npm run lex` 看缺口 → 译 → `put-gloss` 校验。
+- **精讲只有 151 个词**，选的都是"读懂这批书绕不开"的（财产、诉讼、称呼、宗教、旧义），
+  不是按词频选的。剩下的大量词没有精讲 —— 这一层永远补不完，只能按需要加。
 - **专名表**：`scripts/build-names.mjs` 从语料统计人名地名（192 个，1.7 KB），
   句子解析里跳过，避免把 `Matthew` 注成「马太福音」。改语料后需 `npm run names` 重跑。
 - **每日卷轴**已实现（文章 + 对话各一项），但只做了「本地确定性」这一半：
