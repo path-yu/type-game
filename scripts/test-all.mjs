@@ -35,6 +35,7 @@ const steps = [
   { name: '词库覆盖', cmd: 'node', args: ['scripts/audit-words.mjs'], desc: '对话台词 100% 有释义', needsServer: false },
   { name: '场景等级', cmd: 'node', args: ['scripts/audit-level.mjs'], desc: '等级分布 / 词汇画像 / 阈值', needsServer: false },
   { name: '资源路径', cmd: 'node', args: ['scripts/audit-assets.mjs'], desc: '构建产物里的引用是否都存在', needsServer: false },
+  { name: '打包产物', cmd: 'node', args: ['scripts/audit-package.mjs'], desc: '安装包里的界面与数据是否齐全（没打过包就跳过）', needsServer: false },
   { name: '续读链路', cmd: 'node', args: ['scripts/test-seq.mjs'], desc: '6 项段号 / 同书续读', needsServer: true },
   { name: '预习卡', cmd: 'node', args: ['scripts/test-pretest.mjs'], desc: '12 项先测后学', needsServer: true },
   { name: '打字手感', cmd: 'node', args: ['scripts/test-flow.mjs'], desc: '14 项连击段位 / 护盾 / 句末结算', needsServer: true },
