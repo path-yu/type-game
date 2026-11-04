@@ -720,6 +720,10 @@
       {
         "en": "The men went forward to the forecastle, and the deck was left to the officers.",
         "zh": "水手们都回到船头的舱里去了，甲板留给了军官。"
+      },
+      {
+        "en": "The forecastle was so low that a tall man could not stand upright in it.",
+        "zh": "艏楼太矮，个子高的人在里面直不起腰。"
       }
     ]
   },
@@ -729,6 +733,10 @@
       {
         "en": "The beadle thrust the boys aside with his staff and shut the gate behind him.",
         "zh": "教区执事用手杖把孩子们推开，随手关上了身后的门。"
+      },
+      {
+        "en": "The beadle's coat was the finest thing in the parish, and he knew it.",
+        "zh": "教区执事那件外套是全教区最好的东西，他自己也知道。"
       }
     ]
   },
@@ -738,6 +746,10 @@
       {
         "en": "The tithes were paid in kind, and the parson's barn was fuller than the farmer's.",
         "zh": "什一税以实物缴纳，牧师的谷仓比农夫的还满。"
+      },
+      {
+        "en": "The tithe barn stood apart from the farm, and its door was locked twice over.",
+        "zh": "什一税仓离农舍远远的，门上了两道锁。"
       }
     ]
   },
@@ -747,6 +759,10 @@
       {
         "en": "The apothecary mixed the draught himself, and would take no payment until morning.",
         "zh": "药剂师亲手调了那服药，说什么也不肯在早上之前收钱。"
+      },
+      {
+        "en": "The apothecary's shop smelled of camphor and old paper.",
+        "zh": "药铺里一股樟脑和陈纸的味道。"
       }
     ]
   },
@@ -756,6 +772,10 @@
       {
         "en": "He came over in his gig, with the reins in one hand and a bag at his feet.",
         "zh": "他赶着那辆双轮轻便马车过来，一手执缰，脚边放着药箱。"
+      },
+      {
+        "en": "The gig was light enough for one horse and one man, and no more.",
+        "zh": "那辆双轮轻便马车轻得很，一匹马一个人，再坐不下别的。"
       }
     ]
   },
@@ -765,6 +785,10 @@
       {
         "en": "The ostler took the horses, and said nothing about the weather, which was his way.",
         "zh": "马夫把马牵了过去，对天气一字未提——他就是这个脾气。"
+      },
+      {
+        "en": "The ostler knew every horse on that road by name.",
+        "zh": "那条路上的每一匹马，马夫都叫得出名字。"
       }
     ]
   },
@@ -774,6 +798,10 @@
       {
         "en": "A pedlar came up the lane with his box, and the whole household came out to look.",
         "zh": "一个货郎背着箱子沿小路上来，一家人全出来看。"
+      },
+      {
+        "en": "The pedlar opened his box on the kitchen table and the children crowded round.",
+        "zh": "货郎在厨房桌上打开箱子，孩子们都围了上来。"
       }
     ]
   },
@@ -783,6 +811,10 @@
       {
         "en": "They would not go into the workhouse, and so they stayed, and starved by degrees.",
         "zh": "他们不肯进济贫院，于是留了下来，一点点饿下去。"
+      },
+      {
+        "en": "The workhouse stood on the hill, visible from every field in the parish.",
+        "zh": "济贫院立在山坡上，教区里每一块田都看得见它。"
       }
     ]
   },
@@ -792,6 +824,10 @@
       {
         "en": "The turnpike gates were shut at ten, and after that the road belonged to those who could pay the keeper.",
         "zh": "收费路闸十点关，此后这条路只属于那些能私下给看闸人钱的人。"
+      },
+      {
+        "en": "They took the turnpike because the lanes were deep with mud.",
+        "zh": "他们走收费公路，因为小路泥太深。"
       }
     ]
   },
@@ -801,6 +837,10 @@
       {
         "en": "The postilion cracked his whip, and the chaise lurched forward into the dark.",
         "zh": "驭手甩了个响鞭，马车一头扎进黑暗里。"
+      },
+      {
+        "en": "A postilion in a wet coat rode past without looking at them.",
+        "zh": "一个浑身湿透的驭手骑马经过，没看他们一眼。"
       }
     ]
   },
@@ -810,6 +850,10 @@
       {
         "en": "They travelled by chaise, changing horses every ten miles, and spoke to no one on the way.",
         "zh": "他们乘驿站马车走，每十里换一次马，一路上不与人搭话。"
+      },
+      {
+        "en": "The chaise waited at the door with the horses already sweating.",
+        "zh": "马车在门口等着，马已经出汗了。"
       }
     ]
   },
@@ -884,6 +928,10 @@
       {
         "en": "Without a dowry she would have to marry beneath her, and she knew it.",
         "zh": "没有嫁妆，她只能下嫁，这一点她自己清楚。"
+      },
+      {
+        "en": "Her dowry was land, and land could not be carried away.",
+        "zh": "她的嫁妆是土地，而土地是搬不走的。"
       }
     ]
   },
@@ -1443,6 +1491,162 @@
       {
         "en": "Everyone in the village knew he kept a mistress in the next town.",
         "zh": "村里人人都知道他在邻镇养着一个女人。"
+      }
+    ]
+  },
+  "bleak": {
+    "note": "三个层次叠在同一个词里，而且常常同时成立：地方「荒凉无遮蔽」（不长树、风直吹）、天气「阴冷」、前景「无望」。所以 bleak 写景时其实也在写人——19 世纪小说用它形容荒原，几乎总在暗示处境。只译「荒凉」会漏掉那层「没指望」。",
+    "ex": [
+      {
+        "en": "The house stood on a bleak rise where nothing taller than gorse would grow.",
+        "zh": "房子立在一处荒凉的坡上，那里除了荆豆，什么都长不高。"
+      },
+      {
+        "en": "It was a bleak prospect for a woman with no money and no relatives.",
+        "zh": "对一个无钱无亲的女子来说，这是没什么指望的处境。"
+      }
+    ]
+  },
+  "dreary": {
+    "note": "沉闷、乏味、令人提不起劲，多指**时间**难熬（a dreary afternoon、dreary duties），也可以指地方单调。与 bleak 的分工：bleak 是「荒凉而无望」，dreary 是「长得没完、没变化」。写雨天下午用它，写荒原用 bleak。",
+    "ex": [
+      {
+        "en": "The afternoon was dreary, and no one proposed to go out.",
+        "zh": "那个下午沉闷得很，谁也没提出门。"
+      },
+      {
+        "en": "She sat through a dreary hour of calls and said almost nothing.",
+        "zh": "她坐着熬过一小时乏味的拜访，几乎没说话。"
+      }
+    ]
+  },
+  "heath": {
+    "note": "在旧小说里九成指**那片地**——生着低矮灌木的开阔荒地，不是「石楠」这种花。伦敦的 Hampstead Heath 今天仍是这个意思（荒地公园）。词典常把灌木义排在前面，读文本时要反过来取。",
+    "ex": [
+      {
+        "en": "They walked out on the heath until the light went.",
+        "zh": "他们在荒原上一直走到天光散尽。"
+      },
+      {
+        "en": "Nothing grew on the heath but heather and a few stunted thorns.",
+        "zh": "荒原上除了石楠和几株长不高的荆棘，什么也不长。"
+      }
+    ]
+  },
+  "moor": {
+    "note": "英格兰北部的高地荒原：比 heath 更高、更湿、有泥炭层，常起雾。《呼啸山庄》的 moor 是这片地的全部气氛来源——人物在雾里迷路、在雪里走不回来，都不是偶然。同形动词义是「系泊」，与荒原毫无关系，靠上下文分。",
+    "ex": [
+      {
+        "en": "The moor was white with mist by four o'clock, and the guide would not go on.",
+        "zh": "四点不到，荒原上就一片白雾，向导不肯再往前走了。"
+      },
+      {
+        "en": "There is nothing between the house and the sky but four miles of moor.",
+        "zh": "房子与天空之间，只有四英里的荒原。"
+      }
+    ]
+  },
+  "wuthering": {
+    "note": "约克郡方言，意为「风刮得呼呼作响的」。艾米莉·勃朗特把它用作书名与宅名，现代词典几乎不收——它是从方言里取来当专名的，所以查任何通用词典都查不到，只能从词根 wuther（风猛吹、掀动）理解。",
+    "ex": [
+      {
+        "en": "Wuthering Heights is so called from the wind that rages over it in stormy weather.",
+        "zh": "「呼啸山庄」这个名字，得自暴风雨天里在它上空怒吼的风。"
+      },
+      {
+        "en": "It was wuthering all night, and in the morning the gate was half buried in snow.",
+        "zh": "整夜风都在号，早上那道门被雪埋了一半。"
+      }
+    ]
+  },
+  "fell": {
+    "note": "英格兰北部的「山、荒丘」，the fells 就是湖区与约克郡那一带的山。这个词与 fall 的过去式同形，词典往往先给动词义，读乡村小说时要按名词取。另有形容词义「凶猛的、致命的」（a fell blow）。",
+    "ex": [
+      {
+        "en": "The sheep were brought down from the fell before the first snow.",
+        "zh": "第一场雪之前，羊就从山上赶下来了。"
+      },
+      {
+        "en": "He walked the fells alone in weather no shepherd would go out in.",
+        "zh": "他在连牧羊人都不出门的天气里，独自走上那些山头。"
+      }
+    ]
+  },
+  "fen": {
+    "note": "东英吉利的低地沼泽（the Fens），经过排水成为农田，靠堤与风泵维持——所以小说里 fen 常与 dyke（沟渠）、drainage、sluice 一起出现。与 bog 的区别：fen 是富营养的浅水湿地，bog 是酸性泥炭地。",
+    "ex": [
+      {
+        "en": "The fen stretched flat to the horizon, broken only by dykes and a line of willows.",
+        "zh": "沼泽平坦地铺到天边，只有沟渠和一行柳树把它隔开。"
+      },
+      {
+        "en": "They said the fens gave a man fever and took his children.",
+        "zh": "他们说这沼泽让人发烧，还夺走孩子。"
+      }
+    ]
+  },
+  "bog": {
+    "note": "酸性泥炭沼泽，能吞人：一脚踩空陷进去，越挣越深。所以它不只是「湿地面」，而是有危险的地貌，19 世纪文本里常用作死亡与埋葬的意象（bog body 是考古上的「沼泽尸」）。",
+    "ex": [
+      {
+        "en": "The bog looked firm enough and was not; he went in to the waist.",
+        "zh": "那片沼地看着结实，其实不然，他一脚陷到了腰。"
+      },
+      {
+        "en": "Turf was cut from the bog each spring and stacked against the wall.",
+        "zh": "每年春天从沼地切下泥炭，靠墙码起来。"
+      }
+    ]
+  },
+  "copse": {
+    "note": "矮林、小树丛，通常是可以定期砍伐取柴的那种（coppice 指这种轮伐的经营方式）。所以它往往不是野生的，而是**被人管着的**——小说里有人从 copse 里出来，通常意味着他在观察、躲避，或者这林子属于谁。",
+    "ex": [
+      {
+        "en": "He came out of the copse behind the house and stood quite still.",
+        "zh": "他从屋后的矮林里出来，站着不动。"
+      },
+      {
+        "en": "The copse was cut every seventh year and the poles used for fencing.",
+        "zh": "这片矮林每七年砍一次，木杆用来做篱笆。"
+      }
+    ]
+  },
+  "hedgerow": {
+    "note": "树篱：一行灌木，标出田界与路界。它是圈地运动（enclosure）留下的东西，19 世纪乡村小说里的「地界」几乎都用它表示。走在路上「a hedge on either side」就意味着路窄、视野受限——这常常是情节需要的空间感。",
+    "ex": [
+      {
+        "en": "The lane ran between two hedgerows high enough to shut out everything but the sky.",
+        "zh": "小路夹在两道树篱之间，高得只看得见天。"
+      },
+      {
+        "en": "He waited in the ditch under the hedgerow until the cart had gone by.",
+        "zh": "他在树篱下的沟里等着，直到那辆车过去。"
+      }
+    ]
+  },
+  "sleet": {
+    "note": "雨夹雪：雪落到半途化成雨，或雨雪混下，打在脸上又湿又疼。英国冬天最常见的那种天气，比 snow 更让人难受，也更常被用来写「不好受的处境」。",
+    "ex": [
+      {
+        "en": "Sleet drove against the windows all afternoon and no one came.",
+        "zh": "整个下午雨夹雪打着窗子，没有人来。"
+      },
+      {
+        "en": "He had walked six miles in sleet and arrived with no colour in his face.",
+        "zh": "他在雨夹雪里走了六英里，到的时候脸上没有一点血色。"
+      }
+    ]
+  },
+  "thaw": {
+    "note": "解冻：冰冻之后回暖、雪化成水。它带来的是泥泞而不是舒适——19 世纪小说里 thaw 常意味着路不能走、河不能过。抽象义「关系缓和」也常用：a thaw in relations。",
+    "ex": [
+      {
+        "en": "The thaw came in the night, and by morning the road was a river of mud.",
+        "zh": "夜里解了冻，到早上那条路成了一条泥河。"
+      },
+      {
+        "en": "There had been a thaw between them since the funeral.",
+        "zh": "葬礼之后，他们之间的关系缓和了一些。"
       }
     ]
   }
