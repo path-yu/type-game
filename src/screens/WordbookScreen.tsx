@@ -53,6 +53,7 @@ export function WordbookScreen() {
    */
   const mastery = useGame(s => s.p.mastery);
   const toggleLex = useGame(s => s.toggleLex);
+  const markUnknown = useGame(s => s.markUnknown);
   const corpus = useCorpus();
   const read = useGame(s => s.read);
   const go = useGame(s => s.go);
@@ -297,6 +298,19 @@ export function WordbookScreen() {
                 <div className="wb-entry-head">
                   <h2>{entry.w}</h2>
                   <div className="wb-entry-acts">
+                    {(() => {
+                      const st = mastery[entry.w];
+                      const unknown = !!st && st.m < 60;
+                      return (
+                        <button
+                          className={`btn btn-ghost${unknown ? ' on' : ''}`}
+                          onClick={() => markUnknown(entry.w)}
+                          title="标记为生词：今晚就会进夜巡复习"
+                        >
+                          {unknown ? '生词' : '记生词'}
+                        </button>
+                      );
+                    })()}
                     <button
                       className={`btn btn-ghost${mastery[entry.w]?.lex ? ' on' : ''}`}
                       onClick={() => toggleLex(entry.w)}
@@ -313,6 +327,9 @@ export function WordbookScreen() {
                     </button>
                   </div>
                 </div>
+                {mastery[entry.w] && mastery[entry.w].m < 60 ? (
+                  <div className="wb-hint">已记为生词 · 今晚夜巡会复习它</div>
+                ) : null}
                 <div className="wb-entry-meta">
                   {entry.ipa && <span className="wb-ipa">/{entry.ipa}/</span>}
                   {entry.l && <span>原形 {entry.l}</span>}
