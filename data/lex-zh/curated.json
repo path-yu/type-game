@@ -964,5 +964,161 @@
         "zh": "老仆得的是一份年金而不是一笔钱，免得他一次花光。"
       }
     ]
+  },
+  "countenance": {
+    "note": "19 世纪小说用它指「脸」和「脸上的神色」，但两个固定说法最容易读错：keep one's countenance 是「不动声色、忍住不笑」，不是「保持面容」；give countenance to 是「支持、鼓励」，与脸无关。人物「changed countenance」就是脸色变了——那通常是一句话戳中的瞬间。",
+    "ex": [
+      {
+        "en": "He heard her out without changing countenance, and only then asked her to repeat it.",
+        "zh": "他听她说完，脸色丝毫未变，之后才请她再说一遍。"
+      },
+      {
+        "en": "She kept her countenance with difficulty while the others laughed.",
+        "zh": "别人笑的时候，她费了很大劲才没笑出来。"
+      }
+    ]
+  },
+  "complexion": {
+    "note": "面色之外，还有一个抽象义：「事物的性质、局面」，put a new complexion on the affair 是「使事情呈现出另一副样子」。这个义项在政论与书信里很常见，只按「肤色」读会读丢半句。",
+    "ex": [
+      {
+        "en": "Her complexion was high, and the walk had not improved it.",
+        "zh": "她脸色发红，走这一趟也没让它好一点。"
+      },
+      {
+        "en": "The letter put an entirely new complexion on the business.",
+        "zh": "这封信让整件事变成了另一副样子。"
+      }
+    ]
+  },
+  "discompose": {
+    "note": "「使失去镇定」，比 upset 文雅，程度也轻，多指被突然的话或举动打乱。名词 discomposure 是「局促、慌乱」。它不含愤怒，只含「稳不住了」——译成「生气」就错了。",
+    "ex": [
+      {
+        "en": "The question discomposed him more than any accusation could have.",
+        "zh": "这个问题比任何指控都更让他乱了阵脚。"
+      },
+      {
+        "en": "She answered with a discomposure she could not quite hide.",
+        "zh": "她回答时带着一种掩不住的慌乱。"
+      }
+    ]
+  },
+  "agitation": {
+    "note": "指内心的激动、焦躁不安，不是「搅拌」。在小说里常是「有事情瞒着、或刚受了刺激」的外显状态，比 anxiety 更外露：an agitated manner、in great agitation。注意它也可以指局势动荡（political agitation）。",
+    "ex": [
+      {
+        "en": "He walked to the window and back in visible agitation.",
+        "zh": "他明显心神不宁，走到窗边又折回来。"
+      },
+      {
+        "en": "She could not speak of it without agitation, even years afterwards.",
+        "zh": "即便过了多年，她提起这事仍不免激动。"
+      }
+    ]
+  },
+  "vivacity": {
+    "note": "活泼、生气，19 世纪形容女性时的褒义词，近于「神采飞扬」。它指的是外显的生气（说话快、眼睛亮、动作利落），不是性格开朗（那是 cheerfulness）。用作批评时带一点「太跳脱、不够稳重」的意味。",
+    "ex": [
+      {
+        "en": "Her vivacity, which had been praised all evening, was suddenly too much for him.",
+        "zh": "她那整晚受人称赞的活泼，忽然让他受不了。"
+      },
+      {
+        "en": "There was a vivacity in her manner that even fatigue could not dull.",
+        "zh": "她举止里有种生气，连疲惫也压不下去。"
+      }
+    ]
+  },
+  "fortitude": {
+    "note": "坚毅——特指**忍受**痛苦、逆境、漫长的折磨时的力量，不是面对危险时的勇气（那是 courage）。所以它常与 pain、loss、disappointment、patience 搭配，而不与 battle 搭配。译成「勇敢」会偏。",
+    "ex": [
+      {
+        "en": "She bore the loss with a fortitude that made the others ashamed of their complaints.",
+        "zh": "她以一股坚毅承受了这场丧失，倒让别人为自己的抱怨羞愧。"
+      },
+      {
+        "en": "It was not courage that was asked of him now, but fortitude.",
+        "zh": "此刻要他的不是勇气，而是熬得住。"
+      }
+    ]
+  },
+  "sensibility": {
+    "note": "18–19 世纪的关键词，指「感受力」：对情感、美、他人痛苦的反应能力。有 sensibility 在当时是美德（心细、能共情），过头则成了「多愁善感」。它不等于现代的 sensitivity（敏感、易受伤），也不是「感觉」。读奥斯丁时，这个词几乎就是人物性格的评分项。",
+    "ex": [
+      {
+        "en": "He had too much sensibility to laugh at what she had said in earnest.",
+        "zh": "他感受力够细，不会去笑她认真说的话。"
+      },
+      {
+        "en": "Her sister had sensibility without judgment, which is the worse of the two to lack.",
+        "zh": "她姐姐有感受力却缺判断力，而这两样里缺后者更要紧。"
+      }
+    ]
+  },
+  "composure": {
+    "note": "沉着、镇定，指**外表**的稳。recover one's composure 是「恢复常态」，with composure 是「不动声色地」。它与 calm 的差别：calm 是状态，composure 是「撑住的那口气」——小说里常写人物先 composure 崩了，情绪才出来。",
+    "ex": [
+      {
+        "en": "She waited until she had recovered her composure before she answered.",
+        "zh": "她等到自己恢复镇定才回答。"
+      },
+      {
+        "en": "He received the news with composure, and broke down an hour later alone.",
+        "zh": "他听到消息时神色如常，一小时后独自崩溃。"
+      }
+    ]
+  },
+  "mortification": {
+    "note": "核心是「因受挫或丢脸而生的屈辱感」，不是「坏死」——医义虽在，但小说里几乎总是前者。它与 embarrassment 的差别：embarrassment 是当场难为情，mortification 是**自尊被压下去**的那种难受，常伴「恨不得自己消失」。宗教语境里另指克制欲望的苦修。",
+    "ex": [
+      {
+        "en": "To be thanked for it in public was the keenest mortification he had ever known.",
+        "zh": "当众为此受人道谢，是他受过的最难堪的折磨。"
+      },
+      {
+        "en": "She swallowed her mortification and congratulated the other woman warmly.",
+        "zh": "她把那份屈辱咽下去，热情地向那一位道了贺。"
+      }
+    ]
+  },
+  "vexation": {
+    "note": "气恼——程度比 anger 轻，起因多是琐事、麻烦、被人搅了心情，带一点「烦」而不只是「怒」。形容词 vexed 常见于「a vexed question」（棘手的难题）。译成「愤怒」会过重。",
+    "ex": [
+      {
+        "en": "He shut the door with a vexation he did not trouble to hide.",
+        "zh": "他带着毫不掩饰的烦躁把门关上。"
+      },
+      {
+        "en": "Her chief vexation was that no one had thought to tell her.",
+        "zh": "她最气的是没人想到要告诉她一声。"
+      }
+    ]
+  },
+  "temper": {
+    "note": "小说里的 temper 九成是「脾气、性情」，不是冶金。三个固定说法：lose one's temper 发火、keep one's temper 忍住不发火、a hasty temper 性子急。good-tempered 是「脾气温和」，bad-tempered 是「脾气坏」。注意它比 mood 更固定——mood 是一时的，temper 是底子。",
+    "ex": [
+      {
+        "en": "He had a temper, and knew it, and had learned to leave the room before it showed.",
+        "zh": "他脾气不好，自己也知道，学会了在发作前先走出房间。"
+      },
+      {
+        "en": "She said nothing, which in her was the surest sign of temper.",
+        "zh": "她一言不发——在她身上，这就是动气最确凿的迹象。"
+      }
+    ]
+  },
+  "transport": {
+    "note": "在这个语境里不是「运输」，是「不能自已的情绪」：in transports of joy / of rage。动词义也有「使忘形」。这个词带着 18 世纪的强度，比 excitement 高得多——译成「兴奋」会弱掉一半。",
+    "ex": [
+      {
+        "en": "She was in transports over the letter, and read it aloud twice.",
+        "zh": "她为那封信欢喜得不能自已，还朗读了两遍。"
+      },
+      {
+        "en": "He was transported beyond caution, and said what he had sworn not to say.",
+        "zh": "他一时忘形，把发誓不说的话说了出来。"
+      }
+    ]
   }
 }
