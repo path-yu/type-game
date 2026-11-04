@@ -87,7 +87,7 @@ function parseDataFile(file, ssType, offIndex) {
     for (const w of words) {
       if (!out.has(w)) out.set(w, []);
       out.get(w).push({
-        p: ssType, d, x: ex, syn: words.filter(o => o !== w).slice(0, MAX_REL),
+        p: ssType, d, x: ex, o: t[0], syn: words.filter(o => o !== w).slice(0, MAX_REL),
         ...(hyper.length ? { h: hyper } : {}),
         ...(anto.length ? { a: anto } : {}),
         // 该词在这个 synset 里原文就是大写 → 这是缩略语/元素符号，不是这个词本身
@@ -110,6 +110,29 @@ for (const [file, ss] of [['data.noun', 'n'], ['data.verb', 'v'], ['data.adj', '
   log(`  ${file.padEnd(11)} ${m.size} 词`);
 }
 log(`WordNet 合计 ${wn.size} 词`);
+
+/*
+ * 义项顺序来自 index.*，不是 data.*。
+ * data.noun 是按 synset 偏移排的，一个词的几个义项在文件里是散开的 ——
+ * 直接按读到的顺序摆，father 的第一条会变成「黑帮家族的头目」，
+ * mother 的第一条会变成「灵感来源」，全乱。
+ * index.noun 每行末尾那串偏移就是按词频排好的义项顺序。
+ */
+const order = new Map(); // "pos:offset" → 名词内的序号
+for (const [file, pos] of [['index.noun', 'n'], ['index.verb', 'v'], ['index.adj', 'a'], ['index.adv', 'r']]) {
+  let text = '';
+  try { text = fs.readFileSync(path.join(WN, file), 'utf8'); } catch { continue; }
+  for (const line of text.split('\n')) {
+    if (!line || line.startsWith('  ')) continue;
+    // 行尾有空格，split 后末尾会产生空串 —— 不 trim 就把空串当成了偏移
+    const t = line.trim().split(/\s+/);
+    const cnt = Number(t[2]);
+    if (!['n', 'v', 'a', 'r'].includes(t[1]) || !Number.isFinite(cnt) || cnt <= 0) continue;
+    const offs = t.slice(-cnt);
+    offs.forEach((o, i) => order.set(`${pos}:${o}`, i));
+  }
+}
+log(`义项顺序索引 ${order.size} 条`);
 
 /* ---------------- 2. 语料：词频 + 真实例句 ---------------- */
 
@@ -235,9 +258,14 @@ for (const w of words) {
    * saw 只剩名词「锯子」，made 只剩「制造的」—— 全都丢了真正的动词义。
    * 原形义项排前面（读者查 said 要的是 say），词形自己的义项接在后面。
    */
-  let senses = pick(wn.get(w));
+  /* 按 WordNet 的词频义序排，最常用的义项排第一 */
+  const bySenseOrder = (arr) => arr
+    .map((x, i) => ({ x, r: order.get(`${x.p}:${x.o}`) ?? 999 + i }))
+    .sort((a, b) => a.r - b.r)
+    .map(v => v.x);
+  let senses = bySenseOrder(pick(wn.get(w)));
   if (w !== base && wn.has(base)) {
-    const bs = pick(wn.get(base));
+    const bs = bySenseOrder(pick(wn.get(base)));
     senses = [...bs, ...senses];
     /*
      * 屈折形式优先给动词义。
