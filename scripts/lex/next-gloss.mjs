@@ -36,7 +36,9 @@ for (const [w, f] of byFreq) {
     shards.set(ch, JSON.parse(fs.readFileSync(path.join(LEX, `${ch}.json`), 'utf8')));
   }
   const e = shards.get(ch)[w];
-  if (!e || e.senses.length > 4) continue;
+  // 上限 6：卡在 4 会把 back / say / way 这类六义项的高频词全跳过，
+  // 而覆盖率的大头就在这些词上（上一版就是因为这个卡在 68%）
+  if (!e || e.senses.length > 6) continue;
   const todo = e.senses.filter(x => x.d && !x.zh);
   if (!todo.length) continue; // 已经有中文了（人工表或旧词典兜底）
   picked.push({ w, f, senses: todo.map(s => ({ p: s.p, d: s.d })) });
