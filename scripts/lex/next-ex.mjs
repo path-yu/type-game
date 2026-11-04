@@ -36,6 +36,14 @@ const pending = idx.rows
   .filter(([w, f, , hasEx]) => f === 0 && hasEx === 0 && !done[w] && (!from || w.startsWith(from)))
   .map(([w, , pos]) => [w, pos.length]);
 
+/*
+ * 英式 -ise 变体：词表里既然有 capitalise 也有 capitalize，两条都写就是白写一遍。
+ * 有 -ize 主条的，-ise 一律跳过（organise / harmonise / immobilise 都是这种情况）。
+ */
+const allWords = new Set(idx.rows.map(r => r[0]));
+const isBritishVariant = w =>
+  /(ise|isation|ised|ising)$/.test(w) && allWords.has(w.replace(/ise/, 'ize').replace(/isation/, 'ization'));
+
 const picked = [];
 for (const [w, score] of pending.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))) {
   if (picked.length >= n) break;
@@ -43,6 +51,7 @@ for (const [w, score] of pending.sort((a, b) => b[1] - a[1] || a[0].localeCompar
   if (!e) continue;
   const glosses = (e.senses || []).map(s => s.d || '');
   if (glosses.length && glosses.every(g => PROPER.test(g))) continue; // 地名、人名、属名
+  if (isBritishVariant(w)) continue;
   picked.push({
     w,
     senses: (e.senses || []).map(s => `${s.p} ${s.d}`),

@@ -34,12 +34,21 @@ const shardOf = ch => {
   return shards.get(ch);
 };
 
-/* 词干比对：allow 允许 allowed/allowing；make 允许 made（不规则变化靠白名单兜不住，
-   所以只做前缀 + 屈折后缀，不规则的词请让例句用原形） */
+/*
+ * 词干比对：allow 允许 allowed/allowing，ferry 允许 ferried（y→i），
+ * drape 允许 draping（去 e）。所以除了原词，再拿去掉词尾 e/y 的干去比。
+ * 短词只用原词，不然 con 的干会匹配到 concern。
+ */
 const hit = (word, en) => {
-  const stem = word.replace(/-/g, '').slice(0, Math.min(5, word.length)).toLowerCase();
   const s = en.toLowerCase().replace(/-/g, '');
-  return s.includes(stem);
+  const base = word.toLowerCase().replace(/-/g, '');
+  const cands = [base];
+  if (base.length > 4) {
+    cands.push(base.replace(/(e|y)$/, ''));  // drape → drap(ing)、ferry → ferr(ied)
+    cands.push(base.replace(/l{1,2}$/, 'l')); // instill → instil(s)
+    cands.push(base.slice(0, 5));             // override → overr(ode)，不规则变化
+  }
+  return cands.some(v => v.length >= 3 && s.includes(v));
 };
 
 const ok = {};

@@ -1,0 +1,322 @@
+{
+  "certify": {
+    "zh": "证明、认证；出具（医学）证明",
+    "note": "三重用法：官方认证（certified organic）、医生或机构出具证明、法律上「宣布（某人）精神失常」。名词 certification 是证书或认证过程。",
+    "ex": [
+      { "en": "The board certified the results on Friday.", "zh": "董事会周五认证了结果。" },
+      { "en": "She was certified as a fitter two years ago.", "zh": "她两年前拿到了装配工资格证。" }
+    ]
+  },
+  "conserve": {
+    "zh": "节约；保护",
+    "note": "和 preserve 分工：conserve 强调「别浪费、可持续地用」，preserve 强调「原样保住」。名词 conservation，环保语境里到处都是。",
+    "ex": [
+      { "en": "Turn off the lights to conserve energy.", "zh": "关灯省电。" },
+      { "en": "The trust conserves three hundred acres of woodland.", "zh": "这个信托保护着三百英亩林地。" }
+    ]
+  },
+  "debut": {
+    "zh": "首次亮相、首演",
+    "note": "法语借词，t 不发音，读 /ˈdeɪbjuː/。动词可直接接宾语：debut a product。常见错是写成 debute；也别说 first debut——debut 本身就含「首次」。",
+    "ex": [
+      { "en": "The film debuts at the festival in September.", "zh": "这部片九月在电影节首映。" },
+      { "en": "She made her debut at the age of six.", "zh": "她六岁首次登台。" }
+    ]
+  },
+  "default": {
+    "zh": "默认；违约",
+    "note": "三个场景：技术里的默认值（by default）、金融里的违约（default on a loan）、法律里的缺席判决（default judgment）。看语境，别只记一个。",
+    "ex": [
+      { "en": "The default setting is English.", "zh": "默认设置是英文。" },
+      { "en": "The country defaulted on its loans in 2001.", "zh": "该国 2001 年债务违约。" }
+    ]
+  },
+  "deflect": {
+    "zh": "挡开；转移（话题、指责）",
+    "note": "物理上是让东西偏转，话术上是把矛头引开。名词 deflection 在工程里还指梁的「挠度」。",
+    "ex": [
+      { "en": "The shield deflected the blow.", "zh": "盾牌挡开了这一击。" },
+      { "en": "He deflected every question about the budget.", "zh": "关于预算的每个问题他都绕开了。" }
+    ]
+  },
+  "depress": {
+    "zh": "使沮丧；压低",
+    "note": "经济里「压低」是常用义（depress demand / prices）；形容心情是「提不起劲」，比 sad 更沉。名词 depression 既是抑郁症，也是大萧条。",
+    "ex": [
+      { "en": "The news depressed the whole office.", "zh": "这消息让整个办公室都蔫了。" },
+      { "en": "A glut depressed prices for two years.", "zh": "供过于求把价格压了两年。" }
+    ]
+  },
+  "derivative": {
+    "zh": "衍生物；衍生品；模仿的",
+    "note": "化学的衍生物、金融的衍生品都指它；形容作品时是贬义「拾人牙慧、没有原创」。三处都常见，靠上下文分。",
+    "ex": [
+      { "en": "The drug is a derivative of opium.", "zh": "这种药是鸦片的衍生物。" },
+      { "en": "The design is derivative, not inventive.", "zh": "这设计是照搬来的，没有原创。" }
+    ]
+  },
+  "deviate": {
+    "zh": "偏离",
+    "note": "固定搭 deviate from（航线、计划、标准）。名词 deviation 是偏差，统计学里的「标准差」早年也叫 standard deviation。",
+    "ex": [
+      { "en": "The plane deviated from its course over the Alps.", "zh": "飞机在阿尔卑斯山上空偏离了航线。" },
+      { "en": "He never deviated from the script.", "zh": "他从没脱过稿。" }
+    ]
+  },
+  "disrespect": {
+    "zh": "不尊重",
+    "note": "名词不可数，常用 no disrespect intended / meant 打圆场；动词比 insult 轻，偏「不当回事」。",
+    "ex": [
+      { "en": "He meant no disrespect by it.", "zh": "他那么做没有不敬的意思。" },
+      { "en": "She felt disrespected by the tone of the email.", "zh": "她觉得那封邮件的语气不尊重人。" }
+    ]
+  },
+  "distill": {
+    "zh": "蒸馏；提炼",
+    "note": "英式拼写双写 l（distilled），美式可单写 distil。比喻义「把大量内容提炼成精华」很常用。名词 distillation。",
+    "ex": [
+      { "en": "The whisky is distilled twice.", "zh": "这威士忌蒸馏两次。" },
+      { "en": "The book distills thirty years of research into two hundred pages.", "zh": "这本书把三十年的研究浓缩进两百页。" }
+    ]
+  },
+  "evacuate": {
+    "zh": "疏散、撤离；抽空",
+    "note": "人「撤离」、容器「抽空」共用一个词，医学上还指排空肠胃。名词 evacuation 三者通用。",
+    "ex": [
+      { "en": "Residents were evacuated before the flood reached the town.", "zh": "洪水进城之前居民已经撤离。" },
+      { "en": "Evacuate the air from the chamber before sealing it.", "zh": "密封之前把腔里的空气抽空。" }
+    ]
+  },
+  "falsify": {
+    "zh": "篡改、伪造",
+    "note": "专指篡改记录、账目、数据这类文书造假；伪造签名用 forge，编造整件事用 fabricate。",
+    "ex": [
+      { "en": "He falsified three years of accounts.", "zh": "他篡改了三年账目。" },
+      { "en": "The results were falsified to secure funding.", "zh": "为了拿到经费，结果被做了假。" }
+    ]
+  },
+  "ferry": {
+    "zh": "渡船；摆渡、往返运送",
+    "note": "动词带「来回运」的意味，比 transport 具体：摆渡车、接驳车都是 ferry。",
+    "ex": [
+      { "en": "The ferry runs every twenty minutes.", "zh": "渡船二十分钟一班。" },
+      { "en": "Shuttle buses ferried guests from the car park.", "zh": "摆渡车把客人从停车场一趟趟运过来。" }
+    ]
+  },
+  "filter": {
+    "zh": "过滤器；滤镜；过滤、渗透",
+    "note": "三条线：filter out 滤掉、照片滤镜、消息「慢慢漏出来」（filter out / filter through）。技术里的 filter 也指筛选函数。",
+    "ex": [
+      { "en": "Change the filter every six months.", "zh": "每半年换一次滤芯。" },
+      { "en": "The news filtered out through a junior aide.", "zh": "消息从一个低级助理那里漏了出来。" }
+    ]
+  },
+  "format": {
+    "zh": "格式、版式；格式化",
+    "note": "计算机里「格式化」是清空磁盘，出版里「排版」是另一件事，都是 format。名词重音在前，动词英式常后移。",
+    "ex": [
+      { "en": "Send it in PDF format.", "zh": "用 PDF 格式发过来。" },
+      { "en": "The drive was formatted by mistake.", "zh": "硬盘被误格式化了。" }
+    ]
+  },
+  "fortify": {
+    "zh": "加固、设防；强化",
+    "note": "军事设防、意志或身体「增强」、食品「营养强化」三处都用它。名词 fortification 还指防御工事。",
+    "ex": [
+      { "en": "They fortified the walls with stone.", "zh": "他们用石头加固城墙。" },
+      { "en": "The cereal is fortified with iron.", "zh": "这麦片强化了铁。" }
+    ]
+  },
+  "immature": {
+    "zh": "不成熟的",
+    "note": "用于人时带贬义（幼稚），生物学上只是「未发育成熟」——果子 immature 只是没熟，不是坏事。名词 maturity。",
+    "ex": [
+      { "en": "The fruit is still immature and hard.", "zh": "果子还没熟，硬邦邦的。" },
+      { "en": "It was an immature reaction, and he knew it.", "zh": "那反应很不成熟，他自己也知道。" }
+    ]
+  },
+  "induct": {
+    "zh": "使正式就职；接纳（入会、入选）",
+    "note": "最常见是 induct sb into（名人堂、董事会、军队）；学术里 induction 是「归纳法」，inductive reasoning 归纳推理——同一个词根，两条路。",
+    "ex": [
+      { "en": "She was inducted into the hall of fame in 2019.", "zh": "她 2019 年入选名人堂。" },
+      { "en": "New members are inducted at a ceremony in spring.", "zh": "新成员在春季的仪式上正式入会。" }
+    ]
+  },
+  "inflate": {
+    "zh": "充气；抬高（价格）；夸大",
+    "note": "三义：给轮胎打气、通胀式抬高、吹大数字（inflated claims）。反义 deflate，名词 inflation。",
+    "ex": [
+      { "en": "Inflate the tyre to thirty psi.", "zh": "把轮胎打到 30 psi。" },
+      { "en": "The figures were inflated to attract investors.", "zh": "数字被吹大了，好吸引投资。" }
+    ]
+  },
+  "inoculate": {
+    "zh": "接种；使产生免疫力",
+    "note": "医学书面词，日常口语更常说 vaccinate 或 get a shot。搭配固定 inoculate sb against sth，也可用于比喻「让人对……免疫」。",
+    "ex": [
+      { "en": "Children are inoculated against measles at fifteen months.", "zh": "孩子在十五个月时接种麻疹疫苗。" },
+      { "en": "The experience inoculated him against easy optimism.", "zh": "那段经历让他不再轻易乐观。" }
+    ]
+  },
+  "input": {
+    "zh": "输入；意见、投入",
+    "note": "商务里 input 常指「意见、贡献」，不可数（some input）；技术里是输入。动词过去式 input 或 inputted 都有人用。",
+    "ex": [
+      { "en": "We would welcome your input on the draft.", "zh": "草案想听听你的意见。" },
+      { "en": "Input the code and press enter.", "zh": "输入代码再回车。" }
+    ]
+  },
+  "instill": {
+    "zh": "灌输（品质、习惯）",
+    "note": "搭配 instill sth in sb，英式也写 instil、双写 l。灌的多是品质、习惯、恐惧，不是知识——知识用 teach。",
+    "ex": [
+      { "en": "Her father instilled in her a respect for hard work.", "zh": "她父亲让她从小敬重踏实做事。" },
+      { "en": "The training instils habits that outlast the course.", "zh": "这种训练养成的习惯，比课程本身活得久。" }
+    ]
+  },
+  "interlock": {
+    "zh": "互锁、扣合；环环相扣",
+    "note": "机械上是互相扣住（不用钉子就能咬合），抽象上是「彼此牵连、谁也离不开谁」。形容词 interlocking 常见于交叉任职。",
+    "ex": [
+      { "en": "The bricks interlock without mortar.", "zh": "这些砖不用灰浆就能咬合。" },
+      { "en": "The two systems interlock, so neither can run alone.", "zh": "两套系统互相咬合，谁也离不开谁。" }
+    ]
+  },
+  "leverage": {
+    "zh": "杠杆；筹码；利用",
+    "note": "金融里是负债经营（highly leveraged 杠杆很高），谈判里是「筹码」，动词是「撬动、动用」。作动词曾被视为行话，现在商务写作里很常见。",
+    "ex": [
+      { "en": "The company is highly leveraged.", "zh": "这家公司杠杆很高。" },
+      { "en": "She leveraged her contacts to get the meeting.", "zh": "她动用人脉拿到了这次会面。" }
+    ]
+  },
+  "modulate": {
+    "zh": "调节；（声音）抑扬；调制信号",
+    "note": "三条线：调节强度（音量、情绪、光照）、通信里的调制、音乐里的转调。名词 modulation。",
+    "ex": [
+      { "en": "Modulate your voice so the back row can hear.", "zh": "声音收放一下，让后排听得见。" },
+      { "en": "The signal is modulated onto a carrier wave.", "zh": "信号被调制到载波上。" }
+    ]
+  },
+  "naive": {
+    "zh": "天真的、缺乏经验的",
+    "note": "法语借词，原写作 naïve，英文里常省去两点。艺术评论里的 naive art 是「稚拙派」，不含贬义。",
+    "ex": [
+      { "en": "It was naive to trust the first offer.", "zh": "相信第一个报价，太天真了。" },
+      { "en": "The painting has a naive charm.", "zh": "这幅画有种稚拙的可爱。" }
+    ]
+  },
+  "nurture": {
+    "zh": "养育、培养",
+    "note": "与 nature 对举时是「后天养育」（nature and nurture）；动词比 raise 书面，强调长期精心培育，宾语多是才能、关系、事业。",
+    "ex": [
+      { "en": "She nurtured the business from a market stall.", "zh": "她把这个生意从一个小摊养了起来。" },
+      { "en": "Nature and nurture are hard to separate.", "zh": "先天和后天很难分开。" }
+    ]
+  },
+  "oral": {
+    "zh": "口头的；口部的；口试",
+    "note": "法律上与 written 相对（oral contract 口头合同），解剖学上是「口的」。练口语别写 oral English practice——口语练习叫 speaking practice 更自然。",
+    "ex": [
+      { "en": "The agreement was oral, and therefore hard to prove.", "zh": "协议是口头的，所以难以举证。" },
+      { "en": "She passed her French oral in June.", "zh": "她六月过了法语口试。" }
+    ]
+  },
+  "overload": {
+    "zh": "超载、负担过重",
+    "note": "技术上是「过载」（电路、服务器），心理上是「信息/感官过载」。形容词 overloaded 也指人「忙不过来」。",
+    "ex": [
+      { "en": "Don't overload the circuit.", "zh": "别让电路过载。" },
+      { "en": "Information overload makes people stop reading.", "zh": "信息过载让人干脆不读了。" }
+    ]
+  },
+  "precede": {
+    "zh": "在……之前发生",
+    "note": "及物动词，直接接宾语，不接 by 或 with；过去式 preceded。名词 precedent（先例）和 precedence（优先）都从它来。",
+    "ex": [
+      { "en": "A short film preceded the main feature.", "zh": "正片之前放了一部短片。" },
+      { "en": "The warning signs preceded the crash by months.", "zh": "崩盘前几个月就有预警。" }
+    ]
+  },
+  "precedent": {
+    "zh": "先例；先前的",
+    "note": "法律里是判例，日常是「先例」；set / establish a precedent 是固定搭配。unprecedented 是「史无前例」，写作里的高频词。",
+    "ex": [
+      { "en": "The ruling sets a precedent for similar cases.", "zh": "这项裁定为类似案件立了先例。" },
+      { "en": "There is no precedent for a recall at this stage.", "zh": "这个阶段召回没有先例。" }
+    ]
+  },
+  "predicate": {
+    "zh": "基于、取决于；谓语",
+    "note": "动词读 /ˈpredɪkeɪt/、名词读 /ˈpredɪkət/。predicate sth on sth 是「以……为前提」，正式书面用；语法里是谓语。",
+    "ex": [
+      { "en": "The plan predicates success on a single assumption.", "zh": "这个计划把成败押在一个假设上。" },
+      { "en": "In 'the sky is blue', 'is blue' is the predicate.", "zh": "在 the sky is blue 这句里，is blue 是谓语。" }
+    ]
+  },
+  "preempt": {
+    "zh": "抢先；预先阻止",
+    "note": "两层：抢先做（preempt sb）、预先排除（preempt criticism）。形容词 preemptive 常见于 preemptive strike（先发制人的打击）。",
+    "ex": [
+      { "en": "The company preempted the launch by a week.", "zh": "公司抢先一周发布。" },
+      { "en": "He preempted criticism by admitting the error first.", "zh": "他先认错，把批评堵在了前头。" }
+    ]
+  },
+  "recruit": {
+    "zh": "招募；新兵、新成员",
+    "note": "军事和招聘通用；名词 recruitment 是招聘或征募。别和 enroll（注册入学）混。",
+    "ex": [
+      { "en": "The firm recruits ten graduates a year.", "zh": "这家公司每年招十个毕业生。" },
+      { "en": "The new recruit starts on Monday.", "zh": "新来的周一上班。" }
+    ]
+  },
+  "referee": {
+    "zh": "裁判；推荐人",
+    "note": "英式里足球裁判是 referee，美式橄榄球和篮球用 umpire；求职推荐人英式也叫 referee，动词是「做裁判、做推荐」。",
+    "ex": [
+      { "en": "The referee stopped the fight in the third round.", "zh": "裁判在第三回合终止了比赛。" },
+      { "en": "Ask your former manager to referee for you.", "zh": "请前经理给你做推荐人。" }
+    ]
+  },
+  "rejuvenate": {
+    "zh": "使恢复活力",
+    "note": "医学与美容里是「返老还童」，城市和机构里是「焕新、重新活起来」。名词 rejuvenation。",
+    "ex": [
+      { "en": "A week by the sea rejuvenated him.", "zh": "海边待了一周，他人就活过来了。" },
+      { "en": "The council hopes to rejuvenate the high street.", "zh": "市议会想让主街重新热闹起来。" }
+    ]
+  },
+  "repel": {
+    "zh": "击退；使厌恶；排斥",
+    "note": "三义：军事上击退、心理上使人反感（The idea repels me）、物理上排斥（磁极）。名词 repellent 是驱虫剂，也是「讨人厌的」。",
+    "ex": [
+      { "en": "The army repelled the attack before dawn.", "zh": "军队在黎明前击退了进攻。" },
+      { "en": "The smell repelled even the dogs.", "zh": "那味道连狗都躲。" }
+    ]
+  },
+  "rerun": {
+    "zh": "重播；重新进行",
+    "note": "名词重音在前 /ˈriːrʌn/，动词在后 /riːˈrʌn/。电视重播、重跑测试、重新举行选举都用它。",
+    "ex": [
+      { "en": "The network is showing reruns all summer.", "zh": "整个夏天电视台都在放重播。" },
+      { "en": "They had to rerun the test after the power cut.", "zh": "停电之后他们只能重跑测试。" }
+    ]
+  },
+  "retrofit": {
+    "zh": "改装、加装",
+    "note": "给旧设备加装新部件，不是换新；建筑节能、车辆改造、软件给老系统打补丁都用它。过去式 retrofitted。",
+    "ex": [
+      { "en": "The building was retrofitted with insulation.", "zh": "这栋楼加装了保温层。" },
+      { "en": "Retrofitting the fleet will take three years.", "zh": "车队改装要三年。" }
+    ]
+  },
+  "salvage": {
+    "zh": "抢救、打捞；打捞物",
+    "note": "海难打捞、火灾抢救，比喻「挽回（声誉、局面）」（salvage a reputation）。名词还指回收的废料。",
+    "ex": [
+      { "en": "They salvaged what they could from the fire.", "zh": "他们从火里抢出了能抢的东西。" },
+      { "en": "The wreck was salvaged for scrap.", "zh": "沉船被打捞上来当废料。" }
+    ]
+  }
+}
