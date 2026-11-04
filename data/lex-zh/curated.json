@@ -1289,5 +1289,161 @@
         "zh": "她下午有约，不能留下来喝茶。"
       }
     ]
+  },
+  "miss": {
+    "note": "加在未婚女子姓氏前，但有一条 19 世纪的硬规矩：家里只有**长女**能叫 Miss + 姓（Miss Bennet），其余女儿必须 Miss + 名（Miss Elizabeth、Miss Mary）。所以一句「Miss Bennet」指的是简，不是伊丽莎白——不懂这条会把情节读串。丈夫去世后，长女也可能改称 Mrs.，与未婚的妹妹区分开。",
+    "ex": [
+      {
+        "en": "Miss Bennet was the eldest, and the name belonged to her alone.",
+        "zh": "班纳特小姐是长女，「班纳特小姐」这个称呼只归她一个人。"
+      },
+      {
+        "en": "The younger sisters were Miss Elizabeth and Miss Mary, and were never called otherwise.",
+        "zh": "两个妹妹是伊丽莎白小姐和玛丽小姐，从不换别的叫法。"
+      }
+    ]
+  },
+  "master": {
+    "note": "除「主人」「大师」，还有一个几乎消失的用法：Master + 名字，是旧时仆人对未成年男孩的称呼（Master Charles）。所以同一家里，父亲是 Mr. X，儿子是 Master X。另外 master 作动词是「掌握」，与其名词义无关。",
+    "ex": [
+      {
+        "en": "Master Charles was not to be disturbed before eleven, on any account.",
+        "zh": "十一点以前，不论什么事都不许去打扰查尔斯少爷。"
+      },
+      {
+        "en": "The dog knew its master's step before anyone else in the house did.",
+        "zh": "那条狗比屋里任何人都先听出主人的脚步。"
+      }
+    ]
+  },
+  "esquire": {
+    "note": "缩写 Esq.，写在姓名之后（John Smith, Esq.），是低于 knight 的乡绅敬称。19 世纪英国书信里，写给乡绅用 Esq.，写给爵士用 Sir，两者不能混。今天英美仍用它称呼律师，那只是这一传统的残余。",
+    "ex": [
+      {
+        "en": "The letter was directed to John Smith, Esq., and sealed with his own crest.",
+        "zh": "信上写着「约翰·史密斯先生收」，封着他家的纹章。"
+      },
+      {
+        "en": "He signed himself plainly, and would not answer to Esquire.",
+        "zh": "他签名从不加头衔，别人称他先生他也不应。"
+      }
+    ]
+  },
+  "gentleman": {
+    "note": "19 世纪的定义是**社会性的**：有地产、无须靠劳作谋生、有闲去做治安法官或议员——与「有礼貌」无关。一个人可以很粗鲁而仍是 gentleman，也可以彬彬有礼而「not quite a gentleman」。gentleman's gentleman 是「贴身男仆」，不是「绅士的绅士」。",
+    "ex": [
+      {
+        "en": "He had no profession, which was itself the proof that he was a gentleman.",
+        "zh": "他没有职业——这本身就是他身为绅士的凭据。"
+      },
+      {
+        "en": "His manners were easy, but no one in the county would have called him a gentleman.",
+        "zh": "他举止从容，可郡里没人会称他作绅士。"
+      }
+    ]
+  },
+  "lady": {
+    "note": "两条完全不同的构词法：「Lady + 姓氏」是爵士或从男爵之妻（Lady Lucas）；「Lady + 名字」是公爵、伯爵以上之女或嫁入其家者（Lady Catherine de Bourgh）。同是 Lady，前者靠丈夫，后者靠出身——小说里的尊卑就从这里分。",
+    "ex": [
+      {
+        "en": "Lady Lucas was civil to everyone, having nothing else to be.",
+        "zh": "卢卡斯夫人对谁都客气，因为她没有别的可依仗。"
+      },
+      {
+        "en": "Lady Catherine spoke to the whole room without once looking at it.",
+        "zh": "凯瑟琳夫人对着满屋子人说话，却一次也没看他们。"
+      }
+    ]
+  },
+  "madam": {
+    "note": "对女性的正式敬称，用在句首（Madam, I beg you…），也可作讥讽：my dear madam 在争执里常等于「您哪」。与 Mrs. 的区别：madam 单独用，不接姓名；Mrs. 必接姓氏。",
+    "ex": [
+      {
+        "en": "Madam, I have no wish to trouble you further.",
+        "zh": "太太，我不愿再打扰您。"
+      },
+      {
+        "en": "My dear madam, nobody is accusing you of anything.",
+        "zh": "亲爱的太太，没人指控您什么。"
+      }
+    ]
+  },
+  "respectable": {
+    "note": "19 世纪义是「体面、有身份、没出过丑事」——一个**社会评价**，不是道德评价。一个人可以 respectable 而冷酷、愚蠢、平庸。今天的读者容易把它读成「值得尊敬」，于是读不出作者用它时的距离感与轻微的贬义。",
+    "ex": [
+      {
+        "en": "They were respectable people, and being respectable was the whole of their conversation.",
+        "zh": "他们是体面人家，而「体面」就是他们谈话的全部内容。"
+      },
+      {
+        "en": "She married into a respectable family and was never happy again.",
+        "zh": "她嫁进了一户体面人家，此后再没有快活过。"
+      }
+    ]
+  },
+  "honourable": {
+    "note": "形容词「可敬的」，但在称呼里是另一回事：the Honourable（缩写 Hon.）是贵族子弟、高级法官与部分高官子女的头衔，写在姓名前。所以一句 the Honourable Mr. X 说的是出身，不是品德。议员之间互称 the honourable member 也是同一套渊源。",
+    "ex": [
+      {
+        "en": "The Honourable Mr. Fitzwilliam was the younger son of an earl, and never let it be forgotten.",
+        "zh": "菲茨威廉先生是伯爵的次子，这一点他从不让别人忘记。"
+      },
+      {
+        "en": "He made an honourable offer and was refused without ceremony.",
+        "zh": "他提了一门体面的亲事，被毫不客气地拒了。"
+      }
+    ]
+  },
+  "worshipful": {
+    "note": "对市镇长官、治安法官、行会首领的尊称，写在职衔前：the Worshipful the Mayor、the Worshipful Company of…。现代英语里这个词几乎只剩「崇拜的」这一形容词义（且多带贬义），但在旧文本里它是纯粹的身份敬语。",
+    "ex": [
+      {
+        "en": "The Worshipful the Mayor would hear no more of it that evening.",
+        "zh": "市长大人那天晚上再不肯听这件事了。"
+      },
+      {
+        "en": "He was a worshipful man in his own town and a nobody ten miles out.",
+        "zh": "他在自己镇上是个有身份的人，出了十里就什么都不是。"
+      }
+    ]
+  },
+  "yeoman": {
+    "note": "自耕农：自有田地、自己耕作，地位在绅士之下、雇农之上，是 19 世纪乡村社会的中间层。这个阶层在英国历史上很关键（yeomanry 曾构成民兵），所以它不只是「农民」，而是一个有政治含义的身份。",
+    "ex": [
+      {
+        "en": "The yeoman owned his forty acres and answered to no landlord.",
+        "zh": "这个自耕农有自己的四十英亩地，不必向任何地主低头。"
+      },
+      {
+        "en": "His father had been a yeoman; he meant his son to be a gentleman.",
+        "zh": "他父亲是自耕农，而他要儿子做绅士。"
+      }
+    ]
+  },
+  "gentry": {
+    "note": "乡绅阶层：拥有地产、不必劳作、在当地主持事务的那一层人，包括从男爵、knight、esquire 与普通乡绅。它不是爵位，而是一个社会层次——比 nobility（贵族）低，比 yeomanry 高。小说里「the county」指的就是这一层人的社交圈。",
+    "ex": [
+      {
+        "en": "The gentry of the county dined with one another twice a winter and knew every debt of every family.",
+        "zh": "郡里的乡绅一冬互请两次饭，对每家每户的债都一清二楚。"
+      },
+      {
+        "en": "Trade, however profitable, would have put him outside the gentry for good.",
+        "zh": "做生意无论多赚钱，都会把他永久地挡在乡绅之外。"
+      }
+    ]
+  },
+  "mistress": {
+    "note": "本义「女主人」，Mrs. 这个缩写原本就是 mistress。它也指「情妇」——两个意思相差极远，只能靠上下文分：the mistress of the house 是女主人，his mistress 是情妇。另有「女教师」（music mistress）。",
+    "ex": [
+      {
+        "en": "She was mistress of the house in all but name, and the servants obeyed her.",
+        "zh": "她除了名分之外就是这家的女主人，仆人都听她的。"
+      },
+      {
+        "en": "Everyone in the village knew he kept a mistress in the next town.",
+        "zh": "村里人人都知道他在邻镇养着一个女人。"
+      }
+    ]
   }
 }
