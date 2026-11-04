@@ -2733,6 +2733,13 @@ input, textarea { font-family: inherit; }
   outline: none;
 }
 .wb-search input:focus { border-color: var(--accent); }
+.wb-recent { display: flex; align-items: baseline; gap: 8px; margin-bottom: var(--sp-3); overflow-x: auto; }
+.wb-recent-key { flex: none; font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); letter-spacing: .06em; }
+.wb-recent-word {
+  flex: none; font: inherit; font-size: 12.5px; color: var(--fg-2); cursor: pointer;
+  background: none; border: none; border-bottom: 1px dashed var(--sep); padding: 0 1px;
+}
+.wb-recent-word:hover, .wb-recent-word.on { color: var(--accent); border-color: var(--accent); }
 .wb-bar { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--sp-3); }
 /* 26 个字母一条排下来，挤不进一行时横向滚动，不要折成两行把版面顶乱 */
 .wb-bar.letters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; }
@@ -2843,6 +2850,13 @@ input, textarea { font-family: inherit; }
   outline: none;
 }
 .wb-search input:focus { border-color: var(--accent); }
+.wb-recent { display: flex; align-items: baseline; gap: 8px; margin-bottom: var(--sp-3); overflow-x: auto; }
+.wb-recent-key { flex: none; font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); letter-spacing: .06em; }
+.wb-recent-word {
+  flex: none; font: inherit; font-size: 12.5px; color: var(--fg-2); cursor: pointer;
+  background: none; border: none; border-bottom: 1px dashed var(--sep); padding: 0 1px;
+}
+.wb-recent-word:hover, .wb-recent-word.on { color: var(--accent); border-color: var(--accent); }
 .wb-bar { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--sp-3); }
 /* 26 个字母一条排下来，挤不进一行时横向滚动，不要折成两行把版面顶乱 */
 .wb-bar.letters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; }

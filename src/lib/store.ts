@@ -68,6 +68,8 @@ export interface Progress {
   history: { d: string; id: string; wpm: number; acc: number; cons: number; sec: number }[];
   /** 累计易错键对：`应打\u0000实打` → 次数 */
   keyErr: Record<string, number>;
+  /** 最近查过的词（新的在前，最多 40 个）—— 查词也是学习轨迹的一部分 */
+  lookups?: { w: string; t: number }[];
   dailyDay: string;
   dailyArticle: string | null;
   dailyDone: boolean;      // 今日卷轴是否已完成
@@ -178,6 +180,8 @@ interface State {
   ) => void;
   markUnknown: (word: string) => void;
   toggleLex: (word: string) => void;
+  /** 记一次查词（词库页用），只进"最近查过"列表，不改掌握度 */
+  recordLookup: (word: string) => void;
   setSetting: <K extends keyof Settings>(k: K, v: Settings[K]) => void;
   /** 今日卷轴还没定或已跨天时，写入当天选中的文章与对话 */
   ensureDaily: (id: string, sceneId?: string | null) => void;
@@ -543,6 +547,14 @@ export const useGame = create<State>((set, get) => ({
     } else if (st.m > 25 || st.due > today) {
       set({ p: { ...p, mastery: { ...p.mastery, [word]: { ...st, m: 25, due: today } } } });
     }
+    save();
+  },
+
+  recordLookup: (word) => {
+    const { p } = get();
+    const list = (p.lookups ?? []).filter(x => x.w !== word);
+    list.unshift({ w: word, t: Date.now() });
+    set({ p: { ...p, lookups: list.slice(0, 40) } });
     save();
   },
 

@@ -54,6 +54,8 @@ export function WordbookScreen() {
   const mastery = useGame(s => s.p.mastery);
   const toggleLex = useGame(s => s.toggleLex);
   const markUnknown = useGame(s => s.markUnknown);
+  const recordLookup = useGame(s => s.recordLookup);
+  const lookups = useGame(s => s.p.lookups);
   const corpus = useCorpus();
   const read = useGame(s => s.read);
   const go = useGame(s => s.go);
@@ -156,6 +158,7 @@ export function WordbookScreen() {
   /* 点词 → 取分片 → 存缓存 */
   const open = (w: string) => {
     setWord(w);
+    recordLookup(w);
     const ch = w[0];
     const hit = shardCache.current.get(ch);
     if (hit) { setEntry(hit[w] ?? null); return; }
@@ -210,6 +213,17 @@ export function WordbookScreen() {
           />
         </div>
       </div>
+
+      {lookups?.length ? (
+        <div className="wb-recent">
+          <span className="wb-recent-key">最近查过</span>
+          {lookups.slice(0, 12).map(x => (
+            <button key={x.w} className={`wb-recent-word${word === x.w ? ' on' : ''}`} onClick={() => open(x.w)}>
+              {x.w}
+            </button>
+          ))}
+        </div>
+      ) : null}
 
       <div className="wb-bar letters">
         <button className={`wb-chip${!letter ? ' on' : ''}`} onClick={() => setLetter('')}>全部</button>
