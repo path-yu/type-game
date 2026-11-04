@@ -35,20 +35,27 @@ const shardOf = ch => {
 };
 
 /*
- * 词干比对：allow 允许 allowed/allowing，ferry 允许 ferried（y→i），
- * drape 允许 draping（去 e）。所以除了原词，再拿去掉词尾 e/y 的干去比。
- * 短词只用原词，不然 con 的干会匹配到 concern。
+ * 屈折比对。词表里的词和句子里的形不一定长得一样：
+ *   allow → allowed / allowing    drape → draping（去 e）
+ *   ferry → ferried（y→i）        instil → instils（l 归一）
+ *   override → overrode（不规则）
+ * 所以拿原词、去尾 e/y 的干、l 归一的干各跑一遍「允许后缀」的正则；
+ * 长词再兜一层「前五字符 + 至多四字母」，专给不规则变化留口子。
+ * 用词边界锚定，con 不会匹配到 concern。
  */
 const hit = (word, en) => {
-  const s = en.toLowerCase().replace(/-/g, '');
-  const base = word.toLowerCase().replace(/-/g, '');
-  const cands = [base];
-  if (base.length > 4) {
-    cands.push(base.replace(/(e|y)$/, ''));  // drape → drap(ing)、ferry → ferr(ied)
-    cands.push(base.replace(/l{1,2}$/, 'l')); // instill → instil(s)
-    cands.push(base.slice(0, 5));             // override → overr(ode)，不规则变化
-  }
-  return cands.some(v => v.length >= 3 && s.includes(v));
+  const s = en.toLowerCase();
+  const base = word.toLowerCase();
+  const esc = x => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const forms = w =>
+    new RegExp(
+      `\\b${esc(w)}(s|es|ed|d|ing|er|est|ly|ies|ied|y|ise|ised|ising|isation|ize|ized|izing|ization)?\\b`,
+    );
+  const stems = new Set([base, base.replace(/(e|y)$/, ''), base.replace(/l{1,2}$/, 'l')]);
+  // 双写末辅音：con→conned、gag→gagged、pedal→pedalled、remit→remitted
+  for (const st of [...stems]) stems.add(st.replace(/([bdglmnprtz])$/, '$1$1'));
+  if ([...stems].some(st => st.length >= 2 && forms(st).test(s))) return true;
+  return base.length >= 6 && new RegExp(`\\b${esc(base.slice(0, 5))}[a-z]{0,4}\\b`).test(s);
 };
 
 const ok = {};

@@ -237,6 +237,20 @@
       }
     ]
   },
+  "airline": {
+    "zh": "航空公司",
+    "note": "「航班」是 flight，「航线」是 route，「航空公司」是 airline（英式也常说 carrier）。",
+    "ex": [
+      {
+        "en": "The airline cancelled two flights that morning.",
+        "zh": "那家航空公司当天早上取消了两班。"
+      },
+      {
+        "en": "Budget airlines charge for every bag.",
+        "zh": "廉价航空每件行李都收费。"
+      }
+    ]
+  },
   "airway": {
     "zh": "气道；航路",
     "note": "医学上是急救里的「气道」（keep the airway open），航空上是「航路」。复数 airways 常直接当「航空公司」用，如 British Airways。",
@@ -290,6 +304,34 @@
       {
         "en": "The party aligned itself with the farmers' movement.",
         "zh": "这个党站到了农民运动一边。"
+      }
+    ]
+  },
+  "allergic": {
+    "zh": "过敏的；极其反感的",
+    "note": "搭配 allergic to。比喻义「极度反感」很常用：allergic to change。名词 allergy，形容词还有 anaphylactic（过敏性的）。",
+    "ex": [
+      {
+        "en": "She is allergic to shellfish.",
+        "zh": "她对贝类过敏。"
+      },
+      {
+        "en": "The board seems allergic to any real change.",
+        "zh": "董事会对任何真正的改变都像过敏一样躲。"
+      }
+    ]
+  },
+  "allotment": {
+    "zh": "分配额；小块菜地",
+    "note": "日常义是「分配、摊派」；英式还有一个特有义：向市政租的小块菜地（allotment garden）。",
+    "ex": [
+      {
+        "en": "Each department gets an equal allotment of tickets.",
+        "zh": "每个部门分到的票数一样。"
+      },
+      {
+        "en": "He grows potatoes on his allotment.",
+        "zh": "他在自己的小菜地里种土豆。"
       }
     ]
   },
@@ -433,6 +475,20 @@
       }
     ]
   },
+  "assessment": {
+    "zh": "评估；考核",
+    "note": "教育里是考核与作业，医学与社工里是评估，税务里是核定的税额。动词 assess，别和 evaluation 混——后者更宽泛。",
+    "ex": [
+      {
+        "en": "The assessment takes about an hour.",
+        "zh": "这次评估大约一小时。"
+      },
+      {
+        "en": "Continuous assessment counts for half the grade.",
+        "zh": "平时考核占一半成绩。"
+      }
+    ]
+  },
   "assimilate": {
     "zh": "吸收（知识）；同化；消化吸收",
     "note": "三条线：知识被「吃进去」、移民被「同化」、身体「消化吸收」。同化用 assimilate into，不说 assimilate to。",
@@ -489,6 +545,20 @@
       }
     ]
   },
+  "backup": {
+    "zh": "备份；后援；备用的",
+    "note": "拼写分工：名词和形容词是一个词（backup），动词是两个词（back up）。还有第三个意思：交通拥堵（a backup of traffic）。",
+    "ex": [
+      {
+        "en": "Keep a backup on a drive that stays offline.",
+        "zh": "备份放在一块平时不联网的硬盘上。"
+      },
+      {
+        "en": "The backup generator kicked in within seconds.",
+        "zh": "备用发电机几秒内就启动了。"
+      }
+    ]
+  },
   "balk": {
     "zh": "（临到跟前）不肯动；犹豫退缩",
     "note": "搭配 balk at sth，核心是「到了跟前不肯往前」：马不肯跳、人嫌贵不买。棒球里 balk 是投手犯规。别和 block 混——balk 是自己不肯动，不是挡住别人。",
@@ -500,6 +570,20 @@
       {
         "en": "She balked at the price and walked out.",
         "zh": "她嫌价高，转身走了。"
+      }
+    ]
+  },
+  "basketball": {
+    "zh": "篮球（运动/球）",
+    "note": "运动不可数（play basketball，不加冠词），球可数（a basketball）。football、volleyball 同理。",
+    "ex": [
+      {
+        "en": "He played basketball in college.",
+        "zh": "他大学时打篮球。"
+      },
+      {
+        "en": "The basketball rolled under the car.",
+        "zh": "篮球滚到车底下去了。"
       }
     ]
   },
@@ -545,6 +629,34 @@
       }
     ]
   },
+  "bombard": {
+    "zh": "轰炸；（用问题、信息）连续冲击",
+    "note": "搭配 bombard sb with sth：轰炸城市、被问题连番砸、被邮件淹没，都用这一句。",
+    "ex": [
+      {
+        "en": "The city was bombarded for six weeks.",
+        "zh": "这座城市被轰炸了六周。"
+      },
+      {
+        "en": "Reporters bombarded her with questions.",
+        "zh": "记者连珠炮似的向她发问。"
+      }
+    ]
+  },
+  "bonus": {
+    "zh": "奖金；额外的好处",
+    "note": "可数，复数 bonuses。工资结构里是奖金，口语里是「意外的惊喜」，两种情况都能用。",
+    "ex": [
+      {
+        "en": "The staff get a bonus if targets are met.",
+        "zh": "达标的话员工有奖金。"
+      },
+      {
+        "en": "Free coffee is a bonus, not a reason to stay.",
+        "zh": "免费咖啡是额外好处，不是留下的理由。"
+      }
+    ]
+  },
   "boost": {
     "zh": "提升、促进；提振",
     "note": "可数名词，常用 a boost to sth；动词后面接具体对象（boost sales / morale），不接人说 boost him——那是「把他抬起来」的字面义。",
@@ -587,6 +699,20 @@
       }
     ]
   },
+  "borderline": {
+    "zh": "分界线；临界的",
+    "note": "名词本义是国界、分界线；形容词指「处在临界上」（borderline case），医学上是「临界值」，心理上是「边缘型人格」。",
+    "ex": [
+      {
+        "en": "The village sits on the borderline between the two provinces.",
+        "zh": "这个村子位于两省交界线上。"
+      },
+      {
+        "en": "The results were borderline, so they ran the test again.",
+        "zh": "结果在临界值上，所以又测了一遍。"
+      }
+    ]
+  },
   "bristle": {
     "zh": "毛发竖立；被激怒；刚毛",
     "note": "两个固定搭配分工清楚：bristle at sth 对某事冒火，bristle with sth 布满某物（a street bristling with cameras）。名词是刷子上的硬毛。",
@@ -601,6 +727,20 @@
       }
     ]
   },
+  "broadband": {
+    "zh": "宽带",
+    "note": "不可数，指高速互联网接入。笼统说「网络」用 internet，说「带宽容量」才用 broadband。",
+    "ex": [
+      {
+        "en": "Broadband is still unreliable in the valley.",
+        "zh": "山谷里的宽带还是不稳。"
+      },
+      {
+        "en": "The grant pays for broadband to rural schools.",
+        "zh": "这笔拨款给乡村学校铺宽带。"
+      }
+    ]
+  },
   "broadcast": {
     "zh": "播送；散布（消息）",
     "note": "过去式仍是 broadcast，broadcasted 少见。比喻义「到处散布消息」带点贬义——好像拿喇叭喊。",
@@ -612,6 +752,20 @@
       {
         "en": "She broadcast the news to everyone in the office.",
         "zh": "她把消息告诉了办公室所有人。"
+      }
+    ]
+  },
+  "browser": {
+    "zh": "浏览器",
+    "note": "计算机里专指浏览器；「随便逛逛店」的动词是 browse，人不能叫 browser。",
+    "ex": [
+      {
+        "en": "Clear the cache in your browser and reload.",
+        "zh": "清一下浏览器缓存再刷新。"
+      },
+      {
+        "en": "The site no longer supports older browsers.",
+        "zh": "这个网站不再支持旧版浏览器。"
       }
     ]
   },
@@ -640,6 +794,34 @@
       {
         "en": "Plant the bulbs in autumn, pointed end up.",
         "zh": "秋天把球茎种下，尖头朝上。"
+      }
+    ]
+  },
+  "buzzer": {
+    "zh": "蜂鸣器；门铃对讲",
+    "note": "指会响的那个装置：门禁对讲、比赛终场蜂鸣器（at the buzzer 是压哨）。",
+    "ex": [
+      {
+        "en": "The buzzer went off at the end of the exam.",
+        "zh": "考试结束时蜂鸣器响了。"
+      },
+      {
+        "en": "Press the buzzer for the third floor.",
+        "zh": "去三楼就按对讲。"
+      }
+    ]
+  },
+  "camper": {
+    "zh": "露营者；房车",
+    "note": "既是露营的人，也是房车（camper van）；英式房车更常说 motorhome。",
+    "ex": [
+      {
+        "en": "The site takes twenty campers a night.",
+        "zh": "营地一晚接待二十个露营者。"
+      },
+      {
+        "en": "They rented a camper for the coast road.",
+        "zh": "他们租了辆房车跑海岸公路。"
       }
     ]
   },
@@ -713,6 +895,20 @@
       }
     ]
   },
+  "certified": {
+    "zh": "经认证的；持证的",
+    "note": "来自 certify，作定语是「有证书的」。certified mail 是美式的挂号信（英式 recorded delivery）。区别 qualified：有证书 vs 够资格。",
+    "ex": [
+      {
+        "en": "Only certified technicians may open the panel.",
+        "zh": "只有持证技师才能打开这块面板。"
+      },
+      {
+        "en": "The letter arrived by certified mail.",
+        "zh": "信是以挂号信寄来的。"
+      }
+    ]
+  },
   "certify": {
     "zh": "证明、认证；出具（医学）证明",
     "note": "三重用法：官方认证（certified organic）、医生或机构出具证明、法律上「宣布（某人）精神失常」。名词 certification 是证书或认证过程。",
@@ -738,6 +934,34 @@
       {
         "en": "He chafed at the delay but said nothing.",
         "zh": "他对拖延很不耐烦，但没说什么。"
+      }
+    ]
+  },
+  "checkout": {
+    "zh": "结账（台）；退房",
+    "note": "名词一个词（the checkout），动词两个词（check out）。超市收银台、酒店退房、网店结算页都是它。",
+    "ex": [
+      {
+        "en": "There was a queue at the checkout.",
+        "zh": "收银台前排着队。"
+      },
+      {
+        "en": "Checkout is at eleven.",
+        "zh": "退房时间是十一点。"
+      }
+    ]
+  },
+  "chili": {
+    "zh": "辣椒；辣肉酱",
+    "note": "复数 chilies。美式里 chili 还指「辣肉酱」这道菜（chili con carne 的简称）。",
+    "ex": [
+      {
+        "en": "Add one chopped chili and taste.",
+        "zh": "加一个切碎的辣椒，再尝一下。"
+      },
+      {
+        "en": "We had chili and rice for lunch.",
+        "zh": "我们午饭吃辣肉酱配米饭。"
       }
     ]
   },
@@ -769,6 +993,20 @@
       }
     ]
   },
+  "clinic": {
+    "zh": "诊所、门诊；短期培训班",
+    "note": "比 hospital 小的门诊机构，也可指医院的专科门诊；还有「短期辅导班」义（a tennis clinic）。",
+    "ex": [
+      {
+        "en": "The clinic opens at eight on weekdays.",
+        "zh": "诊所工作日八点开门。"
+      },
+      {
+        "en": "She runs a weekly writing clinic for students.",
+        "zh": "她每周给学生开一次写作辅导。"
+      }
+    ]
+  },
   "closure": {
     "zh": "关闭；了结",
     "note": "心理语境里 closure 是「情感上的了结、放下」，中文没有对应单词，别直译成「关闭」。作「关闭」讲时不可数。",
@@ -780,6 +1018,20 @@
       {
         "en": "The verdict brought a measure of closure to the family.",
         "zh": "判决让这家人稍稍放下了一点。"
+      }
+    ]
+  },
+  "clout": {
+    "zh": "影响力、势力；猛击",
+    "note": "名词的「影响力」比 power 更口语，指「真能办成事」：political clout、financial clout。动词是猛击。",
+    "ex": [
+      {
+        "en": "The union has real clout in this town.",
+        "zh": "工会在本镇很有分量。"
+      },
+      {
+        "en": "He clouted the ball over the fence.",
+        "zh": "他把球打过了围栏。"
       }
     ]
   },
@@ -808,6 +1060,20 @@
       {
         "en": "Let's weigh the pros and cons before deciding.",
         "zh": "定之前把利弊掂量一下。"
+      }
+    ]
+  },
+  "confirming": {
+    "zh": "确认性的",
+    "note": "多作定语：confirming evidence、a confirming email。日常更常用它的动词 confirm。",
+    "ex": [
+      {
+        "en": "The scan was confirming rather than diagnostic.",
+        "zh": "这次扫描是确认性的，不是诊断性的。"
+      },
+      {
+        "en": "He sent a confirming email the same afternoon.",
+        "zh": "当天下午他发了一封确认邮件。"
       }
     ]
   },
@@ -895,6 +1161,20 @@
       }
     ]
   },
+  "cyclic": {
+    "zh": "循环的、周期性的",
+    "note": "与 cyclical 基本同义，经济语境更常用 cyclical。反义 acyclic，名词 cycle。",
+    "ex": [
+      {
+        "en": "The industry is cyclic: boom, then bust.",
+        "zh": "这个行业是周期性的：先繁荣，再崩。"
+      },
+      {
+        "en": "Cyclic patterns in the data repeat every eleven years.",
+        "zh": "数据里的周期模式每十一年重复一次。"
+      }
+    ]
+  },
   "dampen": {
     "zh": "弄湿；抑制（情绪、期待）",
     "note": "本义「弄湿」现在少见，多用于压低情绪、期待、增长。和形容词 damp（潮湿的）同源，但 dampen 是动词。",
@@ -906,6 +1186,20 @@
       {
         "en": "The bad weather dampened enthusiasm for the fair.",
         "zh": "坏天气给集会的热情浇了冷水。"
+      }
+    ]
+  },
+  "dashboard": {
+    "zh": "仪表盘；数据看板",
+    "note": "车里的仪表盘和软件的数据看板共用一个词，词源是马车前的挡泥板。",
+    "ex": [
+      {
+        "en": "A warning light came on the dashboard.",
+        "zh": "仪表盘上亮了一个警示灯。"
+      },
+      {
+        "en": "The dashboard tracks orders, refunds and response times.",
+        "zh": "数据看板盯着订单、退款和响应时长。"
       }
     ]
   },
@@ -923,6 +1217,20 @@
       }
     ]
   },
+  "debit": {
+    "zh": "借记、扣款",
+    "note": "与 credit 相对：debit 记借方（钱出去），credit 记贷方（钱进来）。debit card 是借记卡——从自己账户扣，不是信用卡。",
+    "ex": [
+      {
+        "en": "The payment went out by direct debit.",
+        "zh": "这笔款是自动扣的。"
+      },
+      {
+        "en": "The bank debited my account twice.",
+        "zh": "银行从我账户扣了两次。"
+      }
+    ]
+  },
   "debut": {
     "zh": "首次亮相、首演",
     "note": "法语借词，t 不发音，读 /ˈdeɪbjuː/。动词可直接接宾语：debut a product。常见错是写成 debute；也别说 first debut——debut 本身就含「首次」。",
@@ -934,6 +1242,20 @@
       {
         "en": "She made her debut at the age of six.",
         "zh": "她六岁首次登台。"
+      }
+    ]
+  },
+  "deduct": {
+    "zh": "扣除",
+    "note": "搭配 deduct sth from sth，多用于钱；数学上「减去」用 subtract。名词 deduction 既是「扣除额」，也是「推理」。",
+    "ex": [
+      {
+        "en": "The fee is deducted from your first payment.",
+        "zh": "这笔费用从首付款里扣。"
+      },
+      {
+        "en": "You can deduct the interest from your taxable income.",
+        "zh": "利息可以从应税收入里扣除。"
       }
     ]
   },
@@ -993,6 +1315,20 @@
       }
     ]
   },
+  "demo": {
+    "zh": "演示；小样",
+    "note": "demonstration 的缩短：软件有 demo version（试用版），乐队录 demo（小样），产品有 demo（演示）。现在的「示威」一般说 protest。",
+    "ex": [
+      {
+        "en": "She gave a ten-minute demo of the tool.",
+        "zh": "她演示了十分钟这个工具。"
+      },
+      {
+        "en": "The band recorded a three-track demo.",
+        "zh": "乐队录了一张三首的小样。"
+      }
+    ]
+  },
   "depress": {
     "zh": "使沮丧；压低",
     "note": "经济里「压低」是常用义（depress demand / prices）；形容心情是「提不起劲」，比 sad 更沉。名词 depression 既是抑郁症，也是大萧条。",
@@ -1035,6 +1371,34 @@
       }
     ]
   },
+  "desktop": {
+    "zh": "桌面；台式机",
+    "note": "屏幕上的桌面和台式机（desktop computer）都叫它；笔记本是 laptop，别混。",
+    "ex": [
+      {
+        "en": "Save the file to the desktop.",
+        "zh": "把文件存到桌面。"
+      },
+      {
+        "en": "The desktop is five years old and still fast.",
+        "zh": "这台台式机五年了，还挺快。"
+      }
+    ]
+  },
+  "developer": {
+    "zh": "开发者；开发商",
+    "note": "软件开发者与房地产开发商同一个词；摄影里 developer 是显影液。",
+    "ex": [
+      {
+        "en": "The developer fixed the bug within a day.",
+        "zh": "开发者一天之内就修好了。"
+      },
+      {
+        "en": "The developer applied for permission to build forty homes.",
+        "zh": "开发商申请建四十套住宅。"
+      }
+    ]
+  },
   "deviate": {
     "zh": "偏离",
     "note": "固定搭 deviate from（航线、计划、标准）。名词 deviation 是偏差，统计学里的「标准差」早年也叫 standard deviation。",
@@ -1063,6 +1427,20 @@
       }
     ]
   },
+  "diesel": {
+    "zh": "柴油；柴油车",
+    "note": "来自人名 Rudolf Diesel，小写使用。diesel engine 是柴油机；口语里 a diesel 就是「柴油车」。",
+    "ex": [
+      {
+        "en": "The van runs on diesel.",
+        "zh": "这辆货车烧柴油。"
+      },
+      {
+        "en": "Diesel is cheaper than petrol in most of Europe.",
+        "zh": "欧洲大部分地方柴油比汽油便宜。"
+      }
+    ]
+  },
   "differentiate": {
     "zh": "区分；使不同",
     "note": "两种句式：differentiate A from B，或 differentiate between A and B。商业里说产品「做出差异化」也用这个词。",
@@ -1074,6 +1452,34 @@
       {
         "en": "What differentiates this product is the warranty.",
         "zh": "这款产品的不同之处在保修。"
+      }
+    ]
+  },
+  "disconnect": {
+    "zh": "断开；使脱节",
+    "note": "水电、网络「切断」，人和事「脱节」都用它：feel disconnected from sth。名词是断线、脱节。反义 connect。",
+    "ex": [
+      {
+        "en": "The utility will disconnect the supply if the bill is unpaid.",
+        "zh": "账单不付，电力公司就会断供。"
+      },
+      {
+        "en": "He seemed disconnected from what was happening.",
+        "zh": "他像跟眼前发生的事脱了节。"
+      }
+    ]
+  },
+  "dishwasher": {
+    "zh": "洗碗机；洗碗工",
+    "note": "机器和人都用这个词，靠语境分：load the dishwasher 是装碗机，work as a dishwasher 是当洗碗工。",
+    "ex": [
+      {
+        "en": "The dishwasher has been leaking for a week.",
+        "zh": "洗碗机漏水漏了一周。"
+      },
+      {
+        "en": "He worked as a dishwasher that summer.",
+        "zh": "那年夏天他做洗碗工。"
       }
     ]
   },
@@ -1119,6 +1525,34 @@
       }
     ]
   },
+  "documented": {
+    "zh": "有记载的；有证件的",
+    "note": "两层：文献上「有记载」（a well-documented effect）、身份上「有合法证件」（undocumented workers 是无证工人）。",
+    "ex": [
+      {
+        "en": "It is a well-documented side effect.",
+        "zh": "这是有充分记录在案的副作用。"
+      },
+      {
+        "en": "Only documented workers can claim the benefit.",
+        "zh": "只有证件齐全的工人才能申领这项补助。"
+      }
+    ]
+  },
+  "donation": {
+    "zh": "捐赠（物）",
+    "note": "可数：a donation of fifty dollars。区别 contribution（分摊的贡献）与 endowment（捐赠基金）。",
+    "ex": [
+      {
+        "en": "Donations can be made online or by post.",
+        "zh": "可以在线捐，也可以邮寄。"
+      },
+      {
+        "en": "The museum received a donation of forty drawings.",
+        "zh": "博物馆收到四十幅素描的捐赠。"
+      }
+    ]
+  },
   "dope": {
     "zh": "毒品；内幕；笨蛋",
     "note": "三个意思：毒品（口语）、内幕消息（the dope on sth）、笨蛋（旧说法）。动词是「给（马、运动员）下药」。",
@@ -1147,6 +1581,48 @@
       }
     ]
   },
+  "email": {
+    "zh": "电子邮件；发邮件",
+    "note": "可数（an email / two emails），但说「用邮件」时不可数：by email。动词直接接人——email me，不说 email to me。英式也写 e-mail。",
+    "ex": [
+      {
+        "en": "I sent the file by email this morning.",
+        "zh": "今天早上我把文件用邮件发过去了。"
+      },
+      {
+        "en": "Email me the details and I will confirm.",
+        "zh": "细节发我邮箱，我来确认。"
+      }
+    ]
+  },
+  "enamel": {
+    "zh": "珐琅、釉；牙釉质",
+    "note": "工艺上的珐琅、牙齿的釉质、指甲油（nail enamel）都叫它。动词是上釉。",
+    "ex": [
+      {
+        "en": "The pan has a chipped enamel coating.",
+        "zh": "这口锅的珐琅层磕掉了一块。"
+      },
+      {
+        "en": "Enamel protects the tooth below the gum.",
+        "zh": "牙釉质保护着牙龈以下的牙体。"
+      }
+    ]
+  },
+  "endemic": {
+    "zh": "地方性的、某地常有的",
+    "note": "和 epidemic（突然暴发）、pandemic（全球大流行）是一组：endemic 是「某地一直有」。也可形容问题「根深蒂固」。",
+    "ex": [
+      {
+        "en": "Malaria is endemic in parts of the region.",
+        "zh": "疟疾在该地区部分地方流行。"
+      },
+      {
+        "en": "Corruption was endemic to the system.",
+        "zh": "腐败是这套体制的固有问题。"
+      }
+    ]
+  },
   "erupt": {
     "zh": "爆发；（火山）喷发",
     "note": "三条线：火山喷发、冲突或笑声突然爆发、皮疹冒出。常配 in：erupt in laughter / violence。名词 eruption。",
@@ -1158,6 +1634,20 @@
       {
         "en": "The hall erupted in applause.",
         "zh": "大厅里爆发出掌声。"
+      }
+    ]
+  },
+  "etch": {
+    "zh": "蚀刻；铭刻",
+    "note": "工艺上是酸蚀刻版，比喻义是「刻在记忆里」（be etched in/on）。名词 etching 是蚀刻版画。",
+    "ex": [
+      {
+        "en": "The name was etched into the glass.",
+        "zh": "名字被蚀刻在玻璃上。"
+      },
+      {
+        "en": "The scene is etched in my memory.",
+        "zh": "那一幕刻在我记忆里。"
       }
     ]
   },
@@ -1175,6 +1665,20 @@
       }
     ]
   },
+  "export": {
+    "zh": "出口；导出",
+    "note": "名动重音不同：名词和形容词 /ˈekspɔːt/，动词 /ɪkˈspɔːt/。技术里「导出数据」也是它，反义 import。",
+    "ex": [
+      {
+        "en": "The country exports coffee and imports machinery.",
+        "zh": "这个国家出口咖啡，进口机械。"
+      },
+      {
+        "en": "Export the list as a CSV file.",
+        "zh": "把清单导出成 CSV 文件。"
+      }
+    ]
+  },
   "falsify": {
     "zh": "篡改、伪造",
     "note": "专指篡改记录、账目、数据这类文书造假；伪造签名用 forge，编造整件事用 fabricate。",
@@ -1189,6 +1693,20 @@
       }
     ]
   },
+  "feedback": {
+    "zh": "反馈；啸叫",
+    "note": "不可数：some feedback、a piece of feedback，不说 a feedback。技术上是「信号回授」，麦克风靠近音箱时的啸叫也是它。",
+    "ex": [
+      {
+        "en": "The draft needs feedback before Friday.",
+        "zh": "草案周五之前要收到意见。"
+      },
+      {
+        "en": "The mic picked up feedback from the speaker.",
+        "zh": "麦克风从音箱那里收到了啸叫。"
+      }
+    ]
+  },
   "ferry": {
     "zh": "渡船；摆渡、往返运送",
     "note": "动词带「来回运」的意味，比 transport 具体：摆渡车、接驳车都是 ferry。",
@@ -1200,6 +1718,20 @@
       {
         "en": "Shuttle buses ferried guests from the car park.",
         "zh": "摆渡车把客人从停车场一趟趟运过来。"
+      }
+    ]
+  },
+  "filler": {
+    "zh": "填充物；凑数内容；填充词",
+    "note": "装修里的腻子、刊物里填版面的内容、口语里的「um / you know」都叫 filler。",
+    "ex": [
+      {
+        "en": "The magazine uses short stories as filler between ads.",
+        "zh": "杂志用短篇小说填广告之间的空。"
+      },
+      {
+        "en": "The wall was patched with filler and sanded.",
+        "zh": "墙面用腻子补过，再打磨。"
       }
     ]
   },
@@ -1287,6 +1819,20 @@
       }
     ]
   },
+  "forte": {
+    "zh": "长处；强（音乐）",
+    "note": "读 /ˈfɔːteɪ/，别写成 fort（那是堡垒）。音乐术语里是「强」，反义 piano（弱）。",
+    "ex": [
+      {
+        "en": "Patience is not her forte.",
+        "zh": "耐心不是她的长处。"
+      },
+      {
+        "en": "The passage is marked forte, then pianissimo.",
+        "zh": "这一段标的是强，然后极弱。"
+      }
+    ]
+  },
   "fortify": {
     "zh": "加固、设防；强化",
     "note": "军事设防、意志或身体「增强」、食品「营养强化」三处都用它。名词 fortification 还指防御工事。",
@@ -1298,6 +1844,20 @@
       {
         "en": "The cereal is fortified with iron.",
         "zh": "这麦片强化了铁。"
+      }
+    ]
+  },
+  "freelance": {
+    "zh": "自由职业的；做自由职业",
+    "note": "三种词性都能用：work freelance（副词）、a freelance writer（形容词）、freelance for a magazine（动词）。人叫 freelancer。",
+    "ex": [
+      {
+        "en": "She went freelance after the paper closed.",
+        "zh": "报纸停刊后，她转做自由撰稿。"
+      },
+      {
+        "en": "He freelances for three magazines.",
+        "zh": "他给三家杂志自由供稿。"
       }
     ]
   },
@@ -1343,6 +1903,34 @@
       }
     ]
   },
+  "gel": {
+    "zh": "凝胶、发胶；成形、磨合",
+    "note": "名词是凝胶与发胶；动词指计划、团队「拧成一股、磨合到位」。过去式 gelled，双写 l。",
+    "ex": [
+      {
+        "en": "Apply a thin layer of gel and let it set.",
+        "zh": "涂一薄层凝胶，等它定型。"
+      },
+      {
+        "en": "The team gelled after the first month.",
+        "zh": "一个月之后团队才磨合到一块。"
+      }
+    ]
+  },
+  "girlfriend": {
+    "zh": "女朋友；女性朋友",
+    "note": "单数指女朋友；复数 girlfriends 还能指女性好友（偏旧、地区性）。男的同理 boyfriend。",
+    "ex": [
+      {
+        "en": "He brought his girlfriend to the wedding.",
+        "zh": "他带女朋友来参加婚礼。"
+      },
+      {
+        "en": "They were girlfriends at school.",
+        "zh": "她们上学时是好朋友。"
+      }
+    ]
+  },
   "glaze": {
     "zh": "上釉；糖霜；目光发直",
     "note": "陶器的釉、甜甜圈的糖霜，还有 glaze over——眼神放空、听不进去了。形容词 glazed 也形容「呆滞的」。",
@@ -1354,6 +1942,76 @@
       {
         "en": "His eyes glazed over halfway through the lecture.",
         "zh": "讲座听到一半，他眼神就空了。"
+      }
+    ]
+  },
+  "graph": {
+    "zh": "图表；作图",
+    "note": "graph 强调坐标关系（line graph 折线图），chart 更泛（饼图、流程图都能叫）。动词是「把……画成图」。",
+    "ex": [
+      {
+        "en": "The graph shows a sharp fall after 2008.",
+        "zh": "图表显示 2008 年之后急剧下滑。"
+      },
+      {
+        "en": "Graph the results against time.",
+        "zh": "把结果对时间作图。"
+      }
+    ]
+  },
+  "grilled": {
+    "zh": "烤的；受盘问的",
+    "note": "来自 grill：烹饪上是「在格栅上烤」（区别 roasted 烤箱烤、baked 烘），口语里是「严厉盘问」。",
+    "ex": [
+      {
+        "en": "We had grilled fish and a green salad.",
+        "zh": "我们吃了烤鱼和蔬菜沙拉。"
+      },
+      {
+        "en": "He was grilled for two hours by the panel.",
+        "zh": "他被评审组盘问了两个小时。"
+      }
+    ]
+  },
+  "gurgle": {
+    "zh": "汩汩作响；咕噜声",
+    "note": "水流、排水管、婴儿喉咙里的声音都用它；拟声词，名词就是那个声音。",
+    "ex": [
+      {
+        "en": "The drain gurgled and then cleared.",
+        "zh": "下水道咕嘟一声就通了。"
+      },
+      {
+        "en": "The baby gurgled happily.",
+        "zh": "婴儿高兴得咕咕叫。"
+      }
+    ]
+  },
+  "heating": {
+    "zh": "供暖（系统）",
+    "note": "不可数，指整套暖气：「开暖气」是 turn on the heating。区别 heater——那是具体的取暖器。",
+    "ex": [
+      {
+        "en": "The heating comes on at six.",
+        "zh": "暖气六点开。"
+      },
+      {
+        "en": "Heating costs doubled after the retrofit.",
+        "zh": "改造之后取暖费翻了一倍。"
+      }
+    ]
+  },
+  "hotspot": {
+    "zh": "高发地；热门地；无线热点",
+    "note": "犯罪与冲突的高发区、旅游热门地、Wi-Fi 热点都是它，写成一个词。",
+    "ex": [
+      {
+        "en": "The area is a hotspot for pickpockets.",
+        "zh": "这一带是扒手高发区。"
+      },
+      {
+        "en": "Connect to the hotspot and enter the password.",
+        "zh": "连上热点，输入密码。"
       }
     ]
   },
@@ -1427,6 +2085,20 @@
       }
     ]
   },
+  "inflation": {
+    "zh": "通货膨胀；充气",
+    "note": "经济上是通胀，物理上是充气。动词 inflate，反义 deflation（通缩）——别和 depression（萧条）混，那是更严重的阶段。",
+    "ex": [
+      {
+        "en": "Inflation held at just under three percent.",
+        "zh": "通胀率维持在略低于百分之三。"
+      },
+      {
+        "en": "Wage growth has lagged behind inflation for a decade.",
+        "zh": "十年来，工资涨幅一直落后于通胀。"
+      }
+    ]
+  },
   "initiate": {
     "zh": "启动；接纳（入会）",
     "note": "两层：启动程序或项目、接纳某人入会（initiate sb into sth）。名词 initiation 既是「开端」，也是「入会仪式」。",
@@ -1497,6 +2169,20 @@
       }
     ]
   },
+  "install": {
+    "zh": "安装；使就职",
+    "note": "过去式和名词都双写 l（installed / installation）。技术里是装软件、装设备，仪式上指「正式就任」。",
+    "ex": [
+      {
+        "en": "Install the app and sign in with your work email.",
+        "zh": "装上应用，用工作邮箱登录。"
+      },
+      {
+        "en": "The new dean was installed in September.",
+        "zh": "新院长九月正式就任。"
+      }
+    ]
+  },
   "instill": {
     "zh": "灌输（品质、习惯）",
     "note": "搭配 instill sth in sb，英式也写 instil、双写 l。灌的多是品质、习惯、恐惧，不是知识——知识用 teach。",
@@ -1525,6 +2211,20 @@
       }
     ]
   },
+  "intolerant": {
+    "zh": "不宽容的；不耐受的",
+    "note": "两个方向：对异见不宽容（intolerant of dissent）、对食物药物不耐受（lactose intolerant）。反义 tolerant。",
+    "ex": [
+      {
+        "en": "The regime was intolerant of dissent.",
+        "zh": "这个政权容不下异见。"
+      },
+      {
+        "en": "She is lactose intolerant.",
+        "zh": "她乳糖不耐受。"
+      }
+    ]
+  },
   "inventory": {
     "zh": "库存；盘点",
     "note": "既是库存清单、盘点（take inventory），也是「存量」（housing inventory）。动词是盘存，不是「发明」——那是 invent。",
@@ -1539,6 +2239,34 @@
       }
     ]
   },
+  "invoice": {
+    "zh": "发票；开发票",
+    "note": "商务里 invoice 是「要求付款的账单」，比 receipt（收据）早一步：先 invoice，付款后才有 receipt。动词是「向某人开票」。",
+    "ex": [
+      {
+        "en": "The invoice is due in thirty days.",
+        "zh": "这张发票三十天内付款。"
+      },
+      {
+        "en": "We invoice clients at the end of each month.",
+        "zh": "我们每月底给客户开票。"
+      }
+    ]
+  },
+  "italic": {
+    "zh": "斜体的；斜体",
+    "note": "名词多用复数：in italics。动词英式 italicise、美式 italicize。书名、外来词、强调都常用斜体。",
+    "ex": [
+      {
+        "en": "Book titles are set in italic here.",
+        "zh": "这里书名用斜体。"
+      },
+      {
+        "en": "The editor italicised two words.",
+        "zh": "编辑把两个词排成了斜体。"
+      }
+    ]
+  },
   "jab": {
     "zh": "戳、刺；打针",
     "note": "短促的一戳；英式口语里 a jab 就是「打一针」（疫苗 jab），拳击里的刺拳也是 jab。",
@@ -1550,6 +2278,20 @@
       {
         "en": "The nurse gave him a jab in the arm.",
         "zh": "护士在他胳膊上打了一针。"
+      }
+    ]
+  },
+  "jockey": {
+    "zh": "骑师；争抢（有利位置）",
+    "note": "名词是赛马骑师；动词 jockey for 是「抢位子」，常带算计的意味。",
+    "ex": [
+      {
+        "en": "The jockey weighed in before the race.",
+        "zh": "骑师在赛前过了秤。"
+      },
+      {
+        "en": "Firms are jockeying for position ahead of the ruling.",
+        "zh": "各公司在裁决前抢位子。"
       }
     ]
   },
@@ -1581,6 +2323,20 @@
       }
     ]
   },
+  "keynote": {
+    "zh": "主旨（演讲）；主调",
+    "note": "会议里的 keynote speech 是「主题演讲」，音乐里是「主音」，作动词是「定调」。",
+    "ex": [
+      {
+        "en": "She gave the keynote on the first morning.",
+        "zh": "她在第一天上午作了主旨演讲。"
+      },
+      {
+        "en": "Trust was the keynote of his speech.",
+        "zh": "信任是他演讲的主调。"
+      }
+    ]
+  },
   "lag": {
     "zh": "滞后、落后；延迟",
     "note": "动词固定搭 lag behind；名词是「时滞」（time lag、jet lag 时差反应）。技术语境里就是「延迟」，如两秒的 lag。",
@@ -1592,6 +2348,34 @@
       {
         "en": "There is a two-second lag between the audio and the video.",
         "zh": "声音和画面之间有两秒延迟。"
+      }
+    ]
+  },
+  "laminate": {
+    "zh": "压膜；层压板",
+    "note": "动词是「压膜、贴合」，名词是层压材料（laminate flooring 复合地板），形容词 laminated 是覆膜的。",
+    "ex": [
+      {
+        "en": "The card is laminated so it survives the rain.",
+        "zh": "卡片压了膜，淋雨也不怕。"
+      },
+      {
+        "en": "The counter is laminate, not stone.",
+        "zh": "台面是层压板，不是石头。"
+      }
+    ]
+  },
+  "latex": {
+    "zh": "乳胶、胶乳",
+    "note": "天然胶乳与乳胶漆都叫 latex。别和 LaTeX 混——那个是大写、指排版系统。",
+    "ex": [
+      {
+        "en": "The gloves are made of latex.",
+        "zh": "这些手套是乳胶做的。"
+      },
+      {
+        "en": "Latex paint dries faster than oil.",
+        "zh": "乳胶漆比油漆干得快。"
       }
     ]
   },
@@ -1609,6 +2393,20 @@
       }
     ]
   },
+  "lentil": {
+    "zh": "小扁豆",
+    "note": "可数，常用复数；红扁豆煮得快会化，褐扁豆与绿扁豆能保持形状。",
+    "ex": [
+      {
+        "en": "Soak the lentils overnight before cooking.",
+        "zh": "小扁豆做之前泡一夜。"
+      },
+      {
+        "en": "Lentil soup thickens as it cools.",
+        "zh": "扁豆汤凉了会变稠。"
+      }
+    ]
+  },
   "leverage": {
     "zh": "杠杆；筹码；利用",
     "note": "金融里是负债经营（highly leveraged 杠杆很高），谈判里是「筹码」，动词是「撬动、动用」。作动词曾被视为行话，现在商务写作里很常见。",
@@ -1620,6 +2418,48 @@
       {
         "en": "She leveraged her contacts to get the meeting.",
         "zh": "她动用人脉拿到了这次会面。"
+      }
+    ]
+  },
+  "liability": {
+    "zh": "责任；负债；累赘",
+    "note": "法律上是责任，会计上是负债（assets and liabilities），口语里是「累赘」。形容词 liable 是「负有责任的、容易……的」。",
+    "ex": [
+      {
+        "en": "The company accepted liability for the spill.",
+        "zh": "公司承担了泄漏的责任。"
+      },
+      {
+        "en": "The old heating system is a liability, not an asset.",
+        "zh": "那套旧供暖是负担，不是资产。"
+      }
+    ]
+  },
+  "ligament": {
+    "zh": "韧带",
+    "note": "连接骨与骨的是 ligament（韧带），连接肌肉与骨的是 tendon（肌腱）——这两个最容易混。",
+    "ex": [
+      {
+        "en": "He tore a ligament in his knee.",
+        "zh": "他膝盖的韧带撕裂了。"
+      },
+      {
+        "en": "The ligament healed without surgery.",
+        "zh": "韧带没做手术就长好了。"
+      }
+    ]
+  },
+  "marker": {
+    "zh": "记号笔；标志物",
+    "note": "记号笔、路标与界标、语言学里的「标记」（discourse marker 是话语标记）都是它。",
+    "ex": [
+      {
+        "en": "Write the name in marker on the box.",
+        "zh": "用记号笔把名字写在盒子上。"
+      },
+      {
+        "en": "The tree serves as a marker for the turn.",
+        "zh": "那棵树是转弯处的标志。"
       }
     ]
   },
@@ -1651,6 +2491,34 @@
       }
     ]
   },
+  "metric": {
+    "zh": "指标；公制的",
+    "note": "商务里是「衡量指标」（比 KPI 宽），技术里是「度量」，形容词是「公制的」。词根 metre。",
+    "ex": [
+      {
+        "en": "Response time is the metric that matters most.",
+        "zh": "响应时间是最要紧的指标。"
+      },
+      {
+        "en": "The plan is metric: everything in metres and kilos.",
+        "zh": "这个方案用公制：全部以米和公斤计。"
+      }
+    ]
+  },
+  "minuscule": {
+    "zh": "极小的",
+    "note": "常被错拼成 miniscule，正确的是 minuscule（拉丁 minusculus）。比 tiny 书面，强调小到几乎看不见。",
+    "ex": [
+      {
+        "en": "The odds were minuscule but not zero.",
+        "zh": "可能性极小，但不是零。"
+      },
+      {
+        "en": "The writing is minuscule and hard to read.",
+        "zh": "字非常小，很难辨认。"
+      }
+    ]
+  },
   "modulate": {
     "zh": "调节；（声音）抑扬；调制信号",
     "note": "三条线：调节强度（音量、情绪、光照）、通信里的调制、音乐里的转调。名词 modulation。",
@@ -1662,6 +2530,34 @@
       {
         "en": "The signal is modulated onto a carrier wave.",
         "zh": "信号被调制到载波上。"
+      }
+    ]
+  },
+  "module": {
+    "zh": "模块；课程单元",
+    "note": "教育里是「课程单元」，工程里是「模块」；形容词 modular 是模块化的。别和 model（模型）混。",
+    "ex": [
+      {
+        "en": "The course is made up of six modules.",
+        "zh": "这门课由六个单元组成。"
+      },
+      {
+        "en": "Replace the module and restart the unit.",
+        "zh": "换掉这个模块，然后重启设备。"
+      }
+    ]
+  },
+  "nag": {
+    "zh": "唠叨、不断催促；缠绕（疑虑）",
+    "note": "搭配 nag sb about sth、nag at sb。疑虑长期缠人也用 nag at：the doubt nagged at her。",
+    "ex": [
+      {
+        "en": "He nagged me about the form all week.",
+        "zh": "他一周都在催我填表。"
+      },
+      {
+        "en": "The doubt nagged at her for months.",
+        "zh": "那个疑问缠了她好几个月。"
       }
     ]
   },
@@ -1679,6 +2575,20 @@
       }
     ]
   },
+  "negotiable": {
+    "zh": "可商量的；可转让的",
+    "note": "日常是「可议价」，金融上是「可流通转让」。反义 non-negotiable 既是「不容商量」，也是「不可转让」——谈判里听到常是前者。",
+    "ex": [
+      {
+        "en": "The price is negotiable for a long lease.",
+        "zh": "长租的话价格可以谈。"
+      },
+      {
+        "en": "The cheque is negotiable at any branch.",
+        "zh": "这张支票在任何网点都能兑现。"
+      }
+    ]
+  },
   "nurture": {
     "zh": "养育、培养",
     "note": "与 nature 对举时是「后天养育」（nature and nurture）；动词比 raise 书面，强调长期精心培育，宾语多是才能、关系、事业。",
@@ -1690,6 +2600,20 @@
       {
         "en": "Nature and nurture are hard to separate.",
         "zh": "先天和后天很难分开。"
+      }
+    ]
+  },
+  "online": {
+    "zh": "在线的；网上",
+    "note": "形容词和副词同形：an online form / apply online。「上线」要说 go online 或 launch，不能把 online 当动词用。",
+    "ex": [
+      {
+        "en": "The course is delivered online over ten weeks.",
+        "zh": "这门课十周线上授课。"
+      },
+      {
+        "en": "Book online and pick up at the counter.",
+        "zh": "网上预约，到柜台取。"
       }
     ]
   },
@@ -1763,6 +2687,62 @@
       }
     ]
   },
+  "ownership": {
+    "zh": "所有权",
+    "note": "不可数；owner 是人。take ownership of 除了「取得所有权」，还常指「主动担起（问题）」。",
+    "ex": [
+      {
+        "en": "Proof of ownership is required for the claim.",
+        "zh": "索赔需要所有权证明。"
+      },
+      {
+        "en": "Employee ownership changed how decisions were made.",
+        "zh": "员工持股改变了决策的方式。"
+      }
+    ]
+  },
+  "packaging": {
+    "zh": "包装",
+    "note": "不可数，指包装材料与设计；单件的包装盒是 a package 或 packet。动词 package 是「打包」。",
+    "ex": [
+      {
+        "en": "The packaging is recyclable but not compostable.",
+        "zh": "这包装可回收，但不能堆肥。"
+      },
+      {
+        "en": "Good packaging protects the product without costing much.",
+        "zh": "好包装既能护住产品，又不贵。"
+      }
+    ]
+  },
+  "payroll": {
+    "zh": "发薪；工资总额",
+    "note": "不可数指「发薪这件事和总额」：on the payroll 是在编领薪；可数指一份工资表。词由 pay + roll（名册）合成。",
+    "ex": [
+      {
+        "en": "The company runs payroll on the twenty-fifth.",
+        "zh": "公司每月二十五号发薪。"
+      },
+      {
+        "en": "Payroll costs are up nine percent.",
+        "zh": "人力成本涨了百分之九。"
+      }
+    ]
+  },
+  "pedal": {
+    "zh": "踏板；踩踏板",
+    "note": "名动同形，英式过去式 pedalled 双写 l。钢琴的延音踏板是 sustain pedal，刹车踏板是 brake pedal。",
+    "ex": [
+      {
+        "en": "The brake pedal feels soft.",
+        "zh": "刹车踏板踩着发软。"
+      },
+      {
+        "en": "She pedalled up the hill in second gear.",
+        "zh": "她用二挡蹬上了坡。"
+      }
+    ]
+  },
   "percolate": {
     "zh": "渗滤、滴滤；（消息）传开",
     "note": "本义渗滤、滴滤咖啡；比喻「（消息、想法）慢慢渗透开来」。器具 percolator 是滤煮壶。",
@@ -1777,6 +2757,20 @@
       }
     ]
   },
+  "pickup": {
+    "zh": "皮卡；取货、接人；回升",
+    "note": "名词一个词（pickup），动词两个词（pick up）。还指「（需求、销量的）回升」：a pickup in demand。",
+    "ex": [
+      {
+        "en": "He loaded the boxes into the pickup.",
+        "zh": "他把箱子装上皮卡。"
+      },
+      {
+        "en": "Collection is at the pickup point by the gate.",
+        "zh": "到门口那个取货点取。"
+      }
+    ]
+  },
   "piggyback": {
     "zh": "背驮；搭便车、借势",
     "note": "ride piggyback 是「骑在背上」；商业里 piggyback on sth 是「搭别人的便车、借势」。",
@@ -1788,6 +2782,48 @@
       {
         "en": "He carried his son piggyback up the stairs.",
         "zh": "他把儿子背在背上上楼。"
+      }
+    ]
+  },
+  "pigment": {
+    "zh": "色素、颜料；着色",
+    "note": "生物上的「色素」（skin pigment）与工业「颜料」共用一个词；动词是「着色」。",
+    "ex": [
+      {
+        "en": "The pigment fades in strong sunlight.",
+        "zh": "这种色素在强光下会褪。"
+      },
+      {
+        "en": "The skin pigments with exposure.",
+        "zh": "皮肤晒了会变深。"
+      }
+    ]
+  },
+  "placement": {
+    "zh": "实习岗位；安置；摆放",
+    "note": "三义：学习期间的实习岗位（work placement）、人的安置（refugee placement）、物的摆放与排名（job placement 就业安置）。",
+    "ex": [
+      {
+        "en": "The course includes a six-month placement.",
+        "zh": "这门课包含半年实习。"
+      },
+      {
+        "en": "The placement of the lights matters more than their number.",
+        "zh": "灯摆在哪里，比摆多少盏更要紧。"
+      }
+    ]
+  },
+  "plumbing": {
+    "zh": "管道系统；管道工程",
+    "note": "不可数，指整套管道与安装工作；水管工是 plumber。比喻义指「（制度的）底层管线」。",
+    "ex": [
+      {
+        "en": "The plumbing in this building dates from 1920.",
+        "zh": "这栋楼的管道是 1920 年的。"
+      },
+      {
+        "en": "Fixing the plumbing took three days.",
+        "zh": "修管道花了三天。"
       }
     ]
   },
@@ -1816,6 +2852,20 @@
       {
         "en": "Turnout at the polls was low.",
         "zh": "投票率很低。"
+      }
+    ]
+  },
+  "posting": {
+    "zh": "帖子；派驻",
+    "note": "网络「发帖」与人事「派驻」共用一个词，动词 post 两义都通。",
+    "ex": [
+      {
+        "en": "Her posting about the recall was shared four thousand times.",
+        "zh": "她那条召回帖被转了四千次。"
+      },
+      {
+        "en": "He got a posting to the embassy in Rome.",
+        "zh": "他被派驻罗马使馆。"
       }
     ]
   },
@@ -1875,6 +2925,20 @@
       }
     ]
   },
+  "prescribe": {
+    "zh": "开（药）；明文规定",
+    "note": "医「开药方」、法律「规定」两义。小心 proscribe：只差一个字母，意思相反——那是「禁止」。",
+    "ex": [
+      {
+        "en": "The doctor prescribed a week of rest.",
+        "zh": "医生开了一周的休息。"
+      },
+      {
+        "en": "The law prescribes a minimum wage for all workers.",
+        "zh": "法律为所有工人规定了最低工资。"
+      }
+    ]
+  },
   "probe": {
     "zh": "探查、追问；探测器",
     "note": "动词是「探查、追问」（probe into）；名词是探测器、探针、调查（a probe into）。医学检查用的探头也叫 probe。",
@@ -1886,6 +2950,20 @@
       {
         "en": "The probe entered orbit around Mars.",
         "zh": "探测器进入了火星轨道。"
+      }
+    ]
+  },
+  "prod": {
+    "zh": "戳；催促",
+    "note": "本义用尖物戳，比喻义是「推动、催」（prod sb into doing sth），名词是「提醒、推一把」（a gentle prod）。",
+    "ex": [
+      {
+        "en": "She prodded the fire with a stick.",
+        "zh": "她用棍子拨了拨火。"
+      },
+      {
+        "en": "A nudge from the board prodded him into acting.",
+        "zh": "董事会推了一下，他才动。"
       }
     ]
   },
@@ -1914,6 +2992,20 @@
       {
         "en": "The compromise punctured the myth of unity.",
         "zh": "这项妥协戳破了团结的神话。"
+      }
+    ]
+  },
+  "quadruple": {
+    "zh": "增至四倍；四重的",
+    "note": "quadruple 是「乘以四」，中文「翻四番」是十六倍——这组词最容易译错。double / triple / quadruple 同构。",
+    "ex": [
+      {
+        "en": "Revenue quadrupled in six years.",
+        "zh": "六年里收入涨到四倍。"
+      },
+      {
+        "en": "A quadruple bypass is a four-vessel operation.",
+        "zh": "四支搭桥是处理四根血管的手术。"
       }
     ]
   },
@@ -1973,6 +3065,34 @@
       }
     ]
   },
+  "rave": {
+    "zh": "盛赞；胡言乱语；狂欢",
+    "note": "方向靠介词分：rave about 是盛赞，rave at 是怒骂。名词 rave 是通宵舞会，形容词 raving 是「疯狂的」。",
+    "ex": [
+      {
+        "en": "Critics raved about the film.",
+        "zh": "影评人对这部片赞不绝口。"
+      },
+      {
+        "en": "He was raving at the noise all night.",
+        "zh": "他一整夜都在为噪音大发脾气。"
+      }
+    ]
+  },
+  "rebate": {
+    "zh": "返款；退还部分",
+    "note": "区别 discount：discount 是买的时候直接减价，rebate 是先付全款再退回来。名词 /ˈriːbeɪt/，动词 /rɪˈbeɪt/。",
+    "ex": [
+      {
+        "en": "The manufacturer offers a fifty-dollar rebate.",
+        "zh": "厂家返五十美元。"
+      },
+      {
+        "en": "The tax is rebated for low-income households.",
+        "zh": "低收入家庭可以退这笔税。"
+      }
+    ]
+  },
   "recruit": {
     "zh": "招募；新兵、新成员",
     "note": "军事和招聘通用；名词 recruitment 是招聘或征募。别和 enroll（注册入学）混。",
@@ -1987,6 +3107,20 @@
       }
     ]
   },
+  "redundancy": {
+    "zh": "裁员；冗余",
+    "note": "英式里特指「因岗位取消而裁员」（不是因过失解雇），voluntary redundancy 是自愿离职；技术里是冗余备份。",
+    "ex": [
+      {
+        "en": "The plant closed with two hundred redundancies.",
+        "zh": "工厂关闭，两百人被裁。"
+      },
+      {
+        "en": "The system has redundancy built in: two of everything.",
+        "zh": "系统自带冗余：什么都是双份。"
+      }
+    ]
+  },
   "referee": {
     "zh": "裁判；推荐人",
     "note": "英式里足球裁判是 referee，美式橄榄球和篮球用 umpire；求职推荐人英式也叫 referee，动词是「做裁判、做推荐」。",
@@ -1998,6 +3132,62 @@
       {
         "en": "Ask your former manager to referee for you.",
         "zh": "请前经理给你做推荐人。"
+      }
+    ]
+  },
+  "referral": {
+    "zh": "转诊；内推、推荐",
+    "note": "医疗转诊单、招聘内推、营销的推荐奖励（referral bonus）都是它，动词 refer。",
+    "ex": [
+      {
+        "en": "The clinic accepts referrals from GPs only.",
+        "zh": "这家诊所只接全科医生的转诊。"
+      },
+      {
+        "en": "She got the job through a referral.",
+        "zh": "她通过内推拿到了这份工作。"
+      }
+    ]
+  },
+  "refund": {
+    "zh": "退款；退还",
+    "note": "名动同形，重音都在后 /rɪˈfʌnd/。搭配 refund sb / refund sth to sb。注意 refund 是「退钱」，return 是「退货」，两件事。",
+    "ex": [
+      {
+        "en": "You can claim a refund within thirty days.",
+        "zh": "三十天内可以申请退款。"
+      },
+      {
+        "en": "They refunded the full amount to my card.",
+        "zh": "他们把全款退回了我的卡。"
+      }
+    ]
+  },
+  "regression": {
+    "zh": "退步；（统计）回归",
+    "note": "技术里指「功能倒退」，是 bug 的一种；统计里是「回归分析」；心理里是「退行」。",
+    "ex": [
+      {
+        "en": "The update caused a regression in the login flow.",
+        "zh": "这次更新让登录流程倒退了。"
+      },
+      {
+        "en": "Regression analysis shows only a weak link.",
+        "zh": "回归分析显示关联很弱。"
+      }
+    ]
+  },
+  "reissue": {
+    "zh": "补发、重新发行",
+    "note": "re- + issue，「再发一次」：补办银行卡、换发护照、唱片再版都用它。名词指「再版物」。",
+    "ex": [
+      {
+        "en": "The bank will reissue the card at no charge.",
+        "zh": "银行会免费补发新卡。"
+      },
+      {
+        "en": "The album was reissued with two bonus tracks.",
+        "zh": "这张专辑再版时加了两首附赠曲。"
       }
     ]
   },
@@ -2099,6 +3289,34 @@
       }
     ]
   },
+  "reset": {
+    "zh": "重置；重新设定",
+    "note": "过去式不变：reset。名词重音在前 /ˈriːset/。技术上是复位，抽象义是「把局面重新设定」。",
+    "ex": [
+      {
+        "en": "Reset the router and try again.",
+        "zh": "重启路由器再试一次。"
+      },
+      {
+        "en": "The election reset the terms of the debate.",
+        "zh": "这次选举重新设定了辩论的前提。"
+      }
+    ]
+  },
+  "resistant": {
+    "zh": "有抵抗力的；抗……的",
+    "note": "搭配 resistant to：抗疫病、抗变革、耐药（drug-resistant）。反义 susceptible（易感的）。",
+    "ex": [
+      {
+        "en": "The variety is resistant to blight.",
+        "zh": "这个品种抗疫病。"
+      },
+      {
+        "en": "The board was resistant to the idea at first.",
+        "zh": "董事会起初很抵触这个想法。"
+      }
+    ]
+  },
   "retrofit": {
     "zh": "改装、加装",
     "note": "给旧设备加装新部件，不是换新；建筑节能、车辆改造、软件给老系统打补丁都用它。过去式 retrofitted。",
@@ -2124,6 +3342,20 @@
       {
         "en": "The night shift rotates every two weeks.",
         "zh": "夜班每两周轮换一次。"
+      }
+    ]
+  },
+  "router": {
+    "zh": "路由器；铣刀",
+    "note": "网络设备读 /ˈruːtə/（美式也有 /ˈraʊtə/），木工铣刀读 /ˈraʊtə/。词根是 route（路线）。",
+    "ex": [
+      {
+        "en": "Restart the router and reconnect to the network.",
+        "zh": "重启路由器，重新连网。"
+      },
+      {
+        "en": "The router cuts a groove along the edge.",
+        "zh": "铣刀沿边缘开一道槽。"
       }
     ]
   },
@@ -2155,6 +3387,34 @@
       }
     ]
   },
+  "script": {
+    "zh": "剧本；脚本；文字",
+    "note": "三义：影视戏剧的剧本、计算机脚本、也指「文字系统」（Roman script）。动词只指「写剧本」，编程里说 write a script。",
+    "ex": [
+      {
+        "en": "The script went through eleven drafts.",
+        "zh": "剧本改了十一稿。"
+      },
+      {
+        "en": "Run the script and check the output.",
+        "zh": "跑一下脚本，看看输出。"
+      }
+    ]
+  },
+  "secondhand": {
+    "zh": "二手的；间接地",
+    "note": "形容词和副词同形：a secondhand car / hear it secondhand。美式常写 second-hand。反义 brand new。",
+    "ex": [
+      {
+        "en": "They furnished the flat with secondhand pieces.",
+        "zh": "他们用二手家具布置了公寓。"
+      },
+      {
+        "en": "I heard it secondhand, so do not quote me.",
+        "zh": "我是听别人说的，别当准。"
+      }
+    ]
+  },
   "secular": {
     "zh": "世俗的、非宗教的",
     "note": "与 religious、sacred 相对；历史上指「不属于教会的」（secular clergy 在俗教士）。别和 temporary 混——两个词长得像，意思无关。",
@@ -2183,6 +3443,48 @@
       }
     ]
   },
+  "server": {
+    "zh": "服务器；服务员",
+    "note": "计算机的服务器和餐厅的服务员是同一个词——都是「提供服务的一方」。美式里服务员更常说 waiter。",
+    "ex": [
+      {
+        "en": "The server was down for twenty minutes.",
+        "zh": "服务器宕了二十分钟。"
+      },
+      {
+        "en": "The server brought the wrong order twice.",
+        "zh": "服务员上错了两次菜。"
+      }
+    ]
+  },
+  "setup": {
+    "zh": "配置、装置；安排；圈套",
+    "note": "名词 setup 一个词、动词 set up 两个词。三义：配置/装置、组织安排、栽赃的圈套。",
+    "ex": [
+      {
+        "en": "The whole setup cost under two hundred dollars.",
+        "zh": "整套装置花了不到两百美元。"
+      },
+      {
+        "en": "It looked like a setup from the beginning.",
+        "zh": "从一开始就像个圈套。"
+      }
+    ]
+  },
+  "shackle": {
+    "zh": "镣铐；束缚",
+    "note": "字面是脚镣手铐，多用复数；比喻义「束缚」常见于被动 be shackled by。锁具上那个 U 形环也叫 shackle（锁梁）。",
+    "ex": [
+      {
+        "en": "The prisoner's shackles were removed for the hearing.",
+        "zh": "听证时卸下了犯人的镣铐。"
+      },
+      {
+        "en": "The rules shackle small firms more than large ones.",
+        "zh": "这些规定对小公司的束缚比大公司更紧。"
+      }
+    ]
+  },
   "shear": {
     "zh": "剪（羊毛）；剪切",
     "note": "动词三义：剪羊毛、剪切（金属、螺栓）、剥夺（be shorn of sth）。名词 shears 是大剪刀。",
@@ -2194,6 +3496,20 @@
       {
         "en": "The bolt sheared off under load.",
         "zh": "螺栓在受力时被剪断了。"
+      }
+    ]
+  },
+  "shunt": {
+    "zh": "调轨；把……支开；分流",
+    "note": "铁路调车、医学分流（shunt 是分流术）、人际「把人推给别人」都指它，后者带贬义。",
+    "ex": [
+      {
+        "en": "The train was shunted onto a side track.",
+        "zh": "列车被调到了侧线。"
+      },
+      {
+        "en": "Patients were shunted between departments for a week.",
+        "zh": "病人在几个科室之间被推来推去一周。"
       }
     ]
   },
@@ -2225,6 +3541,20 @@
       }
     ]
   },
+  "sliver": {
+    "zh": "薄片、细条",
+    "note": "强调又薄又小的一片：a sliver of glass / light / land。区别 slice——那是切下来的一片，通常更大更规整。",
+    "ex": [
+      {
+        "en": "A sliver of glass was still in his hand.",
+        "zh": "他手里还嵌着一小片玻璃。"
+      },
+      {
+        "en": "A sliver of light came under the door.",
+        "zh": "门缝下透进一线光。"
+      }
+    ]
+  },
   "sloppy": {
     "zh": "马虎的；松垮的",
     "note": "形容事是「马虎」，形容衣物是「松垮邋遢」，形容情绪是「过于感伤」。反义 neat、tidy。",
@@ -2236,6 +3566,20 @@
       {
         "en": "That was a sloppy piece of research.",
         "zh": "那份研究做得马虎。"
+      }
+    ]
+  },
+  "slot": {
+    "zh": "时段、名额；投币口",
+    "note": "三义：日程里的空档（a slot at four）、位置名额、投币或插卡口；动词是「排进档期」。",
+    "ex": [
+      {
+        "en": "There is a slot at four if you can make it.",
+        "zh": "四点有个空档，你能来吗？"
+      },
+      {
+        "en": "Put the coin in the slot.",
+        "zh": "把硬币投入投币口。"
       }
     ]
   },
@@ -2281,6 +3625,20 @@
       }
     ]
   },
+  "soy": {
+    "zh": "大豆；豆制品（美式）",
+    "note": "美式 soy、英式 soya；「酱油」两边都说 soy sauce。植物学上的「大豆」是 soybean。",
+    "ex": [
+      {
+        "en": "The sauce is made from fermented soy.",
+        "zh": "这种酱是用发酵大豆做的。"
+      },
+      {
+        "en": "She drinks soy milk instead of dairy.",
+        "zh": "她喝豆奶，不喝牛奶。"
+      }
+    ]
+  },
   "specify": {
     "zh": "明确规定、具体说明",
     "note": "比 say 正式，指把条件、型号、日期写清楚（specify that / specify how）。名词 specification 是规格书。别理解成「细化」——它的重点在「写明」。",
@@ -2309,6 +3667,20 @@
       }
     ]
   },
+  "spritz": {
+    "zh": "喷（少量液体）",
+    "note": "拟声借词，指短促地喷一下，比 spray 更轻、量更小。餐饮里 spritz 还是一种气泡酒兑苏打的鸡尾酒。",
+    "ex": [
+      {
+        "en": "Spritz the plants twice a week in summer.",
+        "zh": "夏天每周给植物喷两次水。"
+      },
+      {
+        "en": "A spritz of lemon lifts the whole dish.",
+        "zh": "挤一点柠檬汁，整道菜就活了。"
+      }
+    ]
+  },
   "sputter": {
     "zh": "（发动机）突突作响；结巴地说",
     "note": "三条线：发动机快熄火时的突突声、人气急败坏地结巴、油在锅里噼啪溅。",
@@ -2320,6 +3692,20 @@
       {
         "en": "He sputtered an apology and left.",
         "zh": "他结结巴巴道了个歉就走了。"
+      }
+    ]
+  },
+  "staging": {
+    "zh": "预发环境；舞台呈现",
+    "note": "技术里 staging 是「准生产/预发环境」，上线前先在它上面验；戏剧里是舞台调度。动词 stage 两义都通。",
+    "ex": [
+      {
+        "en": "Test it on staging before you push to production.",
+        "zh": "先在预发环境试，再推正式环境。"
+      },
+      {
+        "en": "The production's staging was spare and effective.",
+        "zh": "这出戏的舞台处理简洁有效。"
       }
     ]
   },
@@ -2337,6 +3723,20 @@
       }
     ]
   },
+  "sticker": {
+    "zh": "贴纸；标贴",
+    "note": "贴纸、价签、车窗上的年检标都叫 sticker；「价签」英式更常说 price tag。形容词 sticky 才是「黏的」。",
+    "ex": [
+      {
+        "en": "The price sticker was still on the box.",
+        "zh": "盒子上还贴着价签。"
+      },
+      {
+        "en": "Parking stickers are issued to residents only.",
+        "zh": "停车标只发给本区居民。"
+      }
+    ]
+  },
   "straddle": {
     "zh": "跨坐；两边都占",
     "note": "本义两腿分开跨坐，比喻「骑墙、横跨两边」（straddle two markets）。金融里 straddle 是跨式期权组合。",
@@ -2348,6 +3748,20 @@
       {
         "en": "The paper straddles the line between news and opinion.",
         "zh": "这份报纸踩在新闻与评论的界线上。"
+      }
+    ]
+  },
+  "stratify": {
+    "zh": "分层",
+    "note": "统计与社会科学的常用词（stratified sampling 分层抽样），名词 stratification。",
+    "ex": [
+      {
+        "en": "The sample was stratified by age and income.",
+        "zh": "样本按年龄和收入分了层。"
+      },
+      {
+        "en": "Society stratified along lines of wealth.",
+        "zh": "社会沿着财富的界线分层。"
       }
     ]
   },
@@ -2379,6 +3793,48 @@
       }
     ]
   },
+  "subscribe": {
+    "zh": "订阅；认购；认同",
+    "note": "三义：订阅、认购（股份）、认同（subscribe to a view）。取消订阅是 unsubscribe，名词 subscription。",
+    "ex": [
+      {
+        "en": "Subscribe to the newsletter if you want updates.",
+        "zh": "想要更新就订阅这份通讯。"
+      },
+      {
+        "en": "I subscribe to the view that habits beat willpower.",
+        "zh": "我认同这个看法：习惯比意志力可靠。"
+      }
+    ]
+  },
+  "sully": {
+    "zh": "玷污",
+    "note": "书面词，宾语多是名声、记忆、时刻，比 stain 更文气，常带「无法挽回」的意味。",
+    "ex": [
+      {
+        "en": "The scandal sullied his reputation for good.",
+        "zh": "丑闻永久地玷污了他的名声。"
+      },
+      {
+        "en": "Do not sully the moment with an argument.",
+        "zh": "别用争吵糟蹋这一刻。"
+      }
+    ]
+  },
+  "supplement": {
+    "zh": "补充物、增刊；补充",
+    "note": "名词是补充剂、增刊、附录，动词是「额外补上」。最容易和 complement 混：supplement 是加法，complement 是凑成完整、相配。",
+    "ex": [
+      {
+        "en": "She takes an iron supplement every morning.",
+        "zh": "她每天早上吃一片补铁剂。"
+      },
+      {
+        "en": "He supplements his income with weekend work.",
+        "zh": "他靠周末的活儿补贴收入。"
+      }
+    ]
+  },
   "surcharge": {
     "zh": "附加费；加收",
     "note": "在正常价格上「额外加收」，区别于 fee（服务费）。燃油附加费、信用卡手续费、延迟退房加收都是它。",
@@ -2404,6 +3860,48 @@
       {
         "en": "Police broke up a drug syndicate in the port.",
         "zh": "警方打掉了一个港口贩毒集团。"
+      }
+    ]
+  },
+  "tab": {
+    "zh": "标签页；账；拉环",
+    "note": "浏览器标签、餐厅挂账（on my tab）、易拉罐拉环（英式）都是它；键盘上的 Tab 键同源。",
+    "ex": [
+      {
+        "en": "Open the link in a new tab.",
+        "zh": "在新标签页里打开这个链接。"
+      },
+      {
+        "en": "Put the drinks on my tab.",
+        "zh": "酒钱记我账上。"
+      }
+    ]
+  },
+  "taboo": {
+    "zh": "禁忌（的）；忌讳",
+    "note": "来自汤加语，名词与形容词同形；动词 taboo 少见，多用于人类学描述。",
+    "ex": [
+      {
+        "en": "The subject is still taboo at the table.",
+        "zh": "这个话题在饭桌上仍是禁忌。"
+      },
+      {
+        "en": "Death was a taboo subject in our house.",
+        "zh": "在我们家，死亡是忌讳的话题。"
+      }
+    ]
+  },
+  "takeaway": {
+    "zh": "外卖；（要点）",
+    "note": "英式 takeaway、美式 takeout。除了「外带食物」，还常指「要点、结论」：the key takeaway。",
+    "ex": [
+      {
+        "en": "We got takeaway on Friday night.",
+        "zh": "周五晚上我们叫了外卖。"
+      },
+      {
+        "en": "The takeaway from the meeting was simple: ship it.",
+        "zh": "那次会议的要点很简单：发出去。"
       }
     ]
   },
@@ -2435,6 +3933,20 @@
       }
     ]
   },
+  "thyroid": {
+    "zh": "甲状腺",
+    "note": "医学词，常见搭配 thyroid gland、thyroid function test；口语里 the thyroid 就是「甲状腺」本身，overactive / underactive 指功能亢进或减退。",
+    "ex": [
+      {
+        "en": "Her thyroid was checked twice that year.",
+        "zh": "那年她查了两次甲状腺。"
+      },
+      {
+        "en": "An overactive thyroid can cause weight loss.",
+        "zh": "甲状腺功能亢进会让人变瘦。"
+      }
+    ]
+  },
   "toggle": {
     "zh": "切换（开关）",
     "note": "技术里是在两种状态间来回切（toggle on/off），服装上是「套索扣」。动词强调「来回」，不是单向打开。",
@@ -2463,6 +3975,20 @@
       }
     ]
   },
+  "trillion": {
+    "zh": "万亿",
+    "note": "美式 short scale：trillion = 10¹²（一万亿）；英式旧制曾指 10¹⁸，现已随美式。billion 是十亿。",
+    "ex": [
+      {
+        "en": "The fund manages two trillion dollars.",
+        "zh": "这只基金管理两万亿美元。"
+      },
+      {
+        "en": "A trillion is a thousand billion.",
+        "zh": "一万亿等于一千个十亿。"
+      }
+    ]
+  },
   "triple": {
     "zh": "增至三倍；三重的",
     "note": "triple 是「乘以三」，翻三番是八倍——中文的「番」和英文的 triple 常被译错。形容词是「三重的」：triple glazing 三层玻璃。",
@@ -2474,6 +4000,20 @@
       {
         "en": "The room has triple glazing.",
         "zh": "这房间装了三层玻璃。"
+      }
+    ]
+  },
+  "unclear": {
+    "zh": "不清楚的",
+    "note": "主语常是 it：It is unclear whether…，比 not clear 书面。区别 ambiguous——unclear 是「没搞清」，ambiguous 是「怎么理解都行」。",
+    "ex": [
+      {
+        "en": "It is unclear whether the policy applies to part-timers.",
+        "zh": "这项政策是否适用于兼职者，还不清楚。"
+      },
+      {
+        "en": "The instructions were unclear about the return address.",
+        "zh": "说明里没讲清退货地址。"
       }
     ]
   },
@@ -2491,6 +4031,132 @@
       }
     ]
   },
+  "unify": {
+    "zh": "统一、使成一体",
+    "note": "强调「合为一个整体」，比 unite 更常用于制度、界面、标准；名词 unity 与 unification，形容词 unified。",
+    "ex": [
+      {
+        "en": "The party was unified by a single issue.",
+        "zh": "这个党被一个议题凝聚了起来。"
+      },
+      {
+        "en": "The interface unifies seven separate tools.",
+        "zh": "这个界面把七个独立工具合到了一起。"
+      }
+    ]
+  },
+  "unpaid": {
+    "zh": "未付的；无薪的",
+    "note": "两个意思：账单「未付」、工作「无报酬」。区别 unpaid 与 overdue——unpaid 只是没付，overdue 是已经过了期限。",
+    "ex": [
+      {
+        "en": "There are three unpaid invoices on the account.",
+        "zh": "账上还有三张未付发票。"
+      },
+      {
+        "en": "She took two months of unpaid leave.",
+        "zh": "她请了两个月无薪假。"
+      }
+    ]
+  },
+  "update": {
+    "zh": "更新；进展通报",
+    "note": "名动重音不同：动词 /ʌpˈdeɪt/，名词 /ˈʌpdeɪt/。名词不只见于软件——a monthly update 是「每月进度汇报」。",
+    "ex": [
+      {
+        "en": "Update the app before you report the bug.",
+        "zh": "报故障之前先把应用更新一下。"
+      },
+      {
+        "en": "The board asked for a monthly update.",
+        "zh": "董事会要求每月汇报一次进展。"
+      }
+    ]
+  },
+  "upgrade": {
+    "zh": "升级",
+    "note": "名动重音不同：动词 /ʌpˈɡreɪd/，名词 /ˈʌpɡreɪd/。反义 downgrade；飞机座位「升舱」也用它。",
+    "ex": [
+      {
+        "en": "We upgraded the memory to sixteen gigabytes.",
+        "zh": "我们把内存升到十六 G。"
+      },
+      {
+        "en": "The upgrade broke two of our integrations.",
+        "zh": "这次升级弄坏了两处对接。"
+      }
+    ]
+  },
+  "user": {
+    "zh": "用户",
+    "note": "技术里是用户；drug user 是吸毒者（中性偏医学）。区别 customer——那是付钱的客户。",
+    "ex": [
+      {
+        "en": "The app has two million monthly users.",
+        "zh": "这个应用月活两百万。"
+      },
+      {
+        "en": "Only the account owner can add users.",
+        "zh": "只有账户所有者才能添加用户。"
+      }
+    ]
+  },
+  "validate": {
+    "zh": "验证；使生效；认可（情绪）",
+    "note": "技术「校验」、法律「确认有效」、人际「让人觉得自己的感受被认可」（validate sb's feelings）。名词 validation。",
+    "ex": [
+      {
+        "en": "The system validates the address before shipping.",
+        "zh": "系统在发货前校验地址。"
+      },
+      {
+        "en": "The court validated the will in March.",
+        "zh": "法院三月确认了遗嘱有效。"
+      }
+    ]
+  },
+  "video": {
+    "zh": "视频；录制",
+    "note": "名词可数（a video / videos）。动词是「录制」——「看视频」是 watch a video，别用 video 当动词。",
+    "ex": [
+      {
+        "en": "The video is eight minutes long.",
+        "zh": "这段视频八分钟。"
+      },
+      {
+        "en": "She videos every lecture and reviews them later.",
+        "zh": "她把每节课都录下来，回头再看。"
+      }
+    ]
+  },
+  "visa": {
+    "zh": "签证",
+    "note": "和信用卡品牌 Visa 无关。「办签证」是 apply for a visa，「落地签」是 visa on arrival，「过境签」是 transit visa。",
+    "ex": [
+      {
+        "en": "The visa is valid for ninety days.",
+        "zh": "这份签证九十天内有效。"
+      },
+      {
+        "en": "You need a transit visa even if you do not leave the airport.",
+        "zh": "即使不出机场，也需要过境签证。"
+      }
+    ]
+  },
+  "voucher": {
+    "zh": "代金券；凭证",
+    "note": "可抵现的券、报销用的凭证、会计里的传票都是它。区别 coupon：那是折扣券，通常要在消费时才能抵。",
+    "ex": [
+      {
+        "en": "The voucher covers one night's stay.",
+        "zh": "这张券抵一晚住宿。"
+      },
+      {
+        "en": "Keep the receipt as proof; the voucher expires in June.",
+        "zh": "留好小票作凭证，代金券六月过期。"
+      }
+    ]
+  },
   "waver": {
     "zh": "摇动；动摇",
     "note": "两层：声音、火焰「发颤、摇晃」，决心「动摇」（waver between）。别和 waiver 混——那个是法律上的「弃权声明」，多一个 e。",
@@ -2502,6 +4168,20 @@
       {
         "en": "He wavered between the two offers for a week.",
         "zh": "两个 offer 之间他犹豫了一周。"
+      }
+    ]
+  },
+  "zap": {
+    "zh": "电击；迅速除掉；换台",
+    "note": "口语拟声词：电击、微波炉加热（zap it in the microwave）、快速删除、拿遥控器换台。",
+    "ex": [
+      {
+        "en": "The fence zaps anything that touches it.",
+        "zh": "篱笆会电击碰到它的东西。"
+      },
+      {
+        "en": "He zapped through the channels all evening.",
+        "zh": "他一晚上拿着遥控器换来换去。"
       }
     ]
   }

@@ -1,0 +1,322 @@
+{
+  "video": {
+    "zh": "视频；录制",
+    "note": "名词可数（a video / videos）。动词是「录制」——「看视频」是 watch a video，别用 video 当动词。",
+    "ex": [
+      { "en": "The video is eight minutes long.", "zh": "这段视频八分钟。" },
+      { "en": "She videos every lecture and reviews them later.", "zh": "她把每节课都录下来，回头再看。" }
+    ]
+  },
+  "diesel": {
+    "zh": "柴油；柴油车",
+    "note": "来自人名 Rudolf Diesel，小写使用。diesel engine 是柴油机；口语里 a diesel 就是「柴油车」。",
+    "ex": [
+      { "en": "The van runs on diesel.", "zh": "这辆货车烧柴油。" },
+      { "en": "Diesel is cheaper than petrol in most of Europe.", "zh": "欧洲大部分地方柴油比汽油便宜。" }
+    ]
+  },
+  "pickup": {
+    "zh": "皮卡；取货、接人；回升",
+    "note": "名词一个词（pickup），动词两个词（pick up）。还指「（需求、销量的）回升」：a pickup in demand。",
+    "ex": [
+      { "en": "He loaded the boxes into the pickup.", "zh": "他把箱子装上皮卡。" },
+      { "en": "Collection is at the pickup point by the gate.", "zh": "到门口那个取货点取。" }
+    ]
+  },
+  "packaging": {
+    "zh": "包装",
+    "note": "不可数，指包装材料与设计；单件的包装盒是 a package 或 packet。动词 package 是「打包」。",
+    "ex": [
+      { "en": "The packaging is recyclable but not compostable.", "zh": "这包装可回收，但不能堆肥。" },
+      { "en": "Good packaging protects the product without costing much.", "zh": "好包装既能护住产品，又不贵。" }
+    ]
+  },
+  "donation": {
+    "zh": "捐赠（物）",
+    "note": "可数：a donation of fifty dollars。区别 contribution（分摊的贡献）与 endowment（捐赠基金）。",
+    "ex": [
+      { "en": "Donations can be made online or by post.", "zh": "可以在线捐，也可以邮寄。" },
+      { "en": "The museum received a donation of forty drawings.", "zh": "博物馆收到四十幅素描的捐赠。" }
+    ]
+  },
+  "browser": {
+    "zh": "浏览器",
+    "note": "计算机里专指浏览器；「随便逛逛店」的动词是 browse，人不能叫 browser。",
+    "ex": [
+      { "en": "Clear the cache in your browser and reload.", "zh": "清一下浏览器缓存再刷新。" },
+      { "en": "The site no longer supports older browsers.", "zh": "这个网站不再支持旧版浏览器。" }
+    ]
+  },
+  "payroll": {
+    "zh": "发薪；工资总额",
+    "note": "不可数指「发薪这件事和总额」：on the payroll 是在编领薪；可数指一份工资表。词由 pay + roll（名册）合成。",
+    "ex": [
+      { "en": "The company runs payroll on the twenty-fifth.", "zh": "公司每月二十五号发薪。" },
+      { "en": "Payroll costs are up nine percent.", "zh": "人力成本涨了百分之九。" }
+    ]
+  },
+  "router": {
+    "zh": "路由器；铣刀",
+    "note": "网络设备读 /ˈruːtə/（美式也有 /ˈraʊtə/），木工铣刀读 /ˈraʊtə/。词根是 route（路线）。",
+    "ex": [
+      { "en": "Restart the router and reconnect to the network.", "zh": "重启路由器，重新连网。" },
+      { "en": "The router cuts a groove along the edge.", "zh": "铣刀沿边缘开一道槽。" }
+    ]
+  },
+  "airline": {
+    "zh": "航空公司",
+    "note": "「航班」是 flight，「航线」是 route，「航空公司」是 airline（英式也常说 carrier）。",
+    "ex": [
+      { "en": "The airline cancelled two flights that morning.", "zh": "那家航空公司当天早上取消了两班。" },
+      { "en": "Budget airlines charge for every bag.", "zh": "廉价航空每件行李都收费。" }
+    ]
+  },
+  "allotment": {
+    "zh": "分配额；小块菜地",
+    "note": "日常义是「分配、摊派」；英式还有一个特有义：向市政租的小块菜地（allotment garden）。",
+    "ex": [
+      { "en": "Each department gets an equal allotment of tickets.", "zh": "每个部门分到的票数一样。" },
+      { "en": "He grows potatoes on his allotment.", "zh": "他在自己的小菜地里种土豆。" }
+    ]
+  },
+  "dashboard": {
+    "zh": "仪表盘；数据看板",
+    "note": "车里的仪表盘和软件的数据看板共用一个词，词源是马车前的挡泥板。",
+    "ex": [
+      { "en": "A warning light came on the dashboard.", "zh": "仪表盘上亮了一个警示灯。" },
+      { "en": "The dashboard tracks orders, refunds and response times.", "zh": "数据看板盯着订单、退款和响应时长。" }
+    ]
+  },
+  "heating": {
+    "zh": "供暖（系统）",
+    "note": "不可数，指整套暖气：「开暖气」是 turn on the heating。区别 heater——那是具体的取暖器。",
+    "ex": [
+      { "en": "The heating comes on at six.", "zh": "暖气六点开。" },
+      { "en": "Heating costs doubled after the retrofit.", "zh": "改造之后取暖费翻了一倍。" }
+    ]
+  },
+  "assessment": {
+    "zh": "评估；考核",
+    "note": "教育里是考核与作业，医学与社工里是评估，税务里是核定的税额。动词 assess，别和 evaluation 混——后者更宽泛。",
+    "ex": [
+      { "en": "The assessment takes about an hour.", "zh": "这次评估大约一小时。" },
+      { "en": "Continuous assessment counts for half the grade.", "zh": "平时考核占一半成绩。" }
+    ]
+  },
+  "staging": {
+    "zh": "预发环境；舞台呈现",
+    "note": "技术里 staging 是「准生产/预发环境」，上线前先在它上面验；戏剧里是舞台调度。动词 stage 两义都通。",
+    "ex": [
+      { "en": "Test it on staging before you push to production.", "zh": "先在预发环境试，再推正式环境。" },
+      { "en": "The production's staging was spare and effective.", "zh": "这出戏的舞台处理简洁有效。" }
+    ]
+  },
+  "checkout": {
+    "zh": "结账（台）；退房",
+    "note": "名词一个词（the checkout），动词两个词（check out）。超市收银台、酒店退房、网店结算页都是它。",
+    "ex": [
+      { "en": "There was a queue at the checkout.", "zh": "收银台前排着队。" },
+      { "en": "Checkout is at eleven.", "zh": "退房时间是十一点。" }
+    ]
+  },
+  "setup": {
+    "zh": "配置、装置；安排；圈套",
+    "note": "名词 setup 一个词、动词 set up 两个词。三义：配置/装置、组织安排、栽赃的圈套。",
+    "ex": [
+      { "en": "The whole setup cost under two hundred dollars.", "zh": "整套装置花了不到两百美元。" },
+      { "en": "It looked like a setup from the beginning.", "zh": "从一开始就像个圈套。" }
+    ]
+  },
+  "tab": {
+    "zh": "标签页；账；拉环",
+    "note": "浏览器标签、餐厅挂账（on my tab）、易拉罐拉环（英式）都是它；键盘上的 Tab 键同源。",
+    "ex": [
+      { "en": "Open the link in a new tab.", "zh": "在新标签页里打开这个链接。" },
+      { "en": "Put the drinks on my tab.", "zh": "酒钱记我账上。" }
+    ]
+  },
+  "server": {
+    "zh": "服务器；服务员",
+    "note": "计算机的服务器和餐厅的服务员是同一个词——都是「提供服务的一方」。美式里服务员更常说 waiter。",
+    "ex": [
+      { "en": "The server was down for twenty minutes.", "zh": "服务器宕了二十分钟。" },
+      { "en": "The server brought the wrong order twice.", "zh": "服务员上错了两次菜。" }
+    ]
+  },
+  "voucher": {
+    "zh": "代金券；凭证",
+    "note": "可抵现的券、报销用的凭证、会计里的传票都是它。区别 coupon：那是折扣券，通常要在消费时才能抵。",
+    "ex": [
+      { "en": "The voucher covers one night's stay.", "zh": "这张券抵一晚住宿。" },
+      { "en": "Keep the receipt as proof; the voucher expires in June.", "zh": "留好小票作凭证，代金券六月过期。" }
+    ]
+  },
+  "soy": {
+    "zh": "大豆；豆制品（美式）",
+    "note": "美式 soy、英式 soya；「酱油」两边都说 soy sauce。植物学上的「大豆」是 soybean。",
+    "ex": [
+      { "en": "The sauce is made from fermented soy.", "zh": "这种酱是用发酵大豆做的。" },
+      { "en": "She drinks soy milk instead of dairy.", "zh": "她喝豆奶，不喝牛奶。" }
+    ]
+  },
+  "developer": {
+    "zh": "开发者；开发商",
+    "note": "软件开发者与房地产开发商同一个词；摄影里 developer 是显影液。",
+    "ex": [
+      { "en": "The developer fixed the bug within a day.", "zh": "开发者一天之内就修好了。" },
+      { "en": "The developer applied for permission to build forty homes.", "zh": "开发商申请建四十套住宅。" }
+    ]
+  },
+  "slot": {
+    "zh": "时段、名额；投币口",
+    "note": "三义：日程里的空档（a slot at four）、位置名额、投币或插卡口；动词是「排进档期」。",
+    "ex": [
+      { "en": "There is a slot at four if you can make it.", "zh": "四点有个空档，你能来吗？" },
+      { "en": "Put the coin in the slot.", "zh": "把硬币投入投币口。" }
+    ]
+  },
+  "latex": {
+    "zh": "乳胶、胶乳",
+    "note": "天然胶乳与乳胶漆都叫 latex。别和 LaTeX 混——那个是大写、指排版系统。",
+    "ex": [
+      { "en": "The gloves are made of latex.", "zh": "这些手套是乳胶做的。" },
+      { "en": "Latex paint dries faster than oil.", "zh": "乳胶漆比油漆干得快。" }
+    ]
+  },
+  "upgrade": {
+    "zh": "升级",
+    "note": "名动重音不同：动词 /ʌpˈɡreɪd/，名词 /ˈʌpɡreɪd/。反义 downgrade；飞机座位「升舱」也用它。",
+    "ex": [
+      { "en": "We upgraded the memory to sixteen gigabytes.", "zh": "我们把内存升到十六 G。" },
+      { "en": "The upgrade broke two of our integrations.", "zh": "这次升级弄坏了两处对接。" }
+    ]
+  },
+  "filler": {
+    "zh": "填充物；凑数内容；填充词",
+    "note": "装修里的腻子、刊物里填版面的内容、口语里的「um / you know」都叫 filler。",
+    "ex": [
+      { "en": "The magazine uses short stories as filler between ads.", "zh": "杂志用短篇小说填广告之间的空。" },
+      { "en": "The wall was patched with filler and sanded.", "zh": "墙面用腻子补过，再打磨。" }
+    ]
+  },
+  "redundancy": {
+    "zh": "裁员；冗余",
+    "note": "英式里特指「因岗位取消而裁员」（不是因过失解雇），voluntary redundancy 是自愿离职；技术里是冗余备份。",
+    "ex": [
+      { "en": "The plant closed with two hundred redundancies.", "zh": "工厂关闭，两百人被裁。" },
+      { "en": "The system has redundancy built in: two of everything.", "zh": "系统自带冗余：什么都是双份。" }
+    ]
+  },
+  "regression": {
+    "zh": "退步；（统计）回归",
+    "note": "技术里指「功能倒退」，是 bug 的一种；统计里是「回归分析」；心理里是「退行」。",
+    "ex": [
+      { "en": "The update caused a regression in the login flow.", "zh": "这次更新让登录流程倒退了。" },
+      { "en": "Regression analysis shows only a weak link.", "zh": "回归分析显示关联很弱。" }
+    ]
+  },
+  "clinic": {
+    "zh": "诊所、门诊；短期培训班",
+    "note": "比 hospital 小的门诊机构，也可指医院的专科门诊；还有「短期辅导班」义（a tennis clinic）。",
+    "ex": [
+      { "en": "The clinic opens at eight on weekdays.", "zh": "诊所工作日八点开门。" },
+      { "en": "She runs a weekly writing clinic for students.", "zh": "她每周给学生开一次写作辅导。" }
+    ]
+  },
+  "hotspot": {
+    "zh": "高发地；热门地；无线热点",
+    "note": "犯罪与冲突的高发区、旅游热门地、Wi-Fi 热点都是它，写成一个词。",
+    "ex": [
+      { "en": "The area is a hotspot for pickpockets.", "zh": "这一带是扒手高发区。" },
+      { "en": "Connect to the hotspot and enter the password.", "zh": "连上热点，输入密码。" }
+    ]
+  },
+  "lentil": {
+    "zh": "小扁豆",
+    "note": "可数，常用复数；红扁豆煮得快会化，褐扁豆与绿扁豆能保持形状。",
+    "ex": [
+      { "en": "Soak the lentils overnight before cooking.", "zh": "小扁豆做之前泡一夜。" },
+      { "en": "Lentil soup thickens as it cools.", "zh": "扁豆汤凉了会变稠。" }
+    ]
+  },
+  "liability": {
+    "zh": "责任；负债；累赘",
+    "note": "法律上是责任，会计上是负债（assets and liabilities），口语里是「累赘」。形容词 liable 是「负有责任的、容易……的」。",
+    "ex": [
+      { "en": "The company accepted liability for the spill.", "zh": "公司承担了泄漏的责任。" },
+      { "en": "The old heating system is a liability, not an asset.", "zh": "那套旧供暖是负担，不是资产。" }
+    ]
+  },
+  "marker": {
+    "zh": "记号笔；标志物",
+    "note": "记号笔、路标与界标、语言学里的「标记」（discourse marker 是话语标记）都是它。",
+    "ex": [
+      { "en": "Write the name in marker on the box.", "zh": "用记号笔把名字写在盒子上。" },
+      { "en": "The tree serves as a marker for the turn.", "zh": "那棵树是转弯处的标志。" }
+    ]
+  },
+  "ownership": {
+    "zh": "所有权",
+    "note": "不可数；owner 是人。take ownership of 除了「取得所有权」，还常指「主动担起（问题）」。",
+    "ex": [
+      { "en": "Proof of ownership is required for the claim.", "zh": "索赔需要所有权证明。" },
+      { "en": "Employee ownership changed how decisions were made.", "zh": "员工持股改变了决策的方式。" }
+    ]
+  },
+  "plumbing": {
+    "zh": "管道系统；管道工程",
+    "note": "不可数，指整套管道与安装工作；水管工是 plumber。比喻义指「（制度的）底层管线」。",
+    "ex": [
+      { "en": "The plumbing in this building dates from 1920.", "zh": "这栋楼的管道是 1920 年的。" },
+      { "en": "Fixing the plumbing took three days.", "zh": "修管道花了三天。" }
+    ]
+  },
+  "posting": {
+    "zh": "帖子；派驻",
+    "note": "网络「发帖」与人事「派驻」共用一个词，动词 post 两义都通。",
+    "ex": [
+      { "en": "Her posting about the recall was shared four thousand times.", "zh": "她那条召回帖被转了四千次。" },
+      { "en": "He got a posting to the embassy in Rome.", "zh": "他被派驻罗马使馆。" }
+    ]
+  },
+  "referral": {
+    "zh": "转诊；内推、推荐",
+    "note": "医疗转诊单、招聘内推、营销的推荐奖励（referral bonus）都是它，动词 refer。",
+    "ex": [
+      { "en": "The clinic accepts referrals from GPs only.", "zh": "这家诊所只接全科医生的转诊。" },
+      { "en": "She got the job through a referral.", "zh": "她通过内推拿到了这份工作。" }
+    ]
+  },
+  "takeaway": {
+    "zh": "外卖；（要点）",
+    "note": "英式 takeaway、美式 takeout。除了「外带食物」，还常指「要点、结论」：the key takeaway。",
+    "ex": [
+      { "en": "We got takeaway on Friday night.", "zh": "周五晚上我们叫了外卖。" },
+      { "en": "The takeaway from the meeting was simple: ship it.", "zh": "那次会议的要点很简单：发出去。" }
+    ]
+  },
+  "user": {
+    "zh": "用户",
+    "note": "技术里是用户；drug user 是吸毒者（中性偏医学）。区别 customer——那是付钱的客户。",
+    "ex": [
+      { "en": "The app has two million monthly users.", "zh": "这个应用月活两百万。" },
+      { "en": "Only the account owner can add users.", "zh": "只有账户所有者才能添加用户。" }
+    ]
+  },
+  "basketball": {
+    "zh": "篮球（运动/球）",
+    "note": "运动不可数（play basketball，不加冠词），球可数（a basketball）。football、volleyball 同理。",
+    "ex": [
+      { "en": "He played basketball in college.", "zh": "他大学时打篮球。" },
+      { "en": "The basketball rolled under the car.", "zh": "篮球滚到车底下去了。" }
+    ]
+  },
+  "bonus": {
+    "zh": "奖金；额外的好处",
+    "note": "可数，复数 bonuses。工资结构里是奖金，口语里是「意外的惊喜」，两种情况都能用。",
+    "ex": [
+      { "en": "The staff get a bonus if targets are met.", "zh": "达标的话员工有奖金。" },
+      { "en": "Free coffee is a bonus, not a reason to stay.", "zh": "免费咖啡是额外好处，不是留下的理由。" }
+    ]
+  }
+}

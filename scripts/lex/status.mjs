@@ -45,5 +45,15 @@ const exPath = path.join(ROOT, 'data/lex-zh/examples.json');
 const gen = fs.existsSync(exPath) ? JSON.parse(fs.readFileSync(exPath, 'utf8')) : {};
 const withEx = idx.rows.filter(r => r[3] === 1).length;
 const genN = Object.keys(gen).length;
-console.log(`\n例句 ${withEx.toLocaleString()} 词（语料 ${(withEx - genN).toLocaleString()} + 手写 ${genN}）· 仍缺 ${(idx.total - withEx).toLocaleString()}`);
+
+// 专名（地名、人名）不配例句 —— 它们算在「缺」里会让人以为还有活没干完
+const lexDir = path.join(ROOT, 'public/data/lex');
+let propN = 0;
+for (const f of fs.readdirSync(lexDir)) {
+  if (!/^[a-z]\.json$/.test(f)) continue;
+  const shard = JSON.parse(fs.readFileSync(path.join(lexDir, f), 'utf8'));
+  for (const e of Object.values(shard)) if (e.prop) propN++;
+}
+
+console.log(`\n例句 ${withEx.toLocaleString()} 词（语料 ${(withEx - genN).toLocaleString()} + 手写 ${genN}）· 仍缺 ${(idx.total - withEx).toLocaleString()}（其中专名 ${propN} 不配例句）`);
 console.log('  补下一批：npm run lex:ex');

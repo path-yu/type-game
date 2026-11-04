@@ -1,0 +1,322 @@
+{
+  "buzzer": {
+    "zh": "蜂鸣器；门铃对讲",
+    "note": "指会响的那个装置：门禁对讲、比赛终场蜂鸣器（at the buzzer 是压哨）。",
+    "ex": [
+      { "en": "The buzzer went off at the end of the exam.", "zh": "考试结束时蜂鸣器响了。" },
+      { "en": "Press the buzzer for the third floor.", "zh": "去三楼就按对讲。" }
+    ]
+  },
+  "camper": {
+    "zh": "露营者；房车",
+    "note": "既是露营的人，也是房车（camper van）；英式房车更常说 motorhome。",
+    "ex": [
+      { "en": "The site takes twenty campers a night.", "zh": "营地一晚接待二十个露营者。" },
+      { "en": "They rented a camper for the coast road.", "zh": "他们租了辆房车跑海岸公路。" }
+    ]
+  },
+  "chili": {
+    "zh": "辣椒；辣肉酱",
+    "note": "复数 chilies。美式里 chili 还指「辣肉酱」这道菜（chili con carne 的简称）。",
+    "ex": [
+      { "en": "Add one chopped chili and taste.", "zh": "加一个切碎的辣椒，再尝一下。" },
+      { "en": "We had chili and rice for lunch.", "zh": "我们午饭吃辣肉酱配米饭。" }
+    ]
+  },
+  "confirming": {
+    "zh": "确认性的",
+    "note": "多作定语：confirming evidence、a confirming email。日常更常用它的动词 confirm。",
+    "ex": [
+      { "en": "The scan was confirming rather than diagnostic.", "zh": "这次扫描是确认性的，不是诊断性的。" },
+      { "en": "He sent a confirming email the same afternoon.", "zh": "当天下午他发了一封确认邮件。" }
+    ]
+  },
+  "desktop": {
+    "zh": "桌面；台式机",
+    "note": "屏幕上的桌面和台式机（desktop computer）都叫它；笔记本是 laptop，别混。",
+    "ex": [
+      { "en": "Save the file to the desktop.", "zh": "把文件存到桌面。" },
+      { "en": "The desktop is five years old and still fast.", "zh": "这台台式机五年了，还挺快。" }
+    ]
+  },
+  "dishwasher": {
+    "zh": "洗碗机；洗碗工",
+    "note": "机器和人都用这个词，靠语境分：load the dishwasher 是装碗机，work as a dishwasher 是当洗碗工。",
+    "ex": [
+      { "en": "The dishwasher has been leaking for a week.", "zh": "洗碗机漏水漏了一周。" },
+      { "en": "He worked as a dishwasher that summer.", "zh": "那年夏天他做洗碗工。" }
+    ]
+  },
+  "girlfriend": {
+    "zh": "女朋友；女性朋友",
+    "note": "单数指女朋友；复数 girlfriends 还能指女性好友（偏旧、地区性）。男的同理 boyfriend。",
+    "ex": [
+      { "en": "He brought his girlfriend to the wedding.", "zh": "他带女朋友来参加婚礼。" },
+      { "en": "They were girlfriends at school.", "zh": "她们上学时是好朋友。" }
+    ]
+  },
+  "intolerant": {
+    "zh": "不宽容的；不耐受的",
+    "note": "两个方向：对异见不宽容（intolerant of dissent）、对食物药物不耐受（lactose intolerant）。反义 tolerant。",
+    "ex": [
+      { "en": "The regime was intolerant of dissent.", "zh": "这个政权容不下异见。" },
+      { "en": "She is lactose intolerant.", "zh": "她乳糖不耐受。" }
+    ]
+  },
+  "ligament": {
+    "zh": "韧带",
+    "note": "连接骨与骨的是 ligament（韧带），连接肌肉与骨的是 tendon（肌腱）——这两个最容易混。",
+    "ex": [
+      { "en": "He tore a ligament in his knee.", "zh": "他膝盖的韧带撕裂了。" },
+      { "en": "The ligament healed without surgery.", "zh": "韧带没做手术就长好了。" }
+    ]
+  },
+  "bombard": {
+    "zh": "轰炸；（用问题、信息）连续冲击",
+    "note": "搭配 bombard sb with sth：轰炸城市、被问题连番砸、被邮件淹没，都用这一句。",
+    "ex": [
+      { "en": "The city was bombarded for six weeks.", "zh": "这座城市被轰炸了六周。" },
+      { "en": "Reporters bombarded her with questions.", "zh": "记者连珠炮似的向她发问。" }
+    ]
+  },
+  "clout": {
+    "zh": "影响力、势力；猛击",
+    "note": "名词的「影响力」比 power 更口语，指「真能办成事」：political clout、financial clout。动词是猛击。",
+    "ex": [
+      { "en": "The union has real clout in this town.", "zh": "工会在本镇很有分量。" },
+      { "en": "He clouted the ball over the fence.", "zh": "他把球打过了围栏。" }
+    ]
+  },
+  "cyclic": {
+    "zh": "循环的、周期性的",
+    "note": "与 cyclical 基本同义，经济语境更常用 cyclical。反义 acyclic，名词 cycle。",
+    "ex": [
+      { "en": "The industry is cyclic: boom, then bust.", "zh": "这个行业是周期性的：先繁荣，再崩。" },
+      { "en": "Cyclic patterns in the data repeat every eleven years.", "zh": "数据里的周期模式每十一年重复一次。" }
+    ]
+  },
+  "enamel": {
+    "zh": "珐琅、釉；牙釉质",
+    "note": "工艺上的珐琅、牙齿的釉质、指甲油（nail enamel）都叫它。动词是上釉。",
+    "ex": [
+      { "en": "The pan has a chipped enamel coating.", "zh": "这口锅的珐琅层磕掉了一块。" },
+      { "en": "Enamel protects the tooth below the gum.", "zh": "牙釉质保护着牙龈以下的牙体。" }
+    ]
+  },
+  "endemic": {
+    "zh": "地方性的、某地常有的",
+    "note": "和 epidemic（突然暴发）、pandemic（全球大流行）是一组：endemic 是「某地一直有」。也可形容问题「根深蒂固」。",
+    "ex": [
+      { "en": "Malaria is endemic in parts of the region.", "zh": "疟疾在该地区部分地方流行。" },
+      { "en": "Corruption was endemic to the system.", "zh": "腐败是这套体制的固有问题。" }
+    ]
+  },
+  "etch": {
+    "zh": "蚀刻；铭刻",
+    "note": "工艺上是酸蚀刻版，比喻义是「刻在记忆里」（be etched in/on）。名词 etching 是蚀刻版画。",
+    "ex": [
+      { "en": "The name was etched into the glass.", "zh": "名字被蚀刻在玻璃上。" },
+      { "en": "The scene is etched in my memory.", "zh": "那一幕刻在我记忆里。" }
+    ]
+  },
+  "forte": {
+    "zh": "长处；强（音乐）",
+    "note": "读 /ˈfɔːteɪ/，别写成 fort（那是堡垒）。音乐术语里是「强」，反义 piano（弱）。",
+    "ex": [
+      { "en": "Patience is not her forte.", "zh": "耐心不是她的长处。" },
+      { "en": "The passage is marked forte, then pianissimo.", "zh": "这一段标的是强，然后极弱。" }
+    ]
+  },
+  "graph": {
+    "zh": "图表；作图",
+    "note": "graph 强调坐标关系（line graph 折线图），chart 更泛（饼图、流程图都能叫）。动词是「把……画成图」。",
+    "ex": [
+      { "en": "The graph shows a sharp fall after 2008.", "zh": "图表显示 2008 年之后急剧下滑。" },
+      { "en": "Graph the results against time.", "zh": "把结果对时间作图。" }
+    ]
+  },
+  "gurgle": {
+    "zh": "汩汩作响；咕噜声",
+    "note": "水流、排水管、婴儿喉咙里的声音都用它；拟声词，名词就是那个声音。",
+    "ex": [
+      { "en": "The drain gurgled and then cleared.", "zh": "下水道咕嘟一声就通了。" },
+      { "en": "The baby gurgled happily.", "zh": "婴儿高兴得咕咕叫。" }
+    ]
+  },
+  "italic": {
+    "zh": "斜体的；斜体",
+    "note": "名词多用复数：in italics。动词英式 italicise、美式 italicize。书名、外来词、强调都常用斜体。",
+    "ex": [
+      { "en": "Book titles are set in italic here.", "zh": "这里书名用斜体。" },
+      { "en": "The editor italicised two words.", "zh": "编辑把两个词排成了斜体。" }
+    ]
+  },
+  "jockey": {
+    "zh": "骑师；争抢（有利位置）",
+    "note": "名词是赛马骑师；动词 jockey for 是「抢位子」，常带算计的意味。",
+    "ex": [
+      { "en": "The jockey weighed in before the race.", "zh": "骑师在赛前过了秤。" },
+      { "en": "Firms are jockeying for position ahead of the ruling.", "zh": "各公司在裁决前抢位子。" }
+    ]
+  },
+  "keynote": {
+    "zh": "主旨（演讲）；主调",
+    "note": "会议里的 keynote speech 是「主题演讲」，音乐里是「主音」，作动词是「定调」。",
+    "ex": [
+      { "en": "She gave the keynote on the first morning.", "zh": "她在第一天上午作了主旨演讲。" },
+      { "en": "Trust was the keynote of his speech.", "zh": "信任是他演讲的主调。" }
+    ]
+  },
+  "laminate": {
+    "zh": "压膜；层压板",
+    "note": "动词是「压膜、贴合」，名词是层压材料（laminate flooring 复合地板），形容词 laminated 是覆膜的。",
+    "ex": [
+      { "en": "The card is laminated so it survives the rain.", "zh": "卡片压了膜，淋雨也不怕。" },
+      { "en": "The counter is laminate, not stone.", "zh": "台面是层压板，不是石头。" }
+    ]
+  },
+  "metric": {
+    "zh": "指标；公制的",
+    "note": "商务里是「衡量指标」（比 KPI 宽），技术里是「度量」，形容词是「公制的」。词根 metre。",
+    "ex": [
+      { "en": "Response time is the metric that matters most.", "zh": "响应时间是最要紧的指标。" },
+      { "en": "The plan is metric: everything in metres and kilos.", "zh": "这个方案用公制：全部以米和公斤计。" }
+    ]
+  },
+  "minuscule": {
+    "zh": "极小的",
+    "note": "常被错拼成 miniscule，正确的是 minuscule（拉丁 minusculus）。比 tiny 书面，强调小到几乎看不见。",
+    "ex": [
+      { "en": "The odds were minuscule but not zero.", "zh": "可能性极小，但不是零。" },
+      { "en": "The writing is minuscule and hard to read.", "zh": "字非常小，很难辨认。" }
+    ]
+  },
+  "nag": {
+    "zh": "唠叨、不断催促；缠绕（疑虑）",
+    "note": "搭配 nag sb about sth、nag at sb。疑虑长期缠人也用 nag at：the doubt nagged at her。",
+    "ex": [
+      { "en": "He nagged me about the form all week.", "zh": "他一周都在催我填表。" },
+      { "en": "The doubt nagged at her for months.", "zh": "那个疑问缠了她好几个月。" }
+    ]
+  },
+  "pedal": {
+    "zh": "踏板；踩踏板",
+    "note": "名动同形，英式过去式 pedalled 双写 l。钢琴的延音踏板是 sustain pedal，刹车踏板是 brake pedal。",
+    "ex": [
+      { "en": "The brake pedal feels soft.", "zh": "刹车踏板踩着发软。" },
+      { "en": "She pedalled up the hill in second gear.", "zh": "她用二挡蹬上了坡。" }
+    ]
+  },
+  "pigment": {
+    "zh": "色素、颜料；着色",
+    "note": "生物上的「色素」（skin pigment）与工业「颜料」共用一个词；动词是「着色」。",
+    "ex": [
+      { "en": "The pigment fades in strong sunlight.", "zh": "这种色素在强光下会褪。" },
+      { "en": "The skin pigments with exposure.", "zh": "皮肤晒了会变深。" }
+    ]
+  },
+  "prod": {
+    "zh": "戳；催促",
+    "note": "本义用尖物戳，比喻义是「推动、催」（prod sb into doing sth），名词是「提醒、推一把」（a gentle prod）。",
+    "ex": [
+      { "en": "She prodded the fire with a stick.", "zh": "她用棍子拨了拨火。" },
+      { "en": "A nudge from the board prodded him into acting.", "zh": "董事会推了一下，他才动。" }
+    ]
+  },
+  "quadruple": {
+    "zh": "增至四倍；四重的",
+    "note": "quadruple 是「乘以四」，中文「翻四番」是十六倍——这组词最容易译错。double / triple / quadruple 同构。",
+    "ex": [
+      { "en": "Revenue quadrupled in six years.", "zh": "六年里收入涨到四倍。" },
+      { "en": "A quadruple bypass is a four-vessel operation.", "zh": "四支搭桥是处理四根血管的手术。" }
+    ]
+  },
+  "rave": {
+    "zh": "盛赞；胡言乱语；狂欢",
+    "note": "方向靠介词分：rave about 是盛赞，rave at 是怒骂。名词 rave 是通宵舞会，形容词 raving 是「疯狂的」。",
+    "ex": [
+      { "en": "Critics raved about the film.", "zh": "影评人对这部片赞不绝口。" },
+      { "en": "He was raving at the noise all night.", "zh": "他一整夜都在为噪音大发脾气。" }
+    ]
+  },
+  "rebate": {
+    "zh": "返款；退还部分",
+    "note": "区别 discount：discount 是买的时候直接减价，rebate 是先付全款再退回来。名词 /ˈriːbeɪt/，动词 /rɪˈbeɪt/。",
+    "ex": [
+      { "en": "The manufacturer offers a fifty-dollar rebate.", "zh": "厂家返五十美元。" },
+      { "en": "The tax is rebated for low-income households.", "zh": "低收入家庭可以退这笔税。" }
+    ]
+  },
+  "resistant": {
+    "zh": "有抵抗力的；抗……的",
+    "note": "搭配 resistant to：抗疫病、抗变革、耐药（drug-resistant）。反义 susceptible（易感的）。",
+    "ex": [
+      { "en": "The variety is resistant to blight.", "zh": "这个品种抗疫病。" },
+      { "en": "The board was resistant to the idea at first.", "zh": "董事会起初很抵触这个想法。" }
+    ]
+  },
+  "sliver": {
+    "zh": "薄片、细条",
+    "note": "强调又薄又小的一片：a sliver of glass / light / land。区别 slice——那是切下来的一片，通常更大更规整。",
+    "ex": [
+      { "en": "A sliver of glass was still in his hand.", "zh": "他手里还嵌着一小片玻璃。" },
+      { "en": "A sliver of light came under the door.", "zh": "门缝下透进一线光。" }
+    ]
+  },
+  "stratify": {
+    "zh": "分层",
+    "note": "统计与社会科学的常用词（stratified sampling 分层抽样），名词 stratification。",
+    "ex": [
+      { "en": "The sample was stratified by age and income.", "zh": "样本按年龄和收入分了层。" },
+      { "en": "Society stratified along lines of wealth.", "zh": "社会沿着财富的界线分层。" }
+    ]
+  },
+  "subscribe": {
+    "zh": "订阅；认购；认同",
+    "note": "三义：订阅、认购（股份）、认同（subscribe to a view）。取消订阅是 unsubscribe，名词 subscription。",
+    "ex": [
+      { "en": "Subscribe to the newsletter if you want updates.", "zh": "想要更新就订阅这份通讯。" },
+      { "en": "I subscribe to the view that habits beat willpower.", "zh": "我认同这个看法：习惯比意志力可靠。" }
+    ]
+  },
+  "sully": {
+    "zh": "玷污",
+    "note": "书面词，宾语多是名声、记忆、时刻，比 stain 更文气，常带「无法挽回」的意味。",
+    "ex": [
+      { "en": "The scandal sullied his reputation for good.", "zh": "丑闻永久地玷污了他的名声。" },
+      { "en": "Do not sully the moment with an argument.", "zh": "别用争吵糟蹋这一刻。" }
+    ]
+  },
+  "trillion": {
+    "zh": "万亿",
+    "note": "美式 short scale：trillion = 10¹²（一万亿）；英式旧制曾指 10¹⁸，现已随美式。billion 是十亿。",
+    "ex": [
+      { "en": "The fund manages two trillion dollars.", "zh": "这只基金管理两万亿美元。" },
+      { "en": "A trillion is a thousand billion.", "zh": "一万亿等于一千个十亿。" }
+    ]
+  },
+  "unify": {
+    "zh": "统一、使成一体",
+    "note": "强调「合为一个整体」，比 unite 更常用于制度、界面、标准；名词 unity 与 unification，形容词 unified。",
+    "ex": [
+      { "en": "The party was unified by a single issue.", "zh": "这个党被一个议题凝聚了起来。" },
+      { "en": "The interface unifies seven separate tools.", "zh": "这个界面把七个独立工具合到了一起。" }
+    ]
+  },
+  "zap": {
+    "zh": "电击；迅速除掉；换台",
+    "note": "口语拟声词：电击、微波炉加热（zap it in the microwave）、快速删除、拿遥控器换台。",
+    "ex": [
+      { "en": "The fence zaps anything that touches it.", "zh": "篱笆会电击碰到它的东西。" },
+      { "en": "He zapped through the channels all evening.", "zh": "他一晚上拿着遥控器换来换去。" }
+    ]
+  },
+  "taboo": {
+    "zh": "禁忌（的）；忌讳",
+    "note": "来自汤加语，名词与形容词同形；动词 taboo 少见，多用于人类学描述。",
+    "ex": [
+      { "en": "The subject is still taboo at the table.", "zh": "这个话题在饭桌上仍是禁忌。" },
+      { "en": "Death was a taboo subject in our house.", "zh": "在我们家，死亡是忌讳的话题。" }
+    ]
+  }
+}
