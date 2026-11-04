@@ -544,5 +544,161 @@
         "zh": "目前他没有地址，也不想要一个。"
       }
     ]
+  },
+  "presently": {
+    "note": "读公版书时最容易读反的一个词。现代英语 presently = 「目前」，19 世纪及以前的 presently = 「马上、立刻」，等于 soon。看到「he presently returned」不是「他目前回来了」，是「他随即回来了」。判断依据只有年代与语境，词形上分不出来。",
+    "ex": [
+      {
+        "en": "She presently forgot the whole matter, and spoke of it no more.",
+        "zh": "她很快就把这件事忘了，此后再没提起。"
+      },
+      {
+        "en": "The door opened presently, and a servant showed him in.",
+        "zh": "门随即开了，一个仆人把他引了进去。"
+      }
+    ]
+  },
+  "ere": {
+    "note": "古语「在……之前」，可作介词也可作连词，后接名词或从句。ere long 是「不久之后」，不是「很久以前」——这一个最容易看反。诗歌里常缩成 e'er（那是 ever，不是 ere，别混）。",
+    "ex": [
+      {
+        "en": "Ere the sun was down the whole village had heard of it.",
+        "zh": "太阳还没落，整个村子就都听说了。"
+      },
+      {
+        "en": "He will come, I think, ere long.",
+        "zh": "我想他不久就会来。"
+      }
+    ]
+  },
+  "save": {
+    "note": "作动词是「救、省」，作介词却是「除……之外」——all save one 是「除一个之外全部」，不是「全部救了一个」。这个义项现代英语几乎不用，但 19 世纪文本里常见。另有古义连词「只是、不过」（= but）。",
+    "ex": [
+      {
+        "en": "Every window in the house was dark save one.",
+        "zh": "整栋房子只有一扇窗还亮着。"
+      },
+      {
+        "en": "He told no one, save the old woman who kept the keys.",
+        "zh": "他没告诉任何人，只告诉了那个管钥匙的老妇人。"
+      }
+    ]
+  },
+  "anon": {
+    "note": "古语「不久、马上」，与「匿名（anonymous）」无关——看到 anon 就想到「匿名」是最常见的误读。ever and anon 是「不时地、一再」。现代英语里 anon 已缩为 anonymous 的标记，两个意思同形不同源。",
+    "ex": [
+      {
+        "en": "He was gone anon, and the room felt larger for it.",
+        "zh": "他很快就走了，屋子因此显得空阔了些。"
+      },
+      {
+        "en": "Ever and anon a bell sounded from the harbor.",
+        "zh": "港口那边不时传来一声钟响。"
+      }
+    ]
+  },
+  "nay": {
+    "note": "不只是「不」，更常是「而且、不仅如此」——用来把话说得更重：nay, more（不仅如此）。现代英语里这个用法只剩在议会表决（the nays）和固定说法里。译作「不」会丢掉它递进的那一层。",
+    "ex": [
+      {
+        "en": "It was unwise; nay, it was unjust.",
+        "zh": "那不明智，甚至可以说，不公正。"
+      },
+      {
+        "en": "He answered nay before the question was half out.",
+        "zh": "问题还没问完一半，他就答了「不」。"
+      }
+    ]
+  },
+  "whither": {
+    "note": "「往何处」，与 whence（从何处）成对，hither / thither 是「到这里 / 到那里」。现代英语用 where to / where from 代替。注意 whither 问方向，不问你「去哪了」这件事本身。",
+    "ex": [
+      {
+        "en": "Whither he went, no one in the house could say.",
+        "zh": "他往哪里去了，屋里没人说得上来。"
+      },
+      {
+        "en": "They came hither by night and went thither again before dawn.",
+        "zh": "他们夜里到这里来，天亮前又到那边去了。"
+      }
+    ]
+  },
+  "thee": {
+    "note": "第二人称单数的古形式，一套四个：thou（主格）、thee（宾格）、thy / thine（所有格）、ye（复数主格，也用于称呼尊长）。thine 用在元音前（thine eyes），thy 用在辅音前（thy hand）。现代英语只剩在祈祷文、诗歌和方言里。",
+    "ex": [
+      {
+        "en": "I have nothing to give thee but counsel, and that thou wilt not take.",
+        "zh": "我除了几句忠告没有别的给你，而忠告你又不肯听。"
+      },
+      {
+        "en": "Thy father asked for thee at the gate.",
+        "zh": "你父亲在门口问起你。"
+      }
+    ]
+  },
+  "lest": {
+    "note": "「以免、免得」，后面接的从句在正式文体里常用 should 或动词原形：lest he forget / lest he should forget。不能像 because 那样直接接陈述句的普通时态。for fear that 意思相近，但 lest 更书面。",
+    "ex": [
+      {
+        "en": "She spoke low, lest the servants should hear.",
+        "zh": "她压低声音说话，免得仆人听见。"
+      },
+      {
+        "en": "He wrote it down lest he forget.",
+        "zh": "他记了下来，怕自己忘了。"
+      }
+    ]
+  },
+  "albeit": {
+    "note": "「尽管、虽然」，比 although 更书面，且只能引导短语或省略式从句，不能像 although 那样随便接完整句子。读到时按 although 理解即可，但自己写作时用它容易出错，多数场合 although 更稳。",
+    "ex": [
+      {
+        "en": "He accepted, albeit with visible reluctance.",
+        "zh": "他接受了，尽管看得出很不情愿。"
+      },
+      {
+        "en": "The road was passable, albeit barely.",
+        "zh": "这条路能走，不过勉强而已。"
+      }
+    ]
+  },
+  "aught": {
+    "note": "古语「任何事物」（= anything），与 naught（「无、零」）是一对，只差一个字母，意思相反。for aught I know 是「据我所知未必如此」——不是「据我所知」。这是全批里最容易读反的一个。",
+    "ex": [
+      {
+        "en": "For aught I know, he may be dead these ten years.",
+        "zh": "说不定他这十年里早已不在人世了。"
+      },
+      {
+        "en": "If aught should happen to him, send word to the mill.",
+        "zh": "万一他出了什么事，捎个信到磨坊。"
+      }
+    ]
+  },
+  "betwixt": {
+    "note": "= between，古语与方言。固定说法 betwixt and between 是「不上不下、两者都不是」，这个短语至今还在用，而且只能用它，不能说 between and between。",
+    "ex": [
+      {
+        "en": "There was a gap betwixt the two houses wide enough for a cart.",
+        "zh": "两栋房子之间有条能过一辆车的空隙。"
+      },
+      {
+        "en": "He was betwixt and between, too old for the school and too young for the mill.",
+        "zh": "他卡在中间：上学嫌大，进厂嫌小。"
+      }
+    ]
+  },
+  "whilst": {
+    "note": "= while，英式书面语。除了「当……时」，它也表「虽然」（whilst I agree…），这一层常被漏读。美式英语基本不用；译成「当……时」之前先看后半句是不是转折。",
+    "ex": [
+      {
+        "en": "Whilst I do not doubt your word, I would still see the letter.",
+        "zh": "我并不怀疑你的话，不过还是想看看那封信。"
+      },
+      {
+        "en": "He read whilst she slept, and never once looked up.",
+        "zh": "她睡着的时候他在读书，一次也没抬头。"
+      }
+    ]
   }
 }

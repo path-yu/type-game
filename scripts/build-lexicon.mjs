@@ -286,13 +286,49 @@ function srcRank(w) {
 }
 
 const POS_ORDER = { n: 0, v: 1, a: 2, r: 3 };
-const words = [...freq.keys()].sort();
+/*
+ * 词表 = 语料里出现过的词 + 人工表里写过的词。
+ * 只取语料会漏掉 albeit 这种"书里没出现、但读者会去查"的词 ——
+ * 既然已经为它写了释义，就该在词库里能查到。
+ */
+const words = [...new Set([...freq.keys(), ...Object.keys(OV)])].sort();
 const shards = new Map();
 const index = [];
 let withSense = 0, withEx = 0;
 
 for (const w of words) {
   if (!/^[a-z][a-z'-]*$/.test(w)) continue;
+
+  /*
+   * 人工表先于一切。
+   *
+   * 原来这一段放在 WordNet 处理之后，结果是「WordNet 里根本没有的词」
+   * 到不了人工表 —— ere / lest / albeit / methinks 这些古语词界面上查无此词，
+   * 而公版书里满篇都是。人工表是唯一的释义来源时，它必须排在最前面。
+   */
+  const ov = OV[w];
+  if (ov) {
+    // 人工条目直接用，不再和 WordNet 混
+    const list = ov.map(([p2, d2]) => ({ p: p2, d: '', zh: d2 }));
+    const ex = examples.get(w) ?? [];
+    const entry = {
+      w,
+      ...(ipa.get(w) ? { ipa: ipa.get(w) } : {}),
+      f: freq.get(w) ?? 0,
+      senses: list,
+      ...(ex.length ? { ex } : {}),
+      ...srcRank(w),
+      // 人工表里的词也可能带精讲（means / works 这类），别在这一支漏掉
+      ...(CURATED[w] ? { cur: CURATED[w] } : {}),
+    };
+    withSense++;
+    if (ex.length) withEx++;
+    const ch0 = w[0];
+    if (!shards.has(ch0)) shards.set(ch0, {});
+    shards.get(ch0)[w] = entry;
+    index.push([w, entry.f, list.map(x => x.p).join(''), ex.length ? 1 : 0, CURATED[w] ? 1 : 0]);
+    continue;
+  }
 
   /*
    * 只留原文是小写的义项。
@@ -396,30 +432,6 @@ for (const w of words) {
       ...(opp.size ? { opp: tidy(opp) } : {}),
     };
   };
-
-  const ov = OV[w];
-  if (ov) {
-    // 人工条目直接用，不再和 WordNet 混
-    const list = ov.map(([p2, d2]) => ({ p: p2, d: '', zh: d2 }));
-    const ex = examples.get(w) ?? [];
-    const entry = {
-      w,
-      ...(ipa.get(w) ? { ipa: ipa.get(w) } : {}),
-      f: freq.get(w) ?? 0,
-      senses: list,
-      ...(ex.length ? { ex } : {}),
-      ...srcRank(w),
-      // 人工表里的词也可能带精讲（means / works 这类），别在这一支漏掉
-      ...(CURATED[w] ? { cur: CURATED[w] } : {}),
-    };
-    withSense++;
-    if (ex.length) withEx++;
-    const ch0 = w[0];
-    if (!shards.has(ch0)) shards.set(ch0, {});
-    shards.get(ch0)[w] = entry;
-    index.push([w, entry.f, list.map(x => x.p).join(''), ex.length ? 1 : 0, CURATED[w] ? 1 : 0]);
-    continue;
-  }
 
   const zhOf = ZH_MERGED[w];
   /*
