@@ -162,6 +162,28 @@ const curatedPath = path.join(ROOT, 'data/lex-zh/curated.json');
 const CURATED = fs.existsSync(curatedPath) ? JSON.parse(fs.readFileSync(curatedPath, 'utf8')) : {};
 
 /*
+ * 补充例句：给"语料里根本没出现"的词条（3.5 万里有 8 千多个，是拿 WordNet
+ * 词表补足的那批）配上自撰例句、译文和一句解析。
+ *
+ * 为什么和 curated 分开存：curated 是精讲，参与主题索引、交叉引用、"只看精讲"
+ * 筛选，是另一套制度。这批只是"让空着的例句区有东西可看"，不该冒充精讲。
+ * 所以落成独立字段 gen，前端按「例句」而不是「精讲」呈现。
+ */
+const examplesPath = path.join(ROOT, 'data/lex-zh/examples.json');
+const EXAMPLES = fs.existsSync(examplesPath) ? JSON.parse(fs.readFileSync(examplesPath, 'utf8')) : {};
+
+for (const [w, v] of Object.entries(EXAMPLES)) {
+  if (!v || !Array.isArray(v.ex) || !v.ex.length) {
+    throw new Error(`[lex] examples.json 里 ${w} 没有例句`);
+  }
+  for (const e of v.ex) {
+    if (!e.en || !e.zh) throw new Error(`[lex] examples.json 里 ${w} 的例句缺 en 或 zh`);
+    if (/[\u4e00-\u9fa5]/.test(e.en)) throw new Error(`[lex] examples.json 里 ${w} 的英文例句混进了中文`);
+  }
+  if (!v.zh && !v.note) throw new Error(`[lex] examples.json 里 ${w} 既没有中文简释也没有解析`);
+}
+
+/*
  * 交叉引用：解析的正文里提到别的精讲词时，把它记下来，界面上做成可点的链接。
  *
  * 精讲是一整套制度，词与词之间本来互相牵着 —— entail 的解析里说到
@@ -351,13 +373,14 @@ for (const w of words) {
       ...srcRank(w),
       // 人工表里的词也可能带精讲（means / works 这类），别在这一支漏掉
       ...(CURATED[w] ? { cur: CURATED[w] } : {}),
+      ...(EXAMPLES[w] ? { gen: EXAMPLES[w] } : {}),
     };
     withSense++;
     if (ex.length) withEx++;
     const ch0 = w[0];
     if (!shards.has(ch0)) shards.set(ch0, {});
     shards.get(ch0)[w] = entry;
-    index.push([w, entry.f, list.map(x => x.p).join(''), ex.length ? 1 : 0, CURATED[w] ? 1 : 0]);
+    index.push([w, entry.f, list.map(x => x.p).join(''), ex.length || EXAMPLES[w] ? 1 : 0, CURATED[w] ? 1 : 0]);
     continue;
   }
 
@@ -517,6 +540,7 @@ for (const w of words) {
     ...(ex.length ? { ex } : {}),
     ...srcRank(w),
     ...(CURATED[w] ? { cur: CURATED[w] } : {}),
+    ...(EXAMPLES[w] ? { gen: EXAMPLES[w] } : {}),
     ...relOf(senses),
     ...(lemmaFile.detail?.[base]?.forms ? { forms: lemmaFile.detail[base].forms } : {}),
   };
@@ -527,7 +551,7 @@ for (const w of words) {
   const ch = w[0];
   if (!shards.has(ch)) shards.set(ch, {});
   shards.get(ch)[w] = entry;
-  index.push([w, entry.f, list.map(s => s.p).join(''), ex.length ? 1 : 0, CURATED[w] ? 1 : 0]);
+  index.push([w, entry.f, list.map(s => s.p).join(''), ex.length || EXAMPLES[w] ? 1 : 0, CURATED[w] ? 1 : 0]);
 }
 
 /* ---------------- 3.5 补足到 3.5 万 ---------------- */
@@ -535,9 +559,18 @@ for (const w of words) {
 /*
  * 语料里能查到释义的只有 2.7 万，剩下的差额用 WordNet 里"义项最多"的词补 ——
  * 义项多通常意味着常见（run/get/take 几十条），比按字母随机补有意义得多。
- * 补进来的词没有语料例句，前端会标成"暂无例句"，后续再补（见 plan 的第 6 步）。
+ * 补进来的词没有语料例句，靠 data/lex-zh/examples.json 里的自撰例句顶着；
+ * 还没写到的，前端给出该词的词典例证并标明来源。
  */
 const TARGET = 35000;
+
+/*
+ * 专名的味儿：地名词条清一色是「a city in …」「a town in …」。
+ * 这类词不该硬造例句——给 Aberdeen 编一句生活场景里的对白没有意义。
+ * 标出来，前端就照「专名，只给释义」呈现，而不是摆一句「例句待补」。
+ */
+const PROPER_GLOSS = /\b(a city|a town|a village|a state|a county|a river|a mountain|a lake|an island|a country|a port|a capital|a district|a province|a region|United States|genus|family|inhabitant)\b/i;
+
 if (index.length < TARGET) {
   const have = new Set(index.map(r => r[0]));
   const pool = [...wn.entries()]
@@ -554,11 +587,15 @@ if (index.length < TARGET) {
       .slice(0, MAX_SENSES)
       .map(s => ({ p: s.p, d: s.d, ...(s.x?.length ? { x: s.x.slice(0, MAX_SENSE_EX) } : {}) }));
 
-    const entry = { w, f: 0, senses: list };
+    const proper = list.length > 0 && list.every(s => PROPER_GLOSS.test(s.d || ''));
+    const entry = {
+      w, f: 0, senses: list,
+      ...(EXAMPLES[w] ? { gen: EXAMPLES[w] } : { ...(proper ? { prop: 1 } : {}) }),
+    };
     const ch = w[0];
     if (!shards.has(ch)) shards.set(ch, {});
     shards.get(ch)[w] = entry;
-    index.push([w, 0, list.map(s => s.p).join(''), 0, CURATED[w] ? 1 : 0]);
+    index.push([w, 0, list.map(s => s.p).join(''), EXAMPLES[w] ? 1 : 0, CURATED[w] ? 1 : 0]);
     added++;
   }
   log(`补入 ${added} 个 WordNet 词（无语料例句）`);
@@ -633,6 +670,25 @@ const letters = [...shards.entries()]
   .map(([ch, obj]) => ({ ch, n: Object.keys(obj).length }))
   .sort((a, b) => a.ch.localeCompare(b.ch));
 
+/*
+ * 例句的两层覆盖：语料里捡来的（ex）和人工补写的（gen）。
+ * 剩下的是既没在语料里出现、也还没来得及写的——前端会退到词典例证。
+ */
+const known = new Set(index.map(r => r[0]));
+const orphan = Object.keys(EXAMPLES).filter(w => !known.has(w));
+if (orphan.length) log(`⚠ examples.json 里 ${orphan.length} 个词不在词表中：${orphan.slice(0, 8).join(' ')}`);
+
+let genCount = 0;
+let propN = 0;
+let bare = 0;
+for (const obj of shards.values()) {
+  for (const e of Object.values(obj)) {
+    if (e.gen) genCount++;
+    else if (e.prop) propN++;
+    else if (!e.ex?.length) bare++;
+  }
+}
+
 fs.writeFileSync(
   path.join(OUT, 'index.json'),
   JSON.stringify({ v: 1, total: index.length, letters, rows: index }),
@@ -641,4 +697,5 @@ fs.writeFileSync(
 const kb = f => (fs.statSync(path.join(OUT, f)).size / 1024).toFixed(0) + 'KB';
 log(`✅ ${index.length} 个词条 · ${letters.length} 片 · index ${kb('index.json')}`);
 log(`   有释义 ${withSense} · 有例句 ${withEx}`);
+log(`   补充例句 ${genCount} 词 · 专名 ${propN} 词 · 仍空缺 ${bare} 词`);
 log(`   样例 ${JSON.stringify(index[0])} / ${JSON.stringify(index[Math.floor(index.length / 2)])}`);

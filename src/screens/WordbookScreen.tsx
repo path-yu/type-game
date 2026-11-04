@@ -40,6 +40,13 @@ interface Entry {
   ex?: { t: string; zh?: string; src?: string }[];
   src?: [string, number][];  // 在哪几本书里出现、各几次
   cur?: { note?: string; ex?: { en: string; zh: string }[]; see?: string[] };  // 人写的精讲 + 交叉引用
+  /*
+   * 补充例句：给语料里根本没出现的词条（3.5 万里有 8 千多个是拿词表补足的）
+   * 配的自撰例句 + 译文 + 一句解析。和 cur 分开，是因为它不参与主题与精讲筛选——
+   * 它只负责让例句区不空着。
+   */
+  gen?: { zh?: string; note?: string; ex?: { en: string; zh: string }[] };
+  prop?: 1;  // 专名（地名/人名）：只有词典释义，不配例句
   up?: string[];    // 上位词（WordNet @ 指针）
   opp?: string[];   // 反义词（! 指针）
   forms?: string[];
@@ -472,6 +479,17 @@ export function WordbookScreen() {
                   <span>语料 {entry.f} 次</span>
                 </div>
 
+                {/*
+                 * 词表补全的那批词，义项全是英文（中文只译过语料里出现过的 3 千多词）。
+                 * 补例句时顺手写了一句词级简释，至少让词头下面先有中文。
+                 */}
+                {entry.gen?.zh && !entry.senses.some(s => s.zh) ? (
+                  <div className="wb-gen-zh">
+                    <span>简释</span>
+                    {entry.gen.zh}
+                  </div>
+                ) : null}
+
                 {entry.senses.map((s, i) => (
                   <div className="wb-sense" key={i}>
                     <div className="wb-sense-head">
@@ -568,7 +586,7 @@ export function WordbookScreen() {
                   </>
                 ) : null}
 
-                <div className="wb-sec">语料例句</div>
+                <div className="wb-sec">{entry.ex?.length ? '语料例句' : '例句'}</div>
                 {entry.ex?.length ? (
                   entry.ex.map(e => (
                     <div className="wb-ex-item" key={e.t}>
@@ -577,8 +595,23 @@ export function WordbookScreen() {
                       {e.src && <span className="wb-ex-src">《{e.src}》</span>}
                     </div>
                   ))
+                ) : entry.gen?.ex?.length ? (
+                  <>
+                    {entry.gen.note ? <p className="wb-note">{entry.gen.note}</p> : null}
+                    {entry.gen.ex.map(e => (
+                      <div className="wb-ex-item wb-ex-gen" key={e.en}>
+                        <p className="wb-ex-en">{e.en}</p>
+                        <p className="wb-ex-zh">{e.zh}</p>
+                      </div>
+                    ))}
+                    <p className="wb-ex-src">这个词没在语料里出现，以上例句是照词义写的。</p>
+                  </>
                 ) : (
-                  <div className="wb-tip">这个词在现有语料里没有出现，例句待补。</div>
+                  <div className="wb-tip">
+                    {entry.prop
+                      ? '专名（地名或人名），只保留词典释义，不配例句。'
+                      : '这个词条由词表补全，语料里没有它，也没有人工例句；各义项下的英文例子出自词典。'}
+                  </div>
                 )}
               </div>
             )}

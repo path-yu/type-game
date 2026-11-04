@@ -43,6 +43,7 @@
     "desktop:build": "npm run build && hutch electrobun build --env=stable",
     "lex": "node scripts/lex/status.mjs",
     "lex:next": "node scripts/lex/next-gloss.mjs --n=50",
+    "lex:ex": "node scripts/lex/next-ex.mjs --n=40",
     "prebuild": "node scripts/prebuild.mjs"
   },
   "dependencies": {

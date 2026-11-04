@@ -36,3 +36,14 @@ const todo = idx.rows
   .slice(0, 20);
 console.log('\n下一个该译的高频词：');
 console.log('  ' + todo.map(([w, f]) => `${w}(${f})`).join(' '));
+
+/*
+ * 例句的两种来源：语料里捞出来的，和人手写的。
+ * index 的第 4 位已经是「有没有例句」（两种都算），手写的条数从 examples.json 数。
+ */
+const exPath = path.join(ROOT, 'data/lex-zh/examples.json');
+const gen = fs.existsSync(exPath) ? JSON.parse(fs.readFileSync(exPath, 'utf8')) : {};
+const withEx = idx.rows.filter(r => r[3] === 1).length;
+const genN = Object.keys(gen).length;
+console.log(`\n例句 ${withEx.toLocaleString()} 词（语料 ${(withEx - genN).toLocaleString()} + 手写 ${genN}）· 仍缺 ${(idx.total - withEx).toLocaleString()}`);
+console.log('  补下一批：npm run lex:ex');

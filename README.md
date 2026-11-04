@@ -259,6 +259,22 @@ temper     是「脾气」，不是冶金回火 —— 词典前六条全是后�
 engagement 《傲慢与偏见》里出现 13 次，一次都不是「交战」
 ```
 
+### 补充例句
+
+3.5 万词里有一批是拿 WordNet 词表补足到数的（语料里没出现，所以没有语料例句，中文也
+没译过）。这一层给它们配自撰例句、译文和一句解析，存在 `data/lex-zh/examples.json`，
+构建时落成 `gen` 字段——和精讲 `cur` 分开，因为它不参与主题索引与「只看精讲」筛选，
+只负责让例句区有东西可看。
+
+- 有语料例句的词轮不到它（写入时整条拒收）
+- 英文句里必须真的出现这个词，防的是写着写着换成同义词
+- 地名、人名（`prop`）不配例句，界面直接说「专名，只保留词典释义」
+
+```bash
+npm run lex:ex                            # 按义项数（≈常用度）取下一批 40 词，专名已剔除
+node scripts/lex/put-ex.mjs <批.json>     # 逐条校验后并入 examples.json
+```
+
 ### 四层入口
 
 | 方式 | 做什么 |
@@ -283,6 +299,8 @@ engagement 《傲慢与偏见》里出现 13 次，一次都不是「交战」
 npm run lex                              # 看覆盖率与下一批待译词
 npm run lex:next                         # 取 50 个词（义项按原文列出）
 node scripts/lex/put-gloss.mjs <批.json>  # 校验：条数必须等于义项数，否则整条拒收
+npm run lex:ex                           # 取下一批待补例句的词
+node scripts/lex/put-ex.mjs <批.json>     # 校验后并入 examples.json
 node scripts/build-lexicon.mjs            # 重建 26 个分片 + 索引 + 主题 + 精讲单文件
 ```
 

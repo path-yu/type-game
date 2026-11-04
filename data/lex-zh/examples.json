@@ -1,0 +1,842 @@
+{
+  "abort": {
+    "zh": "中止；流产",
+    "note": "计算机里 abort 是「放弃当前这次操作」，比 cancel 更硬，常用于任务、发射、进程。日常说 abort a plan 就是「中止计划」，不必往医学义上想。",
+    "ex": [
+      {
+        "en": "The launch was aborted at T-minus nine seconds.",
+        "zh": "发射在倒计时九秒时中止。"
+      },
+      {
+        "en": "They had to abort the download and start over.",
+        "zh": "他们只能中断下载重来。"
+      }
+    ]
+  },
+  "about-face": {
+    "zh": "（态度）大转弯；掉头",
+    "note": "来自军事口令「向后转」，比喻立场一百八十度转变，常与 do an about-face 连用。美式拼写，英式多写 about-turn。",
+    "ex": [
+      {
+        "en": "The ministry did an about-face on the levy within a week.",
+        "zh": "部里一周之内就对这项收费改了口。"
+      },
+      {
+        "en": "He about-faced and walked back the way he came.",
+        "zh": "他转身沿原路走回去。"
+      }
+    ]
+  },
+  "absolutism": {
+    "zh": "专制主义；绝对论",
+    "note": "政治上指君主独揽大权（路易十四是标本），哲学与伦理学上指「只认绝对真理」的思维。形容词 absolutist 常带批评语气。",
+    "ex": [
+      {
+        "en": "The eighteenth century saw absolutism give way to constitutional rule.",
+        "zh": "十八世纪，专制让位于立宪。"
+      },
+      {
+        "en": "Moral absolutism leaves no room for the hard case.",
+        "zh": "道德绝对主义容不下难办的个例。"
+      }
+    ]
+  },
+  "accelerator": {
+    "zh": "油门；加速器",
+    "note": "车里是油门踏板（英式也说 gas pedal），物理里是粒子加速器。「踩油门」说 press the accelerator 或 put one's foot on the accelerator。",
+    "ex": [
+      {
+        "en": "She put her foot on the accelerator and the engine complained.",
+        "zh": "她一脚踩下油门，发动机闷闷地叫了一声。"
+      },
+      {
+        "en": "The particle accelerator runs for months at a stretch.",
+        "zh": "这台粒子加速器一开就是好几个月。"
+      }
+    ]
+  },
+  "acrylic": {
+    "zh": "亚克力；丙烯酸（的）",
+    "note": "一个词覆盖三样东西：亚克力板、丙烯颜料、腈纶纤维。区别靠上下文，形容词用法直接置前：acrylic paint、acrylic sheet。",
+    "ex": [
+      {
+        "en": "The sign is cut from a sheet of acrylic.",
+        "zh": "招牌是用一整块亚克力切出来的。"
+      },
+      {
+        "en": "She works mostly in acrylic these days, not oil.",
+        "zh": "她现在多用丙烯颜料，不怎么用油画颜料了。"
+      }
+    ]
+  },
+  "activate": {
+    "zh": "激活、启动；使生效",
+    "note": "比 start 更强调「让某个已经存在但休眠的东西开始工作」：激活账户、触发警报、启动基因。名词 activation，多用于技术与生物语境。",
+    "ex": [
+      {
+        "en": "You need to activate the card before the first of the month.",
+        "zh": "这卡得在月初之前激活。"
+      },
+      {
+        "en": "Sunlight activates the pigment in the skin.",
+        "zh": "阳光会激活皮肤里的色素。"
+      }
+    ]
+  },
+  "addiction": {
+    "zh": "成瘾、瘾",
+    "note": "搭配是 addiction to sth：addiction to gambling、addiction to work。口语里更常说 I'm addicted to…；正式医学文本才用 dependence（依赖）。",
+    "ex": [
+      {
+        "en": "His addiction to the work was as ruinous as any drug.",
+        "zh": "他对工作的瘾，破坏力不亚于任何药物。"
+      },
+      {
+        "en": "The clinic treats gambling addiction alongside alcohol addiction.",
+        "zh": "这家诊所把赌瘾和酒瘾放在一起治。"
+      }
+    ]
+  },
+  "adhere": {
+    "zh": "粘附；坚持、遵守",
+    "note": "两个意思靠介词分工：adhere to 既可以是「粘在……上」，也可以是「遵守、坚持」（adhere to a rule / a plan）。介词不能丢，没有 adhere a rule 这种说法。",
+    "ex": [
+      {
+        "en": "The label had come loose, but the glue still adhered to the glass.",
+        "zh": "标签翘起来了，可胶还黏在玻璃上。"
+      },
+      {
+        "en": "The crew adhered strictly to the safety checklist.",
+        "zh": "机组严格照安全清单执行。"
+      }
+    ]
+  },
+  "adhesion": {
+    "zh": "粘附（力）；加入、拥护",
+    "note": "物理上是「粘附力」，抽象义是「加入或拥护某个组织、主张」。和 adherence 分工：adherence 多指「遵守、坚持」，adhesion 更偏「粘住、归附」。",
+    "ex": [
+      {
+        "en": "Poor adhesion between the layers caused the coating to peel.",
+        "zh": "层与层粘不牢，涂层就剥落了。"
+      },
+      {
+        "en": "The union's adhesion to the agreement was never in doubt.",
+        "zh": "工会对这份协议的拥护从没被怀疑过。"
+      }
+    ]
+  },
+  "administer": {
+    "zh": "管理；施行；给（药）",
+    "note": "三个高频搭配要分清：administer a fund 管钱、administer a test 组织考试、administer a drug 给药。别写成 administrate，那个形式少见且多用于计算机领域。",
+    "ex": [
+      {
+        "en": "The fund is administered by a small board of trustees.",
+        "zh": "这个基金由一个小型理事会管理。"
+      },
+      {
+        "en": "The nurse administered the vaccine to forty children that morning.",
+        "zh": "那天上午护士给四十个孩子打了疫苗。"
+      }
+    ]
+  },
+  "adolescent": {
+    "zh": "青少年；青春期的",
+    "note": "比 teenager 正式，也常带贬义指「幼稚」（adolescent humour）。年龄跨度指从 puberty 到 maturity 这一段，所以十八九岁仍可算 adolescent。",
+    "ex": [
+      {
+        "en": "As an adolescent he barely spoke to anyone outside the family.",
+        "zh": "少年时他几乎不和家里以外的人说话。"
+      },
+      {
+        "en": "The plan smacked of adolescent wishful thinking.",
+        "zh": "这计划透着一股少年人的一厢情愿。"
+      }
+    ]
+  },
+  "affiliate": {
+    "zh": "使隶属；附属机构",
+    "note": "名动读音不同：名词 /əˈfɪliət/，动词 /əˈfɪlieɪt/。be affiliated with 是「挂靠在……下面」，商业语境里 affiliate 就是「加盟方、联盟台」。",
+    "ex": [
+      {
+        "en": "The clinic is affiliated with the university hospital.",
+        "zh": "这家诊所隶属大学医院。"
+      },
+      {
+        "en": "The network has forty local affiliates.",
+        "zh": "这个电视网有四十家本地加盟台。"
+      }
+    ]
+  },
+  "affirmation": {
+    "zh": "断言、肯定；维持原判",
+    "note": "法律里是上诉法院「维持原判」，心理与自助语境里是「自我肯定语」，宗教里是「不宣誓的证言」。读到时先看文体。",
+    "ex": [
+      {
+        "en": "The ruling was an affirmation of the lower court's decision.",
+        "zh": "这一裁定维持了下级法院的判决。"
+      },
+      {
+        "en": "She repeated the affirmation every morning until she half believed it.",
+        "zh": "她每天早上都念那句肯定语，念到有点信了。"
+      }
+    ]
+  },
+  "aggregate": {
+    "zh": "总量；总计的；汇总",
+    "note": "名词、形容词读 /ˈæɡrɪɡət/，动词读 /ˈæɡrɪɡeɪt/——词尾 -ate 一改读音就换了词性。经济文本里 in the aggregate 是「总体上、合计起来」。",
+    "ex": [
+      {
+        "en": "The aggregate cost of the repairs came to just under four thousand dollars.",
+        "zh": "修缮总共花了不到四千美元。"
+      },
+      {
+        "en": "Her blog aggregates news from a dozen local outlets.",
+        "zh": "她的博客汇总了十几家本地媒体的新闻。"
+      }
+    ]
+  },
+  "aggression": {
+    "zh": "侵犯；攻击性",
+    "note": "既指军事侵略，也指心理上的攻击性。注意形容词 aggressive 在商务语境里常是褒义：aggressive growth 是「激进扩张」，不是「好斗」。",
+    "ex": [
+      {
+        "en": "The report documented a pattern of aggression against neighbouring villages.",
+        "zh": "报告记录了一连串对邻村的侵犯。"
+      },
+      {
+        "en": "Some of that aggression is just fear with nowhere to go.",
+        "zh": "那股攻击性里，有一部分只是无处安放的恐惧。"
+      }
+    ]
+  },
+  "agitate": {
+    "zh": "搅动；使不安；鼓动",
+    "note": "三个义项差得远：实验室里是「摇匀」，情绪上是「使焦躁」，政治上是「鼓动」（agitate for reform）。形容词 agitated 多半指心神不宁。",
+    "ex": [
+      {
+        "en": "Agitate the solution gently until the powder dissolves.",
+        "zh": "轻轻摇匀溶液，直到粉末溶解。"
+      },
+      {
+        "en": "The speech agitated the crowd rather than calming it.",
+        "zh": "那番讲话没让人平静，反而把人群搅动起来了。"
+      }
+    ]
+  },
+  "agnostic": {
+    "zh": "不可知论者；不置可否的",
+    "note": "词源是 a-（不）+ gno-（知）：既不断言也不否认神的存在。技术上成了万能后缀：platform-agnostic 跨平台、protocol-agnostic 不挑协议。",
+    "ex": [
+      {
+        "en": "He calls himself agnostic: he neither affirms nor denies a god.",
+        "zh": "他自称不可知论者：既不断言也不否认有神。"
+      },
+      {
+        "en": "The team is platform-agnostic about where the code runs.",
+        "zh": "这个团队对代码跑在哪家平台上无所谓。"
+      }
+    ]
+  },
+  "airway": {
+    "zh": "气道；航路",
+    "note": "医学上是急救里的「气道」（keep the airway open），航空上是「航路」。复数 airways 常直接当「航空公司」用，如 British Airways。",
+    "ex": [
+      {
+        "en": "Keep the airway open and tilt the head back.",
+        "zh": "保持气道通畅，把头后仰。"
+      },
+      {
+        "en": "The airline won the airway between the two capitals.",
+        "zh": "这家航空公司拿下了两国首都之间的航路。"
+      }
+    ]
+  },
+  "albeit": {
+    "zh": "虽然，尽管",
+    "note": "书面语里的「虽然」，后面只接短语，不接完整从句——不能说 albeit he was tired，那要用 although。位置常插在句中，语气比 though 弱，比 but 雅。",
+    "ex": [
+      {
+        "en": "The room was quiet, albeit a little cramped.",
+        "zh": "房间很安静，就是有点挤。"
+      },
+      {
+        "en": "He agreed to help, albeit reluctantly.",
+        "zh": "他答应帮忙，虽然不太情愿。"
+      }
+    ]
+  },
+  "alienation": {
+    "zh": "疏离；异化",
+    "note": "日常是「格格不入、被隔开」，哲学与社会学是「异化」。动词 alienate 还有法律义「转让（财产）」，读旧小说时会碰上。",
+    "ex": [
+      {
+        "en": "What he felt was not anger but a quiet alienation from his own family.",
+        "zh": "他不是愤怒，而是对自己家的一种安静的疏离。"
+      },
+      {
+        "en": "Marx took alienation to be a condition of labour under capital.",
+        "zh": "马克思把异化看作资本之下劳动的一种处境。"
+      }
+    ]
+  },
+  "align": {
+    "zh": "对齐；使一致；结盟",
+    "note": "三条线：物理对齐、口径一致（align our priorities with theirs）、政治结盟（align with）。名词 alignment 还能指汽车「四轮定位」。",
+    "ex": [
+      {
+        "en": "Align the two edges before you run the blade along the fold.",
+        "zh": "沿折痕下刀之前，先把两条边对齐。"
+      },
+      {
+        "en": "The party aligned itself with the farmers' movement.",
+        "zh": "这个党站到了农民运动一边。"
+      }
+    ]
+  },
+  "alloy": {
+    "zh": "合金；使成合金",
+    "note": "名动同形不同音：名词 /ˈælɔɪ/，动词 /əˈlɔɪ/。比喻义是「掺入杂质」：pleasure alloyed with guilt 掺着愧疚的快乐。",
+    "ex": [
+      {
+        "en": "Bronze is an alloy of copper and tin.",
+        "zh": "青铜是铜和锡的合金。"
+      },
+      {
+        "en": "The steel is alloyed with a little vanadium for strength.",
+        "zh": "这种钢掺了一点钒来提高强度。"
+      }
+    ]
+  },
+  "alright": {
+    "zh": "还行；没事",
+    "note": "非正式写法，正式文本仍用 all right。表「没问题、可以」时 alright 很常见；表「确实正确」（You're all right）还是分开写更稳。",
+    "ex": [
+      {
+        "en": "\"Sorry I'm late.\" \"It's alright, we haven't ordered.\"",
+        "zh": "「抱歉来晚了。」「没事，我们还没点。」"
+      },
+      {
+        "en": "The play was alright, nothing more.",
+        "zh": "这戏还行，也就还行。"
+      }
+    ]
+  },
+  "amenable": {
+    "zh": "肯配合的；经得起（处理/检验）",
+    "note": "两个用法：人 amenable to 建议，是「好说话、愿意配合」；事物 amenable to 处理或检验，是「可以这样处理」。不是「和蔼」。",
+    "ex": [
+      {
+        "en": "She was surprisingly amenable to a later start.",
+        "zh": "说到推迟开工，她意外地好说话。"
+      },
+      {
+        "en": "The data are amenable to several readings.",
+        "zh": "这些数据可以有几种解读。"
+      }
+    ]
+  },
+  "amnesty": {
+    "zh": "大赦",
+    "note": "专指对整类人的赦免——政治犯、逃兵、非法持械者，不是普通减刑（那是 pardon 或 commutation）。也指「赦免期限」：during the amnesty。",
+    "ex": [
+      {
+        "en": "The government declared an amnesty for draft evaders.",
+        "zh": "政府宣布对逃避兵役者实行大赦。"
+      },
+      {
+        "en": "The amnesty covered weapons handed in before March.",
+        "zh": "这次赦免适用于三月之前上缴的武器。"
+      }
+    ]
+  },
+  "antagonistic": {
+    "zh": "敌对的、对抗的",
+    "note": "强调立场或作用相冲，比 hostile 更「结构性」，常形容长期对立的关系。药理学里是「拮抗」。名词 antagonist 既是「对手」，也是戏剧里的「反派」。",
+    "ex": [
+      {
+        "en": "The two departments have been antagonistic for as long as anyone can remember.",
+        "zh": "这两个部门对立了不知多少年。"
+      },
+      {
+        "en": "Caffeine can be antagonistic to the drug's effect.",
+        "zh": "咖啡因会对抗这种药的作用。"
+      }
+    ]
+  },
+  "antecedent": {
+    "zh": "前事、前身；先行词",
+    "note": "语法书里的「先行词」和史学里的「前身、前事」是同一个词。复数 antecedents 还常指「家世、来历」：a man of shady antecedents。",
+    "ex": [
+      {
+        "en": "The treaty's antecedents go back to a border dispute in the 1890s.",
+        "zh": "这份条约的由来要追溯到十九世纪九十年代的一场边界争端。"
+      },
+      {
+        "en": "In \"the book that she wrote\", \"book\" is the antecedent of \"that\".",
+        "zh": "在 the book that she wrote 里，book 是 that 的先行词。"
+      }
+    ]
+  },
+  "apprise": {
+    "zh": "告知（正式）",
+    "note": "只用于正式书面，搭配固定：apprise sb of sth。最容易错的是和 appraise（评估）混——两个词只差一个字母，意思毫无关系。",
+    "ex": [
+      {
+        "en": "Please apprise the board of any change in the schedule.",
+        "zh": "日程若有变动，请知会董事会。"
+      },
+      {
+        "en": "He had not been apprised of the decision until Friday.",
+        "zh": "他到周五才被告知这个决定。"
+      }
+    ]
+  },
+  "approximate": {
+    "zh": "大约的；近似、接近",
+    "note": "形容词读 /əˈprɒksɪmət/，动词读 /əˈprɒksɪmeɪt/。动词常配 to：approximate to the truth 接近真相。写作里 approximate 比 about 正式，比 roughly 书面。",
+    "ex": [
+      {
+        "en": "The figures are approximate; the final audit may differ.",
+        "zh": "这些数字是估算的，最终审计可能有出入。"
+      },
+      {
+        "en": "The model approximates the behaviour of the real system without reproducing it.",
+        "zh": "这个模型只是逼近真实系统的行为，并不复现它。"
+      }
+    ]
+  },
+  "assess": {
+    "zh": "评估；估价；课征（税费）",
+    "note": "三条线：评估（assess risk）、估价、课税或摊派（assess a tax on land）。名词 assessment 在英国教育里就是「作业、考核」，别只记住「评估」。",
+    "ex": [
+      {
+        "en": "It is too early to assess the damage.",
+        "zh": "现在评估损失还太早。"
+      },
+      {
+        "en": "Owners are assessed a fee for the new sewer.",
+        "zh": "业主们被课了一笔新下水道的费用。"
+      }
+    ]
+  },
+  "assimilate": {
+    "zh": "吸收（知识）；同化；消化吸收",
+    "note": "三条线：知识被「吃进去」、移民被「同化」、身体「消化吸收」。同化用 assimilate into，不说 assimilate to。",
+    "ex": [
+      {
+        "en": "Children assimilate grammar faster than vocabulary.",
+        "zh": "孩子吸收语法比吸收词汇快。"
+      },
+      {
+        "en": "It took the family a decade to assimilate into the town.",
+        "zh": "这家人花了十年才融进这个镇子。"
+      }
+    ]
+  },
+  "attrition": {
+    "zh": "消耗、损耗；自然减员",
+    "note": "战争里的「消耗战」是 war of attrition；人事上的 attrition 指「走了不补」——是自然流失，不是裁员（裁员是 layoff）。",
+    "ex": [
+      {
+        "en": "The strike was broken by attrition rather than by force.",
+        "zh": "罢工不是被强力压下去的，是被拖垮的。"
+      },
+      {
+        "en": "The company relies on attrition to shrink headcount.",
+        "zh": "公司靠自然减员来压缩人手。"
+      }
+    ]
+  },
+  "backfire": {
+    "zh": "适得其反；（发动机）回火",
+    "note": "本义是发动机回火，比喻义是「反噬、适得其反」，几乎只用于计划、策略、言行。别和 misfire 混：misfire 是没打响、没奏效，backfire 是起了反效果。",
+    "ex": [
+      {
+        "en": "The ad campaign backfired: sales fell for two quarters.",
+        "zh": "那场广告适得其反，销量连跌了两个季度。"
+      },
+      {
+        "en": "The engine backfired and the car shuddered.",
+        "zh": "发动机回火，车身一抖。"
+      }
+    ]
+  },
+  "blister": {
+    "zh": "水泡；起泡",
+    "note": "三个方向：皮肤的水泡、漆面鼓泡、还有「痛骂」（a blistering attack）。形容词 blistering 常形容酷热：blistering heat。",
+    "ex": [
+      {
+        "en": "The new boots raised a blister on his heel within an hour.",
+        "zh": "新靴子一小时就在他脚后跟磨出一个水泡。"
+      },
+      {
+        "en": "The paint blistered in the sun.",
+        "zh": "漆在太阳下鼓起了泡。"
+      }
+    ]
+  },
+  "blockade": {
+    "zh": "封锁",
+    "note": "军事上的封锁是切断进出，搭配 impose / lift a blockade；日常是「堵住通道」。别和 embargo 混：embargo 针对贸易，blockade 针对通行。",
+    "ex": [
+      {
+        "en": "The navy imposed a blockade on the port for six weeks.",
+        "zh": "海军对这个港口封锁了六周。"
+      },
+      {
+        "en": "Protesters blockaded the entrance to the plant.",
+        "zh": "抗议者堵住了工厂入口。"
+      }
+    ]
+  },
+  "boost": {
+    "zh": "提升、促进；提振",
+    "note": "可数名词，常用 a boost to sth；动词后面接具体对象（boost sales / morale），不接人说 boost him——那是「把他抬起来」的字面义。",
+    "ex": [
+      {
+        "en": "The tax cut was meant to boost consumer spending.",
+        "zh": "减税的本意是提振消费。"
+      },
+      {
+        "en": "The win gave her confidence a much-needed boost.",
+        "zh": "这场胜利给她的信心打了一针。"
+      }
+    ]
+  },
+  "booster": {
+    "zh": "助推器；加强剂；增高垫",
+    "note": "三个高频搭配各管一摊：booster seat 儿童增高座椅、booster shot 加强针、rocket booster 火箭助推器。比喻义是「推一把的人或事」。",
+    "ex": [
+      {
+        "en": "Children under eight need a booster seat in this state.",
+        "zh": "在本州，八岁以下儿童要坐增高座椅。"
+      },
+      {
+        "en": "The vaccine needs a booster after a year.",
+        "zh": "这种疫苗一年后要打加强针。"
+      }
+    ]
+  },
+  "bristle": {
+    "zh": "毛发竖立；被激怒；刚毛",
+    "note": "两个固定搭配分工清楚：bristle at sth 对某事冒火，bristle with sth 布满某物（a street bristling with cameras）。名词是刷子上的硬毛。",
+    "ex": [
+      {
+        "en": "The dog's hackles bristled at the sound.",
+        "zh": "狗听到那声音，颈毛都竖起来了。"
+      },
+      {
+        "en": "She bristled at the suggestion that she had lied.",
+        "zh": "有人暗示她撒谎，她立刻竖起了刺。"
+      }
+    ]
+  },
+  "buffer": {
+    "zh": "缓冲（物）；缓冲",
+    "note": "技术里是「缓冲区」，财务和日程里是「缓冲余量」。动词常见于被动：be buffered against / from。",
+    "ex": [
+      {
+        "en": "Keep a buffer of two days between the shipment and the deadline.",
+        "zh": "发货和截止日之间留两天缓冲。"
+      },
+      {
+        "en": "Savings buffered them against a bad year.",
+        "zh": "存款帮他们顶过了糟糕的一年。"
+      }
+    ]
+  },
+  "bulb": {
+    "zh": "灯泡；球茎",
+    "note": "灯泡、植物球茎、还有眼球（the bulb of the eye）。「灯泡坏了」说 the bulb is out 或 has gone，比 broken 自然。",
+    "ex": [
+      {
+        "en": "The bulb in the hallway has been out for a week.",
+        "zh": "走廊那只灯泡坏了一周了。"
+      },
+      {
+        "en": "Plant the bulbs in autumn, pointed end up.",
+        "zh": "秋天把球茎种下，尖头朝上。"
+      }
+    ]
+  },
+  "cancel": {
+    "zh": "取消；抵消",
+    "note": "cancel out 是「互相抵消」，物理与逻辑里常用。拼写英式 cancelled、美式 canceled，两种都对，但一篇文章里要统一；名词 cancellation 双写 l。",
+    "ex": [
+      {
+        "en": "They cancelled the order an hour before delivery.",
+        "zh": "送货前一小时他们取消了订单。"
+      },
+      {
+        "en": "The two effects cancel each other out.",
+        "zh": "两种效应互相抵消。"
+      }
+    ]
+  },
+  "canon": {
+    "zh": "正典；准则；真作全集",
+    "note": "和 cannon（大炮）只差一个 n，意思天差地别。canon 指被公认的正典、准则，也指某作家的真作全集；形容词 canonical 在技术里是「规范形式」。",
+    "ex": [
+      {
+        "en": "The novel entered the canon of American literature in the 1950s.",
+        "zh": "这部小说在五十年代进入美国文学正典。"
+      },
+      {
+        "en": "By the canon of the church, the ruling was invalid.",
+        "zh": "按教会法规，这项裁定无效。"
+      }
+    ]
+  },
+  "canvass": {
+    "zh": "拉票；逐户征求意见",
+    "note": "和 canvas（帆布、画布）只差一个 s，意思无关。canvass 的核心是「逐户逐人地问」，选举里就是拉票，民调里就是走访。",
+    "ex": [
+      {
+        "en": "Volunteers canvassed the neighbourhood for signatures.",
+        "zh": "志愿者在社区挨家挨户征集签名。"
+      },
+      {
+        "en": "The board canvassed members on the merger.",
+        "zh": "董事会就合并一事征求了会员意见。"
+      }
+    ]
+  },
+  "capsule": {
+    "zh": "胶囊；太空舱；概要",
+    "note": "药、航天、还有「浓缩概要」（in capsule form）。别把太空舱说成 cabin——cabin 是机舱、客舱。",
+    "ex": [
+      {
+        "en": "Take one capsule with water before breakfast.",
+        "zh": "早饭前用水送服一粒胶囊。"
+      },
+      {
+        "en": "The capsule splashed down four hundred miles off target.",
+        "zh": "太空舱落点偏了四百英里。"
+      }
+    ]
+  },
+  "chafe": {
+    "zh": "摩擦（致痛）；烦躁",
+    "note": "两条线：皮肤被磨（chafe against）、心里憋火（chafe at / under）。名词 chafing 既是擦伤，也是焦躁。",
+    "ex": [
+      {
+        "en": "The strap chafed against his shoulder all afternoon.",
+        "zh": "带子磨了他肩膀一下午。"
+      },
+      {
+        "en": "He chafed at the delay but said nothing.",
+        "zh": "他对拖延很不耐烦，但没说什么。"
+      }
+    ]
+  },
+  "citation": {
+    "zh": "引文、出处；传票、罚单；嘉奖",
+    "note": "学术里是引注，法律里是传票或罚单，官方场合是嘉奖令——三个意思共用一个词，靠文体分辨。动词 cite 三个义项都通。",
+    "ex": [
+      {
+        "en": "Every claim in the paper needs a citation.",
+        "zh": "论文里每个论断都要有出处。"
+      },
+      {
+        "en": "The officer issued a citation for illegal parking.",
+        "zh": "警察开了一张违停罚单。"
+      }
+    ]
+  },
+  "closure": {
+    "zh": "关闭；了结",
+    "note": "心理语境里 closure 是「情感上的了结、放下」，中文没有对应单词，别直译成「关闭」。作「关闭」讲时不可数。",
+    "ex": [
+      {
+        "en": "The mill's closure put nine hundred people out of work.",
+        "zh": "工厂关闭让九百人失了业。"
+      },
+      {
+        "en": "The verdict brought a measure of closure to the family.",
+        "zh": "判决让这家人稍稍放下了一点。"
+      }
+    ]
+  },
+  "commute": {
+    "zh": "通勤；减刑",
+    "note": "通勤和减刑是同一个词，靠宾语分：commute to work 通勤，commute a sentence 减刑。减刑不是赦免（pardon），只是把刑罚改轻。",
+    "ex": [
+      {
+        "en": "She commutes forty minutes each way on the train.",
+        "zh": "她坐火车通勤，单程四十分钟。"
+      },
+      {
+        "en": "The governor commuted his sentence to life without parole.",
+        "zh": "州长把他的刑罚减为终身不得假释。"
+      }
+    ]
+  },
+  "constituent": {
+    "zh": "成分；选民；构成的",
+    "note": "化学与结构上是「成分」，政治上是「选区选民」。形容词用法固定在前：constituent parts 组成部分。",
+    "ex": [
+      {
+        "en": "Water is the main constituent of the drink.",
+        "zh": "水是这种饮料的主要成分。"
+      },
+      {
+        "en": "She holds a monthly surgery for her constituents.",
+        "zh": "她每月为选区选民安排一次接待。"
+      }
+    ]
+  },
+  "convertible": {
+    "zh": "可转换的；敞篷车",
+    "note": "金融里 convertible 直接当名词用，指可转债；车里是敞篷；软件里是可换算。convert 是动词，-ible 表示「能被……的」。",
+    "ex": [
+      {
+        "en": "The bond is convertible into shares at a fixed price.",
+        "zh": "这种债券可按固定价格转成股票。"
+      },
+      {
+        "en": "They rented a convertible for the coast road.",
+        "zh": "他们租了辆敞篷车跑海岸公路。"
+      }
+    ]
+  },
+  "coordinate": {
+    "zh": "协调；坐标；同等的",
+    "note": "名动读音分工：动词 /kəʊˈɔːdɪneɪt/，名词 /kəʊˈɔːdɪnət/。复数 coordinates 几乎只指坐标，也指配套的一身衣服。",
+    "ex": [
+      {
+        "en": "The two agencies coordinated their response within hours.",
+        "zh": "两个机构几小时内就协调好了应对。"
+      },
+      {
+        "en": "Plot the points on a set of coordinates.",
+        "zh": "把这些点在坐标系里标出来。"
+      }
+    ]
+  },
+  "counterbalance": {
+    "zh": "抗衡、抵销",
+    "note": "强调「用相反的重量或力量抵住」，比 balance 具体。构词就是 counter + balance，政体里的制衡常有用到。",
+    "ex": [
+      {
+        "en": "The Senate counterbalances the power of the president.",
+        "zh": "参议院制衡总统的权力。"
+      },
+      {
+        "en": "Her calm was a counterbalance to his temper.",
+        "zh": "她的沉稳正好抵住他的脾气。"
+      }
+    ]
+  },
+  "dampen": {
+    "zh": "弄湿；抑制（情绪、期待）",
+    "note": "本义「弄湿」现在少见，多用于压低情绪、期待、增长。和形容词 damp（潮湿的）同源，但 dampen 是动词。",
+    "ex": [
+      {
+        "en": "Dampen the cloth and wipe the surface.",
+        "zh": "把布弄湿，擦一遍表面。"
+      },
+      {
+        "en": "The bad weather dampened enthusiasm for the fair.",
+        "zh": "坏天气给集会的热情浇了冷水。"
+      }
+    ]
+  },
+  "deflate": {
+    "zh": "放气；使泄气；压低（价格）",
+    "note": "三条线：轮胎放气、信心受挫、经济上压低价格或通货。反义 inflate 同样三义。",
+    "ex": [
+      {
+        "en": "Someone had deflated all four tyres.",
+        "zh": "有人把四个轮胎的气都放了。"
+      },
+      {
+        "en": "One bad review deflated the whole team.",
+        "zh": "一篇差评就把全队的气泄了。"
+      }
+    ]
+  },
+  "deform": {
+    "zh": "使变形",
+    "note": "强调形状被破坏，多含负面；中性地说形状改变用 change shape。名词 deformation 是材料力学里的「形变」。",
+    "ex": [
+      {
+        "en": "The heat deformed the plastic casing.",
+        "zh": "高温让塑料外壳变了形。"
+      },
+      {
+        "en": "The disease deforms the joints over years.",
+        "zh": "这种病经年累月让关节变形。"
+      }
+    ]
+  },
+  "designate": {
+    "zh": "指定、命名；指定的（后置）",
+    "note": "形容词用法必须后置：president designate 候任总统、chairperson designate 候任主席。动词常带双宾：designate the site a monument。",
+    "ex": [
+      {
+        "en": "The area has been designated a wildlife reserve.",
+        "zh": "这片区域被划定为野生动物保护区。"
+      },
+      {
+        "en": "The chairperson designate takes office in May.",
+        "zh": "候任主席五月就职。"
+      }
+    ]
+  },
+  "diagonal": {
+    "zh": "对角线；斜的",
+    "note": "几何上是对角线，日常是「斜的」。和 vertical 垂直、horizontal 水平并列——只有 diagonal 不依赖重力方向。",
+    "ex": [
+      {
+        "en": "Draw a diagonal from the top left corner.",
+        "zh": "从左上角画一条对角线。"
+      },
+      {
+        "en": "They cut across the field on a diagonal path.",
+        "zh": "他们沿一条斜穿田地的小路走。"
+      }
+    ]
+  },
+  "differentiate": {
+    "zh": "区分；使不同",
+    "note": "两种句式：differentiate A from B，或 differentiate between A and B。商业里说产品「做出差异化」也用这个词。",
+    "ex": [
+      {
+        "en": "It is hard to differentiate the two twins by voice.",
+        "zh": "靠声音很难分清这对双胞胎。"
+      },
+      {
+        "en": "What differentiates this product is the warranty.",
+        "zh": "这款产品的不同之处在保修。"
+      }
+    ]
+  },
+  "disperse": {
+    "zh": "驱散、散开",
+    "note": "强调从聚集状态散开，比 scatter 更整体、更有秩序感。名词 dispersal 在生态学里是「扩散」。",
+    "ex": [
+      {
+        "en": "Police dispersed the crowd before midnight.",
+        "zh": "警察在午夜前驱散了人群。"
+      },
+      {
+        "en": "The seeds are dispersed by the wind.",
+        "zh": "种子靠风散播。"
+      }
+    ]
+  },
+  "erupt": {
+    "zh": "爆发；（火山）喷发",
+    "note": "三条线：火山喷发、冲突或笑声突然爆发、皮疹冒出。常配 in：erupt in laughter / violence。名词 eruption。",
+    "ex": [
+      {
+        "en": "The volcano erupted for the first time in a century.",
+        "zh": "这座火山一百年来第一次喷发。"
+      },
+      {
+        "en": "The hall erupted in applause.",
+        "zh": "大厅里爆发出掌声。"
+      }
+    ]
+  }
+}

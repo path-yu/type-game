@@ -1,0 +1,226 @@
+{
+  "backfire": {
+    "zh": "适得其反；（发动机）回火",
+    "note": "本义是发动机回火，比喻义是「反噬、适得其反」，几乎只用于计划、策略、言行。别和 misfire 混：misfire 是没打响、没奏效，backfire 是起了反效果。",
+    "ex": [
+      { "en": "The ad campaign backfired: sales fell for two quarters.", "zh": "那场广告适得其反，销量连跌了两个季度。" },
+      { "en": "The engine backfired and the car shuddered.", "zh": "发动机回火，车身一抖。" }
+    ]
+  },
+  "blister": {
+    "zh": "水泡；起泡",
+    "note": "三个方向：皮肤的水泡、漆面鼓泡、还有「痛骂」（a blistering attack）。形容词 blistering 常形容酷热：blistering heat。",
+    "ex": [
+      { "en": "The new boots raised a blister on his heel within an hour.", "zh": "新靴子一小时就在他脚后跟磨出一个水泡。" },
+      { "en": "The paint blistered in the sun.", "zh": "漆在太阳下鼓起了泡。" }
+    ]
+  },
+  "blockade": {
+    "zh": "封锁",
+    "note": "军事上的封锁是切断进出，搭配 impose / lift a blockade；日常是「堵住通道」。别和 embargo 混：embargo 针对贸易，blockade 针对通行。",
+    "ex": [
+      { "en": "The navy imposed a blockade on the port for six weeks.", "zh": "海军对这个港口封锁了六周。" },
+      { "en": "Protesters blockaded the entrance to the plant.", "zh": "抗议者堵住了工厂入口。" }
+    ]
+  },
+  "boost": {
+    "zh": "提升、促进；提振",
+    "note": "可数名词，常用 a boost to sth；动词后面接具体对象（boost sales / morale），不接人说 boost him——那是「把他抬起来」的字面义。",
+    "ex": [
+      { "en": "The tax cut was meant to boost consumer spending.", "zh": "减税的本意是提振消费。" },
+      { "en": "The win gave her confidence a much-needed boost.", "zh": "这场胜利给她的信心打了一针。" }
+    ]
+  },
+  "booster": {
+    "zh": "助推器；加强剂；增高垫",
+    "note": "三个高频搭配各管一摊：booster seat 儿童增高座椅、booster shot 加强针、rocket booster 火箭助推器。比喻义是「推一把的人或事」。",
+    "ex": [
+      { "en": "Children under eight need a booster seat in this state.", "zh": "在本州，八岁以下儿童要坐增高座椅。" },
+      { "en": "The vaccine needs a booster after a year.", "zh": "这种疫苗一年后要打加强针。" }
+    ]
+  },
+  "bristle": {
+    "zh": "毛发竖立；被激怒；刚毛",
+    "note": "两个固定搭配分工清楚：bristle at sth 对某事冒火，bristle with sth 布满某物（a street bristling with cameras）。名词是刷子上的硬毛。",
+    "ex": [
+      { "en": "The dog's hackles bristled at the sound.", "zh": "狗听到那声音，颈毛都竖起来了。" },
+      { "en": "She bristled at the suggestion that she had lied.", "zh": "有人暗示她撒谎，她立刻竖起了刺。" }
+    ]
+  },
+  "buffer": {
+    "zh": "缓冲（物）；缓冲",
+    "note": "技术里是「缓冲区」，财务和日程里是「缓冲余量」。动词常见于被动：be buffered against / from。",
+    "ex": [
+      { "en": "Keep a buffer of two days between the shipment and the deadline.", "zh": "发货和截止日之间留两天缓冲。" },
+      { "en": "Savings buffered them against a bad year.", "zh": "存款帮他们顶过了糟糕的一年。" }
+    ]
+  },
+  "bulb": {
+    "zh": "灯泡；球茎",
+    "note": "灯泡、植物球茎、还有眼球（the bulb of the eye）。「灯泡坏了」说 the bulb is out 或 has gone，比 broken 自然。",
+    "ex": [
+      { "en": "The bulb in the hallway has been out for a week.", "zh": "走廊那只灯泡坏了一周了。" },
+      { "en": "Plant the bulbs in autumn, pointed end up.", "zh": "秋天把球茎种下，尖头朝上。" }
+    ]
+  },
+  "cancel": {
+    "zh": "取消；抵消",
+    "note": "cancel out 是「互相抵消」，物理与逻辑里常用。拼写英式 cancelled、美式 canceled，两种都对，但一篇文章里要统一；名词 cancellation 双写 l。",
+    "ex": [
+      { "en": "They cancelled the order an hour before delivery.", "zh": "送货前一小时他们取消了订单。" },
+      { "en": "The two effects cancel each other out.", "zh": "两种效应互相抵消。" }
+    ]
+  },
+  "canon": {
+    "zh": "正典；准则；真作全集",
+    "note": "和 cannon（大炮）只差一个 n，意思天差地别。canon 指被公认的正典、准则，也指某作家的真作全集；形容词 canonical 在技术里是「规范形式」。",
+    "ex": [
+      { "en": "The novel entered the canon of American literature in the 1950s.", "zh": "这部小说在五十年代进入美国文学正典。" },
+      { "en": "By the canon of the church, the ruling was invalid.", "zh": "按教会法规，这项裁定无效。" }
+    ]
+  },
+  "canvass": {
+    "zh": "拉票；逐户征求意见",
+    "note": "和 canvas（帆布、画布）只差一个 s，意思无关。canvass 的核心是「逐户逐人地问」，选举里就是拉票，民调里就是走访。",
+    "ex": [
+      { "en": "Volunteers canvassed the neighbourhood for signatures.", "zh": "志愿者在社区挨家挨户征集签名。" },
+      { "en": "The board canvassed members on the merger.", "zh": "董事会就合并一事征求了会员意见。" }
+    ]
+  },
+  "capsule": {
+    "zh": "胶囊；太空舱；概要",
+    "note": "药、航天、还有「浓缩概要」（in capsule form）。别把太空舱说成 cabin——cabin 是机舱、客舱。",
+    "ex": [
+      { "en": "Take one capsule with water before breakfast.", "zh": "早饭前用水送服一粒胶囊。" },
+      { "en": "The capsule splashed down four hundred miles off target.", "zh": "太空舱落点偏了四百英里。" }
+    ]
+  },
+  "chafe": {
+    "zh": "摩擦（致痛）；烦躁",
+    "note": "两条线：皮肤被磨（chafe against）、心里憋火（chafe at / under）。名词 chafing 既是擦伤，也是焦躁。",
+    "ex": [
+      { "en": "The strap chafed against his shoulder all afternoon.", "zh": "带子磨了他肩膀一下午。" },
+      { "en": "He chafed at the delay but said nothing.", "zh": "他对拖延很不耐烦，但没说什么。" }
+    ]
+  },
+  "citation": {
+    "zh": "引文、出处；传票、罚单；嘉奖",
+    "note": "学术里是引注，法律里是传票或罚单，官方场合是嘉奖令——三个意思共用一个词，靠文体分辨。动词 cite 三个义项都通。",
+    "ex": [
+      { "en": "Every claim in the paper needs a citation.", "zh": "论文里每个论断都要有出处。" },
+      { "en": "The officer issued a citation for illegal parking.", "zh": "警察开了一张违停罚单。" }
+    ]
+  },
+  "closure": {
+    "zh": "关闭；了结",
+    "note": "心理语境里 closure 是「情感上的了结、放下」，中文没有对应单词，别直译成「关闭」。作「关闭」讲时不可数。",
+    "ex": [
+      { "en": "The mill's closure put nine hundred people out of work.", "zh": "工厂关闭让九百人失了业。" },
+      { "en": "The verdict brought a measure of closure to the family.", "zh": "判决让这家人稍稍放下了一点。" }
+    ]
+  },
+  "commute": {
+    "zh": "通勤；减刑",
+    "note": "通勤和减刑是同一个词，靠宾语分：commute to work 通勤，commute a sentence 减刑。减刑不是赦免（pardon），只是把刑罚改轻。",
+    "ex": [
+      { "en": "She commutes forty minutes each way on the train.", "zh": "她坐火车通勤，单程四十分钟。" },
+      { "en": "The governor commuted his sentence to life without parole.", "zh": "州长把他的刑罚减为终身不得假释。" }
+    ]
+  },
+  "constituent": {
+    "zh": "成分；选民；构成的",
+    "note": "化学与结构上是「成分」，政治上是「选区选民」。形容词用法固定在前：constituent parts 组成部分。",
+    "ex": [
+      { "en": "Water is the main constituent of the drink.", "zh": "水是这种饮料的主要成分。" },
+      { "en": "She holds a monthly surgery for her constituents.", "zh": "她每月为选区选民安排一次接待。" }
+    ]
+  },
+  "convertible": {
+    "zh": "可转换的；敞篷车",
+    "note": "金融里 convertible 直接当名词用，指可转债；车里是敞篷；软件里是可换算。convert 是动词，-ible 表示「能被……的」。",
+    "ex": [
+      { "en": "The bond is convertible into shares at a fixed price.", "zh": "这种债券可按固定价格转成股票。" },
+      { "en": "They rented a convertible for the coast road.", "zh": "他们租了辆敞篷车跑海岸公路。" }
+    ]
+  },
+  "coordinate": {
+    "zh": "协调；坐标；同等的",
+    "note": "名动读音分工：动词 /kəʊˈɔːdɪneɪt/，名词 /kəʊˈɔːdɪnət/。复数 coordinates 几乎只指坐标，也指配套的一身衣服。",
+    "ex": [
+      { "en": "The two agencies coordinated their response within hours.", "zh": "两个机构几小时内就协调好了应对。" },
+      { "en": "Plot the points on a set of coordinates.", "zh": "把这些点在坐标系里标出来。" }
+    ]
+  },
+  "counterbalance": {
+    "zh": "抗衡、抵销",
+    "note": "强调「用相反的重量或力量抵住」，比 balance 具体。构词就是 counter + balance，政体里的制衡常有用到。",
+    "ex": [
+      { "en": "The Senate counterbalances the power of the president.", "zh": "参议院制衡总统的权力。" },
+      { "en": "Her calm was a counterbalance to his temper.", "zh": "她的沉稳正好抵住他的脾气。" }
+    ]
+  },
+  "dampen": {
+    "zh": "弄湿；抑制（情绪、期待）",
+    "note": "本义「弄湿」现在少见，多用于压低情绪、期待、增长。和形容词 damp（潮湿的）同源，但 dampen 是动词。",
+    "ex": [
+      { "en": "Dampen the cloth and wipe the surface.", "zh": "把布弄湿，擦一遍表面。" },
+      { "en": "The bad weather dampened enthusiasm for the fair.", "zh": "坏天气给集会的热情浇了冷水。" }
+    ]
+  },
+  "deflate": {
+    "zh": "放气；使泄气；压低（价格）",
+    "note": "三条线：轮胎放气、信心受挫、经济上压低价格或通货。反义 inflate 同样三义。",
+    "ex": [
+      { "en": "Someone had deflated all four tyres.", "zh": "有人把四个轮胎的气都放了。" },
+      { "en": "One bad review deflated the whole team.", "zh": "一篇差评就把全队的气泄了。" }
+    ]
+  },
+  "deform": {
+    "zh": "使变形",
+    "note": "强调形状被破坏，多含负面；中性地说形状改变用 change shape。名词 deformation 是材料力学里的「形变」。",
+    "ex": [
+      { "en": "The heat deformed the plastic casing.", "zh": "高温让塑料外壳变了形。" },
+      { "en": "The disease deforms the joints over years.", "zh": "这种病经年累月让关节变形。" }
+    ]
+  },
+  "designate": {
+    "zh": "指定、命名；指定的（后置）",
+    "note": "形容词用法必须后置：president designate 候任总统、chairperson designate 候任主席。动词常带双宾：designate the site a monument。",
+    "ex": [
+      { "en": "The area has been designated a wildlife reserve.", "zh": "这片区域被划定为野生动物保护区。" },
+      { "en": "The chairperson designate takes office in May.", "zh": "候任主席五月就职。" }
+    ]
+  },
+  "diagonal": {
+    "zh": "对角线；斜的",
+    "note": "几何上是对角线，日常是「斜的」。和 vertical 垂直、horizontal 水平并列——只有 diagonal 不依赖重力方向。",
+    "ex": [
+      { "en": "Draw a diagonal from the top left corner.", "zh": "从左上角画一条对角线。" },
+      { "en": "They cut across the field on a diagonal path.", "zh": "他们沿一条斜穿田地的小路走。" }
+    ]
+  },
+  "differentiate": {
+    "zh": "区分；使不同",
+    "note": "两种句式：differentiate A from B，或 differentiate between A and B。商业里说产品「做出差异化」也用这个词。",
+    "ex": [
+      { "en": "It is hard to differentiate the two twins by voice.", "zh": "靠声音很难分清这对双胞胎。" },
+      { "en": "What differentiates this product is the warranty.", "zh": "这款产品的不同之处在保修。" }
+    ]
+  },
+  "disperse": {
+    "zh": "驱散、散开",
+    "note": "强调从聚集状态散开，比 scatter 更整体、更有秩序感。名词 dispersal 在生态学里是「扩散」。",
+    "ex": [
+      { "en": "Police dispersed the crowd before midnight.", "zh": "警察在午夜前驱散了人群。" },
+      { "en": "The seeds are dispersed by the wind.", "zh": "种子靠风散播。" }
+    ]
+  },
+  "erupt": {
+    "zh": "爆发；（火山）喷发",
+    "note": "三条线：火山喷发、冲突或笑声突然爆发、皮疹冒出。常配 in：erupt in laughter / violence。名词 eruption。",
+    "ex": [
+      { "en": "The volcano erupted for the first time in a century.", "zh": "这座火山一百年来第一次喷发。" },
+      { "en": "The hall erupted in applause.", "zh": "大厅里爆发出掌声。" }
+    ]
+  }
+}
