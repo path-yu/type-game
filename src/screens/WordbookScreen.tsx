@@ -17,7 +17,7 @@ import { syncRoute } from '../lib/route';
  * 这样首屏只需要 783KB，不是 29MB。
  */
 
-type Row = [string, number, string, number]; // [词, 频次, 词性串, 是否有例句]
+type Row = [string, number, string, number, number?]; // [词, 频次, 词性串, 是否有例句, 是否有精讲]
 
 interface Sense {
   p: string;          // 词性
@@ -35,6 +35,7 @@ interface Entry {
   senses: Sense[];
   ex?: { t: string; zh?: string; src?: string }[];
   src?: [string, number][];  // 在哪几本书里出现、各几次
+  cur?: { note?: string; ex?: { en: string; zh: string }[] };  // 人写的精讲
   up?: string[];    // 上位词（WordNet @ 指针）
   opp?: string[];   // 反义词（! 指针）
   forms?: string[];
@@ -61,6 +62,7 @@ export function WordbookScreen() {
   const go = useGame(s => s.go);
   const [fullBooks, setFullBooks] = useState<Set<string>>(new Set());
   const [onlyLex, setOnlyLex] = useState(false);
+  const [onlyCur, setOnlyCur] = useState(false);
 
   const [rows, setRows] = useState<Row[] | null>(null);
   const [fail, setFail] = useState(false);
@@ -135,8 +137,9 @@ export function WordbookScreen() {
     if (pos) pool = pool.filter(r => r[2].includes(pos));
     if (onlyEx) pool = pool.filter(r => r[3] === 1);
     if (onlyLex) pool = pool.filter(r => mastery[r[0]]?.lex);
+    if (onlyCur) pool = pool.filter(r => r[4] === 1);
     return pool;
-  }, [rows, q, letter, pos, onlyEx, onlyLex, mastery]);
+  }, [rows, q, letter, pos, onlyEx, onlyLex, onlyCur, mastery]);
 
   const lexCount = useMemo(
     () => Object.values(mastery).filter(m => m.lex).length,
@@ -250,6 +253,13 @@ export function WordbookScreen() {
         ))}
         <button className={`wb-chip${onlyEx ? ' on' : ''}`} onClick={() => { setOnlyEx(v => !v); setScrollTop(0); }}>
           只显示有例句
+        </button>
+        <button
+          className={`wb-chip${onlyCur ? ' on' : ''}`}
+          onClick={() => { setOnlyCur(v => !v); setScrollTop(0); }}
+          title="带人工例句与用法解析的词条"
+        >
+          只看精讲
         </button>
         <button
           className={`wb-chip${onlyLex ? ' on' : ''}`}
@@ -383,6 +393,19 @@ export function WordbookScreen() {
                       </div>
                     ) : null}
                   </div>
+                ) : null}
+
+                {entry.cur ? (
+                  <>
+                    <div className="wb-sec">精讲 · 用法</div>
+                    {entry.cur.note ? <p className="wb-note">{entry.cur.note}</p> : null}
+                    {entry.cur.ex?.map(e => (
+                      <div className="wb-ex-item wb-ex-cur" key={e.en}>
+                        <p className="wb-ex-en">{e.en}</p>
+                        <p className="wb-ex-zh">{e.zh}</p>
+                      </div>
+                    ))}
+                  </>
                 ) : null}
 
                 {entry.src?.length ? (

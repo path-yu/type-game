@@ -153,6 +153,13 @@ log(`义项顺序索引 ${order.size} 条`);
  */
 const OV = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/lex-zh/overrides.json'), 'utf8'));
 const mergedPath = path.join(ROOT, 'data/lex-zh/merged.json');
+/*
+ * 精讲词条：人写的例句与用法解析（不是从语料里抓的）。
+ * 语料例句能证明"这个词在真实文本里长什么样"，但给不了"怎么用、和谁搭配、
+ * 容易和谁混"——这些只能人写。
+ */
+const curatedPath = path.join(ROOT, 'data/lex-zh/curated.json');
+const CURATED = fs.existsSync(curatedPath) ? JSON.parse(fs.readFileSync(curatedPath, 'utf8')) : {};
 const ZH_MERGED = fs.existsSync(mergedPath) ? JSON.parse(fs.readFileSync(mergedPath, 'utf8')) : {};
 delete OV._comment;
 
@@ -408,7 +415,7 @@ for (const w of words) {
     const ch0 = w[0];
     if (!shards.has(ch0)) shards.set(ch0, {});
     shards.get(ch0)[w] = entry;
-    index.push([w, entry.f, list.map(x => x.p).join(''), ex.length ? 1 : 0]);
+    index.push([w, entry.f, list.map(x => x.p).join(''), ex.length ? 1 : 0, CURATED[w] ? 1 : 0]);
     continue;
   }
 
@@ -464,6 +471,7 @@ for (const w of words) {
     senses: list,
     ...(ex.length ? { ex } : {}),
     ...srcRank(w),
+    ...(CURATED[w] ? { cur: CURATED[w] } : {}),
     ...relOf(senses),
     ...(lemmaFile.detail?.[base]?.forms ? { forms: lemmaFile.detail[base].forms } : {}),
   };
@@ -474,7 +482,7 @@ for (const w of words) {
   const ch = w[0];
   if (!shards.has(ch)) shards.set(ch, {});
   shards.get(ch)[w] = entry;
-  index.push([w, entry.f, list.map(s => s.p).join(''), ex.length ? 1 : 0]);
+  index.push([w, entry.f, list.map(s => s.p).join(''), ex.length ? 1 : 0, CURATED[w] ? 1 : 0]);
 }
 
 /* ---------------- 3.5 补足到 3.5 万 ---------------- */
@@ -505,7 +513,7 @@ if (index.length < TARGET) {
     const ch = w[0];
     if (!shards.has(ch)) shards.set(ch, {});
     shards.get(ch)[w] = entry;
-    index.push([w, 0, list.map(s => s.p).join(''), 0]);
+    index.push([w, 0, list.map(s => s.p).join(''), 0, CURATED[w] ? 1 : 0]);
     added++;
   }
   log(`补入 ${added} 个 WordNet 词（无语料例句）`);

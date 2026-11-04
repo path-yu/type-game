@@ -1,0 +1,128 @@
+{
+  "abandon": {
+    "note": "三个意思要分开：丢下不管（人/地方）、中途放弃（计划/努力）、放任自己（abandon oneself to）。注意它不含「辞职」的意思，辞职是 quit/resign。",
+    "ex": [
+      { "en": "They abandoned the car and walked the last mile in the rain.", "zh": "他们丢下车，在雨里走完了最后一英里。" },
+      { "en": "She abandoned herself to grief for a week, then went back to work.", "zh": "她纵情悲伤了一周，然后回去上班。" }
+    ]
+  },
+  "grave": {
+    "note": "名词是坟；形容词是「严重的、严峻的」或「庄重的」。作形容词时比 serious 更书面、更重，多修饰 concern、danger、doubt 这类抽象名词。",
+    "ex": [
+      { "en": "The report raises grave doubts about the safety of the building.", "zh": "这份报告对那栋楼的安全性提出了严重质疑。" },
+      { "en": "He spoke in a grave voice, as if the news were already certain.", "zh": "他说话的声音很凝重，仿佛消息已经确定。" }
+    ]
+  },
+  "delicate": {
+    "note": "四层意思：物件易碎、工艺精细、局面微妙（需小心处理）、身体娇弱。译「微妙」时多指「一碰就坏」的处境，不是「难以察觉」——那是 subtle。",
+    "ex": [
+      { "en": "It is a delicate balance between security and freedom.", "zh": "这是安全与自由之间一种微妙的平衡。" },
+      { "en": "The porcelain is so delicate that it must be washed by hand.", "zh": "这件瓷器太脆弱，只能手洗。" }
+    ]
+  },
+  "subtle": {
+    "note": "「细微得不容易察觉」，常修饰差别、变化、暗示、气味。和 delicate 的区别：subtle 说的是「弱、淡、不显眼」，delicate 说的是「精、脆、需当心」。",
+    "ex": [
+      { "en": "There is a subtle difference between being polite and being evasive.", "zh": "客气与回避之间有着细微的差别。" },
+      { "en": "A subtle change came over his face, gone before she could name it.", "zh": "他脸上起了细微的变化，她还没辨清就消失了。" }
+    ]
+  },
+  "endure": {
+    "note": "两个不相关的意思：忍受（痛苦/不便），和「持续存在」（正式用法，主语多是事物）。别一律译成「忍受」——The custom endures 是「这个习俗延续至今」。",
+    "ex": [
+      { "en": "She endured two years of silence before she finally wrote to him.", "zh": "她忍了两年的沉默，才终于给他写信。" },
+      { "en": "The old bridge has endured for three centuries.", "zh": "这座老桥已经屹立了三百年。" }
+    ]
+  },
+  "resent": {
+    "note": "「因觉得不公而恼火」，比 hate 更具体：不是讨厌某人，是觉得被亏待。后接动名词：resent doing，不能接不定式。",
+    "ex": [
+      { "en": "He resented being asked to explain himself again.", "zh": "他讨厌又被要求解释一遍。" },
+      { "en": "She never resented the work, only the assumption that it was hers.", "zh": "她从不嫌这活儿累，只恨别人理所当然地认为该由她来做。" }
+    ]
+  },
+  "linger": {
+    "note": "「不肯马上离开」或「迟迟不散」：人逗留、气味/记忆萦绕、目光停留。常与 over、on、behind 连用。",
+    "ex": [
+      { "en": "The smell of woodsmoke lingered in the empty room.", "zh": "柴火烟味在空房间里久久不散。" },
+      { "en": "His eyes lingered on the letter a moment too long.", "zh": "他的目光在那封信上多停了一瞬。" }
+    ]
+  },
+  "betray": {
+    "note": "除「背叛」，还有「无意中流露」：betray fear / betray no sign of… 这个义项在文学里极常见，别一律翻成「背叛」。",
+    "ex": [
+      { "en": "He betrayed no sign of surprise, though he must have been startled.", "zh": "他没有露出一点惊讶，尽管他一定吃了一惊。" },
+      { "en": "Her voice betrayed what her face had kept hidden.", "zh": "她的声音泄露了脸上一直藏着的情绪。" }
+    ]
+  },
+  "glimpse": {
+    "note": "「一眼、一瞬」：名词 catch a glimpse of；动词 glimpse sb/sth（及物，不加 at）。它强调「短暂、不完整」，look 强调主动看。",
+    "ex": [
+      { "en": "I caught a glimpse of her through the crowd and then she was gone.", "zh": "我在人群里瞥见她一眼，随即就消失了。" },
+      { "en": "He glimpsed the truth of it only years later.", "zh": "多年以后他才隐约看清那件事的真相。" }
+    ]
+  },
+  "murmur": {
+    "note": "低声说，带着含糊、连续的意思；也指水、风、人群的低微声响。比 whisper 更含糊，比 mutter 更柔——mutter 常带不满。",
+    "ex": [
+      { "en": "She murmured something he did not catch and turned away.", "zh": "她低声说了句什么，他没听清，她就转过身去了。" },
+      { "en": "Beyond the wall, the river murmured all night.", "zh": "墙外那条河整夜低声流淌。" }
+    ]
+  },
+  "reckon": {
+    "note": "口语里多为「觉得、认为」（I reckon）；书面里是「估算、计算」，还有 reckon with（应付、重视）。译成「计算」会显得生硬。",
+    "ex": [
+      { "en": "I reckon we have about an hour before the tide turns.", "zh": "我估摸着离涨潮还有一个钟头。" },
+      { "en": "Any plan that ignores the weather has to reckon with it sooner or later.", "zh": "任何忽视天气的计划，早晚都得应付它。" }
+    ]
+  },
+  "awe": {
+    "note": "「敬畏」——敬与畏同时在，多由宏大、神圣之物引起。be in awe of；形容词是 awesome（口语已弱化为「很棒」）与 awed。",
+    "ex": [
+      { "en": "The children stood in awe of the enormous skeleton.", "zh": "孩子们站在那具巨大的骨架前，敬畏得不敢出声。" },
+      { "en": "He looked at the sea with something closer to awe than fear.", "zh": "他望着海，那神情与其说是恐惧，不如说是敬畏。" }
+    ]
+  },
+  "dread": {
+    "note": "「预感到而害怕」——怕的是还没发生的事。后接名词或动名词；作名词时 a dread of…。比 fear 更重「料想将至」。",
+    "ex": [
+      { "en": "She dreaded the moment the letter would be opened.", "zh": "她一直怕着那封信被拆开的那一刻。" },
+      { "en": "He went to the door with a dull sense of dread.", "zh": "他带着一种沉闷的预感走向门口。" }
+    ]
+  },
+  "deliberate": {
+    "note": "形容词两读：故意的；从容不迫的（步态、语气）。动词读 /dɪˈlɪbəreɪt/，意为「仔细商议」——同形不同音，注意区分。",
+    "ex": [
+      { "en": "The omission was deliberate; nothing in that report was accidental.", "zh": "那处遗漏是故意的，那份报告里没有一处是偶然。" },
+      { "en": "She crossed the room with slow, deliberate steps.", "zh": "她以缓慢而从容的步子穿过房间。" }
+    ]
+  },
+  "deny": {
+    "note": "两个义项：否认（后接动名词 deny doing，不能接不定式）；拒绝给予（deny sb sth）。注意 deny doing ≠ refuse to do。",
+    "ex": [
+      { "en": "He denied taking the money, and no one could prove otherwise.", "zh": "他否认拿过那笔钱，也没人能证明相反。" },
+      { "en": "The statute denies prisoners the right to vote.", "zh": "该法规剥夺了囚犯的投票权。" }
+    ]
+  },
+  "persuade": {
+    "note": "「说服成功」。中文常说「劝了他半天也没用」，那对应的是 try to persuade。要表达「劝而不成」得另说，不能直接说 persuaded him to… but he refused。",
+    "ex": [
+      { "en": "We finally persuaded her to stay for dinner.", "zh": "我们终于说服她留下吃饭。" },
+      { "en": "I tried to persuade him, but he had already made up his mind.", "zh": "我试着劝他，但他已经拿定主意了。" }
+    ]
+  },
+  "anxious": {
+    "note": "两个方向：为某事焦虑（anxious about），和渴望（anxious to do / anxious for）。后者在正式文体里很常见，别只记「焦虑」。",
+    "ex": [
+      { "en": "She was anxious about the interview for days beforehand.", "zh": "面试前几天她一直心神不宁。" },
+      { "en": "He was anxious to be gone before the others woke.", "zh": "他急着在别人醒来之前离开。" }
+    ]
+  },
+  "sensible": {
+    "note": "「明智的、通情达理的」，不是「敏感的」——那是 sensitive。中国人最常错的一个词。名词 sense 也不等于「感觉」，常指「判断力」。",
+    "ex": [
+      { "en": "It was a sensible decision, if not a brave one.", "zh": "这是个明智的决定，虽然算不上勇敢。" },
+      { "en": "She is far too sensible to take his remark personally.", "zh": "她太通情达理了，不会把他那句话往心里去。" }
+    ]
+  }
+}

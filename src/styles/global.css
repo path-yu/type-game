@@ -2824,6 +2824,13 @@ input, textarea { font-family: inherit; }
   margin: var(--sp-4) 0 var(--sp-2);
   font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .08em; color: var(--fg-3);
 }
+.wb-note {
+  margin: 0 0 var(--sp-2); padding: 8px 10px;
+  font-size: 12.5px; line-height: 1.75; color: var(--fg-2);
+  background: var(--accent-soft); border-left: 2px solid var(--accent);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+.wb-ex-cur { border-left: 2px solid var(--sep-2); padding-left: 10px; }
 .wb-where { display: flex; flex-direction: column; gap: 2px; }
 .wb-where-row {
   display: flex; justify-content: space-between; align-items: baseline;
@@ -2833,6 +2840,13 @@ input, textarea { font-family: inherit; }
 }
 .wb-where-row:hover { background: var(--accent-soft); color: var(--accent); }
 .wb-where-row em { font-style: normal; font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+.wb-note {
+  margin: 0 0 var(--sp-2); padding: 8px 10px;
+  font-size: 12.5px; line-height: 1.75; color: var(--fg-2);
+  background: var(--accent-soft); border-left: 2px solid var(--accent);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+.wb-ex-cur { border-left: 2px solid var(--sep-2); padding-left: 10px; }
 .wb-where { display: flex; flex-direction: column; gap: 2px; }
 .wb-where-row {
   display: flex; justify-content: space-between; align-items: baseline;
@@ -2941,6 +2955,13 @@ input, textarea { font-family: inherit; }
   margin: var(--sp-4) 0 var(--sp-2);
   font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .08em; color: var(--fg-3);
 }
+.wb-note {
+  margin: 0 0 var(--sp-2); padding: 8px 10px;
+  font-size: 12.5px; line-height: 1.75; color: var(--fg-2);
+  background: var(--accent-soft); border-left: 2px solid var(--accent);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+.wb-ex-cur { border-left: 2px solid var(--sep-2); padding-left: 10px; }
 .wb-where { display: flex; flex-direction: column; gap: 2px; }
 .wb-where-row {
   display: flex; justify-content: space-between; align-items: baseline;
@@ -2950,6 +2971,13 @@ input, textarea { font-family: inherit; }
 }
 .wb-where-row:hover { background: var(--accent-soft); color: var(--accent); }
 .wb-where-row em { font-style: normal; font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+.wb-note {
+  margin: 0 0 var(--sp-2); padding: 8px 10px;
+  font-size: 12.5px; line-height: 1.75; color: var(--fg-2);
+  background: var(--accent-soft); border-left: 2px solid var(--accent);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+.wb-ex-cur { border-left: 2px solid var(--sep-2); padding-left: 10px; }
 .wb-where { display: flex; flex-direction: column; gap: 2px; }
 .wb-where-row {
   display: flex; justify-content: space-between; align-items: baseline;
