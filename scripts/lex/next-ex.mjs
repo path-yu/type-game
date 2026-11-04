@@ -14,7 +14,9 @@
  *
  * 输出会附上该词在对话里的原句，写例句时照着语境走，不容易写偏。
  *
- * 用法：node scripts/lex/next-ex.mjs [--n=40] [--from=a] [--modern] [--json]
+ *   4. 外部词频表  —— 前三种都不够用时的兜底（见下面的 FREQ 注释）。
+ *
+ * 用法：node scripts/lex/next-ex.mjs [--n=40] [--from=a] [--modern] [--freq] [--json]
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -28,10 +30,61 @@ const DLG = path.join(ROOT, 'public/data/dialogues.json');
 const n = Number(process.argv.find(a => a.startsWith('--n='))?.slice(4) ?? 40);
 const from = process.argv.find(a => a.startsWith('--from='))?.slice(7) ?? '';
 const onlyModern = process.argv.includes('--modern');
+const onlyFreq = process.argv.includes('--freq');
 const asJson = process.argv.includes('--json');
 
 const idx = JSON.parse(fs.readFileSync(path.join(LEX, 'index.json'), 'utf8'));
 const done = fs.existsSync(EX) ? JSON.parse(fs.readFileSync(EX, 'utf8')) : {};
+
+/*
+ * 外部词频表（Google 网页词频 Top 10000）。
+ *
+ * 前几轮试过的排序信号都不够：字母序碰到民族语言名，义项数碰到多义术语，
+ * 对话语料只覆盖 118 个词。词频表能给出真正的「现代常用度」——
+ * 8 千个空缺词里有 574 个在表内，这批就是最该补的。
+ *
+ * 表里混着大量专名（american / david / yahoo）和成人词，靠下面的名单剔掉；
+ * 国家、语言、常见人名、品牌，都是网页词频的噪声，不是学习词。
+ */
+const FREQ = path.join(ROOT, 'data/wordfreq/google-10000.txt');
+const rank = new Map();
+if (fs.existsSync(FREQ)) {
+  fs.readFileSync(FREQ, 'utf8')
+    .split(/\r?\n/)
+    .forEach((w, i) => {
+      const t = w.trim();
+      if (t) rank.set(t, i + 1);
+    });
+}
+
+const NOISE = new RegExp(
+  '^(' +
+    [
+      // 国家、语言、民族
+      'american', 'english', 'french', 'german', 'spanish', 'italian', 'russian', 'chinese',
+      'japanese', 'indian', 'african', 'asian', 'european', 'australian', 'canadian', 'british',
+      'irish', 'scottish', 'dutch', 'greek', 'latin', 'hebrew', 'arabic', 'persian', 'turkish',
+      'polish', 'swedish', 'norwegian', 'danish', 'finnish', 'portuguese', 'mexican', 'brazilian',
+      'korean', 'thai', 'vietnamese', 'indonesian', 'malaysian', 'filipino',
+      // 地名
+      'america', 'europe', 'asia', 'africa', 'france', 'paris', 'germany', 'china', 'japan',
+      'india', 'england', 'london', 'york', 'washington', 'chicago', 'boston', 'texas', 'florida',
+      'california', 'virginia', 'georgia', 'michigan', 'colorado', 'illinois', 'kansas', 'arizona',
+      'israel', 'columbia', 'australia', 'ireland', 'russia', 'singapore', 'phoenix', 'houston',
+      'atlanta', 'dakota', 'pennsylvania', 'massachusetts', 'iowa', 'missouri', 'hawaii',
+      // 常见人名
+      'david', 'james', 'john', 'michael', 'robert', 'william', 'mary', 'charles', 'thomas',
+      'george', 'scott', 'jones', 'johnson', 'smith', 'brown', 'miller', 'wilson', 'davis',
+      'daniel', 'joseph', 'jackson', 'kelly', 'anderson', 'taylor', 'moore', 'clark',
+      // 品牌与缩写
+      'yahoo', 'google', 'microsoft', 'apple', 'amazon', 'facebook', 'twitter', 'cisco',
+      'dec', 'mon', 'sec', 'min', 'des',
+      // 成人内容
+      'nude', 'anal', 'sex', 'porn', 'fuck', 'fucking', 'lesbian', 'hardcore', 'xxx', 'adult',
+      'viagra', 'casino',
+    ].join('|') +
+    ')$',
+);
 
 /* 专名和术语的味儿：gloss 里几乎全是这种句式 */
 const PROPER = /\b(a city|a town|a village|a state|a county|a river|a mountain|a lake|an island|a country|a port|a capital|a district|a province|a region|United States|genus|family|inhabitant|member of)\b/i;
@@ -80,6 +133,7 @@ const isBritishVariant = w =>
 const picked = [];
 for (const [w, score, pos] of pending.sort(
   (a, b) =>
+    (rank.get(a[0]) ?? 1e9) - (rank.get(b[0]) ?? 1e9) ||
     (modern.get(b[0]) ?? 0) - (modern.get(a[0]) ?? 0) ||
     b[1] - a[1] ||
     a[0].localeCompare(b[0]),
@@ -87,6 +141,8 @@ for (const [w, score, pos] of pending.sort(
   if (picked.length >= n) break;
   if (w.length <= 2) continue;
   if (onlyModern && !modern.has(w)) continue;
+  if (onlyFreq && !rank.has(w)) continue;
+  if (NOISE.test(w)) continue;
   const e = shardOf(w[0])[w];
   if (!e) continue;
   const glosses = (e.senses || []).map(s => s.d || '');
@@ -101,10 +157,11 @@ for (const [w, score, pos] of pending.sort(
    * 但对话语料里出现过的纯名词是例外——那是 refund、invoice、payroll
    * 这种现代生活词，恰恰是公版书语料覆盖不到、最该补的一层。
    */
-  if (!/[va]/.test(pos) && !modern.has(w)) continue;
+  if (!/[va]/.test(pos) && !modern.has(w) && !rank.has(w)) continue;
   picked.push({
     w,
     modern: modern.get(w) ?? 0,
+    rank: rank.get(w) ?? 0,
     senses: (e.senses || []).map(s => `${s.p} ${s.d}`),
     ...(samples.get(w) ? { sample: samples.get(w) } : {}),
   });
@@ -116,7 +173,7 @@ if (asJson) {
   const total = idx.rows.filter(([w, f, , hasEx]) => f === 0 && hasEx === 0 && !done[w]).length;
   console.log(`还差 ${total} 个词没有例句${from ? `（${from} 段）` : ''}，本批 ${picked.length} 个：\n`);
   for (const p of picked) {
-    console.log(`${p.w}  [${p.senses.length}]${p.modern ? `  对话 ${p.modern} 次` : ''}`);
+    console.log(`${p.w}  [${p.senses.length}]${p.rank ? `  #${p.rank}` : ''}${p.modern ? `  对话 ${p.modern} 次` : ''}`);
     for (const s of p.senses.slice(0, 4)) console.log(`    ${s.slice(0, 110)}`);
     if (p.sample) console.log(`    ▸ ${p.sample.en}\n      ${p.sample.zh}`);
   }

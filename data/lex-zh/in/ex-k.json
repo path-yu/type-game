@@ -1,0 +1,322 @@
+{
+  "fax": {
+    "zh": "传真；发传真",
+    "note": "名动同形。虽然过时，合同与官方流程里仍会出现；传真号是 fax number，早年也叫 telefax。",
+    "ex": [
+      { "en": "Send it by fax if the email bounces.", "zh": "邮件退回来就发传真。" },
+      { "en": "He faxed the signed form to the office.", "zh": "他把签好的表传真到了办公室。" }
+    ]
+  },
+  "christmas": {
+    "zh": "圣诞节",
+    "note": "不加冠词：at Christmas、over Christmas。圣诞礼物是 Christmas present，圣诞树是 Christmas tree；缩写 Xmas 只用于非正式场合。",
+    "ex": [
+      { "en": "We spend Christmas with her family.", "zh": "我们跟她家人一起过圣诞。" },
+      { "en": "The shop closes over Christmas.", "zh": "这家店圣诞期间歇业。" }
+    ]
+  },
+  "super": {
+    "zh": "极好的；非常",
+    "note": "口语里的形容词与副词（super quick），也作前缀（supermarket、supervisor）。正式文里表示「很好」别用 super。",
+    "ex": [
+      { "en": "The soup was super, thanks.", "zh": "汤很好，谢谢。" },
+      { "en": "He is super careful with figures.", "zh": "他对数字格外小心。" }
+    ]
+  },
+  "worldwide": {
+    "zh": "全球的；在全球",
+    "note": "一个词。作形容词放名词前（worldwide network），作副词放句末（sold worldwide）。区别 global——它更常指「整体性」。",
+    "ex": [
+      { "en": "The brand has worldwide recognition.", "zh": "这个品牌全球知名。" },
+      { "en": "Tickets go on sale worldwide on Monday.", "zh": "门票周一全球开售。" }
+    ]
+  },
+  "automotive": {
+    "zh": "汽车的、机动车的",
+    "note": "只作定语，指「与机动车有关」；口语里说 car industry 更自然。注意 automatic（自动的）是另一个词。",
+    "ex": [
+      { "en": "The automotive industry shed ten thousand jobs.", "zh": "汽车行业裁掉了一万个岗位。" },
+      { "en": "Automotive parts are taxed at five percent.", "zh": "汽车零件按百分之五征税。" }
+    ]
+  },
+  "congress": {
+    "zh": "代表大会；（大写）国会",
+    "note": "大写 Congress 指美国国会；小写泛指代表大会，学术会议用它比 conference 正式。成员是 congressman。",
+    "ex": [
+      { "en": "The congress passed the bill by two votes.", "zh": "国会以两票之差通过了法案。" },
+      { "en": "She attended a congress on tropical medicine.", "zh": "她参加了一个热带医学大会。" }
+    ]
+  },
+  "integrated": {
+    "zh": "综合的、整合的",
+    "note": "来自 integrate，指各部分组成一个整体；integrated circuit 是集成电路。区别 comprehensive——那是「覆盖全面」。",
+    "ex": [
+      { "en": "The course is an integrated programme of theory and practice.", "zh": "这门课是理论与实践结合的综合课程。" },
+      { "en": "The chip has an integrated graphics unit.", "zh": "这颗芯片集成了图形单元。" }
+    ]
+  },
+  "trademark": {
+    "zh": "商标；标志性特征",
+    "note": "法律上是商标（registered trademark 用 ®），口语里是「招牌特征」。区别 brand——那是品牌本身。",
+    "ex": [
+      { "en": "The logo is a registered trademark.", "zh": "这个标志是注册商标。" },
+      { "en": "Her laugh became a trademark.", "zh": "她那种笑成了她的招牌。" }
+    ]
+  },
+  "optical": {
+    "zh": "光学的；视觉的",
+    "note": "两义并用：光学透镜（optical lens）、光纤（optical fibre）、视错觉（optical illusion）。",
+    "ex": [
+      { "en": "The telescope uses optical lenses, not mirrors.", "zh": "这架望远镜用的是光学透镜，不是反射镜。" },
+      { "en": "It is an optical illusion, not a trick.", "zh": "那是视错觉，不是魔术。" }
+    ]
+  },
+  "revision": {
+    "zh": "修订（版）；复习",
+    "note": "英式里 revision 就是「复习」（美式说 review）；文件改版也是它。动词 revise。",
+    "ex": [
+      { "en": "The draft is on its third revision.", "zh": "草案已经改到第三版。" },
+      { "en": "She did two hours of revision before the exam.", "zh": "考前她复习了两小时。" }
+    ]
+  },
+  "operator": {
+    "zh": "操作员；运营商；接线员",
+    "note": "三义：设备操作员、电信运营商、旧时的接线员；数学里是「运算符」。",
+    "ex": [
+      { "en": "The crane operator signalled to the crew.", "zh": "吊车司机向班组打手势。" },
+      { "en": "The network operator raised prices again.", "zh": "这家网络运营商又涨价了。" }
+    ]
+  },
+  "annotation": {
+    "zh": "注释、批注",
+    "note": "比 comment 更强调「附着在原文上」；技术文档里的标注也用它（代码注释更常说 comment）。",
+    "ex": [
+      { "en": "The margin was full of annotations in pencil.", "zh": "页边写满了铅笔批注。" },
+      { "en": "Add an annotation to the chart before sharing.", "zh": "分享之前给图表加个注。" }
+    ]
+  },
+  "advisory": {
+    "zh": "咨询的、建议性的；公告",
+    "note": "形容词是「只提建议、无决定权」（advisory board），名词是官方的通告与预警。",
+    "ex": [
+      { "en": "The committee has an advisory role only.", "zh": "委员会只起咨询作用。" },
+      { "en": "The weather advisory warned of ice.", "zh": "天气预警提示有结冰。" }
+    ]
+  },
+  "hardcover": {
+    "zh": "精装（本）",
+    "note": "反义 paperback（平装）；英式也说 hardback。出版信息里常写 in hardcover / in paperback。",
+    "ex": [
+      { "en": "The hardcover costs twice as much as the paperback.", "zh": "精装本比平装本贵一倍。" },
+      { "en": "It comes out in hardcover in May.", "zh": "五月出精装版。" }
+    ]
+  },
+  "explorer": {
+    "zh": "探险者；资源管理器",
+    "note": "地理探险者与计算机的文件管理器（Windows Explorer）都用它；浏览器早年也叫 Internet Explorer。",
+    "ex": [
+      { "en": "The explorer spent a year in the delta.", "zh": "这位探险者在三角洲待了一年。" },
+      { "en": "The file opens in your default explorer.", "zh": "文件会用默认的文件管理器打开。" }
+    ]
+  },
+  "commitment": {
+    "zh": "承诺；投入",
+    "note": "两层：对外的承诺、对内的投入度。区别 promise——那是口头许诺，commitment 是「承担下来」。",
+    "ex": [
+      { "en": "The job needs a two-year commitment.", "zh": "这份工作要求承诺做两年。" },
+      { "en": "Her commitment to the project never wavered.", "zh": "她对这个项目的投入从没动摇过。" }
+    ]
+  },
+  "specialty": {
+    "zh": "专长；特产",
+    "note": "美式 specialty、英式 speciality；医学里的「专科」也用它（a specialty clinic）。",
+    "ex": [
+      { "en": "Her specialty is contract law.", "zh": "她的专长是合同法。" },
+      { "en": "The shop sells local specialties.", "zh": "这家店卖本地特产。" }
+    ]
+  },
+  "classified": {
+    "zh": "机密的；分类广告",
+    "note": "两层：政府文件的「机密」（反义 declassified 解密）、报纸的「分类广告」（the classifieds）。",
+    "ex": [
+      { "en": "The report is classified; you cannot take it out.", "zh": "这份报告是机密的，不能带出去。" },
+      { "en": "He found the flat through the classifieds.", "zh": "他通过分类广告找到的房子。" }
+    ]
+  },
+  "genre": {
+    "zh": "（文艺）类型、体裁",
+    "note": "读 /ˈʒɒnrə/，来自法语。指小说、电影、音乐的「类型」；区别 category——那是更泛的分类。",
+    "ex": [
+      { "en": "Detective fiction is a genre with strict rules.", "zh": "侦探小说是有严格规则的一个类型。" },
+      { "en": "He works in several genres.", "zh": "他跨几个体裁写作。" }
+    ]
+  },
+  "parameter": {
+    "zh": "参数；界限",
+    "note": "技术上的「参数」、日常的「范围与界限」（常被误用作「因素」）。别和 perimeter（周长、周边）混。",
+    "ex": [
+      { "en": "Set the parameters before you run the model.", "zh": "跑模型之前先把参数设好。" },
+      { "en": "That is outside the parameters of the study.", "zh": "那超出了这项研究的范围。" }
+    ]
+  },
+  "adapter": {
+    "zh": "适配器；改编者",
+    "note": "电源适配器、插头转换头、接口转换器都叫 adapter；人也可指把小说改成剧本的「改编者」。",
+    "ex": [
+      { "en": "You need an adapter for the older socket.", "zh": "老插座需要一个转换头。" },
+      { "en": "The adapter converts the signal to HDMI.", "zh": "这个适配器把信号转成 HDMI。" }
+    ]
+  },
+  "processor": {
+    "zh": "处理器；加工者",
+    "note": "计算机的处理器（CPU）、厨房的料理机（food processor）、食品工业的加工商都用它。",
+    "ex": [
+      { "en": "The processor runs hot under load.", "zh": "满载时处理器发热厉害。" },
+      { "en": "The food processor saves an hour a day.", "zh": "料理机每天能省一小时。" }
+    ]
+  },
+  "node": {
+    "zh": "节点；结",
+    "note": "技术上的节点（网络、树、集群）、医学的「结」（lymph node 淋巴结）、植物的「茎节」都用它。",
+    "ex": [
+      { "en": "Each node in the network relays the message.", "zh": "网络里每个节点都转发消息。" },
+      { "en": "The lymph node was swollen.", "zh": "淋巴结肿了。" }
+    ]
+  },
+  "contractor": {
+    "zh": "承包商",
+    "note": "与 employee 相对：承包商不是雇员，按项目结算。动词 contract 是「签订合同」，注意别和 contact（联系）混。",
+    "ex": [
+      { "en": "The contractor walked off the site in June.", "zh": "承包商六月撤出了工地。" },
+      { "en": "Hire a licensed contractor for the wiring.", "zh": "布线要请有执照的承包商。" }
+    ]
+  },
+  "modify": {
+    "zh": "修改、改装",
+    "note": "比 change 正式，强调在原有基础上改动，名词 modification。区别 alter（改性质）、amend（改条文）。",
+    "ex": [
+      { "en": "The design was modified twice before approval.", "zh": "设计在批准前改过两次。" },
+      { "en": "We modified the car for the desert.", "zh": "为了跑沙漠，我们改装了这辆车。" }
+    ]
+  },
+  "kernel": {
+    "zh": "核心；果仁",
+    "note": "计算机的「内核」、坚果的「果仁」、比喻的「核心」（a kernel of truth）都用它。",
+    "ex": [
+      { "en": "The kernel handles memory and devices.", "zh": "内核负责内存与设备。" },
+      { "en": "Crack the shell and take out the kernel.", "zh": "敲开壳，取出果仁。" }
+    ]
+  },
+  "keyboard": {
+    "zh": "键盘",
+    "note": "计算机键盘与乐器键盘同词。「弹键盘」是 play keyboard，不加 the；键盘手是 keyboardist。",
+    "ex": [
+      { "en": "The keyboard is wireless but needs charging.", "zh": "键盘是无线的，但要充电。" },
+      { "en": "He plays keyboard in the band.", "zh": "他在乐队弹键盘。" }
+    ]
+  },
+  "calculator": {
+    "zh": "计算器",
+    "note": "指工具；「算得极快的人」可开玩笑说 a human calculator。别和 calculation（计算这件事）混。",
+    "ex": [
+      { "en": "The calculator app is hidden in the folder.", "zh": "计算器应用藏在文件夹里。" },
+      { "en": "She did the sums on a calculator.", "zh": "她用计算器算的。" }
+    ]
+  },
+  "awareness": {
+    "zh": "意识、认知",
+    "note": "不可数；固定搭配 raise awareness（提高认识）。区别 consciousness——那是生理上的清醒。",
+    "ex": [
+      { "en": "The campaign raised awareness of the disease.", "zh": "这场活动提高了人们对这种病的认识。" },
+      { "en": "There is growing awareness of the cost.", "zh": "人们对成本的意识在增强。" }
+    ]
+  },
+  "formula": {
+    "zh": "公式；配方；方案",
+    "note": "三义：数学公式、产品配方、比喻的「成功方案」。复数 formulas 或 formulae；赛车「一级方程式」也是它。",
+    "ex": [
+      { "en": "The formula is simple: sleep, food, exercise.", "zh": "公式很简单：睡眠、饮食、运动。" },
+      { "en": "The company keeps its formula secret.", "zh": "公司对配方保密。" }
+    ]
+  },
+  "cellular": {
+    "zh": "细胞的；蜂窝式的",
+    "note": "生物上是「细胞的」，通信里是「蜂窝式的」（cellular network）；口语里 cell phone 也是它。",
+    "ex": [
+      { "en": "Cellular damage accumulates with age.", "zh": "细胞损伤随年龄累积。" },
+      { "en": "Cellular coverage is patchy outside town.", "zh": "城外的手机信号覆盖不稳。" }
+    ]
+  },
+  "char": {
+    "zh": "烧焦；焦痕",
+    "note": "烹饪上是「把表面烧焦」，火灾里是「炭化」；charcoal 是木炭。英式里 char 还是清洁女工的旧称。",
+    "ex": [
+      { "en": "Char the peppers over the flame.", "zh": "把辣椒在火上烧焦。" },
+      { "en": "The beams were charred but sound.", "zh": "梁烧焦了，但结构还好。" }
+    ]
+  },
+  "cartoon": {
+    "zh": "漫画；动画片",
+    "note": "报纸的单幅漫画与动画片都叫 cartoon；后者美式也常说 animated show。漫画家是 cartoonist。",
+    "ex": [
+      { "en": "He draws a weekly cartoon for the paper.", "zh": "他每周给报纸画一幅漫画。" },
+      { "en": "The kids watch cartoons on Saturday morning.", "zh": "孩子们周六早上看动画片。" }
+    ]
+  },
+  "header": {
+    "zh": "页眉；包头",
+    "note": "文档的页眉、数据的包头、足球的头球都是它。反义 footer（页脚）。",
+    "ex": [
+      { "en": "Put your name in the header of every page.", "zh": "每页页眉写上名字。" },
+      { "en": "The header carries the routing information.", "zh": "数据包头带着路由信息。" }
+    ]
+  },
+  "grid": {
+    "zh": "网格；电网；发车位",
+    "note": "三义：图纸与城市的网格、电力系统（the grid）、赛车的发车位置。off-grid 是「离网生活」。",
+    "ex": [
+      { "en": "The city is laid out on a grid.", "zh": "这座城市是按网格规划的。" },
+      { "en": "The grid failed during the storm.", "zh": "风暴中电网瘫了。" }
+    ]
+  },
+  "plasma": {
+    "zh": "血浆；等离子体",
+    "note": "医学上是血浆（plasma donation 献血浆），物理上是等离子体；屏幕里的等离子屏也是它。",
+    "ex": [
+      { "en": "The clinic collects plasma twice a week.", "zh": "这家诊所每周采两次血浆。" },
+      { "en": "The plasma screen was replaced by OLED.", "zh": "等离子屏被 OLED 取代了。" }
+    ]
+  },
+  "controller": {
+    "zh": "控制器；主管",
+    "note": "技术上的控制器（游戏手柄也叫 controller）、企业里的财务主管都用它；动词 control。",
+    "ex": [
+      { "en": "The controller throttles the motor.", "zh": "控制器调节电机转速。" },
+      { "en": "She was appointed financial controller.", "zh": "她被任命为财务主管。" }
+    ]
+  },
+  "trailer": {
+    "zh": "拖车；预告片",
+    "note": "两层：车辆上的拖车与挂车、影视的预告片；美式里「房车」也叫 trailer（trailer park 是房车营地）。",
+    "ex": [
+      { "en": "They towed the boat on a trailer.", "zh": "他们用拖车拖船。" },
+      { "en": "The trailer gave away the ending.", "zh": "预告片把结局剧透了。" }
+    ]
+  },
+  "cinema": {
+    "zh": "电影院；电影（艺术）",
+    "note": "英式 cinema、美式 movie theater；作为艺术门类的「电影」也用 cinema。go to the cinema 是固定说法。",
+    "ex": [
+      { "en": "The film is still showing at the local cinema.", "zh": "这部片本地影院还在放。" },
+      { "en": "He studied cinema in Prague.", "zh": "他在布拉格学电影。" }
+    ]
+  },
+  "innovative": {
+    "zh": "创新的",
+    "note": "来自 innovate，指「引入新方法」；区别 inventive——那多形容人或点子「善于发明」。",
+    "ex": [
+      { "en": "The design is innovative but hard to manufacture.", "zh": "设计很新，但难量产。" },
+      { "en": "They took an innovative approach to funding.", "zh": "他们在筹资上用了新办法。" }
+    ]
+  }
+}

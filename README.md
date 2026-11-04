@@ -270,8 +270,16 @@ engagement 《傲慢与偏见》里出现 13 次，一次都不是「交战」
 - 英文句里必须真的出现这个词，防的是写着写着换成同义词
 - 地名、人名（`prop`）不配例句，界面直接说「专名，只保留词典释义」
 
+**先补哪些词**由三层信号决定，都放在 `scripts/lex/next-ex.mjs` 里：
+
+1. `data/wordfreq/google-10000.txt`（Google 网页词频 Top 10000）—— 空缺词里有 574 个
+   在表内，按排名取，这是最接近「现代常用度」的信号
+2. 对话语料频次（`dialogues.json`，1157 场现代场景）—— 补的是 email、refund、
+   invoice、payroll 这类公版书永远不会出现的现代生活词
+3. 义项数 —— 前两者都没覆盖时，义项多通常意味着常见
+
 ```bash
-npm run lex:ex                            # 按义项数（≈常用度）取下一批 40 词，专名已剔除
+npm run lex:ex                            # 取下一批 40 词，按词频排名，专名与噪声已剔除
 node scripts/lex/put-ex.mjs <批.json>     # 逐条校验后并入 examples.json
 ```
 

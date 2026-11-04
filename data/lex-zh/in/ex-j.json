@@ -1,0 +1,322 @@
+{
+  "directory": {
+    "zh": "名录；目录、文件夹",
+    "note": "印刷版的名录与计算机里的文件夹共用一个词；电话簿是 phone directory，广告黄页是 yellow pages。",
+    "ex": [
+      { "en": "Look it up in the trade directory.", "zh": "去行业名录里查一下。" },
+      { "en": "The file sits in a hidden directory.", "zh": "文件放在一个隐藏文件夹里。" }
+    ]
+  },
+  "digital": {
+    "zh": "数字的、数码的",
+    "note": "与 analogue（模拟）相对，强调「以 0/1 表示」；不等于 electronic（电子的）——电子秤未必是数字的。",
+    "ex": [
+      { "en": "The archive has been digital since 2010.", "zh": "这批档案从 2010 年起就是数字化的。" },
+      { "en": "Digital payments overtook cash here last year.", "zh": "这里的电子支付去年超过了现金。" }
+    ]
+  },
+  "audio": {
+    "zh": "音频；声音的",
+    "note": "不可数，指声音信号或音轨；作定语是 audio file、audio quality。区别 sound——那是物理意义上的声音。",
+    "ex": [
+      { "en": "The audio is out of sync with the video.", "zh": "声音和画面不同步。" },
+      { "en": "Audio quality matters more than video for lectures.", "zh": "对讲座来说，音质比画质重要。" }
+    ]
+  },
+  "blog": {
+    "zh": "博客；写博客",
+    "note": "可数；动词直接接话题（blog about sth）。weblog 的缩短，现在几乎没人说 weblog 了。",
+    "ex": [
+      { "en": "She has kept a blog since 2004.", "zh": "她从 2004 年就开始写博客。" },
+      { "en": "He blogs about urban planning.", "zh": "他写城市规划方面的博客。" }
+    ]
+  },
+  "archive": {
+    "zh": "档案（馆）；归档",
+    "note": "指长期保存的原始记录；计算机里 archive 也指压缩包。区别 library——那是供查阅的藏书机构。",
+    "ex": [
+      { "en": "The letters are held in the county archive.", "zh": "这些信件存在县档案馆。" },
+      { "en": "Archive the old tickets before you close the project.", "zh": "关项目之前把旧工单归档。" }
+    ]
+  },
+  "global": {
+    "zh": "全球的；全局的",
+    "note": "两层：地理上的「全球」、技术上的「全局」（global variable、global search）。反义 local。",
+    "ex": [
+      { "en": "The firm has a global workforce.", "zh": "这家公司有遍布全球的员工。" },
+      { "en": "A global variable is visible everywhere.", "zh": "全局变量到处都可见。" }
+    ]
+  },
+  "domain": {
+    "zh": "领域；域名",
+    "note": "三义：知识的「领域」、网络的「域名」、法律旧义的「领地」。public domain 是「公有领域」，指版权失效。",
+    "ex": [
+      { "en": "That question falls outside my domain.", "zh": "那个问题不在我的领域内。" },
+      { "en": "The domain expires next March.", "zh": "这个域名明年三月到期。" }
+    ]
+  },
+  "hardware": {
+    "zh": "硬件；五金",
+    "note": "计算机硬件与五金（螺丝、合页）共用一个词，反义 software。去五金店说 hardware store，英式也说 DIY store。",
+    "ex": [
+      { "en": "The software is free; the hardware is not.", "zh": "软件免费，硬件不免费。" },
+      { "en": "The shop sells tools and hardware.", "zh": "这家店卖工具和五金。" }
+    ]
+  },
+  "environmental": {
+    "zh": "环境的",
+    "note": "来自 environment，指「与环境有关的」（environmental review 环评）；environmentalist 才是「环保人士」。",
+    "ex": [
+      { "en": "The project failed its environmental review.", "zh": "这个项目没过环评。" },
+      { "en": "Environmental costs are rarely priced in.", "zh": "环境成本很少被计入价格。" }
+    ]
+  },
+  "corporation": {
+    "zh": "公司（法人）",
+    "note": "法律意义上的「法人公司」，比 company 正式；美式里常指大企业。缩写 Corp. 出现在公司名后。",
+    "ex": [
+      { "en": "The corporation employs forty thousand people.", "zh": "这家公司雇了四万人。" },
+      { "en": "A municipal corporation runs the water supply.", "zh": "市政法人机构负责供水。" }
+    ]
+  },
+  "rental": {
+    "zh": "租金；租赁物",
+    "note": "可数（a rental），也指「租金总额」。美式 rental car、英式 hire car；租房合同是 lease。",
+    "ex": [
+      { "en": "The rental is due on the first.", "zh": "房租每月一号交。" },
+      { "en": "He picked up the rental car at the airport.", "zh": "他在机场取了租的车。" }
+    ]
+  },
+  "registration": {
+    "zh": "注册、登记",
+    "note": "会议报名、车辆登记、域名注册都用它，动词 register。区别 enrolment——那是入学或入会注册。",
+    "ex": [
+      { "en": "Registration closes on Friday.", "zh": "报名周五截止。" },
+      { "en": "The car's registration expires in June.", "zh": "这辆车的登记六月到期。" }
+    ]
+  },
+  "potential": {
+    "zh": "潜力；潜在的",
+    "note": "名词不可数（have potential）；形容词修饰「尚未发生的」（potential buyer、potential risk）。",
+    "ex": [
+      { "en": "She saw potential in the idea.", "zh": "她看出这个想法有潜力。" },
+      { "en": "The potential risk was underestimated.", "zh": "潜在风险被低估了。" }
+    ]
+  },
+  "interface": {
+    "zh": "界面；接口；对接",
+    "note": "三层：用户界面、软硬件接口、人际的「接触面」。动词是「对接」，不是「使用」。",
+    "ex": [
+      { "en": "The interface is clean but slow.", "zh": "界面干净，但慢。" },
+      { "en": "The two systems interface through an API.", "zh": "两套系统通过 API 对接。" }
+    ]
+  },
+  "maximum": {
+    "zh": "最大值；最大的",
+    "note": "复数 maxima 或 maximums；反义 minimum。作定语时不加 the：maximum speed。",
+    "ex": [
+      { "en": "The tank holds a maximum of forty litres.", "zh": "油箱最多装四十升。" },
+      { "en": "Maximum speed is capped at sixty.", "zh": "最高时速限制在六十。" }
+    ]
+  },
+  "retail": {
+    "zh": "零售；零售的",
+    "note": "反义 wholesale（批发）。retail price 是零售价，retail therapy 是玩笑话里的「购物疗法」。",
+    "ex": [
+      { "en": "Retail sales fell for the third month.", "zh": "零售额连续第三个月下滑。" },
+      { "en": "They sell wholesale and retail.", "zh": "他们既做批发也做零售。" }
+    ]
+  },
+  "housing": {
+    "zh": "住房（总称）",
+    "note": "不可数，指住房供给与居住条件；具体一套房是 a house。affordable housing 是保障性住房。",
+    "ex": [
+      { "en": "Housing costs have doubled in a decade.", "zh": "十年里住房成本翻了一倍。" },
+      { "en": "The site is zoned for housing.", "zh": "这块地规划为住宅用地。" }
+    ]
+  },
+  "graphics": {
+    "zh": "图形、图像",
+    "note": "形式是复数，但作不可数用。computer graphics 是计算机图形学，graphic design 是平面设计。",
+    "ex": [
+      { "en": "The graphics in that game still hold up.", "zh": "那款游戏的画面至今不过时。" },
+      { "en": "She studied graphics before switching to film.", "zh": "她先学平面设计，后来转做电影。" }
+    ]
+  },
+  "sector": {
+    "zh": "部门、行业；扇形",
+    "note": "经济的「部门」（public / private / tech sector）、几何的「扇形」、军事的「防区」，同一个词。",
+    "ex": [
+      { "en": "The public sector employs a third of the workforce.", "zh": "公共部门雇了三分之一的劳动力。" },
+      { "en": "Prices rose across every sector.", "zh": "各行业的价格都在涨。" }
+    ]
+  },
+  "evaluation": {
+    "zh": "评估",
+    "note": "比 assessment 宽泛，动词 evaluate。项目结束时的「终期评估」是 final evaluation。",
+    "ex": [
+      { "en": "The evaluation runs for six months.", "zh": "这项评估持续六个月。" },
+      { "en": "We need an evaluation, not an opinion.", "zh": "我们要的是评估，不是意见。" }
+    ]
+  },
+  "implementation": {
+    "zh": "实施、落地",
+    "note": "政策与技术里都指「把方案变成实际」，动词 implement。常听到的抱怨：计划不错，implementation 是问题。",
+    "ex": [
+      { "en": "Implementation starts in April.", "zh": "实施从四月开始。" },
+      { "en": "The plan is good; implementation is the problem.", "zh": "计划不错，问题在落地。" }
+    ]
+  },
+  "installation": {
+    "zh": "安装；装置（作品）",
+    "note": "软件与设备的「安装」、军事的「驻地」、艺术的「装置作品」都是它。动词 install。",
+    "ex": [
+      { "en": "Installation takes about an hour.", "zh": "安装大约要一小时。" },
+      { "en": "The gallery bought the installation.", "zh": "画廊买下了那件装置作品。" }
+    ]
+  },
+  "coverage": {
+    "zh": "覆盖（范围）；报道",
+    "note": "三义：信号与保险的覆盖范围、媒体对事件的报道、服务的覆盖。动词 cover。",
+    "ex": [
+      { "en": "Mobile coverage is poor in the valley.", "zh": "山谷里手机信号覆盖很差。" },
+      { "en": "The trial got wide press coverage.", "zh": "这场审判被媒体广泛报道。" }
+    ]
+  },
+  "clinical": {
+    "zh": "临床的；冷静得缺乏人情味的",
+    "note": "医学上是「临床的」，形容语气时是「冷静到近乎无情」（a clinical description）。两层在写作里都常见。",
+    "ex": [
+      { "en": "The drug is in clinical trials.", "zh": "这种药正在做临床试验。" },
+      { "en": "He described the scene in clinical detail.", "zh": "他用冷静到近乎无情的细节描述了那一幕。" }
+    ]
+  },
+  "component": {
+    "zh": "部件、成分",
+    "note": "硬件的「元件」与抽象的「要素」都用它；区别 ingredient——那是配料，多用于烹饪与方案。",
+    "ex": [
+      { "en": "A single component failed and took the system down.", "zh": "一个部件坏了，整个系统就瘫了。" },
+      { "en": "Timing is a key component of comedy.", "zh": "时机是喜剧的关键要素。" }
+    ]
+  },
+  "configuration": {
+    "zh": "配置、布局",
+    "note": "技术上的「配置」（口语缩短成 config），也指物体的组合方式（molecular configuration）。",
+    "ex": [
+      { "en": "The configuration file holds the API keys.", "zh": "配置文件里放着 API 密钥。" },
+      { "en": "The seating configuration can change overnight.", "zh": "座位布局可以一夜之间改掉。" }
+    ]
+  },
+  "computing": {
+    "zh": "计算；计算机技术",
+    "note": "不可数，指「计算这件事与技术领域」；单说「算数」是 calculation。cloud computing 是云计算。",
+    "ex": [
+      { "en": "Cloud computing cut our costs by half.", "zh": "云计算把我们的成本砍了一半。" },
+      { "en": "She works in scientific computing.", "zh": "她做科学计算。" }
+    ]
+  },
+  "virus": {
+    "zh": "病毒",
+    "note": "生物病毒与计算机病毒共用一个词；形容词 viral 既指「病毒性的」，也指「疯传的」。",
+    "ex": [
+      { "en": "The virus spread through the shared drive.", "zh": "病毒通过共享盘扩散。" },
+      { "en": "The virus mutates faster than the vaccine.", "zh": "病毒变异得比疫苗快。" }
+    ]
+  },
+  "interactive": {
+    "zh": "交互的、互动的",
+    "note": "技术的「交互式」（interactive map）与教学的「互动」都用它；名词 interaction。",
+    "ex": [
+      { "en": "The exhibition is interactive: you can touch everything.", "zh": "这个展览是互动的，什么都能摸。" },
+      { "en": "The class is more interactive than a lecture.", "zh": "这门课比讲座更互动。" }
+    ]
+  },
+  "electrical": {
+    "zh": "电的、用电的",
+    "note": "三个词分工：electrical 指「与电有关的」（electrical fault），electric 指「用电的」（electric car），electronic 指「电子器件的」。",
+    "ex": [
+      { "en": "The fault is electrical, not mechanical.", "zh": "故障出在电路上，不是机械。" },
+      { "en": "He qualified as an electrical engineer.", "zh": "他成了电气工程师。" }
+    ]
+  },
+  "icon": {
+    "zh": "图标；圣像；偶像",
+    "note": "界面图标、宗教圣像、文化偶像都用它；形容词 iconic 是「标志性的」。",
+    "ex": [
+      { "en": "Tap the icon in the top right.", "zh": "点右上角的图标。" },
+      { "en": "She became an icon of the era.", "zh": "她成了那个时代的偶像。" }
+    ]
+  },
+  "delete": {
+    "zh": "删除",
+    "note": "计算机与文字编辑通用，名词 deletion。键盘上是 Delete 键，「退格」是 backspace——两个不一样。",
+    "ex": [
+      { "en": "Delete the draft once it is filed.", "zh": "归档之后把草稿删掉。" },
+      { "en": "The comment was deleted within minutes.", "zh": "那条评论几分钟内就被删了。" }
+    ]
+  },
+  "integration": {
+    "zh": "整合、一体化",
+    "note": "技术的「集成/对接」、社会的「融合」、数学的「积分」都用它，动词 integrate。",
+    "ex": [
+      { "en": "The integration of the two teams took a year.", "zh": "两个团队的整合花了一年。" },
+      { "en": "Payment integration is the hardest part.", "zh": "支付对接是最难的部分。" }
+    ]
+  },
+  "protocol": {
+    "zh": "协议；礼仪、规程",
+    "note": "两层：技术的「协议」、外交与医学的「规程/礼仪」（clinical protocol 临床方案）。",
+    "ex": [
+      { "en": "The protocol defines how packets are framed.", "zh": "协议规定了数据包怎么封装。" },
+      { "en": "Diplomatic protocol requires the host to speak first.", "zh": "外交礼仪要求东道主先发言。" }
+    ]
+  },
+  "spam": {
+    "zh": "垃圾邮件；滥发",
+    "note": "不可数；动词 spam sb with sth 是「用……轰炸某人」。本义是午餐肉罐头 Spam，出自一段著名喜剧。",
+    "ex": [
+      { "en": "The filter catches most spam.", "zh": "过滤器能拦下大部分垃圾邮件。" },
+      { "en": "He was banned for spamming the forum.", "zh": "他因在论坛刷屏被封。" }
+    ]
+  },
+  "designer": {
+    "zh": "设计师；名牌的",
+    "note": "名词是设计师；作定语时指「名牌的、设计师款的」（designer clothes），带消费文化色彩。",
+    "ex": [
+      { "en": "The designer spent a year on the typeface.", "zh": "设计师在这款字体上花了一年。" },
+      { "en": "He was wearing designer jeans.", "zh": "他穿着名牌牛仔裤。" }
+    ]
+  },
+  "font": {
+    "zh": "字体；洗礼池",
+    "note": "排版里的「字体」（严格说 typeface 是字族、font 是具体字重与样式，日常混用）；教堂里的「洗礼池」同词。",
+    "ex": [
+      { "en": "Choose a font that reads well at small sizes.", "zh": "选一种小字号也清楚的字体。" },
+      { "en": "The font in the chapel dates from 1300.", "zh": "礼拜堂的洗礼池是十四世纪的。" }
+    ]
+  },
+  "gender": {
+    "zh": "性别；（语法）性",
+    "note": "社会学上的「性别」与生理的 sex 区分；语言学上是名词的「语法性」（法语阴阳性）。",
+    "ex": [
+      { "en": "The form asks for gender, not sex.", "zh": "表格问的是社会性别，不是生理性别。" },
+      { "en": "French nouns carry gender.", "zh": "法语名词分阴阳性。" }
+    ]
+  },
+  "infrastructure": {
+    "zh": "基础设施",
+    "note": "不可数，指道路、电网、供水这些「底座」；技术里也指 IT 基础设施（服务器、网络）。",
+    "ex": [
+      { "en": "The bridge is part of the national infrastructure.", "zh": "这座桥是国家基础设施的一部分。" },
+      { "en": "There is no infrastructure for recycling here.", "zh": "这里没有回收的配套设施。" }
+    ]
+  },
+  "nutrition": {
+    "zh": "营养",
+    "note": "不可数，指营养学或营养状况；形容词 nutritional 是「营养方面的」，nutritious 是「有营养的」——后者形容食物。",
+    "ex": [
+      { "en": "Nutrition labels are mandatory here.", "zh": "这里强制标注营养成分。" },
+      { "en": "Good nutrition matters more than supplements.", "zh": "吃对饭比吃补剂更重要。" }
+    ]
+  }
+}
