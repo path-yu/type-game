@@ -4,7 +4,7 @@ let pass = 0, fail = 0;
 const check = (n, ok, d='') => { ok ? pass++ : fail++; console.log(`  ${ok ? '✓' : '✗'} ${n}${d ? '  ' + d : ''}`); };
 
 const b = await puppeteer.launch({ executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',
-  headless:'new', args:['--no-sandbox','--disable-gpu'], defaultViewport:{width:1320,height:860} });
+  headless:'new', args:['--mute-audio', '--no-sandbox','--disable-gpu'], defaultViewport:{width:1320,height:860} });
 const p = await b.newPage();
 
 // 用桩替换 speechSynthesis，记录 speak / cancel 调用
@@ -20,6 +20,9 @@ await p.evaluateOnNewDocument(() => {
     onvoiceschanged: null,
   };
   Object.defineProperty(window, 'speechSynthesis', { value: fake, configurable: true });
+  // 这一组测的就是朗读路径：应用在 webdriver 下默认静音（见 src/lib/speech.ts），
+  // 这里把开关关掉，否则 speak() 直接返回，桩收不到任何调用
+  Object.defineProperty(navigator, 'webdriver', { value: false, configurable: true });
   window.SpeechSynthesisUtterance = class { constructor(t) { this.text = t; } };
 });
 

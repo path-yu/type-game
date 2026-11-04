@@ -17,7 +17,7 @@ const SIZES = [16, 24, 32, 48, 64, 128, 256, 512, 1024];
 const browser = await puppeteer.launch({
   executablePath: CHROME,
   headless: 'new',
-  args: ['--no-sandbox', '--force-device-scale-factor=1'],
+  args: ['--mute-audio', '--no-sandbox', '--force-device-scale-factor=1'],
   defaultViewport: { width: 1200, height: 1200, deviceScaleFactor: 1 },
 });
 const page = await browser.newPage();

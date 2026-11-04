@@ -1,15 +1,18 @@
 /**
- * 把《一九八四》的逐句译文，接到它的 40 段选段上。
+ * 把整本译文的逐句译文，接到这本书的选段上。
  *
- * 背景：这本书先有了整本译文（data/tr-work/nineteen-eighty-four.json，按句对齐），
- * 后来才用 add-books.mjs 切出 40 段收进文库。选段和整本用的是同一把切句尺
- * （src/lib/split.js），所以段内的每一句都能在整本译文里找到对应的一句，
- * 按句拼回去即可 —— 不需要再翻一遍。
+ * 一本书的两件事是分开的：
+ *   1. 整本翻译（scripts/tr/build-file.mjs + 分批译）→ data/tr-work/<slug>.json
+ *   2. 切段入库（scripts/add-books.mjs）→ articles.json 里的 <prefix>-0000…
+ * 第 2 步切出来的段落，和整本用的是同一把切句尺（src/lib/split.js），
+ * 所以段内每一句都能在整本译文里找到对应那条，按句拼回去即可 —— 不必再翻一遍。
  *
- * 硬校验：每段拼出来的条数必须等于 splitSentences(tx) 的句数，且不许有空缺。
- * 少一句就整体错位，界面上看不出来，只会觉得"翻译怪怪的"。
+ * 硬校验：每段拼出的条数必须等于 splitSentences(tx) 的句数，且不许有空缺。
+ * 少一句就整体错位，界面上看不出来，只会觉得"这一段翻得怪"。
+ * 对不齐的段整段不入库：少一段读者察觉不了，错位才会。
  *
- * 用法：node scripts/attach-1984-tr.mjs [--dry]
+ * 用法：node scripts/attach-book-tr.mjs <slug> <段落前缀> [--dry]
+ * 例：  node scripts/attach-book-tr.mjs the-great-gatsby gatsby-
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -18,8 +21,11 @@ import { splitSentences } from './lib/prose.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dry = process.argv.includes('--dry');
-const SLUG = 'nineteen-eighty-four';
-const PREFIX = 'n1984-';
+const [SLUG, PREFIX] = process.argv.slice(2).filter(a => !a.startsWith('--'));
+if (!SLUG || !PREFIX) {
+  console.error('用法: node scripts/attach-book-tr.mjs <slug> <段落前缀>');
+  process.exit(1);
+}
 
 /*
  * 句子对齐的键。

@@ -4,7 +4,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 const browser = await puppeteer.launch({
   executablePath: CHROME, headless: 'new',
-  args: ['--no-sandbox', '--disable-gpu'], defaultViewport: { width: 1440, height: 900 },
+  args: ['--mute-audio', '--no-sandbox', '--disable-gpu'], defaultViewport: { width: 1440, height: 900 },
 });
 const page = await browser.newPage();
 page.on('pageerror', e => console.log('PAGEERROR', e.message));

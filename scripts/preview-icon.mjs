@@ -9,7 +9,7 @@ const html = `<body style="margin:0;background:#15181f;display:flex;gap:26px;pad
 <div style="text-align:center"><img src="${b64('assets/icons/32x32.png')}" width="32"><div style="color:#7a8496;font-size:11px;margin-top:12px">32</div></div>
 <div style="text-align:center"><img src="${b64('assets/icons/16x16.png')}" width="16"><div style="color:#7a8496;font-size:11px;margin-top:12px">16</div></div>
 </body>`;
-const b = await puppeteer.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:'new',args:['--no-sandbox'],defaultViewport:{width:640,height:300,deviceScaleFactor:2}});
+const b = await puppeteer.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:'new',args:['--mute-audio', '--no-sandbox'],defaultViewport:{width:640,height:300,deviceScaleFactor:2}});
 const p = await b.newPage();
 await p.setContent(html,{waitUntil:'networkidle0'});
 await new Promise(r=>setTimeout(r,300));

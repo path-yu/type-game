@@ -11,7 +11,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const browser = await puppeteer.launch({
   executablePath: CHROME,
   headless: 'new',
-  args: ['--no-sandbox', '--disable-gpu', '--font-render-hinting=none', '--lang=zh-CN'],
+  args: ['--mute-audio', '--no-sandbox', '--disable-gpu', '--font-render-hinting=none', '--lang=zh-CN'],
   defaultViewport: { width: 1440, height: 900, deviceScaleFactor: 2 },
 });
 

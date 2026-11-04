@@ -46,6 +46,15 @@ const NEW_BOOKS = [
     until: /^THE END/m,
     u: 'gutenberg.net.au/ebooks01/0100021',
   },
+  {
+    // 《了不起的盖茨比》：美国 2021 年起已进入公有领域，Gutenberg #64317
+    id: 64317, key: 'gatsby', title: 'The Great Gatsby', theme: 'novel', lic: 'PD',
+    cap: 40,
+    file: 'data/raw/books/64317.txt',
+    // 开头是目录、献词和那句拉丁文题词，正文从"我年纪还轻"起
+    after: /^In my younger and more vulnerable years/m,
+    until: /^\*\*\* END OF THE PROJECT/m,
+  },
 ];
 
 /**
