@@ -1,393 +1,1307 @@
 [
  {
-  "w": "tin",
-  "f": 195,
+  "w": "bow",
+  "f": 80,
   "senses": [
    {
     "p": "n",
-    "d": "a silvery malleable metallic element that resists corrosion; used in many alloys and to coat other metals to prevent corrosion; obtained chiefly from cassiterite where it occurs as tin oxide"
+    "d": "a knot with two loops and loose ends; used to tie shoelaces"
    },
    {
     "p": "n",
-    "d": "a vessel (box, can, pan, etc.) made of tinplate and used mainly in baking"
+    "d": "a slightly curved piece of resilient wood with taut horsehair strands; used in playing certain stringed instruments"
    },
    {
     "p": "n",
-    "d": "metal container for storing dry foods such as tea or flour"
+    "d": "front part of a vessel or aircraft"
    },
    {
     "p": "n",
-    "d": "airtight sealed metal container for food or drink or paint etc."
+    "d": "a weapon for shooting arrows, composed of a curved piece of resilient wood with a taut cord to propel the arrow"
    },
    {
-    "p": "v",
-    "d": "plate with tin"
+    "p": "n",
+    "d": "something curved in shape"
    },
    {
-    "p": "v",
-    "d": "preserve in a can or tin"
+    "p": "n",
+    "d": "bending the head or body or knee as a sign of reverence or submission or shame or greeting"
    }
   ]
  },
  {
-  "w": "interest",
-  "f": 194,
+  "w": "camp",
+  "f": 80,
   "senses": [
    {
     "p": "n",
-    "d": "a sense of concern with and curiosity about someone or something"
+    "d": "temporary living quarters specially built by the army for soldiers"
    },
    {
     "p": "n",
-    "d": "a reason for wanting something done"
+    "d": "a group of people living together in a camp"
    },
    {
     "p": "n",
-    "d": "the power of attracting or holding one's attention (because it is unusual or exciting etc.)"
+    "d": "temporary lodgings in the country for travelers or vacationers"
    },
    {
     "p": "n",
-    "d": "a fixed charge for borrowing money; usually a percentage of the amount borrowed"
+    "d": "an exclusive circle of people with a common purpose"
    },
    {
     "p": "n",
-    "d": "(law) a right or legal share of something; a financial involvement with something"
+    "d": "a penal institution (often for forced labor)"
    },
    {
     "p": "n",
-    "d": "(usually plural) a social group whose members control some field of activity and who have common aims"
+    "d": "something that is considered amusing not because of its originality but because of its unoriginality"
    }
   ]
  },
  {
-  "w": "quick",
-  "f": 194,
+  "w": "due",
+  "f": 80,
   "senses": [
    {
     "p": "a",
-    "d": "accomplished rapidly and without delay"
+    "d": "owed and payable immediately or on demand"
    },
    {
     "p": "a",
-    "d": "hurried and brief"
+    "d": "scheduled to arrive"
    },
    {
     "p": "a",
-    "d": "moving quickly and lightly"
+    "d": "suitable to or expected in the circumstances"
    },
    {
     "p": "a",
-    "d": "apprehending and responding with speed and sensitivity"
+    "d": "capable of being assigned or credited to"
    },
    {
-    "p": "a",
-    "d": "performed with little or no delay"
+    "p": "n",
+    "d": "that which is deserved or owed"
    },
    {
-    "p": "a",
-    "d": "easily aroused or excited"
+    "p": "n",
+    "d": "a payment that is due (e.g., as the price of membership)"
    }
   ]
  },
  {
-  "w": "changed",
-  "f": 193,
+  "w": "impression",
+  "f": 80,
   "senses": [
    {
-    "p": "v",
-    "d": "cause to change; make different; cause a transformation"
+    "p": "n",
+    "d": "a vague idea in which some confidence is placed"
    },
    {
-    "p": "v",
-    "d": "undergo a change; become different in essence; losing one's or its original nature"
+    "p": "n",
+    "d": "an outward appearance"
    },
    {
-    "p": "v",
-    "d": "become different in some particular way, without permanently losing one's or its former characteristics or essence"
+    "p": "n",
+    "d": "a clear and telling mental image"
    },
    {
-    "p": "v",
-    "d": "lay aside, abandon, or leave for another"
+    "p": "n",
+    "d": "a concavity in a surface produced by pressing"
    },
    {
-    "p": "v",
-    "d": "change clothes; put on different clothes"
+    "p": "n",
+    "d": "a symbol that is the result of printing or engraving"
    },
    {
-    "p": "v",
-    "d": "exchange or replace with another, usually of the same kind or category"
+    "p": "n",
+    "d": "all the copies of a work printed at one time"
    }
   ]
  },
  {
-  "w": "save",
-  "f": 193,
+  "w": "lies",
+  "f": 80,
   "senses": [
    {
     "p": "v",
-    "d": "save from ruin, destruction, or harm"
+    "d": "be located or situated somewhere; occupy a certain position"
    },
    {
     "p": "v",
-    "d": "to keep up and reserve for personal or special use"
+    "d": "be lying, be prostrate; be in a horizontal position"
    },
    {
     "p": "v",
-    "d": "bring into safety"
+    "d": "originate (in)"
    },
    {
     "p": "v",
-    "d": "spend less; buy at a reduced price"
+    "d": "be and remain in a particular state or condition"
    },
    {
     "p": "v",
-    "d": "accumulate money for future use"
+    "d": "tell an untruth; pretend with intent to deceive"
    },
    {
     "p": "v",
-    "d": "make unnecessary an expenditure or effort"
+    "d": "have a place in relation to something else"
    }
   ]
  },
  {
-  "w": "legs",
-  "f": 191,
+  "w": "managed",
+  "f": 80,
   "senses": [
    {
-    "p": "n",
-    "d": "a human limb; commonly used to refer to a whole limb but technically only the part of the limb between the knee and ankle"
+    "p": "v",
+    "d": "be successful; achieve a goal"
    },
    {
-    "p": "n",
-    "d": "a structure in animals that is similar to a human leg and used for locomotion"
+    "p": "v",
+    "d": "be in charge of, act on, or dispose of"
    },
    {
-    "p": "n",
-    "d": "one of the supports for a piece of furniture"
+    "p": "v",
+    "d": "succeed in doing, achieving, or producing (something) with the limited or inadequate means available"
    },
    {
-    "p": "n",
-    "d": "a part of a forked or branching shape"
+    "p": "v",
+    "d": "watch and direct"
    },
    {
-    "p": "n",
-    "d": "the limb of an animal used for food"
+    "p": "v",
+    "d": "achieve something by means of trickery or devious methods"
    },
    {
-    "p": "n",
-    "d": "a prosthesis that replaces a missing leg"
+    "p": "v",
+    "d": "carry on or function"
    }
   ]
  },
  {
-  "w": "knows",
-  "f": 190,
+  "w": "pardon",
+  "f": 80,
   "senses": [
    {
-    "p": "v",
-    "d": "be cognizant or aware of a fact or a specific piece of information; possess knowledge or information about"
+    "p": "n",
+    "d": "the act of excusing a mistake or offense"
+   },
+   {
+    "p": "n",
+    "d": "a warrant granting release from punishment for an offense"
+   },
+   {
+    "p": "n",
+    "d": "the formal act of liberating someone"
    },
    {
     "p": "v",
-    "d": "know how to do or perform something"
+    "d": "accept an excuse for"
    },
    {
     "p": "v",
-    "d": "be aware of the truth of something; have a belief or faith in something; regard as true beyond any doubt"
-   },
-   {
-    "p": "v",
-    "d": "be familiar or acquainted with a person or an object"
-   },
-   {
-    "p": "v",
-    "d": "have firsthand knowledge of states, situations, emotions, or sensations"
-   },
-   {
-    "p": "v",
-    "d": "accept (someone) to be what is claimed or accept his power and authority"
+    "d": "grant a pardon to"
    }
   ]
  },
  {
-  "w": "station",
-  "f": 190,
+  "w": "pounds",
+  "f": 80,
   "senses": [
    {
-    "p": "n",
-    "d": "a facility equipped with special equipment and personnel for a particular purpose"
-   },
-   {
-    "p": "n",
-    "d": "proper or designated social situation"
-   },
-   {
-    "p": "n",
-    "d": "(nautical) the location to which a ship or fleet is assigned for duty"
-   },
-   {
-    "p": "n",
-    "d": "the position where someone (as a guard or sentry) stands or is assigned to stand"
-   },
-   {
-    "p": "n",
-    "d": "the frequency assigned to a broadcasting station"
+    "p": "v",
+    "d": "hit hard with the hand, fist, or some heavy instrument"
    },
    {
     "p": "v",
-    "d": "assign to a station"
+    "d": "strike or drive against with a heavy impact"
+   },
+   {
+    "p": "v",
+    "d": "move heavily or clumsily"
+   },
+   {
+    "p": "v",
+    "d": "move rhythmically"
+   },
+   {
+    "p": "v",
+    "d": "partition off into compartments"
+   },
+   {
+    "p": "v",
+    "d": "shut up or confine in any enclosure or within any bounds or limits"
    }
   ]
  },
  {
-  "w": "worse",
-  "f": 190,
+  "w": "race",
+  "f": 80,
   "senses": [
    {
-    "p": "a",
-    "d": "having undesirable or negative qualities"
-   },
-   {
-    "p": "a",
-    "d": "very intense"
-   },
-   {
-    "p": "a",
-    "d": "feeling physical discomfort or pain (`tough' is occasionally used colloquially for `bad')"
-   },
-   {
-    "p": "a",
-    "d": "(of foodstuffs) not in an edible or usable condition"
-   },
-   {
-    "p": "a",
-    "d": "feeling or expressing regret or sorrow or a sense of loss over something done or undone"
-   },
-   {
-    "p": "a",
-    "d": "not capable of being collected"
-   }
-  ]
- },
- {
-  "w": "instant",
-  "f": 189,
-  "senses": [
-   {
-    "p": "a",
-    "d": "occurring with no delay"
-   },
-   {
-    "p": "a",
-    "d": "in or of the present month"
-   },
-   {
-    "p": "a",
-    "d": "demanding attention- H.L.Mencken"
+    "p": "n",
+    "d": "any competition"
    },
    {
     "p": "n",
-    "d": "a very short time (as the time it takes the eye to blink or the heart to beat)"
+    "d": "a contest of speed"
    },
    {
     "p": "n",
-    "d": "a particular point in time"
+    "d": "people who are believed to belong to the same genetic stock"
+   },
+   {
+    "p": "n",
+    "d": "(biology) a taxonomic group that is a division of a species; usually arises as a consequence of geographical isolation within a species"
+   },
+   {
+    "p": "n",
+    "d": "the flow of air that is driven backwards by an aircraft propeller"
+   },
+   {
+    "p": "n",
+    "d": "a canal for a current of water"
    }
   ]
  },
  {
-  "w": "fall",
-  "f": 188,
-  "senses": [
-   {
-    "p": "v",
-    "d": "descend in free fall under the influence of gravity"
-   },
-   {
-    "p": "v",
-    "d": "move downward and lower, but not necessarily all the way"
-   },
-   {
-    "p": "v",
-    "d": "pass suddenly and passively into a state of body or mind"
-   },
-   {
-    "p": "v",
-    "d": "come under, be classified or included"
-   },
-   {
-    "p": "v",
-    "d": "fall from clouds"
-   },
-   {
-    "p": "v",
-    "d": "suffer defeat, failure, or ruin"
-   }
-  ]
- },
- {
-  "w": "sharp",
-  "f": 188,
+  "w": "stable",
+  "f": 80,
   "senses": [
    {
     "p": "a",
-    "d": "(of something seen or heard) clearly defined"
+    "d": "resistant to change of position or condition"
    },
    {
     "p": "a",
-    "d": "ending in a sharp point"
+    "d": "firm and dependable; subject to little fluctuation"
    },
    {
     "p": "a",
-    "d": "having or demonstrating ability to recognize or draw fine distinctions"
+    "d": "not taking part readily in chemical change"
    },
    {
     "p": "a",
-    "d": "marked by practical hardheaded intelligence"
+    "d": "maintaining equilibrium"
    },
    {
     "p": "a",
-    "d": "harsh"
+    "d": "showing little if any change"
    },
    {
-    "p": "a",
-    "d": "having or emitting a high-pitched and sharp tone or tones"
+    "p": "n",
+    "d": "a farm building for housing horses or other livestock"
    }
   ]
  },
  {
-  "w": "faces",
-  "f": 187,
+  "w": "cover",
+  "f": 79,
   "senses": [
    {
     "p": "v",
-    "d": "deal with (something unpleasant) head on"
+    "d": "provide with a covering or cause to be covered"
    },
    {
     "p": "v",
-    "d": "oppose, as in hostility or a competition"
+    "d": "form a cover over"
    },
    {
     "p": "v",
-    "d": "be oriented in a certain direction, often with respect to another reference point; be opposite to"
+    "d": "span an interval of distance, space or time"
    },
    {
     "p": "v",
-    "d": "be opposite"
+    "d": "provide for"
    },
    {
     "p": "v",
-    "d": "turn so as to face; turn the face in a certain direction"
+    "d": "act on verbally or in some form of artistic expression"
    },
    {
     "p": "v",
-    "d": "present somebody with something, usually to accuse or criticize"
+    "d": "include in scope; include as part of something broader; have as one's sphere or territory"
    }
   ]
  },
  {
-  "w": "showed",
-  "f": 187,
+  "w": "doors",
+  "f": 79,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a swinging or sliding barrier that will close the entrance to a room or building or vehicle"
+   },
+   {
+    "p": "n",
+    "d": "the entrance (the space in a wall) through which you enter or leave a room or building; the space that a door can close"
+   },
+   {
+    "p": "n",
+    "d": "anything providing a means of access (or escape)"
+   },
+   {
+    "p": "n",
+    "d": "a structure where people live or work (usually ordered along a street or road)"
+   },
+   {
+    "p": "n",
+    "d": "a room that is entered via a door"
+   }
+  ]
+ },
+ {
+  "w": "feared",
+  "f": 79,
+  "senses": [
+   {
+    "p": "v",
+    "d": "be afraid or feel anxious or apprehensive about a possible or probable situation or event"
+   },
+   {
+    "p": "v",
+    "d": "be afraid or scared of; be frightened of"
+   },
+   {
+    "p": "v",
+    "d": "be sorry; used to introduce an unpleasant statement"
+   },
+   {
+    "p": "v",
+    "d": "be uneasy or apprehensive about"
+   },
+   {
+    "p": "v",
+    "d": "regard with feelings of respect and reverence; consider hallowed or exalted or be in awe of"
+   },
+   {
+    "p": "n",
+    "d": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight)"
+   }
+  ]
+ },
+ {
+  "w": "ginger",
+  "f": 79,
+  "senses": [
+   {
+    "p": "n",
+    "d": "perennial plants having thick branching aromatic rhizomes and leafy reedlike stems"
+   },
+   {
+    "p": "n",
+    "d": "dried ground gingerroot"
+   },
+   {
+    "p": "n",
+    "d": "pungent rhizome of the common ginger plant; used fresh as a seasoning especially in Asian cookery"
+   },
+   {
+    "p": "n",
+    "d": "liveliness and energy"
+   },
+   {
+    "p": "v",
+    "d": "add ginger to in order to add flavor"
+   },
+   {
+    "p": "a",
+    "d": "(used especially of hair or fur) having a bright orange-brown color"
+   }
+  ]
+ },
+ {
+  "w": "lit",
+  "f": 79,
+  "senses": [
+   {
+    "p": "v",
+    "d": "make lighter or brighter"
+   },
+   {
+    "p": "v",
+    "d": "begin to smoke"
+   },
+   {
+    "p": "v",
+    "d": "to come to rest, settle"
+   },
+   {
+    "p": "v",
+    "d": "cause to start burning; subject to fire or great heat"
+   },
+   {
+    "p": "v",
+    "d": "fall to somebody by assignment or lot"
+   },
+   {
+    "p": "v",
+    "d": "alight from (a horse)"
+   }
+  ]
+ },
+ {
+  "w": "locked",
+  "f": 79,
+  "senses": [
+   {
+    "p": "v",
+    "d": "fasten with a lock"
+   },
+   {
+    "p": "v",
+    "d": "keep engaged"
+   },
+   {
+    "p": "v",
+    "d": "become rigid or immoveable"
+   },
+   {
+    "p": "v",
+    "d": "hold in a locking position"
+   },
+   {
+    "p": "v",
+    "d": "become engaged or intermeshed with one another"
+   },
+   {
+    "p": "v",
+    "d": "hold fast (in a certain state)"
+   }
+  ]
+ },
+ {
+  "w": "main",
+  "f": 79,
+  "senses": [
+   {
+    "p": "a",
+    "d": "most important element"
+   },
+   {
+    "p": "a",
+    "d": "(of a clause) capable of standing syntactically alone as a complete sentence"
+   },
+   {
+    "p": "a",
+    "d": "of force; of the greatest possible intensity"
+   },
+   {
+    "p": "n",
+    "d": "any very large body of (salt) water"
+   },
+   {
+    "p": "n",
+    "d": "a principal pipe in a system that distributes water or gas or electricity or that collects sewage"
+   }
+  ]
+ },
+ {
+  "w": "proved",
+  "f": 79,
+  "senses": [
+   {
+    "p": "v",
+    "d": "be shown or be found to be"
+   },
+   {
+    "p": "v",
+    "d": "establish the validity of something, as by an example, explanation or experiment"
+   },
+   {
+    "p": "v",
+    "d": "provide evidence for"
+   },
+   {
+    "p": "v",
+    "d": "prove formally; demonstrate by a mathematical, formal proof"
+   },
+   {
+    "p": "v",
+    "d": "put to the test, as for its quality, or give experimental use to"
+   },
+   {
+    "p": "v",
+    "d": "increase in volume"
+   }
+  ]
+ },
+ {
+  "w": "seated",
+  "f": 79,
+  "senses": [
+   {
+    "p": "v",
+    "d": "show to a seat; assign a seat for"
+   },
+   {
+    "p": "v",
+    "d": "be able to seat"
+   },
+   {
+    "p": "v",
+    "d": "place ceremoniously or formally in an office or position"
+   },
+   {
+    "p": "v",
+    "d": "put a seat on a chair"
+   },
+   {
+    "p": "v",
+    "d": "provide with seats"
+   },
+   {
+    "p": "v",
+    "d": "place or attach firmly in or on a base"
+   }
+  ]
+ },
+ {
+  "w": "space",
+  "f": 79,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the unlimited expanse in which everything is located"
+   },
+   {
+    "p": "n",
+    "d": "an empty area (usually bounded in some way between things)"
+   },
+   {
+    "p": "n",
+    "d": "an area reserved for some particular purpose"
+   },
+   {
+    "p": "n",
+    "d": "any location outside the Earth's atmosphere"
+   },
+   {
+    "p": "n",
+    "d": "a blank character used to separate successive words in writing or printing"
+   },
+   {
+    "p": "n",
+    "d": "the interval between two times"
+   }
+  ]
+ },
+ {
+  "w": "careful",
+  "f": 78,
+  "senses": [
+   {
+    "p": "a",
+    "d": "exercising caution or showing care or attention"
+   },
+   {
+    "p": "a",
+    "d": "cautiously attentive"
+   },
+   {
+    "p": "a",
+    "d": "unhurried and with care and dignity"
+   },
+   {
+    "p": "a",
+    "d": "full of cares or anxiety-Luke 10.41"
+   },
+   {
+    "p": "a",
+    "d": "mindful of the future in spending money"
+   }
+  ]
+ },
+ {
+  "w": "circle",
+  "f": 78,
+  "senses": [
+   {
+    "p": "n",
+    "d": "ellipse in which the two axes are of equal length; a plane curve generated by one point moving at a constant distance from a fixed point"
+   },
+   {
+    "p": "n",
+    "d": "an unofficial association of people or groups"
+   },
+   {
+    "p": "n",
+    "d": "something approximating the shape of a circle"
+   },
+   {
+    "p": "n",
+    "d": "movement once around a course"
+   },
+   {
+    "p": "n",
+    "d": "a road junction at which traffic streams circularly around a central island"
+   },
+   {
+    "p": "n",
+    "d": "street names for flunitrazepan"
+   }
+  ]
+ },
+ {
+  "w": "dim",
+  "f": 78,
+  "senses": [
+   {
+    "p": "v",
+    "d": "switch (a car's headlights) from a higher to a lower beam"
+   },
+   {
+    "p": "a",
+    "d": "lacking in light; not bright or harsh"
+   },
+   {
+    "p": "v",
+    "d": "become dim or lusterless"
+   },
+   {
+    "p": "a",
+    "d": "lacking clarity or distinctness"
+   },
+   {
+    "p": "v",
+    "d": "make dim or lusterless"
+   },
+   {
+    "p": "a",
+    "d": "made dim or less bright"
+   }
+  ]
+ },
+ {
+  "w": "loss",
+  "f": 78,
+  "senses": [
+   {
+    "p": "n",
+    "d": "something that is lost"
+   },
+   {
+    "p": "n",
+    "d": "gradual decline in amount or activity"
+   },
+   {
+    "p": "n",
+    "d": "the act of losing someone or something"
+   },
+   {
+    "p": "n",
+    "d": "the disadvantage that results from losing something"
+   },
+   {
+    "p": "n",
+    "d": "the experience of losing a loved one"
+   },
+   {
+    "p": "n",
+    "d": "the amount by which the cost of a business exceeds its revenue"
+   }
+  ]
+ },
+ {
+  "w": "mice",
+  "f": 78,
+  "senses": [
+   {
+    "p": "v",
+    "d": "to go stealthily or furtively"
+   },
+   {
+    "p": "v",
+    "d": "manipulate the mouse of a computer"
+   },
+   {
+    "p": "n",
+    "d": "any of numerous small rodents typically resembling diminutive rats having pointed snouts and small ears on elongated bodies with slender usually hairless tails"
+   },
+   {
+    "p": "n",
+    "d": "a swollen bruise caused by a blow to the eye"
+   },
+   {
+    "p": "n",
+    "d": "person who is quiet or timid"
+   },
+   {
+    "p": "n",
+    "d": "a hand-operated electronic device that controls the coordinates of a cursor on your computer screen as you move it around on a pad; on the bottom of the device is a ball that rolls on the surface of the pad"
+   }
+  ]
+ },
+ {
+  "w": "rule",
+  "f": 78,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a principle or condition that customarily governs behavior"
+   },
+   {
+    "p": "n",
+    "d": "something regarded as a normative example"
+   },
+   {
+    "p": "n",
+    "d": "prescribed guide for conduct or action"
+   },
+   {
+    "p": "n",
+    "d": "(linguistics) a rule describing (or prescribing) a linguistic practice"
+   },
+   {
+    "p": "n",
+    "d": "a basic generalization that is accepted as true and that can be used as a basis for reasoning or conduct"
+   },
+   {
+    "p": "n",
+    "d": "the duration of a monarch's or government's power"
+   }
+  ]
+ },
+ {
+  "w": "stick",
+  "f": 78,
+  "senses": [
+   {
+    "p": "v",
+    "d": "put, fix, force, or implant"
+   },
+   {
+    "p": "v",
+    "d": "stay put (in a certain place)"
+   },
+   {
+    "p": "v",
+    "d": "stick to firmly"
+   },
+   {
+    "p": "v",
+    "d": "be or become fixed"
+   },
+   {
+    "p": "v",
+    "d": "endure"
+   },
+   {
+    "p": "v",
+    "d": "be a devoted follower or supporter"
+   }
+  ]
+ },
+ {
+  "w": "wondering",
+  "f": 78,
+  "senses": [
+   {
+    "p": "v",
+    "d": "have a wish or desire to know something"
+   },
+   {
+    "p": "v",
+    "d": "place in doubt or express doubtful speculation"
+   },
+   {
+    "p": "v",
+    "d": "be amazed at"
+   },
+   {
+    "p": "n",
+    "d": "the feeling aroused by something strange and surprising"
+   },
+   {
+    "p": "n",
+    "d": "something that causes feelings of wonder"
+   },
+   {
+    "p": "n",
+    "d": "a state in which you want to learn more about something"
+   }
+  ]
+ },
+ {
+  "w": "yards",
+  "f": 78,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a unit of length equal to 3 feet; defined as 91.44 centimeters; originally taken to be the average length of a stride"
+   },
+   {
+    "p": "n",
+    "d": "the enclosed land around a house or other building"
+   },
+   {
+    "p": "n",
+    "d": "a tract of land enclosed for particular activities (sometimes paved and usually associated with buildings)"
+   },
+   {
+    "p": "n",
+    "d": "the cardinal number that is the product of 10 and 100"
+   },
+   {
+    "p": "n",
+    "d": "a unit of volume (as for sand or gravel)"
+   },
+   {
+    "p": "n",
+    "d": "a tract of land where logs are accumulated"
+   }
+  ]
+ },
+ {
+  "w": "bag",
+  "f": 77,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a flexible container with a single opening"
+   },
+   {
+    "p": "n",
+    "d": "the quantity of game taken in a particular period (usually by one person)"
+   },
+   {
+    "p": "n",
+    "d": "a place that the runner must touch before scoring"
+   },
+   {
+    "p": "n",
+    "d": "a container used for carrying money and small personal items or accessories (especially by women)"
+   },
+   {
+    "p": "n",
+    "d": "the quantity that a bag will hold"
+   },
+   {
+    "p": "n",
+    "d": "a portable rectangular container for carrying clothes"
+   }
+  ]
+ },
+ {
+  "w": "declared",
+  "f": 77,
+  "senses": [
+   {
+    "p": "v",
+    "d": "state emphatically and authoritatively"
+   },
+   {
+    "p": "v",
+    "d": "announce publicly or officially"
+   },
+   {
+    "p": "v",
+    "d": "state firmly"
+   },
+   {
+    "p": "v",
+    "d": "declare to be"
+   },
+   {
+    "p": "v",
+    "d": "authorize payments of"
+   },
+   {
+    "p": "v",
+    "d": "designate (a trump suit or no-trump) with the final bid of a hand"
+   }
+  ]
+ },
+ {
+  "w": "dreams",
+  "f": 77,
+  "senses": [
+   {
+    "p": "v",
+    "d": "have a daydream; indulge in a fantasy"
+   },
+   {
+    "p": "v",
+    "d": "experience while sleeping"
+   },
+   {
+    "p": "n",
+    "d": "a series of mental images and emotions occurring during sleep"
+   },
+   {
+    "p": "n",
+    "d": "imaginative thoughts indulged in while awake"
+   },
+   {
+    "p": "n",
+    "d": "a cherished desire"
+   },
+   {
+    "p": "n",
+    "d": "a fantastic but vain hope (from fantasies induced by the opium pipe)"
+   }
+  ]
+ },
+ {
+  "w": "milk",
+  "f": 77,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a white nutritious liquid secreted by mammals and used as food by human beings"
+   },
+   {
+    "p": "v",
+    "d": "take milk from female mammals"
+   },
+   {
+    "p": "n",
+    "d": "produced by mammary glands of female mammals for feeding their young"
+   },
+   {
+    "p": "v",
+    "d": "exploit as much as possible"
+   },
+   {
+    "p": "v",
+    "d": "add milk to"
+   },
+   {
+    "p": "n",
+    "d": "any of several nutritive milklike liquids"
+   }
+  ]
+ },
+ {
+  "w": "orders",
+  "f": 77,
+  "senses": [
+   {
+    "p": "v",
+    "d": "give instructions to or direct somebody to do something with authority"
+   },
+   {
+    "p": "v",
+    "d": "make a request for something"
+   },
+   {
+    "p": "v",
+    "d": "issue commands or orders for"
+   },
+   {
+    "p": "v",
+    "d": "bring into conformity with rules or principles or usage; impose regulations"
+   },
+   {
+    "p": "v",
+    "d": "bring order to or into"
+   },
+   {
+    "p": "v",
+    "d": "place in a certain order"
+   }
+  ]
+ },
+ {
+  "w": "row",
+  "f": 77,
+  "senses": [
+   {
+    "p": "n",
+    "d": "an arrangement of objects or people side by side in a line"
+   },
+   {
+    "p": "n",
+    "d": "an angry dispute"
+   },
+   {
+    "p": "n",
+    "d": "a long continuous strip (usually running horizontally)"
+   },
+   {
+    "p": "n",
+    "d": "(construction) a layer of masonry"
+   },
+   {
+    "p": "n",
+    "d": "a linear array of numbers, letters, or symbols side by side"
+   },
+   {
+    "p": "n",
+    "d": "a continuous chronological succession without an interruption"
+   }
+  ]
+ },
+ {
+  "w": "younger",
+  "f": 77,
+  "senses": [
+   {
+    "p": "a",
+    "d": "(used of living things especially persons) in an early period of life or development or growth"
+   },
+   {
+    "p": "a",
+    "d": "(of crops) harvested at an early stage of development; before complete maturity"
+   },
+   {
+    "p": "a",
+    "d": "suggestive of youth; vigorous and fresh"
+   },
+   {
+    "p": "a",
+    "d": "being in its early stage"
+   },
+   {
+    "p": "a",
+    "d": "not tried or tested by experience"
+   },
+   {
+    "p": "n",
+    "d": "any immature animal"
+   }
+  ]
+ },
+ {
+  "w": "blame",
+  "f": 76,
+  "senses": [
+   {
+    "p": "v",
+    "d": "put or pin the blame on"
+   },
+   {
+    "p": "v",
+    "d": "harass with constant criticism"
+   },
+   {
+    "p": "v",
+    "d": "attribute responsibility to"
+   },
+   {
+    "p": "n",
+    "d": "an accusation that you are responsible for some lapse or misdeed"
+   },
+   {
+    "p": "n",
+    "d": "a reproach for some lapse or misdeed"
+   },
+   {
+    "p": "a",
+    "d": "expletives used informally as intensifiers"
+   }
+  ]
+ },
+ {
+  "w": "couple",
+  "f": 76,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a pair who associate with one another"
+   },
+   {
+    "p": "n",
+    "d": "a pair of people who live together"
+   },
+   {
+    "p": "n",
+    "d": "a small indefinite number"
+   },
+   {
+    "p": "n",
+    "d": "two items of the same kind"
+   },
+   {
+    "p": "n",
+    "d": "(physics) something joined by two equal and opposite forces that act along parallel lines"
+   },
+   {
+    "p": "v",
+    "d": "bring two objects, ideas, or people together"
+   }
+  ]
+ },
+ {
+  "w": "examined",
+  "f": 76,
+  "senses": [
+   {
+    "p": "v",
+    "d": "consider in detail and subject to an analysis in order to discover essential features or meaning"
+   },
+   {
+    "p": "v",
+    "d": "observe, check out, and look over carefully or inspect"
+   },
+   {
+    "p": "v",
+    "d": "question or examine thoroughly and closely"
+   },
+   {
+    "p": "v",
+    "d": "question closely"
+   },
+   {
+    "p": "v",
+    "d": "put to the test, as for its quality, or give experimental use to"
+   }
+  ]
+ },
+ {
+  "w": "expressed",
+  "f": 76,
+  "senses": [
+   {
+    "p": "v",
+    "d": "give expression to"
+   },
+   {
+    "p": "v",
+    "d": "articulate; either verbally or with a cry, shout, or noise"
+   },
+   {
+    "p": "v",
+    "d": "serve as a means for expressing something"
+   },
+   {
+    "p": "v",
+    "d": "indicate through a symbol, formula, etc."
+   },
+   {
+    "p": "v",
+    "d": "manifest the effects of (a gene or genetic trait)"
+   },
+   {
+    "p": "v",
+    "d": "obtain from a substance, as by mechanical action"
+   }
+  ]
+ },
+ {
+  "w": "missed",
+  "f": 76,
+  "senses": [
+   {
+    "p": "v",
+    "d": "fail to perceive or to catch with the senses or the mind"
+   },
+   {
+    "p": "v",
+    "d": "feel or suffer from the lack of"
+   },
+   {
+    "p": "v",
+    "d": "fail to attend an event or activity"
+   },
+   {
+    "p": "v",
+    "d": "leave undone or leave out"
+   },
+   {
+    "p": "v",
+    "d": "fail to reach or get to"
+   },
+   {
+    "p": "v",
+    "d": "be without"
+   }
+  ]
+ },
+ {
+  "w": "rage",
+  "f": 76,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a feeling of intense anger"
+   },
+   {
+    "p": "n",
+    "d": "a state of extreme anger"
+   },
+   {
+    "p": "n",
+    "d": "something that is desired intensely"
+   },
+   {
+    "p": "n",
+    "d": "violent state of the elements"
+   },
+   {
+    "p": "n",
+    "d": "an interest followed with exaggerated zeal"
+   },
+   {
+    "p": "v",
+    "d": "behave violently, as if in state of a great anger"
+   }
+  ]
+ },
+ {
+  "w": "search",
+  "f": 76,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the activity of looking thoroughly in order to find something or someone"
+   },
+   {
+    "p": "n",
+    "d": "an investigation seeking answers"
+   },
+   {
+    "p": "n",
+    "d": "an operation that determines whether one or more of a set of items has a specified property"
+   },
+   {
+    "p": "n",
+    "d": "the examination of alternative hypotheses"
+   },
+   {
+    "p": "n",
+    "d": "boarding and inspecting a ship on the high seas"
+   },
+   {
+    "p": "v",
+    "d": "try to locate or discover, or try to establish the existence of"
+   }
+  ]
+ },
+ {
+  "w": "service",
+  "f": 76,
+  "senses": [
+   {
+    "p": "n",
+    "d": "work done by one person or group that benefits another"
+   },
+   {
+    "p": "n",
+    "d": "an act of help or assistance"
+   },
+   {
+    "p": "n",
+    "d": "the act of public worship following prescribed rules"
+   },
+   {
+    "p": "n",
+    "d": "a company or agency that performs a public service; subject to government regulation"
+   },
+   {
+    "p": "n",
+    "d": "employment in or work for another"
+   },
+   {
+    "p": "n",
+    "d": "a force that is a branch of the armed forces"
+   }
+  ]
+ },
+ {
+  "w": "shown",
+  "f": 76,
   "senses": [
    {
     "p": "v",
@@ -416,1074 +1330,152 @@
   ]
  },
  {
-  "w": "middle",
-  "f": 186,
+  "w": "stern",
+  "f": 76,
   "senses": [
    {
-    "p": "n",
-    "d": "an area that is approximately central within some larger region"
+    "p": "a",
+    "d": "of a stern or strict bearing or demeanor; forbidding in aspect"
    },
    {
     "p": "a",
-    "d": "being neither at the beginning nor at the end in a series"
-   },
-   {
-    "p": "n",
-    "d": "an intermediate part or section- Aristotle"
+    "d": "not to be placated or appeased or moved by entreaty"
    },
    {
     "p": "a",
-    "d": "equally distant from the extremes"
-   },
-   {
-    "p": "n",
-    "d": "the middle area of the human torso (usually in front)"
+    "d": "severe and unremitting in making demands"
    },
    {
     "p": "a",
-    "d": "of a stage in the development of a language or literature between earlier and later stages"
+    "d": "severely simple"
+   },
+   {
+    "p": "n",
+    "d": "the rear part of a ship"
+   },
+   {
+    "p": "n",
+    "d": "the fleshy part of the human body that you sit on"
    }
   ]
  },
  {
-  "w": "die",
-  "f": 185,
+  "w": "whip",
+  "f": 76,
   "senses": [
    {
     "p": "v",
-    "d": "pass from physical life and lose all bodily attributes and functions necessary to sustain life"
+    "d": "beat severely with a whip or rod"
    },
    {
     "p": "v",
-    "d": "suffer or face the pain of death"
+    "d": "defeat thoroughly"
    },
    {
     "p": "v",
-    "d": "be brought to or as if to the point of death by an intense emotion such as embarrassment, amusement, or shame"
+    "d": "thrash about flexibly in the manner of a whiplash"
    },
    {
     "p": "v",
-    "d": "stop operating or functioning"
+    "d": "strike as if by whipping"
    },
    {
     "p": "v",
-    "d": "feel indifferent towards"
+    "d": "whip with or as if with a wire whisk"
    },
    {
     "p": "v",
-    "d": "languish as with love or desire"
+    "d": "subject to harsh criticism"
    }
   ]
  },
  {
-  "w": "hook",
-  "f": 185,
+  "w": "caused",
+  "f": 75,
   "senses": [
    {
     "p": "v",
-    "d": "fasten with a hook"
+    "d": "give rise to; cause to happen or occur, not always intentionally"
    },
    {
     "p": "v",
-    "d": "rip off; ask an unreasonable price"
+    "d": "cause to do; cause to act in a specified manner"
    },
    {
-    "p": "v",
-    "d": "make a piece of needlework by interlocking and looping thread with a hooked needle"
+    "p": "n",
+    "d": "events that provide the generative force that is the origin of something"
    },
    {
-    "p": "v",
-    "d": "hit a ball and put a spin on it so that it travels to the left"
+    "p": "n",
+    "d": "a justification for something existing or happening"
    },
    {
-    "p": "v",
-    "d": "take by theft"
+    "p": "n",
+    "d": "a series of actions advancing a principle or tending toward a particular end"
    },
    {
-    "p": "v",
-    "d": "make off with belongings of others"
+    "p": "n",
+    "d": "any entity that produces an effect or is responsible for events or results"
    }
   ]
  },
  {
-  "w": "killed",
-  "f": 185,
+  "w": "crept",
+  "f": 75,
   "senses": [
    {
     "p": "v",
-    "d": "cause to die; put to death, usually intentionally or knowingly"
+    "d": "move slowly; in the case of people or animals with the body near the ground"
    },
    {
     "p": "v",
-    "d": "thwart the passage of"
+    "d": "to go stealthily or furtively"
    },
    {
     "p": "v",
-    "d": "end or extinguish by forceful means"
+    "d": "grow or spread, often in such a way as to cover (a surface)"
    },
    {
     "p": "v",
-    "d": "be fatal"
+    "d": "show submission or fear"
    },
    {
-    "p": "v",
-    "d": "be the source of great pain for"
+    "p": "n",
+    "d": "someone unpleasantly strange or eccentric"
    },
    {
-    "p": "v",
-    "d": "overwhelm with hilarity, pleasure, or admiration"
+    "p": "n",
+    "d": "a slow longitudinal movement or deformation"
    }
   ]
  },
  {
-  "w": "bell",
-  "f": 184,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a hollow device made of metal that makes a ringing sound when struck"
-   },
-   {
-    "p": "n",
-    "d": "a push button at an outer door that gives a ringing or buzzing signal when pushed"
-   },
-   {
-    "p": "n",
-    "d": "the sound of a bell being struck"
-   },
-   {
-    "p": "n",
-    "d": "(nautical) each of the eight half-hour units of nautical time signaled by strokes of a ship's bell; eight bells signals 4:00, 8:00, or 12:00 o'clock, either a.m. or p.m."
-   },
-   {
-    "p": "n",
-    "d": "the shape of a bell"
-   },
-   {
-    "p": "n",
-    "d": "a percussion instrument consisting of a set of tuned bells that are struck with a hammer; used as an orchestral instrument"
-   }
-  ]
- },
- {
-  "w": "general",
-  "f": 183,
+  "w": "fat",
+  "f": 75,
   "senses": [
    {
     "p": "a",
-    "d": "applying to all or most members of a category or group"
+    "d": "having an (over)abundance of flesh"
    },
    {
     "p": "a",
-    "d": "not specialized or limited to one class of things"
+    "d": "having a relatively large diameter"
    },
    {
     "p": "a",
-    "d": "prevailing among and common to the general public"
+    "d": "containing or composed of fat"
    },
    {
     "p": "a",
-    "d": "affecting the entire body"
-   },
-   {
-    "p": "a",
-    "d": "somewhat indefinite"
-   },
-   {
-    "p": "a",
-    "d": "of worldwide scope or applicability- Christopher Morley"
-   }
-  ]
- },
- {
-  "w": "blood",
-  "f": 182,
-  "senses": [
-   {
-    "p": "n",
-    "d": "the fluid (red in vertebrates) that is pumped through the body by the heart and contains plasma, blood cells, and platelets"
-   },
-   {
-    "p": "n",
-    "d": "temperament or disposition"
-   },
-   {
-    "p": "n",
-    "d": "a dissolute man in fashionable society"
-   },
-   {
-    "p": "n",
-    "d": "the descendants of one individual"
-   },
-   {
-    "p": "n",
-    "d": "people viewed as members of a group"
-   },
-   {
-    "p": "v",
-    "d": "smear with blood, as in a hunting initiation rite, where the face of a person is smeared with the blood of the kill"
-   }
-  ]
- },
- {
-  "w": "carry",
-  "f": 182,
-  "senses": [
-   {
-    "p": "v",
-    "d": "move while supporting, either in a vehicle or in one's hands or on one's body"
-   },
-   {
-    "p": "v",
-    "d": "have with oneself; have on one's person"
-   },
-   {
-    "p": "v",
-    "d": "transmit or serve as the medium for transmission"
-   },
-   {
-    "p": "v",
-    "d": "serve as a means for expressing something"
-   },
-   {
-    "p": "v",
-    "d": "bear or be able to bear the weight, pressure,or responsibility of"
-   },
-   {
-    "p": "v",
-    "d": "support or hold in a certain manner"
-   }
-  ]
- },
- {
-  "w": "died",
-  "f": 182,
-  "senses": [
-   {
-    "p": "v",
-    "d": "pass from physical life and lose all bodily attributes and functions necessary to sustain life"
-   },
-   {
-    "p": "v",
-    "d": "suffer or face the pain of death"
-   },
-   {
-    "p": "v",
-    "d": "be brought to or as if to the point of death by an intense emotion such as embarrassment, amusement, or shame"
-   },
-   {
-    "p": "v",
-    "d": "stop operating or functioning"
-   },
-   {
-    "p": "v",
-    "d": "feel indifferent towards"
-   },
-   {
-    "p": "v",
-    "d": "languish as with love or desire"
-   }
-  ]
- },
- {
-  "w": "darkness",
-  "f": 181,
-  "senses": [
-   {
-    "p": "n",
-    "d": "absence of light or illumination"
-   },
-   {
-    "p": "n",
-    "d": "an unilluminated area"
-   },
-   {
-    "p": "n",
-    "d": "absence of moral or spiritual values"
-   },
-   {
-    "p": "n",
-    "d": "an unenlightened state"
-   },
-   {
-    "p": "n",
-    "d": "having a dark or somber color"
-   },
-   {
-    "p": "n",
-    "d": "a swarthy complexion"
-   }
-  ]
- },
- {
-  "w": "remembered",
-  "f": 181,
-  "senses": [
-   {
-    "p": "v",
-    "d": "recall knowledge from memory; have a recollection"
-   },
-   {
-    "p": "v",
-    "d": "keep in mind for attention or consideration"
-   },
-   {
-    "p": "v",
-    "d": "recapture the past; indulge in memories"
-   },
-   {
-    "p": "v",
-    "d": "show appreciation to"
-   },
-   {
-    "p": "v",
-    "d": "mention favorably, as in prayer"
-   },
-   {
-    "p": "v",
-    "d": "mention as by way of greeting or to indicate friendship"
-   }
-  ]
- },
- {
-  "w": "subject",
-  "f": 181,
-  "senses": [
-   {
-    "p": "n",
-    "d": "the subject matter of a conversation or discussion"
-   },
-   {
-    "p": "n",
-    "d": "something (a person or object or scene) selected by an artist or photographer for graphic representation"
-   },
-   {
-    "p": "n",
-    "d": "a branch of knowledge"
-   },
-   {
-    "p": "n",
-    "d": "some situation or event that is thought about"
-   },
-   {
-    "p": "n",
-    "d": "(grammar) one of the two main constituents of a sentence; the grammatical constituent about which something is predicated"
-   },
-   {
-    "p": "n",
-    "d": "a person who is subjected to experimental or other observational procedures; someone who is an object of investigation"
-   }
-  ]
- },
- {
-  "w": "age",
-  "f": 180,
-  "senses": [
-   {
-    "p": "n",
-    "d": "how long something has existed"
-   },
-   {
-    "p": "n",
-    "d": "an era of history having some distinctive feature"
-   },
-   {
-    "p": "n",
-    "d": "a time of life (usually defined in years) at which some particular qualification or power arises"
-   },
-   {
-    "p": "n",
-    "d": "a prolonged period of time"
-   },
-   {
-    "p": "n",
-    "d": "a late time of life"
-   },
-   {
-    "p": "v",
-    "d": "begin to seem older; get older"
-   }
-  ]
- },
- {
-  "w": "appearance",
-  "f": 179,
-  "senses": [
-   {
-    "p": "n",
-    "d": "outward or visible aspect of a person or thing"
-   },
-   {
-    "p": "n",
-    "d": "the event of coming into sight"
-   },
-   {
-    "p": "n",
-    "d": "formal attendance (in court or at a hearing) of a party in an action"
-   },
-   {
-    "p": "n",
-    "d": "a mental representation"
-   },
-   {
-    "p": "n",
-    "d": "the act of appearing in public view"
-   },
-   {
-    "p": "n",
-    "d": "pretending that something is the case in order to make a good impression"
-   }
-  ]
- },
- {
-  "w": "yellow",
-  "f": 179,
-  "senses": [
-   {
-    "p": "a",
-    "d": "of the color intermediate between green and orange in the color spectrum; of something resembling the color of an egg yolk"
-   },
-   {
-    "p": "a",
-    "d": "easily frightened"
-   },
-   {
-    "p": "a",
-    "d": "changed to a yellowish color by age"
-   },
-   {
-    "p": "a",
-    "d": "typical of tabloids"
-   },
-   {
-    "p": "a",
-    "d": "cowardly or treacherous-M.W.Straight"
-   },
-   {
-    "p": "a",
-    "d": "affected by jaundice which causes yellowing of skin etc"
-   }
-  ]
- },
- {
-  "w": "asleep",
-  "f": 178,
-  "senses": [
-   {
-    "p": "a",
-    "d": "in a state of sleep"
-   },
-   {
-    "p": "a",
-    "d": "lacking sensation"
-   },
-   {
-    "p": "a",
-    "d": "dead"
-   },
-   {
-    "p": "r",
-    "d": "into a sleeping state"
-   },
-   {
-    "p": "r",
-    "d": "in the sleep of death"
-   }
-  ]
- },
- {
-  "w": "later",
-  "f": 178,
-  "senses": [
-   {
-    "p": "a",
-    "d": "being or occurring at an advanced period of time or after a usual or expected time"
-   },
-   {
-    "p": "a",
-    "d": "after the expected or usual time; delayed"
-   },
-   {
-    "p": "a",
-    "d": "of the immediate past or just previous to the present time"
-   },
-   {
-    "p": "a",
-    "d": "having died recently"
-   },
-   {
-    "p": "a",
-    "d": "of a later stage in the development of a language or literature; used especially of dead languages"
-   },
-   {
-    "p": "a",
-    "d": "at or toward an end or late period or stage of development"
-   }
-  ]
- },
- {
-  "w": "piece",
-  "f": 178,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a separate part of a whole"
-   },
-   {
-    "p": "n",
-    "d": "an item that is an instance of some type"
-   },
-   {
-    "p": "n",
-    "d": "a portion of a natural object"
-   },
-   {
-    "p": "n",
-    "d": "a musical work that has been created"
-   },
-   {
-    "p": "n",
-    "d": "an instance of some kind"
-   },
-   {
-    "p": "n",
-    "d": "an artistic or literary composition"
-   }
-  ]
- },
- {
-  "w": "state",
-  "f": 178,
-  "senses": [
-   {
-    "p": "n",
-    "d": "the territory occupied by one of the constituent administrative districts of a nation"
-   },
-   {
-    "p": "n",
-    "d": "the way something is with respect to its main attributes"
-   },
-   {
-    "p": "n",
-    "d": "the group of people comprising the government of a sovereign state"
-   },
-   {
-    "p": "n",
-    "d": "a politically organized body of people under a single government"
-   },
-   {
-    "p": "n",
-    "d": "(chemistry) the three traditional states of matter are solids (fixed shape and volume) and liquids (fixed volume and shaped by the container) and gases (filling the container)"
-   },
-   {
-    "p": "n",
-    "d": "a state of depression or agitation"
-   }
-  ]
- },
- {
-  "w": "hall",
-  "f": 177,
-  "senses": [
-   {
-    "p": "n",
-    "d": "an interior passage or corridor onto which rooms open"
-   },
-   {
-    "p": "n",
-    "d": "a large entrance or reception room or area"
-   },
-   {
-    "p": "n",
-    "d": "a large room for gatherings or entertainment"
-   },
-   {
-    "p": "n",
-    "d": "a college or university building containing living quarters for students"
-   },
-   {
-    "p": "n",
-    "d": "the large room of a manor or castle"
-   },
-   {
-    "p": "n",
-    "d": "a large and imposing house"
-   }
-  ]
- },
- {
-  "w": "heads",
-  "f": 177,
-  "senses": [
-   {
-    "p": "v",
-    "d": "to go or travel towards"
-   },
-   {
-    "p": "v",
-    "d": "be in charge of"
-   },
-   {
-    "p": "v",
-    "d": "travel in front of; go in advance of others"
-   },
-   {
-    "p": "v",
-    "d": "be the first or leading member of (a group) and excel"
-   },
-   {
-    "p": "v",
-    "d": "direct the course; determine the direction of travelling"
-   },
-   {
-    "p": "v",
-    "d": "take its rise"
-   }
-  ]
- },
- {
-  "w": "rich",
-  "f": 177,
-  "senses": [
-   {
-    "p": "a",
-    "d": "possessing material wealth"
-   },
-   {
-    "p": "a",
-    "d": "having an abundant supply of desirable qualities or substances (especially natural resources)"
-   },
-   {
-    "p": "a",
-    "d": "of great worth or quality"
+    "d": "lucrative"
    },
    {
     "p": "a",
     "d": "marked by great fruitfulness"
    },
    {
-    "p": "a",
-    "d": "strong; intense"
-   },
-   {
-    "p": "a",
-    "d": "very productive"
-   }
-  ]
- },
- {
-  "w": "safe",
-  "f": 177,
-  "senses": [
-   {
-    "p": "a",
-    "d": "free from danger or the risk of harm"
-   },
-   {
-    "p": "a",
-    "d": "(of an undertaking) secure from risk"
-   },
-   {
-    "p": "a",
-    "d": "having reached a base without being put out"
-   },
-   {
-    "p": "a",
-    "d": "financially safe"
-   },
-   {
     "p": "n",
-    "d": "strongbox where valuables can be safely kept"
-   },
-   {
-    "p": "n",
-    "d": "a ventilated or refrigerated cupboard for securing provisions from pests"
-   }
-  ]
- },
- {
-  "w": "figure",
-  "f": 176,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a diagram or picture illustrating textual material"
-   },
-   {
-    "p": "n",
-    "d": "alternative names for the body of a human being"
-   },
-   {
-    "p": "n",
-    "d": "one of the elements that collectively form a system of numeration"
-   },
-   {
-    "p": "n",
-    "d": "a model of a bodily form (especially of a person)"
-   },
-   {
-    "p": "n",
-    "d": "a well-known or notable person"
-   },
-   {
-    "p": "n",
-    "d": "a combination of points and lines and planes that form a visible palpable shape"
-   }
-  ]
- },
- {
-  "w": "act",
-  "f": 175,
-  "senses": [
-   {
-    "p": "v",
-    "d": "perform an action, or work out or perform (an action)"
-   },
-   {
-    "p": "v",
-    "d": "behave in a certain manner; show a certain behavior; conduct or comport oneself"
-   },
-   {
-    "p": "v",
-    "d": "play a role or part"
-   },
-   {
-    "p": "v",
-    "d": "discharge one's duties"
-   },
-   {
-    "p": "v",
-    "d": "pretend to have certain qualities or state of mind"
-   },
-   {
-    "p": "v",
-    "d": "be suitable for theatrical performance"
-   }
-  ]
- },
- {
-  "w": "filled",
-  "f": 175,
-  "senses": [
-   {
-    "p": "v",
-    "d": "make full, also in a metaphorical sense"
-   },
-   {
-    "p": "v",
-    "d": "become full"
-   },
-   {
-    "p": "v",
-    "d": "occupy the whole of"
-   },
-   {
-    "p": "v",
-    "d": "assume, as of positions or roles"
-   },
-   {
-    "p": "v",
-    "d": "fill, satisfy or meet a want or need or condtion ro restriction"
-   },
-   {
-    "p": "v",
-    "d": "appoint someone to (a position or a job)"
-   }
-  ]
- },
- {
-  "w": "natural",
-  "f": 175,
-  "senses": [
-   {
-    "p": "a",
-    "d": "in accordance with nature; relating to or concerning nature"
-   },
-   {
-    "p": "a",
-    "d": "existing in or produced by nature; not artificial or imitation"
-   },
-   {
-    "p": "a",
-    "d": "existing in or in conformity with nature or the observable world; neither supernatural nor magical"
-   },
-   {
-    "p": "a",
-    "d": "functioning or occurring in a normal way; lacking abnormalities or deficiencies"
-   },
-   {
-    "p": "a",
-    "d": "(of a musical note) being neither raised nor lowered by one chromatic semitone"
-   },
-   {
-    "p": "a",
-    "d": "(of a parent or child) related by blood; genetically related"
-   }
-  ]
- },
- {
-  "w": "war",
-  "f": 175,
-  "senses": [
-   {
-    "p": "n",
-    "d": "the waging of armed conflict against an enemy"
-   },
-   {
-    "p": "n",
-    "d": "a legal state created by a declaration of war and ended by official declaration during which the international rules of war apply"
-   },
-   {
-    "p": "n",
-    "d": "an active struggle between competing entities"
-   },
-   {
-    "p": "n",
-    "d": "a concerted campaign to end something that is injurious"
-   },
-   {
-    "p": "v",
-    "d": "make or wage war"
-   }
-  ]
- },
- {
-  "w": "attention",
-  "f": 174,
-  "senses": [
-   {
-    "p": "n",
-    "d": "the process whereby a person concentrates on some features of the environment to the (relative) exclusion of others"
-   },
-   {
-    "p": "n",
-    "d": "the work of providing treatment for or attending to someone or something"
-   },
-   {
-    "p": "n",
-    "d": "a general interest that leads people to want to know more"
-   },
-   {
-    "p": "n",
-    "d": "a courteous act indicating affection"
-   },
-   {
-    "p": "n",
-    "d": "the faculty or power of mental concentration"
-   },
-   {
-    "p": "n",
-    "d": "a motionless erect stance with arms at the sides and feet together; assumed by military personnel during drill or review"
-   }
-  ]
- },
- {
-  "w": "company",
-  "f": 174,
-  "senses": [
-   {
-    "p": "n",
-    "d": "an institution created to conduct business"
-   },
-   {
-    "p": "n",
-    "d": "small military unit; usually two or three platoons"
-   },
-   {
-    "p": "n",
-    "d": "the state of being with someone"
-   },
-   {
-    "p": "n",
-    "d": "organization of performers and associated personnel (especially theatrical)"
-   },
-   {
-    "p": "n",
-    "d": "a social or business visitor"
-   },
-   {
-    "p": "n",
-    "d": "a social gathering of guests or companions"
-   }
-  ]
- },
- {
-  "w": "step",
-  "f": 174,
-  "senses": [
-   {
-    "p": "n",
-    "d": "any maneuver made as part of progress toward a goal"
-   },
-   {
-    "p": "n",
-    "d": "the distance covered by a step"
-   },
-   {
-    "p": "n",
-    "d": "the act of changing location by raising the foot and setting it down"
-   },
-   {
-    "p": "n",
-    "d": "support consisting of a place to rest the foot while ascending or descending a stairway"
-   },
-   {
-    "p": "n",
-    "d": "relative position in a graded series"
-   },
-   {
-    "p": "n",
-    "d": "a short distance"
-   }
-  ]
- },
- {
-  "w": "talked",
-  "f": 174,
-  "senses": [
-   {
-    "p": "v",
-    "d": "exchange thoughts; talk with"
-   },
-   {
-    "p": "v",
-    "d": "express in speech"
-   },
-   {
-    "p": "v",
-    "d": "use language"
-   },
-   {
-    "p": "v",
-    "d": "reveal information"
-   },
-   {
-    "p": "v",
-    "d": "divulge confidential information or secrets"
-   },
-   {
-    "p": "v",
-    "d": "deliver a lecture or talk"
-   }
-  ]
- },
- {
-  "w": "stone",
-  "f": 173,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a lump or mass of hard consolidated mineral matter"
-   },
-   {
-    "p": "n",
-    "d": "building material consisting of a piece of rock hewn in a definite shape for a special purpose"
-   },
-   {
-    "p": "n",
-    "d": "material consisting of the aggregate of minerals like those making up the Earth's crust"
-   },
-   {
-    "p": "n",
-    "d": "a crystalline rock that can be cut and polished for jewelry"
-   },
-   {
-    "p": "n",
-    "d": "an avoirdupois unit used to measure the weight of a human body; equal to 14 pounds"
-   },
-   {
-    "p": "n",
-    "d": "the hard inner (usually woody) layer of the pericarp of some fruits (as peaches or plums or cherries or olives) that contains the seed"
-   }
-  ]
- },
- {
-  "w": "fingers",
-  "f": 171,
-  "senses": [
-   {
-    "p": "v",
-    "d": "feel or handle with the fingers"
-   },
-   {
-    "p": "v",
-    "d": "examine by touch"
-   },
-   {
-    "p": "v",
-    "d": "search for on the computer"
-   },
-   {
-    "p": "v",
-    "d": "indicate the fingering for the playing of musical scores for keyboard instruments"
-   },
-   {
-    "p": "n",
-    "d": "any of the terminal members of the hand (sometimes excepting the thumb)"
-   },
-   {
-    "p": "n",
-    "d": "the length of breadth of a finger used as a linear measure"
-   }
-  ]
- },
- {
-  "w": "hurt",
-  "f": 170,
-  "senses": [
-   {
-    "p": "v",
-    "d": "be the source of pain"
-   },
-   {
-    "p": "v",
-    "d": "give trouble or pain to"
-   },
-   {
-    "p": "v",
-    "d": "cause emotional anguish or make miserable"
-   },
-   {
-    "p": "v",
-    "d": "cause damage or affect negatively"
-   },
-   {
-    "p": "v",
-    "d": "hurt the feelings of"
-   },
-   {
-    "p": "v",
-    "d": "feel physical pain"
-   }
-  ]
- },
- {
-  "w": "books",
-  "f": 169,
-  "senses": [
-   {
-    "p": "v",
-    "d": "engage for a performance"
-   },
-   {
-    "p": "v",
-    "d": "arrange for and reserve (something for someone else) in advance"
-   },
-   {
-    "p": "v",
-    "d": "record a charge in a police register"
-   },
-   {
-    "p": "v",
-    "d": "register in a hotel booker"
-   },
-   {
-    "p": "n",
-    "d": "a written work or composition that has been published (printed on pages bound together)"
-   },
-   {
-    "p": "n",
-    "d": "physical objects consisting of a number of pages bound together"
+    "d": "a soft greasy substance occurring in organic tissue and consisting of a mixture of lipids (mostly triglycerides)"
    }
   ]
  }
