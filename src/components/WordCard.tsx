@@ -18,10 +18,38 @@ interface Cur {
   /** 精讲词的正确义项顺序（老词典那条常常反着排，比如 miss 的第一条是「失误」） */
   zh?: { p: string; t: string }[];
 }
+
+/** 新词库的词条（public/data/lex/<字母>.json），只在老词典没有这个词时才取 */
+interface LexSense { p?: string; d?: string; zh?: string }
+interface LexEntry {
+  w: string;
+  ipa?: string;
+  senses: LexSense[];
+  ex?: { t: string; zh?: string; src?: string }[];
+}
+
+const base = import.meta.env.BASE_URL || '/';
+
+/*
+ * 老词典（dict.json）只有 7,584 词，读书时点到不常见的词会显示「暂未收录」——
+ * 而新词库有 35,000 条，同一个词在那边是全的。
+ *
+ * 所以这里按首字母懒取分片（最大 3.4MB），只在老词典确实没有时才发请求；
+ * 取过就常驻，翻页不重复拉。
+ */
+const shardCache = new Map<string, Promise<Record<string, LexEntry>>>();
+function loadShard(ch: string): Promise<Record<string, LexEntry>> {
+  const hit = shardCache.get(ch);
+  if (hit) return hit;
+  const p = fetch(`${base}data/lex/${ch}.json`)
+    .then(r => (r.ok ? r.json() : {}))
+    .catch(() => ({})) as Promise<Record<string, LexEntry>>;
+  shardCache.set(ch, p);
+  return p;
+}
 let curPromise: Promise<Record<string, Cur>> | null = null;
 function loadCurated(): Promise<Record<string, Cur>> {
   if (!curPromise) {
-    const base = import.meta.env.BASE_URL || '/';
     curPromise = fetch(`${base}data/lex/curated.json`)
       .then(r => (r.ok ? r.json() : { words: {} }))
       .then((j: { words?: Record<string, Cur> }) => j.words ?? {})
@@ -62,6 +90,8 @@ export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave 
   const go = useGame(s => s.go);
   const [speedOpen, setSpeedOpen] = useState(false);
   const [cur, setCur] = useState<Cur | null>(null);
+  const [lex, setLex] = useState<LexEntry | null>(null);
+  const [lexState, setLexState] = useState<'idle' | 'loading' | 'miss'>('idle');
 
   // 换词就换精讲；这一份取过一次就常驻，翻页时不重复请求
   useEffect(() => {
@@ -69,6 +99,24 @@ export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave 
     loadCurated().then(all => { if (alive) setCur(all[word] ?? null); });
     return () => { alive = false; };
   }, [word]);
+
+  /*
+   * 老词典里没有这个词时，去新词库那一取。
+   * entry 是阅读器从 corpus 里查出来的，它只认 dict.json。
+   */
+  useEffect(() => {
+    setLex(null);
+    if (entry) { setLexState('idle'); return; }
+    let alive = true;
+    setLexState('loading');
+    loadShard(word[0]).then(all => {
+      if (!alive) return;
+      const e = all[word] ?? null;
+      setLex(e);
+      setLexState(e ? 'idle' : 'miss');
+    });
+    return () => { alive = false; };
+  }, [word, entry]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -123,8 +171,8 @@ export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave 
     if (top + h > window.innerHeight - 14) top = anchor.y - h - 12;
     el.style.left = `${left}px`;
     el.style.top = `${Math.max(68, top)}px`;
-    // cur 是异步到的，精讲一插进来卡片就变高了 —— 得重新算一次位置，否则会出屏
-  }, [anchor, word, cur]);
+    // cur / lex 都是异步到的，内容一插进来卡片就变高了 —— 得重新算位置，否则会出屏
+  }, [anchor, word, cur, lex]);
 
   const play = () => speak(word, { accent: settings.voice, rate: settings.rate });
   const tags = (entry?.g || []).map(t => TAG_LABEL[t]).filter(Boolean).slice(0, 3);
@@ -136,7 +184,7 @@ export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave 
         <div>
           <div className="hw">{surface || word}</div>
           <div className="ipa">
-            {entry?.p ? `/${entry.p}/` : '—'}
+            {entry?.p ? `/${entry.p}/` : lex?.ipa ? `/${lex.ipa}/` : '—'}
             {surface && surface.toLowerCase() !== word.toLowerCase() && (
               <span className="lemma">原形 {word}</span>
             )}
@@ -179,11 +227,46 @@ export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave 
               <span>{s.t}</span>
             </div>
           ))
+        ) : entry?.z ? (
+          entry.z
+        ) : lex?.senses.length ? (
+          lex.senses.slice(0, 4).map((s, i) => (
+            <div key={i} className="zh-row">
+              <em>{POS_SHORT[s.p ?? ''] ?? s.p ?? '—'}</em>
+              <span>{s.zh || s.d || '—'}</span>
+            </div>
+          ))
+        ) : lexState === 'loading' ? (
+          <span className="zh-loading">正在查词库…</span>
         ) : (
-          entry?.z || '词库中暂未收录这个词 · 可手动收藏'
+          '词库中暂未收录这个词 · 可手动收藏'
         )}
       </div>
-      {entry?.e && <div className="en">{entry.e}</div>}
+      {entry?.e ? (
+        <div className="en">{entry.e}</div>
+      ) : (
+        // 新词库的英文原义：只在老词典没给的时候补一条，补多了卡片会太长
+        lex?.senses[0]?.d && !lex.senses[0].zh ? <div className="en">{lex.senses[0].d}</div> : null
+      )}
+
+      {lex?.ex?.length ? (
+        <div className="card-ex">
+          <div className="card-ex-hd">语料例句</div>
+          {/*
+           * 卡片窄，长句会把整张卡撑得很高。优先挑带中译的、再按长度取短的两条 ——
+           * 例句是给"看一眼用法"的，不是给精读的。
+           */}
+          {[...lex.ex]
+            .sort((a, b) => (a.zh ? 0 : 1) - (b.zh ? 0 : 1) || a.t.length - b.t.length)
+            .slice(0, 2)
+            .map((e, i) => (
+              <div className="card-ex-item" key={i}>
+                <p className="card-ex-en">{e.t}</p>
+                {e.zh ? <p className="card-ex-zh">{e.zh}</p> : null}
+              </div>
+            ))}
+        </div>
+      ) : null}
 
       {/*
        * 精讲是这套书真正的难点：词认得、义选错。卡片地方小，

@@ -3106,3 +3106,33 @@ input, textarea { font-family: inherit; }
   border: 1px solid var(--accent); border-radius: 3px;
   padding: 0 3px; line-height: 13px;
 }
+
+/* 词卡：老词典没有的词，例句从新词库补两条 */
+.card .zh-loading { color: var(--fg-3); font-size: 13px; }
+.card-ex { margin-top: 10px; border-top: var(--hairline); padding-top: 8px; }
+.card-ex-hd {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: .08em; color: var(--fg-3); margin-bottom: 5px;
+}
+.card-ex-item { margin-bottom: 7px; }
+.card-ex-item:last-child { margin-bottom: 0; }
+.card-ex-en {
+  margin: 0; font-family: var(--font-serif); font-size: 12.5px;
+  line-height: 1.55; color: var(--fg-1);
+}
+.card-ex-zh { margin: 2px 0 0; font-size: 12px; line-height: 1.55; color: var(--fg-2); }
+
+/* 词卡：老词典没有的词，例句从新词库补两条 */
+.card .zh-loading { color: var(--fg-3); font-size: 13px; }
+.card-ex { margin-top: 10px; border-top: var(--hairline); padding-top: 8px; }
+.card-ex-hd {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: .08em; color: var(--fg-3); margin-bottom: 5px;
+}
+.card-ex-item { margin-bottom: 7px; }
+.card-ex-item:last-child { margin-bottom: 0; }
+.card-ex-en {
+  margin: 0; font-family: var(--font-serif); font-size: 12.5px;
+  line-height: 1.55; color: var(--fg-1);
+}
+.card-ex-zh { margin: 2px 0 0; font-size: 12px; line-height: 1.55; color: var(--fg-2); }
