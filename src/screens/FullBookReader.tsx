@@ -219,6 +219,7 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { setTocOpen(false); return; }
       if (e.key === 'ArrowRight') { turn(1); e.preventDefault(); }
       else if (e.key === 'ArrowLeft') { turn(-1); e.preventDefault(); }
     };
@@ -319,6 +320,9 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
       </div>
 
       <div className="rd-book">
+        {tocOpen && (
+          <div className="rd-toc-mask" onClick={() => setTocOpen(false)} aria-hidden />
+        )}
         {tocOpen && (
           <aside className="rd-toc" role="dialog" aria-label="目录">
             <div className="rd-toc-head">

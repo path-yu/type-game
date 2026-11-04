@@ -44,6 +44,7 @@
 [data-theme='light'] {
   --bg: #f2f2f7;
   --bg-paper: #ffffff;
+  --card: #ffffff;
   --bg-sunken: #eaeaef;
   --surface: #ffffff;
   --surface-2: #f7f7fa;
@@ -81,6 +82,7 @@
 [data-theme='dark'] {
   --bg: #1c1c1e;
   --bg-paper: #242426;
+  --card: #242426;
   --bg-sunken: #141416;
   --surface: #2c2c2e;
   --surface-2: #323234;
@@ -2623,13 +2625,6 @@ input, textarea { font-family: inherit; }
 .bk-confirm-acts { display: flex; justify-content: flex-end; gap: 8px; }
 
 /* ---------- 全书阅读：目录抽屉 ---------- */
-.rd-toc {
-  position: absolute; z-index: 20; top: 0; left: 0; bottom: 0;
-  width: min(300px, 78%);
-  display: flex; flex-direction: column;
-  background: var(--card); border-right: var(--hairline);
-  border-radius: var(--r-md); box-shadow: 0 12px 40px rgb(0 0 0 / 45%);
-}
 .rd-toc-head {
   display: flex; align-items: center; justify-content: space-between;
   padding: var(--sp-3) var(--sp-4);
@@ -2675,11 +2670,22 @@ input, textarea { font-family: inherit; }
 
 /* ---------- 全书阅读：目录抽屉 ---------- */
 .rd-toc {
-  position: absolute; z-index: 20; top: 0; left: 0; bottom: 0;
-  width: min(300px, 78%);
+  /*
+   * 固定定位，不再挂在 .rd-book 里。
+   * 原来用 absolute，它的包含块是 .app（整屏），left:0 就落到了侧栏上面；
+   * 侧栏有 backdrop-filter，会自成一个层叠上下文，于是目录被侧栏压在底下 ——
+   * 截图里"第三章""城市"叠在一起，就是这么来的。
+   */
+  position: fixed; z-index: 200; top: 0; left: 0; bottom: 0;
+  width: min(320px, 84vw);
   display: flex; flex-direction: column;
-  background: var(--card); border-right: var(--hairline);
-  border-radius: var(--r-md); box-shadow: 0 12px 40px rgb(0 0 0 / 45%);
+  background: var(--bg-paper); border-right: var(--hairline);
+  box-shadow: 0 24px 60px rgb(0 0 0 / 55%);
+}
+.rd-toc-mask {
+  position: fixed; inset: 0; z-index: 190;
+  background: rgb(0 0 0 / 45%);
+  backdrop-filter: blur(1.5px);
 }
 .rd-toc-head {
   display: flex; align-items: center; justify-content: space-between;

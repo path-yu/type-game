@@ -258,13 +258,6 @@ export function WordbookScreen() {
         >
           只看收藏（{lexCount}）
         </button>
-        <button
-          className={`wb-chip${onlyLex ? ' on' : ''}`}
-          onClick={() => { setOnlyLex(v => !v); setScrollTop(0); }}
-          title="在词库里收藏的词，同步进藏书阁"
-        >
-          只看收藏（{lexCount}）
-        </button>
       </div>
 
       {fail ? (
