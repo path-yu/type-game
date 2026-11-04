@@ -812,5 +812,157 @@
         "zh": "他们乘驿站马车走，每十里换一次马，一路上不与人搭话。"
       }
     ]
+  },
+  "entail": {
+    "note": "限嗣继承：把地产锁定在某一系后代（通常只限男性）手里，现任持有人不能变卖，也不能留给女儿。《傲慢与偏见》整部书的起因就在这里——班纳特先生的地产限定给男性继承人柯林斯，五个女儿一分也拿不到，所以「嫁女儿」不是风俗，是生计。en-tail 的字面义是「把尾巴钉住」，即把继承顺序钉死。",
+    "ex": [
+      {
+        "en": "The estate was entailed on the male line, and there was no male heir.",
+        "zh": "这份地产限定由男系继承，而家里没有男性继承人。"
+      },
+      {
+        "en": "He could not sell the land, nor leave it to his daughters, nor do anything but keep it whole for a cousin he had never met.",
+        "zh": "他既不能卖这块地，也不能留给女儿，只能整份地留着，交给一个素未谋面的表亲。"
+      }
+    ]
+  },
+  "settlement": {
+    "note": "在这个语境里不是「定居点」，是「婚姻财产协议」：婚前由双方（通常是女方父亲与男方）立契，把女方的财产、以及她将来守寡时可得的寡妇所得产（jointure）、子女的份额一次定清。没有 settlement 的婚姻在当时被视为对女方极不负责。读婚姻情节时，settlement 谈到哪一步，就等于婚事谈到了哪一步。",
+    "ex": [
+      {
+        "en": "The settlements were drawn up before the wedding, and the bride's fortune was tied up beyond her husband's reach.",
+        "zh": "婚前就立好了财产协议，新娘的财产被固定下来，丈夫动不了。"
+      },
+      {
+        "en": "Nothing was said of settlements, which her aunt took as a very bad sign.",
+        "zh": "谁也没提财产协议，她姑母认为这是极坏的兆头。"
+      }
+    ]
+  },
+  "jointure": {
+    "note": "寡妇所得产：丈夫生前（通常在婚姻协议里）为妻子设定的地产收益，她守寡后终身享有。它常被用来「替代」法律默认的 dower，所以文书里会出现「in lieu of dower」这种说法。与 dower 的区别：dower 是普通法给的固定份额，jointure 是谈出来的。",
+    "ex": [
+      {
+        "en": "Her jointure was four hundred a year, and on that she was expected to keep a household.",
+        "zh": "她的寡妇所得产是每年四百镑，人们指望她靠这笔钱撑起一个家。"
+      },
+      {
+        "en": "The widow held the house by her jointure and could not be turned out.",
+        "zh": "寡妇凭寡妇所得产占着那栋房子，谁也赶不走她。"
+      }
+    ]
+  },
+  "portion": {
+    "note": "在婚嫁语境里不是「部分」，是「分给女儿的那份财产」，也就是她带进婚姻的本钱——决定她在婚姻市场上的位置。两三万镑的 portion 与五千镑的 portion，谈的是完全两种婚事。同族的词还有 fortune（总财产）、dowry（嫁妆）。",
+    "ex": [
+      {
+        "en": "Each daughter was to have a portion of five thousand pounds.",
+        "zh": "每个女儿可分到五千镑的财产。"
+      },
+      {
+        "en": "His sisters had small portions and no prospects, which he never once forgot.",
+        "zh": "他的姐妹们财产微薄、前途无着，这一点他从未忘记。"
+      }
+    ]
+  },
+  "dower": {
+    "note": "寡妇产：普通法下妻子对亡夫地产终身享有的份额，一般为三分之一。它是「法定」的，不需要协议，因此常与 jointure（协议设定的）并用或互相替代。注意与 dowry 不是一回事：dowry 是出嫁时带过去的，dower 是守寡后拿回来的。",
+    "ex": [
+      {
+        "en": "By right of dower she was entitled to a third of the estate for life.",
+        "zh": "依寡妇产的权利，她终身可得这份地产的三分之一。"
+      },
+      {
+        "en": "He married her for her land, and she took care that her dower was secured first.",
+        "zh": "他娶她是为那片地，而她先把寡妇产定妥了才答应。"
+      }
+    ]
+  },
+  "dowry": {
+    "note": "嫁妆：女子出嫁时带到夫家的钱财。与 dower（寡妇产）、portion（分给女儿的那份）用法相连但不等同。在 19 世纪英国的语境里，更常用的词是 fortune 与 portion；dowry 更多见于欧陆或更早的文本。",
+    "ex": [
+      {
+        "en": "Without a dowry she would have to marry beneath her, and she knew it.",
+        "zh": "没有嫁妆，她只能下嫁，这一点她自己清楚。"
+      }
+    ]
+  },
+  "ward": {
+    "note": "法律上的「受监护人」：未成年且失去父亲的人，由监护人或衡平法院照管人身与财产。历史上「监护权」本身是可以获利甚至转让的权利（Court of Wards），所以小说里争夺 ward 往往不是出于慈爱，而是为了那笔财产。另有「城区」「病区」「监区」等义，按上下文分。",
+    "ex": [
+      {
+        "en": "She was made his ward, and her fortune was put into his hands until she came of age.",
+        "zh": "她成了他的受监护人，财产也交到他手里，直到她成年。"
+      },
+      {
+        "en": "A ward in chancery had no one to speak for her but the court itself.",
+        "zh": "衡平法院的受监护人，除了法院本身，没有人替她说话。"
+      }
+    ]
+  },
+  "guardian": {
+    "note": "监护人，可指人身也可指财产。父亡后由遗嘱指定（guardian by appointment），无指定则由法院定。在财产小说里，「谁当监护人」几乎等于「谁管那笔钱」，所以这个身份常是争夺对象。",
+    "ex": [
+      {
+        "en": "Her father had named him guardian, a choice the family never stopped questioning.",
+        "zh": "她父亲指定他做监护人，这个选择家里人从来没有停止过质疑。"
+      },
+      {
+        "en": "The guardian's accounts were three years overdue, and no one had asked for them.",
+        "zh": "监护人的账目拖了三年没交，却没人去要。"
+      }
+    ]
+  },
+  "testator": {
+    "note": "立遗嘱的人（男性；女性是 testatrix）。法律文本里专指「留下遗嘱的那一位」，不是泛指「死人」。读遗嘱情节时注意：testator 死后，遗嘱要经 probate（认证）才生效，codicil 可以追加修改。",
+    "ex": [
+      {
+        "en": "The testator had signed in the presence of two witnesses, as the law required.",
+        "zh": "立遗嘱人按法律要求，在两个见证人面前签了字。"
+      },
+      {
+        "en": "The testator's intentions were clear; the wording was not.",
+        "zh": "立遗嘱人的意思很清楚，措辞却不清楚。"
+      }
+    ]
+  },
+  "codicil": {
+    "note": "遗嘱附录：不必重写整份遗嘱，另附一纸即可增删条款，效力并入原遗嘱。它篇幅小、容易藏、也容易被质疑——小说里常是「翻盘」的道具：一份迟到的 codicil 能把前面几十页的安排全部推翻。",
+    "ex": [
+      {
+        "en": "A codicil, dated six months later, left the library and everything in it to the niece.",
+        "zh": "六个月后的一份遗嘱附录，把书房连同里面的一切留给了侄女。"
+      },
+      {
+        "en": "The codicil was found in a drawer, unsigned, and therefore worth nothing.",
+        "zh": "那份附录是在抽屉里找到的，没有签名，因此一文不值。"
+      }
+    ]
+  },
+  "chancery": {
+    "note": "衡平法院：审理普通法给不了救济的案件，程序繁琐、以拖延著称。狄更斯《荒凉山庄》里的 Jarndyce and Jarndyce 就是一场拖了几十年、最后把遗产全耗在诉讼费上的衡平案。in chancery 也可指「陷入无休止的官司」，或（拳击）「把头夹在腋下」。",
+    "ex": [
+      {
+        "en": "The case had been in chancery for eleven years and had not yet come to a hearing.",
+        "zh": "这案子在衡平法院拖了十一年，还没开庭。"
+      },
+      {
+        "en": "What the lawyers did not take, chancery took, and the heirs were left with the papers.",
+        "zh": "律师没拿走的，衡平法院拿走了，继承人只剩下那堆文书。"
+      }
+    ]
+  },
+  "annuity": {
+    "note": "年金：一次性付一笔钱，之后按年领固定的款项，直到约定年限或终身。19 世纪安置女儿、老仆、退职者的常用办法——比一次给一大笔「体面」，也防止被挥霍。所以遗嘱里常见「an annuity of fifty pounds」而不是「fifty pounds」。",
+    "ex": [
+      {
+        "en": "She was left an annuity of eighty pounds, which was enough to keep her in gloves and tea.",
+        "zh": "她得了一份每年八十镑的年金，够她买手套和茶叶。"
+      },
+      {
+        "en": "The old servant was given an annuity rather than a sum, lest he spend it all at once.",
+        "zh": "老仆得的是一份年金而不是一笔钱，免得他一次花光。"
+      }
+    ]
   }
 }
