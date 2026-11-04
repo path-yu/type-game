@@ -44,6 +44,14 @@ const POS_LABEL: Record<string, string> = {
 };
 
 export function WordbookScreen() {
+  /*
+   * 收藏接的是学习系统里同一个存档（p.mastery[word].lex）——
+   * 在词库里收藏的词，藏书阁里立刻就有，不是两套数据。
+   */
+  const mastery = useGame(s => s.p.mastery);
+  const toggleLex = useGame(s => s.toggleLex);
+  const [onlyLex, setOnlyLex] = useState(false);
+
   const [rows, setRows] = useState<Row[] | null>(null);
   const [fail, setFail] = useState(false);
   const [q, setQ] = useState('');
@@ -102,8 +110,14 @@ export function WordbookScreen() {
     if (letter) pool = pool.filter(r => r[0][0] === letter);
     if (pos) pool = pool.filter(r => r[2].includes(pos));
     if (onlyEx) pool = pool.filter(r => r[3] === 1);
+    if (onlyLex) pool = pool.filter(r => mastery[r[0]]?.lex);
     return pool;
-  }, [rows, q, letter, pos, onlyEx]);
+  }, [rows, q, letter, pos, onlyEx, onlyLex, mastery]);
+
+  const lexCount = useMemo(
+    () => Object.values(mastery).filter(m => m.lex).length,
+    [mastery],
+  );
 
   /* 点词 → 取分片 → 存缓存 */
   const open = (w: string) => {
@@ -189,6 +203,20 @@ export function WordbookScreen() {
         <button className={`wb-chip${onlyEx ? ' on' : ''}`} onClick={() => { setOnlyEx(v => !v); setScrollTop(0); }}>
           只显示有例句
         </button>
+        <button
+          className={`wb-chip${onlyLex ? ' on' : ''}`}
+          onClick={() => { setOnlyLex(v => !v); setScrollTop(0); }}
+          title="在词库里收藏的词，同步进藏书阁"
+        >
+          只看收藏（{lexCount}）
+        </button>
+        <button
+          className={`wb-chip${onlyLex ? ' on' : ''}`}
+          onClick={() => { setOnlyLex(v => !v); setScrollTop(0); }}
+          title="在词库里收藏的词，同步进藏书阁"
+        >
+          只看收藏（{lexCount}）
+        </button>
       </div>
 
       {fail ? (
@@ -235,13 +263,22 @@ export function WordbookScreen() {
               <div className="wb-entry">
                 <div className="wb-entry-head">
                   <h2>{entry.w}</h2>
-                  <button
-                    className="btn btn-ghost"
-                    onClick={() => speak(entry.w, { accent: useGame.getState().s.voice, rate: 0.9 })}
-                    title="读一遍"
-                  >
-                    发音
-                  </button>
+                  <div className="wb-entry-acts">
+                    <button
+                      className={`btn btn-ghost${mastery[entry.w]?.lex ? ' on' : ''}`}
+                      onClick={() => toggleLex(entry.w)}
+                      title="收进藏书阁"
+                    >
+                      {mastery[entry.w]?.lex ? '已收藏' : '收藏'}
+                    </button>
+                    <button
+                      className="btn btn-ghost"
+                      onClick={() => speak(entry.w, { accent: useGame.getState().s.voice, rate: 0.9 })}
+                      title="读一遍"
+                    >
+                      发音
+                    </button>
+                  </div>
                 </div>
                 <div className="wb-entry-meta">
                   {entry.ipa && <span className="wb-ipa">/{entry.ipa}/</span>}
