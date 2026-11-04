@@ -268,17 +268,48 @@ for (const w of words) {
    * 原形义项排前面（读者查 said 要的是 say），词形自己的义项接在后面。
    */
   /* 按 WordNet 的词频义序排，最常用的义项排第一 */
+  /*
+   * 排序两个层级：
+   *   1. 先按词性分组，义项多的词性排前面（see 动词 20 条、名词 1 条 → 动词先行；
+   *      time 名词多、go 动词多，各归各位）
+   *   2. 组内按 WordNet 的词频义序
+   * 只按序排会把 see 的第一条排成「主教座堂」，因为名词义序也是 0，跟动词打平。
+   */
   const bySenseOrder = (arr, key) => {
     const m = order.get(key);
+    const posSize = new Map();
+    for (const x of arr) posSize.set(x.p, (posSize.get(x.p) ?? 0) + 1);
     return arr
-      .map((x, i) => ({ x, r: m?.get(`${x.p}:${x.o}`) ?? 999 + i }))
-      .sort((a, b) => a.r - b.r)
+      .map((x, i) => ({
+        x,
+        g: -(posSize.get(x.p) ?? 0),
+        r: m?.get(`${x.p}:${x.o}`) ?? 999 + i,
+      }))
+      .sort((a, b) => a.g - b.g || a.r - b.r)
       .map(v => v.x);
   };
   let senses = bySenseOrder(pick(wn.get(w)), w);
-  if (w !== base && wn.has(base)) {
+  /*
+   * 动名词（-ing）不并原形义项。
+   * whaling 本身是「捕鲸」，把 whale 的「鲸 / 庞然大物」并进来，
+   * 读者会以为 whaling 也能指鲸鱼。building / meeting 同理。
+   * 屈折形式（said / saw / made）该并，-ing 派生词不该并。
+   */
+  const own0 = wn.get(w) ?? [];
+  const gerund = /ing$/.test(w) && own0.length > 0 && own0.every(x => x.p === 'n');
+  if (w !== base && wn.has(base) && !gerund) {
     const bs = bySenseOrder(pick(wn.get(base)), base);
-    senses = [...bs, ...senses];
+    /*
+     * 完全没有自身义项、又带 -ing 的词（whaling / farming）：
+     * 只取原形的动词义（hunt for whales → 捕鲸），
+     * 原形的名词义（鲸）不该给这个形式。
+     */
+    if (/ing$/.test(w) && !own0.length) {
+      const vs = bs.filter(x => x.p === 'v');
+      senses = vs.length ? vs : bs;
+    } else {
+      senses = [...bs, ...senses];
+    }
     /*
      * 屈折形式优先给动词义。
      * saw 是「看见」的过去式，但 see 的名词义（主教座堂）在 WordNet 里排前面，
@@ -351,9 +382,6 @@ for (const w of words) {
    * 界面上一行中文配着下一行英文，看不出错，只会觉得"这词翻得怪"。
    * 宁可整条中文都不要，也不能错位。
    */
-  if (zhOf && zhOf.length !== senses.slice(0, MAX_SENSES).length) {
-    console.warn(`[lex] ⚠ ${w}: 中文 ${zhOf.length} 条 / 义项 ${senses.length} 个，跳过中文`);
-  }
   const seenGloss = new Set();
   const list = senses
     .filter(s => s.d && !seenGloss.has(s.p + s.d) && seenGloss.add(s.p + s.d))
@@ -362,14 +390,27 @@ for (const w of words) {
      * 这里再按 n/v/a/r 排一次会把那个顺序推翻 —— saw 又回到「主教座堂」打头。
      */
     .slice(0, MAX_SENSES)
-    .map((s, i) => ({
+    .map(s => ({
       p: s.p,
       d: s.d,
       ...(s.zh ? { zh: s.zh } : {}),
-      ...(zhOf?.length === senses.slice(0, MAX_SENSES).length && zhOf[i] ? { zh: zhOf[i] } : {}),
       ...(s.x?.length ? { x: s.x.slice(0, MAX_SENSE_EX) } : {}),
       ...(s.syn?.length ? { s: s.syn } : {}),
     }));
+
+  /*
+   * 中文对位放在最后一步：按「去重后」的义项数比。
+   * 之前拿去重前的数量比，woods 这种「5 条义项去重成 4 条」的词会误判成错位，
+   * 结果整条中文被丢掉。
+   */
+  if (zhOf) {
+    if (zhOf.length === list.length) {
+      // 空串表示"这一条还没译"，不要写成 zh:""
+      list.forEach((s, i) => { if (zhOf[i]) s.zh = zhOf[i]; });
+    } else {
+      console.warn(`[lex] ⚠ ${w}: 中文 ${zhOf.length} 条 / 义项 ${list.length} 个，跳过中文`);
+    }
+  }
 
   const ex = examples.get(w) ?? [];
   const entry = {
