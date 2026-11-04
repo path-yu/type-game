@@ -1649,5 +1649,161 @@
         "zh": "葬礼之后，他们之间的关系缓和了一些。"
       }
     ]
+  },
+  "providence": {
+    "note": "旧文本里的 providence 九成是「天意」：上帝对世事的照管，常写成大写 Providence，那时它指上帝本身。日常义「先见之明」也有，但更常见的现代误读是把它当成「节俭」（provident 才偏这层）。a special providence 是「天意的特别干预」，小说里常用来解释一次侥幸。",
+    "ex": [
+      {
+        "en": "He called it providence that the coach was late, and no one contradicted him.",
+        "zh": "他说马车晚点是天意，没人反驳他。"
+      },
+      {
+        "en": "She had a providence of her own, and would not leave a thing to chance that could be counted.",
+        "zh": "她自有她的先见之明，能算的事绝不交给运气。"
+      }
+    ]
+  },
+  "justification": {
+    "note": "神学里的「称义」：上帝宣告罪人为义，是保罗书信的核心词，宗教小说里出现时不是「理由」。与 sanctification（成圣）要分开：称义是地位上的宣告，成圣是生命上的改变。日常义「正当依据」还活着，但两种用法在同一句里出现时，得先判断在讲法庭还是在讲救恩。",
+    "ex": [
+      {
+        "en": "He preached justification by faith alone, and the parish split over it.",
+        "zh": "他讲唯独因信称义，教区为此分裂。"
+      },
+      {
+        "en": "There was no justification for what he had done, and he did not offer one.",
+        "zh": "他所做的事没有正当理由，他也不打算找。"
+      }
+    ]
+  },
+  "charity": {
+    "note": "钦定本《圣经》里 charity 是 agape 的译词，意思是「爱德」——对上帝与邻人的爱，不是「慈善捐款」。《哥林多前书》十三章那一段（Though I speak with tongues… and have not charity）译作「慈善」就整段垮掉。现代译本改用 love，所以今天读旧文本要特别留意这层。",
+    "ex": [
+      {
+        "en": "And though I bestow all my goods to feed the poor, and have not charity, it profiteth me nothing.",
+        "zh": "我若将所有的周济穷人，却没有爱，仍然与我无益。"
+      },
+      {
+        "en": "She gave to every charity in the town and loved none of her neighbours.",
+        "zh": "她给镇上每一家慈善机构捐钱，却一个邻居也不爱。"
+      }
+    ]
+  },
+  "dispensation": {
+    "note": "两个义项在旧文本里都常见：神学的「经世 / 安排」（上帝在某一时期对人的治理方式），以及「豁免、特许」（教会对某项戒律的免除）。现代英语几乎只剩「分配」这一层，读到宗教语境时容易全错。",
+    "ex": [
+      {
+        "en": "They lived, he said, under a milder dispensation than their fathers had.",
+        "zh": "他说，他们身处一个比父辈更宽和的时代安排之下。"
+      },
+      {
+        "en": "He obtained a dispensation to marry within the forbidden degree.",
+        "zh": "他取得了一项豁免，得以在禁止的亲属范围内成婚。"
+      }
+    ]
+  },
+  "conversion": {
+    "note": "宗教语境里是「归信」：一个人经历悔改、认信，生命转向。它有明确的经验含义（往往有具体的时刻与场景），不是抽象的「转变」。读《简·爱》里圣约翰那段、或《红字》里丁梅斯代尔的挣扎，这个词都是关键。日常义「改建、换算」仍在，但排在后面。",
+    "ex": [
+      {
+        "en": "His conversion came on a Tuesday afternoon, in a field, with no one to see it.",
+        "zh": "他归信是在一个周二下午，在野地里，没有人看见。"
+      },
+      {
+        "en": "The barn's conversion into a chapel took three summers.",
+        "zh": "把那座谷仓改成礼拜堂，用了三个夏天。"
+      }
+    ]
+  },
+  "vocation": {
+    "note": "本义是「呼召」——上帝对人的召唤，所以「天职」比「职业」更贴。一个人 follow his vocation 是回应召唤，不只是换工作。这个词在 19 世纪宗教小说里几乎总带着「要不要放下世俗去回应」的张力。",
+    "ex": [
+      {
+        "en": "He believed he had a vocation, and the belief made him unbearable at table.",
+        "zh": "他相信自己受了呼召，这份自信让他在饭桌上令人难忍。"
+      },
+      {
+        "en": "She had no vocation for nursing, but took it up because it was there.",
+        "zh": "她对护理并无天职，只是因为眼前有这条路就走了。"
+      }
+    ]
+  },
+  "reproof": {
+    "note": "责备、训斥，但比 blame 正式，多指**出于善意**的纠正（《提摩太后书》「用百般的忍耐、各样的教训责备人」）。a word of reproof 是「一句规劝」。与 rebuke 近义，但 reproof 更常带「为你好」的意味。",
+    "ex": [
+      {
+        "en": "She took his reproof without a word and did the thing again the next day.",
+        "zh": "她一声不响地受了他的责备，第二天照旧去做。"
+      },
+      {
+        "en": "There was more reproof in her silence than in anything she could have said.",
+        "zh": "她的沉默比任何话都更像责备。"
+      }
+    ]
+  },
+  "edification": {
+    "note": "「教化、精神上的提升」——原义是建造（建筑），保罗用它指「造就人」。所以 for your edification 是「为增长你的见识」，略带郑重或戏谑；an edifying sight 是「有教化意义的景象」，说反话时就是「真长见识」。",
+    "ex": [
+      {
+        "en": "The sight was not edifying, and the children were sent upstairs.",
+        "zh": "那场面没什么教化意义，孩子们被打发上楼去了。"
+      },
+      {
+        "en": "He read the whole chapter aloud for the edification of the company.",
+        "zh": "他把整章朗读了一遍，为的是让在座的人受些教益。"
+      }
+    ]
+  },
+  "benighted": {
+    "note": "字面是「被夜色笼罩」，但 19 世纪文本里几乎总是比喻义：**蒙昧的、未开化的**（benighted heathen、benighted country）。只按「天黑」读，会把一句评论读成一段写景。",
+    "ex": [
+      {
+        "en": "They spoke of the place as benighted, and sent missionaries to it.",
+        "zh": "他们把那地方说成蒙昧之地，还派了传教士去。"
+      },
+      {
+        "en": "A benighted traveller knocked at the door an hour after dark.",
+        "zh": "天黑一小时后，一个赶路摸黑的行人来敲门。"
+      }
+    ]
+  },
+  "heathen": {
+    "note": "基督教视角下的「异教徒」：不信仰《圣经》之上帝的人。它自带立场，不是中性的「非基督徒」，19 世纪文本用它时往往带轻蔑或怜悯。今天英语里已属冒犯语，读时要知道那是**当时的口气**，不是作者在陈述事实。",
+    "ex": [
+      {
+        "en": "He spoke of the islanders as heathen, and of himself as their only hope.",
+        "zh": "他说那些岛民是异教徒，说自己是他们唯一的希望。"
+      },
+      {
+        "en": "The word heathen was used in that house for anyone who did not go to church.",
+        "zh": "在那户人家，「异教徒」这个词是用来指一切不上教堂的人。"
+      }
+    ]
+  },
+  "profane": {
+    "note": "与 sacred 相对：亵渎的、不神圣的。但它也有中性的「世俗的」一义（profane history 是世俗史，与教会史相对），这一层不带贬义——判断靠上下文。动词义「玷污、滥用神圣之物」在旧文本里也常见。",
+    "ex": [
+      {
+        "en": "He would not suffer profane hands to touch the vessels.",
+        "zh": "他不许不洁的手碰那些圣器。"
+      },
+      {
+        "en": "Profane history and sacred history were taught as two separate subjects.",
+        "zh": "世俗史与圣史是作为两门课分开教的。"
+      }
+    ]
+  },
+  "grace": {
+    "note": "神学上是「恩典」：上帝白白给人的恩惠，不是人挣来的。三个高频搭配：by the grace of God、say grace（饭前祷告）、grace before meat。与「优雅」同形不同源——那一层来自拉丁 gratia 的「可喜」，虽然同词，但读宗教段落时要先想到恩典。",
+    "ex": [
+      {
+        "en": "He said grace over a table that had very little on it.",
+        "zh": "他对着一张几乎空无一物的桌子做了饭前祷告。"
+      },
+      {
+        "en": "She had been saved, she said, not by works but by grace.",
+        "zh": "她说自己得救不是因行为，而是因恩典。"
+      }
+    ]
   }
 }
