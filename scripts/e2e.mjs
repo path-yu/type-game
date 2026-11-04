@@ -302,7 +302,22 @@ check('Tier 分层条 5 段', lex.tiers === 5);
 
 /* ---------------- 9. 刷新后保持 ---------------- */
 section('刷新后状态');
+/*
+ * 现在有路由了：刷新停在原屏，不再一律弹回首页。
+ * 所以这里分两步验 —— 先确认"刷新没把人踢走"，再回地图看进度。
+ */
 await page.reload({ waitUntil: 'networkidle2' });
+await page.waitForSelector('.lex', { timeout: 8000 }).catch(() => {});
+await sleep(500);
+const stayed = await page.evaluate(() => ({
+  hash: location.hash,
+  title: document.querySelector('.page-title')?.textContent?.trim() ?? '',
+  side: document.querySelectorAll('.side-item').length,
+}));
+check('刷新后停在原来那一屏', stayed.hash === '#/lexicon' && stayed.side > 0,
+  `${stayed.hash} · ${stayed.title || '藏书阁'} · 侧栏 ${stayed.side}`);
+
+await page.evaluate(() => { location.hash = '#/map'; });
 await page.waitForSelector('.dist-list');
 await sleep(700);
 const after = await page.evaluate(() => ({

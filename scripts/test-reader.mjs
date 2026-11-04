@@ -289,6 +289,61 @@ const grown = await page.evaluate(() => ({
 }));
 check('翻到末尾会接着挂载后面的句子', grown.sents > full.sents, `${full.sents} → ${grown.sents} 句`);
 
+/* ---------- 目录 / 滚动 / 刷新 ---------- */
+await page.evaluate(() => {
+  [...document.querySelectorAll('.rd-head-acts .btn')].find(b => b.textContent.trim() === '目录')?.click();
+});
+await sleep(400);
+const toc = await page.evaluate(() => ({
+  open: !!document.querySelector('.rd-toc'),
+  n: document.querySelectorAll('.rd-toc-item').length,
+  first: document.querySelector('.rd-toc-label')?.textContent?.trim() ?? '',
+}));
+check('全书有目录', toc.open && toc.n > 0, `${toc.n} 章 · 首条 ${toc.first}`);
+
+/* 点最后一章，应当翻到后面去（不是停在第一屏） */
+const tocJump = await page.evaluate(async () => {
+  const items = [...document.querySelectorAll('.rd-toc-item')];
+  items[items.length - 1].click();
+  await new Promise(r => setTimeout(r, 700));
+  return document.querySelector('.rd-pageno')?.textContent?.trim() ?? '';
+});
+check('目录能跳章（跳到最后一章）', !tocJump.startsWith('1 /'), tocJump);
+
+/* 切到滚动模式 */
+await page.evaluate(() => {
+  [...document.querySelectorAll('.rd-head-acts .btn')].find(b => ['翻页', '滚动'].includes(b.textContent.trim()))?.click();
+});
+await sleep(800);
+const sc = await page.evaluate(() => ({
+  has: !!document.querySelector('.rd-scroll'),
+  sents: document.querySelectorAll('.rd-scroll .rd-sent').length,
+  pct: document.querySelector('.rd-pageno')?.textContent?.trim() ?? '',
+}));
+check('能切到竖向滚动', sc.has && sc.sents > 0, `${sc.sents} 句 · ${sc.pct}`);
+
+/* 滚到底会接下一批 */
+const grew = await page.evaluate(async () => {
+  const el = document.querySelector('.rd-scroll');
+  const before = el.querySelectorAll('.rd-sent').length;
+  el.scrollTop = el.scrollHeight;
+  await new Promise(r => setTimeout(r, 1200));
+  return [before, el.querySelectorAll('.rd-sent').length];
+});
+/* 这本书本来就不长时，跳到最后一章就已经全挂上了 —— 那种情况也算过 */
+check('滚动到底会接着挂载', grew[1] > grew[0] || grew[1] === total, `${grew[0]} → ${grew[1]} 句（全书 ${total}）`);
+
+/* 刷新停在原地：全书阅读是文库的子状态，地址要能恢复 */
+const hashBefore = await page.evaluate(() => location.hash);
+await page.reload({ waitUntil: 'networkidle2' });
+await sleep(1500);
+const afterReload = await page.evaluate(() => ({
+  hash: location.hash,
+  isFull: !!document.querySelector('.rd-scroll') || !!document.querySelector('.rd-page'),
+}));
+check('刷新后还在全书阅读里', afterReload.hash.startsWith('#/full/') && afterReload.isFull,
+  `${hashBefore} → ${afterReload.hash}`);
+
 console.log(`\n通过 ${pass} · 失败 ${fail}`);
 console.log('运行时错误:', errs.length ? errs.slice(0, 3) : '0');
 await b.close();

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { CorpusCtx } from './lib/CorpusContext';
 import { estimateVocab, loadCorpus, type Corpus } from './lib/data';
 import { dueWords, useGame } from './lib/store';
@@ -8,6 +8,7 @@ import { PlayScreen } from './screens/PlayScreen';
 import { ResultScreen } from './screens/ResultScreen';
 import { ReviewScreen } from './screens/ReviewScreen';
 import { LexiconScreen } from './screens/LexiconScreen';
+import { WordbookScreen } from './screens/WordbookScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { ReportScreen } from './screens/ReportScreen';
 import { ClozeScreen } from './screens/ClozeScreen';
@@ -17,6 +18,7 @@ import { DialogueScreen } from './screens/DialogueScreen';
 import { IconBlank, IconBook, IconChat, IconCity, IconGear, IconMonitor, IconMoon, IconPulse, IconShelf, IconSun } from './components/Icons';
 import { reportReady } from './lib/native';
 import { stopSpeaking } from './lib/speech';
+import { onRouteChange, parseRoute, syncRoute, type Route } from './lib/route';
 
 export default function App() {
   const [corpus, setCorpus] = useState<Corpus | null>(null);
@@ -25,6 +27,8 @@ export default function App() {
 
   const screen = useGame(s => s.screen);
   const go = useGame(s => s.go);
+  const article = useGame(s => s.article);
+  const read = useGame(s => s.read);
   const p = useGame(s => s.p);
   const toast = useGame(s => s.toast);
   const boot = useGame(s => s.boot);
@@ -51,6 +55,58 @@ export default function App() {
       })
       .catch((e: Error) => setErr(e.message));
   }, [boot]);
+
+  /*
+   * 路由：地址栏 ←→ 当前屏。
+   *
+   * 之前只有 store 里的 screen，刷新一次就丢——读到第三十七章按个 F5，
+   * 得从书架重新找回来。现在 #/read/<id> 这样的地址能直接恢复。
+   */
+  const routed = useRef(false);
+
+  const applyRoute = useCallback((r: Route, c: Corpus | null) => {
+    /*
+     * 打字页/结算页靠的是内存里的这一局（正在打哪一段、刚打完怎么样），
+     * 地址栏恢复不出来。刷新或分享这种链接一律回地图 ——
+     * 之前不拦的后果不是"少了点状态"，而是 PlayScreen 拿 null 取 .tx 直接崩，
+     * 整页白屏，连侧栏都没了。
+     */
+    if (r.screen === 'play' || r.screen === 'result') { go('map'); return; }
+
+    if (r.screen === 'reader') {
+      const a = r.param && c ? c.articles.find(x => x.id === r.param) : null;
+      // 文章被删了或者链接是编的，退回文库而不是白屏
+      if (a) read(a);
+      else go('library');
+      return;
+    }
+    go(r.screen);
+  }, [go, read]);
+
+  // 首屏：按地址栏恢复（只做一次，等语料就位）
+  useEffect(() => {
+    if (!corpus || routed.current) return;
+    routed.current = true;
+    applyRoute(parseRoute(), corpus);
+  }, [corpus, applyRoute]);
+
+  // 状态 → 地址栏
+  useEffect(() => {
+    if (!routed.current) return;
+    /*
+     * 全书阅读是从文库或阅读页钻进去的子状态（#/full/<书名>），
+     * 那两屏都不能凭自己的 screen 把地址覆盖掉。
+     */
+    if ((screen === 'reader' || screen === 'library') && location.hash.startsWith('#/full/')) return;
+    if (screen === 'reader' && article?.id) syncRoute('reader', article.id);
+    else syncRoute(screen);
+  }, [screen, article?.id]);
+
+  // 浏览器前进/后退 → 状态
+  useEffect(() => {
+    if (!routed.current) return;
+    return onRouteChange(r => applyRoute(r, corpus));
+  }, [corpus, applyRoute]);
 
   const isFocus = screen === 'play' || screen === 'review';
 
@@ -130,6 +186,11 @@ export default function App() {
               <span>文库</span>
               <span className="badge">{corpus.articles.length}</span>
             </button>
+            <button className={`side-item${screen === 'words' ? ' on' : ''}`} onClick={() => go('words')}>
+              <IconBook />
+              <span>词库</span>
+              <span className="badge">35k</span>
+            </button>
             <button className={`side-item${screen === 'lexicon' ? ' on' : ''}`} onClick={() => go('lexicon')}>
               <IconBook />
               <span>藏书阁</span>
@@ -176,6 +237,7 @@ export default function App() {
           {screen === 'library' && <LibraryScreen />}
           {screen === 'reader' && <ReaderScreen />}
           {screen === 'dialogue' && <DialogueScreen />}
+          {screen === 'words' && <WordbookScreen />}
           {screen === 'lexicon' && <LexiconScreen />}
           {screen === 'cloze' && <ClozeScreen />}
           {screen === 'report' && <ReportScreen />}

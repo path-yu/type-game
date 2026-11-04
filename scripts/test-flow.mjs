@@ -122,7 +122,13 @@ check('护盾用完之后，错一下掉 30 连击', broken.combo <= afterShield
 await page.screenshot({ path: 'shots/flow-play.png' });
 
 // —— 结算页：完美句数 + 下一步目标 ——
+/*
+ * 刷新不再回首页了（见 src/lib/route.ts）：地址栏记着当前屏，
+ * 在打字页刷新就还停在打字页。要回地图得显式跳回去。
+ */
 await page.reload({ waitUntil: 'networkidle2' });
+await sleep(900);
+await page.evaluate(() => { location.hash = '#/map'; });
 await page.waitForSelector('.side-item');
 await sleep(800);
 const text2 = await startTyping();

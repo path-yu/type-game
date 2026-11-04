@@ -105,6 +105,65 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
 
   /* 每句落在第几屏：排完版量一次 offsetLeft 就知道，翻页时不用重算 */
   const [sentPage, setSentPage] = useState<number[] | null>(null);
+  const sentPageRef = useRef<number[] | null>(null);
+
+  /*
+   * 两种读法：一屏一页（横翻）和竖向无限滚动。
+   * 分页适合"读完一屏正好一口"，但想跳着找某章某段就不顺手；
+   * 滚动更像真的在看书，放在设置里选，默认仍然是一屏一页。
+   */
+  const [mode, setMode] = useState<'page' | 'scroll'>(
+    () => (localStorage.getItem('tw-fullmode') === 'scroll' ? 'scroll' : 'page'),
+  );
+  const pickMode = (m: 'page' | 'scroll') => {
+    setMode(m);
+    localStorage.setItem('tw-fullmode', m);
+  };
+  const [tocOpen, setTocOpen] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  /*
+   * 目录：从英文原句里认章节标题。
+   * 公版书的写法不统一 —— 「CHAPTER IV.」「PART ONE」「IV.」都见过，
+   * 认不出来就当这本书没有目录（目录面板会显示"没找到章节"），不硬编一个。
+   */
+  const chapters = useMemo(() => {
+    if (!data) return [];
+    const isHead = (t: string) =>
+      /^(CHAPTER|Chapter|BOOK|Book|PART|Part)\s+([IVXLCDM]+|\d+|[A-Z][A-Za-z]*)\b/.test(t)
+      || /^第[一二三四五六七八九十百]+[章部卷]/.test(t)
+      || /^[IVXLCDM]+\.?$/.test(t.trim());
+    const out: { i: number; label: string }[] = [];
+    for (let i = 0; i < data.src.length; i++) {
+      const t = data.src[i].trim();
+      if (t.length > 60 || !isHead(t)) continue;
+      const zh = (data.tr[i] ?? '').trim();
+      // 有中文章名就用中文（"第一章"），没有就退回原文
+      const label = /^第[一二三四五六七八九十百]+[章部卷]/.test(zh) ? zh.replace(/[。.\s]+$/, '') : t.replace(/[.、\s]+$/, '');
+      out.push({ i, label });
+    }
+    return out;
+  }, [data]);
+
+  /** 跳到某一句：分页模式换算成屏，滚动模式直接滚过去 */
+  const jumpTo = (i: number) => {
+    setTocOpen(false);
+    if (!data) return;
+    /*
+     * 目标可能在还没挂载的那一段里（比如第七章在第 3000 句）。
+     * 先把批次挂到它后面，等这一轮排版量完 sentPage 再翻过去 ——
+     * 直接 setPage 会落在第 1 屏，因为那张表里还没有它。
+     */
+    if (mounted < i + MOUNT_STEP) setMounted(Math.min(data.src.length, i + MOUNT_STEP));
+    window.setTimeout(() => {
+      if (mode === 'scroll') {
+        scrollRef.current?.querySelector<HTMLElement>(`[data-i="${i}"]`)?.scrollIntoView({ block: 'start' });
+      } else {
+        const to = sentPageRef.current?.[i] ?? 0;
+        setPage(Math.max(0, to));
+      }
+    }, 280);
+  };
 
   /*
    * 量可视区。依赖 data：书页容器是在 data 到手后才渲染出来的，
@@ -152,6 +211,7 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
     for (let i = 0; i < nodes.length; i++) {
       arr[i] = Math.max(0, Math.floor((nodes[i].offsetLeft + 8) / w));
     }
+    sentPageRef.current = arr;
     setSentPage(arr);
   }, [box.w, box.h, blocks, showZh]);
 
@@ -221,6 +281,16 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
           </div>
         </div>
         <div className="rd-head-acts">
+          <button className={`btn btn-ghost${tocOpen ? ' on' : ''}`} onClick={() => setTocOpen(v => !v)} aria-pressed={tocOpen}>
+            目录
+          </button>
+          <button
+            className="btn btn-ghost"
+            onClick={() => pickMode(mode === 'page' ? 'scroll' : 'page')}
+            title="在「一屏一页」和「竖向滚动」之间切换"
+          >
+            {mode === 'page' ? '翻页' : '滚动'}
+          </button>
           <button
             className={`btn btn-ghost${reading ? ' on' : ''}`}
             onClick={() => {
@@ -249,53 +319,121 @@ export function FullBookReader({ title, onExit }: { title: string; onExit: () =>
       </div>
 
       <div className="rd-book">
+        {tocOpen && (
+          <aside className="rd-toc" role="dialog" aria-label="目录">
+            <div className="rd-toc-head">
+              <span>目录</span>
+              <button className="icon-btn" onClick={() => setTocOpen(false)} aria-label="关闭目录">×</button>
+            </div>
+            {chapters.length === 0 ? (
+              <div className="rd-toc-empty">这本书的原文里没有可识别的章节标题</div>
+            ) : (
+              <div className="rd-toc-list">
+                {chapters.map(c => (
+                  <button key={c.i} className="rd-toc-item" onClick={() => jumpTo(c.i)}>
+                    <span className="rd-toc-label">{c.label}</span>
+                    <em>
+                      {mode === 'scroll'
+                        ? `${Math.round((c.i / data.src.length) * 100)}%`
+                        /* 还没排到的章，页码是未知的，别假装它在第 1 屏 */
+                        : sentPage?.[c.i] === undefined ? '…' : `第 ${sentPage[c.i] + 1} 屏`}
+                    </em>
+                  </button>
+                ))}
+              </div>
+            )}
+          </aside>
+        )}
         <div className="rd-run">
           <span>{bookZh(title)} · 全书</span>
           <span>第 {page + 1} 屏</span>
         </div>
 
-        <div className="rd-page" ref={pageRef}>
-          <article
-            className="rd-body"
-            style={{
-              columnWidth: box.w ? `${box.w}px` : undefined,
-              height: box.h || undefined,
-              transform: `translateX(${-page * box.w}px)`,
-            }}
-          >
-            {blocks.map((s, i) => {
-              /*
-               * 只有当前屏（以及前后各一屏，翻页时不至于先白一下）才铺词 span，
-               * 其余句子就是纯文本。点词是读这一屏时才用得上的功能，
-               * 没必要为整本书建十几万个可点节点。
-               */
-              const near = !sentPage || Math.abs((sentPage[i] ?? -99) - page) <= 1;
-              return (
-                /* 长句允许跨页断开：整句不许断会让长段落后面留出半页空白，翻起来很跳 */
-                <div className="rd-sent" key={s.start} style={s.en.length > 260 ? { breakInside: 'auto' } : undefined}>
-                  <p
-                    className="rd-en"
-                    onClick={() => { stopSpeaking(); speak(s.en, { accent: settings.voice, rate: settings.rate }); }}
-                    title="点这一句可以朗读"
-                  >
-                    {near ? renderWords(s.en, tokenize(corpus, s.en), corpus, p.mastery, onWord) : s.en}
-                  </p>
-                  {showZh && s.zh && <p className="rd-zh">{s.zh}</p>}
-                  {i === 0 && <span className="rd-hidden" />}
-                </div>
-              );
-            })}
-          </article>
-          <button className="rd-turn prev" onClick={() => turn(-1)} disabled={page === 0} aria-label="上一页">‹</button>
-          <button className="rd-turn next" onClick={() => turn(1)} disabled={page >= pages - 1} aria-label="下一页">›</button>
-        </div>
+        {mode === 'page' ? (
+          <>
+          <div className="rd-page" ref={pageRef}>
+            <article
+              className="rd-body"
+              style={{
+                columnWidth: box.w ? `${box.w}px` : undefined,
+                height: box.h || undefined,
+                transform: `translateX(${-page * box.w}px)`,
+              }}
+            >
+              {blocks.map((s, i) => {
+                /*
+                 * 只有当前屏（以及前后各一屏，翻页时不至于先白一下）才铺词 span，
+                 * 其余句子就是纯文本。点词是读这一屏时才用得上的功能，
+                 * 没必要为整本书建十几万个可点节点。
+                 */
+                const near = !sentPage || Math.abs((sentPage[i] ?? -99) - page) <= 1;
+                return (
+                  /* 长句允许跨页断开：整句不许断会让长段落后面留出半页空白，翻起来很跳 */
+                  <div className="rd-sent" key={s.start} style={s.en.length > 260 ? { breakInside: 'auto' } : undefined}>
+                    <p
+                      className="rd-en"
+                      onClick={() => { stopSpeaking(); speak(s.en, { accent: settings.voice, rate: settings.rate }); }}
+                      title="点这一句可以朗读"
+                    >
+                      {near ? renderWords(s.en, tokenize(corpus, s.en), corpus, p.mastery, onWord) : s.en}
+                    </p>
+                    {showZh && s.zh && <p className="rd-zh">{s.zh}</p>}
+                    {i === 0 && <span className="rd-hidden" />}
+                  </div>
+                );
+              })}
+            </article>
+            <button className="rd-turn prev" onClick={() => turn(-1)} disabled={page === 0} aria-label="上一页">‹</button>
+            <button className="rd-turn next" onClick={() => turn(1)} disabled={page >= pages - 1} aria-label="下一页">›</button>
+          </div>
 
-        <div className="rd-pagefoot">
-          <span className="rd-pageno">
-            {page + 1} / {pages}{mounted < (data.src.length) ? '+' : ''}
-          </span>
-          <span className="rd-hint">← → 翻屏 · 点词看释义</span>
-        </div>
+          <div className="rd-pagefoot">
+            <span className="rd-pageno">
+              {page + 1} / {pages}{mounted < (data.src.length) ? '+' : ''}
+            </span>
+            <span className="rd-hint">← → 翻屏 · 点词看释义</span>
+          </div>
+          </>
+        ) : (
+          <>
+            <div
+              className="rd-scroll"
+              ref={scrollRef}
+              onScroll={() => {
+                const el = scrollRef.current;
+                if (!el || !data) return;
+                // 离底还有一屏半就接下一批，滚动不会撞墙
+                if (el.scrollTop + el.clientHeight > el.scrollHeight - 900) {
+                  setMounted(m => Math.min(data.src.length, m + MOUNT_STEP));
+                }
+              }}
+            >
+              <article className="rd-body flat">
+                {blocks.map((s2, i) => (
+                  <div className="rd-sent" key={s2.start} data-i={s2.start}>
+                    <p
+                      className="rd-en"
+                      onClick={() => { stopSpeaking(); speak(s2.en, { accent: settings.voice, rate: settings.rate }); }}
+                      title="点这一句可以朗读"
+                    >
+                      {renderWords(s2.en, tokenize(corpus, s2.en), corpus, p.mastery, onWord)}
+                    </p>
+                    {showZh && s2.zh && <p className="rd-zh">{s2.zh}</p>}
+                    {i === 0 && <span className="rd-hidden" />}
+                  </div>
+                ))}
+                {mounted < data.src.length && <div className="rd-more">正在排列后面的句子…</div>}
+              </article>
+            </div>
+
+            <div className="rd-pagefoot">
+              <span className="rd-pageno">
+                {Math.min(100, Math.round((mounted / data.src.length) * 100))}%
+              </span>
+              <span className="rd-hint">滚轮往下读 · 点词看释义</span>
+            </div>
+          </>
+        )}
       </div>
 
       {card && (

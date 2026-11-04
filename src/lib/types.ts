@@ -84,4 +84,4 @@ export interface GhostFrame {
   at?: string;
 }
 
-export type Screen = 'map' | 'play' | 'result' | 'review' | 'lexicon' | 'library' | 'reader' | 'report' | 'cloze' | 'dialogue' | 'settings';
+export type Screen = 'map' | 'play' | 'result' | 'review' | 'lexicon' | 'words' | 'library' | 'reader' | 'report' | 'cloze' | 'dialogue' | 'settings';

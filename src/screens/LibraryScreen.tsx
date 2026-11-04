@@ -7,6 +7,7 @@ import type { Article } from '../lib/types';
 import { bookHasZh, bookMatches, bookZh } from '../lib/book-titles';
 import { loadFullIndex, type FullBookInfo } from '../lib/fullbooks';
 import { FullBookReader } from './FullBookReader';
+import { onRouteChange, parseRoute, syncRoute } from '../lib/route';
 
 /**
  * 文库：先看书架，再翻目录，最后才是一段一段读。
@@ -29,7 +30,28 @@ export function LibraryScreen() {
   const [open, setOpen] = useState<string | null>(null);
   const [covers, setCovers] = useState<Record<string, string>>({});
   const [full, setFull] = useState<Record<string, FullBookInfo>>({});
-  const [fullOpen, setFullOpen] = useState<string | null>(null);
+  /*
+   * 全书阅读是这一屏的子状态，所以地址要自己写：库页是 #/library，
+   * 打开整本时是 #/full/<书名>，刷新才能回到同一本书同一屏。
+   */
+  const [fullOpen, setFullOpen] = useState<string | null>(() => {
+    const r = parseRoute();
+    return r.param?.startsWith('full/') ? r.param.slice(5) : null;
+  });
+
+  useEffect(() => onRouteChange(r => {
+    setFullOpen(r.param?.startsWith('full/') ? r.param.slice(5) : null);
+    setOpen(null);
+  }), []);
+
+  const openFull = (title: string) => {
+    setFullOpen(title);
+    syncRoute('library', `full/${title}`);
+  };
+  const closeFull = () => {
+    setFullOpen(null);
+    syncRoute('library');
+  };
 
   /*
    * 全书译文索引。
@@ -126,7 +148,7 @@ export function LibraryScreen() {
   }, [full, groups]);
 
   /* 读全书：整本通读，退出后回到目录 */
-  if (fullOpen) return <FullBookReader title={fullOpen} onExit={() => setFullOpen(null)} />;
+  if (fullOpen) return <FullBookReader title={fullOpen} onExit={closeFull} />;
   const coverOf = (title: string) => `${import.meta.env.BASE_URL || '/'}covers/${covers[title] ?? ''}`;
 
   return (
@@ -234,7 +256,7 @@ export function LibraryScreen() {
               </div>
               <div className="lib-only-list">
                 {fullOnly.map(b => (
-                  <button key={b.slug} className="lib-only-card" onClick={() => setFullOpen(b.title)}>
+                  <button key={b.slug} className="lib-only-card" onClick={() => openFull(b.title)}>
                     <span className="lib-only-cover">
                       <img src={coverOf(b.title)} alt="" decoding="async" />
                     </span>

@@ -2621,3 +2621,263 @@ input, textarea { font-family: inherit; }
   list-style: disc;
 }
 .bk-confirm-acts { display: flex; justify-content: flex-end; gap: 8px; }
+
+/* ---------- 全书阅读：目录抽屉 ---------- */
+.rd-toc {
+  position: absolute; z-index: 20; top: 0; left: 0; bottom: 0;
+  width: min(300px, 78%);
+  display: flex; flex-direction: column;
+  background: var(--card); border-right: var(--hairline);
+  border-radius: var(--r-md); box-shadow: 0 12px 40px rgb(0 0 0 / 45%);
+}
+.rd-toc-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: var(--hairline);
+  font-family: var(--font-serif); font-size: 13px; color: var(--fg-2);
+}
+.rd-toc-empty { padding: var(--sp-5); font-size: 12.5px; color: var(--fg-3); line-height: 1.7; }
+.rd-toc-list { overflow-y: auto; padding: var(--sp-2) 0; }
+.rd-toc-item {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  width: 100%; padding: 9px var(--sp-4);
+  font: inherit; text-align: left; color: var(--fg-1);
+  background: none; border: none; cursor: pointer;
+}
+.rd-toc-item:hover { background: var(--accent-soft); color: var(--accent); }
+.rd-toc-label {
+  font-family: var(--font-serif); font-size: 13.5px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.rd-toc-item em {
+  flex: none; font-style: normal;
+  font-family: var(--font-mono); font-size: 10px; color: var(--fg-3);
+}
+
+/* ---------- 全书阅读：竖向滚动 ---------- */
+.rd-scroll {
+  position: relative;
+  height: clamp(360px, calc(100vh - 340px), 680px);
+  overflow-y: auto; overflow-x: hidden;
+  padding-right: 10px;
+  scroll-behavior: smooth;
+}
+.rd-body.flat {
+  columns: initial; column-width: auto;
+  height: auto; transform: none; transition: none;
+  max-width: 68ch; margin: 0 auto;
+}
+.rd-body.flat .rd-sent { break-inside: auto; }
+.rd-more {
+  padding: var(--sp-5) 0; text-align: center;
+  font-size: 12px; color: var(--fg-3);
+}
+
+/* ---------- 全书阅读：目录抽屉 ---------- */
+.rd-toc {
+  position: absolute; z-index: 20; top: 0; left: 0; bottom: 0;
+  width: min(300px, 78%);
+  display: flex; flex-direction: column;
+  background: var(--card); border-right: var(--hairline);
+  border-radius: var(--r-md); box-shadow: 0 12px 40px rgb(0 0 0 / 45%);
+}
+.rd-toc-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: var(--hairline);
+  font-family: var(--font-serif); font-size: 13px; color: var(--fg-2);
+}
+.rd-toc-empty { padding: var(--sp-5); font-size: 12.5px; color: var(--fg-3); line-height: 1.7; }
+.rd-toc-list { overflow-y: auto; padding: var(--sp-2) 0; }
+.rd-toc-item {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  width: 100%; padding: 9px var(--sp-4);
+  font: inherit; text-align: left; color: var(--fg-1);
+  background: none; border: none; cursor: pointer;
+}
+.rd-toc-item:hover { background: var(--accent-soft); color: var(--accent); }
+.rd-toc-label {
+  font-family: var(--font-serif); font-size: 13.5px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.rd-toc-item em {
+  flex: none; font-style: normal;
+  font-family: var(--font-mono); font-size: 10px; color: var(--fg-3);
+}
+
+/* ---------- 全书阅读：竖向滚动 ---------- */
+.rd-scroll {
+  position: relative;
+  height: clamp(360px, calc(100vh - 340px), 680px);
+  overflow-y: auto; overflow-x: hidden;
+  padding-right: 10px;
+  scroll-behavior: smooth;
+}
+.rd-body.flat {
+  columns: initial; column-width: auto;
+  height: auto; transform: none; transition: none;
+  max-width: 68ch; margin: 0 auto;
+}
+.rd-body.flat .rd-sent { break-inside: auto; }
+.rd-more {
+  padding: var(--sp-5) 0; text-align: center;
+  font-size: 12px; color: var(--fg-3);
+}
+
+/* ---------- 词库 ---------- */
+.lex-page { display: flex; flex-direction: column; min-height: 0; }
+.wb-search input {
+  width: 260px; padding: 9px 12px;
+  font: inherit; font-size: 13.5px; color: var(--fg-1);
+  background: var(--card); border: 1px solid var(--sep); border-radius: var(--r-sm);
+  outline: none;
+}
+.wb-search input:focus { border-color: var(--accent); }
+.wb-bar { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--sp-3); }
+/* 26 个字母一条排下来，挤不进一行时横向滚动，不要折成两行把版面顶乱 */
+.wb-bar.letters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; }
+.wb-bar.letters .wb-chip { padding: 3px 7px; font-size: 10.5px; flex: none; }
+/* 26 个字母一条排下来，挤不进一行时横向滚动，不要折成两行把版面顶乱 */
+.wb-bar.letters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; }
+.wb-bar.letters .wb-chip { padding: 3px 7px; font-size: 10.5px; flex: none; }
+.wb-chip {
+  padding: 4px 9px; font: inherit; font-size: 11.5px;
+  color: var(--fg-2); background: none; cursor: pointer;
+  border: 1px solid var(--sep); border-radius: 999px;
+}
+.wb-chip:hover { color: var(--accent); border-color: var(--accent); }
+.wb-chip.on { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+
+.wb-wrap { display: grid; grid-template-columns: minmax(300px, 1fr) minmax(340px, 1.1fr); gap: var(--sp-5); min-height: 0; flex: 1; }
+.wb-list {
+  position: relative; overflow-y: auto;
+  height: clamp(360px, calc(100vh - 380px), 720px);
+  border: var(--hairline); border-radius: var(--r-md);
+  background: var(--card);
+}
+.wb-spacer { position: relative; }
+.wb-row {
+  position: absolute; top: 0; left: 0; right: 0;
+  display: flex; align-items: center; gap: 10px; padding: 0 14px;
+  font: inherit; text-align: left; color: var(--fg-1); cursor: pointer;
+  background: none; border: none; border-bottom: var(--hairline);
+}
+.wb-row:hover { background: var(--accent-soft); }
+.wb-row.on { background: var(--accent-soft); color: var(--accent); }
+.wb-word { font-size: 14px; flex: 1; }
+.wb-pos { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+.wb-freq { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); min-width: 46px; text-align: right; }
+.wb-ex { width: 14px; font-family: var(--font-mono); font-size: 10px; color: var(--accent); }
+.wb-none { padding: var(--sp-6); text-align: center; font-size: 12.5px; color: var(--fg-3); }
+
+.wb-detail {
+  height: clamp(360px, calc(100vh - 380px), 720px);
+  overflow-y: auto; padding: var(--sp-4) var(--sp-5);
+  border: var(--hairline); border-radius: var(--r-md); background: var(--card);
+}
+.wb-tip { font-size: 12.5px; color: var(--fg-3); line-height: 1.9; }
+.wb-entry-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.wb-entry-head h2 { margin: 0; font-family: var(--font-serif); font-size: 26px; font-weight: 500; }
+.wb-entry-meta { display: flex; gap: 14px; margin-top: 4px; font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+.wb-ipa { color: var(--fg-2); }
+.wb-sense { padding: var(--sp-3) 0; border-bottom: var(--hairline); }
+.wb-sense-head { display: flex; gap: 8px; font-size: 13.5px; line-height: 1.65; }
+.wb-sense-head em {
+  flex: none; font-style: normal; font-family: var(--font-mono); font-size: 10px;
+  color: var(--accent); border: 1px solid var(--accent); border-radius: 3px;
+  padding: 1px 4px; height: 16px; line-height: 14px; margin-top: 3px;
+}
+.wb-sense-ex { margin: 4px 0 0 26px; font-size: 12.5px; color: var(--fg-3); font-style: italic; }
+.wb-syn { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 8px 0 0 26px; font-size: 11px; color: var(--fg-3); }
+.wb-syn-word {
+  font: inherit; font-size: 11.5px; color: var(--fg-2); cursor: pointer;
+  background: none; border: none; border-bottom: 1px dashed var(--sep); padding: 0;
+}
+.wb-syn-word:hover { color: var(--accent); border-color: var(--accent); }
+.wb-sec {
+  margin: var(--sp-4) 0 var(--sp-2);
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .08em; color: var(--fg-3);
+}
+.wb-ex-item { padding: var(--sp-3) 0; border-bottom: var(--hairline); }
+.wb-ex-en { margin: 0; font-family: var(--font-serif); font-size: 14px; line-height: 1.7; }
+.wb-ex-zh { margin: 4px 0 0; font-size: 13px; color: var(--fg-2); line-height: 1.7; }
+.wb-ex-src { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+
+/* ---------- 词库 ---------- */
+.lex-page { display: flex; flex-direction: column; min-height: 0; }
+.wb-search input {
+  width: 260px; padding: 9px 12px;
+  font: inherit; font-size: 13.5px; color: var(--fg-1);
+  background: var(--card); border: 1px solid var(--sep); border-radius: var(--r-sm);
+  outline: none;
+}
+.wb-search input:focus { border-color: var(--accent); }
+.wb-bar { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: var(--sp-3); }
+/* 26 个字母一条排下来，挤不进一行时横向滚动，不要折成两行把版面顶乱 */
+.wb-bar.letters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; }
+.wb-bar.letters .wb-chip { padding: 3px 7px; font-size: 10.5px; flex: none; }
+/* 26 个字母一条排下来，挤不进一行时横向滚动，不要折成两行把版面顶乱 */
+.wb-bar.letters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 2px; }
+.wb-bar.letters .wb-chip { padding: 3px 7px; font-size: 10.5px; flex: none; }
+.wb-chip {
+  padding: 4px 9px; font: inherit; font-size: 11.5px;
+  color: var(--fg-2); background: none; cursor: pointer;
+  border: 1px solid var(--sep); border-radius: 999px;
+}
+.wb-chip:hover { color: var(--accent); border-color: var(--accent); }
+.wb-chip.on { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+
+.wb-wrap { display: grid; grid-template-columns: minmax(300px, 1fr) minmax(340px, 1.1fr); gap: var(--sp-5); min-height: 0; flex: 1; }
+.wb-list {
+  position: relative; overflow-y: auto;
+  height: clamp(360px, calc(100vh - 380px), 720px);
+  border: var(--hairline); border-radius: var(--r-md);
+  background: var(--card);
+}
+.wb-spacer { position: relative; }
+.wb-row {
+  position: absolute; top: 0; left: 0; right: 0;
+  display: flex; align-items: center; gap: 10px; padding: 0 14px;
+  font: inherit; text-align: left; color: var(--fg-1); cursor: pointer;
+  background: none; border: none; border-bottom: var(--hairline);
+}
+.wb-row:hover { background: var(--accent-soft); }
+.wb-row.on { background: var(--accent-soft); color: var(--accent); }
+.wb-word { font-size: 14px; flex: 1; }
+.wb-pos { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+.wb-freq { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); min-width: 46px; text-align: right; }
+.wb-ex { width: 14px; font-family: var(--font-mono); font-size: 10px; color: var(--accent); }
+.wb-none { padding: var(--sp-6); text-align: center; font-size: 12.5px; color: var(--fg-3); }
+
+.wb-detail {
+  height: clamp(360px, calc(100vh - 380px), 720px);
+  overflow-y: auto; padding: var(--sp-4) var(--sp-5);
+  border: var(--hairline); border-radius: var(--r-md); background: var(--card);
+}
+.wb-tip { font-size: 12.5px; color: var(--fg-3); line-height: 1.9; }
+.wb-entry-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.wb-entry-head h2 { margin: 0; font-family: var(--font-serif); font-size: 26px; font-weight: 500; }
+.wb-entry-meta { display: flex; gap: 14px; margin-top: 4px; font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+.wb-ipa { color: var(--fg-2); }
+.wb-sense { padding: var(--sp-3) 0; border-bottom: var(--hairline); }
+.wb-sense-head { display: flex; gap: 8px; font-size: 13.5px; line-height: 1.65; }
+.wb-sense-head em {
+  flex: none; font-style: normal; font-family: var(--font-mono); font-size: 10px;
+  color: var(--accent); border: 1px solid var(--accent); border-radius: 3px;
+  padding: 1px 4px; height: 16px; line-height: 14px; margin-top: 3px;
+}
+.wb-sense-ex { margin: 4px 0 0 26px; font-size: 12.5px; color: var(--fg-3); font-style: italic; }
+.wb-syn { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 8px 0 0 26px; font-size: 11px; color: var(--fg-3); }
+.wb-syn-word {
+  font: inherit; font-size: 11.5px; color: var(--fg-2); cursor: pointer;
+  background: none; border: none; border-bottom: 1px dashed var(--sep); padding: 0;
+}
+.wb-syn-word:hover { color: var(--accent); border-color: var(--accent); }
+.wb-sec {
+  margin: var(--sp-4) 0 var(--sp-2);
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .08em; color: var(--fg-3);
+}
+.wb-ex-item { padding: var(--sp-3) 0; border-bottom: var(--hairline); }
+.wb-ex-en { margin: 0; font-family: var(--font-serif); font-size: 14px; line-height: 1.7; }
+.wb-ex-zh { margin: 4px 0 0; font-size: 13px; color: var(--fg-2); line-height: 1.7; }
+.wb-ex-src { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }

@@ -10,6 +10,7 @@ import { translationsFor } from '../lib/trans';
 import { WordCard } from '../components/WordCard';
 import { hasFullBook } from '../lib/fullbooks';
 import { FullBookReader } from './FullBookReader';
+import { syncRoute } from '../lib/route';
 
 /**
  * 阅读页：先把文章看完，再决定要不要打。
@@ -195,7 +196,18 @@ export function ReaderScreen() {
   const noTr = trTried && !tr;
 
   /* 全书模式：整本通读（只对翻完的书开放） */
-  if (fullOpen) return <FullBookReader title={article.s} onExit={() => setFullOpen(false)} />;
+  if (fullOpen) {
+    /*
+     * 从阅读页进全书，地址也要跟着走 —— 否则刷新会退回这一篇的阅读页，
+     * 明明整本书就摆在眼前却回不去。退出时再写回本篇。
+     */
+    return (
+      <FullBookReader
+        title={article.s}
+        onExit={() => { setFullOpen(false); syncRoute('reader', article.id); }}
+      />
+    );
+  }
   const entry = lookup(corpus, card?.key ?? '');
 
   return (
@@ -228,7 +240,7 @@ export function ReaderScreen() {
             {showZh ? '中英' : '原文'}
           </button>
           {fullOk && (
-            <button className="btn btn-ghost" onClick={() => setFullOpen(true)} title="整本通读，全部句子都有译文">
+            <button className="btn btn-ghost" onClick={() => { setFullOpen(true); syncRoute('library', `full/${article.s}`); }} title="整本通读，全部句子都有译文">
               读全书
             </button>
           )}
