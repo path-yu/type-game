@@ -1805,5 +1805,161 @@
         "zh": "她说自己得救不是因行为，而是因恩典。"
       }
     ]
+  },
+  "costs": {
+    "note": "复数 the costs 在法律语境里是「讼费」——败诉方要付的那笔。它和「成本」是两个概念：一场衡平官司可以打几十年，最后遗产全被 costs 吃光，当事人一分不剩。《荒凉山庄》的 Jarndyce and Jarndyce 就是这么结案的。看到 pay the costs，等于看到「输了」。",
+    "ex": [
+      {
+        "en": "The suit was decided in his favour, and the costs came to more than the estate was worth.",
+        "zh": "官司他赢了，可讼费超过了那份遗产本身的价值。"
+      },
+      {
+        "en": "They kept the action alive for years, and the costs did what the disputants could not.",
+        "zh": "他们把这案子拖了多年，最后是讼费做成了当事人做不到的事。"
+      }
+    ]
+  },
+  "suit": {
+    "note": "旧文本里的 suit 有三个不相关的意思：诉讼（bring a suit）、请求/请愿（sue for peace 同一词根）、求婚（pay suit to a lady）。「一套衣服」是最晚出的义项，却是今天的第一义——读 19 世纪文本时要先按前三个取。",
+    "ex": [
+      {
+        "en": "He brought a suit against his own brother and lost it.",
+        "zh": "他起诉了自己的兄弟，输了。"
+      },
+      {
+        "en": "The younger son had been paying suit to her for two years without effect.",
+        "zh": "那个次子向她求了两年，毫无结果。"
+      }
+    ]
+  },
+  "decree": {
+    "note": "法院的「判决、裁定」，尤指衡平法院的终局裁判（decree in chancery）；也指君主的「敕令」。与 judgment 的差别：decree 更常用于衡平与婚姻案件（a decree absolute 是「离婚判决生效」）。作动词是「颁令、裁定」。",
+    "ex": [
+      {
+        "en": "The decree was made in his absence, and he did not learn of it for a month.",
+        "zh": "判决是在他缺席时作出的，他一个月后才知道。"
+      },
+      {
+        "en": "A decree absolute would set her free, but it cost money to obtain.",
+        "zh": "离婚判决一旦生效她就自由了，但那是要花钱的。"
+      }
+    ]
+  },
+  "injunction": {
+    "note": "衡平法上的「禁令」：法院命令某人做或不做某事。它与损害赔偿不同——它是**阻止**，不是补偿。旧文本里常见于阻止出版、阻止砍树、阻止结婚财产转移，一个 injunction 下来，事情往往就停在半路。",
+    "ex": [
+      {
+        "en": "An injunction was served on the publisher on the morning the book appeared.",
+        "zh": "书上市那天早上，出版商就收到了禁令。"
+      },
+      {
+        "en": "He obtained an injunction to stop the sale of the timber.",
+        "zh": "他取得禁令，阻止那批木材被卖掉。"
+      }
+    ]
+  },
+  "bailiff": {
+    "note": "执达吏：法院派去执行扣押、驱逐、送达的人。他能进屋子搬东西、把欠租的佃户赶出去——所以在小说里他一出现，就意味着「已经到最后一步了」。另有庄园管家一义（bailiff of the estate），不执法。",
+    "ex": [
+      {
+        "en": "The bailiff came at six in the morning and took the clock and both beds.",
+        "zh": "执达吏早上六点来，把钟和两张床都搬走了。"
+      },
+      {
+        "en": "The bailiff stood in the doorway reading the writ aloud to no one in particular.",
+        "zh": "执达吏站在门口，把那道令状念了一遍，也不知道念给谁听。"
+      }
+    ]
+  },
+  "writ": {
+    "note": "法院发出的「令状」：一纸书面命令，是诉讼与执行的起点。常见的有 writ of summons（传唤令）、writ of execution（执行令）。它必须**送达**本人才生效，所以小说里常有「躲着不让人送 writ」的情节——送不到，程序就动不了。",
+    "ex": [
+      {
+        "en": "The writ was served on him at the inn, and he had twenty days to answer.",
+        "zh": "令状在客栈送到他手上，他有二十天答辩。"
+      },
+      {
+        "en": "He had been dodging the writ for a fortnight and was running out of rooms.",
+        "zh": "他躲那道令状躲了两个星期，能住的房间也快没了。"
+      }
+    ]
+  },
+  "assign": {
+    "note": "法律上的「让与」：把财产、租约、权利转给别人（assign a lease、assign a policy）。这一义项在词典里常被「分配、指派」挤掉，但读遗嘱与租约段落时它是关键——assign 之后，受让人（assignee）承接全部义务。",
+    "ex": [
+      {
+        "en": "He had assigned the lease to a stranger and left the country.",
+        "zh": "他把租约让给了一个陌生人，然后出了国。"
+      },
+      {
+        "en": "The copyright was assigned to the publisher for fifty pounds.",
+        "zh": "版权以五十镑让与了出版商。"
+      }
+    ]
+  },
+  "creditor": {
+    "note": "债主。19 世纪小说里「被债主追」是常态，而且有具体程序：先被催、再被起诉、再被扣押财物、最后进债务人监狱（debtor's prison，1869 年才废除）。所以 creditor 不只是一个名词，它代表一条通往监狱的路。",
+    "ex": [
+      {
+        "en": "His creditors met on Thursday and agreed to give him three months.",
+        "zh": "他的债主们周四碰了头，同意宽限三个月。"
+      },
+      {
+        "en": "She had been hiding from a creditor in a house that was not hers.",
+        "zh": "她躲在一个不属于自己的房子里，避一个债主。"
+      }
+    ]
+  },
+  "insolvent": {
+    "note": "「无力偿债」，比 bankrupt（已宣告破产）更技术也更早一步：一个人可以 insolvent 而尚未被宣告破产。法律上它指资产不足抵债的状态，所以常出现在遗嘱、合伙、商号倒闭的叙述里。",
+    "ex": [
+      {
+        "en": "The firm was insolvent by the spring, though no one said the word aloud.",
+        "zh": "到春天商号已经无力偿债了，虽然没人把话说出口。"
+      },
+      {
+        "en": "An insolvent estate cannot pay legacies, however clearly they were written.",
+        "zh": "无力偿债的遗产付不出遗赠，无论遗嘱写得多么明白。"
+      }
+    ]
+  },
+  "execution": {
+    "note": "在法律语境里不是「处决」，是「执行」：把判决付诸实施，通常指扣押并变卖财物抵债（levy execution on goods）。所以「execution 到了门口」不是行刑队来了，是执达吏来了。真正的「处决」义要靠上下文（sentence、gallows 之类）才能确定。",
+    "ex": [
+      {
+        "en": "Execution was levied on the furniture before the quarter's rent was due.",
+        "zh": "季租还没到期，家具就先被扣押执行了。"
+      },
+      {
+        "en": "He stayed the execution of the decree by paying a token sum.",
+        "zh": "他付了一笔象征性的款项，暂缓了判决的执行。"
+      }
+    ]
+  },
+  "levy": {
+    "note": "两个方向相反的动作：levy a tax 是「征税」，levy execution（on goods）是「扣押财物」。同一个人（bailiff）既能 levy 税，也能 levy 财物——判断靠宾语是钱还是物。",
+    "ex": [
+      {
+        "en": "A rate was levied on every household in the parish, whether or not it had a roof.",
+        "zh": "教区里每户都要缴这笔税，不管那房子还有没有屋顶。"
+      },
+      {
+        "en": "They levied on the stock and the cart, and left him the dog.",
+        "zh": "他们扣押了牲畜和车，把狗留给了他。"
+      }
+    ]
+  },
+  "distress": {
+    "note": "除「痛苦」，还有法律上的「扣押财物抵债」（distress for rent）：房东可以不经过法院，直接进屋子拿走租客的财物。这个义项在乡村小说里很常见，而且往往是突然发生的——门一开，东西就没了。",
+    "ex": [
+      {
+        "en": "The landlord distrained for rent and took everything that would move.",
+        "zh": "房东为抵租金扣押财物，能搬走的都搬走了。"
+      },
+      {
+        "en": "She was in great distress, but it was the other kind, and no one came to help.",
+        "zh": "她痛苦万分，可那是另一种 distress，没有人来帮她。"
+      }
+    ]
   }
 }
