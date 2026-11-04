@@ -409,6 +409,8 @@ for (const w of words) {
       senses: list,
       ...(ex.length ? { ex } : {}),
       ...srcRank(w),
+      // 人工表里的词也可能带精讲（means / works 这类），别在这一支漏掉
+      ...(CURATED[w] ? { cur: CURATED[w] } : {}),
     };
     withSense++;
     if (ex.length) withEx++;

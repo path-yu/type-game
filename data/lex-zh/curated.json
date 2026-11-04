@@ -388,5 +388,161 @@
         "zh": "没有任何道歉能弥补这件事。"
       }
     ]
+  },
+  "issue": {
+    "note": "核心不是泛指的「问题」，而是「待决的争议点」——the issue 是双方还没谈拢的那件事。另外三个常见义：报刊的「期号」（the March issue）、动词「发布/发放」（issue a statement）、以及「由……产生」（issue from）。at issue 是「争议中的」，不是「在问题上」。",
+    "ex": [
+      {
+        "en": "The real issue was never the money; it was who had the right to decide.",
+        "zh": "真正的争点从来不是钱，而是谁有权决定。"
+      },
+      {
+        "en": "The paper ran the story in its Sunday issue, and by Monday it was everywhere.",
+        "zh": "报纸在周日那期刊出了这篇报道，到周一已经传遍了。"
+      }
+    ]
+  },
+  "matter": {
+    "note": "作名词是「事情」，但 a matter of 常表「只是……的问题」（a matter of time）。作动词是「要紧」（it doesn't matter）——这个义项最容易被漏掉，因为中文「事」没有动词用法。no matter how 是「无论怎样」，不是「没问题」。",
+    "ex": [
+      {
+        "en": "It was a small matter, and he treated it as one.",
+        "zh": "那是件小事，他也确实当小事待它。"
+      },
+      {
+        "en": "What he thought of her hardly mattered now.",
+        "zh": "他现在怎么看她，已经无关紧要了。"
+      }
+    ]
+  },
+  "figure": {
+    "note": "四个不相干的意思要分清：数字（figures 数据）、身材（keep one's figure）、人物（a public figure）、插图（Figure 3）。而 figure out 才是「弄明白」——单独一个 figure 没有「想」的意思，这是最常见的误读。",
+    "ex": [
+      {
+        "en": "She had the figure of a woman half her age and did not pretend not to know it.",
+        "zh": "她的身材像年轻她一半的女人，而她并不假装不知道这一点。"
+      },
+      {
+        "en": "I could not figure out whether he was lying or merely tired.",
+        "zh": "我弄不清他是在说谎，还是只是累了。"
+      }
+    ]
+  },
+  "account": {
+    "note": "默认想到「账户」会误事。文学与新闻里更常见的是「叙述」（give an account of）与「解释」（account for）。三个固定搭配要记牢：take into account 考虑到、on account of 因为、by all accounts 据大家说。",
+    "ex": [
+      {
+        "en": "By his own account he had arrived before the fire started.",
+        "zh": "按他自己的说法，火起之前他就到了。"
+      },
+      {
+        "en": "The delay can be accounted for by a single missing signature.",
+        "zh": "这次延误只需一个缺失的签名就能解释。"
+      }
+    ]
+  },
+  "capital": {
+    "note": "不止「首都」和「资本」。大写字母是 capital letter；capital punishment 是死刑——这里的 capital 来自「头」，意为「该斩首的、致命的」，所以 capital error 是「致命错误」，不是「资本错误」。",
+    "ex": [
+      {
+        "en": "He wrote the word in capitals, as though the size of the letters could settle the argument.",
+        "zh": "他把那个词写成大写，仿佛字母的大小就能了结这场争论。"
+      },
+      {
+        "en": "It was a capital mistake, and he knew it before the sentence was out of his mouth.",
+        "zh": "那是个致命的错误，话还没说完他自己就知道了。"
+      }
+    ]
+  },
+  "charge": {
+    "note": "「收费」「指控」「冲锋」三义并存，最容易错的是 in charge of ——那是「负责」，不是「被指控」。charge sb with sth 才是指控；charge for sth 是收费；charge into 是冲进去。",
+    "ex": [
+      {
+        "en": "She was left in charge of a house that was no longer hers.",
+        "zh": "她被留下来照管一栋已经不属于她的房子。"
+      },
+      {
+        "en": "They charged him with nothing and let him go at dawn.",
+        "zh": "他们没指控他任何罪名，天亮时放他走了。"
+      }
+    ]
+  },
+  "order": {
+    "note": "除「命令」「秩序」，19 世纪小说里极常见的是「阶层」——the lower orders 是下层社会，不是「下级命令」。另有「订购」（place an order）与「圣职」（take orders 受任圣职）。in order to 才是「为了」。",
+    "ex": [
+      {
+        "en": "The street kept its order long after the shops had closed.",
+        "zh": "店铺关门很久之后，那条街仍保持着它的秩序。"
+      },
+      {
+        "en": "He was of an order that had learned to speak softly and mean it.",
+        "zh": "他属于那样一个阶层：学会了轻声说话，而且言出必行。"
+      }
+    ]
+  },
+  "case": {
+    "note": "「情况」「案件」「箱子」「病例」四义。in case 是「以防万一」，不是「在……情况下」——后者是 in that case / in which case。the case 常指「实情」（that is not the case）。",
+    "ex": [
+      {
+        "en": "Take the umbrella in case the wind turns.",
+        "zh": "带上伞，以防风向转了。"
+      },
+      {
+        "en": "That is not the case, though he let them believe it was.",
+        "zh": "实情并非如此，尽管他任由他们那样以为。"
+      }
+    ]
+  },
+  "party": {
+    "note": "除「政党」「聚会」，还有两个容易读漏的：「一行人」（a party of travellers，19 世纪小说里到处都是）与法律上的「当事人」。party to 是「参与……的」，不是「去派对」。",
+    "ex": [
+      {
+        "en": "A small party of us went ahead to test the ice.",
+        "zh": "我们一小队人先走，去试试冰面。"
+      },
+      {
+        "en": "He was party to the arrangement long before anyone told me.",
+        "zh": "早在任何人告诉我之前，他就参与了这个安排。"
+      }
+    ]
+  },
+  "means": {
+    "note": "「手段、方法」与「财力」两个意思。by means of 靠……；a means to an end 达到目的的手段；live beyond one's means 入不敷出。注意它虽然形似 mean 的复数，意思与「意思是」无关——单数 a means 也是「一种手段」。",
+    "ex": [
+      {
+        "en": "He had the means to leave and no intention of using them.",
+        "zh": "他有离开的财力，却没有动用的打算。"
+      },
+      {
+        "en": "Silence was, for her, a means and not a mood.",
+        "zh": "对她来说，沉默是手段，不是心情。"
+      }
+    ]
+  },
+  "right": {
+    "note": "「右」「正确」之外，文学里高频的是副词用法「正好、恰恰」——right in the middle、right after。作名词是「权利」（the right to…）。right away 是「立刻」，不是「向右」。",
+    "ex": [
+      {
+        "en": "The letter arrived right after he had stopped expecting it.",
+        "zh": "那封信恰恰在他已经不再期待的时候到了。"
+      },
+      {
+        "en": "She had a right to be angry and used it sparingly.",
+        "zh": "她有权生气，却很少动用这份权利。"
+      }
+    ]
+  },
+  "present": {
+    "note": "三种身份：形容词「在场的」（those present）、名词「现在」与「礼物」、动词「呈现/提出」（present a paper）。at present 是「目前」；present company excepted 是「在座各位除外」——这句在英式客套里很常见。",
+    "ex": [
+      {
+        "en": "Those present would later disagree about what was said.",
+        "zh": "在场的人后来对当时说了什么各执一词。"
+      },
+      {
+        "en": "At present he had no address, and did not want one.",
+        "zh": "目前他没有地址，也不想要一个。"
+      }
+    ]
   }
 }
