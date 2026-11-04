@@ -1,0 +1,15 @@
+{
+  "_comment": "精讲词的主题索引。一个词可以属于多个主题（chancery 既在财产也在诉讼）。构建时会校验：这里的每个词都必须真的在 curated.json 里，且每个精讲词至少要归入一个主题 —— 漏掉的词会在构建时告警。",
+  "财产与继承": ["entail", "settlement", "jointure", "portion", "dower", "dowry", "ward", "guardian", "testator", "codicil", "annuity", "chancery"],
+  "诉讼与债务": ["costs", "suit", "decree", "injunction", "bailiff", "writ", "assign", "creditor", "insolvent", "execution", "levy", "distress", "chancery"],
+  "称呼与等级": ["miss", "master", "esquire", "gentleman", "lady", "madam", "respectable", "honourable", "worshipful", "yeoman", "gentry", "mistress"],
+  "宗教与道德": ["providence", "justification", "charity", "dispensation", "conversion", "vocation", "reproof", "edification", "benighted", "heathen", "profane", "grace"],
+  "古语与旧用法": ["presently", "ere", "save", "anon", "nay", "whither", "thee", "lest", "albeit", "aught", "betwixt", "whilst"],
+  "器物与职业": ["harpoon", "forecastle", "beadle", "tithe", "apothecary", "gig", "ostler", "pedlar", "workhouse", "turnpike", "postilion", "chaise"],
+  "景物与天气": ["bleak", "dreary", "heath", "moor", "wuthering", "fell", "fen", "bog", "copse", "hedgerow", "sleet", "thaw"],
+  "情绪与神态": ["countenance", "complexion", "discompose", "agitation", "vivacity", "fortitude", "sensibility", "composure", "mortification", "vexation", "temper", "transport"],
+  "叙事动作": ["betake", "repair", "withdraw", "retire", "engage", "engagement", "attach", "dispose", "wait", "call", "company", "acquaintance", "propose"],
+  "一词多义": ["issue", "matter", "figure", "account", "capital", "charge", "order", "case", "party", "means", "right", "present"],
+  "搭配与句式": ["avoid", "suggest", "insist", "prevent", "remind", "accuse", "blame", "refuse", "mind", "warn", "congratulate", "apologize"],
+  "词义辨析": ["abandon", "sensible", "persuade", "deny", "delicate", "subtle", "endure", "resent", "linger", "betray", "glimpse", "murmur", "reckon", "awe", "dread", "deliberate", "grave", "anxious"]
+}

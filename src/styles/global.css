@@ -2991,3 +2991,43 @@ input, textarea { font-family: inherit; }
 .wb-ex-en { margin: 0; font-family: var(--font-serif); font-size: 14px; line-height: 1.7; }
 .wb-ex-zh { margin: 4px 0 0; font-size: 13px; color: var(--fg-2); line-height: 1.7; }
 .wb-ex-src { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+
+/* ---------- 词库：主题浏览 ---------- */
+.wb-topics {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px; margin-bottom: var(--sp-4);
+  padding: var(--sp-3);
+  background: var(--card); border: var(--hairline); border-radius: var(--r-md);
+}
+.wb-topic {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  padding: 9px 11px; font: inherit; font-size: 13px;
+  color: var(--fg-1); text-align: left; cursor: pointer;
+  background: var(--bg); border: 1px solid transparent; border-radius: var(--r-sm);
+}
+.wb-topic:hover { border-color: var(--accent); color: var(--accent); }
+.wb-topic.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.wb-topic em {
+  flex: none; font-style: normal;
+  font-family: var(--font-mono); font-size: 10px; color: var(--fg-3);
+}
+
+/* ---------- 词库：主题浏览 ---------- */
+.wb-topics {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px; margin-bottom: var(--sp-4);
+  padding: var(--sp-3);
+  background: var(--card); border: var(--hairline); border-radius: var(--r-md);
+}
+.wb-topic {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  padding: 9px 11px; font: inherit; font-size: 13px;
+  color: var(--fg-1); text-align: left; cursor: pointer;
+  background: var(--bg); border: 1px solid transparent; border-radius: var(--r-sm);
+}
+.wb-topic:hover { border-color: var(--accent); color: var(--accent); }
+.wb-topic.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.wb-topic em {
+  flex: none; font-style: normal;
+  font-family: var(--font-mono); font-size: 10px; color: var(--fg-3);
+}

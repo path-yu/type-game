@@ -19,6 +19,9 @@ import { syncRoute } from '../lib/route';
 
 type Row = [string, number, string, number, number?]; // [词, 频次, 词性串, 是否有例句, 是否有精讲]
 
+/** 精讲的主题分组。由 data/lex-zh/topics.json 维护，构建时校验 */
+interface Topic { k: string; n: number; w: string[] }
+
 interface Sense {
   p: string;          // 词性
   zh?: string;        // 中文释义（有就先显示这个）
@@ -66,6 +69,9 @@ export function WordbookScreen() {
 
   const [rows, setRows] = useState<Row[] | null>(null);
   const [fail, setFail] = useState(false);
+  const [topics, setTopics] = useState<Topic[]>([]);
+  const [topic, setTopic] = useState<string>('');
+  const [topicOpen, setTopicOpen] = useState(false);
   const [q, setQ] = useState('');
   const [letter, setLetter] = useState<string>('');
   const [pos, setPos] = useState<string>('');
@@ -92,12 +98,10 @@ export function WordbookScreen() {
         if (alive) setFullBooks(new Set(Object.values(j.books ?? {}).map(b => b.title)));
       })
       .catch(() => {});
-    // 有哪些书能整本读 —— 点"出处"时决定是跳整本还是跳到第一段
-    fetch(`${base}data/full/index.json`)
-      .then(r => (r.ok ? r.json() : { books: {} }))
-      .then((j: { books?: Record<string, { title: string }> }) => {
-        if (alive) setFullBooks(new Set(Object.values(j.books ?? {}).map(b => b.title)));
-      })
+    // 精讲的主题索引，1.9KB，一次取完 —— 不必碰任何字母分片
+    fetch(`${base}data/lex/topics.json`)
+      .then(r => (r.ok ? r.json() : { groups: [] }))
+      .then((j: { groups?: Topic[] }) => { if (alive) setTopics(j.groups ?? []); })
       .catch(() => {});
     fetch(`${base}data/lex/index.json`)
       .then(r => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
@@ -138,8 +142,12 @@ export function WordbookScreen() {
     if (onlyEx) pool = pool.filter(r => r[3] === 1);
     if (onlyLex) pool = pool.filter(r => mastery[r[0]]?.lex);
     if (onlyCur) pool = pool.filter(r => r[4] === 1);
+    if (topic) {
+      const set = new Set(topics.find(g => g.k === topic)?.w ?? []);
+      pool = pool.filter(r => set.has(r[0]));
+    }
     return pool;
-  }, [rows, q, letter, pos, onlyEx, onlyLex, onlyCur, mastery]);
+  }, [rows, q, letter, pos, onlyEx, onlyLex, onlyCur, topic, topics, mastery]);
 
   const lexCount = useMemo(
     () => Object.values(mastery).filter(m => m.lex).length,
@@ -204,7 +212,7 @@ export function WordbookScreen() {
           <div className="page-sub">
             {rows ? `${rows.length.toLocaleString()} 个词` : '正在载入词表…'}
             {/* 只要在筛，就把结果数说出来 —— 只看精讲时还显示 35,000 会让人以为没生效 */}
-            {(q || letter || pos || onlyEx || onlyLex || onlyCur) && ` · 筛出 ${shown.length} 个`}
+            {(q || letter || pos || onlyEx || onlyLex || onlyCur || topic) && ` · 筛出 ${shown.length} 个`}
           </div>
         </div>
         <div className="wb-search">
@@ -269,7 +277,39 @@ export function WordbookScreen() {
         >
           只看收藏（{lexCount}）
         </button>
+        <button
+          className={`wb-chip${topic || topicOpen ? ' on' : ''}`}
+          onClick={() => setTopicOpen(v => !v)}
+          title="按主题翻：财产、诉讼、称呼、宗教、器物、景物……"
+        >
+          按主题{topic ? `：${topic}` : ''}
+        </button>
       </div>
+
+      {/*
+       * 主题面板。精讲词是按主题写的，但读者往往不知道该查哪个词 ——
+       * 这一层解决的是"我不知道该查什么"而非常见义的问题。
+       */}
+      {topicOpen && (
+        <div className="wb-topics">
+          {topics.map(g => (
+            <button
+              key={g.k}
+              className={`wb-topic${topic === g.k ? ' on' : ''}`}
+              onClick={() => {
+                setTopic(topic === g.k ? '' : g.k);
+                setQ(''); setLetter(''); setPos('');
+                setOnlyEx(false); setOnlyLex(false); setOnlyCur(false);
+                setScrollTop(0);
+                setTopicOpen(false);
+              }}
+            >
+              <span>{g.k}</span>
+              <em>{g.n}</em>
+            </button>
+          ))}
+        </div>
+      )}
 
       {fail ? (
         <div className="empty">词库数据没载入成功，检查一下 public/data/lex/ 是否随构建一起发布。</div>

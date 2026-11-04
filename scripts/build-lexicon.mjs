@@ -535,12 +535,40 @@ if (index.length < TARGET) {
 
 index.sort((a, b) => a[0].localeCompare(b[0]));
 
+/*
+ * 精讲的主题索引：一个词可以同时在几个主题里。
+ * 校验放在这里而不是另写脚本 —— 主题表与 curated 一旦对不上，
+ * 界面上就会有空分组或者查不到的词，而那种错只有点开才知道。
+ */
+const topicsPath = path.join(ROOT, 'data/lex-zh/topics.json');
+const TOPICS = fs.existsSync(topicsPath) ? JSON.parse(fs.readFileSync(topicsPath, 'utf8')) : {};
+const topicList = [];
+{
+  const assigned = new Set();
+  for (const [k, ws] of Object.entries(TOPICS)) {
+    if (k.startsWith('_')) continue;
+    const keep = ws.filter(w => {
+      if (!CURATED[w]) { console.warn(`[lex] ⚠ 主题「${k}」里的 ${w} 没有精讲词条，已跳过`); return false; }
+      assigned.add(w);
+      return true;
+    });
+    topicList.push({ k, n: keep.length, w: keep });
+  }
+  const unassigned = Object.keys(CURATED).filter(w => !assigned.has(w));
+  if (unassigned.length) {
+    console.warn(`[lex] ⚠ ${unassigned.length} 个精讲词未归入任何主题：${unassigned.slice(0, 8).join(' ')}`);
+  }
+}
+
 /* ---------------- 4. 落盘 ---------------- */
 
 fs.mkdirSync(OUT, { recursive: true });
 for (const [ch, obj] of shards) {
   fs.writeFileSync(path.join(OUT, `${ch}.json`), JSON.stringify(obj));
 }
+
+// 主题索引单独一份，很小：词库页要按主题浏览时不必再拉任何分片
+fs.writeFileSync(path.join(OUT, 'topics.json'), JSON.stringify({ v: 1, groups: topicList }));
 
 const letters = [...shards.entries()]
   .map(([ch, obj]) => ({ ch, n: Object.keys(obj).length }))
