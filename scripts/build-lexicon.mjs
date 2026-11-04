@@ -207,15 +207,34 @@ for (const w of words) {
   const mapped = lemmaOf(w);
   const base = wn.has(mapped) || zhGloss.has(mapped) ? mapped : (guessLemma(w) ?? mapped);
   const pick = (x) => (x ?? []).filter(s => !s.up);
+  /*
+   * 屈折形式要和原形的义项合起来看，而不是二选一。
+   * 之前只看词形本身：said 只剩形容词义「前面提到的那个人」，
+   * saw 只剩名词「锯子」，made 只剩「制造的」—— 全都丢了真正的动词义。
+   * 原形义项排前面（读者查 said 要的是 say），词形自己的义项接在后面。
+   */
   let senses = pick(wn.get(w));
-  // 词形本身没收录时，用原形的释义补上（went → go）
-  if (!senses.length && w !== base) senses = pick(wn.get(base));
+  if (w !== base && wn.has(base)) {
+    const bs = pick(wn.get(base));
+    senses = [...bs, ...senses];
+    /*
+     * 屈折形式优先给动词义。
+     * saw 是「看见」的过去式，但 see 的名词义（主教座堂）在 WordNet 里排前面，
+     * 直接按原顺序合并会让读者以为 saw 是个宗教词。凡 -ed/-ing/-s 形式且原形有动词义，
+     * 就把动词义提到前面。
+     */
+    // 词形被词表映射过（said → say）也算屈折，不能只靠 -ed/-ing/-s 后缀
+    if ((w !== mapped || /(ed|ing|s)$/.test(w)) && bs.some(x => x.p === 'v')) {
+      senses = [...senses.filter(x => x.p === 'v'), ...senses.filter(x => x.p !== 'v')];
+    }
+  }
 
   if (!senses.length) {
     // 只有旧词典里那句中文，也先留着 —— 总比"查无此词"好
     const z = zhGloss.get(w) || zhGloss.get(base);
     if (!z) continue;
-    senses = [{ p: '', d: z, x: [], syn: [] }];
+    // 旧词典的释义本来就是中文，直接当中文放，别塞进英文字段里显示成斜体
+    senses = [{ p: '', d: '', zh: z, x: [], syn: [] }];
   }
 
   const ov = OV[w];
@@ -243,11 +262,15 @@ for (const w of words) {
   const seenGloss = new Set();
   const list = senses
     .filter(s => s.d && !seenGloss.has(s.p + s.d) && seenGloss.add(s.p + s.d))
-    .sort((a, b) => (POS_ORDER[a.p] ?? 9) - (POS_ORDER[b.p] ?? 9))
+    /*
+     * 不再按词性重排。上面已经决定了顺序（屈折形式动词义在前），
+     * 这里再按 n/v/a/r 排一次会把那个顺序推翻 —— saw 又回到「主教座堂」打头。
+     */
     .slice(0, MAX_SENSES)
     .map((s, i) => ({
       p: s.p,
       d: s.d,
+      ...(s.zh ? { zh: s.zh } : {}),
       ...(zhOf?.[i] ? { zh: zhOf[i] } : {}),
       ...(s.x?.length ? { x: s.x.slice(0, MAX_SENSE_EX) } : {}),
       ...(s.syn?.length ? { s: s.syn } : {}),

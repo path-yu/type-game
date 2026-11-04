@@ -19,6 +19,9 @@ const asJson = process.argv.includes('--json');
 
 const idx = JSON.parse(fs.readFileSync(path.join(LEX, 'index.json'), 'utf8'));
 const done = fs.existsSync(ZH) ? JSON.parse(fs.readFileSync(ZH, 'utf8')) : {};
+// 人工表里已经定过的词不要再发出来（它们的中文不走分批翻译这条路）
+const OV = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/lex-zh/overrides.json'), 'utf8'));
+for (const k of Object.keys(OV)) done[k] = 1;
 
 const rows = idx.rows.filter(([w, f]) => f > 0 && !done[w]);
 
@@ -34,7 +37,9 @@ for (const [w, f] of byFreq) {
   }
   const e = shards.get(ch)[w];
   if (!e || e.senses.length > 4) continue;
-  picked.push({ w, f, senses: e.senses.map(s => ({ p: s.p, d: s.d })) });
+  const todo = e.senses.filter(x => x.d && !x.zh);
+  if (!todo.length) continue; // 已经有中文了（人工表或旧词典兜底）
+  picked.push({ w, f, senses: todo.map(s => ({ p: s.p, d: s.d })) });
 }
 
 if (asJson) {
