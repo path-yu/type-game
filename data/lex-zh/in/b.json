@@ -1,691 +1,299 @@
 [
  {
-  "w": "reality",
-  "f": 76,
+  "w": "uncomfortable",
+  "f": 51,
   "senses": [
    {
-    "p": "n",
-    "d": "all of your experiences that determine how things appear to you"
+    "p": "a",
+    "d": "conducive to or feeling mental discomfort"
    },
    {
-    "p": "n",
-    "d": "the state of being actual or real"
-   },
-   {
-    "p": "n",
-    "d": "the state of the world as it really is rather than as you might want it to be"
-   },
-   {
-    "p": "n",
-    "d": "the quality possessed by something that is real"
+    "p": "a",
+    "d": "providing or experiencing physical discomfort"
    }
   ]
  },
  {
-  "w": "stared",
-  "f": 76,
+  "w": "using",
+  "f": 51,
   "senses": [
-   {
-    "p": "v",
-    "d": "look at with fixed eyes"
-   },
-   {
-    "p": "v",
-    "d": "fixate one's eyes"
-   },
    {
     "p": "n",
-    "d": "a fixed look with eyes open wide"
+    "d": "an act that exploits or victimizes someone (treats them unfairly)"
    }
   ]
  },
  {
-  "w": "taught",
-  "f": 76,
+  "w": "weary",
+  "f": 51,
   "senses": [
    {
     "p": "v",
-    "d": "impart skills or knowledge to"
+    "d": "exhaust or get tired through overuse or great strain or stress"
    },
    {
     "p": "v",
-    "d": "accustom gradually to some action or attitude"
+    "d": "lose interest or become bored with something or somebody"
+   },
+   {
+    "p": "a",
+    "d": "physically and mentally fatigued"
    }
   ]
  },
  {
-  "w": "hastily",
-  "f": 75,
+  "w": "worried",
+  "f": 51,
+  "senses": [
+   {
+    "p": "a",
+    "d": "afflicted with or marked by anxious uneasiness or trouble or grief"
+   },
+   {
+    "p": "a",
+    "d": "mentally upset over possible misfortune or danger etc"
+   }
+  ]
+ },
+ {
+  "w": "afford",
+  "f": 50,
+  "senses": [
+   {
+    "p": "v",
+    "d": "be able to spare or give up"
+   },
+   {
+    "p": "v",
+    "d": "be the cause or source of"
+   },
+   {
+    "p": "v",
+    "d": "have the financial means to do something or buy something"
+   },
+   {
+    "p": "v",
+    "d": "afford access to"
+   }
+  ]
+ },
+ {
+  "w": "aloft",
+  "f": 50,
   "senses": [
    {
     "p": "r",
-    "d": "in a hurried or hasty manner"
-   }
-  ]
- },
- {
-  "w": "lessons",
-  "f": 75,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a unit of instruction"
-   },
-   {
-    "p": "n",
-    "d": "punishment intended as a warning to others"
-   },
-   {
-    "p": "n",
-    "d": "the significance of a story or event"
-   },
-   {
-    "p": "n",
-    "d": "a task assigned for individual study"
-   }
-  ]
- },
- {
-  "w": "monkey",
-  "f": 75,
-  "senses": [
-   {
-    "p": "n",
-    "d": "any of various long-tailed primates (excluding the prosimians)"
-   },
-   {
-    "p": "v",
-    "d": "play around with or alter or falsify, usually secretively or dishonestly"
-   },
-   {
-    "p": "n",
-    "d": "one who is playfully mischievous"
-   },
-   {
-    "p": "v",
-    "d": "do random, unplanned work or activities or spend time idly"
-   }
-  ]
- },
- {
-  "w": "painted",
-  "f": 75,
-  "senses": [
-   {
-    "p": "a",
-    "d": "coated with paint"
-   },
-   {
-    "p": "a",
-    "d": "lacking substance or vitality as if produced by painting"
-   },
-   {
-    "p": "a",
-    "d": "having makeup applied"
-   },
-   {
-    "p": "a",
-    "d": "having sections or patches colored differently and usually brightly"
-   }
-  ]
- },
- {
-  "w": "palace",
-  "f": 75,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a large and stately mansion"
-   },
-   {
-    "p": "n",
-    "d": "the governing group of a kingdom"
-   },
-   {
-    "p": "n",
-    "d": "a large ornate exhibition hall"
-   },
-   {
-    "p": "n",
-    "d": "official residence of an exalted person (as a sovereign)"
-   }
-  ]
- },
- {
-  "w": "professor",
-  "f": 75,
-  "senses": [
-   {
-    "p": "n",
-    "d": "someone who is a member of the faculty at a college or university"
-   }
-  ]
- },
- {
-  "w": "roses",
-  "f": 75,
-  "senses": [
-   {
-    "p": "n",
-    "d": "any of many shrubs of the genus Rosa that bear roses"
-   },
-   {
-    "p": "a",
-    "d": "of something having a dusty purplish pink color"
-   },
-   {
-    "p": "n",
-    "d": "pinkish table wine from red grapes whose skins were removed after fermentation began"
-   },
-   {
-    "p": "n",
-    "d": "a dusty pink color"
-   }
-  ]
- },
- {
-  "w": "useful",
-  "f": 75,
-  "senses": [
-   {
-    "p": "a",
-    "d": "being of use or service"
-   },
-   {
-    "p": "a",
-    "d": "having a useful function"
-   }
-  ]
- },
- {
-  "w": "aware",
-  "f": 74,
-  "senses": [
-   {
-    "p": "a",
-    "d": "(sometimes followed by `of') having or showing knowledge or understanding or realization or perception"
-   },
-   {
-    "p": "a",
-    "d": "bearing in mind; attentive to"
-   }
-  ]
- },
- {
-  "w": "dancing",
-  "f": 74,
-  "senses": [
-   {
-    "p": "n",
-    "d": "taking a series of rhythmical steps (and movements) in time to music"
-   }
-  ]
- },
- {
-  "w": "visible",
-  "f": 74,
-  "senses": [
-   {
-    "p": "a",
-    "d": "capable of being seen; or open to easy view"
-   },
-   {
-    "p": "a",
-    "d": "obvious to the eye"
-   },
-   {
-    "p": "a",
-    "d": "present and easily available"
-   }
-  ]
- },
- {
-  "w": "admiration",
-  "f": 73,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a feeling of delighted approval and liking"
-   },
-   {
-    "p": "n",
-    "d": "the feeling aroused by something strange and surprising"
-   },
-   {
-    "p": "n",
-    "d": "a favorable judgment"
-   }
-  ]
- },
- {
-  "w": "anywhere",
-  "f": 73,
-  "senses": [
-   {
-    "p": "r",
-    "d": "at or in or to any place; (`anyplace' is used informally for `anywhere')"
-   }
-  ]
- },
- {
-  "w": "axe",
-  "f": 73,
-  "senses": [
-   {
-    "p": "n",
-    "d": "an edge tool with a heavy bladed head mounted across a handle"
-   },
-   {
-    "p": "v",
-    "d": "chop or split with an ax"
-   },
-   {
-    "p": "v",
-    "d": "terminate"
-   }
-  ]
- },
- {
-  "w": "beach",
-  "f": 73,
-  "senses": [
-   {
-    "p": "n",
-    "d": "an area of sand sloping down to the water of a sea or lake"
-   },
-   {
-    "p": "v",
-    "d": "land on a beach"
-   }
-  ]
- },
- {
-  "w": "chin",
-  "f": 73,
-  "senses": [
-   {
-    "p": "n",
-    "d": "the protruding part of the lower jaw"
-   },
-   {
-    "p": "v",
-    "d": "raise oneself while hanging from one's hands until one's chin is level with the support bar"
-   }
-  ]
- },
- {
-  "w": "convinced",
-  "f": 73,
-  "senses": [
-   {
-    "p": "a",
-    "d": "persuaded of; very sure"
-   },
-   {
-    "p": "a",
-    "d": "having a strong belief or conviction"
-   }
-  ]
- },
- {
-  "w": "grief",
-  "f": 73,
-  "senses": [
-   {
-    "p": "n",
-    "d": "intense sorrow caused by loss of a loved one (especially by death)"
-   },
-   {
-    "p": "n",
-    "d": "something that causes great unhappiness"
-   }
-  ]
- },
- {
-  "w": "horrid",
-  "f": 73,
-  "senses": [
-   {
-    "p": "a",
-    "d": "exceedingly bad"
-   },
-   {
-    "p": "a",
-    "d": "grossly offensive to decency or morality; causing horror"
-   }
-  ]
- },
- {
-  "w": "newspeak",
-  "f": 73,
-  "senses": [
-   {
-    "p": "n",
-    "d": "deliberately ambiguous and contradictory language used to mislead and manipulate the public"
-   }
-  ]
- },
- {
-  "w": "rabbit",
-  "f": 73,
-  "senses": [
-   {
-    "p": "n",
-    "d": "any of various burrowing animals of the family Leporidae having long ears and short tails; some domesticated and raised for pets or food"
-   },
-   {
-    "p": "v",
-    "d": "hunt rabbits"
-   },
-   {
-    "p": "n",
-    "d": "the fur of a rabbit"
-   },
-   {
-    "p": "n",
-    "d": "flesh of any of various rabbits or hares (wild or domesticated) eaten as food"
-   }
-  ]
- },
- {
-  "w": "railway",
-  "f": 73,
-  "senses": [
-   {
-    "p": "n",
-    "d": "line that is the commercial organization responsible for operating a system of transportation for trains that pull passengers or freight"
-   },
-   {
-    "p": "n",
-    "d": "a line of track providing a runway for wheels"
-   }
-  ]
- },
- {
-  "w": "rope",
-  "f": 73,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a strong line"
-   },
-   {
-    "p": "v",
-    "d": "catch with a lasso"
-   },
-   {
-    "p": "n",
-    "d": "street names for flunitrazepan"
-   },
-   {
-    "p": "v",
-    "d": "fasten with a rope"
-   }
-  ]
- },
- {
-  "w": "teach",
-  "f": 73,
-  "senses": [
-   {
-    "p": "v",
-    "d": "impart skills or knowledge to"
-   },
-   {
-    "p": "v",
-    "d": "accustom gradually to some action or attitude"
-   }
-  ]
- },
- {
-  "w": "thanks",
-  "f": 73,
-  "senses": [
-   {
-    "p": "n",
-    "d": "an acknowledgment of appreciation"
-   },
-   {
-    "p": "n",
-    "d": "with the help of or owing to"
-   }
-  ]
- },
- {
-  "w": "tonight",
-  "f": 73,
-  "senses": [
-   {
-    "p": "n",
-    "d": "the present or immediately coming night"
+    "d": "at or on or to the masthead or upper rigging of a ship"
    },
    {
     "p": "r",
-    "d": "during the night of the present day"
+    "d": "upward"
+   },
+   {
+    "p": "r",
+    "d": "at or to great height; high up in or into the air"
+   },
+   {
+    "p": "r",
+    "d": "in the higher atmosphere above the earth"
    }
   ]
  },
  {
-  "w": "candle",
-  "f": 72,
+  "w": "attitude",
+  "f": 50,
   "senses": [
    {
     "p": "n",
-    "d": "stick of wax with a wick in the middle"
+    "d": "a complex mental state involving beliefs and feelings and values and dispositions to act in certain ways"
+   },
+   {
+    "p": "n",
+    "d": "the arrangement of the body and its limbs"
+   },
+   {
+    "p": "n",
+    "d": "a theatrical pose created for effect"
+   },
+   {
+    "p": "n",
+    "d": "position of aircraft or spacecraft relative to a frame of reference (the horizon or direction of motion)"
+   }
+  ]
+ },
+ {
+  "w": "crowded",
+  "f": 50,
+  "senses": [
+   {
+    "p": "a",
+    "d": "overfilled or compacted or concentrated"
+   }
+  ]
+ },
+ {
+  "w": "dread",
+  "f": 50,
+  "senses": [
+   {
+    "p": "n",
+    "d": "fearful expectation or anticipation"
    },
    {
     "p": "v",
-    "d": "examine eggs for freshness by holding them against a light"
-   },
-   {
-    "p": "n",
-    "d": "the basic unit of luminous intensity adopted under the Systeme International d'Unites; equal to 1/60 of the luminous intensity per square centimeter of a black body radiating at the temperature of 2,046 degrees Kelvin"
-   }
-  ]
- },
- {
-  "w": "emerald",
-  "f": 72,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a green transparent form of beryl; highly valued as a gemstone"
-   },
-   {
-    "p": "n",
-    "d": "a transparent piece of emerald that has been cut and polished and is valued as a precious gem"
-   },
-   {
-    "p": "n",
-    "d": "the green color of an emerald"
-   }
-  ]
- },
- {
-  "w": "generally",
-  "f": 72,
-  "senses": [
-   {
-    "p": "r",
-    "d": "usually; as a rule"
-   },
-   {
-    "p": "r",
-    "d": "without distinction of one from others"
-   },
-   {
-    "p": "r",
-    "d": "without regard to specific details or exceptions"
-   }
-  ]
- },
- {
-  "w": "inn",
-  "f": 72,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a hotel providing overnight lodging for travelers"
-   }
-  ]
- },
- {
-  "w": "lesson",
-  "f": 72,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a unit of instruction"
-   },
-   {
-    "p": "n",
-    "d": "punishment intended as a warning to others"
-   },
-   {
-    "p": "n",
-    "d": "the significance of a story or event"
-   },
-   {
-    "p": "n",
-    "d": "a task assigned for individual study"
-   }
-  ]
- },
- {
-  "w": "mystery",
-  "f": 72,
-  "senses": [
-   {
-    "p": "n",
-    "d": "something that baffles understanding and cannot be explained"
-   },
-   {
-    "p": "n",
-    "d": "a story about a crime (usually murder) presented as a novel or play or movie"
-   }
-  ]
- },
- {
-  "w": "sleeping",
-  "f": 72,
-  "senses": [
-   {
-    "p": "n",
-    "d": "the state of being asleep"
+    "d": "be afraid or scared of; be frightened of"
    },
    {
     "p": "a",
-    "d": "lying with head on paws as if sleeping"
-   },
-   {
-    "p": "n",
-    "d": "quiet and inactive restfulness"
-   },
-   {
-    "p": "n",
-    "d": "the suspension of consciousness and decrease in metabolic rate"
+    "d": "causing fear or dread or terror"
    }
   ]
  },
  {
-  "w": "ugly",
-  "f": 72,
-  "senses": [
-   {
-    "p": "a",
-    "d": "displeasing to the senses"
-   },
-   {
-    "p": "a",
-    "d": "inclined to anger or bad feelings with overtones of menace"
-   },
-   {
-    "p": "a",
-    "d": "morally reprehensible"
-   },
-   {
-    "p": "a",
-    "d": "provoking horror- Winston Churchill"
-   }
-  ]
- },
- {
-  "w": "wooden",
-  "f": 72,
-  "senses": [
-   {
-    "p": "a",
-    "d": "made or consisting of (entirely or in part) or employing wood"
-   },
-   {
-    "p": "a",
-    "d": "lacking ease or grace"
-   }
-  ]
- },
- {
-  "w": "crime",
-  "f": 71,
-  "senses": [
-   {
-    "p": "n",
-    "d": "(criminal law) an act punishable by law; usually considered an evil act"
-   },
-   {
-    "p": "n",
-    "d": "an evil act not necessarily punishable by law"
-   }
-  ]
- },
- {
-  "w": "describe",
-  "f": 71,
+  "w": "fled",
+  "f": 50,
   "senses": [
    {
     "p": "v",
-    "d": "give a description of"
-   },
-   {
-    "p": "v",
-    "d": "to give an account or representation of in words"
-   },
-   {
-    "p": "v",
-    "d": "make a mark or lines on a surface"
-   },
-   {
-    "p": "v",
-    "d": "identify as in botany or biology, for example"
+    "d": "run away quickly"
    }
   ]
  },
  {
-  "w": "extremely",
-  "f": 71,
+  "w": "hatred",
+  "f": 50,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the emotion of intense dislike; a feeling of dislike so strong that it demands action"
+   }
+  ]
+ },
+ {
+  "w": "hundreds",
+  "f": 50,
+  "senses": [
+   {
+    "p": "n",
+    "d": "ten 10s"
+   },
+   {
+    "p": "a",
+    "d": "being ten more than ninety"
+   }
+  ]
+ },
+ {
+  "w": "midnight",
+  "f": 50,
+  "senses": [
+   {
+    "p": "n",
+    "d": "12 o'clock at night; the middle of the night"
+   }
+  ]
+ },
+ {
+  "w": "notion",
+  "f": 50,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a vague idea in which some confidence is placed"
+   },
+   {
+    "p": "n",
+    "d": "a general inclusive concept"
+   },
+   {
+    "p": "n",
+    "d": "an odd or fanciful or capricious idea"
+   },
+   {
+    "p": "n",
+    "d": "(usually plural) small personal articles or clothing or sewing items"
+   }
+  ]
+ },
+ {
+  "w": "rolling",
+  "f": 50,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a deep prolonged sound (as of thunder or large bells)"
+   },
+   {
+    "p": "n",
+    "d": "the act of robbing a helpless person"
+   },
+   {
+    "p": "n",
+    "d": "propelling something on wheels"
+   },
+   {
+    "p": "a",
+    "d": "uttered with a trill"
+   }
+  ]
+ },
+ {
+  "w": "sadly",
+  "f": 50,
   "senses": [
    {
     "p": "r",
-    "d": "to a high degree or extent; favorably or with much respect"
+    "d": "in an unfortunate way"
    },
    {
     "p": "r",
-    "d": "to an extreme degree"
-   }
-  ]
- },
- {
-  "w": "rapidly",
-  "f": 71,
-  "senses": [
+    "d": "with sadness; in a sad manner"
+   },
    {
     "p": "r",
-    "d": "with speed"
+    "d": "in an unfortunate or deplorable manner"
    }
   ]
  },
  {
-  "w": "trembling",
-  "f": 71,
+  "w": "sentence",
+  "f": 50,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a string of words satisfying the grammatical rules of a language"
+   },
+   {
+    "p": "n",
+    "d": "(criminal law) a final judgment of guilty in a criminal case and the punishment that is imposed"
+   },
+   {
+    "p": "n",
+    "d": "the period of time a prisoner is imprisoned"
+   },
+   {
+    "p": "v",
+    "d": "pronounce a sentence on (somebody) in a court of law"
+   }
+  ]
+ },
+ {
+  "w": "stopping",
+  "f": 50,
+  "senses": [
+   {
+    "p": "n",
+    "d": "fastener consisting of a narrow strip of welded metal used to join steel members"
+   },
+   {
+    "p": "n",
+    "d": "the kind of playing that involves pressing the fingers on the strings of a stringed instrument to control the pitch"
+   }
+  ]
+ },
+ {
+  "w": "trembled",
+  "f": 50,
   "senses": [
    {
     "p": "v",
@@ -694,128 +302,528 @@
    {
     "p": "n",
     "d": "a reflex motion caused by cold or fear or excitement"
-   },
+   }
+  ]
+ },
+ {
+  "w": "beloved",
+  "f": 49,
+  "senses": [
    {
     "p": "n",
-    "d": "a shaky motion"
+    "d": "a beloved person; used as terms of endearment"
    },
    {
     "p": "a",
-    "d": "vibrating slightly and irregularly; as e.g. with fear or cold or like the leaves of an aspen in a breeze"
+    "d": "dearly loved"
    }
   ]
  },
  {
-  "w": "whaling",
-  "f": 71,
-  "senses": [
-   {
-    "p": "v",
-    "d": "hunt for whales"
-   },
-   {
-    "p": "n",
-    "d": "a very large person; impressive in size or qualities"
-   },
-   {
-    "p": "n",
-    "d": "any of the larger cetacean mammals having a streamlined body and breathing through a blowhole on the head"
-   }
-  ]
- },
- {
-  "w": "awfully",
-  "f": 70,
+  "w": "curiously",
+  "f": 49,
   "senses": [
    {
     "p": "r",
-    "d": "used as intensifiers"
+    "d": "in a manner differing from the usual or expected"
    },
    {
     "p": "r",
-    "d": "of a dreadful kind"
+    "d": "with curiosity"
+   }
+  ]
+ },
+ {
+  "w": "desk",
+  "f": 49,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a piece of furniture with a writing surface and usually drawers or other compartments"
+   }
+  ]
+ },
+ {
+  "w": "earnest",
+  "f": 49,
+  "senses": [
+   {
+    "p": "a",
+    "d": "characterized by a firm and humorless belief in the validity of your opinions"
+   },
+   {
+    "p": "a",
+    "d": "sincerely earnest"
+   },
+   {
+    "p": "a",
+    "d": "not distracted by anything unrelated to the goal"
+   },
+   {
+    "p": "n",
+    "d": "something of value given by one person to another to bind a contract"
+   }
+  ]
+ },
+ {
+  "w": "existed",
+  "f": 49,
+  "senses": [
+   {
+    "p": "v",
+    "d": "have an existence, be extant"
+   },
+   {
+    "p": "v",
+    "d": "support oneself"
+   }
+  ]
+ },
+ {
+  "w": "exquisite",
+  "f": 49,
+  "senses": [
+   {
+    "p": "a",
+    "d": "intense or sharp"
+   },
+   {
+    "p": "a",
+    "d": "lavishly elegant and refined"
+   },
+   {
+    "p": "a",
+    "d": "delicately beautiful"
+   },
+   {
+    "p": "a",
+    "d": "of extreme beauty"
+   }
+  ]
+ },
+ {
+  "w": "guilty",
+  "f": 49,
+  "senses": [
+   {
+    "p": "a",
+    "d": "responsible for or chargeable with a reprehensible act"
+   },
+   {
+    "p": "a",
+    "d": "showing a sense of guilt- Eric Linklater"
+   }
+  ]
+ },
+ {
+  "w": "illustration",
+  "f": 49,
+  "senses": [
+   {
+    "p": "n",
+    "d": "artwork that helps make something clear or attractive"
+   },
+   {
+    "p": "n",
+    "d": "showing by example"
+   },
+   {
+    "p": "n",
+    "d": "an item of information that is typical of a class or group"
+   },
+   {
+    "p": "n",
+    "d": "a visual representation (a picture or diagram) that is used make some subject more pleasing or easier to understand"
+   }
+  ]
+ },
+ {
+  "w": "insisted",
+  "f": 49,
+  "senses": [
+   {
+    "p": "v",
+    "d": "be emphatic or resolute and refuse to budge"
+   },
+   {
+    "p": "v",
+    "d": "beg persistently and urgently"
+   },
+   {
+    "p": "v",
+    "d": "postulate positively and assertively"
+   }
+  ]
+ },
+ {
+  "w": "monstrous",
+  "f": 49,
+  "senses": [
+   {
+    "p": "a",
+    "d": "abnormally large"
+   },
+   {
+    "p": "a",
+    "d": "shockingly brutal or cruel"
+   },
+   {
+    "p": "a",
+    "d": "distorted and unnatural in shape or size; abnormal and hideous"
+   }
+  ]
+ },
+ {
+  "w": "painful",
+  "f": 49,
+  "senses": [
+   {
+    "p": "a",
+    "d": "causing physical or psychological pain"
+   },
+   {
+    "p": "a",
+    "d": "causing misery or pain or distress"
+   },
+   {
+    "p": "a",
+    "d": "exceptionally bad or displeasing"
+   },
+   {
+    "p": "a",
+    "d": "causing physical discomfort"
+   }
+  ]
+ },
+ {
+  "w": "parlor",
+  "f": 49,
+  "senses": [
+   {
+    "p": "n",
+    "d": "reception room in an inn or club where visitors can be received"
+   },
+   {
+    "p": "n",
+    "d": "a room in a private house or establishment where people can sit and talk and relax"
+   }
+  ]
+ },
+ {
+  "w": "properly",
+  "f": 49,
+  "senses": [
+   {
+    "p": "r",
+    "d": "in the right manner; correctly; suitably"
    },
    {
     "p": "r",
-    "d": "in a terrible manner"
-   }
-  ]
- },
- {
-  "w": "china",
-  "f": 70,
-  "senses": [
-   {
-    "p": "n",
-    "d": "high quality porcelain originally made only in China"
+    "d": "indicating exactness or preciseness--Thomas Carlyle"
    },
    {
-    "p": "n",
-    "d": "dishware made of high quality porcelain"
+    "p": "r",
+    "d": "in accordance with what is appropriate or suitable for the circumstances"
    }
   ]
  },
  {
-  "w": "choose",
-  "f": 70,
+  "w": "rid",
+  "f": 49,
   "senses": [
    {
     "p": "v",
-    "d": "pick out, select, or choose from a number of alternatives"
+    "d": "relieve from"
+   }
+  ]
+ },
+ {
+  "w": "ridiculous",
+  "f": 49,
+  "senses": [
+   {
+    "p": "a",
+    "d": "inspiring scornful pity- Dashiell Hammett"
+   },
+   {
+    "p": "a",
+    "d": "so unreasonable as to invite derision"
+   },
+   {
+    "p": "a",
+    "d": "broadly or extravagantly humorous; resembling farce"
+   }
+  ]
+ },
+ {
+  "w": "twilight",
+  "f": 49,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the time of day immediately following sunset"
+   },
+   {
+    "p": "n",
+    "d": "the diffused light from the sky when the sun is below the horizon but its rays are refracted by the atmosphere of the earth"
+   },
+   {
+    "p": "n",
+    "d": "a condition of decline following successes"
+   },
+   {
+    "p": "a",
+    "d": "lighted by or as if by twilight-Henry Fielding"
+   }
+  ]
+ },
+ {
+  "w": "worthy",
+  "f": 49,
+  "senses": [
+   {
+    "p": "a",
+    "d": "having worth or merit or value; being honorable or admirable"
+   },
+   {
+    "p": "a",
+    "d": "worthy of being chosen especially as a spouse"
+   },
+   {
+    "p": "a",
+    "d": "having qualities or abilities that merit recognition in some way"
+   },
+   {
+    "p": "n",
+    "d": "an important, honorable person (word is often used humorously)"
+   }
+  ]
+ },
+ {
+  "w": "becomes",
+  "f": 48,
+  "senses": [
+   {
+    "p": "v",
+    "d": "enter or assume a certain state or condition"
    },
    {
     "p": "v",
-    "d": "select as an alternative over another"
+    "d": "undergo a change or development"
    },
    {
     "p": "v",
-    "d": "see fit or proper to act in a certain way; decide to act in a certain way"
+    "d": "come into existence"
+   },
+   {
+    "p": "v",
+    "d": "enhance the appearance of"
    }
   ]
  },
  {
-  "w": "coffee",
-  "f": 70,
+  "w": "chimney",
+  "f": 48,
   "senses": [
    {
     "p": "n",
-    "d": "a beverage consisting of an infusion of ground coffee beans"
+    "d": "a vertical flue that provides a path through which smoke from a fire is carried away through the wall or roof of a building"
    },
    {
     "p": "n",
-    "d": "any of several small trees and shrubs native to the tropical Old World yielding coffee beans"
-   },
-   {
-    "p": "n",
-    "d": "a seed of the coffee tree; ground to make coffee"
-   },
-   {
-    "p": "n",
-    "d": "a medium brown to dark-brown color"
+    "d": "a glass flue surrounding the wick of an oil lamp"
    }
   ]
  },
  {
-  "w": "colonel",
-  "f": 70,
+  "w": "continually",
+  "f": 48,
   "senses": [
    {
-    "p": "n",
-    "d": "a commissioned military officer in the United States Army or Air Force or Marines who ranks above a lieutenant colonel and below a brigadier general"
+    "p": "r",
+    "d": "seemingly without interruption"
    }
   ]
  },
  {
-  "w": "fairy",
-  "f": 70,
+  "w": "depend",
+  "f": 48,
+  "senses": [
+   {
+    "p": "v",
+    "d": "be contingent upon (something that is elided)"
+   },
+   {
+    "p": "v",
+    "d": "have faith or confidence in"
+   }
+  ]
+ },
+ {
+  "w": "drinking",
+  "f": 48,
   "senses": [
    {
     "p": "n",
-    "d": "a small being, human in form, playful and having magical powers"
+    "d": "the act of consuming liquids"
    },
    {
     "p": "n",
-    "d": "offensive term for a homosexual man"
+    "d": "the act of drinking alcoholic beverages to excess"
+   }
+  ]
+ },
+ {
+  "w": "gloomy",
+  "f": 48,
+  "senses": [
+   {
+    "p": "a",
+    "d": "depressingly dark"
+   },
+   {
+    "p": "a",
+    "d": "filled with melancholy and despondency"
+   },
+   {
+    "p": "a",
+    "d": "causing dejection"
+   }
+  ]
+ },
+ {
+  "w": "magic",
+  "f": 48,
+  "senses": [
+   {
+    "p": "n",
+    "d": "any art that invokes supernatural powers"
+   },
+   {
+    "p": "n",
+    "d": "an illusory feat; considered magical by naive observers"
+   },
+   {
+    "p": "a",
+    "d": "possessing or using or characteristic of or appropriate to supernatural powers- Shakespeare"
+   }
+  ]
+ },
+ {
+  "w": "praise",
+  "f": 48,
+  "senses": [
+   {
+    "p": "n",
+    "d": "an expression of approval and commendation"
+   },
+   {
+    "p": "n",
+    "d": "offering words of homage as an act of worship"
+   },
+   {
+    "p": "v",
+    "d": "express approval of"
+   }
+  ]
+ },
+ {
+  "w": "problem",
+  "f": 48,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a state of difficulty that needs to be resolved"
+   },
+   {
+    "p": "n",
+    "d": "a question raised for consideration or solution"
+   },
+   {
+    "p": "n",
+    "d": "a source of difficulty"
+   }
+  ]
+ },
+ {
+  "w": "reminded",
+  "f": 48,
+  "senses": [
+   {
+    "p": "v",
+    "d": "put in the mind of someone"
+   },
+   {
+    "p": "v",
+    "d": "assist (somebody acting or reciting) by suggesting the next words of something forgotten or imperfectly learned"
+   }
+  ]
+ },
+ {
+  "w": "riding",
+  "f": 48,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the sport of sitting on the back of a horse while controlling its movements"
+   },
+   {
+    "p": "n",
+    "d": "travel by being carried on horseback"
+   }
+  ]
+ },
+ {
+  "w": "slope",
+  "f": 48,
+  "senses": [
+   {
+    "p": "n",
+    "d": "an elevated geological formation"
+   },
+   {
+    "p": "n",
+    "d": "the property possessed by a line or surface that departs from the horizontal"
+   },
+   {
+    "p": "v",
+    "d": "be at an angle"
+   }
+  ]
+ },
+ {
+  "w": "vanity",
+  "f": 48,
+  "senses": [
+   {
+    "p": "n",
+    "d": "feelings of excessive pride"
+   },
+   {
+    "p": "n",
+    "d": "the quality of being valueless or futile"
+   },
+   {
+    "p": "n",
+    "d": "the trait of being unduly vain and conceited; false pride"
+   },
+   {
+    "p": "n",
+    "d": "low table with mirror or mirrors where one sits while dressing or applying makeup"
+   }
+  ]
+ },
+ {
+  "w": "accordingly",
+  "f": 47,
+  "senses": [
+   {
+    "p": "r",
+    "d": "(sentence connectors) because of the reason given"
+   },
+   {
+    "p": "r",
+    "d": "in accordance with"
    }
   ]
  }
