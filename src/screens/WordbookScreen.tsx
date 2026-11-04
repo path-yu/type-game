@@ -18,8 +18,9 @@ import { speak, stopSpeaking } from '../lib/speech';
 type Row = [string, number, string, number]; // [词, 频次, 词性串, 是否有例句]
 
 interface Sense {
-  p: string;          // 词性 n/v/a/r
-  d: string;          // 释义（英文原义）
+  p: string;          // 词性
+  zh?: string;        // 中文释义（有就先显示这个）
+  d: string;          // 英文原义
   x?: string[];       // 该义项自带的例子
   s?: string[];       // 同义词
 }
@@ -35,7 +36,10 @@ interface Entry {
 }
 
 const ROW_H = 46;
-const POS_LABEL: Record<string, string> = { n: '名', v: '动', a: '形', r: '副', '': '—' };
+const POS_LABEL: Record<string, string> = {
+  n: '名', v: '动', a: '形', r: '副',
+  pron: '代', conj: '连', prep: '介', art: '冠', aux: '助', part: '不', int: '叹', '': '—',
+};
 
 export function WordbookScreen() {
   const [rows, setRows] = useState<Row[] | null>(null);
@@ -246,8 +250,11 @@ export function WordbookScreen() {
                 {entry.senses.map((s, i) => (
                   <div className="wb-sense" key={i}>
                     <div className="wb-sense-head">
-                      <em>{POS_LABEL[s.p] ?? '—'}</em>
-                      <span>{s.d}</span>
+                      <em>{POS_LABEL[s.p] ?? s.p ?? '—'}</em>
+                      <span>
+                        {s.zh && <b className="wb-zh">{s.zh}</b>}
+                        {s.d && <i className="wb-en-gloss">{s.d}</i>}
+                      </span>
                     </div>
                     {s.x?.map(t => <div className="wb-sense-ex" key={t}>{t}</div>)}
                     {s.s?.length ? (

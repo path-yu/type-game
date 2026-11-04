@@ -48,10 +48,13 @@ function parseDataFile(file, ssType) {
     if (!Number.isFinite(wcnt)) continue;
 
     const words = [];
+    const upper = new Set(); // 原文里是大写的形（IT / He / As 这类缩略与化学符号）
     let i = 4;
     for (let k = 0; k < wcnt && i + 1 < t.length; k++, i += 2) {
       // 形容词会带 (a)(p)(ip) 标记，去掉
-      words.push(t[i].replace(/\([a-z]+\)$/, '').toLowerCase().replace(/_/g, ' '));
+      const raw = t[i].replace(/\([a-z]+\)$/, '').replace(/_/g, ' ');
+      if (/^[A-Z]/.test(raw)) upper.add(raw.toLowerCase());
+      words.push(raw.toLowerCase());
     }
     if (!words.length) continue;
 
@@ -64,7 +67,11 @@ function parseDataFile(file, ssType) {
 
     for (const w of words) {
       if (!out.has(w)) out.set(w, []);
-      out.get(w).push({ p: ssType, d, x: ex, syn: words.filter(o => o !== w).slice(0, MAX_REL) });
+      out.get(w).push({
+        p: ssType, d, x: ex, syn: words.filter(o => o !== w).slice(0, MAX_REL),
+        // 该词在这个 synset 里原文就是大写 → 这是缩略语/元素符号，不是这个词本身
+        ...(upper.has(w) ? { up: 1 } : {}),
+      });
     }
   }
   return out;
@@ -83,6 +90,17 @@ for (const [file, ss] of [['data.noun', 'n'], ['data.verb', 'v'], ['data.adj', '
 log(`WordNet 合计 ${wn.size} 词`);
 
 /* ---------------- 2. 语料：词频 + 真实例句 ---------------- */
+
+/*
+ * 中文释义有两个来源：
+ *   overrides.json  人工定的高频虚词（WordNet 根本不全：没有冠词、代词，
+ *                   还会把 it/he/as 错配成 IT、氦、砷）
+ *   merged.json     分批译出来的普通词，一个词一个数组，与义项顺序对应
+ */
+const OV = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/lex-zh/overrides.json'), 'utf8'));
+const mergedPath = path.join(ROOT, 'data/lex-zh/merged.json');
+const ZH_MERGED = fs.existsSync(mergedPath) ? JSON.parse(fs.readFileSync(mergedPath, 'utf8')) : {};
+delete OV._comment;
 
 const dict = JSON.parse(fs.readFileSync(path.join(DATA, 'dict.json'), 'utf8'));
 const ipa = new Map(dict.words.map(x => [x.w, x.p || '']));
@@ -180,11 +198,18 @@ let withSense = 0, withEx = 0;
 for (const w of words) {
   if (!/^[a-z][a-z'-]*$/.test(w)) continue;
 
+  /*
+   * 只留原文是小写的义项。
+   * WordNet 不分大小写，IT（信息技术）、He（氦）、As（砷）会和 it / he / as
+   * 混在同一个词头下 —— 之前就出过「it: 计算机与通信工程的分支」这种笑话。
+   * 一个词若只剩大写义项，说明它本身没有独立的词条，交给下面的旧词典兜底。
+   */
   const mapped = lemmaOf(w);
   const base = wn.has(mapped) || zhGloss.has(mapped) ? mapped : (guessLemma(w) ?? mapped);
-  let senses = wn.get(w) ?? wn.get(base) ?? [];
+  const pick = (x) => (x ?? []).filter(s => !s.up);
+  let senses = pick(wn.get(w));
   // 词形本身没收录时，用原形的释义补上（went → go）
-  if (!senses.length && w !== base) senses = wn.get(base) ?? [];
+  if (!senses.length && w !== base) senses = pick(wn.get(base));
 
   if (!senses.length) {
     // 只有旧词典里那句中文，也先留着 —— 总比"查无此词"好
@@ -193,14 +218,37 @@ for (const w of words) {
     senses = [{ p: '', d: z, x: [], syn: [] }];
   }
 
+  const ov = OV[w];
+  if (ov) {
+    // 人工条目直接用，不再和 WordNet 混
+    const list = ov.map(([p2, d2]) => ({ p: p2, d: '', zh: d2 }));
+    const ex = examples.get(w) ?? [];
+    const entry = {
+      w,
+      ...(ipa.get(w) ? { ipa: ipa.get(w) } : {}),
+      f: freq.get(w) ?? 0,
+      senses: list,
+      ...(ex.length ? { ex } : {}),
+    };
+    withSense++;
+    if (ex.length) withEx++;
+    const ch0 = w[0];
+    if (!shards.has(ch0)) shards.set(ch0, {});
+    shards.get(ch0)[w] = entry;
+    index.push([w, entry.f, list.map(x => x.p).join(''), ex.length ? 1 : 0]);
+    continue;
+  }
+
+  const zhOf = ZH_MERGED[w];
   const seenGloss = new Set();
   const list = senses
     .filter(s => s.d && !seenGloss.has(s.p + s.d) && seenGloss.add(s.p + s.d))
     .sort((a, b) => (POS_ORDER[a.p] ?? 9) - (POS_ORDER[b.p] ?? 9))
     .slice(0, MAX_SENSES)
-    .map(s => ({
+    .map((s, i) => ({
       p: s.p,
       d: s.d,
+      ...(zhOf?.[i] ? { zh: zhOf[i] } : {}),
       ...(s.x?.length ? { x: s.x.slice(0, MAX_SENSE_EX) } : {}),
       ...(s.syn?.length ? { s: s.syn } : {}),
     }));
