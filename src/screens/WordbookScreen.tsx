@@ -32,6 +32,8 @@ interface Entry {
   l?: string;                                  // 原形（屈折形式才有）
   senses: Sense[];
   ex?: { t: string; zh?: string; src?: string }[];
+  up?: string[];    // 上位词（WordNet @ 指针）
+  opp?: string[];   // 反义词（! 指针）
   forms?: string[];
 }
 
@@ -267,6 +269,27 @@ export function WordbookScreen() {
                     ) : null}
                   </div>
                 ))}
+
+                {(entry.up?.length || entry.opp?.length) ? (
+                  <div className="wb-rel">
+                    {entry.up?.length ? (
+                      <div className="wb-rel-row">
+                        <span className="wb-rel-key">上位</span>
+                        {entry.up.map(x => (
+                          <button key={x} className="wb-syn-word" onClick={() => open(x)}>{x}</button>
+                        ))}
+                      </div>
+                    ) : null}
+                    {entry.opp?.length ? (
+                      <div className="wb-rel-row">
+                        <span className="wb-rel-key">反义</span>
+                        {entry.opp.map(x => (
+                          <button key={x} className="wb-syn-word" onClick={() => open(x)}>{x}</button>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
 
                 <div className="wb-sec">语料例句</div>
                 {entry.ex?.length ? (

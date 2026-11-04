@@ -34,7 +34,7 @@ const log = (...a) => console.log('[lex]', ...a);
 /* ---------------- 1. WordNet ---------------- */
 
 /** data.noun 这一行的格式，见 WordNet 文档 5.1 节 */
-function parseDataFile(file, ssType) {
+function parseDataFile(file, ssType, offIndex) {
   const out = new Map(); // word → [{ p, d, x, syn }]
   const text = fs.readFileSync(path.join(WN, file), 'utf8');
   for (const line of text.split('\n')) {
@@ -65,10 +65,31 @@ function parseDataFile(file, ssType) {
       return '';
     }).replace(/\s+/g, ' ').trim();
 
+    /*
+     * 指针段：`@ 00001740 n 0000` 是上位词，`~` 是下位词，`!` 是反义词。
+     * 每个指针 4 个 token（符号 / 目标偏移 / 词性 / 源目标词义位）。
+     * 这里只收 @ 和 !，下位词太多（一个"动物"下面几千条），列出来没意义。
+     */
+    if (offIndex) offIndex.set(`${ssType}:${t[0]}`, words);
+    const hyper = [], anto = [];
+    if (i + 1 < t.length) {
+      const pcnt = parseInt(t[i], 16);
+      if (Number.isFinite(pcnt)) {
+        i++;
+        for (let k = 0; k < pcnt && i + 3 < t.length; k++, i += 4) {
+          const sym = t[i], off = t[i + 1], pos = t[i + 2];
+          if (sym === '@') hyper.push(`${pos}:${off}`);
+          else if (sym === '!') anto.push(`${pos}:${off}`);
+        }
+      }
+    }
+
     for (const w of words) {
       if (!out.has(w)) out.set(w, []);
       out.get(w).push({
         p: ssType, d, x: ex, syn: words.filter(o => o !== w).slice(0, MAX_REL),
+        ...(hyper.length ? { h: hyper } : {}),
+        ...(anto.length ? { a: anto } : {}),
         // 该词在这个 synset 里原文就是大写 → 这是缩略语/元素符号，不是这个词本身
         ...(upper.has(w) ? { up: 1 } : {}),
       });
@@ -78,9 +99,10 @@ function parseDataFile(file, ssType) {
 }
 
 log('读 WordNet…');
+const byOffset = new Map(); // "n:00001740" → 该 synset 的词
 const wn = new Map();
 for (const [file, ss] of [['data.noun', 'n'], ['data.verb', 'v'], ['data.adj', 'a'], ['data.adv', 'r']]) {
-  const m = parseDataFile(file, ss);
+  const m = parseDataFile(file, ss, byOffset);
   for (const [w, senses] of m) {
     if (!wn.has(w)) wn.set(w, []);
     wn.get(w).push(...senses);
@@ -237,6 +259,31 @@ for (const w of words) {
     senses = [{ p: '', d: '', zh: z, x: [], syn: [] }];
   }
 
+  /* 把上位/反义指针解成词形，最多各 4 个，去掉自己 */
+  const relOf = (senses0) => {
+    const up = new Set(), opp = new Set();
+    // 只看第一个义项：把 hunt/run 这种动词上位词混到名词词条里，反而看不懂
+    for (const s0 of senses0.slice(0, 1)) {
+      for (const o of s0.h ?? []) {
+        const ws = byOffset.get(o);
+        // 优先收单词（"cetacean" 好过 "cetacean mammal"），多字词排在后面
+        // 优先收单词（"cetacean" 好过 "cetacean mammal"），多字词排在后面
+        if (ws) for (const x of ws) if (x !== w && x.length > 1 && !up.has(x)) up.add(x);
+      }
+      for (const o of s0.a ?? []) {
+        const ws = byOffset.get(o);
+        if (ws) for (const x of ws) if (x !== w && !opp.has(x)) opp.add(x);
+      }
+    }
+    const tidy = (arr) => [...arr]
+      .sort((a, b) => (a.includes(' ') ? 1 : 0) - (b.includes(' ') ? 1 : 0) || a.length - b.length)
+      .slice(0, 4);
+    return {
+      ...(up.size ? { up: tidy(up) } : {}),
+      ...(opp.size ? { opp: tidy(opp) } : {}),
+    };
+  };
+
   const ov = OV[w];
   if (ov) {
     // 人工条目直接用，不再和 WordNet 混
@@ -284,6 +331,7 @@ for (const w of words) {
     ...(base !== w ? { l: base } : {}),
     senses: list,
     ...(ex.length ? { ex } : {}),
+    ...relOf(senses),
     ...(lemmaFile.detail?.[base]?.forms ? { forms: lemmaFile.detail[base].forms } : {}),
   };
 
