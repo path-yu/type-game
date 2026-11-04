@@ -38,13 +38,35 @@ interface Entry {
   senses: Sense[];
   ex?: { t: string; zh?: string; src?: string }[];
   src?: [string, number][];  // 在哪几本书里出现、各几次
-  cur?: { note?: string; ex?: { en: string; zh: string }[] };  // 人写的精讲
+  cur?: { note?: string; ex?: { en: string; zh: string }[]; see?: string[] };  // 人写的精讲 + 交叉引用
   up?: string[];    // 上位词（WordNet @ 指针）
   opp?: string[];   // 反义词（! 指针）
   forms?: string[];
 }
 
 const ROW_H = 46;
+
+/*
+ * 把精讲正文里提到的其它精讲词切出来做链接。
+ * 只在英文词界处切 —— 中英混排的段落里，能安全识别的只有英文片段。
+ */
+function noteSegments(text: string, see?: string[]): { text: string; link?: string }[] {
+  if (!see?.length) return [{ text }];
+  const terms = [...see].sort((a, b) => b.length - a.length);
+  const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp(`(?<![A-Za-z])(${terms.map(esc).join('|')})(?![A-Za-z])`, 'gi');
+  const out: { text: string; link?: string }[] = [];
+  let last = 0;
+  for (const m of text.matchAll(re)) {
+    const i = m.index ?? 0;
+    if (i > last) out.push({ text: text.slice(last, i) });
+    out.push({ text: m[0], link: m[0].toLowerCase() });
+    last = i + m[0].length;
+  }
+  if (last < text.length) out.push({ text: text.slice(last) });
+  return out.length ? out : [{ text }];
+}
+
 const POS_LABEL: Record<string, string> = {
   n: '名', v: '动', a: '形', r: '副',
   pron: '代', conj: '连', prep: '介', art: '冠', aux: '助', part: '不', int: '叹', '': '—',
@@ -164,6 +186,22 @@ export function WordbookScreen() {
     }
     const first = corpus.articles.find(a => a.s === title);
     if (first) read(first);
+  };
+
+  /*
+   * 同主题的其它词。精讲是按主题写的，一个词往往只有看懂同组其它词才完整 ——
+   * 比如 entail 与 settlement / jointure / dower 本是一套。
+   * 词本身在几个主题里时取第一个，最多列 8 个，免得把面板撑长。
+   */
+  const sameTopic = () => {
+    const w = entry?.w;
+    if (!w) return null;
+    for (const g of topics) {
+      if (!g.w.includes(w)) continue;
+      const words = g.w.filter(x => x !== w).slice(0, 8);
+      if (words.length) return { topic: g.k, words };
+    }
+    return null;
   };
 
   /* 点词 → 取分片 → 存缓存 */
@@ -439,7 +477,19 @@ export function WordbookScreen() {
                 {entry.cur ? (
                   <>
                     <div className="wb-sec">精讲 · 用法</div>
-                    {entry.cur.note ? <p className="wb-note">{entry.cur.note}</p> : null}
+                    {entry.cur.note ? (
+                      <p className="wb-note">
+                        {noteSegments(entry.cur.note, entry.cur.see).map((seg, i) =>
+                          seg.link ? (
+                            <button key={i} className="wb-inline" onClick={() => open(seg.link!)}>
+                              {seg.text}
+                            </button>
+                          ) : (
+                            <span key={i}>{seg.text}</span>
+                          ),
+                        )}
+                      </p>
+                    ) : null}
                     {entry.cur.ex?.map(e => (
                       <div className="wb-ex-item wb-ex-cur" key={e.en}>
                         <p className="wb-ex-en">{e.en}</p>
@@ -447,6 +497,17 @@ export function WordbookScreen() {
                       </div>
                     ))}
                   </>
+                ) : null}
+
+                {sameTopic() ? (
+                  <div className="wb-rel">
+                    <div className="wb-rel-row">
+                      <span className="wb-rel-key">同主题 · {sameTopic()!.topic}</span>
+                      {sameTopic()!.words.map(x => (
+                        <button key={x} className="wb-syn-word" onClick={() => open(x)}>{x}</button>
+                      ))}
+                    </div>
+                  </div>
                 ) : null}
 
                 {entry.src?.length ? (

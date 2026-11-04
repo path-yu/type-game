@@ -160,6 +160,37 @@ const mergedPath = path.join(ROOT, 'data/lex-zh/merged.json');
  */
 const curatedPath = path.join(ROOT, 'data/lex-zh/curated.json');
 const CURATED = fs.existsSync(curatedPath) ? JSON.parse(fs.readFileSync(curatedPath, 'utf8')) : {};
+
+/*
+ * 交叉引用：解析的正文里提到别的精讲词时，把它记下来，界面上做成可点的链接。
+ *
+ * 精讲是一整套制度，词与词之间本来互相牵着 —— entail 的解析里说到
+ * settlement、jointure、dower，读者读完一定会想接着看那几个。
+ * 让它们能点，比让他手动去搜一次要省一整个来回。
+ *
+ * 只连精讲词（不是全库），否则中文行文里偶然出现的英文词会到处变成链接。
+ */
+{
+  const terms = Object.keys(CURATED).sort((a, b) => b.length - a.length);
+  const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  for (const [w, v] of Object.entries(CURATED)) {
+    const text = v.note ?? '';
+    if (!text) continue;
+    const hits = [];
+    for (const t of terms) {
+      if (t === w || t.length < 3) continue;
+      // 词界：英文里 \b 对 "pin-money" 这类带连字符的词不好用，单独处理两侧
+      const re = new RegExp(`(^|[^A-Za-z])${esc(t)}([^A-Za-z]|$)`, 'i');
+      if (re.test(text)) hits.push({ t, at: text.toLowerCase().indexOf(t.toLowerCase()) });
+    }
+    if (hits.length) {
+      hits.sort((a, b) => a.at - b.at);
+      v.see = hits.slice(0, 8).map(x => x.t);
+    } else {
+      delete v.see;
+    }
+  }
+}
 const ZH_MERGED = fs.existsSync(mergedPath) ? JSON.parse(fs.readFileSync(mergedPath, 'utf8')) : {};
 delete OV._comment;
 

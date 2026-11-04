@@ -3031,3 +3031,21 @@ input, textarea { font-family: inherit; }
   flex: none; font-style: normal;
   font-family: var(--font-mono); font-size: 10px; color: var(--fg-3);
 }
+
+/* 精讲正文里的交叉引用：看着像文字，点得动，但不打断阅读节奏 */
+.wb-inline {
+  display: inline; padding: 0; margin: 0;
+  font: inherit; color: var(--accent); cursor: pointer;
+  background: none; border: none;
+  border-bottom: 1px dashed color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.wb-inline:hover { border-bottom-style: solid; }
+
+/* 精讲正文里的交叉引用：看着像文字，点得动，但不打断阅读节奏 */
+.wb-inline {
+  display: inline; padding: 0; margin: 0;
+  font: inherit; color: var(--accent); cursor: pointer;
+  background: none; border: none;
+  border-bottom: 1px dashed color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.wb-inline:hover { border-bottom-style: solid; }
