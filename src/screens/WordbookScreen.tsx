@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useGame } from '../lib/store';
+import { useCorpus } from '../lib/CorpusContext';
 import { speak, stopSpeaking } from '../lib/speech';
+import { syncRoute } from '../lib/route';
 
 /**
  * 词库：查词用的，不是"我学过哪些词"那本账簿（那是藏书阁）。
@@ -32,6 +34,7 @@ interface Entry {
   l?: string;                                  // 原形（屈折形式才有）
   senses: Sense[];
   ex?: { t: string; zh?: string; src?: string }[];
+  src?: [string, number][];  // 在哪几本书里出现、各几次
   up?: string[];    // 上位词（WordNet @ 指针）
   opp?: string[];   // 反义词（! 指针）
   forms?: string[];
@@ -50,6 +53,10 @@ export function WordbookScreen() {
    */
   const mastery = useGame(s => s.p.mastery);
   const toggleLex = useGame(s => s.toggleLex);
+  const corpus = useCorpus();
+  const read = useGame(s => s.read);
+  const go = useGame(s => s.go);
+  const [fullBooks, setFullBooks] = useState<Set<string>>(new Set());
   const [onlyLex, setOnlyLex] = useState(false);
 
   const [rows, setRows] = useState<Row[] | null>(null);
@@ -73,6 +80,20 @@ export function WordbookScreen() {
 
   useEffect(() => {
     let alive = true;
+    // 有哪些书能整本读 —— 点"出处"时决定是跳整本还是跳到第一段
+    fetch(`${base}data/full/index.json`)
+      .then(r => (r.ok ? r.json() : { books: {} }))
+      .then((j: { books?: Record<string, { title: string }> }) => {
+        if (alive) setFullBooks(new Set(Object.values(j.books ?? {}).map(b => b.title)));
+      })
+      .catch(() => {});
+    // 有哪些书能整本读 —— 点"出处"时决定是跳整本还是跳到第一段
+    fetch(`${base}data/full/index.json`)
+      .then(r => (r.ok ? r.json() : { books: {} }))
+      .then((j: { books?: Record<string, { title: string }> }) => {
+        if (alive) setFullBooks(new Set(Object.values(j.books ?? {}).map(b => b.title)));
+      })
+      .catch(() => {});
     fetch(`${base}data/lex/index.json`)
       .then(r => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
       .then((j: { rows: Row[] }) => { if (alive) setRows(j.rows); })
@@ -118,6 +139,18 @@ export function WordbookScreen() {
     () => Object.values(mastery).filter(m => m.lex).length,
     [mastery],
   );
+
+  /* 顺着出处跳过去：有整本译文就进整本，否则跳到那本书的第一段 */
+  const jumpToBook = (title: string) => {
+    stopSpeaking();
+    if (fullBooks.has(title)) {
+      syncRoute('library', `full/${title}`);
+      go('library');
+      return;
+    }
+    const first = corpus.articles.find(a => a.s === title);
+    if (first) read(first);
+  };
 
   /* 点词 → 取分片 → 存缓存 */
   const open = (w: string) => {
@@ -326,6 +359,20 @@ export function WordbookScreen() {
                       </div>
                     ) : null}
                   </div>
+                ) : null}
+
+                {entry.src?.length ? (
+                  <>
+                    <div className="wb-sec">我在哪读到过它</div>
+                    <div className="wb-where">
+                      {entry.src.map(([title, n]) => (
+                        <button key={title} className="wb-where-row" onClick={() => jumpToBook(title)}>
+                          <span>{title}</span>
+                          <em>{n} 次</em>
+                        </button>
+                      ))}
+                    </div>
+                  </>
                 ) : null}
 
                 <div className="wb-sec">语料例句</div>

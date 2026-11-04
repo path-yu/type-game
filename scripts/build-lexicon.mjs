@@ -188,6 +188,15 @@ function guessLemma(w) {
 
 const freq = new Map();
 const examples = new Map(); // word → [{ t, zh, src }]
+/* 每个词在哪些书里出现过、各出现几次 —— 查完词能顺着跳到那本书 */
+const srcCount = new Map(); // word → Map(src → count)
+
+function bumpSrc(word, src) {
+  if (!src) return;
+  if (!srcCount.has(word)) srcCount.set(word, new Map());
+  const m = srcCount.get(word);
+  m.set(src, (m.get(src) ?? 0) + 1);
+}
 
 function addExample(word, t, zh, src) {
   if (!examples.has(word)) examples.set(word, []);
@@ -209,14 +218,30 @@ function scanText(text, zhList, src) {
       freq.set(w, (freq.get(w) ?? 0) + 1);
       if (seen.has(w)) continue;
       seen.add(w);
+      bumpSrc(w, src);
       addExample(w, s, zhList?.[i] ?? '', src);
     }
   }
 }
 
 log('扫语料…');
+/*
+ * 书名有两种写法：文章里是书名（"Moby Dick"），全书文件里用的是 slug（moby-dick），
+ * 有些全书文件连 title 字段都没有。不统一就会统计成两本书，
+ * 界面上也会出现 "moby-dick 584 次" 这种不该给读者看的东西。
+ */
+const fullIdx = JSON.parse(fs.readFileSync(path.join(DATA, 'full/index.json'), 'utf8'));
+const BOOK_TITLE = new Map(); // 小写 → 正式书名
+for (const [slug, info] of Object.entries(fullIdx.books ?? {})) {
+  BOOK_TITLE.set(slug.toLowerCase(), info.title);
+  if (info.title) BOOK_TITLE.set(info.title.toLowerCase(), info.title);
+}
+const canonSrc = (x) => (x ? BOOK_TITLE.get(String(x).toLowerCase()) ?? x : x);
+
 const arts = JSON.parse(fs.readFileSync(path.join(DATA, 'articles.json'), 'utf8')).items;
-for (const a of arts) scanText(a.tx, null, a.s);
+// 文章里的书名也登记进来，避免同一本书两种写法
+for (const a of arts) if (a.s) BOOK_TITLE.set(a.s.toLowerCase(), BOOK_TITLE.get(a.s.toLowerCase()) ?? a.s);
+for (const a of arts) scanText(a.tx, null, canonSrc(a.s));
 // 选段没有逐句译文，取整段译文按句切不齐，这里只留原文句
 
 const fullDir = path.join(DATA, 'full');
@@ -224,7 +249,8 @@ for (const f of fs.readdirSync(fullDir).filter(x => x.endsWith('.json') && x !==
   const j = JSON.parse(fs.readFileSync(path.join(fullDir, f), 'utf8'));
   const en = j.en ?? j.src ?? [];
   const zh = j.tr ?? [];
-  for (let i = 0; i < en.length; i++) addExampleRow(en[i], zh[i], j.title ?? f.replace('.json', ''));
+  const title = canonSrc(f.replace(/\.json$/, ''));
+  for (let i = 0; i < en.length; i++) addExampleRow(en[i], zh[i], title);
 }
 function addExampleRow(t, zh, src) {
   const s = String(t).trim();
@@ -236,12 +262,21 @@ function addExampleRow(t, zh, src) {
     freq.set(w, (freq.get(w) ?? 0) + 1);
     if (seen.has(w)) continue;
     seen.add(w);
+    bumpSrc(w, src);
     addExample(w, s, zh ?? '', src);
   }
 }
 log(`语料 ${freq.size} 个词形，有例句的 ${examples.size} 个`);
 
 /* ---------------- 3. 组词条 ---------------- */
+
+/** 这个词在哪几本书里出现得最多，最多 4 本 */
+function srcRank(w) {
+  const m = srcCount.get(w);
+  if (!m) return {};
+  const top = [...m].sort((a, b) => b[1] - a[1]).slice(0, 4);
+  return top.length ? { src: top } : {};
+}
 
 const POS_ORDER = { n: 0, v: 1, a: 2, r: 3 };
 const words = [...freq.keys()].sort();
@@ -366,6 +401,7 @@ for (const w of words) {
       f: freq.get(w) ?? 0,
       senses: list,
       ...(ex.length ? { ex } : {}),
+      ...srcRank(w),
     };
     withSense++;
     if (ex.length) withEx++;
@@ -420,6 +456,7 @@ for (const w of words) {
     ...(base !== w ? { l: base } : {}),
     senses: list,
     ...(ex.length ? { ex } : {}),
+    ...srcRank(w),
     ...relOf(senses),
     ...(lemmaFile.detail?.[base]?.forms ? { forms: lemmaFile.detail[base].forms } : {}),
   };
