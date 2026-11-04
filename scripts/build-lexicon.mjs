@@ -118,7 +118,13 @@ log(`WordNet 合计 ${wn.size} 词`);
  * mother 的第一条会变成「灵感来源」，全乱。
  * index.noun 每行末尾那串偏移就是按词频排好的义项顺序。
  */
-const order = new Map(); // "pos:offset" → 名词内的序号
+/*
+ * 顺序必须按「词」分开存。
+ * 同一个 synset 会被好几个词共享（hand / helping hand / mite …），
+ * 用 "pos:offset" 做键的话，后写的词会把前一个词的序号覆盖掉 ——
+ * 结果 hand 的第一条变成了「帮手」，因为那条来自 helping hand 的词频序。
+ */
+const order = new Map(); // word → Map("pos:offset" → 序号)
 for (const [file, pos] of [['index.noun', 'n'], ['index.verb', 'v'], ['index.adj', 'a'], ['index.adv', 'r']]) {
   let text = '';
   try { text = fs.readFileSync(path.join(WN, file), 'utf8'); } catch { continue; }
@@ -129,7 +135,10 @@ for (const [file, pos] of [['index.noun', 'n'], ['index.verb', 'v'], ['index.adj
     const cnt = Number(t[2]);
     if (!['n', 'v', 'a', 'r'].includes(t[1]) || !Number.isFinite(cnt) || cnt <= 0) continue;
     const offs = t.slice(-cnt);
-    offs.forEach((o, i) => order.set(`${pos}:${o}`, i));
+    const lemma = t[0].toLowerCase();
+    if (!order.has(lemma)) order.set(lemma, new Map());
+    const m = order.get(lemma);
+    offs.forEach((o, i) => m.set(`${pos}:${o}`, i));
   }
 }
 log(`义项顺序索引 ${order.size} 条`);
@@ -259,13 +268,16 @@ for (const w of words) {
    * 原形义项排前面（读者查 said 要的是 say），词形自己的义项接在后面。
    */
   /* 按 WordNet 的词频义序排，最常用的义项排第一 */
-  const bySenseOrder = (arr) => arr
-    .map((x, i) => ({ x, r: order.get(`${x.p}:${x.o}`) ?? 999 + i }))
-    .sort((a, b) => a.r - b.r)
-    .map(v => v.x);
-  let senses = bySenseOrder(pick(wn.get(w)));
+  const bySenseOrder = (arr, key) => {
+    const m = order.get(key);
+    return arr
+      .map((x, i) => ({ x, r: m?.get(`${x.p}:${x.o}`) ?? 999 + i }))
+      .sort((a, b) => a.r - b.r)
+      .map(v => v.x);
+  };
+  let senses = bySenseOrder(pick(wn.get(w)), w);
   if (w !== base && wn.has(base)) {
-    const bs = bySenseOrder(pick(wn.get(base)));
+    const bs = bySenseOrder(pick(wn.get(base)), base);
     senses = [...bs, ...senses];
     /*
      * 屈折形式优先给动词义。
