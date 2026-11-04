@@ -1,0 +1,806 @@
+[
+ {
+  "w": "exactly",
+  "f": 195,
+  "senses": [
+   {
+    "p": "r",
+    "d": "indicating exactness or preciseness--Thomas Carlyle"
+   },
+   {
+    "p": "r",
+    "d": "just as it should be"
+   },
+   {
+    "p": "r",
+    "d": "in a precise manner"
+   }
+  ]
+ },
+ {
+  "w": "impossible",
+  "f": 195,
+  "senses": [
+   {
+    "p": "n",
+    "d": "something that cannot be done"
+   },
+   {
+    "p": "a",
+    "d": "not capable of occurring or being accomplished or dealt with"
+   },
+   {
+    "p": "a",
+    "d": "totally unlikely"
+   },
+   {
+    "p": "a",
+    "d": "(used of persons or their behavior) not acceptable or reasonable"
+   }
+  ]
+ },
+ {
+  "w": "sky",
+  "f": 191,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the atmosphere and outer space as viewed from the earth"
+   },
+   {
+    "p": "v",
+    "d": "throw or toss with a light motion"
+   }
+  ]
+ },
+ {
+  "w": "flowers",
+  "f": 190,
+  "senses": [
+   {
+    "p": "v",
+    "d": "produce or yield flowers"
+   },
+   {
+    "p": "n",
+    "d": "a plant cultivated for its blooms or blossoms"
+   },
+   {
+    "p": "n",
+    "d": "reproductive organ of angiosperm plants especially one having showy or colorful parts"
+   },
+   {
+    "p": "n",
+    "d": "the period of greatest prosperity or productivity"
+   }
+  ]
+ },
+ {
+  "w": "remained",
+  "f": 190,
+  "senses": [
+   {
+    "p": "v",
+    "d": "stay the same; remain in a certain state"
+   },
+   {
+    "p": "v",
+    "d": "continue in a place, position, or situation"
+   },
+   {
+    "p": "v",
+    "d": "be left; of persons, questions, problems, results, evidence, etc."
+   },
+   {
+    "p": "v",
+    "d": "stay behind"
+   }
+  ]
+ },
+ {
+  "w": "simply",
+  "f": 188,
+  "senses": [
+   {
+    "p": "r",
+    "d": "and nothing more"
+   },
+   {
+    "p": "r",
+    "d": "(used for emphasis) absolutely"
+   },
+   {
+    "p": "r",
+    "d": "absolutely; altogether; really"
+   },
+   {
+    "p": "r",
+    "d": "in a simple manner; without extravagance or embellishment"
+   }
+  ]
+ },
+ {
+  "w": "whispered",
+  "f": 187,
+  "senses": [
+   {
+    "p": "v",
+    "d": "speak softly; in a low voice"
+   },
+   {
+    "p": "n",
+    "d": "speaking softly without vibration of the vocal cords"
+   },
+   {
+    "p": "n",
+    "d": "a light noise, like the noise of silk clothing or leaves blowing in the wind"
+   },
+   {
+    "p": "a",
+    "d": "spoken in soft hushed tones without vibrations of the vocal cords"
+   }
+  ]
+ },
+ {
+  "w": "thousand",
+  "f": 185,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the cardinal number that is the product of 10 and 100"
+   },
+   {
+    "p": "a",
+    "d": "denoting a quantity consisting of 1,000 items or units"
+   }
+  ]
+ },
+ {
+  "w": "clothes",
+  "f": 183,
+  "senses": [
+   {
+    "p": "n",
+    "d": "clothing in general"
+   }
+  ]
+ },
+ {
+  "w": "danger",
+  "f": 182,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the condition of being susceptible to harm or injury"
+   },
+   {
+    "p": "n",
+    "d": "a venture undertaken without regard to possible loss or injury"
+   },
+   {
+    "p": "n",
+    "d": "a cause of pain or injury or loss"
+   },
+   {
+    "p": "n",
+    "d": "a dangerous place"
+   }
+  ]
+ },
+ {
+  "w": "below",
+  "f": 180,
+  "senses": [
+   {
+    "p": "r",
+    "d": "in or to a place that is lower"
+   },
+   {
+    "p": "r",
+    "d": "(in writing) at a later place"
+   },
+   {
+    "p": "r",
+    "d": "on a floor below"
+   },
+   {
+    "p": "r",
+    "d": "further down"
+   }
+  ]
+ },
+ {
+  "w": "nobody",
+  "f": 179,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a person of no influence"
+   }
+  ]
+ },
+ {
+  "w": "art",
+  "f": 178,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the products of human creativity; works of art collectively"
+   },
+   {
+    "p": "n",
+    "d": "the creation of beautiful or significant things"
+   },
+   {
+    "p": "n",
+    "d": "a superior skill that you can learn by study and practice and observation"
+   },
+   {
+    "p": "n",
+    "d": "photographs or other visual representations in a printed publication"
+   }
+  ]
+ },
+ {
+  "w": "curious",
+  "f": 178,
+  "senses": [
+   {
+    "p": "a",
+    "d": "beyond or deviating from the usual or expected"
+   },
+   {
+    "p": "a",
+    "d": "eager to investigate and learn or learn more (sometimes about others' concerns)"
+   }
+  ]
+ },
+ {
+  "w": "sudden",
+  "f": 178,
+  "senses": [
+   {
+    "p": "a",
+    "d": "happening without warning or in a short space of time"
+   }
+  ]
+ },
+ {
+  "w": "darling",
+  "f": 176,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a special loved one"
+   },
+   {
+    "p": "a",
+    "d": "dearly loved"
+   }
+  ]
+ },
+ {
+  "w": "thoughts",
+  "f": 174,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the content of cognition; the main thing you are thinking about"
+   },
+   {
+    "p": "n",
+    "d": "the process of using your mind to consider something carefully"
+   },
+   {
+    "p": "n",
+    "d": "the organized beliefs of a period or group or individual"
+   },
+   {
+    "p": "n",
+    "d": "a personal belief or judgment that is not founded on proof or certainty"
+   }
+  ]
+ },
+ {
+  "w": "basil",
+  "f": 173,
+  "senses": [
+   {
+    "p": "n",
+    "d": "any of several Old World tropical aromatic annual or perennial herbs of the genus Ocimum"
+   },
+   {
+    "p": "n",
+    "d": "leaves of the common basil; used fresh or dried"
+   }
+  ]
+ },
+ {
+  "w": "surprised",
+  "f": 170,
+  "senses": [
+   {
+    "p": "a",
+    "d": "taken unawares or suddenly and feeling wonder or astonishment"
+   }
+  ]
+ },
+ {
+  "w": "exclaimed",
+  "f": 169,
+  "senses": [
+   {
+    "p": "v",
+    "d": "utter aloud; often with surprise, horror, or joy"
+   },
+   {
+    "p": "v",
+    "d": "state or announce"
+   }
+  ]
+ },
+ {
+  "w": "journey",
+  "f": 169,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the act of traveling from one place to another"
+   },
+   {
+    "p": "v",
+    "d": "undertake a journey or trip"
+   },
+   {
+    "p": "v",
+    "d": "travel upon or across"
+   }
+  ]
+ },
+ {
+  "w": "ladies",
+  "f": 169,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a polite name for any woman"
+   },
+   {
+    "p": "n",
+    "d": "a woman of refinement"
+   }
+  ]
+ },
+ {
+  "w": "afterwards",
+  "f": 168,
+  "senses": [
+   {
+    "p": "r",
+    "d": "happening at a time subsequent to a reference time"
+   }
+  ]
+ },
+ {
+  "w": "immediately",
+  "f": 168,
+  "senses": [
+   {
+    "p": "r",
+    "d": "without delay or hesitation; with no time intervening"
+   },
+   {
+    "p": "r",
+    "d": "near or close by"
+   },
+   {
+    "p": "r",
+    "d": "bearing an immediate relation"
+   }
+  ]
+ },
+ {
+  "w": "written",
+  "f": 168,
+  "senses": [
+   {
+    "p": "a",
+    "d": "set down in writing in any of various ways"
+   },
+   {
+    "p": "a",
+    "d": "systematically collected and written down"
+   },
+   {
+    "p": "a",
+    "d": "written as for a film or play or broadcast"
+   }
+  ]
+ },
+ {
+  "w": "seven",
+  "f": 167,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the cardinal number that is the sum of six and one"
+   },
+   {
+    "p": "a",
+    "d": "being one more than six"
+   },
+   {
+    "p": "n",
+    "d": "one of four playing cards in a deck with seven pips on the face"
+   }
+  ]
+ },
+ {
+  "w": "walking",
+  "f": 167,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the act of traveling by foot"
+   },
+   {
+    "p": "a",
+    "d": "close enough to be walked to"
+   }
+  ]
+ },
+ {
+  "w": "em",
+  "f": 166,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a quad with a square body"
+   },
+   {
+    "p": "n",
+    "d": "a linear unit (1/6 inch) used in printing"
+   }
+  ]
+ },
+ {
+  "w": "whales",
+  "f": 165,
+  "senses": [
+   {
+    "p": "v",
+    "d": "hunt for whales"
+   },
+   {
+    "p": "n",
+    "d": "a very large person; impressive in size or qualities"
+   },
+   {
+    "p": "n",
+    "d": "any of the larger cetacean mammals having a streamlined body and breathing through a blowhole on the head"
+   }
+  ]
+ },
+ {
+  "w": "happiness",
+  "f": 164,
+  "senses": [
+   {
+    "p": "n",
+    "d": "state of well-being characterized by emotions ranging from contentment to intense joy"
+   },
+   {
+    "p": "n",
+    "d": "emotions experienced when in a state of well-being"
+   }
+  ]
+ },
+ {
+  "w": "joy",
+  "f": 163,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the emotion of great happiness"
+   },
+   {
+    "p": "v",
+    "d": "feel happiness or joy"
+   },
+   {
+    "p": "n",
+    "d": "something or someone that provides a source of happiness"
+   },
+   {
+    "p": "v",
+    "d": "make glad or happy"
+   }
+  ]
+ },
+ {
+  "w": "expected",
+  "f": 162,
+  "senses": [
+   {
+    "p": "a",
+    "d": "considered likely or probable to happen or arrive"
+   }
+  ]
+ },
+ {
+  "w": "frightened",
+  "f": 161,
+  "senses": [
+   {
+    "p": "a",
+    "d": "made afraid"
+   },
+   {
+    "p": "a",
+    "d": "thrown into a state of intense fear or desperation"
+   }
+  ]
+ },
+ {
+  "w": "months",
+  "f": 161,
+  "senses": [
+   {
+    "p": "n",
+    "d": "one of the twelve divisions of the calendar year"
+   },
+   {
+    "p": "n",
+    "d": "a time unit of approximately 30 days"
+   }
+  ]
+ },
+ {
+  "w": "pleased",
+  "f": 161,
+  "senses": [
+   {
+    "p": "a",
+    "d": "experiencing or manifesting pleasure"
+   },
+   {
+    "p": "a",
+    "d": "feeling pleasurable satisfaction over something by which you measures your self-worth"
+   }
+  ]
+ },
+ {
+  "w": "island",
+  "f": 159,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a land mass (smaller than a continent) that is surrounded by water"
+   },
+   {
+    "p": "n",
+    "d": "a zone or area resembling an island"
+   }
+  ]
+ },
+ {
+  "w": "summer",
+  "f": 159,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the warmest season of the year; in the northern hemisphere it extends from the summer solstice to the autumnal equinox"
+   },
+   {
+    "p": "v",
+    "d": "spend the summer"
+   },
+   {
+    "p": "n",
+    "d": "the period of finest development, happiness, or beauty"
+   }
+  ]
+ },
+ {
+  "w": "pray",
+  "f": 158,
+  "senses": [
+   {
+    "p": "v",
+    "d": "address a deity, a prophet, a saint or an object of worship; say a prayer"
+   },
+   {
+    "p": "v",
+    "d": "call upon in supplication; entreat"
+   }
+  ]
+ },
+ {
+  "w": "easily",
+  "f": 157,
+  "senses": [
+   {
+    "p": "r",
+    "d": "with ease (`easy' is sometimes used informally for `easily')"
+   },
+   {
+    "p": "r",
+    "d": "without question"
+   },
+   {
+    "p": "r",
+    "d": "indicating high probability; in all likelihood"
+   }
+  ]
+ },
+ {
+  "w": "forth",
+  "f": 157,
+  "senses": [
+   {
+    "p": "r",
+    "d": "from a particular thing or place or position (`forth' is obsolete)"
+   },
+   {
+    "p": "r",
+    "d": "forward in time or order or degree"
+   },
+   {
+    "p": "r",
+    "d": "out into view"
+   }
+  ]
+ },
+ {
+  "w": "gentlemen",
+  "f": 155,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a man of refinement"
+   },
+   {
+    "p": "n",
+    "d": "a manservant who acts as a personal attendant to his employer"
+   }
+  ]
+ },
+ {
+  "w": "interesting",
+  "f": 155,
+  "senses": [
+   {
+    "p": "a",
+    "d": "arousing or holding the attention"
+   }
+  ]
+ },
+ {
+  "w": "proud",
+  "f": 155,
+  "senses": [
+   {
+    "p": "a",
+    "d": "feeling self-respect or pleasure in something by which you measure your self-worth; or being a reason for pride"
+   },
+   {
+    "p": "a",
+    "d": "having or displaying great dignity or nobility"
+   }
+  ]
+ },
+ {
+  "w": "splendid",
+  "f": 155,
+  "senses": [
+   {
+    "p": "a",
+    "d": "having great beauty and splendor"
+   },
+   {
+    "p": "a",
+    "d": "very good; of the highest quality"
+   },
+   {
+    "p": "a",
+    "d": "characterized by grandeur"
+   }
+  ]
+ },
+ {
+  "w": "animals",
+  "f": 154,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a living organism characterized by voluntary movement"
+   },
+   {
+    "p": "a",
+    "d": "marked by the appetites and passions of the body"
+   }
+  ]
+ },
+ {
+  "w": "raised",
+  "f": 153,
+  "senses": [
+   {
+    "p": "a",
+    "d": "located or moved above the surround or above the normal position"
+   },
+   {
+    "p": "a",
+    "d": "embellished with a raised pattern created by pressure or embroidery"
+   },
+   {
+    "p": "a",
+    "d": "increased in amount or degree"
+   }
+  ]
+ },
+ {
+  "w": "worth",
+  "f": 153,
+  "senses": [
+   {
+    "p": "n",
+    "d": "an indefinite quantity of something having a specified value"
+   },
+   {
+    "p": "a",
+    "d": "(often used ironically) worthy of being treated in a particular way"
+   },
+   {
+    "p": "n",
+    "d": "the quality that renders something desirable or valuable or useful"
+   },
+   {
+    "p": "a",
+    "d": "having a specified value"
+   }
+  ]
+ },
+ {
+  "w": "probably",
+  "f": 152,
+  "senses": [
+   {
+    "p": "r",
+    "d": "with considerable certainty; without much doubt"
+   },
+   {
+    "p": "r",
+    "d": "easy to believe on the basis of available evidence"
+   }
+  ]
+ },
+ {
+  "w": "holding",
+  "f": 151,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the act of retaining something"
+   },
+   {
+    "p": "n",
+    "d": "something owned; any tangible or intangible possession that is owned by someone"
+   }
+  ]
+ },
+ {
+  "w": "entirely",
+  "f": 150,
+  "senses": [
+   {
+    "p": "r",
+    "d": "to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')"
+   },
+   {
+    "p": "r",
+    "d": "without any others being included or involved"
+   }
+  ]
+ }
+]
