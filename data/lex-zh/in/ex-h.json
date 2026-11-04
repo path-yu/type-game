@@ -1,0 +1,322 @@
+{
+  "audit": {
+    "zh": "审计；旁听",
+    "note": "财务「审计」与教育「旁听」（美式）共用一个词；auditor 是审计师。区别 inspection——那是现场检查，audit 是查账与合规。",
+    "ex": [
+      { "en": "The accounts were audited twice last year.", "zh": "去年账目审了两次。" },
+      { "en": "She audited the course without taking the exam.", "zh": "她旁听了这门课，没参加考试。" }
+    ]
+  },
+  "backlog": {
+    "zh": "积压（的活）",
+    "note": "指该做而未做的一堆：订单积压、案件积压、邮件积压。常用 a backlog of sth。",
+    "ex": [
+      { "en": "The backlog of cases runs to three years.", "zh": "积压的案件排到了三年后。" },
+      { "en": "Clear the backlog before taking new orders.", "zh": "清完积压再接新单。" }
+    ]
+  },
+  "baffle": {
+    "zh": "使困惑；挡板",
+    "note": "比 confuse 更强调「想不通、解不开」；名词是机械与音响里的挡板、隔音板。",
+    "ex": [
+      { "en": "The results baffled the researchers.", "zh": "结果让研究者摸不着头脑。" },
+      { "en": "The baffle directs air away from the sensor.", "zh": "挡板把气流引开传感器。" }
+    ]
+  },
+  "broaden": {
+    "zh": "拓宽、扩大",
+    "note": "及物不及物都行：broaden the course、the road broadens。区别 widen——那是物理变宽，broaden 多用于抽象范围。",
+    "ex": [
+      { "en": "She broadened the course to include film.", "zh": "她把课程范围扩到了电影。" },
+      { "en": "Travel broadens the mind.", "zh": "旅行开阔眼界。" }
+    ]
+  },
+  "catalog": {
+    "zh": "目录；编目",
+    "note": "美式 catalog、英式 catalogue。商品目录、图书馆目录、一连串事件（a catalog of failures）都用它。",
+    "ex": [
+      { "en": "The catalog lists every title in print.", "zh": "目录列出了所有在印的书。" },
+      { "en": "They cataloged the archive in a year.", "zh": "他们一年内把档案编了目。" }
+    ]
+  },
+  "censor": {
+    "zh": "审查、删剪；审查员",
+    "note": "小心 censure（谴责）——两个词长得像，意思不同，都是正式用语。censor 针对内容，censure 针对人。",
+    "ex": [
+      { "en": "The film was censored before release.", "zh": "影片上映前被删剪过。" },
+      { "en": "The letter was heavily censored by the prison.", "zh": "这封信被监狱大量删改。" }
+    ]
+  },
+  "clone": {
+    "zh": "克隆；复制品",
+    "note": "生物克隆、技术复制（克隆硬盘/仓库）、产品翻版都用它。区别 copy：clone 强调一模一样，连缺陷都照搬。",
+    "ex": [
+      { "en": "The drive was cloned to a larger disk.", "zh": "硬盘被克隆到了更大的盘上。" },
+      { "en": "The app is a clone of a popular tool.", "zh": "这个应用是某个热门工具的翻版。" }
+    ]
+  },
+  "concoct": {
+    "zh": "调制；编造",
+    "note": "两层：随手拼凑着调（汤、酱、饮料），带点「凑合」的意味；编（借口、故事），带贬义。",
+    "ex": [
+      { "en": "She concocted a sauce from what was left.", "zh": "她用剩下的东西调了个酱。" },
+      { "en": "He concocted an excuse on the spot.", "zh": "他当场编了个借口。" }
+    ]
+  },
+  "converge": {
+    "zh": "汇聚；趋于一致",
+    "note": "反义 diverge（分岔、分歧）。数学里的「收敛」也是它，名词 convergence。",
+    "ex": [
+      { "en": "The two roads converge at the bridge.", "zh": "两条路在桥那里汇合。" },
+      { "en": "Their views converged after the meeting.", "zh": "会后他们的看法趋于一致。" }
+    ]
+  },
+  "corporate": {
+    "zh": "公司的；法人的",
+    "note": "强调「作为法人的公司整体」：corporate culture、corporate hospitality。别和 corporeal（肉体的）混。",
+    "ex": [
+      { "en": "Corporate hospitality is under scrutiny.", "zh": "商务招待正在接受审查。" },
+      { "en": "The brand has a separate corporate identity.", "zh": "这个品牌有独立的企业形象。" }
+    ]
+  },
+  "correlate": {
+    "zh": "相关联",
+    "note": "搭配 correlate with。统计上的老话：相关不等于因果（correlation is not causation）。名词 correlation。",
+    "ex": [
+      { "en": "Income correlates with years of schooling.", "zh": "收入与受教育年限相关。" },
+      { "en": "The two series correlate closely.", "zh": "这两组数据高度相关。" }
+    ]
+  },
+  "dabble": {
+    "zh": "涉猎、浅尝",
+    "note": "带轻贬义，指不认真地试，搭配 dabble in。原义是「戏水」。",
+    "ex": [
+      { "en": "He dabbled in painting before law school.", "zh": "上法学院之前他玩过一阵画。" },
+      { "en": "Do not dabble: either commit or stay out.", "zh": "别浅尝辄止：要么投入，要么别碰。" }
+    ]
+  },
+  "deepen": {
+    "zh": "加深",
+    "note": "抽象的危机、关系、理解与物理的河道、井都能用。注意 deep 是形容词，动词要加 -en。",
+    "ex": [
+      { "en": "The recession deepened in the second quarter.", "zh": "衰退在第二季度加深了。" },
+      { "en": "They deepened the well by ten metres.", "zh": "他们把井挖深了十米。" }
+    ]
+  },
+  "decouple": {
+    "zh": "脱钩、解耦",
+    "note": "政策「脱钩」（补贴与产量脱钩）、工程「解耦」（界面与数据层）。反义 couple，名词 decoupling。",
+    "ex": [
+      { "en": "The subsidy was decoupled from production.", "zh": "补贴与产量脱钩了。" },
+      { "en": "Decouple the interface from the data layer.", "zh": "把界面和数据层解耦。" }
+    ]
+  },
+  "discard": {
+    "zh": "丢弃；弃用",
+    "note": "比 throw away 正式，也可指抛弃人、方案；名词是「废弃之物」。",
+    "ex": [
+      { "en": "Discard any produce past its date.", "zh": "过期食品一律丢掉。" },
+      { "en": "He was discarded after two seasons.", "zh": "两个赛季之后他就不用了。" }
+    ]
+  },
+  "displace": {
+    "zh": "取代；迫使离开",
+    "note": "两层：技术或岗位「取代」、人「被迫迁离」（displaced persons）。名词 displacement 还指排量与位移。",
+    "ex": [
+      { "en": "Email displaced the fax within a decade.", "zh": "十年之内电子邮件取代了传真。" },
+      { "en": "The war displaced two million people.", "zh": "战争让两百万人流离失所。" }
+    ]
+  },
+  "divest": {
+    "zh": "剥离（资产）；脱去",
+    "note": "金融上是撤资、剥离（divest from fossil fuels），也指脱去衣物或权力。反义 invest。",
+    "ex": [
+      { "en": "The group divested its chemical division.", "zh": "集团剥离了化工业务。" },
+      { "en": "He divested himself of all shares.", "zh": "他把手上的股份全部出手了。" }
+    ]
+  },
+  "drench": {
+    "zh": "浸透",
+    "note": "比 wet 强烈得多，常说 be drenched in/with：被雨浇透、被酱汁浸满。",
+    "ex": [
+      { "en": "The field was drenched by two days of rain.", "zh": "田地被两天的雨浇透了。" },
+      { "en": "He drenched the salad in dressing.", "zh": "他把沙拉浇满了酱汁。" }
+    ]
+  },
+  "edit": {
+    "zh": "编辑；剪辑",
+    "note": "文字编辑、影像剪辑、改代码都用它；名词 an edit 是「一版修改」。别混 editor（编辑）与 edition（版本）。",
+    "ex": [
+      { "en": "She edits the weekend edition.", "zh": "她编周末版。" },
+      { "en": "The film was edited down to ninety minutes.", "zh": "影片被剪到九十分钟。" }
+    ]
+  },
+  "eject": {
+    "zh": "弹出；驱逐",
+    "note": "机器弹出（光盘、磁带）、法律驱逐、飞机弹射（ejector seat）都用它。名词 ejection。",
+    "ex": [
+      { "en": "Press the key to eject the disc.", "zh": "按键弹出光盘。" },
+      { "en": "The tenant was ejected for non-payment.", "zh": "房客因欠租被赶走。" }
+    ]
+  },
+  "enclose": {
+    "zh": "围住；随信附上",
+    "note": "物理围合与信里附件都用它。名词 enclosure 既是「围场」，也是「附件」。",
+    "ex": [
+      { "en": "The garden is enclosed by a low wall.", "zh": "花园被一道矮墙围着。" },
+      { "en": "Please enclose a copy of your ID.", "zh": "请随信附上身份证复印件。" }
+    ]
+  },
+  "endorse": {
+    "zh": "支持、背书；代言",
+    "note": "政治支持、明星代言（endorsement）、票据背面签字三义。反义 oppose。",
+    "ex": [
+      { "en": "Two former presidents endorsed the plan.", "zh": "两位前总统支持这项计划。" },
+      { "en": "The cheque must be endorsed before deposit.", "zh": "支票存之前要在背面签字。" }
+    ]
+  },
+  "excavate": {
+    "zh": "挖掘、发掘",
+    "note": "考古发掘、工程开挖都用它；名词 excavation 还指「坑、发掘现场」。",
+    "ex": [
+      { "en": "The site was excavated in the 1930s.", "zh": "这个遗址在三十年代被发掘。" },
+      { "en": "They excavated two metres of soil.", "zh": "他们挖掉了两米厚的土。" }
+    ]
+  },
+  "funnel": {
+    "zh": "漏斗；使汇聚",
+    "note": "名词是漏斗与烟囱，动词是把人流、资金、信息「导进一个口」，常用被动 be funnelled into。",
+    "ex": [
+      { "en": "Use a funnel to fill the tank.", "zh": "用漏斗往油箱里加。" },
+      { "en": "Traffic is funnelled into one lane.", "zh": "车流被导入一条车道。" }
+    ]
+  },
+  "garner": {
+    "zh": "获得（支持、注意）",
+    "note": "正式书面，宾语多是 support / attention / votes / praise；奖项用 win，不用 garner。",
+    "ex": [
+      { "en": "The proposal garnered little support.", "zh": "这项提议没得到多少支持。" },
+      { "en": "She garnered praise for the report.", "zh": "她因这份报告赢得了赞誉。" }
+    ]
+  },
+  "highlight": {
+    "zh": "强调、标出；亮点",
+    "note": "动词是强调或高亮，名词是「最精彩的部分」。荧光笔是 highlighter，不是 highlight。",
+    "ex": [
+      { "en": "The report highlights three risks.", "zh": "报告强调了三个风险。" },
+      { "en": "The highlight of the trip was the ferry.", "zh": "这趟旅行的亮点是坐渡船。" }
+    ]
+  },
+  "hybrid": {
+    "zh": "混合（的）；混动车",
+    "note": "生物杂交、汽车混动、混合办公（hybrid work）、混合式课程都用它。",
+    "ex": [
+      { "en": "The car is a hybrid, not electric.", "zh": "这车是混动，不是纯电。" },
+      { "en": "The course is a hybrid of lectures and labs.", "zh": "这门课是讲授与实验的混合。" }
+    ]
+  },
+  "inhibit": {
+    "zh": "抑制、阻碍",
+    "note": "心理抑制、生化抑制、行为拘束（feel inhibited）都用它。区别 prohibit——那是明令禁止，inhibit 是把东西压住。",
+    "ex": [
+      { "en": "Cold inhibits the reaction.", "zh": "低温会抑制这个反应。" },
+      { "en": "Fear of failure inhibits many students.", "zh": "怕失败让很多学生放不开。" }
+    ]
+  },
+  "integrate": {
+    "zh": "整合；融入",
+    "note": "技术集成、社会融合（integrate into）、数学积分都用它。名词 integration，反义 segregate。",
+    "ex": [
+      { "en": "The two systems were integrated last spring.", "zh": "两套系统去年春天整合了。" },
+      { "en": "New arrivals integrated quickly into the town.", "zh": "新来的人很快融进了镇子。" }
+    ]
+  },
+  "isolate": {
+    "zh": "隔离；分离出",
+    "note": "医学隔离、社会孤立、实验分离（isolate a gene）三义；形容词 isolated 常指「偏远的、孤立的」。",
+    "ex": [
+      { "en": "The patient was isolated for a week.", "zh": "病人被隔离了一周。" },
+      { "en": "They isolated the compound from the bark.", "zh": "他们从树皮里分离出了这种化合物。" }
+    ]
+  },
+  "levy": {
+    "zh": "征收（税、费）",
+    "note": "名动同形，读 /ˈlevi/。搭配 levy a tax on sth；比 impose 更具体到「按项征收」。",
+    "ex": [
+      { "en": "The city levies a tax on empty homes.", "zh": "市里对空置房征税。" },
+      { "en": "A levy on sugary drinks was proposed.", "zh": "有人提议对含糖饮料征税。" }
+    ]
+  },
+  "lobby": {
+    "zh": "游说；门厅",
+    "note": "三义：游说（动词，也可作名词 the farm lobby）、酒店大堂、剧院休息厅。游说者是 lobbyist。",
+    "ex": [
+      { "en": "Farmers lobbied hard against the bill.", "zh": "农民大力游说反对这项法案。" },
+      { "en": "We met in the hotel lobby.", "zh": "我们在酒店大堂见的面。" }
+    ]
+  },
+  "marginal": {
+    "zh": "边缘的；微小的；边际的",
+    "note": "经济上的边际（marginal cost）、政治的边缘席位、口语的「微不足道」都是它。名词 margin 是页边、利润、差距。",
+    "ex": [
+      { "en": "The change was marginal, barely noticeable.", "zh": "变化很小，几乎看不出来。" },
+      { "en": "Marginal seats decided the election.", "zh": "边缘选区决定了这次选举。" }
+    ]
+  },
+  "mediate": {
+    "zh": "调解",
+    "note": "搭配 mediate between A and B、mediate a dispute。区别 arbitrate：仲裁是「裁决」，调解是「促成协议」。名词 mediation。",
+    "ex": [
+      { "en": "A third party mediated the dispute.", "zh": "第三方调解了这场纠纷。" },
+      { "en": "The UN mediated between the two sides.", "zh": "联合国在双方之间斡旋。" }
+    ]
+  },
+  "pinpoint": {
+    "zh": "精确定位；极精确的",
+    "note": "本义「针尖」，动词是精确定位问题或位置，形容词是「精确到点的」。",
+    "ex": [
+      { "en": "They pinpointed the leak within an hour.", "zh": "他们一小时内就定位了漏点。" },
+      { "en": "We need pinpoint accuracy for this measurement.", "zh": "这个测量需要极高精度。" }
+    ]
+  },
+  "pragmatic": {
+    "zh": "务实的",
+    "note": "常与 principled、idealistic 对举；名词 pragmatism。区别 practical：pragmatic 更带「就事论事、不讲主义」的判断色彩。",
+    "ex": [
+      { "en": "She took a pragmatic view of the delay.", "zh": "她对延误持务实的态度。" },
+      { "en": "The policy is pragmatic rather than principled.", "zh": "这项政策讲实用，不讲原则。" }
+    ]
+  },
+  "premise": {
+    "zh": "前提；（复数）场地",
+    "note": "单数是「前提」，复数 premises 指房屋与场地——同一个词两个完全不同的意思，看单复数。",
+    "ex": [
+      { "en": "The argument rests on a false premise.", "zh": "这个论证建立在一个错误的前提上。" },
+      { "en": "Smoking is not allowed on the premises.", "zh": "场内禁止吸烟。" }
+    ]
+  },
+  "retrieve": {
+    "zh": "取回；检索",
+    "note": "计算机里的「检索、读取」，日常的「取回」，也指挽回局面（retrieve a situation）。名词 retrieval。",
+    "ex": [
+      { "en": "She retrieved the file from the archive.", "zh": "她从档案里取回了文件。" },
+      { "en": "The dog retrieved the stick.", "zh": "狗把棍子叼了回来。" }
+    ]
+  },
+  "rupture": {
+    "zh": "破裂",
+    "note": "医学的（疝、阑尾）破裂、工程的断裂、关系的决裂都用它，比 break 正式。",
+    "ex": [
+      { "en": "The pipeline ruptured near the junction.", "zh": "管道在接口附近破裂了。" },
+      { "en": "The talks ended in a rupture between the two parties.", "zh": "谈判以两方决裂告终。" }
+    ]
+  },
+  "versatile": {
+    "zh": "多才多艺的；多用途的",
+    "note": "人和物都能用，名词 versatility。别和 volatile（易变的、挥发性的）混——两个词长得很像。",
+    "ex": [
+      { "en": "She is a versatile musician.", "zh": "她是个多面手音乐家。" },
+      { "en": "The tool is versatile enough for both jobs.", "zh": "这件工具两种活都能干。" }
+    ]
+  }
+}

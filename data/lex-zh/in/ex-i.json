@@ -1,0 +1,322 @@
+{
+  "diverge": {
+    "zh": "分岔；产生分歧",
+    "note": "反义 converge；搭配 diverge from（偏离路线、偏离标准）。名词 divergence，数学里是「发散」。",
+    "ex": [
+      { "en": "The path diverges after the bridge.", "zh": "过了桥，小路就分岔了。" },
+      { "en": "Our views diverged on the timing.", "zh": "在时间安排上，我们看法不同。" }
+    ]
+  },
+  "dredge": {
+    "zh": "疏浚；翻出（旧事）",
+    "note": "两条线：河道清淤、把沉底的事「捞上来」（dredge up，多含不体面）。",
+    "ex": [
+      { "en": "The harbour is dredged every spring.", "zh": "港口每年春天清淤。" },
+      { "en": "The paper dredged up an old scandal.", "zh": "报纸翻出了一桩旧丑闻。" }
+    ]
+  },
+  "dynamic": {
+    "zh": "动态的、有活力的；态势",
+    "note": "三义：形容词「有活力的/动态的」、名词「（人际、市场的）态势」、物理「动力学」。反义 static。",
+    "ex": [
+      { "en": "The market is dynamic; the rules are not.", "zh": "市场在变，规则不变。" },
+      { "en": "The dynamic between the two brothers shifted.", "zh": "兄弟俩之间的态势变了。" }
+    ]
+  },
+  "excise": {
+    "zh": "切除、删去；消费税",
+    "note": "动词「切除」多用于医学与文本（excise a passage 删掉一段）；名词读 /ˈeksaɪz/，指消费税。",
+    "ex": [
+      { "en": "The tumour was excised in a short operation.", "zh": "肿瘤在一次小手术里被切除了。" },
+      { "en": "Excise on fuel rose again this year.", "zh": "燃油消费税今年又涨了。" }
+    ]
+  },
+  "expansive": {
+    "zh": "广阔的；开朗的；扩张的",
+    "note": "三层：空间开阔、人的情绪「放得开、话多」、政策「扩张性」（expansive fiscal policy）。",
+    "ex": [
+      { "en": "The house has an expansive view of the bay.", "zh": "这房子能望见开阔的海湾。" },
+      { "en": "He was in an expansive mood after the win.", "zh": "赢了之后他兴致很高，话也多了。" }
+    ]
+  },
+  "fledgling": {
+    "zh": "刚起步的；雏鸟",
+    "note": "比喻「刚起步的」（a fledgling company / democracy），本义是刚长齐羽毛的雏鸟。",
+    "ex": [
+      { "en": "The fledgling company has nine staff.", "zh": "这家刚起步的公司有九个员工。" },
+      { "en": "A fledgling fell out of the nest.", "zh": "一只雏鸟从窝里掉了下来。" }
+    ]
+  },
+  "foray": {
+    "zh": "初次涉足；突袭",
+    "note": "两层：军事上的突袭、比喻「初次涉足某领域」（a foray into politics）。",
+    "ex": [
+      { "en": "Her first foray into politics ended badly.", "zh": "她第一次涉足政治，收场不佳。" },
+      { "en": "The troops made a foray into the valley.", "zh": "部队突入山谷。" }
+    ]
+  },
+  "garnish": {
+    "zh": "点缀（食物）；扣押（款项）",
+    "note": "烹饪里是「上桌前点缀」，法律里是「扣押工资或财产」（garnishee）。两个意思差得远，看语境。",
+    "ex": [
+      { "en": "Garnish with parsley and serve.", "zh": "用欧芹点缀后端上。" },
+      { "en": "His wages were garnished for unpaid rent.", "zh": "他的工资因欠租被扣。" }
+    ]
+  },
+  "generate": {
+    "zh": "产生、生成",
+    "note": "广义「产生」：发电、生成代码、引发兴趣。名词 generation 既是「一代人」，也是「发电」。",
+    "ex": [
+      { "en": "The plant generates enough power for the town.", "zh": "这座电厂够全镇用电。" },
+      { "en": "The campaign generated a lot of interest.", "zh": "这场活动引起了很多关注。" }
+    ]
+  },
+  "genetic": {
+    "zh": "基因的、遗传的",
+    "note": "genetic 是「与基因有关」，hereditary 是「代代相传」；genetic engineering 是基因工程。",
+    "ex": [
+      { "en": "The disease has a genetic component.", "zh": "这种病有遗传因素。" },
+      { "en": "Genetic testing is now routine here.", "zh": "基因检测在这里已是常规。" }
+    ]
+  },
+  "grill": {
+    "zh": "烤；盘问；烤架",
+    "note": "烹饪是在格栅上烤（区别 roast 烤箱、bake 烘焙），口语里是「严厉追问」；名词是烤架。",
+    "ex": [
+      { "en": "Grill the fish for four minutes a side.", "zh": "鱼每面烤四分钟。" },
+      { "en": "The committee grilled him for an hour.", "zh": "委员会盘问了他一小时。" }
+    ]
+  },
+  "huddle": {
+    "zh": "挤成一团；碰头商议",
+    "note": "物理上挤成一堆（取暖、躲雨），体育与商务里是「围拢快速商议」（a quick huddle）。",
+    "ex": [
+      { "en": "They huddled around the stove.", "zh": "他们挤在炉子周围。" },
+      { "en": "The team huddled before the second half.", "zh": "下半场前，队伍围在一起碰了个头。" }
+    ]
+  },
+  "hydrate": {
+    "zh": "补水；水合",
+    "note": "生理上是补水，化学上是水合物。形容词 hydrated、dehydrated（脱水）。",
+    "ex": [
+      { "en": "Drink before you are thirsty; hydrate early.", "zh": "别等渴了才喝，早点补水。" },
+      { "en": "The cream hydrates without feeling greasy.", "zh": "这款面霜补水，但不油腻。" }
+    ]
+  },
+  "immerse": {
+    "zh": "浸入；沉浸",
+    "note": "物理「浸没」、学习「沉浸式」（immersion course）、注意力「投入」（immerse oneself in）。",
+    "ex": [
+      { "en": "Immerse the jar in boiling water.", "zh": "把罐子浸到沸水里。" },
+      { "en": "She immersed herself in the archives for a month.", "zh": "她泡在档案里一个月。" }
+    ]
+  },
+  "implant": {
+    "zh": "植入；植入物",
+    "note": "医学「植入物」（dental implant）、比喻「灌输（观念）」。重音：动词在后 /ɪmˈplɑːnt/，名词在前。",
+    "ex": [
+      { "en": "The chip is implanted under the skin.", "zh": "芯片被植入皮下。" },
+      { "en": "The idea was implanted early and never left.", "zh": "这个念头很早就种下了，再没消失。" }
+    ]
+  },
+  "inaugural": {
+    "zh": "就职的；首届的",
+    "note": "就职演说（inaugural address）、首届赛季（inaugural season）、开篇讲座（inaugural lecture）。动词 inaugurate。",
+    "ex": [
+      { "en": "He gave the inaugural address in January.", "zh": "他一月发表了就职演说。" },
+      { "en": "The inaugural festival drew ten thousand people.", "zh": "首届音乐节来了一万人。" }
+    ]
+  },
+  "insecure": {
+    "zh": "不牢靠的；缺乏安全感的",
+    "note": "两层：物理上不稳固、心理上没底（insecure about sth）。反义 secure。",
+    "ex": [
+      { "en": "The ladder felt insecure against the wall.", "zh": "梯子靠在墙上不太稳。" },
+      { "en": "He is insecure about his accent.", "zh": "他对自己的口音没底。" }
+    ]
+  },
+  "intensify": {
+    "zh": "加强、加剧",
+    "note": "及物不及物都行；名词 intensity（强度），形容词 intense（强烈的）。",
+    "ex": [
+      { "en": "The rain intensified towards evening.", "zh": "到傍晚雨更大了。" },
+      { "en": "They intensified the search after dark.", "zh": "天黑之后他们加大了搜索力度。" }
+    ]
+  },
+  "intensive": {
+    "zh": "密集的、集约的",
+    "note": "与 extensive 相对：intensive 是「单位面积或时间投入大」，extensive 是「铺得广」。医学 intensive care 是重症监护。",
+    "ex": [
+      { "en": "She took an intensive course over the summer.", "zh": "她夏天上了一个强化班。" },
+      { "en": "The area is under intensive farming.", "zh": "这一带是集约化农业。" }
+    ]
+  },
+  "invasive": {
+    "zh": "侵入性的；蔓延成灾的",
+    "note": "医学「有创的」（minimally invasive 微创）、生态「入侵物种」、隐私上「侵扰性的」。",
+    "ex": [
+      { "en": "The test is minimally invasive.", "zh": "这项检查创伤很小。" },
+      { "en": "The plant is invasive and hard to remove.", "zh": "这种植物繁殖力强，很难清除。" }
+    ]
+  },
+  "lax": {
+    "zh": "松懈的、不严的",
+    "note": "贬义居多：管理松懈、纪律松散。名词 laxity。别和 laxative（泻药）混。",
+    "ex": [
+      { "en": "Security at the gate was lax.", "zh": "门口的安检很松。" },
+      { "en": "The rules are lax about late submissions.", "zh": "对迟交的规定很宽松。" }
+    ]
+  },
+  "leach": {
+    "zh": "沥滤、渗漏",
+    "note": "环境科学高频词，搭配 leach out of / into；名词 leaching 指淋溶作用。",
+    "ex": [
+      { "en": "Rain leaches nutrients out of the soil.", "zh": "雨水把养分从土里冲走了。" },
+      { "en": "Chemicals leached into the groundwater.", "zh": "化学物质渗进了地下水。" }
+    ]
+  },
+  "leapfrog": {
+    "zh": "跳过（阶段）、超越",
+    "note": "本义是儿童「跳背」游戏，比喻跳过中间步骤，或越过对手。",
+    "ex": [
+      { "en": "The country leapfrogged several stages of development.", "zh": "这个国家跳过了几个发展阶段。" },
+      { "en": "They leapfrogged the competition with a cheaper model.", "zh": "他们用更便宜的型号超越了对手。" }
+    ]
+  },
+  "liberate": {
+    "zh": "解放；使摆脱",
+    "note": "军事解放、从束缚中「腾出」（liberate sb from sth）。名词 liberation。注意 liberal 是「自由的、开明的」，别混。",
+    "ex": [
+      { "en": "The city was liberated in 1944.", "zh": "这座城市 1944 年获得解放。" },
+      { "en": "The new law liberates small firms from the paperwork.", "zh": "新法让小公司摆脱了这些文书。" }
+    ]
+  },
+  "liquidate": {
+    "zh": "清盘；变现；清除",
+    "note": "商业上「清盘、变现」（liquidate holdings）、政治旧用法「清除」。名词 liquidation。",
+    "ex": [
+      { "en": "The company was liquidated in March.", "zh": "公司三月清盘。" },
+      { "en": "He liquidated his holdings before the crash.", "zh": "崩盘之前他把持仓全清了。" }
+    ]
+  },
+  "loot": {
+    "zh": "抢掠；赃物",
+    "note": "名动同形，比 rob 更强调「趁乱成批抢」，宾语多是地点而不是人。",
+    "ex": [
+      { "en": "Shops were looted during the blackout.", "zh": "停电期间店铺被抢。" },
+      { "en": "Police recovered most of the loot.", "zh": "警方追回了大部分赃物。" }
+    ]
+  },
+  "median": {
+    "zh": "中位数；中间的",
+    "note": "统计上是中位数（不是平均数 average）；路上是中央隔离带；医学上指「正中结构」。词根 medi- 是中间。",
+    "ex": [
+      { "en": "The median wage rose two percent.", "zh": "中位工资涨了百分之二。" },
+      { "en": "The median strip separates the lanes.", "zh": "中央分隔带把车道分开。" }
+    ]
+  },
+  "mince": {
+    "zh": "切碎；扭捏地走；肉馅",
+    "note": "固定说法 not mince words（直言不讳）；英式 mince 是「肉馅」（美式 ground meat）。",
+    "ex": [
+      { "en": "Mince the garlic finely.", "zh": "把蒜切得很碎。" },
+      { "en": "He does not mince words.", "zh": "他说话不绕弯子。" }
+    ]
+  },
+  "negate": {
+    "zh": "否定；使失效",
+    "note": "比 deny 更强调「使之无效」：一个错误推翻整个证明、一次延误抵消优势。",
+    "ex": [
+      { "en": "One error negates the whole proof.", "zh": "一个错误就让整个证明失效。" },
+      { "en": "The delay negated the advantage of an early start.", "zh": "延误抵消了早出发的优势。" }
+    ]
+  },
+  "nestle": {
+    "zh": "依偎；坐落于",
+    "note": "两层：人或动物依偎、地点「安卧在」（多用于描写，带温情）。",
+    "ex": [
+      { "en": "The village nestles in the valley.", "zh": "村子安卧在山谷里。" },
+      { "en": "She nestled the child against her shoulder.", "zh": "她把孩子贴在肩上。" }
+    ]
+  },
+  "obtuse": {
+    "zh": "迟钝的；钝角的",
+    "note": "几何上是钝角，形容人时是「反应慢」，带不满的口气。反义 acute（锐角、敏锐）。",
+    "ex": [
+      { "en": "He was being deliberately obtuse.", "zh": "他是故意装糊涂。" },
+      { "en": "An obtuse angle is greater than ninety degrees.", "zh": "钝角大于九十度。" }
+    ]
+  },
+  "ordain": {
+    "zh": "授予圣职；注定",
+    "note": "宗教上是授圣职，书面语里是「注定」。名词 ordinance 是「法令」，两个词别混。",
+    "ex": [
+      { "en": "He was ordained in 1998.", "zh": "他 1998 年被授予圣职。" },
+      { "en": "Fate had ordained otherwise.", "zh": "命运另有安排。" }
+    ]
+  },
+  "outlaw": {
+    "zh": "取缔、宣布非法；亡命徒",
+    "note": "动词是立法禁止（比 ban 更正式、更绝对），名词是「逃犯、法外之徒」。",
+    "ex": [
+      { "en": "The practice was outlawed in 1970.", "zh": "这种做法在 1970 年被禁。" },
+      { "en": "He lived as an outlaw for six years.", "zh": "他做了六年亡命徒。" }
+    ]
+  },
+  "partisan": {
+    "zh": "党派性的；支持者、游击队员",
+    "note": "形容报道时带贬义（偏袒一方），名词是「铁杆支持者」或「游击队员」。反义 bipartisan（两党一致的）。",
+    "ex": [
+      { "en": "The report was dismissed as partisan.", "zh": "这份报告被指有党派偏见。" },
+      { "en": "Partisans held the hills for months.", "zh": "游击队在山区坚守了几个月。" }
+    ]
+  },
+  "perturb": {
+    "zh": "使不安；扰动",
+    "note": "天文与物理上是「扰动」（轨道受邻近天体影响），心理上是「使不安」，正式用语。名词 perturbation。",
+    "ex": [
+      { "en": "The news perturbed her more than she showed.", "zh": "这消息让她不安，比她表现出来的更甚。" },
+      { "en": "The orbit was perturbed by a nearby planet.", "zh": "轨道受到邻近行星的扰动。" }
+    ]
+  },
+  "pliable": {
+    "zh": "柔韧的；易受影响的",
+    "note": "物理上是柔韧好弯，形容人是「好说话、没主见」。近义词 pliant，但 pliant 更强调顺从。",
+    "ex": [
+      { "en": "Soak the leather until it is pliable.", "zh": "把皮子泡软。" },
+      { "en": "He is too pliable to hold that post.", "zh": "他太没主见，坐不住那个位子。" }
+    ]
+  },
+  "postulate": {
+    "zh": "假定；假设",
+    "note": "学术用词：作为推理起点的「设定」，比 assume 正式。名词读 /ˈpɒstjʊlət/。",
+    "ex": [
+      { "en": "The model postulates a single cause.", "zh": "这个模型假定只有一个原因。" },
+      { "en": "The postulate was never tested.", "zh": "这个假设从未被检验过。" }
+    ]
+  },
+  "predate": {
+    "zh": "早于、先于",
+    "note": "前缀 pre- 加 date，「在时间上更早」。别和 predator（捕食者）混。",
+    "ex": [
+      { "en": "The map predates the treaty by ten years.", "zh": "这张地图比条约早十年。" },
+      { "en": "Wheel use predates written records.", "zh": "轮子的使用早于文字记录。" }
+    ]
+  },
+  "premiere": {
+    "zh": "首映、首演",
+    "note": "指首次公演；名词与动词同形，读 /ˈpremieə/。别把「重映」说成 premiere。",
+    "ex": [
+      { "en": "The film premieres in Venice next month.", "zh": "这部片下月在威尼斯首映。" },
+      { "en": "The premiere drew a standing ovation.", "zh": "首演赢得全场起立鼓掌。" }
+    ]
+  },
+  "ransom": {
+    "zh": "赎金；赎回",
+    "note": "名动同形；hold sb to ransom 除了「绑人要赎金」，也常用于商业谈判里「拿捏对方」。",
+    "ex": [
+      { "en": "They paid a ransom for his release.", "zh": "他们付了赎金换他获释。" },
+      { "en": "The company was ransomed by the attackers.", "zh": "公司被攻击者勒索赎金。" }
+    ]
+  }
+}
