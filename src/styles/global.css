@@ -3088,3 +3088,21 @@ input, textarea { font-family: inherit; }
   -webkit-mask-image: linear-gradient(to bottom, #000 78%, rgb(0 0 0 / 0) 100%);
   mask-image: linear-gradient(to bottom, #000 78%, rgb(0 0 0 / 0) 100%);
 }
+
+/* 精讲词的义项在卡片里按词性逐条列；老词典那一段是整块文本，不适用 */
+.card .zh-row { display: flex; gap: 7px; align-items: baseline; }
+.card .zh-row em {
+  flex: none; font-style: normal; font-family: var(--font-mono);
+  font-size: 10px; color: var(--accent);
+  border: 1px solid var(--accent); border-radius: 3px;
+  padding: 0 3px; line-height: 13px;
+}
+
+/* 精讲词的义项在卡片里按词性逐条列；老词典那一段是整块文本，不适用 */
+.card .zh-row { display: flex; gap: 7px; align-items: baseline; }
+.card .zh-row em {
+  flex: none; font-style: normal; font-family: var(--font-mono);
+  font-size: 10px; color: var(--accent);
+  border: 1px solid var(--accent); border-radius: 3px;
+  padding: 0 3px; line-height: 13px;
+}

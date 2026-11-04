@@ -11,7 +11,13 @@ import { splitEmphasis } from '../lib/rich';
  * 阅读器本来只用 dict.json 那份老词库，不该为了看一眼精讲
  * 去拉 26 个字母分片（最大 3.4MB）。
  */
-interface Cur { note?: string; ex?: { en: string; zh: string }[]; see?: string[] }
+interface Cur {
+  note?: string;
+  ex?: { en: string; zh: string }[];
+  see?: string[];
+  /** 精讲词的正确义项顺序（老词典那条常常反着排，比如 miss 的第一条是「失误」） */
+  zh?: { p: string; t: string }[];
+}
 let curPromise: Promise<Record<string, Cur>> | null = null;
 function loadCurated(): Promise<Record<string, Cur>> {
   if (!curPromise) {
@@ -31,6 +37,12 @@ const TAG_LABEL: Record<string, string> = {
 
 const SPEEDS = [0.5, 0.75, 1, 1.25];
 const fmt = (v: number) => (v === 1 ? '1×' : `${v}×`);
+
+/** 词性缩写：卡片窄，一个字的标签就够 */
+const POS_SHORT: Record<string, string> = {
+  n: '名', v: '动', a: '形', r: '副',
+  pron: '代', conj: '连', prep: '介', art: '冠', aux: '助', part: '不', int: '叹',
+};
 
 interface Props {
   word: string;
@@ -84,13 +96,16 @@ export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave 
    * 用 pointerdown + 捕获阶段：比 click 更早，可以在打字区接管之前就收掉卡片。
    * 但落点在另一个词上时不管 —— 那种情况应该「换词」而不是「先关再开」，
    * 否则引擎会 resume 一次又立刻 pause，计时器白抖一下。
+   *
+   * 两种词节点都要认：打字页是 .w（TextStage），阅读页与全书是 .rd-w。
+   * 只认 .w 的时候，读书时点相邻的词会先把自己关掉再弹一张新的，闪一下。
    */
   useEffect(() => {
     const onDown = (e: PointerEvent) => {
       const t = e.target as HTMLElement | null;
       if (!t) return;
       if (ref.current?.contains(t)) return;
-      if (t.closest('.w')) return;
+      if (t.closest('.w, .rd-w')) return;
       onClose();
     };
     document.addEventListener('pointerdown', onDown, true);
@@ -156,7 +171,18 @@ export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave 
         </div>
       </div>
 
-      <div className="zh">{entry?.z || '词库中暂未收录这个词 · 可手动收藏'}</div>
+      <div className="zh">
+        {cur?.zh?.length ? (
+          cur.zh.map((s, i) => (
+            <div key={i} className="zh-row">
+              <em>{POS_SHORT[s.p] ?? s.p ?? '—'}</em>
+              <span>{s.t}</span>
+            </div>
+          ))
+        ) : (
+          entry?.z || '词库中暂未收录这个词 · 可手动收藏'
+        )}
+      </div>
       {entry?.e && <div className="en">{entry.e}</div>}
 
       {/*

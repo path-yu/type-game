@@ -608,7 +608,24 @@ fs.writeFileSync(path.join(OUT, 'topics.json'), JSON.stringify({ v: 1, groups: t
  */
 const curOnly = {};
 for (const [w, v] of Object.entries(CURATED)) {
-  curOnly[w] = { ...(v.note ? { note: v.note } : {}), ...(v.ex ? { ex: v.ex } : {}), ...(v.see ? { see: v.see } : {}) };
+  /*
+   * 顺带把这几条的中文义项也带上。
+   * 阅读器的词卡用的是老词典（dict.json），那里 miss 的第一条是「失误」——
+   * 和词库自己排的「小姐」冲突，读者会以为两边打架。
+   * 只带 151 个词的前几条，几 KB 的事。
+   */
+  const s = shards.get(w[0])?.[w];
+  const zh = (s?.senses ?? [])
+    .filter(x => x.zh)
+    .slice(0, 4)
+    .map(x => ({ p: x.p ?? '', t: x.zh }));
+
+  curOnly[w] = {
+    ...(v.note ? { note: v.note } : {}),
+    ...(v.ex ? { ex: v.ex } : {}),
+    ...(v.see ? { see: v.see } : {}),
+    ...(zh.length ? { zh } : {}),
+  };
 }
 fs.writeFileSync(path.join(OUT, 'curated.json'), JSON.stringify({ v: 1, words: curOnly }));
 
