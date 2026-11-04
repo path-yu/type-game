@@ -210,6 +210,8 @@ export function WordbookScreen() {
     setWord(w);
     recordLookup(w);
     const ch = w[0];
+    // 分片按 a–z 切，别的开头（带引号、数字，或手敲进地址栏的乱码）没有对应文件
+    if (!/^[a-z]$/.test(ch)) { setEntry(null); setLoading(false); return; }
     const hit = shardCache.current.get(ch);
     if (hit) { setEntry(hit[w] ?? null); return; }
     setLoading(true);

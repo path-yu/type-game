@@ -39,6 +39,8 @@ const base = import.meta.env.BASE_URL || '/';
  */
 const shardCache = new Map<string, Promise<Record<string, LexEntry>>>();
 function loadShard(ch: string): Promise<Record<string, LexEntry>> {
+  // 分片是按 a–z 切的；带引号或数字的词（'tis、19th）没有对应文件，别去发 404
+  if (!/^[a-z]$/.test(ch)) return Promise.resolve({});
   const hit = shardCache.get(ch);
   if (hit) return hit;
   const p = fetch(`${base}data/lex/${ch}.json`)

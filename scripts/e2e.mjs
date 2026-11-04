@@ -88,6 +88,18 @@ await page.keyboard.type(text.slice(0, 8));
 await sleep(80);
 let st = await stateNow();
 check('正确输入 → 字符变暗', st.done === 8, `done=${st.done}`);
+
+/*
+ * 连击的记账比"字符变暗"晚一拍：done 是逐键直改 DOM，combo 走的是 React 那边。
+ * 机器忙的时候（比如整套测试连着跑）80ms 不够，会读到少一个的中间值。
+ * 这不是功能问题 —— 单独跑永远是 8 —— 所以等它落定，而不是把断言放宽。
+ */
+if (st.combo !== 8) {
+  for (let i = 0; i < 10 && st.combo !== 8; i++) {
+    await sleep(50);
+    st = await stateNow();
+  }
+}
 check('连击累加', st.combo === 8, `combo=${st.combo}`);
 
 // 故意打错

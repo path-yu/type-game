@@ -42,7 +42,8 @@
     "desktop:dev": "hutch electrobun dev",
     "desktop:build": "npm run build && hutch electrobun build --env=stable",
     "lex": "node scripts/lex/status.mjs",
-    "lex:next": "node scripts/lex/next-gloss.mjs --n=50"
+    "lex:next": "node scripts/lex/next-gloss.mjs --n=50",
+    "prebuild": "node scripts/prebuild.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
