@@ -3,6 +3,26 @@ import type { WordEntry } from '../lib/types';
 import { speak } from '../lib/speech';
 import { dayNo, useGame } from '../lib/store';
 import { memoryLabel } from '../lib/fsrs';
+import { syncRoute } from '../lib/route';
+import { splitEmphasis } from '../lib/rich';
+
+/*
+ * 精讲单独一份（84KB），第一次点词时才取，取过常驻。
+ * 阅读器本来只用 dict.json 那份老词库，不该为了看一眼精讲
+ * 去拉 26 个字母分片（最大 3.4MB）。
+ */
+interface Cur { note?: string; ex?: { en: string; zh: string }[]; see?: string[] }
+let curPromise: Promise<Record<string, Cur>> | null = null;
+function loadCurated(): Promise<Record<string, Cur>> {
+  if (!curPromise) {
+    const base = import.meta.env.BASE_URL || '/';
+    curPromise = fetch(`${base}data/lex/curated.json`)
+      .then(r => (r.ok ? r.json() : { words: {} }))
+      .then((j: { words?: Record<string, Cur> }) => j.words ?? {})
+      .catch(() => ({}));
+  }
+  return curPromise;
+}
 
 const TAG_LABEL: Record<string, string> = {
   zk: '中考', gk: '高考', cet4: 'CET4', cet6: 'CET6',
@@ -27,7 +47,16 @@ export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave 
   const settings = useGame(s => s.s);
   const stat = useGame(s => s.p.mastery[word]);
   const setSetting = useGame(s => s.setSetting);
+  const go = useGame(s => s.go);
   const [speedOpen, setSpeedOpen] = useState(false);
+  const [cur, setCur] = useState<Cur | null>(null);
+
+  // 换词就换精讲；这一份取过一次就常驻，翻页时不重复请求
+  useEffect(() => {
+    let alive = true;
+    loadCurated().then(all => { if (alive) setCur(all[word] ?? null); });
+    return () => { alive = false; };
+  }, [word]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -79,7 +108,8 @@ export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave 
     if (top + h > window.innerHeight - 14) top = anchor.y - h - 12;
     el.style.left = `${left}px`;
     el.style.top = `${Math.max(68, top)}px`;
-  }, [anchor, word]);
+    // cur 是异步到的，精讲一插进来卡片就变高了 —— 得重新算一次位置，否则会出屏
+  }, [anchor, word, cur]);
 
   const play = () => speak(word, { accent: settings.voice, rate: settings.rate });
   const tags = (entry?.g || []).map(t => TAG_LABEL[t]).filter(Boolean).slice(0, 3);
@@ -128,6 +158,33 @@ export function WordCard({ word, surface, entry, anchor, saved, onClose, onSave 
 
       <div className="zh">{entry?.z || '词库中暂未收录这个词 · 可手动收藏'}</div>
       {entry?.e && <div className="en">{entry.e}</div>}
+
+      {/*
+       * 精讲是这套书真正的难点：词认得、义选错。卡片地方小，
+       * 只放那段解析，不堆例句 —— 想看全的，按钮直接跳到词库那一条。
+       */}
+      {cur?.note ? (
+        <div className="card-cur">
+          <div className="card-cur-hd">
+            <span>精讲</span>
+            <button
+              className="card-cur-more"
+              onClick={() => {
+                syncRoute('words', word);
+                go('words');
+                onClose();
+              }}
+            >
+              在词库细看 →
+            </button>
+          </div>
+          <p>
+            {splitEmphasis(cur.note).map((seg, i) =>
+              seg.b ? <b key={i}>{seg.text}</b> : <span key={i}>{seg.text}</span>,
+            )}
+          </p>
+        </div>
+      ) : null}
 
       {(entry?.t || tags.length > 0 || stat?.d != null) && (
         <>

@@ -601,6 +601,17 @@ for (const [ch, obj] of shards) {
 // 主题索引单独一份，很小：词库页要按主题浏览时不必再拉任何分片
 fs.writeFileSync(path.join(OUT, 'topics.json'), JSON.stringify({ v: 1, groups: topicList }));
 
+/*
+ * 精讲单独一份，给阅读器用。
+ * 读书时点开一个词，卡片刻那 151 条精讲里的一条就够 —— 不该为了这一条
+ * 去拉 26 个字母分片（最大 3.4MB）。这份只有几百 KB，一次取完常驻。
+ */
+const curOnly = {};
+for (const [w, v] of Object.entries(CURATED)) {
+  curOnly[w] = { ...(v.note ? { note: v.note } : {}), ...(v.ex ? { ex: v.ex } : {}), ...(v.see ? { see: v.see } : {}) };
+}
+fs.writeFileSync(path.join(OUT, 'curated.json'), JSON.stringify({ v: 1, words: curOnly }));
+
 const letters = [...shards.entries()]
   .map(([ch, obj]) => ({ ch, n: Object.keys(obj).length }))
   .sort((a, b) => a.ch.localeCompare(b.ch));

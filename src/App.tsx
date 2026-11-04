@@ -98,6 +98,8 @@ export default function App() {
      * 那两屏都不能凭自己的 screen 把地址覆盖掉。
      */
     if ((screen === 'reader' || screen === 'library') && location.hash.startsWith('#/full/')) return;
+    // 词库的 #/words/<词> 是词库页自己写的，别被「当前是词库」覆盖回去
+    if (screen === 'words' && location.hash.startsWith('#/words/')) return;
     if (screen === 'reader' && article?.id) syncRoute('reader', article.id);
     else syncRoute(screen);
   }, [screen, article?.id]);

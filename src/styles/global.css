@@ -3049,3 +3049,42 @@ input, textarea { font-family: inherit; }
   border-bottom: 1px dashed color-mix(in srgb, var(--accent) 55%, transparent);
 }
 .wb-inline:hover { border-bottom-style: solid; }
+
+/* ---------- 阅读器词卡：精讲 ---------- */
+.card-cur {
+  margin-top: var(--sp-3);
+  padding: 9px 11px;
+  background: var(--accent-soft);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+.card-cur-hd {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  margin-bottom: 4px;
+}
+.card-cur-hd > span {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: .08em; color: var(--accent);
+}
+.card-cur-more {
+  font: inherit; font-size: 11px; color: var(--accent);
+  background: none; border: none; padding: 0; cursor: pointer;
+  border-bottom: 1px dashed color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.card-cur-more:hover { border-bottom-style: solid; }
+.card-cur p {
+  margin: 0; font-size: 12px; line-height: 1.7; color: var(--fg-2);
+  max-height: 7.2em; overflow: hidden;
+}
+
+/* 精讲超出一屏时给个渐隐，让人知道下面还有 —— 否则半句话断在那里像出错 */
+.card-cur p {
+  -webkit-mask-image: linear-gradient(to bottom, #000 78%, rgb(0 0 0 / 0) 100%);
+  mask-image: linear-gradient(to bottom, #000 78%, rgb(0 0 0 / 0) 100%);
+}
+
+/* 精讲超出一屏时给个渐隐，让人知道下面还有 —— 否则半句话断在那里像出错 */
+.card-cur p {
+  -webkit-mask-image: linear-gradient(to bottom, #000 78%, rgb(0 0 0 / 0) 100%);
+  mask-image: linear-gradient(to bottom, #000 78%, rgb(0 0 0 / 0) 100%);
+}

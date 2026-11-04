@@ -2,7 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useGame } from '../lib/store';
 import { useCorpus } from '../lib/CorpusContext';
 import { speak, stopSpeaking } from '../lib/speech';
-import { syncRoute } from '../lib/route';
+import { syncRoute, parseRoute, onRouteChange } from '../lib/route';
+import { splitEmphasis } from '../lib/rich';
 
 /**
  * 词库：查词用的，不是"我学过哪些词"那本账簿（那是藏书阁）。
@@ -222,6 +223,43 @@ export function WordbookScreen() {
       .catch(() => setEntry(null))
       .finally(() => setLoading(false));
   };
+
+  /*
+   * 从别处带词进来（阅读器词卡的「在词库细看」、以及刷新后的恢复）。
+   * 地址是 #/words/<词>，所以刷新也停在这一个词上。
+   */
+  useEffect(() => {
+    const apply = (r: { screen: string; param: string | null }) => {
+      if (r.screen === 'words' && r.param) open(decodeURIComponent(r.param));
+    };
+    apply(parseRoute());
+    return onRouteChange(apply);
+    // open 每次渲染都是新的，但它只依赖稳定的 setState 与 base，挂一次就够
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // 选中一个词时把地址也写上，刷新后还回到这个词
+  useEffect(() => {
+    if (word) syncRoute('words', word);
+  }, [word]);
+
+  /*
+   * 从外部带进来的词可能不在可视区（三万五千行里任何一处），
+   * 列表要自己跟过去；已经看得见就不动，免得点一下就跳一下。
+   */
+  useEffect(() => {
+    if (!word || !rows) return;
+    const el = listRef.current;
+    if (!el) return;
+    const i = rows.findIndex(r => r[0] === word);
+    if (i < 0) return;
+    const top = i * ROW_H;
+    if (top < el.scrollTop || top > el.scrollTop + el.clientHeight - ROW_H) {
+      const to = Math.max(0, top - el.clientHeight / 2);
+      el.scrollTop = to;
+      setScrollTop(to);
+    }
+  }, [word, rows]);
 
   useEffect(() => {
     const el = listRef.current;
@@ -485,7 +523,11 @@ export function WordbookScreen() {
                               {seg.text}
                             </button>
                           ) : (
-                            <span key={i}>{seg.text}</span>
+                            <span key={i}>
+                              {splitEmphasis(seg.text).map((p2, j) =>
+                                p2.b ? <b key={j}>{p2.text}</b> : <span key={j}>{p2.text}</span>,
+                              )}
+                            </span>
                           ),
                         )}
                       </p>
