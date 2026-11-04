@@ -461,6 +461,20 @@
       }
     ]
   },
+  "babble": {
+    "zh": "含混地说；潺潺水声",
+    "note": "两层：人说得含混不清（带贬义，像婴儿或醉汉）、水声潺潺。名词 babble 是「嘈杂的人声」：a babble of voices。",
+    "ex": [
+      {
+        "en": "He babbled something about a train and hung up.",
+        "zh": "他含含糊糊说了句火车的事就挂了。"
+      },
+      {
+        "en": "The stream babbled over the stones.",
+        "zh": "溪水在石头上潺潺流过。"
+      }
+    ]
+  },
   "backfire": {
     "zh": "适得其反；（发动机）回火",
     "note": "本义是发动机回火，比喻义是「反噬、适得其反」，几乎只用于计划、策略、言行。别和 misfire 混：misfire 是没打响、没奏效，backfire 是起了反效果。",
@@ -472,6 +486,34 @@
       {
         "en": "The engine backfired and the car shuddered.",
         "zh": "发动机回火，车身一抖。"
+      }
+    ]
+  },
+  "balk": {
+    "zh": "（临到跟前）不肯动；犹豫退缩",
+    "note": "搭配 balk at sth，核心是「到了跟前不肯往前」：马不肯跳、人嫌贵不买。棒球里 balk 是投手犯规。别和 block 混——balk 是自己不肯动，不是挡住别人。",
+    "ex": [
+      {
+        "en": "The horse balked at the jump.",
+        "zh": "马到了障碍前不肯跳。"
+      },
+      {
+        "en": "She balked at the price and walked out.",
+        "zh": "她嫌价高，转身走了。"
+      }
+    ]
+  },
+  "bias": {
+    "zh": "偏见；偏差",
+    "note": "比 prejudice 中性：可指人的先入之见，也可指统计上的系统性偏差（sample bias）。动词「使有倾向」，形容词 biased 是「有偏的」。",
+    "ex": [
+      {
+        "en": "The study was criticized for sample bias.",
+        "zh": "这项研究被指样本有偏。"
+      },
+      {
+        "en": "His accent biased her against him before he spoke.",
+        "zh": "还没开口，口音就让她有了先入之见。"
       }
     ]
   },
@@ -531,6 +573,20 @@
       }
     ]
   },
+  "bootleg": {
+    "zh": "盗版的；私酿、走私",
+    "note": "本义是靴筒——禁酒时期把酒瓶塞在靴筒里。现在指盗版录音、私酿、走私货。动词是「私自制作或贩运」。",
+    "ex": [
+      {
+        "en": "The album circulated as a bootleg for years.",
+        "zh": "这张专辑以私录版流传了好些年。"
+      },
+      {
+        "en": "Bootleg cigarettes were sold at the market.",
+        "zh": "市场上卖走私烟。"
+      }
+    ]
+  },
   "bristle": {
     "zh": "毛发竖立；被激怒；刚毛",
     "note": "两个固定搭配分工清楚：bristle at sth 对某事冒火，bristle with sth 布满某物（a street bristling with cameras）。名词是刷子上的硬毛。",
@@ -542,6 +598,20 @@
       {
         "en": "She bristled at the suggestion that she had lied.",
         "zh": "有人暗示她撒谎，她立刻竖起了刺。"
+      }
+    ]
+  },
+  "broadcast": {
+    "zh": "播送；散布（消息）",
+    "note": "过去式仍是 broadcast，broadcasted 少见。比喻义「到处散布消息」带点贬义——好像拿喇叭喊。",
+    "ex": [
+      {
+        "en": "The ceremony was broadcast live to forty countries.",
+        "zh": "典礼向四十个国家直播。"
+      },
+      {
+        "en": "She broadcast the news to everyone in the office.",
+        "zh": "她把消息告诉了办公室所有人。"
       }
     ]
   },
@@ -1861,6 +1931,48 @@
       }
     ]
   },
+  "radiate": {
+    "zh": "散发、辐射",
+    "note": "物理上是辐射热与光，人也用：radiate confidence / health 是「整个人透着」。名词 radiation 是辐射。",
+    "ex": [
+      {
+        "en": "The stove radiated heat across the room.",
+        "zh": "炉子把热散到整个房间。"
+      },
+      {
+        "en": "She radiated confidence on stage.",
+        "zh": "她在台上整个人透着自信。"
+      }
+    ]
+  },
+  "raid": {
+    "zh": "突袭；搜查；挖角",
+    "note": "军事突袭、警方搜查、商业上的「挖角/突袭收购」都用它（a raid on a rival）。名动同形。",
+    "ex": [
+      {
+        "en": "Police raided the warehouse at dawn.",
+        "zh": "警察在黎明突袭了仓库。"
+      },
+      {
+        "en": "The company poached staff in a series of raids.",
+        "zh": "这家公司连环挖人。"
+      }
+    ]
+  },
+  "ramp": {
+    "zh": "坡道、引道；逐步加码",
+    "note": "名词是坡道、舷梯、匝道；动词 ramp up 是「提高、加快」，ramp down 是「逐步减少」。别拿 ramp 当「坡」的通用词——hill、slope 才是。",
+    "ex": [
+      {
+        "en": "The ramp up to the bridge was closed.",
+        "zh": "上桥的引道封了。"
+      },
+      {
+        "en": "The factory ramped up production in March.",
+        "zh": "工厂三月提高了产量。"
+      }
+    ]
+  },
   "recruit": {
     "zh": "招募；新兵、新成员",
     "note": "军事和招聘通用；名词 recruitment 是招聘或征募。别和 enroll（注册入学）混。",
@@ -1903,6 +2015,34 @@
       }
     ]
   },
+  "relay": {
+    "zh": "转达；接力",
+    "note": "读 /ˈriːleɪ/，名动同形。消息「转达」用 relay，不用 repeat；技术里的 relay 是继电器，体育里是接力赛。",
+    "ex": [
+      {
+        "en": "Could you relay the message to the night shift?",
+        "zh": "能把话转给夜班吗？"
+      },
+      {
+        "en": "The race is a four-by-one-hundred relay.",
+        "zh": "这是 4×100 米接力。"
+      }
+    ]
+  },
+  "remit": {
+    "zh": "汇款；提交；减免",
+    "note": "三义：汇款、提交（remit sth to）、减免（remit a debt）；法律里还指「发回重审」。名词 remit 读 /ˈriːmɪt/，指「职权范围」：outside my remit。",
+    "ex": [
+      {
+        "en": "Please remit the balance within thirty days.",
+        "zh": "请在三十天内汇出余款。"
+      },
+      {
+        "en": "The matter was remitted to a lower court.",
+        "zh": "案件被发回下级法院。"
+      }
+    ]
+  },
   "repel": {
     "zh": "击退；使厌恶；排斥",
     "note": "三义：军事上击退、心理上使人反感（The idea repels me）、物理上排斥（磁极）。名词 repellent 是驱虫剂，也是「讨人厌的」。",
@@ -1914,6 +2054,34 @@
       {
         "en": "The smell repelled even the dogs.",
         "zh": "那味道连狗都躲。"
+      }
+    ]
+  },
+  "replay": {
+    "zh": "回放；重赛",
+    "note": "名词重音在前 /ˈriːpleɪ/，动词在后 /riːˈpleɪ/。体育里是「重赛」，录像里是「回放」，靠语境分。",
+    "ex": [
+      {
+        "en": "They replayed the incident frame by frame.",
+        "zh": "他们逐帧回放了那件事。"
+      },
+      {
+        "en": "The match will be replayed on Wednesday.",
+        "zh": "比赛周三重赛。"
+      }
+    ]
+  },
+  "reprieve": {
+    "zh": "暂缓执行；暂时的解脱",
+    "note": "法律上是「暂缓执行」（不是赦免），日常是「缓一口气」。搭配 reprieve sb from sth。",
+    "ex": [
+      {
+        "en": "He won a last-minute reprieve from deportation.",
+        "zh": "他在最后一刻获准暂缓遣返。"
+      },
+      {
+        "en": "The rain gave the crops a brief reprieve.",
+        "zh": "这场雨让庄稼缓了口气。"
       }
     ]
   },
@@ -1945,6 +2113,20 @@
       }
     ]
   },
+  "rotate": {
+    "zh": "旋转；轮换",
+    "note": "物理旋转、岗位轮换、农作物轮作（crop rotation）都用它。名词 rotation 三义通用。",
+    "ex": [
+      {
+        "en": "The chair rotates a full three hundred sixty degrees.",
+        "zh": "这把椅子能转整三百六十度。"
+      },
+      {
+        "en": "The night shift rotates every two weeks.",
+        "zh": "夜班每两周轮换一次。"
+      }
+    ]
+  },
   "salvage": {
     "zh": "抢救、打捞；打捞物",
     "note": "海难打捞、火灾抢救，比喻「挽回（声誉、局面）」（salvage a reputation）。名词还指回收的废料。",
@@ -1956,6 +2138,370 @@
       {
         "en": "The wreck was salvaged for scrap.",
         "zh": "沉船被打捞上来当废料。"
+      }
+    ]
+  },
+  "scald": {
+    "zh": "烫伤；焯",
+    "note": "专指被开水或蒸汽烫，不是火烤（那是 burn）。厨房里 scald 是「焯一下」。名词是烫伤。",
+    "ex": [
+      {
+        "en": "He scalded his hand on the kettle.",
+        "zh": "他被水壶烫了手。"
+      },
+      {
+        "en": "Scald the tomatoes to peel them.",
+        "zh": "把番茄烫一下好去皮。"
+      }
+    ]
+  },
+  "secular": {
+    "zh": "世俗的、非宗教的",
+    "note": "与 religious、sacred 相对；历史上指「不属于教会的」（secular clergy 在俗教士）。别和 temporary 混——两个词长得像，意思无关。",
+    "ex": [
+      {
+        "en": "The country has a secular constitution.",
+        "zh": "这个国家有世俗宪法。"
+      },
+      {
+        "en": "Secular music flourished alongside church music.",
+        "zh": "世俗音乐与教会音乐并行发展。"
+      }
+    ]
+  },
+  "serial": {
+    "zh": "连载的、连续的；连续剧",
+    "note": "和 series 的分工：serial 强调「一期接一期地连」，series 强调「一组」。serial killer 是连环杀手，serial number 是流水号。",
+    "ex": [
+      {
+        "en": "The novel was published as a serial in 1850.",
+        "zh": "这部小说 1850 年以连载形式发表。"
+      },
+      {
+        "en": "Police linked the crimes as part of a serial pattern.",
+        "zh": "警方把这些案子串成一个连环模式。"
+      }
+    ]
+  },
+  "shear": {
+    "zh": "剪（羊毛）；剪切",
+    "note": "动词三义：剪羊毛、剪切（金属、螺栓）、剥夺（be shorn of sth）。名词 shears 是大剪刀。",
+    "ex": [
+      {
+        "en": "The sheep are sheared once a year.",
+        "zh": "羊一年剪一次毛。"
+      },
+      {
+        "en": "The bolt sheared off under load.",
+        "zh": "螺栓在受力时被剪断了。"
+      }
+    ]
+  },
+  "slant": {
+    "zh": "倾斜；倾向、立场",
+    "note": "名词是倾斜、倾向、报道角度（an editorial slant）；动词是「倾斜」和「带倾向地写」（slanted news）。",
+    "ex": [
+      {
+        "en": "The roof slants steeply to the north.",
+        "zh": "屋顶朝北陡斜。"
+      },
+      {
+        "en": "The report has a clear political slant.",
+        "zh": "这份报告有明显的政治倾向。"
+      }
+    ]
+  },
+  "slick": {
+    "zh": "湿滑；圆滑；利落",
+    "note": "三层：路面湿滑、人圆滑油滑（a slick salesman）、办事干净利落（褒义）。名词是水面浮油：an oil slick。",
+    "ex": [
+      {
+        "en": "The road was slick with rain.",
+        "zh": "路面被雨打得发滑。"
+      },
+      {
+        "en": "It was a slick operation from start to finish.",
+        "zh": "从头到尾办得干净利落。"
+      }
+    ]
+  },
+  "sloppy": {
+    "zh": "马虎的；松垮的",
+    "note": "形容事是「马虎」，形容衣物是「松垮邋遢」，形容情绪是「过于感伤」。反义 neat、tidy。",
+    "ex": [
+      {
+        "en": "His handwriting is sloppy but readable.",
+        "zh": "他字写得潦草，但看得懂。"
+      },
+      {
+        "en": "That was a sloppy piece of research.",
+        "zh": "那份研究做得马虎。"
+      }
+    ]
+  },
+  "slur": {
+    "zh": "含糊地说；诋毁；连音",
+    "note": "三义：说话含糊（喝醉、麻醉后）、诽谤（racial slur 是种族侮辱语）、音乐里的连音线。名词还指「污点」。",
+    "ex": [
+      {
+        "en": "His speech was slurred after the anaesthetic.",
+        "zh": "麻醉之后他说话含糊。"
+      },
+      {
+        "en": "The article slurred her reputation without evidence.",
+        "zh": "那篇文章没有证据就诋毁她的名声。"
+      }
+    ]
+  },
+  "snag": {
+    "zh": "小障碍；勾住",
+    "note": "名词是临时的小麻烦（hit a snag），比 problem 轻；动词是「被勾住、刮破」。",
+    "ex": [
+      {
+        "en": "We hit a snag with the permits.",
+        "zh": "许可证上卡了一下。"
+      },
+      {
+        "en": "Her sleeve snagged on a nail.",
+        "zh": "她袖子被钉子勾住了。"
+      }
+    ]
+  },
+  "solicit": {
+    "zh": "征求、招揽；拉客",
+    "note": "正式用词：征求意见、招揽生意（solicit business）。法律语境里 solicit 常指「拉客、唆使犯罪」。名词 solicitation，常指「骚扰电话」。",
+    "ex": [
+      {
+        "en": "The charity solicits donations by post.",
+        "zh": "这家慈善机构通过邮寄募捐。"
+      },
+      {
+        "en": "He was charged with soliciting.",
+        "zh": "他被控拉客。"
+      }
+    ]
+  },
+  "specify": {
+    "zh": "明确规定、具体说明",
+    "note": "比 say 正式，指把条件、型号、日期写清楚（specify that / specify how）。名词 specification 是规格书。别理解成「细化」——它的重点在「写明」。",
+    "ex": [
+      {
+        "en": "The contract does not specify a delivery date.",
+        "zh": "合同没写明交货日期。"
+      },
+      {
+        "en": "Please specify which model you need.",
+        "zh": "请说明你要哪个型号。"
+      }
+    ]
+  },
+  "sponsor": {
+    "zh": "赞助；提出（法案）；担保",
+    "note": "商业上赞助、立法中提出法案（sponsor a bill）、移民上担保。名词是赞助商、提案人，也指教父教母。",
+    "ex": [
+      {
+        "en": "The bank sponsors the local football team.",
+        "zh": "这家银行赞助本地足球队。"
+      },
+      {
+        "en": "Who is sponsoring the bill in the Senate?",
+        "zh": "谁在参议院提这个法案？"
+      }
+    ]
+  },
+  "sputter": {
+    "zh": "（发动机）突突作响；结巴地说",
+    "note": "三条线：发动机快熄火时的突突声、人气急败坏地结巴、油在锅里噼啪溅。",
+    "ex": [
+      {
+        "en": "The engine sputtered and died.",
+        "zh": "发动机突突两声就熄了。"
+      },
+      {
+        "en": "He sputtered an apology and left.",
+        "zh": "他结结巴巴道了个歉就走了。"
+      }
+    ]
+  },
+  "static": {
+    "zh": "静止的、不变的；静电、杂音",
+    "note": "形容词是「不动的」（prices remained static），名词是静电与收音机杂音。技术里 static 指静态资源，反义 dynamic。",
+    "ex": [
+      {
+        "en": "Prices have remained static for a year.",
+        "zh": "价格一年没动。"
+      },
+      {
+        "en": "The radio was full of static.",
+        "zh": "收音机里全是杂音。"
+      }
+    ]
+  },
+  "straddle": {
+    "zh": "跨坐；两边都占",
+    "note": "本义两腿分开跨坐，比喻「骑墙、横跨两边」（straddle two markets）。金融里 straddle 是跨式期权组合。",
+    "ex": [
+      {
+        "en": "He straddled the chair and leaned forward.",
+        "zh": "他跨坐在椅子上，身子前倾。"
+      },
+      {
+        "en": "The paper straddles the line between news and opinion.",
+        "zh": "这份报纸踩在新闻与评论的界线上。"
+      }
+    ]
+  },
+  "stripe": {
+    "zh": "条纹；臂章上的杠",
+    "note": "名词是条纹、军衔的杠（three stripes 三道杠），美式口语里 of that stripe 是「那一类的」。动词是「画上条纹」。",
+    "ex": [
+      {
+        "en": "A zebra's stripes are unique to each animal.",
+        "zh": "每只斑马的条纹都不一样。"
+      },
+      {
+        "en": "He was a sergeant with three stripes.",
+        "zh": "他是个三道杠的中士。"
+      }
+    ]
+  },
+  "stud": {
+    "zh": "饰钉；种马；布满",
+    "note": "三义：皮鞋和皮衣上的饰钉（studded with）、种马与配种场、口语里的「猛男」。动词是「点缀、密布」。",
+    "ex": [
+      {
+        "en": "The leather jacket was studded with rivets.",
+        "zh": "皮夹克上钉着铆钉。"
+      },
+      {
+        "en": "He keeps a stud farm in Kentucky.",
+        "zh": "他在肯塔基有个种马场。"
+      }
+    ]
+  },
+  "surcharge": {
+    "zh": "附加费；加收",
+    "note": "在正常价格上「额外加收」，区别于 fee（服务费）。燃油附加费、信用卡手续费、延迟退房加收都是它。",
+    "ex": [
+      {
+        "en": "A fuel surcharge is added to every ticket.",
+        "zh": "每张票都加收燃油附加费。"
+      },
+      {
+        "en": "The hotel surcharges guests for late check-out.",
+        "zh": "酒店对延迟退房加收费用。"
+      }
+    ]
+  },
+  "syndicate": {
+    "zh": "辛迪加、犯罪集团；同时供多家刊载",
+    "note": "名词是商业联合体、报业辛迪加、犯罪集团；动词是「把稿件同时卖给多家」。读到时多半是 syndicated column（多家报纸同刊的专栏）。",
+    "ex": [
+      {
+        "en": "The column is syndicated to two hundred papers.",
+        "zh": "这个专栏同时供两百份报纸刊载。"
+      },
+      {
+        "en": "Police broke up a drug syndicate in the port.",
+        "zh": "警方打掉了一个港口贩毒集团。"
+      }
+    ]
+  },
+  "temporal": {
+    "zh": "时间的；世俗的",
+    "note": "与 spatial 相对，指「时间上的」；宗教语境里指「世俗的」（temporal power 俗权）。最容易错的是和 temporary（暂时的）混——两个词完全不同。",
+    "ex": [
+      {
+        "en": "The two events are close in temporal terms.",
+        "zh": "这两件事在时间上挨得很近。"
+      },
+      {
+        "en": "The court has no temporal jurisdiction over the case.",
+        "zh": "法院对本案没有时间上的管辖权。"
+      }
+    ]
+  },
+  "terminal": {
+    "zh": "航站楼；终端；晚期的",
+    "note": "三义：航站楼与终点站、计算机终端、疾病「晚期/致命」。词根 termin- 是「界限」，terminate 同源。",
+    "ex": [
+      {
+        "en": "The flight leaves from Terminal 2.",
+        "zh": "航班从 2 号航站楼出发。"
+      },
+      {
+        "en": "He was diagnosed with terminal cancer.",
+        "zh": "他被诊断为癌症晚期。"
+      }
+    ]
+  },
+  "toggle": {
+    "zh": "切换（开关）",
+    "note": "技术里是在两种状态间来回切（toggle on/off），服装上是「套索扣」。动词强调「来回」，不是单向打开。",
+    "ex": [
+      {
+        "en": "Press the key to toggle between views.",
+        "zh": "按这个键在两种视图之间切换。"
+      },
+      {
+        "en": "The coat has a toggle closure.",
+        "zh": "这件外套用的是牛角扣。"
+      }
+    ]
+  },
+  "transpose": {
+    "zh": "调换（顺序）；移调；改写",
+    "note": "三义：把数字或词序弄反、音乐移调、把作品改成另一种形式（小说改剧本）。数学里的「转置」也是它。",
+    "ex": [
+      {
+        "en": "Don't transpose the digits when you copy the number.",
+        "zh": "抄号码时别把数字顺序弄反。"
+      },
+      {
+        "en": "The piece was transposed down a third.",
+        "zh": "这首曲子被移低了三度。"
+      }
+    ]
+  },
+  "triple": {
+    "zh": "增至三倍；三重的",
+    "note": "triple 是「乘以三」，翻三番是八倍——中文的「番」和英文的 triple 常被译错。形容词是「三重的」：triple glazing 三层玻璃。",
+    "ex": [
+      {
+        "en": "Profits tripled in five years.",
+        "zh": "五年里利润涨到三倍。"
+      },
+      {
+        "en": "The room has triple glazing.",
+        "zh": "这房间装了三层玻璃。"
+      }
+    ]
+  },
+  "undercut": {
+    "zh": "以低价抢（市场）；削弱",
+    "note": "商业上是「比对手卖得便宜」（undercut competitors by 20%），抽象义是「悄悄削掉（论点、威信）」。过去式不变：undercut。",
+    "ex": [
+      {
+        "en": "The chain undercut local shops by twenty percent.",
+        "zh": "这家连锁店比本地店铺便宜两成。"
+      },
+      {
+        "en": "His joke undercut the seriousness of the moment.",
+        "zh": "他一句玩笑把当时的严肃劲儿削掉了。"
+      }
+    ]
+  },
+  "waver": {
+    "zh": "摇动；动摇",
+    "note": "两层：声音、火焰「发颤、摇晃」，决心「动摇」（waver between）。别和 waiver 混——那个是法律上的「弃权声明」，多一个 e。",
+    "ex": [
+      {
+        "en": "Her voice wavered as she read the letter.",
+        "zh": "她念信时声音发颤。"
+      },
+      {
+        "en": "He wavered between the two offers for a week.",
+        "zh": "两个 offer 之间他犹豫了一周。"
       }
     ]
   }

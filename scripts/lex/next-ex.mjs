@@ -26,6 +26,9 @@ const done = fs.existsSync(EX) ? JSON.parse(fs.readFileSync(EX, 'utf8')) : {};
 /* 专名和术语的味儿：gloss 里几乎全是这种句式 */
 const PROPER = /\b(a city|a town|a village|a state|a county|a river|a mountain|a lake|an island|a country|a port|a capital|a district|a province|a region|United States|genus|family|inhabitant|member of)\b/i;
 
+/* 义项前面挂专业标签的，多半是术语：(law)、(geology)、(baseball)、(music) */
+const DOMAIN = /\((law|geology|biology|botany|zoology|chemistry|physics|music|baseball|cricket|medicine|anatomy|architecture|nautical|military|heraldry|printing|typography|grammar|linguistics|computing|mathematics|finance|accounting|sports|hunting|fishing|agriculture|obsolete|archaic)\)/i;
+
 const shards = new Map();
 const shardOf = ch => {
   if (!shards.has(ch)) shards.set(ch, JSON.parse(fs.readFileSync(path.join(LEX, `${ch}.json`), 'utf8')));
@@ -34,7 +37,7 @@ const shardOf = ch => {
 
 const pending = idx.rows
   .filter(([w, f, , hasEx]) => f === 0 && hasEx === 0 && !done[w] && (!from || w.startsWith(from)))
-  .map(([w, , pos]) => [w, pos.length]);
+  .map(([w, , pos]) => [w, pos.length, pos]);
 
 /*
  * 英式 -ise 变体：词表里既然有 capitalise 也有 capitalize，两条都写就是白写一遍。
@@ -45,13 +48,22 @@ const isBritishVariant = w =>
   /(ise|isation|ised|ising)$/.test(w) && allWords.has(w.replace(/ise/, 'ize').replace(/isation/, 'ization'));
 
 const picked = [];
-for (const [w, score] of pending.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))) {
+for (const [w, score, pos] of pending.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))) {
   if (picked.length >= n) break;
   const e = shardOf(w[0])[w];
   if (!e) continue;
   const glosses = (e.senses || []).map(s => s.d || '');
-  if (glosses.length && glosses.every(g => PROPER.test(g))) continue; // 地名、人名、属名
+  // 专名：只要多数义项是「a city in …」这类句子就算，charles 这种半人半地名的也能拦住
+  if (glosses.length && glosses.filter(g => PROPER.test(g)).length * 2 >= glosses.length) continue;
+  if (glosses.length && glosses.filter(g => DOMAIN.test(g)).length * 2 >= glosses.length) continue;
   if (isBritishVariant(w)) continue;
+  if (w.length > 10 || w.includes(' ') || w.includes('-')) continue;
+  /*
+   * 只收有动词或形容词义项的。纯名词那批基本都是术语和物件名
+   * （anteater / bunt / congee / alto），义项再多也不值得编例句；
+   * capsule、citation 这种常用的，早在按字母推的时候写掉了。
+   */
+  if (!/[va]/.test(pos)) continue;
   picked.push({
     w,
     senses: (e.senses || []).map(s => `${s.p} ${s.d}`),
