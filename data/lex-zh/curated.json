@@ -700,5 +700,117 @@
         "zh": "她睡着的时候他在读书，一次也没抬头。"
       }
     ]
+  },
+  "harpoon": {
+    "note": "捕鲸用的长叉，带倒钩与长索（line），掷出后靠索收回。译「鱼叉」可以，但要知道它不是随手扔的——一次投中要靠「boat-steerer」把划艇带到鲸侧，掷出后整条艇会被拖着走，叫「Nantucket sleighride」。这些细节决定了《白鲸》里那些段落的节奏。",
+    "ex": [
+      {
+        "en": "He braced himself in the bow, harpoon raised, and waited for the boat to rise.",
+        "zh": "他在船头稳住身子，举起鱼叉，等小艇随浪抬高。"
+      },
+      {
+        "en": "The line ran out so fast that the water smoked about the loggerhead.",
+        "zh": "绳索放得飞快，海水在缆桩周围腾起一片白雾。"
+      }
+    ]
+  },
+  "forecastle": {
+    "note": "拼写与读音完全对不上：写成 fore-castle，读作 /ˈfoʊksl/（福克瑟）。它是船头的水手舱，与船尾的 quarterdeck（官舱与指挥区）相对；说 a foremast hand 就是「普通水手」，与军官层区分。船上的阶级在空间上是分明的。",
+    "ex": [
+      {
+        "en": "The men went forward to the forecastle, and the deck was left to the officers.",
+        "zh": "水手们都回到船头的舱里去了，甲板留给了军官。"
+      }
+    ]
+  },
+  "beadle": {
+    "note": "教区里的小吏，穿制服、持杖，在教堂维持秩序、传唤人、也协助济贫事务。不是「传令官」（herald），也不是「法警」（constable）。狄更斯笔下常是个自以为了不起的小人物——这个词自带一点讽刺。",
+    "ex": [
+      {
+        "en": "The beadle thrust the boys aside with his staff and shut the gate behind him.",
+        "zh": "教区执事用手杖把孩子们推开，随手关上了身后的门。"
+      }
+    ]
+  },
+  "tithe": {
+    "note": "教区按收成十分之一征收的税，名词用法最常见（the tithes）。它长期是乡村矛盾的焦点：谁种谁缴、缴实物还是折钱，争执不断。别把 tithe 译成「税」就算了——它特指教会那一份，与 rates（地方税）不是一回事。",
+    "ex": [
+      {
+        "en": "The tithes were paid in kind, and the parson's barn was fuller than the farmer's.",
+        "zh": "什一税以实物缴纳，牧师的谷仓比农夫的还满。"
+      }
+    ]
+  },
+  "apothecary": {
+    "note": "旧时的药剂师，自己配药、也看些小病，地位低于 physician（内科医生），常兼卖杂货与香料。莎士比亚时代的 apothecary 是穷而可靠的手艺人，19 世纪逐渐被 chemist / pharmacist 取代。译「药剂师」没问题，但要记得他能诊病。",
+    "ex": [
+      {
+        "en": "The apothecary mixed the draught himself, and would take no payment until morning.",
+        "zh": "药剂师亲手调了那服药，说什么也不肯在早上之前收钱。"
+      }
+    ]
+  },
+  "gig": {
+    "note": "在 19 世纪小说里几乎总是「一匹马拉的双轮轻便马车」——快、轻、只坐两人，是乡间医生和单身绅士的常用车。现代口语的 gig 是「演出、活儿」，与马车毫无关系；字典常把「赛艇」排在第一条，读文本时要按语境挑。",
+    "ex": [
+      {
+        "en": "He came over in his gig, with the reins in one hand and a bag at his feet.",
+        "zh": "他赶着那辆双轮轻便马车过来，一手执缰，脚边放着药箱。"
+      }
+    ]
+  },
+  "ostler": {
+    "note": "旅馆里照管客人马匹的伙计：卸套、喂料、刷马、备马。也拼作 hostler。这个职业随马车时代一起消失，现代英语基本不用；读旧小说时它出现的场合几乎都在 inn 的院子里。注意与 stableman（马夫）近义，但 ostler 特指「旅馆的」。",
+    "ex": [
+      {
+        "en": "The ostler took the horses, and said nothing about the weather, which was his way.",
+        "zh": "马夫把马牵了过去，对天气一字未提——他就是这个脾气。"
+      }
+    ]
+  },
+  "pedlar": {
+    "note": "走街串巷的货郎，背着箱子卖针线、丝带、小刀之类的杂货。英式拼 pedlar，美式 peddler。与 merchant（商人）、hawker（叫卖小贩）都不同：pedlar 是背着货走路的那种，乡下人家靠他捎消息。",
+    "ex": [
+      {
+        "en": "A pedlar came up the lane with his box, and the whole household came out to look.",
+        "zh": "一个货郎背着箱子沿小路上来，一家人全出来看。"
+      }
+    ]
+  },
+  "workhouse": {
+    "note": "济贫院，不是「工作室」。1834 年《济贫法修正案》之后，它是穷人在院内做工换取食宿的地方，而且刻意把条件设得比院外最差的工作还差 —— 目的是让人宁可挨饿也不愿进去。夫妻分住、母子分离是常态。这个词在 19 世纪文学里带着强烈的制度批判意味。",
+    "ex": [
+      {
+        "en": "They would not go into the workhouse, and so they stayed, and starved by degrees.",
+        "zh": "他们不肯进济贫院，于是留了下来，一点点饿下去。"
+      }
+    ]
+  },
+  "turnpike": {
+    "note": "收费公路（turnpike road），得名于路口那根可转开的横杆。18–19 世纪英国由信托公司修建养护，过卡缴费。现代美式英语里 turnpike 直接指「高速公路」，与收费与否无关，别按字面译成「旋转门」。",
+    "ex": [
+      {
+        "en": "The turnpike gates were shut at ten, and after that the road belonged to those who could pay the keeper.",
+        "zh": "收费路闸十点关，此后这条路只属于那些能私下给看闸人钱的人。"
+      }
+    ]
+  },
+  "postilion": {
+    "note": "骑在马上的驭手——不是坐在车厢里的。驿站马车（post-chaise）由他骑在左侧那匹马上驱赶，所以译「马车夫」是错的：coachman 坐车，postilion 骑马。他穿长靴、戴高帽，是 18–19 世纪旅行场景里的标志性人物。",
+    "ex": [
+      {
+        "en": "The postilion cracked his whip, and the chaise lurched forward into the dark.",
+        "zh": "驭手甩了个响鞭，马车一头扎进黑暗里。"
+      }
+    ]
+  },
+  "chaise": {
+    "note": "轻便马车（借自法语），通常两轮或四轮、可坐两三人。post-chaise 是驿站马车：每到一站换马不换车，是当时长途旅行最快的方式。与 carriage（泛指马车，多指自家的、较重的）相比，chaise 是「雇来的、跑得快的那种」。",
+    "ex": [
+      {
+        "en": "They travelled by chaise, changing horses every ten miles, and spoke to no one on the way.",
+        "zh": "他们乘驿站马车走，每十里换一次马，一路上不与人搭话。"
+      }
+    ]
   }
 }

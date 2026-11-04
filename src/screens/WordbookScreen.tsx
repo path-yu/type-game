@@ -203,7 +203,8 @@ export function WordbookScreen() {
           <h1 className="page-title">词库</h1>
           <div className="page-sub">
             {rows ? `${rows.length.toLocaleString()} 个词` : '正在载入词表…'}
-            {q && ` · 查到 ${shown.length} 个`}
+            {/* 只要在筛，就把结果数说出来 —— 只看精讲时还显示 35,000 会让人以为没生效 */}
+            {(q || letter || pos || onlyEx || onlyLex || onlyCur) && ` · 筛出 ${shown.length} 个`}
           </div>
         </div>
         <div className="wb-search">
