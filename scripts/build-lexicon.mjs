@@ -306,6 +306,14 @@ for (const w of words) {
   }
 
   const zhOf = ZH_MERGED[w];
+  /*
+   * 中文条数必须和义项数对齐，少一条就整体错位 ——
+   * 界面上一行中文配着下一行英文，看不出错，只会觉得"这词翻得怪"。
+   * 宁可整条中文都不要，也不能错位。
+   */
+  if (zhOf && zhOf.length !== senses.slice(0, MAX_SENSES).length) {
+    console.warn(`[lex] ⚠ ${w}: 中文 ${zhOf.length} 条 / 义项 ${senses.length} 个，跳过中文`);
+  }
   const seenGloss = new Set();
   const list = senses
     .filter(s => s.d && !seenGloss.has(s.p + s.d) && seenGloss.add(s.p + s.d))
@@ -318,7 +326,7 @@ for (const w of words) {
       p: s.p,
       d: s.d,
       ...(s.zh ? { zh: s.zh } : {}),
-      ...(zhOf?.[i] ? { zh: zhOf[i] } : {}),
+      ...(zhOf?.length === senses.slice(0, MAX_SENSES).length && zhOf[i] ? { zh: zhOf[i] } : {}),
       ...(s.x?.length ? { x: s.x.slice(0, MAX_SENSE_EX) } : {}),
       ...(s.syn?.length ? { s: s.syn } : {}),
     }));
