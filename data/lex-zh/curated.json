@@ -1120,5 +1120,174 @@
         "zh": "他一时忘形，把发誓不说的话说了出来。"
       }
     ]
+  },
+  "betake": {
+    "note": "现代英语几乎只剩一个用法：betake oneself to = 前往、去。它是书面古语，带一点郑重，19 世纪小说里随处可见（betook himself to his chamber / to the country）。不能像 go 那样直接带宾语，必须有 oneself。",
+    "ex": [
+      {
+        "en": "He betook himself to his room and did not come down again that day.",
+        "zh": "他回自己房间去了，那天再没下楼。"
+      },
+      {
+        "en": "She betook herself to the kitchen, where there was always something to be done.",
+        "zh": "她躲进厨房去了——那里总有活儿可干。"
+      }
+    ]
+  },
+  "repair": {
+    "note": "在这个语境里不是「修理」，是「前往」：repair to a place，正式而略古。同形两义，靠宾语判断——repair a clock 是修钟，repair to the library 是去书房。这一条几乎每次读旧小说都会撞上。",
+    "ex": [
+      {
+        "en": "After dinner the gentlemen repaired to the library, and the ladies to the drawing-room.",
+        "zh": "饭后男人们去了书房，女人们去了客厅。"
+      },
+      {
+        "en": "He repaired to the inn at dusk, and asked for a room without giving a name.",
+        "zh": "他黄昏时去了客栈，没报姓名就要了一间房。"
+      }
+    ]
+  },
+  "withdraw": {
+    "note": "在社交场面里是「退席、离开房间」，不是「撤回」：withdraw to the drawing-room、he withdrew early。19 世纪的礼节里，「谁先 withdraw」是有讲究的——女主人离席，才意味着聚会可以散。另外 withdraw from 才是「退出」。",
+    "ex": [
+      {
+        "en": "The ladies withdrew soon after the tea was brought in.",
+        "zh": "茶端上来不久，女客们便退到里间去了。"
+      },
+      {
+        "en": "He withdrew without ceremony, and was not missed.",
+        "zh": "他没打招呼就走了，也没人觉得少了谁。"
+      }
+    ]
+  },
+  "retire": {
+    "note": "除了「退休」，更常见的是「退下、就寝」：retire to one's room、retire for the night、retired early。19 世纪小说写「某人早早上楼」，往往就用 retire——它不一定是睡，也可能是避开众人。形容词 retired 是「隐居的、僻静的」。",
+    "ex": [
+      {
+        "en": "She retired early, pleading a headache that no one believed.",
+        "zh": "她推说头疼，早早就退下了，可没人信。"
+      },
+      {
+        "en": "They live in a retired part of the county and see almost no one.",
+        "zh": "他们住在郡里偏僻的一角，几乎不见人。"
+      }
+    ]
+  },
+  "engage": {
+    "note": "在婚恋语境里 engage 就是「订婚」：be engaged to sb、an engaged couple。另有三个常用义并存：雇用（engage a servant）、占用（my time is engaged）、许诺（engage to do）。形容词 engaged 最常是「忙」——不是「订婚」。判断靠介词：to 是订婚对象，in 是忙于某事。",
+    "ex": [
+      {
+        "en": "They had been engaged three weeks before anyone in the family was told.",
+        "zh": "他们订婚三个星期之后，家里人才知道。"
+      },
+      {
+        "en": "I am engaged this evening, or I would wait upon you.",
+        "zh": "我今晚有约，否则一定前来拜访。"
+      }
+    ]
+  },
+  "attach": {
+    "note": "be attached to 是「依恋、喜爱」，不是「被附上」。19 世纪写人物感情时这是标准说法：she was much attached to her cousin。名词 attachment 即「眷恋」。另有法律义「扣押」，按上下文分。",
+    "ex": [
+      {
+        "en": "He was more attached to the house than to anyone living in it.",
+        "zh": "他对那栋房子的依恋，胜过对住在里面的任何一个人。"
+      },
+      {
+        "en": "She had been attached to him since childhood, and never said so.",
+        "zh": "她从小就依恋他，却从没说过。"
+      }
+    ]
+  },
+  "dispose": {
+    "note": "dispose of 是「处理掉、解决掉」；在婚嫁语境里还有一层更冷的用法——dispose of a daughter in marriage，即「把女儿嫁出去」，语气里带着处理财物的意味，作者用它时多半带讽刺。单独 dispose 是「使倾向于」：I am disposed to agree。",
+    "ex": [
+      {
+        "en": "The furniture was disposed of before the lease expired.",
+        "zh": "租约到期前家具就都处理掉了。"
+      },
+      {
+        "en": "He spoke of disposing of his daughters as though it were a matter of stock.",
+        "zh": "他谈把女儿们嫁出去，口气像在处理一批存货。"
+      }
+    ]
+  },
+  "wait": {
+    "note": "wait upon / on sb 是「侍候、随侍」，也可指「登门拜访（以示敬意）」。这与「等待」无关：a lady-in-waiting 是侍女。19 世纪语境里「wait upon」还含着身份差——谁等谁，就说明谁低谁高。",
+    "ex": [
+      {
+        "en": "She waited upon the old lady at table and took nothing herself.",
+        "zh": "她在席上侍候老太太，自己什么也没吃。"
+      },
+      {
+        "en": "He waited upon her father the next morning, and was received coldly.",
+        "zh": "第二天上午他去拜见她的父亲，受到了冷遇。"
+      }
+    ]
+  },
+  "call": {
+    "note": "call upon / call on sb 是「短访」，19 世纪社交的基本单位：留名片、坐一刻钟、谈天气。这与「打电话」无关。call for sb 是「来接某人」，call at a house 是「到某家拜访」。读奥斯丁时，谁 call 了谁、多久回访，都是信息。",
+    "ex": [
+      {
+        "en": "He called upon them the following week, and stayed exactly the proper quarter of an hour.",
+        "zh": "他第二周去拜访了他们，恰好坐了该坐的那一刻钟。"
+      },
+      {
+        "en": "She had not called since the funeral, and the omission was noticed.",
+        "zh": "葬礼之后她一直没来拜访，这份疏漏被人记下了。"
+      }
+    ]
+  },
+  "company": {
+    "note": "除「公司」，最常是「有人在场」：in company 是在人前，in good company 是「大家都一样」，keep sb company 是陪伴。特别要留意 keep company with——在 19 世纪它常指「与某人交往（并可能谈婚论嫁）」，而不只是「做伴」。",
+    "ex": [
+      {
+        "en": "He said nothing of it in company, but spoke freely enough when they were alone.",
+        "zh": "有人在场时他对此一字不提，独处时却说得毫无顾忌。"
+      },
+      {
+        "en": "The neighbours said he had been keeping company with the schoolmaster's daughter.",
+        "zh": "邻居们说，他一直在和校长的女儿来往。"
+      }
+    ]
+  },
+  "acquaintance": {
+    "note": "「相识」不是「朋友」——这一层分寸在 19 世纪极重要：acquaintance 可以点头问好，friend 才能托付事情。三个说法：make sb's acquaintance（结识）、on further acquaintance（进一步交往后）、a nodding acquaintance（点头之交）。",
+    "ex": [
+      {
+        "en": "They were acquaintances of ten years and had never once dined alone together.",
+        "zh": "他们相识十年，却从未单独一起吃过一顿饭。"
+      },
+      {
+        "en": "I made his acquaintance at Bath, and have not sought it since.",
+        "zh": "我是在巴斯结识他的，此后没再主动来往。"
+      }
+    ]
+  },
+  "propose": {
+    "note": "在婚恋语境里不必加 marriage：he proposed to her 就是「他向她求婚」。19 世纪小说里的 propose 默认指求婚，除非上下文另有说明；而 propose doing / propose that 才是「提议」。同一个词，宾语是人还是事，决定了整段话在讲什么。",
+    "ex": [
+      {
+        "en": "He proposed on a Tuesday, in the garden, and was accepted before he had finished the sentence.",
+        "zh": "他周二在花园里求的婚，话没说完就被答应了。"
+      },
+      {
+        "en": "She had refused two proposals that winter and was thought difficult.",
+        "zh": "那年冬天她拒了两门亲事，被人说成难缠。"
+      }
+    ]
+  },
+  "engagement": {
+    "note": "在 19 世纪小说里几乎总是「婚约」，其次才是「约定的约会」（an engagement for Tuesday）。现代读者最容易按「参与度、投入感」来理解，那是 engagement 在 20 世纪才有的抽象义，旧文本里没有。与 engage 一套看：be engaged to = 订婚；an engagement 就是那桩婚事本身，可长可短，也可以被 break off。",
+    "ex": [
+      {
+        "en": "The engagement was not announced, though the servants knew it a fortnight before the family did.",
+        "zh": "婚事没有公开，可仆人们比家里人早知道两个星期。"
+      },
+      {
+        "en": "She had an engagement in the afternoon and could not stay to tea.",
+        "zh": "她下午有约，不能留下来喝茶。"
+      }
+    ]
   }
 }
