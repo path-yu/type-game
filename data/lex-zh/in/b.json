@@ -1,690 +1,542 @@
 [
  {
-  "w": "uncomfortable",
-  "f": 51,
-  "senses": [
-   {
-    "p": "a",
-    "d": "conducive to or feeling mental discomfort"
-   },
-   {
-    "p": "a",
-    "d": "providing or experiencing physical discomfort"
-   }
-  ]
- },
- {
-  "w": "using",
-  "f": 51,
+  "w": "enthusiasm",
+  "f": 34,
   "senses": [
    {
     "p": "n",
-    "d": "an act that exploits or victimizes someone (treats them unfairly)"
+    "d": "a feeling of excitement"
+   },
+   {
+    "p": "n",
+    "d": "overflowing with eager enjoyment or approval"
+   },
+   {
+    "p": "n",
+    "d": "a lively interest"
    }
   ]
  },
  {
-  "w": "weary",
-  "f": 51,
+  "w": "expectation",
+  "f": 34,
+  "senses": [
+   {
+    "p": "n",
+    "d": "belief about (or mental picture of) the future"
+   },
+   {
+    "p": "n",
+    "d": "anticipating with confidence of fulfillment"
+   },
+   {
+    "p": "n",
+    "d": "the feeling that something is about to happen"
+   },
+   {
+    "p": "n",
+    "d": "the sum of the values of a random variable divided by the number of values"
+   }
+  ]
+ },
+ {
+  "w": "farm",
+  "f": 34,
   "senses": [
    {
     "p": "v",
-    "d": "exhaust or get tired through overuse or great strain or stress"
+    "d": "be a farmer; work as a farmer"
    },
    {
     "p": "v",
-    "d": "lose interest or become bored with something or somebody"
+    "d": "collect fees or profits"
    },
    {
-    "p": "a",
-    "d": "physically and mentally fatigued"
+    "p": "v",
+    "d": "cultivate by growing, often involving improvements by means of agricultural techniques"
+   },
+   {
+    "p": "n",
+    "d": "workplace consisting of farm buildings and cultivated land as a unit"
    }
   ]
  },
  {
-  "w": "worried",
-  "f": 51,
-  "senses": [
-   {
-    "p": "a",
-    "d": "afflicted with or marked by anxious uneasiness or trouble or grief"
-   },
-   {
-    "p": "a",
-    "d": "mentally upset over possible misfortune or danger etc"
-   }
-  ]
- },
- {
-  "w": "afford",
-  "f": 50,
-  "senses": [
-   {
-    "p": "v",
-    "d": "be able to spare or give up"
-   },
-   {
-    "p": "v",
-    "d": "be the cause or source of"
-   },
-   {
-    "p": "v",
-    "d": "have the financial means to do something or buy something"
-   },
-   {
-    "p": "v",
-    "d": "afford access to"
-   }
-  ]
- },
- {
-  "w": "aloft",
-  "f": 50,
+  "w": "fully",
+  "f": 34,
   "senses": [
    {
     "p": "r",
-    "d": "at or on or to the masthead or upper rigging of a ship"
+    "d": "to the greatest degree or extent; completely or entirely; (`full' in this sense is used as a combining form)"
    },
    {
     "p": "r",
-    "d": "upward"
+    "d": "sufficiently; more than adequately"
    },
    {
     "p": "r",
-    "d": "at or to great height; high up in or into the air"
-   },
-   {
-    "p": "r",
-    "d": "in the higher atmosphere above the earth"
+    "d": "referring to a quantity"
    }
   ]
  },
  {
-  "w": "attitude",
-  "f": 50,
+  "w": "groan",
+  "f": 34,
   "senses": [
    {
     "p": "n",
-    "d": "a complex mental state involving beliefs and feelings and values and dispositions to act in certain ways"
-   },
-   {
-    "p": "n",
-    "d": "the arrangement of the body and its limbs"
-   },
-   {
-    "p": "n",
-    "d": "a theatrical pose created for effect"
-   },
-   {
-    "p": "n",
-    "d": "position of aircraft or spacecraft relative to a frame of reference (the horizon or direction of motion)"
-   }
-  ]
- },
- {
-  "w": "crowded",
-  "f": 50,
-  "senses": [
-   {
-    "p": "a",
-    "d": "overfilled or compacted or concentrated"
-   }
-  ]
- },
- {
-  "w": "dread",
-  "f": 50,
-  "senses": [
-   {
-    "p": "n",
-    "d": "fearful expectation or anticipation"
+    "d": "an utterance expressing pain or disapproval"
    },
    {
     "p": "v",
-    "d": "be afraid or scared of; be frightened of"
-   },
-   {
-    "p": "a",
-    "d": "causing fear or dread or terror"
+    "d": "indicate pain, discomfort, or displeasure"
    }
   ]
  },
  {
-  "w": "fled",
-  "f": 50,
-  "senses": [
-   {
-    "p": "v",
-    "d": "run away quickly"
-   }
-  ]
- },
- {
-  "w": "hatred",
-  "f": 50,
+  "w": "guests",
+  "f": 34,
   "senses": [
    {
     "p": "n",
-    "d": "the emotion of intense dislike; a feeling of dislike so strong that it demands action"
+    "d": "a visitor to whom hospitality is extended"
+   },
+   {
+    "p": "n",
+    "d": "a customer of a hotel or restaurant etc."
+   },
+   {
+    "p": "n",
+    "d": "(computer science) any computer that is hooked up to a computer network"
    }
   ]
  },
  {
-  "w": "hundreds",
-  "f": 50,
-  "senses": [
-   {
-    "p": "n",
-    "d": "ten 10s"
-   },
-   {
-    "p": "a",
-    "d": "being ten more than ninety"
-   }
-  ]
- },
- {
-  "w": "midnight",
-  "f": 50,
-  "senses": [
-   {
-    "p": "n",
-    "d": "12 o'clock at night; the middle of the night"
-   }
-  ]
- },
- {
-  "w": "notion",
-  "f": 50,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a vague idea in which some confidence is placed"
-   },
-   {
-    "p": "n",
-    "d": "a general inclusive concept"
-   },
-   {
-    "p": "n",
-    "d": "an odd or fanciful or capricious idea"
-   },
-   {
-    "p": "n",
-    "d": "(usually plural) small personal articles or clothing or sewing items"
-   }
-  ]
- },
- {
-  "w": "rolling",
-  "f": 50,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a deep prolonged sound (as of thunder or large bells)"
-   },
-   {
-    "p": "n",
-    "d": "the act of robbing a helpless person"
-   },
-   {
-    "p": "n",
-    "d": "propelling something on wheels"
-   },
-   {
-    "p": "a",
-    "d": "uttered with a trill"
-   }
-  ]
- },
- {
-  "w": "sadly",
-  "f": 50,
+  "w": "hitherto",
+  "f": 34,
   "senses": [
    {
     "p": "r",
-    "d": "in an unfortunate way"
+    "d": "used in negative statement to describe a situation that has existed up to this point or up to the present time"
+   }
+  ]
+ },
+ {
+  "w": "humanity",
+  "f": 34,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the quality of being humane"
+   },
+   {
+    "p": "n",
+    "d": "the quality of being human"
+   },
+   {
+    "p": "n",
+    "d": "all of the living human inhabitants of the earth"
+   }
+  ]
+ },
+ {
+  "w": "lagoon",
+  "f": 34,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a body of water cut off from a larger body by a reef of sand or coral"
+   }
+  ]
+ },
+ {
+  "w": "lazy",
+  "f": 34,
+  "senses": [
+   {
+    "p": "a",
+    "d": "moving slowly and gently"
+   },
+   {
+    "p": "a",
+    "d": "disinclined to work or exertion"
+   }
+  ]
+ },
+ {
+  "w": "marvellous",
+  "f": 34,
+  "senses": [
+   {
+    "p": "a",
+    "d": "extraordinarily good or great; used especially as intensifiers"
+   },
+   {
+    "p": "a",
+    "d": "being or having the character of a miracle"
+   },
+   {
+    "p": "a",
+    "d": "too improbable to admit of belief"
+   }
+  ]
+ },
+ {
+  "w": "millions",
+  "f": 34,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the number that is represented as a one followed by 6 zeros"
+   },
+   {
+    "p": "n",
+    "d": "a very large indefinite number (usually hyperbole)"
+   },
+   {
+    "p": "a",
+    "d": "(in Roman numerals, M written with a macron over it) denoting a quantity consisting of 1,000,000 items or units"
+   }
+  ]
+ },
+ {
+  "w": "moody",
+  "f": 34,
+  "senses": [
+   {
+    "p": "a",
+    "d": "showing a brooding ill humor- Bruce Bliven"
+   },
+   {
+    "p": "a",
+    "d": "subject to sharply varying moods"
+   }
+  ]
+ },
+ {
+  "w": "outer",
+  "f": 34,
+  "senses": [
+   {
+    "p": "a",
+    "d": "being on the outside or further from a center"
+   },
+   {
+    "p": "a",
+    "d": "located outside"
+   },
+   {
+    "p": "a",
+    "d": "being on or toward the outside of the body"
+   }
+  ]
+ },
+ {
+  "w": "owe",
+  "f": 34,
+  "senses": [
+   {
+    "p": "v",
+    "d": "be obliged to pay or repay"
+   },
+   {
+    "p": "v",
+    "d": "be indebted to, in an abstract or intellectual sense"
+   },
+   {
+    "p": "v",
+    "d": "be in debt"
+   }
+  ]
+ },
+ {
+  "w": "passionate",
+  "f": 34,
+  "senses": [
+   {
+    "p": "a",
+    "d": "having or expressing strong emotions"
+   }
+  ]
+ },
+ {
+  "w": "possibility",
+  "f": 34,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a future prospect or potential"
+   },
+   {
+    "p": "n",
+    "d": "capability of existing or happening or being true"
+   },
+   {
+    "p": "n",
+    "d": "a tentative insight into the natural world; a concept that is not yet verified but that if true would explain certain facts or phenomena"
+   },
+   {
+    "p": "n",
+    "d": "a possible alternative"
+   }
+  ]
+ },
+ {
+  "w": "pronounced",
+  "f": 34,
+  "senses": [
+   {
+    "p": "v",
+    "d": "speak, pronounce, or utter in a certain way"
+   },
+   {
+    "p": "v",
+    "d": "pronounce judgment on"
+   },
+   {
+    "p": "a",
+    "d": "strongly marked; easily noticeable"
+   }
+  ]
+ },
+ {
+  "w": "quantity",
+  "f": 34,
+  "senses": [
+   {
+    "p": "n",
+    "d": "how much there is or how many there are of something that you can quantify"
+   },
+   {
+    "p": "n",
+    "d": "an adequate or large amount"
+   },
+   {
+    "p": "n",
+    "d": "the concept that something has a magnitude and can be represented in mathematical expressions by a constant or a variable"
+   }
+  ]
+ },
+ {
+  "w": "reaching",
+  "f": 34,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the act of physically reaching or thrusting out"
+   },
+   {
+    "p": "n",
+    "d": "accomplishment of an objective"
+   }
+  ]
+ },
+ {
+  "w": "reasonable",
+  "f": 34,
+  "senses": [
+   {
+    "p": "a",
+    "d": "showing reason or sound judgment"
+   },
+   {
+    "p": "a",
+    "d": "not excessive or extreme"
+   },
+   {
+    "p": "a",
+    "d": "marked by sound judgment"
+   }
+  ]
+ },
+ {
+  "w": "recollection",
+  "f": 34,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the ability to recall past occurrences"
+   },
+   {
+    "p": "n",
+    "d": "the process of remembering (especially the process of recovering information by mental effort)"
+   },
+   {
+    "p": "n",
+    "d": "something recalled to the mind"
+   }
+  ]
+ },
+ {
+  "w": "remembering",
+  "f": 34,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the cognitive processes whereby past experience is remembered"
+   }
+  ]
+ },
+ {
+  "w": "remorse",
+  "f": 34,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a feeling of deep regret (usually for some misdeed)"
+   }
+  ]
+ },
+ {
+  "w": "ribbon",
+  "f": 34,
+  "senses": [
+   {
+    "p": "n",
+    "d": "any long object resembling a thin line"
+   },
+   {
+    "p": "n",
+    "d": "an award for winning a championship or commemorating some other event"
+   },
+   {
+    "p": "n",
+    "d": "a long strip of inked material for making characters on paper with a typewriter"
+   },
+   {
+    "p": "n",
+    "d": "notion consisting of a narrow strip of fine material used for trimming"
+   }
+  ]
+ },
+ {
+  "w": "solitude",
+  "f": 34,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a state of social isolation"
+   },
+   {
+    "p": "n",
+    "d": "the state or situation of being alone"
+   },
+   {
+    "p": "n",
+    "d": "a solitary place"
+   }
+  ]
+ },
+ {
+  "w": "stooped",
+  "f": 34,
+  "senses": [
+   {
+    "p": "a",
+    "d": "having the back and shoulders rounded; not erect"
+   }
+  ]
+ },
+ {
+  "w": "yonder",
+  "f": 34,
+  "senses": [
+   {
+    "p": "a",
+    "d": "distant but within sight (`yon' is dialectal)"
    },
    {
     "p": "r",
-    "d": "with sadness; in a sad manner"
-   },
-   {
-    "p": "r",
-    "d": "in an unfortunate or deplorable manner"
+    "d": "at or in an indicated (usually distant) place (`yon' is archaic and dialectal)- Calder Willingham"
    }
   ]
  },
  {
-  "w": "sentence",
-  "f": 50,
+  "w": "advertisement",
+  "f": 33,
   "senses": [
    {
     "p": "n",
-    "d": "a string of words satisfying the grammatical rules of a language"
-   },
-   {
-    "p": "n",
-    "d": "(criminal law) a final judgment of guilty in a criminal case and the punishment that is imposed"
-   },
-   {
-    "p": "n",
-    "d": "the period of time a prisoner is imprisoned"
-   },
-   {
-    "p": "v",
-    "d": "pronounce a sentence on (somebody) in a court of law"
+    "d": "a public promotion of some product or service"
    }
   ]
  },
  {
-  "w": "stopping",
-  "f": 50,
+  "w": "applied",
+  "f": 33,
   "senses": [
-   {
-    "p": "n",
-    "d": "fastener consisting of a narrow strip of welded metal used to join steel members"
-   },
-   {
-    "p": "n",
-    "d": "the kind of playing that involves pressing the fingers on the strings of a stringed instrument to control the pitch"
-   }
-  ]
- },
- {
-  "w": "trembled",
-  "f": 50,
-  "senses": [
-   {
-    "p": "v",
-    "d": "move or jerk quickly and involuntarily up and down or sideways"
-   },
-   {
-    "p": "n",
-    "d": "a reflex motion caused by cold or fear or excitement"
-   }
-  ]
- },
- {
-  "w": "beloved",
-  "f": 49,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a beloved person; used as terms of endearment"
-   },
    {
     "p": "a",
-    "d": "dearly loved"
+    "d": "concerned with concrete problems or data rather than with fundamental principles- Sidney Hook"
    }
   ]
  },
  {
-  "w": "curiously",
-  "f": 49,
+  "w": "balloon",
+  "f": 33,
+  "senses": [
+   {
+    "p": "n",
+    "d": "large tough nonrigid bag filled with gas or heated air"
+   },
+   {
+    "p": "v",
+    "d": "ride in a hot-air balloon"
+   },
+   {
+    "p": "n",
+    "d": "small thin inflatable rubber bag with narrow neck"
+   },
+   {
+    "p": "v",
+    "d": "become inflated"
+   }
+  ]
+ },
+ {
+  "w": "cheese",
+  "f": 33,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a solid food prepared from the pressed curd of milk"
+   },
+   {
+    "p": "v",
+    "d": "used in the imperative (get away, or stop it)"
+   },
+   {
+    "p": "n",
+    "d": "erect or decumbent Old World perennial with axillary clusters of rosy-purple flowers; introduced in United States"
+   },
+   {
+    "p": "v",
+    "d": "wind onto a cheese"
+   }
+  ]
+ },
+ {
+  "w": "dearly",
+  "f": 33,
   "senses": [
    {
     "p": "r",
-    "d": "in a manner differing from the usual or expected"
+    "d": "in a sincere and heartfelt manner"
    },
    {
     "p": "r",
-    "d": "with curiosity"
-   }
-  ]
- },
- {
-  "w": "desk",
-  "f": 49,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a piece of furniture with a writing surface and usually drawers or other compartments"
-   }
-  ]
- },
- {
-  "w": "earnest",
-  "f": 49,
-  "senses": [
-   {
-    "p": "a",
-    "d": "characterized by a firm and humorless belief in the validity of your opinions"
-   },
-   {
-    "p": "a",
-    "d": "sincerely earnest"
-   },
-   {
-    "p": "a",
-    "d": "not distracted by anything unrelated to the goal"
-   },
-   {
-    "p": "n",
-    "d": "something of value given by one person to another to bind a contract"
-   }
-  ]
- },
- {
-  "w": "existed",
-  "f": 49,
-  "senses": [
-   {
-    "p": "v",
-    "d": "have an existence, be extant"
-   },
-   {
-    "p": "v",
-    "d": "support oneself"
-   }
-  ]
- },
- {
-  "w": "exquisite",
-  "f": 49,
-  "senses": [
-   {
-    "p": "a",
-    "d": "intense or sharp"
-   },
-   {
-    "p": "a",
-    "d": "lavishly elegant and refined"
-   },
-   {
-    "p": "a",
-    "d": "delicately beautiful"
-   },
-   {
-    "p": "a",
-    "d": "of extreme beauty"
-   }
-  ]
- },
- {
-  "w": "guilty",
-  "f": 49,
-  "senses": [
-   {
-    "p": "a",
-    "d": "responsible for or chargeable with a reprehensible act"
-   },
-   {
-    "p": "a",
-    "d": "showing a sense of guilt- Eric Linklater"
-   }
-  ]
- },
- {
-  "w": "illustration",
-  "f": 49,
-  "senses": [
-   {
-    "p": "n",
-    "d": "artwork that helps make something clear or attractive"
-   },
-   {
-    "p": "n",
-    "d": "showing by example"
-   },
-   {
-    "p": "n",
-    "d": "an item of information that is typical of a class or group"
-   },
-   {
-    "p": "n",
-    "d": "a visual representation (a picture or diagram) that is used make some subject more pleasing or easier to understand"
-   }
-  ]
- },
- {
-  "w": "insisted",
-  "f": 49,
-  "senses": [
-   {
-    "p": "v",
-    "d": "be emphatic or resolute and refuse to budge"
-   },
-   {
-    "p": "v",
-    "d": "beg persistently and urgently"
-   },
-   {
-    "p": "v",
-    "d": "postulate positively and assertively"
-   }
-  ]
- },
- {
-  "w": "monstrous",
-  "f": 49,
-  "senses": [
-   {
-    "p": "a",
-    "d": "abnormally large"
-   },
-   {
-    "p": "a",
-    "d": "shockingly brutal or cruel"
-   },
-   {
-    "p": "a",
-    "d": "distorted and unnatural in shape or size; abnormal and hideous"
-   }
-  ]
- },
- {
-  "w": "painful",
-  "f": 49,
-  "senses": [
-   {
-    "p": "a",
-    "d": "causing physical or psychological pain"
-   },
-   {
-    "p": "a",
-    "d": "causing misery or pain or distress"
-   },
-   {
-    "p": "a",
-    "d": "exceptionally bad or displeasing"
-   },
-   {
-    "p": "a",
-    "d": "causing physical discomfort"
-   }
-  ]
- },
- {
-  "w": "parlor",
-  "f": 49,
-  "senses": [
-   {
-    "p": "n",
-    "d": "reception room in an inn or club where visitors can be received"
-   },
-   {
-    "p": "n",
-    "d": "a room in a private house or establishment where people can sit and talk and relax"
-   }
-  ]
- },
- {
-  "w": "properly",
-  "f": 49,
-  "senses": [
-   {
-    "p": "r",
-    "d": "in the right manner; correctly; suitably"
+    "d": "at a great cost"
    },
    {
     "p": "r",
-    "d": "indicating exactness or preciseness--Thomas Carlyle"
-   },
-   {
-    "p": "r",
-    "d": "in accordance with what is appropriate or suitable for the circumstances"
+    "d": "with affection"
    }
   ]
  },
  {
-  "w": "rid",
-  "f": 49,
+  "w": "dismal",
+  "f": 33,
   "senses": [
-   {
-    "p": "v",
-    "d": "relieve from"
-   }
-  ]
- },
- {
-  "w": "ridiculous",
-  "f": 49,
-  "senses": [
-   {
-    "p": "a",
-    "d": "inspiring scornful pity- Dashiell Hammett"
-   },
-   {
-    "p": "a",
-    "d": "so unreasonable as to invite derision"
-   },
-   {
-    "p": "a",
-    "d": "broadly or extravagantly humorous; resembling farce"
-   }
-  ]
- },
- {
-  "w": "twilight",
-  "f": 49,
-  "senses": [
-   {
-    "p": "n",
-    "d": "the time of day immediately following sunset"
-   },
-   {
-    "p": "n",
-    "d": "the diffused light from the sky when the sun is below the horizon but its rays are refracted by the atmosphere of the earth"
-   },
-   {
-    "p": "n",
-    "d": "a condition of decline following successes"
-   },
-   {
-    "p": "a",
-    "d": "lighted by or as if by twilight-Henry Fielding"
-   }
-  ]
- },
- {
-  "w": "worthy",
-  "f": 49,
-  "senses": [
-   {
-    "p": "a",
-    "d": "having worth or merit or value; being honorable or admirable"
-   },
-   {
-    "p": "a",
-    "d": "worthy of being chosen especially as a spouse"
-   },
-   {
-    "p": "a",
-    "d": "having qualities or abilities that merit recognition in some way"
-   },
-   {
-    "p": "n",
-    "d": "an important, honorable person (word is often used humorously)"
-   }
-  ]
- },
- {
-  "w": "becomes",
-  "f": 48,
-  "senses": [
-   {
-    "p": "v",
-    "d": "enter or assume a certain state or condition"
-   },
-   {
-    "p": "v",
-    "d": "undergo a change or development"
-   },
-   {
-    "p": "v",
-    "d": "come into existence"
-   },
-   {
-    "p": "v",
-    "d": "enhance the appearance of"
-   }
-  ]
- },
- {
-  "w": "chimney",
-  "f": 48,
-  "senses": [
-   {
-    "p": "n",
-    "d": "a vertical flue that provides a path through which smoke from a fire is carried away through the wall or roof of a building"
-   },
-   {
-    "p": "n",
-    "d": "a glass flue surrounding the wick of an oil lamp"
-   }
-  ]
- },
- {
-  "w": "continually",
-  "f": 48,
-  "senses": [
-   {
-    "p": "r",
-    "d": "seemingly without interruption"
-   }
-  ]
- },
- {
-  "w": "depend",
-  "f": 48,
-  "senses": [
-   {
-    "p": "v",
-    "d": "be contingent upon (something that is elided)"
-   },
-   {
-    "p": "v",
-    "d": "have faith or confidence in"
-   }
-  ]
- },
- {
-  "w": "drinking",
-  "f": 48,
-  "senses": [
-   {
-    "p": "n",
-    "d": "the act of consuming liquids"
-   },
-   {
-    "p": "n",
-    "d": "the act of drinking alcoholic beverages to excess"
-   }
-  ]
- },
- {
-  "w": "gloomy",
-  "f": 48,
-  "senses": [
-   {
-    "p": "a",
-    "d": "depressingly dark"
-   },
-   {
-    "p": "a",
-    "d": "filled with melancholy and despondency"
-   },
    {
     "p": "a",
     "d": "causing dejection"
@@ -692,138 +544,270 @@
   ]
  },
  {
-  "w": "magic",
-  "f": 48,
+  "w": "farewell",
+  "f": 33,
   "senses": [
    {
     "p": "n",
-    "d": "any art that invokes supernatural powers"
+    "d": "an acknowledgment or expression of goodwill at parting"
    },
    {
     "p": "n",
-    "d": "an illusory feat; considered magical by naive observers"
+    "d": "the act of departing politely"
+   }
+  ]
+ },
+ {
+  "w": "flames",
+  "f": 33,
+  "senses": [
+   {
+    "p": "v",
+    "d": "shine with a sudden light"
+   },
+   {
+    "p": "v",
+    "d": "be in flames or aflame"
+   },
+   {
+    "p": "v",
+    "d": "criticize harshly, usually via an electronic medium"
+   },
+   {
+    "p": "n",
+    "d": "the process of combustion of inflammable materials producing heat and light and (often) smoke"
+   }
+  ]
+ },
+ {
+  "w": "fury",
+  "f": 33,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a feeling of intense anger"
+   },
+   {
+    "p": "n",
+    "d": "state of violent mental agitation"
+   },
+   {
+    "p": "n",
+    "d": "the property of being wild or turbulent"
+   }
+  ]
+ },
+ {
+  "w": "gladly",
+  "f": 33,
+  "senses": [
+   {
+    "p": "r",
+    "d": "in a willing manner"
+   }
+  ]
+ },
+ {
+  "w": "hay",
+  "f": 33,
+  "senses": [
+   {
+    "p": "n",
+    "d": "grass mowed and cured for use as fodder"
+   },
+   {
+    "p": "v",
+    "d": "convert (plant material) into hay"
+   }
+  ]
+ },
+ {
+  "w": "honey",
+  "f": 33,
+  "senses": [
+   {
+    "p": "n",
+    "d": "a sweet yellow liquid produced by bees"
+   },
+   {
+    "p": "n",
+    "d": "a beloved person; used as terms of endearment"
+   },
+   {
+    "p": "v",
+    "d": "sweeten with honey"
    },
    {
     "p": "a",
-    "d": "possessing or using or characteristic of or appropriate to supernatural powers- Shakespeare"
+    "d": "of something having the color of honey"
    }
   ]
  },
  {
-  "w": "praise",
-  "f": 48,
+  "w": "injured",
+  "f": 33,
+  "senses": [
+   {
+    "p": "a",
+    "d": "harmed"
+   },
+   {
+    "p": "a",
+    "d": "emotionally hurt or upset or annoyed"
+   }
+  ]
+ },
+ {
+  "w": "leather",
+  "f": 33,
   "senses": [
    {
     "p": "n",
-    "d": "an expression of approval and commendation"
-   },
-   {
-    "p": "n",
-    "d": "offering words of homage as an act of worship"
+    "d": "an animal skin made smooth and flexible by removing the hair and then tanning"
    },
    {
     "p": "v",
-    "d": "express approval of"
+    "d": "whip with a leather strap"
    }
   ]
  },
  {
-  "w": "problem",
-  "f": 48,
+  "w": "letting",
+  "f": 33,
   "senses": [
    {
     "p": "n",
-    "d": "a state of difficulty that needs to be resolved"
-   },
-   {
-    "p": "n",
-    "d": "a question raised for consideration or solution"
-   },
-   {
-    "p": "n",
-    "d": "a source of difficulty"
+    "d": "property that is leased or rented out or let"
    }
   ]
  },
  {
-  "w": "reminded",
-  "f": 48,
+  "w": "mend",
+  "f": 33,
   "senses": [
    {
-    "p": "v",
-    "d": "put in the mind of someone"
+    "p": "n",
+    "d": "sewing that repairs a worn or torn hole (especially in a garment)"
    },
    {
     "p": "v",
-    "d": "assist (somebody acting or reciting) by suggesting the next words of something forgotten or imperfectly learned"
-   }
-  ]
- },
- {
-  "w": "riding",
-  "f": 48,
-  "senses": [
-   {
-    "p": "n",
-    "d": "the sport of sitting on the back of a horse while controlling its movements"
+    "d": "restore by replacing a part or putting together what is torn or broken"
    },
    {
     "p": "n",
-    "d": "travel by being carried on horseback"
-   }
-  ]
- },
- {
-  "w": "slope",
-  "f": 48,
-  "senses": [
-   {
-    "p": "n",
-    "d": "an elevated geological formation"
-   },
-   {
-    "p": "n",
-    "d": "the property possessed by a line or surface that departs from the horizontal"
+    "d": "the act of putting something in working order again"
    },
    {
     "p": "v",
-    "d": "be at an angle"
+    "d": "heal or recover"
    }
   ]
  },
  {
-  "w": "vanity",
-  "f": 48,
+  "w": "mingled",
+  "f": 33,
   "senses": [
    {
-    "p": "n",
-    "d": "feelings of excessive pride"
+    "p": "v",
+    "d": "to bring or combine together or with something else"
    },
    {
-    "p": "n",
-    "d": "the quality of being valueless or futile"
+    "p": "v",
+    "d": "get involved or mixed-up with"
    },
    {
-    "p": "n",
-    "d": "the trait of being unduly vain and conceited; false pride"
-   },
-   {
-    "p": "n",
-    "d": "low table with mirror or mirrors where one sits while dressing or applying makeup"
+    "p": "v",
+    "d": "be all mixed up or jumbled together"
    }
   ]
  },
  {
-  "w": "accordingly",
-  "f": 47,
+  "w": "northern",
+  "f": 33,
   "senses": [
    {
-    "p": "r",
-    "d": "(sentence connectors) because of the reason given"
+    "p": "a",
+    "d": "in or characteristic of a region of the United States north of (approximately) the Mason-Dixon line"
    },
    {
-    "p": "r",
-    "d": "in accordance with"
+    "p": "a",
+    "d": "situated in or oriented toward the north"
+   },
+   {
+    "p": "a",
+    "d": "coming from the north; used especially of wind"
+   },
+   {
+    "p": "a",
+    "d": "situated in or coming from regions of the north"
+   }
+  ]
+ },
+ {
+  "w": "occasional",
+  "f": 33,
+  "senses": [
+   {
+    "p": "a",
+    "d": "occurring from time to time"
+   },
+   {
+    "p": "a",
+    "d": "occurring or appearing at usually irregular intervals"
+   },
+   {
+    "p": "a",
+    "d": "occurring on a temporary or irregular basis"
+   },
+   {
+    "p": "a",
+    "d": "recurring or reappearing from time to time"
+   }
+  ]
+ },
+ {
+  "w": "odds",
+  "f": 33,
+  "senses": [
+   {
+    "p": "n",
+    "d": "the likelihood of a thing occurring rather than not occurring"
+   },
+   {
+    "p": "n",
+    "d": "the ratio by which one better's wager is greater than that of another"
+   }
+  ]
+ },
+ {
+  "w": "pew",
+  "f": 33,
+  "senses": [
+   {
+    "p": "n",
+    "d": "long bench with backs; used in church by the congregation"
+   }
+  ]
+ },
+ {
+  "w": "popular",
+  "f": 33,
+  "senses": [
+   {
+    "p": "a",
+    "d": "regarded with great favor, approval, or affection especially by the general public"
+   },
+   {
+    "p": "a",
+    "d": "carried on by or for the people (or citizens) at large"
+   },
+   {
+    "p": "a",
+    "d": "representing or appealing to or adapted for the benefit of the people at large"
+   },
+   {
+    "p": "a",
+    "d": "(of music or art) new and of general appeal (especially among young people)"
    }
   ]
  }
