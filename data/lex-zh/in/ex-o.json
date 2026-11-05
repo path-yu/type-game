@@ -1,0 +1,322 @@
+{
+  "polyphonic": {
+    "zh": "复调的",
+    "note": "音乐术语，与 homophonic（主调的）相对：几个声部同时进行、没有主次。手机铃声的「复音」也是它。日常少见，读音乐史时会碰上。",
+    "ex": [
+      { "en": "The motet is polyphonic: four voices, none dominant.", "zh": "这首经文歌是复调的：四个声部，没有主次。" },
+      { "en": "Early polyphonic music sounds strange to modern ears.", "zh": "早期复调音乐在现代耳朵里听着陌生。" }
+    ]
+  },
+  "tee": {
+    "zh": "T 恤；球座；三通",
+    "note": "T-shirt 的口语缩短、高尔夫球座、管道三通都叫 tee；动词 tee up 是「架球」，也比喻「准备好」。",
+    "ex": [
+      { "en": "He wore a plain white tee.", "zh": "他穿了件纯白 T 恤。" },
+      { "en": "She teed the ball up on the fourth.", "zh": "她在第四洞把球架上了球座。" }
+    ]
+  },
+  "cad": {
+    "zh": "无赖（旧式说法）",
+    "note": "旧式英式贬称，指对女性失礼的男子，带年代感，现在几乎只在文学作品里出现。",
+    "ex": [
+      { "en": "He behaved like a cad and left her with the bill.", "zh": "他像个无赖，把账单留给了她。" },
+      { "en": "The word cad is now almost archaic.", "zh": "cad 这个词现在几乎成了古语。" }
+    ]
+  },
+  "dialog": {
+    "zh": "对话框；对白（美式拼写）",
+    "note": "计算机的「对话框」多用美式拼写 dialog，人际与文学的「对话」多用英式 dialogue；两种拼写并存。",
+    "ex": [
+      { "en": "Open the dialog and choose a folder.", "zh": "打开对话框，选一个文件夹。" },
+      { "en": "The film's dialog was almost entirely improvised.", "zh": "这部片的对白几乎全是即兴的。" }
+    ]
+  },
+  "ecology": {
+    "zh": "生态（学）",
+    "note": "指生物与环境之间的相互关系；环保运动是 environmentalism，注意区分。形容词 ecological。",
+    "ex": [
+      { "en": "The ecology of the marsh changed after the dyke.", "zh": "筑堤之后，沼泽的生态变了。" },
+      { "en": "She studies the ecology of coastal forests.", "zh": "她研究海岸林的生态。" }
+    ]
+  },
+  "synthesis": {
+    "zh": "综合；合成",
+    "note": "与 analysis（分析）相对：把部分合成整体。化学上是「合成」，哲学上是「综合」。动词 synthesise / synthesize。",
+    "ex": [
+      { "en": "The book is a synthesis of two decades of work.", "zh": "这本书是二十年工作的综合。" },
+      { "en": "The drug is produced by chemical synthesis.", "zh": "这种药通过化学合成生产。" }
+    ]
+  },
+  "baseline": {
+    "zh": "基线；基准",
+    "note": "测量与项目管理里的「基准」，医学上是「基线检查」，排版里的「基线」也用它。",
+    "ex": [
+      { "en": "We measured the baseline before the change.", "zh": "改动之前我们测了基线。" },
+      { "en": "The new rules set a baseline for emissions.", "zh": "新规为排放设了基准。" }
+    ]
+  },
+  "treasury": {
+    "zh": "财政部；金库",
+    "note": "大写指国家财政部门（HM Treasury、US Treasury），小写指机构的资金池；treasurer 是司库。",
+    "ex": [
+      { "en": "The Treasury issued new guidance on Monday.", "zh": "财政部周一发布了新指引。" },
+      { "en": "The club's treasury is empty.", "zh": "俱乐部的金库空了。" }
+    ]
+  },
+  "disco": {
+    "zh": "迪斯科（音乐、舞厅）",
+    "note": "音乐流派与舞厅都叫 disco，正式说法是 discotheque；动词 disco 罕见。",
+    "ex": [
+      { "en": "The wedding band played disco after midnight.", "zh": "午夜之后，乐队开始放迪斯科。" },
+      { "en": "They met at a disco in 1979.", "zh": "他们 1979 年在一家迪斯科舞厅认识。" }
+    ]
+  },
+  "mutant": {
+    "zh": "突变体；变种的",
+    "note": "生物学上是「突变体」，流行文化里是「变种人」；动词 mutate，名词 mutation。",
+    "ex": [
+      { "en": "The mutant strain resisted the drug.", "zh": "这个突变株耐药。" },
+      { "en": "X-Men are mutants, in the comic's terms.", "zh": "在漫画里，X 战警是变种人。" }
+    ]
+  },
+  "respondent": {
+    "zh": "受访者；被上诉人",
+    "note": "问卷与调查里的「受访者」，法律里上诉案的「被上诉人」；动词 respond。",
+    "ex": [
+      { "en": "Half the respondents said they would pay more.", "zh": "一半受访者说愿意多付。" },
+      { "en": "The respondent has fourteen days to reply.", "zh": "被上诉人有十四天时间答辩。" }
+    ]
+  },
+  "appliance": {
+    "zh": "家用电器",
+    "note": "多指白电与厨房设备（复数 appliances）；工具与设备统称 equipment。拼写 a-p-p-l-i-a-n-c-e。",
+    "ex": [
+      { "en": "The kitchen appliances are all new.", "zh": "厨房电器都是新的。" },
+      { "en": "The warranty covers the appliance, not the installation.", "zh": "保修覆盖电器本身，不含安装。" }
+    ]
+  },
+  "microwave": {
+    "zh": "微波炉；微波",
+    "note": "家电「微波炉」与物理「微波」同词；动词直接说 microwave it，不用加介词。",
+    "ex": [
+      { "en": "Reheat it in the microwave for two minutes.", "zh": "用微波炉热两分钟。" },
+      { "en": "The signal travels by microwave.", "zh": "信号以微波传输。" }
+    ]
+  },
+  "repository": {
+    "zh": "仓库、存放处",
+    "note": "技术上的代码仓库（口语缩短成 repo）、机构与档案的「收藏处」；比 warehouse 更偏「长期保存」。",
+    "ex": [
+      { "en": "The code lives in a private repository.", "zh": "代码放在一个私有仓库里。" },
+      { "en": "The library is a repository of local records.", "zh": "这家图书馆是地方档案的存放处。" }
+    ]
+  },
+  "transplant": {
+    "zh": "移植；移栽",
+    "note": "医学的器官移植、园艺的移栽、人员的「调动」都用它；名动重音不同（名词在前）。",
+    "ex": [
+      { "en": "The kidney was transplanted within four hours.", "zh": "肾在四小时内完成了移植。" },
+      { "en": "The seedlings were transplanted in May.", "zh": "幼苗五月移栽了。" }
+    ]
+  },
+  "victorian": {
+    "zh": "维多利亚时代的；拘谨老派的",
+    "note": "特指 1837–1901 年的英国；形容人时带贬义，指拘谨、假正经。",
+    "ex": [
+      { "en": "The house is Victorian, with high ceilings.", "zh": "这房子是维多利亚时期的，天花板很高。" },
+      { "en": "He has Victorian attitudes about dress.", "zh": "他对穿着持一种老派的道学态度。" }
+    ]
+  },
+  "bounty": {
+    "zh": "赏金；丰饶",
+    "note": "两层：悬赏金（a bounty for information）、文学里的「丰饶、慷慨」。赏金猎人是 bounty hunter。",
+    "ex": [
+      { "en": "There is a bounty on the snake's head.", "zh": "这种蛇有悬赏。" },
+      { "en": "The land's bounty fed the whole village.", "zh": "土地的丰饶养活了整个村子。" }
+    ]
+  },
+  "compiler": {
+    "zh": "编译器；编纂者",
+    "note": "技术上是「编译器」，也指「编纂者」（a compiler of dictionaries）。动词 compile。",
+    "ex": [
+      { "en": "The compiler rejects the file at line forty.", "zh": "编译器在第四十行报错。" },
+      { "en": "He wrote the first compiler for the language.", "zh": "他写了这门语言的第一个编译器。" }
+    ]
+  },
+  "unity": {
+    "zh": "团结；统一；整体性",
+    "note": "政治上的「团结」、艺术的「统一性」、数学里的「单位元」；形容词 unified，动词 unify。",
+    "ex": [
+      { "en": "The party's unity was never in doubt.", "zh": "这个党的团结从来没有被怀疑过。" },
+      { "en": "The painting lacks unity.", "zh": "这幅画缺少整体感。" }
+    ]
+  },
+  "hunch": {
+    "zh": "直觉、预感；弓着背",
+    "note": "口语里的「预感」（a hunch）没什么依据；也形容驼背（hunched over）。区别 intuition——hunch 更随口。",
+    "ex": [
+      { "en": "I have a hunch she will say no.", "zh": "我有预感她会拒绝。" },
+      { "en": "He hunched over the keyboard.", "zh": "他弓着背对着键盘。" }
+    ]
+  },
+  "pendant": {
+    "zh": "吊坠；悬垂（物）",
+    "note": "首饰的「吊坠」、灯具的「吊挂式」（pendant light）；词根 pend- 就是「悬挂」。",
+    "ex": [
+      { "en": "She wore a silver pendant on a short chain.", "zh": "她戴着一条短链上的银吊坠。" },
+      { "en": "The pendant light hangs over the table.", "zh": "吊灯挂在桌子上方。" }
+    ]
+  },
+  "taxation": {
+    "zh": "征税、税制",
+    "note": "指征税这件事与整套制度，具体税种是 tax；动词 tax，形容词 taxable（应税的）。",
+    "ex": [
+      { "en": "Taxation is the price of public services.", "zh": "税收是公共服务的代价。" },
+      { "en": "The party promised no new taxation.", "zh": "这个党承诺不加新税。" }
+    ]
+  },
+  "cheque": {
+    "zh": "支票（英式）",
+    "note": "英式 cheque、美式 check；「把支票兑现」是 cash a cheque。美式的 check 还有「账单、检查」等义。",
+    "ex": [
+      { "en": "He paid by cheque.", "zh": "他用支票付的。" },
+      { "en": "The cheque cleared on Friday.", "zh": "支票周五到账了。" }
+    ]
+  },
+  "limitation": {
+    "zh": "局限；限额",
+    "note": "抽象上是研究或方法的「局限」，具体上是「限额」；形容词 limited，动词 limit。",
+    "ex": [
+      { "en": "The study has one obvious limitation.", "zh": "这项研究有一个明显的局限。" },
+      { "en": "There is a limitation on how much you can claim.", "zh": "索赔有上限。" }
+    ]
+  },
+  "compile": {
+    "zh": "编纂；编译",
+    "note": "两层：资料的「汇编」、程序的「编译」。名词 compilation 既指「汇编物（合集）」，也指「编译过程」。",
+    "ex": [
+      { "en": "She compiled the index by hand.", "zh": "索引是她手工编的。" },
+      { "en": "The code compiles but fails at runtime.", "zh": "代码能编译，但运行时出错。" }
+    ]
+  },
+  "annex": {
+    "zh": "吞并；附楼",
+    "note": "动词指未经同意地兼并领土（带贬义），名词是「附楼、附件」；重音都在后 /əˈneks/。",
+    "ex": [
+      { "en": "The territory was annexed in 1938.", "zh": "这片领土在 1938 年被吞并。" },
+      { "en": "The archive is in the annex behind the library.", "zh": "档案馆在图书馆后面的附楼里。" }
+    ]
+  },
+  "whack": {
+    "zh": "重击；（口语）份儿",
+    "note": "动词是用力打；口语 out of whack 是「出故障、错位」，a whack of 是「一大份」（美式）。",
+    "ex": [
+      { "en": "He whacked the ball into the net.", "zh": "他一下把球打进了网里。" },
+      { "en": "The whole thing is out of whack.", "zh": "整件事都乱了套。" }
+    ]
+  },
+  "curry": {
+    "zh": "咖喱；讨好（curry favour）",
+    "note": "名词是咖喱菜；固定说法 curry favour（讨好）来自古语「刷马」，和食物无关。",
+    "ex": [
+      { "en": "The curry is mild but fragrant.", "zh": "这咖喱不辣，但很香。" },
+      { "en": "He tried to curry favour with the new boss.", "zh": "他试图讨好新上司。" }
+    ]
+  },
+  "genesis": {
+    "zh": "起源、创始",
+    "note": "书面语里的「起源」（the genesis of an idea）；大写 Genesis 是《创世记》。别和 genetics（遗传学）混。",
+    "ex": [
+      { "en": "The book traces the genesis of the movement.", "zh": "这本书追溯了这场运动的起源。" },
+      { "en": "Genesis is the first book of the Bible.", "zh": "《创世记》是《圣经》的第一卷。" }
+    ]
+  },
+  "ordinance": {
+    "zh": "条例、法令",
+    "note": "地方性法规（市级 ordinance），比 law 具体、比 regulation 更「立法」。别和 ordnance（军械）混。",
+    "ex": [
+      { "en": "The city passed an ordinance banning scooters.", "zh": "市里通过了禁止滑板车的条例。" },
+      { "en": "The ordinance takes effect in July.", "zh": "这项条例七月生效。" }
+    ]
+  },
+  "ironic": {
+    "zh": "讽刺的；反讽的",
+    "note": "ironic 指「与预期相反、带讽刺意味」，sarcastic 指故意挖苦；名词是 irony（反讽这件事）。",
+    "ex": [
+      { "en": "It is ironic that the safety officer caused the fire.", "zh": "安全员引发了火灾，真是讽刺。" },
+      { "en": "Her tone was ironic, not sincere.", "zh": "她的语气是反讽，不是真心。" }
+    ]
+  },
+  "coconut": {
+    "zh": "椰子",
+    "note": "可数（a coconut）；椰奶是 coconut milk，椰油是 coconut oil。口语里 coconut 也指「脑袋」。",
+    "ex": [
+      { "en": "Crack the coconut and save the water.", "zh": "敲开椰子，把椰子水留着。" },
+      { "en": "The curry is made with coconut milk.", "zh": "这咖喱是用椰奶做的。" }
+    ]
+  },
+  "pier": {
+    "zh": "栈桥、突堤",
+    "note": "伸入水中的栈桥，比 dock（泊位）、wharf（装卸码头）更偏「游玩与观景」。",
+    "ex": [
+      { "en": "They walked to the end of the pier.", "zh": "他们走到栈桥的尽头。" },
+      { "en": "The pier was damaged in the storm.", "zh": "栈桥在风暴里受损了。" }
+    ]
+  },
+  "registrar": {
+    "zh": "登记员；注册主任",
+    "note": "大学的「注册主任」、英式医院的「专科住院医」、婚姻与土地的「登记官」；动词 register。",
+    "ex": [
+      { "en": "The registrar issued the certificate.", "zh": "登记员签发了证书。" },
+      { "en": "Contact the registrar about your enrolment.", "zh": "注册的事请联系注册处。" }
+    ]
+  },
+  "garlic": {
+    "zh": "大蒜",
+    "note": "不可数；一瓣蒜是 a clove of garlic，一头蒜是 a head of garlic。",
+    "ex": [
+      { "en": "Crush two cloves of garlic.", "zh": "压两瓣蒜。" },
+      { "en": "The sauce is heavy on garlic.", "zh": "这酱的蒜味很重。" }
+    ]
+  },
+  "intake": {
+    "zh": "摄入量；招收人数；进气口",
+    "note": "三义：饮食与呼吸的「摄入」、机构的「招收」、机械的「进气口」。动词 take in。",
+    "ex": [
+      { "en": "Reduce your salt intake.", "zh": "减少盐的摄入。" },
+      { "en": "The school doubled its intake this year.", "zh": "这所学校今年的招生翻了一倍。" }
+    ]
+  },
+  "incentive": {
+    "zh": "激励、诱因",
+    "note": "经济与政策术语，常配 incentive to do sth；反义 disincentive（抑制因素）。",
+    "ex": [
+      { "en": "The tax break is an incentive to hire.", "zh": "这项税收减免是招人的激励。" },
+      { "en": "There is little incentive to save.", "zh": "没有什么动力去存钱。" }
+    ]
+  },
+  "geek": {
+    "zh": "极客、技术宅",
+    "note": "原义带贬义（怪人），现在多为中性甚至褒义，指对某领域极度投入的人。",
+    "ex": [
+      { "en": "He is a hardware geek who builds his own machines.", "zh": "他是个自己装机器的硬件极客。" },
+      { "en": "Geek culture is now mainstream.", "zh": "极客文化现在已经成了主流。" }
+    ]
+  },
+  "medieval": {
+    "zh": "中世纪的；老掉牙的",
+    "note": "指约五到十五世纪；口语里作贬义用，指「原始、落后」。也可拼作 mediaeval。",
+    "ex": [
+      { "en": "The town has a medieval wall.", "zh": "这个镇子有一段中世纪的城墙。" },
+      { "en": "The system is medieval compared with the new one.", "zh": "跟新系统比，这套东西老得可以进博物馆。" }
+    ]
+  },
+  "backpack": {
+    "zh": "背包；背包旅行",
+    "note": "名词与动词同形；英式也常直接说 rucksack。backpacker 是背包客。",
+    "ex": [
+      { "en": "He carried a fifty-litre backpack.", "zh": "他背着一个五十升的背包。" },
+      { "en": "They backpacked through the Balkans.", "zh": "他们背包走了巴尔干。" }
+    ]
+  }
+}
