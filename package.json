@@ -44,6 +44,7 @@
     "lex": "node scripts/lex/status.mjs",
     "lex:next": "node scripts/lex/next-gloss.mjs --n=50",
     "lex:ex": "node scripts/lex/next-ex.mjs --n=40",
+    "lex:sense": "node scripts/lex/next-sense-zh.mjs --n=40",
     "prebuild": "node scripts/prebuild.mjs"
   },
   "dependencies": {
