@@ -1,0 +1,322 @@
+{
+  "indie": {
+    "zh": "独立（音乐、电影）",
+    "note": "independent 的缩短，指独立于大厂牌的音樂、电影、游戏；也可作名词指独立公司。",
+    "ex": [
+      { "en": "The film was made by an indie studio.", "zh": "这部片是一家独立工作室做的。" },
+      { "en": "She listens to indie bands from the nineties.", "zh": "她听九十年代的独立乐队。" }
+    ]
+  },
+  "detector": {
+    "zh": "探测器；检测器",
+    "note": "各种探测与检测设备：metal detector 金属探测器、lie detector 测谎仪、smoke detector 烟感。动词 detect。",
+    "ex": [
+      { "en": "The smoke detector needs a new battery.", "zh": "烟感器该换电池了。" },
+      { "en": "The detector picked up trace amounts.", "zh": "探测器捕捉到了痕量。" }
+    ]
+  },
+  "bomber": {
+    "zh": "轰炸机；放炸弹的人",
+    "note": "飞机与人都叫 bomber；bomber jacket 是飞行员夹克（时尚词）。",
+    "ex": [
+      { "en": "The bomber flew three missions that week.", "zh": "那架轰炸机当周飞了三次任务。" },
+      { "en": "The bomber was caught at the border.", "zh": "放炸弹的人在边境被抓。" }
+    ]
+  },
+  "timer": {
+    "zh": "计时器",
+    "note": "计时设备；口语里 an old timer 是「老前辈、老资格」，与计时器无关。",
+    "ex": [
+      { "en": "Set the timer for twelve minutes.", "zh": "把计时器设成十二分钟。" },
+      { "en": "The old timer still remembers the flood.", "zh": "那位老前辈还记得那场洪水。" }
+    ]
+  },
+  "visibility": {
+    "zh": "能见度；曝光度",
+    "note": "气象上的「能见度」、公关上的「曝光度」、技术上的「可见性」（scope）；形容词 visible。",
+    "ex": [
+      { "en": "Fog cut visibility to fifty metres.", "zh": "雾把能见度降到了五十米。" },
+      { "en": "The campaign gave the issue visibility.", "zh": "这场活动让这个议题被看见了。" }
+    ]
+  },
+  "intern": {
+    "zh": "实习生；拘禁",
+    "note": "名词「实习生」重音在前，动词「拘禁」重音在后（多指战时拘留敌国侨民）。",
+    "ex": [
+      { "en": "She joined as an intern last summer.", "zh": "她去年夏天以实习生身份加入。" },
+      { "en": "The prisoners were interned for two years.", "zh": "这些人被拘禁了两年。" }
+    ]
+  },
+  "bash": {
+    "zh": "猛击、狠批；聚会",
+    "note": "口语里是「猛打、狠批」（bash sb/sth），名词 a bash 是热闹的聚会；技术圈的 bash 是 shell 名。",
+    "ex": [
+      { "en": "The report bashed the council's record.", "zh": "报告把市议会的旧账批了一通。" },
+      { "en": "They threw a birthday bash.", "zh": "他们办了个生日聚会。" }
+    ]
+  },
+  "platoon": {
+    "zh": "排（军事编制）",
+    "note": "小于连（company）、大于班（squad）；电影《野战排》的片名就是 Platoon。",
+    "ex": [
+      { "en": "A platoon holds about thirty soldiers.", "zh": "一个排大约三十名士兵。" },
+      { "en": "The platoon was sent ahead to scout.", "zh": "这个排被派到前面侦察。" }
+    ]
+  },
+  "infrared": {
+    "zh": "红外（的）",
+    "note": "光谱上在红光之外，对应 ultraviolet（紫外）；作定语用 infrared sensor、infrared camera。",
+    "ex": [
+      { "en": "The camera sees in infrared.", "zh": "这台相机能看红外。" },
+      { "en": "The remote uses infrared, so it needs line of sight.", "zh": "遥控器用红外，所以中间不能挡。" }
+    ]
+  },
+  "caller": {
+    "zh": "来电者；来访者",
+    "note": "电话的「来电者」、上门的「访客」；caller ID 是来电显示。舞蹈里 caller 是「报舞步的人」。",
+    "ex": [
+      { "en": "The caller hung up without speaking.", "zh": "来电的人没说话就挂了。" },
+      { "en": "There is a caller at the door.", "zh": "门口有人找。" }
+    ]
+  },
+  "motivation": {
+    "zh": "动机；干劲",
+    "note": "两层：做事的「动机」（原因）与「干劲」（状态）。动词 motivate，形容词 motivated。",
+    "ex": [
+      { "en": "The motivation behind the change was cost.", "zh": "这次改变的动机是成本。" },
+      { "en": "He lacks motivation in the afternoons.", "zh": "他下午没什么干劲。" }
+    ]
+  },
+  "minimize": {
+    "zh": "使降到最低；轻描淡写",
+    "note": "美式 minimize、英式 minimise。第二义「刻意淡化」常带批评。反义 maximize。",
+    "ex": [
+      { "en": "Wear a mask to minimize the risk.", "zh": "戴口罩，把风险降到最低。" },
+      { "en": "She minimized the damage in her report.", "zh": "她在报告里把损失说得很轻。" }
+    ]
+  },
+  "shack": {
+    "zh": "棚屋",
+    "note": "简陋的小屋，带贫穷意味，比 hut 更不正式。",
+    "ex": [
+      { "en": "They lived in a shack by the river.", "zh": "他们住在河边的棚屋里。" },
+      { "en": "The shack had no running water.", "zh": "那间棚屋没有自来水。" }
+    ]
+  },
+  "clarity": {
+    "zh": "清晰",
+    "note": "表达与图像的「清晰」，也指思路清明（clarity of thought）；形容词 clear。",
+    "ex": [
+      { "en": "The report is a model of clarity.", "zh": "这份报告清楚得可以当范本。" },
+      { "en": "The photo lacks clarity at the edges.", "zh": "照片边缘不够清晰。" }
+    ]
+  },
+  "ecological": {
+    "zh": "生态的",
+    "note": "比 environmental 更专指生物与环境的相互作用；口语里常被当成 eco-friendly 用。",
+    "ex": [
+      { "en": "The dam caused ecological damage downstream.", "zh": "大坝给下游造成了生态破坏。" },
+      { "en": "The farm is ecological in name only.", "zh": "这个农场的「生态」只是名义上的。" }
+    ]
+  },
+  "scoop": {
+    "zh": "一勺；独家新闻；舀",
+    "note": "量词「一勺」（冰淇淋球也是 a scoop）、新闻的「独家」、动词「抢先报道」。",
+    "ex": [
+      { "en": "Add two scoops of flour.", "zh": "加两勺面粉。" },
+      { "en": "The paper scooped every rival on the story.", "zh": "这家报纸在这个新闻上抢了所有同行。" }
+    ]
+  },
+  "appraisal": {
+    "zh": "评估、估价；考核",
+    "note": "房产的「估价」、员工的「年度考核」、学术的「评述」；动词 appraise，注意别和 apprise（告知）混。",
+    "ex": [
+      { "en": "The house needs an independent appraisal.", "zh": "这房子需要独立估价。" },
+      { "en": "Her annual appraisal is next week.", "zh": "她的年度考核在下周。" }
+    ]
+  },
+  "boxer": {
+    "zh": "拳击手；拳师犬",
+    "note": "拳击手与拳师犬同词；拳击这项运动是 boxing。",
+    "ex": [
+      { "en": "The boxer retired undefeated.", "zh": "这位拳手以全胜战绩退役。" },
+      { "en": "He keeps two boxers as pets.", "zh": "他养了两只拳师犬。" }
+    ]
+  },
+  "aurora": {
+    "zh": "极光",
+    "note": "北极光是 aurora borealis、南极光是 aurora australis；复数 auroras 或 aurorae。",
+    "ex": [
+      { "en": "The aurora was visible as far south as Yorkshire.", "zh": "极光最南在约克郡都能看见。" },
+      { "en": "The aurora borealis lit the sky green.", "zh": "北极光把天空照成了绿色。" }
+    ]
+  },
+  "chancellor": {
+    "zh": "总理；财政大臣；大学校长",
+    "note": "德国「总理」、英国「财政大臣」（Chancellor of the Exchequer）、大学「名誉校长」——靠国别与语境分。",
+    "ex": [
+      { "en": "The chancellor announced the budget.", "zh": "财政大臣公布了预算。" },
+      { "en": "She became chancellor of the university in 2019.", "zh": "她 2019 年出任该校校长。" }
+    ]
+  },
+  "digit": {
+    "zh": "数字（0–9）；手指、脚趾",
+    "note": "数学上是 0–9 的一「位」，解剖上是手指或脚趾；digital 由此而来，原义是「用手指的」。",
+    "ex": [
+      { "en": "Enter the six-digit code.", "zh": "输入六位验证码。" },
+      { "en": "He lost the tip of a digit in the accident.", "zh": "事故中他失去了一截手指。" }
+    ]
+  },
+  "dietary": {
+    "zh": "饮食的",
+    "note": "只作定语（dietary fibre 膳食纤维、dietary requirements 饮食禁忌）；「节食」是 diet。",
+    "ex": [
+      { "en": "The label lists dietary fibre per serving.", "zh": "标签上列了每份的膳食纤维。" },
+      { "en": "The clinic offers dietary advice.", "zh": "这家诊所提供饮食建议。" }
+    ]
+  },
+  "duo": {
+    "zh": "二人组",
+    "note": "音乐、喜剧、体育里的「两人搭档」；三人是 trio，四人是 quartet。",
+    "ex": [
+      { "en": "The duo has played together for twenty years.", "zh": "这对搭档合作二十年了。" },
+      { "en": "A comedy duo closed the show.", "zh": "一对喜剧搭档压轴。" }
+    ]
+  },
+  "headline": {
+    "zh": "标题；新闻摘要；领衔",
+    "note": "报纸的「大标题」、复数 headlines 是「新闻摘要」、动词是「领衔演出」。",
+    "ex": [
+      { "en": "The headline said the minister had resigned.", "zh": "标题说部长辞职了。" },
+      { "en": "She headlined the festival on Saturday.", "zh": "她周六在音乐节压轴。" }
+    ]
+  },
+  "exemption": {
+    "zh": "免除、豁免",
+    "note": "税务与规则上的「豁免」；动词 exempt（exempt sb from sth），形容词 exempt。",
+    "ex": [
+      { "en": "The charity claimed an exemption from the tax.", "zh": "这家慈善机构申请了免税。" },
+      { "en": "There is no exemption for small firms.", "zh": "小公司也不例外。" }
+    ]
+  },
+  "comedian": {
+    "zh": "喜剧演员",
+    "note": "女性旧作 comedienne（渐少用）；美式也常说 comic 或 stand-up。",
+    "ex": [
+      { "en": "The comedian works clean, no swearing.", "zh": "这位喜剧演员的段子很干净，不爆粗。" },
+      { "en": "She is a comedian and a writer.", "zh": "她是喜剧演员，也写东西。" }
+    ]
+  },
+  "harassment": {
+    "zh": "骚扰",
+    "note": "不可数；法律上分 sexual / racial / workplace harassment。动词 harass 是一 r 两 s。",
+    "ex": [
+      { "en": "The company has a policy on sexual harassment.", "zh": "公司有反性骚扰的规定。" },
+      { "en": "He was accused of harassment by two colleagues.", "zh": "两名同事指控他骚扰。" }
+    ]
+  },
+  "cereal": {
+    "zh": "麦片；谷类作物",
+    "note": "早餐麦片（不可数）与植物学的「谷类」（cereal crops）都是它；词源是罗马谷物女神 Ceres。",
+    "ex": [
+      { "en": "He eats cereal for breakfast.", "zh": "他早饭吃麦片。" },
+      { "en": "Wheat is the main cereal grown here.", "zh": "小麦是这里主要的谷物。" }
+    ]
+  },
+  "graphical": {
+    "zh": "图形的",
+    "note": "与 graphic 近义，但 graphical 多用于术语：graphical user interface（图形用户界面）。",
+    "ex": [
+      { "en": "The report includes a graphical summary.", "zh": "报告里有一个图形摘要。" },
+      { "en": "The installer offers a graphical interface.", "zh": "安装程序提供图形界面。" }
+    ]
+  },
+  "scooter": {
+    "zh": "踏板车、滑板车",
+    "note": "电动滑板车、英式的轻便摩托、儿童滑板车都叫 scooter；moped 是「助力车」。",
+    "ex": [
+      { "en": "He rides a scooter to the station.", "zh": "他骑踏板车去车站。" },
+      { "en": "Electric scooters are banned on the pavement.", "zh": "电动滑板车禁止上人行道。" }
+    ]
+  },
+  "brigade": {
+    "zh": "旅；专业队",
+    "note": "军事编制「旅」，也指专业队（fire brigade 消防队）；比喻「一帮人」时带调侃（the anti-smoking brigade）。",
+    "ex": [
+      { "en": "The brigade was held in reserve.", "zh": "这个旅被留作预备队。" },
+      { "en": "A fire brigade arrived within minutes.", "zh": "消防队几分钟就到了。" }
+    ]
+  },
+  "sewer": {
+    "zh": "下水道",
+    "note": "名词是下水道（污水是 sewage）；另有一个同形的 sewer，指「缝纫的人」，来源不同。",
+    "ex": [
+      { "en": "The sewer runs under the main road.", "zh": "下水道从主路下面穿过。" },
+      { "en": "Rainwater and sewage share the same sewer here.", "zh": "这里的雨水和污水走同一条下水道。" }
+    ]
+  },
+  "deficit": {
+    "zh": "赤字、逆差；亏空",
+    "note": "财政的「赤字」、贸易的「逆差」、生理上的「亏空」（sleep deficit）。反义 surplus。",
+    "ex": [
+      { "en": "The deficit widened to four percent of GDP.", "zh": "赤字扩大到 GDP 的百分之四。" },
+      { "en": "He has a sleep deficit from the night shift.", "zh": "上夜班让他缺觉。" }
+    ]
+  },
+  "floppy": {
+    "zh": "松软的；软盘",
+    "note": "形容词是「松软下垂的」，名词是 floppy disk 的缩短（软盘），如今是怀旧词。",
+    "ex": [
+      { "en": "He wore a floppy hat.", "zh": "他戴了顶软塌塌的帽子。" },
+      { "en": "The data was on a floppy.", "zh": "数据在一张软盘上。" }
+    ]
+  },
+  "freshman": {
+    "zh": "大一新生；新手",
+    "note": "美式说法，英式是 first-year；二年级 sophomore、三年级 junior、四年级 senior。",
+    "ex": [
+      { "en": "Freshmen arrive a week before term.", "zh": "新生提前一周到校。" },
+      { "en": "He was a freshman when the lab opened.", "zh": "实验室开张那年他刚上大一。" }
+    ]
+  },
+  "induction": {
+    "zh": "就职、入选；归纳；感应",
+    "note": "三义：正式就任或入选仪式、逻辑上的「归纳」（与 deduction 相对）、物理上的电磁感应。",
+    "ex": [
+      { "en": "Her induction into the hall of fame is in May.", "zh": "她五月入选名人堂。" },
+      { "en": "The motor works by electromagnetic induction.", "zh": "这台电机靠电磁感应工作。" }
+    ]
+  },
+  "incidence": {
+    "zh": "发生率",
+    "note": "流行病学里的「新发病例率」，与 prevalence（患病率，含旧病例）不同。别和 incident（事件）混。",
+    "ex": [
+      { "en": "The incidence of the disease has fallen.", "zh": "这种病的发生率下降了。" },
+      { "en": "There is a higher incidence among smokers.", "zh": "吸烟者中的发生率更高。" }
+    ]
+  },
+  "finale": {
+    "zh": "终场、大结局",
+    "note": "演出与剧集的「终章」，与 premiere（首演）相对；t 不发音，读 /fɪˈnɑːli/。",
+    "ex": [
+      { "en": "The finale lasted twenty minutes.", "zh": "终场持续了二十分钟。" },
+      { "en": "The season finale drew nine million viewers.", "zh": "本季大结局有九百万观众。" }
+    ]
+  },
+  "marathon": {
+    "zh": "马拉松；漫长的事",
+    "note": "距离 42.195 公里；也比喻漫长费力的事（a twelve-hour marathon session）。",
+    "ex": [
+      { "en": "She ran her first marathon at forty.", "zh": "她四十岁跑了第一个马拉松。" },
+      { "en": "The hearing turned into a twelve-hour marathon.", "zh": "听证会变成了十二小时的马拉松。" }
+    ]
+  },
+  "funky": {
+    "zh": "律动感强的；怪味的",
+    "note": "音乐上指「放克味的」，口语里指「怪怪的」（味道、风格都行）。",
+    "ex": [
+      { "en": "The bass line is funky.", "zh": "那段贝斯很有律动。" },
+      { "en": "There is a funky smell in the fridge.", "zh": "冰箱里有股怪味。" }
+    ]
+  }
+}

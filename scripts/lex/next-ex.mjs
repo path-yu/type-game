@@ -90,6 +90,9 @@ const NOISE = new RegExp(
       'excellency', 'hon', 'ana', 'daphne', 'bruno', 'murray', 'wallace', 'harvard',
       'montgomery', 'einstein', 'phoebe', 'joel', 'hector', 'hercules', 'hudson', 'esther',
       'omaha', 'venus', 'midi', 'lambda', 'dominic', 'hispanic', 'islam', 'athens',
+      'atlantic', 'caribbean', 'egypt', 'egyptian', 'cuba', 'bolivia', 'kuwait', 'jupiter',
+      'celtic', 'bosnia', 'barbados', 'wichita', 'charleston', 'darwin', 'adrian', 'buster',
+      'joshua', 'ling', 'judith', 'burton', 'doris', 'gregory', 'latino', 'gnome', 'chi', 'sol',
       // 疾病与希腊字母（词频高，但做学习词条没意义）
       'cancer', 'diabetes', 'hiv', 'aids', 'alpha', 'beta', 'gamma', 'delta', 'omega', 'sigma',
       // 前缀式的残片与缩写
@@ -102,7 +105,8 @@ const NOISE = new RegExp(
       'whore', 'damn', 'goddamn', 'bleep', 'pee', 'dick', 'bitch', 'slut', 'cock', 'pussy',
       'nude', 'anal', 'sex', 'porn', 'lesbian', 'hardcore', 'xxx', 'adult', 'horny',
       'erotic', 'fetish', 'bestiality', 'viagra', 'casino', 'arse', 'cunt', 'fart',
-      'hooker', 'fanny', 'boob', 'bam', 'cox',
+      'hooker', 'fanny', 'boob', 'bam', 'cox', 'poop', 'faggot', 'fag', 'puke', 'bugger',
+      'stripper', 'fatty', 'junkie', 'jackass',
     ].join('|') +
     ')$',
 );
