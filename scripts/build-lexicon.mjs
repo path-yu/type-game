@@ -588,6 +588,16 @@ if (index.length < TARGET) {
       .map(s => ({ p: s.p, d: s.d, ...(s.x?.length ? { x: s.x.slice(0, MAX_SENSE_EX) } : {}) }));
 
     const proper = list.length > 0 && list.every(s => PROPER_GLOSS.test(s.d || ''));
+
+    /*
+     * 补足词也可能已经译过义项（给它们补例句之后，中文是一条单独补的流水线）。
+     * 对位规则与主循环一致：条数必须等于义项数，对不上就整条不用中文。
+     */
+    const zhFill = ZH_MERGED[w];
+    if (zhFill && zhFill.length === list.length) {
+      list.forEach((s, i) => { if (zhFill[i]) s.zh = zhFill[i]; });
+    }
+
     const entry = {
       w, f: 0, senses: list,
       ...(EXAMPLES[w] ? { gen: EXAMPLES[w] } : { ...(proper ? { prop: 1 } : {}) }),

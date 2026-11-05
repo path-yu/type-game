@@ -284,6 +284,20 @@ npm run lex:ex                            # 取下一批 40 词，按词频排�
 node scripts/lex/put-ex.mjs <批.json>     # 逐条校验后并入 examples.json
 ```
 
+### 义项中文（第二条流水线）
+
+补足词连义项都是英文——`merged.json` 原先只覆盖语料里出现过的词。有了例句之后，
+这一层单独补：`next-sense-zh.mjs` 按词频挑出「已有例句、义项全无中文」的词，
+逐条列出英文义项，译好后用同一个 `put-gloss.mjs` 并入。
+
+对位规则不变：**中文条数必须等于义项数**。`sector` 六个义项（扇形仪 / 方面 /
+经济部门 / 防区 / 磁盘扇区 / 扇形）少一条就整条错位。
+
+```bash
+node scripts/lex/next-sense-zh.mjs --n=16  # 列出待译词与义项
+node scripts/lex/put-gloss.mjs <批.json>   # 条数校验后并入 merged.json
+```
+
 ### 四层入口
 
 | 方式 | 做什么 |
