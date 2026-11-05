@@ -1,0 +1,322 @@
+{
+  "intro": {
+    "zh": "引言、前奏",
+    "note": "introduction 的口语缩短，指歌曲前奏、文章导语、社交场合的「介绍」；正式文里仍用 introduction。",
+    "ex": [
+      { "en": "The intro runs about forty seconds.", "zh": "前奏大约四十秒。" },
+      { "en": "Write a two-line intro before the list.", "zh": "列表前面写两句导语。" }
+    ]
+  },
+  "adjustable": {
+    "zh": "可调节的",
+    "note": "来自 adjust；金融里的 adjustable-rate mortgage 是可调利率房贷（ARM），反义 fixed-rate。",
+    "ex": [
+      { "en": "The chair has an adjustable back.", "zh": "这把椅子的靠背可以调。" },
+      { "en": "Rates are adjustable every six months.", "zh": "利率每半年可调一次。" }
+    ]
+  },
+  "brat": {
+    "zh": "没规矩的小孩",
+    "note": "贬义，指被惯坏、没规矩的孩子；顺带一提，brat 也是 bratwurst（香肠）的缩短。",
+    "ex": [
+      { "en": "The neighbours' brat broke a window.", "zh": "邻居家那个小崽子打碎了一扇窗。" },
+      { "en": "He was a spoiled brat at fifteen.", "zh": "他十五岁时是个被惯坏的孩子。" }
+    ]
+  },
+  "roulette": {
+    "zh": "轮盘赌",
+    "note": "赌场游戏；比喻「拿命赌」是 Russian roulette。词源是法语「小轮子」。",
+    "ex": [
+      { "en": "They played roulette until two in the morning.", "zh": "他们玩轮盘赌到凌晨两点。" },
+      { "en": "Buying that stock was Russian roulette.", "zh": "买那只股票就像玩俄罗斯轮盘。" }
+    ]
+  },
+  "subscriber": {
+    "zh": "订户、订阅者",
+    "note": "报纸、宽带、流媒体的付费用户；动词 subscribe，名词 subscription。",
+    "ex": [
+      { "en": "The newsletter has forty thousand subscribers.", "zh": "这份通讯有四万订户。" },
+      { "en": "Subscribers get the archive for free.", "zh": "订阅者可以免费查看存档。" }
+    ]
+  },
+  "runway": {
+    "zh": "跑道；T 台",
+    "note": "机场跑道、时装秀的 T 台（也说 catwalk）；商业里 runway 指「现金还能撑多久」（an eight-month runway）。",
+    "ex": [
+      { "en": "The plane waited forty minutes on the runway.", "zh": "飞机在跑道上等了四十分钟。" },
+      { "en": "The brand showed forty looks on the runway.", "zh": "这个品牌在 T 台上展示了四十套造型。" }
+    ]
+  },
+  "peanut": {
+    "zh": "花生；微不足道的钱",
+    "note": "复数指花生；口语里 peanuts 是「很少的钱」（paid peanuts 给的钱少得可怜）。",
+    "ex": [
+      { "en": "She is allergic to peanuts.", "zh": "她对花生过敏。" },
+      { "en": "The fine was peanuts to them.", "zh": "那点罚款对他们来说不算什么。" }
+    ]
+  },
+  "diagnostic": {
+    "zh": "诊断的；诊断工具",
+    "note": "医学与技术的「诊断用」；复数 diagnostics 常指诊断数据或故障诊断程序。动词 diagnose。",
+    "ex": [
+      { "en": "The diagnostic test takes ten minutes.", "zh": "这项诊断检查要十分钟。" },
+      { "en": "The logs are a diagnostic tool, not a record.", "zh": "日志是诊断工具，不是记录。" }
+    ]
+  },
+  "injection": {
+    "zh": "注射；注入",
+    "note": "医学注射、经济的「注资」、程序里的「依赖注入」都用它。动词 inject。",
+    "ex": [
+      { "en": "The patient needs an injection every week.", "zh": "病人每周需要打一针。" },
+      { "en": "The plan needs an injection of cash.", "zh": "这个计划需要注入一笔现金。" }
+    ]
+  },
+  "bean": {
+    "zh": "豆",
+    "note": "泛指豆类（coffee bean 咖啡豆）；固定说法 spill the beans 说漏嘴、full of beans 精力旺盛。",
+    "ex": [
+      { "en": "Soak the beans overnight.", "zh": "把豆子泡一夜。" },
+      { "en": "He spilled the beans about the surprise.", "zh": "他把惊喜的事说漏了。" }
+    ]
+  },
+  "indicator": {
+    "zh": "指标；指示器",
+    "note": "数据上的「指标」、仪表的「指示器」、化学的「指示剂」都是它。动词 indicate。",
+    "ex": [
+      { "en": "Response time is the best indicator of load.", "zh": "响应时间是负载最好的指标。" },
+      { "en": "The needle is an indicator, not a control.", "zh": "指针只是指示，不是控制件。" }
+    ]
+  },
+  "racist": {
+    "zh": "种族主义者（的）",
+    "note": "可形容人、言论、政策；名词是「种族主义者」。注意 race（种族）、racial（种族的）、racist（歧视的）三者词性不同。",
+    "ex": [
+      { "en": "He was accused of making racist remarks.", "zh": "他被指发表了种族主义言论。" },
+      { "en": "The policy was called racist by two unions.", "zh": "两个工会称这项政策带有种族歧视。" }
+    ]
+  },
+  "coupon": {
+    "zh": "优惠券",
+    "note": "需在消费时抵扣的券；区别 voucher——voucher 多是先付或赠送的凭证，可直接抵现。",
+    "ex": [
+      { "en": "The coupon expires at the end of the month.", "zh": "这张券月底过期。" },
+      { "en": "Clip the coupon and send it in.", "zh": "剪下优惠券寄回来。" }
+    ]
+  },
+  "upbeat": {
+    "zh": "乐观的、欢快的",
+    "note": "形容情绪、语气、音乐；反义 downbeat。原义是音乐里的「弱拍」。",
+    "ex": [
+      { "en": "The report struck an upbeat tone.", "zh": "报告的语气很乐观。" },
+      { "en": "The music is upbeat but the lyrics are grim.", "zh": "曲子欢快，歌词却很灰。" }
+    ]
+  },
+  "activation": {
+    "zh": "激活、启用",
+    "note": "软件与账户的「激活」、化学的「活化」、神经的「激活」；动词 activate。",
+    "ex": [
+      { "en": "Activation takes about a minute.", "zh": "激活大约要一分钟。" },
+      { "en": "The activation code came by email.", "zh": "激活码是邮件发来的。" }
+    ]
+  },
+  "tolerate": {
+    "zh": "容忍；耐受",
+    "note": "两层：对人「容忍」（带不满），对条件「耐受」（植物、药物）。名词 tolerance，形容词 tolerant。",
+    "ex": [
+      { "en": "She will not tolerate lateness.", "zh": "她不容忍迟到。" },
+      { "en": "The plant tolerates poor soil.", "zh": "这种植物耐贫瘠的土壤。" }
+    ]
+  },
+  "toner": {
+    "zh": "碳粉；爽肤水",
+    "note": "打印机的「碳粉」（不是墨水 ink）、护肤的「爽肤水」，两个意思差得远。",
+    "ex": [
+      { "en": "Replace the toner when the stripes appear.", "zh": "出现条纹的时候就该换碳粉了。" },
+      { "en": "Use a toner after cleansing.", "zh": "洁面之后用爽肤水。" }
+    ]
+  },
+  "scenario": {
+    "zh": "情景、设想",
+    "note": "规划与风险里的「设想情景」，电影里是「剧本梗概」。常配 worst-case、best-case。",
+    "ex": [
+      { "en": "The worst-case scenario is a total outage.", "zh": "最坏的情况是全面中断。" },
+      { "en": "We modelled three scenarios for demand.", "zh": "我们建了三种需求情景。" }
+    ]
+  },
+  "stunt": {
+    "zh": "特技、噱头；阻碍生长",
+    "note": "名动异义：特技与公关噱头，对植物或发育「阻碍生长」（stunted growth 发育迟缓）。",
+    "ex": [
+      { "en": "The stunt was performed without a net.", "zh": "那个特技没有用安全网。" },
+      { "en": "Malnutrition stunted his growth.", "zh": "营养不良阻碍了他的发育。" }
+    ]
+  },
+  "inclusion": {
+    "zh": "包含；包容",
+    "note": "文本上的「纳入」、社会上的「包容与融合」（与 exclusion 相对）。动词 include，形容词 inclusive。",
+    "ex": [
+      { "en": "The inclusion of two new chapters doubled the length.", "zh": "增加两章让篇幅翻了一倍。" },
+      { "en": "The school has a policy on inclusion.", "zh": "这所学校有融合教育的政策。" }
+    ]
+  },
+  "perimeter": {
+    "zh": "周长；周边",
+    "note": "几何的「周长」、军事与安保的「周边防线」。别和 parameter（参数）混。",
+    "ex": [
+      { "en": "The perimeter of the site is fenced.", "zh": "场地四周有围栏。" },
+      { "en": "Guards patrol the perimeter.", "zh": "警卫在周边巡逻。" }
+    ]
+  },
+  "herbal": {
+    "zh": "草本的",
+    "note": "来自 herb，h 不发音；herbal tea 是花草茶，和 green tea（绿茶）不是一回事。",
+    "ex": [
+      { "en": "She drinks herbal tea after dinner.", "zh": "她晚饭后喝花草茶。" },
+      { "en": "The clinic sells herbal remedies.", "zh": "这家诊所卖草药。" }
+    ]
+  },
+  "graduation": {
+    "zh": "毕业（典礼）",
+    "note": "指毕业这件事或典礼；「从某专业毕业」用 graduate in / with。",
+    "ex": [
+      { "en": "The graduation is on the twenty-third.", "zh": "毕业典礼在二十三号。" },
+      { "en": "After graduation he moved north.", "zh": "毕业之后他搬到了北方。" }
+    ]
+  },
+  "hacker": {
+    "zh": "黑客",
+    "note": "原义是「爱折腾技术的人」（褒义），媒体用法偏「入侵者」（准确说是 cracker）。动词 hack。",
+    "ex": [
+      { "en": "The hacker entered through a forgotten test account.", "zh": "黑客从一个被遗忘的测试账号进来的。" },
+      { "en": "He is a hacker in the old sense: he likes taking things apart.", "zh": "他是老派意义上的 hacker：喜欢把东西拆开看。" }
+    ]
+  },
+  "haircut": {
+    "zh": "理发",
+    "note": "一个词；「剪头发」是 get a haircut，不是 cut hair（那是给别人剪）。金融俚语里 haircut 指折价或削价。",
+    "ex": [
+      { "en": "He needs a haircut before the interview.", "zh": "面试之前他得理个发。" },
+      { "en": "A haircut costs thirty here.", "zh": "这里理个发三十块。" }
+    ]
+  },
+  "spotlight": {
+    "zh": "聚光灯；公众关注",
+    "note": "舞台灯，引申为「被关注」（in the spotlight）；动词是「突出报道」。",
+    "ex": [
+      { "en": "The spotlight moved to the second speaker.", "zh": "聚光灯转向了第二位发言者。" },
+      { "en": "The report spotlighted three failures.", "zh": "报告聚焦了三处失败。" }
+    ]
+  },
+  "diner": {
+    "zh": "小餐馆；餐车",
+    "note": "美式里指平价小餐馆；与 dinner（晚餐）只差一个 n，最容易写错。吃饭的人也叫 diner。",
+    "ex": [
+      { "en": "We ate at a diner off the highway.", "zh": "我们在高速旁的一家小餐馆吃的。" },
+      { "en": "The diner serves breakfast all day.", "zh": "这家小馆全天供应早餐。" }
+    ]
+  },
+  "deviant": {
+    "zh": "反常的；行为异常者",
+    "note": "社会学是「越轨的」，统计与安全是「偏离正常的」；名词指行为反常的人，带判断色彩。",
+    "ex": [
+      { "en": "The study looked at deviant behaviour in groups.", "zh": "这项研究考察群体中的越轨行为。" },
+      { "en": "The algorithm flags deviant transactions.", "zh": "算法会标记异常交易。" }
+    ]
+  },
+  "mandatory": {
+    "zh": "强制的、法定的",
+    "note": "来自 mandate（授权、命令）；比 required 更硬，指「规定必须做」。反义 optional。",
+    "ex": [
+      { "en": "Helmets are mandatory on site.", "zh": "工地上必须戴安全帽。" },
+      { "en": "Training is mandatory for new staff.", "zh": "新员工必须参加培训。" }
+    ]
+  },
+  "embarrass": {
+    "zh": "使尴尬",
+    "note": "拼写两个 r、两个 s。形容词 embarrassed（感到尴尬的）与 embarrassing（令人尴尬的）是最常见的误用。",
+    "ex": [
+      { "en": "The question embarrassed him.", "zh": "那个问题让他很尴尬。" },
+      { "en": "The error embarrassed the department.", "zh": "这个错误让部门很难堪。" }
+    ]
+  },
+  "surgical": {
+    "zh": "外科的；精准的",
+    "note": "医学上是「外科的」（反义 medical 内科），比喻「像手术一样精准」（a surgical strike）。",
+    "ex": [
+      { "en": "The surgical team arrived at six.", "zh": "手术团队六点到了。" },
+      { "en": "The cuts were surgical, not across the board.", "zh": "削减是精准的，不是一刀切。" }
+    ]
+  },
+  "mafia": {
+    "zh": "黑手党；秘密集团",
+    "note": "特指西西里黑手党，也泛指有组织的秘密集团（the banking mafia），后者是比喻用法。",
+    "ex": [
+      { "en": "The mafia controlled the port for decades.", "zh": "黑手党控制这个港口几十年。" },
+      { "en": "He called the group a mafia within the party.", "zh": "他称这个团体是党内的黑帮。" }
+    ]
+  },
+  "heartbeat": {
+    "zh": "心跳；片刻",
+    "note": "生理上的心跳；口语 in a heartbeat 是「立刻、毫不犹豫」。",
+    "ex": [
+      { "en": "Her heartbeat slowed on the monitor.", "zh": "监护仪上她的心跳慢了下来。" },
+      { "en": "I will be back in a heartbeat.", "zh": "我马上回来。" }
+    ]
+  },
+  "starter": {
+    "zh": "开胃菜；启动器；新人",
+    "note": "餐饮的「前菜」（英式；美式 appetizer）、机械「启动器」、团队里的「先发或新人」。for starters 是「首先」。",
+    "ex": [
+      { "en": "We shared a starter and two mains.", "zh": "我们分了一个前菜和两个主菜。" },
+      { "en": "The starter motor is dead.", "zh": "启动马达坏了。" }
+    ]
+  },
+  "jade": {
+    "zh": "玉；玉制的",
+    "note": "玉石不可数；翡翠绿是 jade green。别和 jaded（厌倦的）混，那是另一个词。",
+    "ex": [
+      { "en": "The bowl is carved from jade.", "zh": "这只碗是玉雕的。" },
+      { "en": "She wore a jade pendant.", "zh": "她戴着一枚玉坠。" }
+    ]
+  },
+  "emission": {
+    "zh": "排放（物）",
+    "note": "环境语境里常用复数 emissions 指排放量，物理上是「发射」。动词 emit。",
+    "ex": [
+      { "en": "Carbon emissions fell for the third year.", "zh": "碳排放连续第三年下降。" },
+      { "en": "The plant's emissions are monitored hourly.", "zh": "这家厂的排放每小时监测一次。" }
+    ]
+  },
+  "alcoholic": {
+    "zh": "含酒精的；酒精成瘾者",
+    "note": "形容词是「含酒精的」（反义 non-alcoholic），名词是酒精成瘾者（医学与康复语境）。alcoholism 是酒精依赖。",
+    "ex": [
+      { "en": "The drink is non-alcoholic.", "zh": "这种饮料不含酒精。" },
+      { "en": "He has been a recovering alcoholic for ten years.", "zh": "他戒酒已经十年了。" }
+    ]
+  },
+  "addict": {
+    "zh": "成瘾者；使成瘾",
+    "note": "名词重音在前 /ˈædɪkt/、动词在后 /əˈdɪkt/；形容词 addicted 常配 to。",
+    "ex": [
+      { "en": "The clinic treats heroin addicts.", "zh": "这家诊所治疗海洛因成瘾者。" },
+      { "en": "He was addicted to the work long before the money came.", "zh": "钱还没来的时候，他就已经对工作上瘾了。" }
+    ]
+  },
+  "ceramic": {
+    "zh": "陶瓷；陶瓷的",
+    "note": "泛指陶瓷材料与制品，porcelain（瓷）是其中一种；复数 ceramics 也指「陶艺」这门手艺。",
+    "ex": [
+      { "en": "The tiles are ceramic, not stone.", "zh": "这些砖是陶瓷的，不是石头。" },
+      { "en": "She collects studio ceramics.", "zh": "她收藏手工陶艺作品。" }
+    ]
+  },
+  "footwear": {
+    "zh": "鞋类",
+    "note": "不可数，商业与告示里的正式说法（行业分类用词），日常还是说 shoes。",
+    "ex": [
+      { "en": "Footwear must be removed at the door.", "zh": "进门要脱鞋。" },
+      { "en": "The shop sells outdoor footwear.", "zh": "这家店卖户外鞋。" }
+    ]
+  }
+}

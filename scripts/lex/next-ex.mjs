@@ -87,6 +87,9 @@ const NOISE = new RegExp(
       'brad', 'russell', 'dylan', 'anthony', 'rick', 'ross', 'adam', 'bruce', 'howard',
       'lincoln', 'alexander', 'edward', 'elizabeth', 'victoria', 'lawrence', 'costa',
       'jacob', 'cole', 'julian', 'diana', 'norman', 'herr', 'dude',
+      'excellency', 'hon', 'ana', 'daphne', 'bruno', 'murray', 'wallace', 'harvard',
+      'montgomery', 'einstein', 'phoebe', 'joel', 'hector', 'hercules', 'hudson', 'esther',
+      'omaha', 'venus', 'midi', 'lambda', 'dominic', 'hispanic', 'islam', 'athens',
       // 疾病与希腊字母（词频高，但做学习词条没意义）
       'cancer', 'diabetes', 'hiv', 'aids', 'alpha', 'beta', 'gamma', 'delta', 'omega', 'sigma',
       // 前缀式的残片与缩写
@@ -98,7 +101,8 @@ const NOISE = new RegExp(
       'shit', 'fuck', 'fucking', 'fucked', 'bastard', 'crap', 'asshole', 'bullshit', 'piss',
       'whore', 'damn', 'goddamn', 'bleep', 'pee', 'dick', 'bitch', 'slut', 'cock', 'pussy',
       'nude', 'anal', 'sex', 'porn', 'lesbian', 'hardcore', 'xxx', 'adult', 'horny',
-      'erotic', 'fetish', 'bestiality', 'viagra', 'casino',
+      'erotic', 'fetish', 'bestiality', 'viagra', 'casino', 'arse', 'cunt', 'fart',
+      'hooker', 'fanny', 'boob', 'bam', 'cox',
     ].join('|') +
     ')$',
 );
