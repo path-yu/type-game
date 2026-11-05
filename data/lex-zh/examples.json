@@ -629,6 +629,20 @@
       }
     ]
   },
+  "apocalypse": {
+    "zh": "大灾难、末日",
+    "note": "原指《启示录》，现泛指毁灭性灾难，常带夸张或戏谑口气。形容词 apocalyptic。",
+    "ex": [
+      {
+        "en": "The film imagines an apocalypse caused by fungus.",
+        "zh": "这部片设想了一场由真菌引发的末日。"
+      },
+      {
+        "en": "The report reads like an apocalypse.",
+        "zh": "这份报告读起来像末日预言。"
+      }
+    ]
+  },
   "appliance": {
     "zh": "家用电器",
     "note": "多指白电与厨房设备（复数 appliances）；工具与设备统称 equipment。拼写 a-p-p-l-i-a-n-c-e。",
@@ -682,6 +696,20 @@
       {
         "en": "The model approximates the behaviour of the real system without reproducing it.",
         "zh": "这个模型只是逼近真实系统的行为，并不复现它。"
+      }
+    ]
+  },
+  "aquatic": {
+    "zh": "水生的、水中的",
+    "note": "与 terrestrial（陆生的）相对；aquatic sports 是水上运动。别和 aqueduct（输水道）混。",
+    "ex": [
+      {
+        "en": "The park has an aquatic centre.",
+        "zh": "这个公园有个水上中心。"
+      },
+      {
+        "en": "Aquatic plants filter the water.",
+        "zh": "水生植物能过滤水质。"
       }
     ]
   },
@@ -752,6 +780,20 @@
       {
         "en": "It took the family a decade to assimilate into the town.",
         "zh": "这家人花了十年才融进这个镇子。"
+      }
+    ]
+  },
+  "asteroid": {
+    "zh": "小行星",
+    "note": "比行星小、比流星体大；进入大气层烧起来的那叫 meteor（流星）。",
+    "ex": [
+      {
+        "en": "The asteroid passed within two million kilometres.",
+        "zh": "那颗小行星从两百万公里外掠过。"
+      },
+      {
+        "en": "An asteroid impact ended the dinosaurs.",
+        "zh": "一次小行星撞击终结了恐龙。"
       }
     ]
   },
@@ -965,6 +1007,20 @@
       }
     ]
   },
+  "backstage": {
+    "zh": "在后台；幕后的",
+    "note": "剧院的「后台」，比喻「幕后」（backstage deals）；对应 onstage（台上）。",
+    "ex": [
+      {
+        "en": "She waited backstage until the second act.",
+        "zh": "她在后台一直等到第二幕。"
+      },
+      {
+        "en": "The backstage negotiations decided the vote.",
+        "zh": "真正的交易在幕后定了。"
+      }
+    ]
+  },
   "backup": {
     "zh": "备份；后援；备用的",
     "note": "拼写分工：名词和形容词是一个词（backup），动词是两个词（back up）。还有第三个意思：交通拥堵（a backup of traffic）。",
@@ -1018,6 +1074,20 @@
       {
         "en": "The company performs classical ballet.",
         "zh": "这个团演的是古典芭蕾。"
+      }
+    ]
+  },
+  "ballot": {
+    "zh": "选票；不记名投票",
+    "note": "名词是选票与投票这件事，动词是「组织投票」；票箱是 ballot box。",
+    "ex": [
+      {
+        "en": "The union will ballot members next week.",
+        "zh": "工会下周让会员投票。"
+      },
+      {
+        "en": "Three candidates are on the ballot.",
+        "zh": "选票上有三名候选人。"
       }
     ]
   },
@@ -1119,6 +1189,20 @@
       }
     ]
   },
+  "benchmark": {
+    "zh": "基准；用基准测试",
+    "note": "商业的「基准」、技术的「性能基准测试」；动词是「对标」。原义是测量员的水准标。",
+    "ex": [
+      {
+        "en": "The benchmark is set by the fastest competitor.",
+        "zh": "基准由最快的对手设定。"
+      },
+      {
+        "en": "They benchmarked the new chip against three rivals.",
+        "zh": "他们把新芯片与三个对手做了基准对比。"
+      }
+    ]
+  },
   "bias": {
     "zh": "偏见；偏差",
     "note": "比 prejudice 中性：可指人的先入之见，也可指统计上的系统性偏差（sample bias）。动词「使有倾向」，形容词 biased 是「有偏的」。",
@@ -1130,6 +1214,20 @@
       {
         "en": "His accent biased her against him before he spoke.",
         "zh": "还没开口，口音就让她有了先入之见。"
+      }
+    ]
+  },
+  "biblical": {
+    "zh": "圣经的",
+    "note": "来自 Bible；biblical proportions 是常见夸张说法，指规模巨大（a flood of biblical proportions）。",
+    "ex": [
+      {
+        "en": "The phrase is biblical in origin.",
+        "zh": "这个说法源自圣经。"
+      },
+      {
+        "en": "The flood was of biblical proportions.",
+        "zh": "那场洪水大得像圣经里写的那样。"
       }
     ]
   },
@@ -1847,6 +1945,20 @@
       }
     ]
   },
+  "chassis": {
+    "zh": "底盘；机架",
+    "note": "车辆与电子设备的「底座骨架」；复数 chassis 不变形，读 /ˈʃæsi/。",
+    "ex": [
+      {
+        "en": "The rust is in the chassis, not the body.",
+        "zh": "锈在底盘上，不在车身。"
+      },
+      {
+        "en": "The display is mounted on a metal chassis.",
+        "zh": "显示器装在金属机架上。"
+      }
+    ]
+  },
   "checkout": {
     "zh": "结账（台）；退房",
     "note": "名词一个词（the checkout），动词两个词（check out）。超市收银台、酒店退房、网店结算页都是它。",
@@ -1886,6 +1998,20 @@
       {
         "en": "We had chili and rice for lunch.",
         "zh": "我们午饭吃辣肉酱配米饭。"
+      }
+    ]
+  },
+  "chow": {
+    "zh": "食物（口语）",
+    "note": "美式口语，不可数，带点随意；chow down 是「狼吞虎咽」。也是松狮犬（chow chow）的简称。",
+    "ex": [
+      {
+        "en": "The chow here is plain but filling.",
+        "zh": "这儿的饭简单，但顶饱。"
+      },
+      {
+        "en": "Chow down, we leave in ten.",
+        "zh": "快吃，十分钟后出发。"
       }
     ]
   },
@@ -2645,6 +2771,20 @@
       }
     ]
   },
+  "decimal": {
+    "zh": "十进制的；小数",
+    "note": "与 fraction（分数）相对；小数点 decimal point，「保留两位小数」是 to two decimal places。",
+    "ex": [
+      {
+        "en": "Give the answer to two decimal places.",
+        "zh": "答案保留两位小数。"
+      },
+      {
+        "en": "The currency went decimal in 1971.",
+        "zh": "这种货币 1971 年改为十进制。"
+      }
+    ]
+  },
   "decouple": {
     "zh": "脱钩、解耦",
     "note": "政策「脱钩」（补贴与产量脱钩）、工程「解耦」（界面与数据层）。反义 couple，名词 decoupling。",
@@ -3275,6 +3415,20 @@
       }
     ]
   },
+  "dosage": {
+    "zh": "剂量",
+    "note": "药物与辐射的「用量方案」，比 dose（一次的量）更强调整段用量。",
+    "ex": [
+      {
+        "en": "Do not exceed the recommended dosage.",
+        "zh": "不要超过推荐剂量。"
+      },
+      {
+        "en": "The dosage is adjusted by weight.",
+        "zh": "剂量按体重调整。"
+      }
+    ]
+  },
   "drape": {
     "zh": "披挂、垂挂；窗帘",
     "note": "强调「松松地搭上去、垂下来」，不是穿。名词 drapes 是美式的窗帘（英式说 curtains）。",
@@ -3541,6 +3695,20 @@
       }
     ]
   },
+  "ensemble": {
+    "zh": "合奏团；整套（服装）；集成",
+    "note": "音乐的「合奏与剧团」、服装的「成套搭配」、机器学习的「集成模型」（ensemble method）。",
+    "ex": [
+      {
+        "en": "She plays in a string ensemble.",
+        "zh": "她在一个弦乐合奏团演奏。"
+      },
+      {
+        "en": "The ensemble was designed as one piece.",
+        "zh": "这套衣服是整体设计的。"
+      }
+    ]
+  },
   "environmental": {
     "zh": "环境的",
     "note": "来自 environment，指「与环境有关的」（environmental review 环评）；environmentalist 才是「环保人士」。",
@@ -3737,6 +3905,20 @@
       }
     ]
   },
+  "extraction": {
+    "zh": "提取；开采；拔除",
+    "note": "资源「开采」、医学「拔牙」、数据「抽取」都用它。动词 extract。",
+    "ex": [
+      {
+        "en": "Oil extraction fell for the third year.",
+        "zh": "石油开采连续第三年下降。"
+      },
+      {
+        "en": "The tooth extraction took ten minutes.",
+        "zh": "拔牙用了十分钟。"
+      }
+    ]
+  },
   "facial": {
     "zh": "面部的；面部护理",
     "note": "形容词是「面部的」（facial expression），名词是美容院的「面部护理」；医学检查里也用它。",
@@ -3748,6 +3930,20 @@
       {
         "en": "She booked a facial for Saturday.",
         "zh": "她订了周六的面部护理。"
+      }
+    ]
+  },
+  "falcon": {
+    "zh": "隼",
+    "note": "一种猛禽；训鹰术是 falconry，训鹰人是 falconer。",
+    "ex": [
+      {
+        "en": "A falcon hovered over the field.",
+        "zh": "一只隼在田野上空悬停。"
+      },
+      {
+        "en": "Falconry is still practised here.",
+        "zh": "这里还有人玩鹰猎。"
       }
     ]
   },
@@ -3986,6 +4182,48 @@
       {
         "en": "He fluffed his lines in the second act.",
         "zh": "第二幕他说错了台词。"
+      }
+    ]
+  },
+  "flux": {
+    "zh": "不断变化；通量",
+    "note": "常用 in flux 表示「变动不定」；物理上是「通量」，焊接里还指助焊剂。",
+    "ex": [
+      {
+        "en": "The situation is in flux.",
+        "zh": "局势还在变化中。"
+      },
+      {
+        "en": "The flux through the coil is measured in webers.",
+        "zh": "通过线圈的通量以韦伯计。"
+      }
+    ]
+  },
+  "flyer": {
+    "zh": "传单；飞行器；常旅客",
+    "note": "传单、常旅客（frequent flyer）、小型飞行器；拼写也有 flier，两种都对。",
+    "ex": [
+      {
+        "en": "They handed out flyers outside the station.",
+        "zh": "他们在车站外发传单。"
+      },
+      {
+        "en": "Frequent flyers get priority boarding.",
+        "zh": "常旅客可以优先登机。"
+      }
+    ]
+  },
+  "focal": {
+    "zh": "焦点的、核心的",
+    "note": "光学的「焦点的」、论述的「核心的」（focal point）；动词 focus。",
+    "ex": [
+      {
+        "en": "The focal point of the room is the window.",
+        "zh": "房间的视觉中心是那扇窗。"
+      },
+      {
+        "en": "Cost is the focal issue in the dispute.",
+        "zh": "成本是这场争执的核心问题。"
       }
     ]
   },
@@ -4451,6 +4689,20 @@
       }
     ]
   },
+  "grad": {
+    "zh": "毕业生；研究生（口语）",
+    "note": "graduate 的缩短；美式 grad school 是研究生院，grad student 是研究生。",
+    "ex": [
+      {
+        "en": "The grads start in September.",
+        "zh": "毕业生九月入职。"
+      },
+      {
+        "en": "She is a grad student in physics.",
+        "zh": "她是物理系的研究生。"
+      }
+    ]
+  },
   "graduation": {
     "zh": "毕业（典礼）",
     "note": "指毕业这件事或典礼；「从某专业毕业」用 graduate in / with。",
@@ -4563,6 +4815,20 @@
       }
     ]
   },
+  "guru": {
+    "zh": "大师、权威",
+    "note": "原指印度教的「上师」，现在多指某领域权威，常带一点调侃：tech guru、marketing guru。",
+    "ex": [
+      {
+        "en": "He is the guru of the local tech scene.",
+        "zh": "他是本地技术圈的大佬。"
+      },
+      {
+        "en": "She became a management guru in the nineties.",
+        "zh": "她在九十年代成了管理大师。"
+      }
+    ]
+  },
   "hacker": {
     "zh": "黑客",
     "note": "原义是「爱折腾技术的人」（褒义），媒体用法偏「入侵者」（准确说是 cracker）。动词 hack。",
@@ -4588,6 +4854,20 @@
       {
         "en": "A haircut costs thirty here.",
         "zh": "这里理个发三十块。"
+      }
+    ]
+  },
+  "hamburger": {
+    "zh": "汉堡",
+    "note": "来自德国城市 Hamburg，与 ham（火腿）毫无关系；口语里常缩短成 burger。",
+    "ex": [
+      {
+        "en": "He ordered a hamburger and fries.",
+        "zh": "他点了汉堡和薯条。"
+      },
+      {
+        "en": "The hamburger has nothing to do with ham.",
+        "zh": "汉堡跟火腿没有关系。"
       }
     ]
   },
@@ -5515,6 +5795,20 @@
       }
     ]
   },
+  "jackpot": {
+    "zh": "头奖、累积奖金",
+    "note": "老虎机与彩票的头奖；hit the jackpot 也比喻撞大运、大获成功。",
+    "ex": [
+      {
+        "en": "She hit the jackpot on the third spin.",
+        "zh": "她第三把就中了头奖。"
+      },
+      {
+        "en": "The jackpot rolled over to next week.",
+        "zh": "头奖滚存到下周。"
+      }
+    ]
+  },
   "jade": {
     "zh": "玉；玉制的",
     "note": "玉石不可数；翡翠绿是 jade green。别和 jaded（厌倦的）混，那是另一个词。",
@@ -5795,6 +6089,20 @@
       }
     ]
   },
+  "liberation": {
+    "zh": "解放；解脱",
+    "note": "军事与政治的「解放」，也可指个人的「解脱」。动词 liberate，形容词 liberated。",
+    "ex": [
+      {
+        "en": "The city marks its liberation every May.",
+        "zh": "这座城市每年五月纪念解放。"
+      },
+      {
+        "en": "She described the divorce as a liberation.",
+        "zh": "她把离婚说成一种解脱。"
+      }
+    ]
+  },
   "ligament": {
     "zh": "韧带",
     "note": "连接骨与骨的是 ligament（韧带），连接肌肉与骨的是 tendon（肌腱）——这两个最容易混。",
@@ -5820,6 +6128,20 @@
       {
         "en": "There is a limitation on how much you can claim.",
         "zh": "索赔有上限。"
+      }
+    ]
+  },
+  "limiting": {
+    "zh": "限制性的",
+    "note": "多作定语，指「起限制作用的」；limiting factor（限制因素）是技术写作里的高频搭配。",
+    "ex": [
+      {
+        "en": "Cost is the limiting factor here.",
+        "zh": "成本在这里是限制因素。"
+      },
+      {
+        "en": "The limiting condition is temperature.",
+        "zh": "限制条件是温度。"
       }
     ]
   },
@@ -6089,6 +6411,34 @@
       }
     ]
   },
+  "mileage": {
+    "zh": "里程；油耗",
+    "note": "里程与油耗（美式）；口语里 get mileage out of sth 是「从中得到好处或谈资」。",
+    "ex": [
+      {
+        "en": "The car has low mileage for its age.",
+        "zh": "按车龄算，这车跑的里程很少。"
+      },
+      {
+        "en": "You get better mileage on the motorway.",
+        "zh": "在高速上更省油。"
+      }
+    ]
+  },
+  "mime": {
+    "zh": "哑剧；用动作示意",
+    "note": "哑剧艺术，动词是「用动作表达」；也指表演里的「假唱、假奏」（mime to a track）。",
+    "ex": [
+      {
+        "en": "He studied mime in Paris.",
+        "zh": "他在巴黎学哑剧。"
+      },
+      {
+        "en": "She mimed opening a door.",
+        "zh": "她比了个开门的动作。"
+      }
+    ]
+  },
   "mince": {
     "zh": "切碎；扭捏地走；肉馅",
     "note": "固定说法 not mince words（直言不讳）；英式 mince 是「肉馅」（美式 ground meat）。",
@@ -6128,6 +6478,20 @@
       {
         "en": "The writing is minuscule and hard to read.",
         "zh": "字非常小，很难辨认。"
+      }
+    ]
+  },
+  "mixer": {
+    "zh": "搅拌机；调音台；交流会",
+    "note": "厨房的搅拌机、音响的调音台、社交场合的「交流会」（a networking mixer）。",
+    "ex": [
+      {
+        "en": "Put the dough in the mixer.",
+        "zh": "把面团放进搅拌机。"
+      },
+      {
+        "en": "He works the mixer at the club.",
+        "zh": "他在俱乐部做调音。"
       }
     ]
   },
@@ -6310,6 +6674,34 @@
       {
         "en": "The lymph node was swollen.",
         "zh": "淋巴结肿了。"
+      }
+    ]
+  },
+  "nomination": {
+    "zh": "提名",
+    "note": "奖项与选举的「提名」；动词 nominate，被提名者是 nominee。",
+    "ex": [
+      {
+        "en": "Her nomination surprised no one.",
+        "zh": "她的提名谁都不意外。"
+      },
+      {
+        "en": "Nominations close on Friday.",
+        "zh": "提名周五截止。"
+      }
+    ]
+  },
+  "nuke": {
+    "zh": "核打击；微波加热；否决",
+    "note": "口语里泛指「摧毁、否决」（the plan was nuked），作名词是核弹。正式文本用 nuclear weapons。",
+    "ex": [
+      {
+        "en": "Just nuke it for ninety seconds.",
+        "zh": "微波炉热九十秒就行。"
+      },
+      {
+        "en": "The plan was nuked by the finance team.",
+        "zh": "这个计划被财务团队否掉了。"
       }
     ]
   },
@@ -6859,6 +7251,20 @@
       }
     ]
   },
+  "polyester": {
+    "zh": "聚酯纤维、涤纶",
+    "note": "衣物标签上的「涤纶」；口语里带一点「廉价、不透气」的联想。",
+    "ex": [
+      {
+        "en": "The shirt is cotton and polyester.",
+        "zh": "这件衬衫是棉和涤纶混纺的。"
+      },
+      {
+        "en": "Polyester dries faster than cotton.",
+        "zh": "涤纶比棉干得快。"
+      }
+    ]
+  },
   "polyphonic": {
     "zh": "复调的",
     "note": "音乐术语，与 homophonic（主调的）相对：几个声部同时进行、没有主次。手机铃声的「复音」也是它。日常少见，读音乐史时会碰上。",
@@ -7195,6 +7601,20 @@
       }
     ]
   },
+  "quad": {
+    "zh": "四方院；四人间；四轮摩托",
+    "note": "校园的「四方院」、宿舍的「四人间」、肌肉的「股四头肌」（quads）、四轮摩托都叫 quad。",
+    "ex": [
+      {
+        "en": "The quad is used as a courtyard.",
+        "zh": "这个四方院被当作庭院用。"
+      },
+      {
+        "en": "He broke his wrist on a quad.",
+        "zh": "他骑四轮摩托摔断了手腕。"
+      }
+    ]
+  },
   "quadruple": {
     "zh": "增至四倍；四重的",
     "note": "quadruple 是「乘以四」，中文「翻四番」是十六倍——这组词最容易译错。double / triple / quadruple 同构。",
@@ -7374,6 +7794,20 @@
       {
         "en": "The new recruit starts on Monday.",
         "zh": "新来的周一上班。"
+      }
+    ]
+  },
+  "redemption": {
+    "zh": "赎回；救赎",
+    "note": "金融的「赎回」、宗教与文学的「救赎」、券的「兑换」。动词 redeem。",
+    "ex": [
+      {
+        "en": "The bond is callable for redemption in 2030.",
+        "zh": "这笔债券 2030 年可赎回。"
+      },
+      {
+        "en": "He wrote about guilt and redemption.",
+        "zh": "他写的是罪与救赎。"
       }
     ]
   },
@@ -7601,6 +8035,20 @@
       }
     ]
   },
+  "reprint": {
+    "zh": "重印（本）；转载",
+    "note": "出版上的「重印」内容不变、媒体的「转载」；区别 reissue——那是换版重发。",
+    "ex": [
+      {
+        "en": "The book is in its fourth reprint.",
+        "zh": "这本书已经第四次重印。"
+      },
+      {
+        "en": "They reprinted the article without permission.",
+        "zh": "他们未经许可转载了那篇文章。"
+      }
+    ]
+  },
   "rerun": {
     "zh": "重播；重新进行",
     "note": "名词重音在前 /ˈriːrʌn/，动词在后 /riːˈrʌn/。电视重播、重跑测试、重新举行选举都用它。",
@@ -7668,6 +8116,20 @@
       {
         "en": "They sell wholesale and retail.",
         "zh": "他们既做批发也做零售。"
+      }
+    ]
+  },
+  "retrieval": {
+    "zh": "取回；检索",
+    "note": "计算机的「检索」（information retrieval）、物理上的「回收」。动词 retrieve。",
+    "ex": [
+      {
+        "en": "Data retrieval took less than a second.",
+        "zh": "数据检索用了不到一秒。"
+      },
+      {
+        "en": "The retrieval of the wreck took six weeks.",
+        "zh": "打捞沉船花了六周。"
       }
     ]
   },
@@ -7794,6 +8256,20 @@
       {
         "en": "The wreck was salvaged for scrap.",
         "zh": "沉船被打捞上来当废料。"
+      }
+    ]
+  },
+  "samba": {
+    "zh": "桑巴",
+    "note": "巴西的舞蹈与音乐，嘉年华的核心；也可作动词（samba through the street）。",
+    "ex": [
+      {
+        "en": "The band played a fast samba.",
+        "zh": "乐队奏了一支快节奏的桑巴。"
+      },
+      {
+        "en": "She teaches samba on Thursdays.",
+        "zh": "她周四教桑巴。"
       }
     ]
   },
@@ -8077,6 +8553,20 @@
       }
     ]
   },
+  "skate": {
+    "zh": "滑冰、滑板；回避",
+    "note": "冰上、轮滑、滑板都用 skate；比喻 skate over sth 是「把问题滑过去」。",
+    "ex": [
+      {
+        "en": "They skate on the canal in winter.",
+        "zh": "冬天他们在运河上滑冰。"
+      },
+      {
+        "en": "He skated over the question.",
+        "zh": "他把那个问题滑了过去。"
+      }
+    ]
+  },
   "slant": {
     "zh": "倾斜；倾向、立场",
     "note": "名词是倾斜、倾向、报道角度（an editorial slant）；动词是「倾斜」和「带倾向地写」（slanted news）。",
@@ -8312,6 +8802,20 @@
       {
         "en": "He sputtered an apology and left.",
         "zh": "他结结巴巴道了个歉就走了。"
+      }
+    ]
+  },
+  "squirt": {
+    "zh": "喷射；一小股",
+    "note": "指小股液体的「喷」，比 spray 更集中；口语里 a squirt 还能贬称小孩。",
+    "ex": [
+      {
+        "en": "Squirt some lemon on the fish.",
+        "zh": "往鱼上挤一点柠檬。"
+      },
+      {
+        "en": "The hose squirted water across the path.",
+        "zh": "水管把水喷了一地。"
       }
     ]
   },
@@ -8637,6 +9141,20 @@
       }
     ]
   },
+  "tailor": {
+    "zh": "裁缝；定制、使适合",
+    "note": "动词 tailor sth to sth 是「针对……调整」，商务与教育语境高频。",
+    "ex": [
+      {
+        "en": "The tailor took in the jacket.",
+        "zh": "裁缝把夹克改小了。"
+      },
+      {
+        "en": "The course is tailored to beginners.",
+        "zh": "这门课是为初学者量身定做的。"
+      }
+    ]
+  },
   "takeaway": {
     "zh": "外卖；（要点）",
     "note": "英式 takeaway、美式 takeout。除了「外带食物」，还常指「要点、结论」：the key takeaway。",
@@ -8648,6 +9166,20 @@
       {
         "en": "The takeaway from the meeting was simple: ship it.",
         "zh": "那次会议的要点很简单：发出去。"
+      }
+    ]
+  },
+  "tango": {
+    "zh": "探戈",
+    "note": "舞蹈与音乐；习语 It takes two to tango 指「一个巴掌拍不响，双方都有责任」。",
+    "ex": [
+      {
+        "en": "They danced a tango at the wedding.",
+        "zh": "他们在婚礼上跳了一支探戈。"
+      },
+      {
+        "en": "It takes two to tango.",
+        "zh": "一个巴掌拍不响。"
       }
     ]
   },
@@ -9029,6 +9561,20 @@
       }
     ]
   },
+  "variance": {
+    "zh": "差异；方差",
+    "note": "统计的「方差」、会计的「差异」、规划的「变更许可」；at variance with 是「与……不一致」。",
+    "ex": [
+      {
+        "en": "There is wide variance in the results.",
+        "zh": "结果差异很大。"
+      },
+      {
+        "en": "The budget was approved with a small variance.",
+        "zh": "预算以很小的偏差获批。"
+      }
+    ]
+  },
   "vector": {
     "zh": "向量；传播媒介",
     "note": "数学与物理的「向量」、生物学的「传播媒介」、计算机的「攻击向量」，三个领域都常见。",
@@ -9208,6 +9754,20 @@
       {
         "en": "He zapped through the channels all evening.",
         "zh": "他一晚上拿着遥控器换来换去。"
+      }
+    ]
+  },
+  "zen": {
+    "zh": "禅；淡定",
+    "note": "佛教的「禅」；口语里 be zen about sth 是「看得很开、不为所动」。大写 Zen 指禅宗。",
+    "ex": [
+      {
+        "en": "He practises zen in the mornings.",
+        "zh": "他早上修禅。"
+      },
+      {
+        "en": "She stayed zen through the whole delay.",
+        "zh": "整个延误过程中她都很淡定。"
       }
     ]
   },
