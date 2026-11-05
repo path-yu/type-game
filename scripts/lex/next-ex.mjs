@@ -37,25 +37,32 @@ const idx = JSON.parse(fs.readFileSync(path.join(LEX, 'index.json'), 'utf8'));
 const done = fs.existsSync(EX) ? JSON.parse(fs.readFileSync(EX, 'utf8')) : {};
 
 /*
- * 外部词频表（Google 网页词频 Top 10000）。
+ * 外部词频表，两张合用 —— 它们覆盖的语域不一样，噪声也不一样：
+ *
+ *   google-10000.txt  Google 网页词频，偏书面与技术（directory / protocol）
+ *   en-50k.txt        OpenSubtitles 字幕词频，偏口语（announcer / lousy）
  *
  * 前几轮试过的排序信号都不够：字母序碰到民族语言名，义项数碰到多义术语，
- * 对话语料只覆盖 118 个词。词频表能给出真正的「现代常用度」——
- * 8 千个空缺词里有 574 个在表内，这批就是最该补的。
+ * 对话语料只覆盖 118 个词。两张表合起来，8 千个空缺词里有三千多个命中，
+ * 等于给出了一条按常用度排好的队列，剩下的才真正算低频。
  *
- * 表里混着大量专名（american / david / yahoo）和成人词，靠下面的名单剔掉；
- * 国家、语言、常见人名、品牌，都是网页词频的噪声，不是学习词。
+ * 取两表排名里更小的那个：在任一语域里常用，就说明这词该会。
  */
-const FREQ = path.join(ROOT, 'data/wordfreq/google-10000.txt');
 const rank = new Map();
-if (fs.existsSync(FREQ)) {
-  fs.readFileSync(FREQ, 'utf8')
+const loadFreq = (file, pick) => {
+  const p = path.join(ROOT, 'data/wordfreq', file);
+  if (!fs.existsSync(p)) return;
+  fs.readFileSync(p, 'utf8')
     .split(/\r?\n/)
-    .forEach((w, i) => {
-      const t = w.trim();
-      if (t) rank.set(t, i + 1);
+    .forEach((line, i) => {
+      const w = pick(line);
+      if (!w) return;
+      const prev = rank.get(w);
+      if (prev === undefined || i + 1 < prev) rank.set(w, i + 1);
     });
-}
+};
+loadFreq('google-10000.txt', l => l.trim());
+loadFreq('en-50k.txt', l => l.split(' ')[0].trim());
 
 const NOISE = new RegExp(
   '^(' +
@@ -76,12 +83,22 @@ const NOISE = new RegExp(
       'david', 'james', 'john', 'michael', 'robert', 'william', 'mary', 'charles', 'thomas',
       'george', 'scott', 'jones', 'johnson', 'smith', 'brown', 'miller', 'wilson', 'davis',
       'daniel', 'joseph', 'jackson', 'kelly', 'anderson', 'taylor', 'moore', 'clark',
+      'simon', 'arthur', 'leo', 'dean', 'morgan', 'jordan', 'lewis', 'catherine', 'ali',
+      'brad', 'russell', 'dylan', 'anthony', 'rick', 'ross', 'adam', 'bruce', 'howard',
+      'lincoln', 'alexander', 'edward', 'elizabeth', 'victoria', 'lawrence', 'costa',
+      'jacob', 'cole', 'julian', 'diana', 'norman', 'herr', 'dude',
+      // 疾病与希腊字母（词频高，但做学习词条没意义）
+      'cancer', 'diabetes', 'hiv', 'aids', 'alpha', 'beta', 'gamma', 'delta', 'omega', 'sigma',
+      // 前缀式的残片与缩写
+      'anti', 'semi', 'para', 'ftp', 'asp', 'amp', 'gratis',
       // 品牌与缩写
       'yahoo', 'google', 'microsoft', 'apple', 'amazon', 'facebook', 'twitter', 'cisco',
-      'dec', 'mon', 'sec', 'min', 'des',
-      // 成人内容
-      'nude', 'anal', 'sex', 'porn', 'fuck', 'fucking', 'lesbian', 'hardcore', 'xxx', 'adult',
-      'viagra', 'casino',
+      'siemens', 'adobe', 'hollywood', 'coke', 'dec', 'mon', 'sec', 'min', 'des',
+      // 脏话与成人内容（字幕词频表里排得很靠前，但不该进学习词库）
+      'shit', 'fuck', 'fucking', 'fucked', 'bastard', 'crap', 'asshole', 'bullshit', 'piss',
+      'whore', 'damn', 'goddamn', 'bleep', 'pee', 'dick', 'bitch', 'slut', 'cock', 'pussy',
+      'nude', 'anal', 'sex', 'porn', 'lesbian', 'hardcore', 'xxx', 'adult', 'horny',
+      'erotic', 'fetish', 'bestiality', 'viagra', 'casino',
     ].join('|') +
     ')$',
 );

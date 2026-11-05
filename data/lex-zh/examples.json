@@ -391,6 +391,20 @@
       }
     ]
   },
+  "ambassador": {
+    "zh": "大使；代表",
+    "note": "派驻他国的大使，比喻「代表、使者」（brand ambassador 品牌代言人）。大使馆是 embassy。",
+    "ex": [
+      {
+        "en": "She was ambassador to Norway for four years.",
+        "zh": "她做了四年驻挪威大使。"
+      },
+      {
+        "en": "He acted as a goodwill ambassador for the charity.",
+        "zh": "他担任这家慈善机构的亲善大使。"
+      }
+    ]
+  },
   "amenable": {
     "zh": "肯配合的；经得起（处理/检验）",
     "note": "两个用法：人 amenable to 建议，是「好说话、愿意配合」；事物 amenable to 处理或检验，是「可以这样处理」。不是「和蔼」。",
@@ -419,6 +433,34 @@
       }
     ]
   },
+  "analyst": {
+    "zh": "分析师",
+    "note": "金融与数据的「分析师」、情报的「分析员」，心理治疗里 psychoanalyst 常简称 analyst。动词 analyse。",
+    "ex": [
+      {
+        "en": "The analyst cut her forecast twice.",
+        "zh": "这位分析师两次下调了预测。"
+      },
+      {
+        "en": "He works as a data analyst.",
+        "zh": "他是数据分析师。"
+      }
+    ]
+  },
+  "anime": {
+    "zh": "日本动画",
+    "note": "不可数，特指日本风格的动画；日本国内 anime 泛指所有动画。区别 cartoon——那是泛称。",
+    "ex": [
+      {
+        "en": "The series was adapted from a manga into anime.",
+        "zh": "这个系列从漫画改编成了动画。"
+      },
+      {
+        "en": "Anime has a huge following outside Japan.",
+        "zh": "日本动画在日本之外有大量拥趸。"
+      }
+    ]
+  },
   "annotation": {
     "zh": "注释、批注",
     "note": "比 comment 更强调「附着在原文上」；技术文档里的标注也用它（代码注释更常说 comment）。",
@@ -430,6 +472,20 @@
       {
         "en": "Add an annotation to the chart before sharing.",
         "zh": "分享之前给图表加个注。"
+      }
+    ]
+  },
+  "announcer": {
+    "zh": "播音员、解说员",
+    "note": "广播、电视与现场的播报者；体育解说也用它，但美式里「解说嘉宾」更常说 commentator。",
+    "ex": [
+      {
+        "en": "The announcer misread the score twice.",
+        "zh": "播音员两次念错了比分。"
+      },
+      {
+        "en": "He works as a stadium announcer on weekends.",
+        "zh": "他周末在体育场做现场播报。"
       }
     ]
   },
@@ -601,6 +657,20 @@
       }
     ]
   },
+  "audition": {
+    "zh": "试镜、试音",
+    "note": "表演类的选拔，动词直接接（audition for a role）。区别 interview——那是求职面试。",
+    "ex": [
+      {
+        "en": "She got the part at her first audition.",
+        "zh": "她第一次试镜就拿到了角色。"
+      },
+      {
+        "en": "Two hundred people auditioned for the chorus.",
+        "zh": "两百人参加了合唱团的选拔。"
+      }
+    ]
+  },
   "automotive": {
     "zh": "汽车的、机动车的",
     "note": "只作定语，指「与机动车有关」；口语里说 car industry 更自然。注意 automatic（自动的）是另一个词。",
@@ -612,6 +682,20 @@
       {
         "en": "Automotive parts are taxed at five percent.",
         "zh": "汽车零件按百分之五征税。"
+      }
+    ]
+  },
+  "aviation": {
+    "zh": "航空（业）",
+    "note": "不可数，指航空业与飞行技术；作定语用 aviation industry、aviation fuel。旧称飞行员为 aviator。",
+    "ex": [
+      {
+        "en": "He works in civil aviation.",
+        "zh": "他在民航工作。"
+      },
+      {
+        "en": "Aviation fuel is untaxed here.",
+        "zh": "这里的航空燃油不征税。"
       }
     ]
   },
@@ -713,6 +797,20 @@
       }
     ]
   },
+  "bankruptcy": {
+    "zh": "破产",
+    "note": "法律上是「破产」（file for bankruptcy 申请破产），比喻「彻底失败」（moral bankruptcy）。形容词 bankrupt。",
+    "ex": [
+      {
+        "en": "The chain filed for bankruptcy in March.",
+        "zh": "这家连锁店三月申请了破产。"
+      },
+      {
+        "en": "The scheme was close to moral bankruptcy.",
+        "zh": "这个计划在道义上快破产了。"
+      }
+    ]
+  },
   "basketball": {
     "zh": "篮球（运动/球）",
     "note": "运动不可数（play basketball，不加冠词），球可数（a basketball）。football、volleyball 同理。",
@@ -727,6 +825,20 @@
       }
     ]
   },
+  "beep": {
+    "zh": "哔哔声；发出提示音",
+    "note": "拟声词，指电子设备的短促提示音；动词是「响一声」。呼机叫 pager 或 beeper。",
+    "ex": [
+      {
+        "en": "The machine beeps when the cycle ends.",
+        "zh": "循环结束时机器会哔一声。"
+      },
+      {
+        "en": "Leave a message after the beep.",
+        "zh": "听到提示音后留言。"
+      }
+    ]
+  },
   "bias": {
     "zh": "偏见；偏差",
     "note": "比 prejudice 中性：可指人的先入之见，也可指统计上的系统性偏差（sample bias）。动词「使有倾向」，形容词 biased 是「有偏的」。",
@@ -738,6 +850,20 @@
       {
         "en": "His accent biased her against him before he spoke.",
         "zh": "还没开口，口音就让她有了先入之见。"
+      }
+    ]
+  },
+  "blackjack": {
+    "zh": "二十一点；短棍",
+    "note": "赌场游戏「21 点」、旧时警用短棍都叫它；动词是「用棍打、胁迫」。",
+    "ex": [
+      {
+        "en": "He lost three hundred at blackjack.",
+        "zh": "他玩二十一点输了三百。"
+      },
+      {
+        "en": "The guard carried a blackjack.",
+        "zh": "警卫带着一根短棍。"
       }
     ]
   },
@@ -839,6 +965,20 @@
       }
     ]
   },
+  "booth": {
+    "zh": "隔间；摊位",
+    "note": "电话亭、投票间、餐厅卡座、展会摊位都是它。读音 /buːð/ 或 /buːθ/ 都有人用。",
+    "ex": [
+      {
+        "en": "Vote in booth three, please.",
+        "zh": "请到三号投票间。"
+      },
+      {
+        "en": "We booked a booth at the fair.",
+        "zh": "我们在展会上订了个展位。"
+      }
+    ]
+  },
   "bootleg": {
     "zh": "盗版的；私酿、走私",
     "note": "本义是靴筒——禁酒时期把酒瓶塞在靴筒里。现在指盗版录音、私酿、走私货。动词是「私自制作或贩运」。",
@@ -850,6 +990,20 @@
       {
         "en": "Bootleg cigarettes were sold at the market.",
         "zh": "市场上卖走私烟。"
+      }
+    ]
+  },
+  "booze": {
+    "zh": "酒；狂饮",
+    "note": "口语、略贬，指酒精饮料；作动词是「猛喝」。形容词 boozy 是「酒气冲天的」。",
+    "ex": [
+      {
+        "en": "There was no booze at the reception.",
+        "zh": "招待会上没有酒。"
+      },
+      {
+        "en": "He has been boozing since noon.",
+        "zh": "他从中午就开始喝上了。"
       }
     ]
   },
@@ -962,6 +1116,20 @@
       {
         "en": "Plant the bulbs in autumn, pointed end up.",
         "zh": "秋天把球茎种下，尖头朝上。"
+      }
+    ]
+  },
+  "bunny": {
+    "zh": "兔子（儿语）",
+    "note": "儿语与卖萌用法，正式说 rabbit；还有 bunny ears（兔耳）、Playboy bunny 这类固定说法。",
+    "ex": [
+      {
+        "en": "The kids fed the bunny at the fair.",
+        "zh": "孩子们在集市上喂兔子。"
+      },
+      {
+        "en": "She wore bunny ears to the party.",
+        "zh": "她戴着兔耳去参加派对。"
       }
     ]
   },
@@ -1357,6 +1525,20 @@
       }
     ]
   },
+  "coma": {
+    "zh": "昏迷",
+    "note": "in a coma 是深度昏迷，比 unconscious 严重；diabetic coma 是糖尿病昏迷。别和 comma（逗号）混。",
+    "ex": [
+      {
+        "en": "He was in a coma for eleven days.",
+        "zh": "他昏迷了十一天。"
+      },
+      {
+        "en": "She came out of the coma on her own.",
+        "zh": "她自己醒了过来。"
+      }
+    ]
+  },
   "commitment": {
     "zh": "承诺；投入",
     "note": "两层：对外的承诺、对内的投入度。区别 promise——那是口头许诺，commitment 是「承担下来」。",
@@ -1581,6 +1763,20 @@
       }
     ]
   },
+  "cookie": {
+    "zh": "曲奇；网络 cookie",
+    "note": "英式 biscuit、美式 cookie；技术上的 cookie 是网站存在浏览器里的小数据。",
+    "ex": [
+      {
+        "en": "She baked a batch of cookies.",
+        "zh": "她烤了一批曲奇。"
+      },
+      {
+        "en": "Clear cookies and try again.",
+        "zh": "清一下 cookie 再试。"
+      }
+    ]
+  },
   "coordinate": {
     "zh": "协调；坐标；同等的",
     "note": "名动读音分工：动词 /kəʊˈɔːdɪneɪt/，名词 /kəʊˈɔːdɪnət/。复数 coordinates 几乎只指坐标，也指配套的一身衣服。",
@@ -1662,6 +1858,20 @@
       {
         "en": "The trial got wide press coverage.",
         "zh": "这场审判被媒体广泛报道。"
+      }
+    ]
+  },
+  "cowboy": {
+    "zh": "牛仔；野路子的",
+    "note": "字面是牛仔；英式口语里作定语指「不守规矩、粗制滥造的」（a cowboy builder 野路子包工头）。",
+    "ex": [
+      {
+        "en": "The cowboy drove the herd north.",
+        "zh": "牛仔把牛群往北赶。"
+      },
+      {
+        "en": "He is a cowboy builder who skips inspections.",
+        "zh": "他是个不报检的野路子承包商。"
       }
     ]
   },
@@ -1875,6 +2085,20 @@
       }
     ]
   },
+  "deluxe": {
+    "zh": "豪华的",
+    "note": "来自法语，只作定语；商品的「豪华版」是 deluxe edition。别写成 delux。",
+    "ex": [
+      {
+        "en": "They booked the deluxe room by mistake.",
+        "zh": "他们误订了豪华房。"
+      },
+      {
+        "en": "The deluxe edition comes with a booklet.",
+        "zh": "豪华版附一本小册子。"
+      }
+    ]
+  },
   "demo": {
     "zh": "演示；小样",
     "note": "demonstration 的缩短：软件有 demo version（试用版），乐队录 demo（小样），产品有 demo（演示）。现在的「示威」一般说 protest。",
@@ -1900,6 +2124,20 @@
       {
         "en": "A glut depressed prices for two years.",
         "zh": "供过于求把价格压了两年。"
+      }
+    ]
+  },
+  "deputy": {
+    "zh": "副手、代理人",
+    "note": "头衔里的「副」多用 deputy（deputy manager）或 vice（vice president）；deputy 更强调「代行职权」。",
+    "ex": [
+      {
+        "en": "The deputy took over while she was away.",
+        "zh": "她不在的时候由副手接管。"
+      },
+      {
+        "en": "A deputy sheriff arrived first.",
+        "zh": "副警长先到了。"
       }
     ]
   },
@@ -2449,6 +2687,20 @@
       }
     ]
   },
+  "ethnic": {
+    "zh": "族群的、民族的",
+    "note": "指「与族群文化有关的」（ethnic group），比 racial 更常用于文化层面；ethnic cleansing 是「种族清洗」，政治敏感。",
+    "ex": [
+      {
+        "en": "The city has four ethnic neighbourhoods.",
+        "zh": "这座城市有四个族群聚居区。"
+      },
+      {
+        "en": "Ethnic food is now mainstream here.",
+        "zh": "这里的外族风味菜已经很普遍。"
+      }
+    ]
+  },
   "evacuate": {
     "zh": "疏散、撤离；抽空",
     "note": "人「撤离」、容器「抽空」共用一个词，医学上还指排空肠胃。名词 evacuation 三者通用。",
@@ -2460,6 +2712,20 @@
       {
         "en": "Evacuate the air from the chamber before sealing it.",
         "zh": "密封之前把腔里的空气抽空。"
+      }
+    ]
+  },
+  "evaluate": {
+    "zh": "评估",
+    "note": "强调「按标准比对价值」，名词 evaluation。区别 estimate——那是估算数量。",
+    "ex": [
+      {
+        "en": "We evaluate every applicant the same way.",
+        "zh": "我们对每个申请人用同一套标准评估。"
+      },
+      {
+        "en": "The drug is being evaluated in trials.",
+        "zh": "这种药正在试验中接受评估。"
       }
     ]
   },
@@ -2603,6 +2869,20 @@
       }
     ]
   },
+  "fiber": {
+    "zh": "纤维；膳食纤维",
+    "note": "美式 fiber、英式 fibre。不可数，指纤维材料或膳食纤维；optical fibre 是光纤。",
+    "ex": [
+      {
+        "en": "The cable has a glass fiber core.",
+        "zh": "这根线缆有玻璃纤维芯。"
+      },
+      {
+        "en": "You need more fiber in your diet.",
+        "zh": "你的饮食里需要更多纤维。"
+      }
+    ]
+  },
   "filler": {
     "zh": "填充物；凑数内容；填充词",
     "note": "装修里的腻子、刊物里填版面的内容、口语里的「um / you know」都叫 filler。",
@@ -2712,6 +2992,20 @@
       {
         "en": "The font in the chapel dates from 1300.",
         "zh": "礼拜堂的洗礼池是十四世纪的。"
+      }
+    ]
+  },
+  "footage": {
+    "zh": "影像素材",
+    "note": "不可数，指拍下来的片段总量，新闻与监控语境高频。注意它不指照片——静态画面是 stills。",
+    "ex": [
+      {
+        "en": "The footage was shot on a phone.",
+        "zh": "这段影像是用手机拍的。"
+      },
+      {
+        "en": "Police reviewed two hours of footage.",
+        "zh": "警方看了两个小时的监控录像。"
       }
     ]
   },
@@ -2852,6 +3146,34 @@
       {
         "en": "He told the same gag at every party.",
         "zh": "每次聚会他都讲同一个段子。"
+      }
+    ]
+  },
+  "galaxy": {
+    "zh": "星系",
+    "note": "天文上的星系（the Galaxy 指银河系）；比喻「一群（名人）」。形容词 galactic。",
+    "ex": [
+      {
+        "en": "The galaxy is about a hundred thousand light years across.",
+        "zh": "这个星系直径约十万光年。"
+      },
+      {
+        "en": "A galaxy of stars turned out for the gala.",
+        "zh": "一众明星出席了晚会。"
+      }
+    ]
+  },
+  "garbage": {
+    "zh": "垃圾；废话",
+    "note": "美式 garbage、英式 rubbish，都不可数。比喻义「胡说八道」很常用。垃圾桶美式 garbage can、英式 dustbin。",
+    "ex": [
+      {
+        "en": "Put the garbage out on Tuesday night.",
+        "zh": "周二晚上把垃圾拿出去。"
+      },
+      {
+        "en": "That argument is garbage.",
+        "zh": "那套论证就是垃圾。"
       }
     ]
   },
@@ -3258,6 +3580,20 @@
       {
         "en": "She immersed herself in the archives for a month.",
         "zh": "她泡在档案里一个月。"
+      }
+    ]
+  },
+  "immunity": {
+    "zh": "免疫力；豁免",
+    "note": "医学的「免疫」与法律的「豁免」（diplomatic immunity 外交豁免）共用一个词；形容词 immune 常接 to。",
+    "ex": [
+      {
+        "en": "Immunity lasts about six months.",
+        "zh": "免疫力大约持续六个月。"
+      },
+      {
+        "en": "MPs have immunity from prosecution for speeches.",
+        "zh": "议员在议会发言享有免于起诉的豁免权。"
       }
     ]
   },
@@ -3891,6 +4227,20 @@
       }
     ]
   },
+  "layout": {
+    "zh": "布局、版面",
+    "note": "名词写成一个词；动词短语 lay out 是两个词。印刷版面、建筑平面布置都用它。",
+    "ex": [
+      {
+        "en": "The layout is clear but the type is small.",
+        "zh": "版面清楚，但字号偏小。"
+      },
+      {
+        "en": "The kitchen layout wastes space.",
+        "zh": "这个厨房的布局浪费空间。"
+      }
+    ]
+  },
   "leach": {
     "zh": "沥滤、渗漏",
     "note": "环境科学高频词，搭配 leach out of / into；名词 leaching 指淋溶作用。",
@@ -4059,6 +4409,34 @@
       }
     ]
   },
+  "lousy": {
+    "zh": "糟糕的；满是虱子的",
+    "note": "口语贬义「很差」，本义是「长虱子的」。be lousy with sth 是「到处都是」，带抱怨口气。",
+    "ex": [
+      {
+        "en": "The weather was lousy all week.",
+        "zh": "一整周天气都糟透了。"
+      },
+      {
+        "en": "He felt lousy about missing the call.",
+        "zh": "错过那通电话让他心里很难受。"
+      }
+    ]
+  },
+  "makeup": {
+    "zh": "化妆品；构成",
+    "note": "不可数，写成一个词；动词短语 make up 是两个词。the makeup of sth 是「……的构成」。",
+    "ex": [
+      {
+        "en": "She wears very little makeup.",
+        "zh": "她很少化妆。"
+      },
+      {
+        "en": "The makeup of the committee changed.",
+        "zh": "委员会的构成变了。"
+      }
+    ]
+  },
   "marginal": {
     "zh": "边缘的；微小的；边际的",
     "note": "经济上的边际（marginal cost）、政治的边缘席位、口语的「微不足道」都是它。名词 margin 是页边、利润、差距。",
@@ -4084,6 +4462,20 @@
       {
         "en": "The tree serves as a marker for the turn.",
         "zh": "那棵树是转弯处的标志。"
+      }
+    ]
+  },
+  "matrix": {
+    "zh": "矩阵；基质；母体",
+    "note": "数学的矩阵、生物的基质、电影《黑客帝国》里的「母体」都是它；复数是 matrices。",
+    "ex": [
+      {
+        "en": "The data form a matrix of rows and columns.",
+        "zh": "这些数据构成一个有行有列的矩阵。"
+      },
+      {
+        "en": "The film's matrix is a simulated world.",
+        "zh": "那部电影里的「母体」是一个模拟世界。"
       }
     ]
   },
@@ -4196,6 +4588,34 @@
       {
         "en": "The writing is minuscule and hard to read.",
         "zh": "字非常小，很难辨认。"
+      }
+    ]
+  },
+  "modeling": {
+    "zh": "建模；模特业",
+    "note": "美式 modeling 单写 l、英式 modelling 双写；既指「建模」也指「做模特」，靠语境分。",
+    "ex": [
+      {
+        "en": "The study uses agent-based modeling.",
+        "zh": "这项研究用的是基于主体的建模。"
+      },
+      {
+        "en": "She did some modeling in her twenties.",
+        "zh": "她二十几岁时做过模特。"
+      }
+    ]
+  },
+  "moderator": {
+    "zh": "主持人；审核员",
+    "note": "讨论会的「主持人」、论坛的「版主/审核」、物理上的「慢化剂」都用它；动词 moderate 是「主持、缓和」。",
+    "ex": [
+      {
+        "en": "The moderator kept the panel on time.",
+        "zh": "主持人把控着小组发言的时间。"
+      },
+      {
+        "en": "Moderators removed the post within an hour.",
+        "zh": "审核员一小时内删了那条帖。"
       }
     ]
   },
@@ -4759,6 +5179,20 @@
       }
     ]
   },
+  "pollution": {
+    "zh": "污染",
+    "note": "不可数，指污染的状态；具体污染物是 pollutant，动词 pollute，形容词 polluted。",
+    "ex": [
+      {
+        "en": "Air pollution shortens lives here.",
+        "zh": "这里的空气污染在缩短人的寿命。"
+      },
+      {
+        "en": "Plastic pollution is worst along this coast.",
+        "zh": "塑料污染在这段海岸最严重。"
+      }
+    ]
+  },
   "posting": {
     "zh": "帖子；派驻",
     "note": "网络「发帖」与人事「派驻」共用一个词，动词 post 两义都通。",
@@ -4927,6 +5361,20 @@
       }
     ]
   },
+  "preview": {
+    "zh": "预览；试映",
+    "note": "名动同形，指「先看一部分」：软件里的预览、出版前的试读、电影的试映都用它。区别 review（评论、复查）。",
+    "ex": [
+      {
+        "en": "Click the thumbnail for a preview.",
+        "zh": "点缩略图看预览。"
+      },
+      {
+        "en": "The film was previewed in three cities.",
+        "zh": "这部片在三个城市做了试映。"
+      }
+    ]
+  },
   "probe": {
     "zh": "探查、追问；探测器",
     "note": "动词是「探查、追问」（probe into）；名词是探测器、探针、调查（a probe into）。医学检查用的探头也叫 probe。",
@@ -5011,6 +5459,34 @@
       }
     ]
   },
+  "punk": {
+    "zh": "朋克（音乐）；小混混",
+    "note": "音乐流派与亚文化装扮，也可贬称「小混混」。形容词 punk 指「朋克的」。",
+    "ex": [
+      {
+        "en": "The band started as a punk outfit in 1977.",
+        "zh": "这支乐队 1977 年以朋克起家。"
+      },
+      {
+        "en": "He was a punk kid with a bad attitude.",
+        "zh": "他那时是个态度很冲的小混混。"
+      }
+    ]
+  },
+  "python": {
+    "zh": "蟒蛇",
+    "note": "生物上是蟒蛇；大写 Python 是一门编程语言——创始人取的是喜剧团体名，不是蛇。",
+    "ex": [
+      {
+        "en": "A python was found in the attic.",
+        "zh": "阁楼里发现了一条蟒蛇。"
+      },
+      {
+        "en": "The script is written in Python.",
+        "zh": "这个脚本是用 Python 写的。"
+      }
+    ]
+  },
   "quadruple": {
     "zh": "增至四倍；四重的",
     "note": "quadruple 是「乘以四」，中文「翻四番」是十六倍——这组词最容易译错。double / triple / quadruple 同构。",
@@ -5050,6 +5526,20 @@
       {
         "en": "She radiated confidence on stage.",
         "zh": "她在台上整个人透着自信。"
+      }
+    ]
+  },
+  "radiation": {
+    "zh": "辐射",
+    "note": "物理上是辐射，医学上是放疗（radiation therapy）；动词 radiate 是「散发」。",
+    "ex": [
+      {
+        "en": "The plant released radiation into the air.",
+        "zh": "电厂把辐射排进了空气。"
+      },
+      {
+        "en": "He had six weeks of radiation after surgery.",
+        "zh": "手术之后他做了六周放疗。"
       }
     ]
   },
@@ -5641,6 +6131,34 @@
       }
     ]
   },
+  "simulation": {
+    "zh": "模拟",
+    "note": "不可数指「模拟这件事」，可数指一次模拟；动词 simulate。区别 emulation——那是「模仿以求等同」。",
+    "ex": [
+      {
+        "en": "The simulation ran for six hours.",
+        "zh": "这次模拟跑了六个小时。"
+      },
+      {
+        "en": "Pilots train in a flight simulation.",
+        "zh": "飞行员在飞行模拟器里训练。"
+      }
+    ]
+  },
+  "siren": {
+    "zh": "汽笛、警报器；塞壬",
+    "note": "警报器与希腊神话里以歌声诱人的塞壬是同一个词，所以比喻义是「诱惑」（the siren call of the city）。",
+    "ex": [
+      {
+        "en": "The sirens went off two minutes before the strike.",
+        "zh": "空袭前两分钟警报响了。"
+      },
+      {
+        "en": "He followed the siren call of the city.",
+        "zh": "他跟着城市的诱惑走了。"
+      }
+    ]
+  },
   "slant": {
     "zh": "倾斜；倾向、立场",
     "note": "名词是倾斜、倾向、报道角度（an editorial slant）；动词是「倾斜」和「带倾向地写」（slanted news）。",
@@ -5876,6 +6394,20 @@
       {
         "en": "The radio was full of static.",
         "zh": "收音机里全是杂音。"
+      }
+    ]
+  },
+  "stereo": {
+    "zh": "立体声；音响",
+    "note": "与 mono（单声道）相对；口语里 a stereo 就是「一套音响」。别和 stereotype（刻板印象）混。",
+    "ex": [
+      {
+        "en": "The car has a decent stereo.",
+        "zh": "这车的音响还不错。"
+      },
+      {
+        "en": "The album was mixed in stereo.",
+        "zh": "这张专辑是立体声混音。"
       }
     ]
   },
@@ -6313,6 +6845,20 @@
       }
     ]
   },
+  "vector": {
+    "zh": "向量；传播媒介",
+    "note": "数学与物理的「向量」、生物学的「传播媒介」、计算机的「攻击向量」，三个领域都常见。",
+    "ex": [
+      {
+        "en": "The vector points north-east.",
+        "zh": "这个向量指向东北。"
+      },
+      {
+        "en": "Mosquitoes are the main vector for the disease.",
+        "zh": "蚊子是这种病的主要传播媒介。"
+      }
+    ]
+  },
   "versatile": {
     "zh": "多才多艺的；多用途的",
     "note": "人和物都能用，名词 versatility。别和 volatile（易变的、挥发性的）混——两个词长得很像。",
@@ -6408,6 +6954,20 @@
       {
         "en": "Tickets go on sale worldwide on Monday.",
         "zh": "门票周一全球开售。"
+      }
+    ]
+  },
+  "yen": {
+    "zh": "日元；渴望",
+    "note": "货币单位（JPY）；口语里 a yen for sth 是「强烈的向往」，来自汉语「瘾」的旧借词。",
+    "ex": [
+      {
+        "en": "The yen weakened against the dollar.",
+        "zh": "日元对美元走弱。"
+      },
+      {
+        "en": "She has a yen for the sea.",
+        "zh": "她特别想去看海。"
       }
     ]
   },

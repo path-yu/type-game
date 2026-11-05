@@ -272,8 +272,9 @@ engagement 《傲慢与偏见》里出现 13 次，一次都不是「交战」
 
 **先补哪些词**由三层信号决定，都放在 `scripts/lex/next-ex.mjs` 里：
 
-1. `data/wordfreq/google-10000.txt`（Google 网页词频 Top 10000）—— 空缺词里有 574 个
-   在表内，按排名取，这是最接近「现代常用度」的信号
+1. 两张外部词频表（`data/wordfreq/`）—— `google-10000.txt` 偏书面与技术，
+   `en-50k.txt`（OpenSubtitles 字幕）偏口语。空缺词里有三千多个命中，
+   按两表排名里更小的那个取，这是最接近「现代常用度」的信号
 2. 对话语料频次（`dialogues.json`，1157 场现代场景）—— 补的是 email、refund、
    invoice、payroll 这类公版书永远不会出现的现代生活词
 3. 义项数 —— 前两者都没覆盖时，义项多通常意味着常见
