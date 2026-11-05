@@ -1,0 +1,322 @@
+{
+  "federation": {
+    "zh": "联邦；联合会",
+    "note": "政治上是「联邦」（成员单位有自治权），民间组织是「联合会」。形容词 federal 是「联邦的」。",
+    "ex": [
+      { "en": "The federation has eighteen member clubs.", "zh": "这个联合会有十八个成员俱乐部。" },
+      { "en": "The country became a federation in 1901.", "zh": "这个国家 1901 年成为联邦。" }
+    ]
+  },
+  "autopsy": {
+    "zh": "尸检；事后深度复盘",
+    "note": "医学上是尸检，比 post-mortem 更技术；技术圈借用来指「对故障的深度复盘」（an autopsy of the outage）。",
+    "ex": [
+      { "en": "The autopsy found no sign of injury.", "zh": "尸检没有发现外伤迹象。" },
+      { "en": "They held an autopsy on the failed launch.", "zh": "他们对这次失败的发布做了复盘。" }
+    ]
+  },
+  "counselor": {
+    "zh": "辅导员、顾问；律师（美式）",
+    "note": "心理与学业的「辅导员」、夏令营的「带队老师」、美式法律里的「律师」。拼写 c-o-u-n-s-e-l-o-r，英式 counsellor 双写 l。",
+    "ex": [
+      { "en": "The school counselor saw him twice a week.", "zh": "学校辅导员每周见他两次。" },
+      { "en": "She is a counselor for the defence.", "zh": "她是辩方的律师。" }
+    ]
+  },
+  "publish": {
+    "zh": "出版、发表；发布",
+    "note": "出书、发论文、发布软件版本都用它。名词 publication 既是「出版」也是「出版物」。",
+    "ex": [
+      { "en": "The paper publishes on Thursdays.", "zh": "这份报纸每周四出。" },
+      { "en": "The findings were published last month.", "zh": "研究结果上个月发表了。" }
+    ]
+  },
+  "thermal": {
+    "zh": "热的、保暖的",
+    "note": "技术上是热学词（thermal energy、thermal imaging），服装上是「保暖内衣」（thermals）。",
+    "ex": [
+      { "en": "The building has thermal insulation.", "zh": "这栋楼做了保温。" },
+      { "en": "She wore a thermal vest under the shirt.", "zh": "她在衬衫里面穿了件保暖背心。" }
+    ]
+  },
+  "coastal": {
+    "zh": "沿海的",
+    "note": "只作定语（coastal town）；说「在海岸边」用 on the coast。动词 coast 还有「滑行、不费力地前进」的意思。",
+    "ex": [
+      { "en": "The coastal road floods twice a year.", "zh": "这条沿海公路一年淹两次。" },
+      { "en": "Coastal towns lost most of their visitors.", "zh": "沿海城镇失去了大部分游客。" }
+    ]
+  },
+  "customize": {
+    "zh": "定制、自定义",
+    "note": "美式 customize、英式 customise；软件里的「自定义设置」也用它。名词 customization。",
+    "ex": [
+      { "en": "You can customize the dashboard.", "zh": "这个看板可以自定义。" },
+      { "en": "The shop customizes bikes for tall riders.", "zh": "这家店为高个子骑手定制自行车。" }
+    ]
+  },
+  "governance": {
+    "zh": "治理",
+    "note": "比 government 抽象，指决策与监督的机制，多用于机构、数据与 AI；动词 govern。",
+    "ex": [
+      { "en": "Good governance matters more than good intentions.", "zh": "好的治理比好的意愿更重要。" },
+      { "en": "The charity published its governance rules.", "zh": "这家慈善机构公布了治理规则。" }
+    ]
+  },
+  "capability": {
+    "zh": "能力；功能",
+    "note": "比 ability 更偏「可测量、可交付的能力」；复数 capabilities 常指设备或系统的「功能」。",
+    "ex": [
+      { "en": "The team has the capability to ship by June.", "zh": "团队有能力在六月前交付。" },
+      { "en": "The system's capabilities are listed in the manual.", "zh": "系统的功能在手册里列着。" }
+    ]
+  },
+  "psychic": {
+    "zh": "通灵的；灵媒",
+    "note": "形容词是「通灵的、心灵的」，名词是「灵媒」。词根 psych- 与心理学同源，但 psychic 不带科学含义。",
+    "ex": [
+      { "en": "She claims to be psychic.", "zh": "她自称有通灵能力。" },
+      { "en": "He consulted a psychic about the missing ring.", "zh": "他为了丢的戒指去找了个灵媒。" }
+    ]
+  },
+  "recorder": {
+    "zh": "录音机；记录员；竖笛",
+    "note": "录音设备、法庭记录员、竖笛三种意思；法律里的 recorder 还是「记录法官」。",
+    "ex": [
+      { "en": "The interview was taped on a small recorder.", "zh": "采访是用一台小录音机录的。" },
+      { "en": "She plays the recorder in a consort.", "zh": "她在一个古乐小组里吹竖笛。" }
+    ]
+  },
+  "blackmail": {
+    "zh": "敲诈、勒索",
+    "note": "本义是苏格兰边境的「黑租」（保护费），现在专指以揭露隐私相挟；与 extortion 近义，但更常指「拿秘密威胁」。",
+    "ex": [
+      { "en": "He was charged with blackmail.", "zh": "他被控敲诈。" },
+      { "en": "They blackmailed the company into silence.", "zh": "他们敲诈公司，逼它噤声。" }
+    ]
+  },
+  "sucker": {
+    "zh": "容易上当的人；吸盘",
+    "note": "口语贬义「冤大头」、生物「吸盘」、植物「根出条」。a sucker for sth 是「对……毫无抵抗力」。",
+    "ex": [
+      { "en": "Only a sucker would pay that price.", "zh": "只有冤大头才付那个价。" },
+      { "en": "The octopus attaches itself with suckers.", "zh": "章鱼靠吸盘附着。" }
+    ]
+  },
+  "zombie": {
+    "zh": "僵尸",
+    "note": "文化符号；商业里 zombie company 指靠债务续命的企业，技术里 zombie process 是「僵尸进程」。",
+    "ex": [
+      { "en": "The film is about zombies in a shopping mall.", "zh": "这部片讲的是商场里的僵尸。" },
+      { "en": "The company is a zombie: alive but not working.", "zh": "这家公司像僵尸：没死，但也不运转。" }
+    ]
+  },
+  "geographic": {
+    "zh": "地理的",
+    "note": "与 geographical 同义（后者在英式更常见）；作术语时多用 geographic（geographic information system）。",
+    "ex": [
+      { "en": "The geographic spread of the sample is narrow.", "zh": "样本的地理分布很窄。" },
+      { "en": "There is no geographic reason for the border.", "zh": "这条边界没有地理上的理由。" }
+    ]
+  },
+  "generator": {
+    "zh": "发电机；生成器",
+    "note": "物理上的发电机，软件里的「生成器」（报表生成、代码生成）。动词 generate。",
+    "ex": [
+      { "en": "The backup generator failed during the outage.", "zh": "停电时备用发电机也坏了。" },
+      { "en": "The report generator runs every night.", "zh": "报表生成器每晚运行。" }
+    ]
+  },
+  "suspension": {
+    "zh": "停职、暂停；悬挂（系统）",
+    "note": "四义：停职停学、服务或比赛的暂停、车辆悬挂、化学的悬浮液。动词 suspend。",
+    "ex": [
+      { "en": "He was given a two-week suspension.", "zh": "他被停职两周。" },
+      { "en": "The car has independent suspension.", "zh": "这辆车是独立悬挂。" }
+    ]
+  },
+  "florist": {
+    "zh": "花店；花商",
+    "note": "卖花的人与店都叫 florist，花艺这门手艺是 floristry。",
+    "ex": [
+      { "en": "The florist delivered the flowers at noon.", "zh": "花店中午把花送到了。" },
+      { "en": "She trained as a florist in Paris.", "zh": "她在巴黎学的花艺。" }
+    ]
+  },
+  "analog": {
+    "zh": "模拟的；类似物",
+    "note": "美式 analog、英式 analogue。技术上指「模拟信号」，逻辑上指「类似的情形」。反义 digital。",
+    "ex": [
+      { "en": "The tape is an analog format.", "zh": "磁带是模拟格式。" },
+      { "en": "This case is an analog of the earlier one.", "zh": "这个案子是早先那个案子的类似情形。" }
+    ]
+  },
+  "facial": {
+    "zh": "面部的；面部护理",
+    "note": "形容词是「面部的」（facial expression），名词是美容院的「面部护理」；医学检查里也用它。",
+    "ex": [
+      { "en": "The facial muscles are hard to relax.", "zh": "面部肌肉很难放松。" },
+      { "en": "She booked a facial for Saturday.", "zh": "她订了周六的面部护理。" }
+    ]
+  },
+  "offset": {
+    "zh": "抵消；胶印",
+    "note": "动词「抵消」（offset sth by sth）、印刷「胶印」、会计「冲抵」；过去式不变。",
+    "ex": [
+      { "en": "Higher fuel costs were offset by lower wages.", "zh": "燃油成本上升被工资下降抵消了。" },
+      { "en": "The publisher uses offset printing.", "zh": "这家出版社用的是胶印。" }
+    ]
+  },
+  "elite": {
+    "zh": "精英；精锐的",
+    "note": "名词可数（an elite），常带批评语气；形容词指「精锐的、顶级的」。读 /eɪˈliːt/ 或 /ɪˈliːt/。",
+    "ex": [
+      { "en": "The decision was made by a small elite.", "zh": "这个决定是一小撮精英做的。" },
+      { "en": "He trains with an elite unit.", "zh": "他在一支精锐部队训练。" }
+    ]
+  },
+  "automation": {
+    "zh": "自动化",
+    "note": "不可数；动词 automate，形容词 automatic。注意别和 automaton（自动机械、机械行事的人）混。",
+    "ex": [
+      { "en": "Automation cut the workforce by a third.", "zh": "自动化裁掉了三分之一的员工。" },
+      { "en": "The warehouse runs on partial automation.", "zh": "这个仓库是半自动化运行。" }
+    ]
+  },
+  "athletics": {
+    "zh": "田径运动",
+    "note": "英式里 athletics 就是「田径」，美式更常说 track and field；athletic 是形容词（健壮的、田径的）。",
+    "ex": [
+      { "en": "She competed in athletics at school.", "zh": "她在学校参加田径比赛。" },
+      { "en": "The club covers swimming and athletics.", "zh": "这个俱乐部有游泳和田径。" }
+    ]
+  },
+  "southeast": {
+    "zh": "东南（的）",
+    "note": "写成一个词（英式也可写 south-east）；作副词直接说 head southeast，不加介词。",
+    "ex": [
+      { "en": "The wind turned southeast overnight.", "zh": "夜里风转成了东南风。" },
+      { "en": "They live in the southeast of the city.", "zh": "他们住在城市的东南部。" }
+    ]
+  },
+  "firewall": {
+    "zh": "防火墙",
+    "note": "技术上的防火墙，也比喻「隔离屏障」（a firewall between work and home）。",
+    "ex": [
+      { "en": "The firewall blocks outbound traffic by default.", "zh": "防火墙默认拦截出站流量。" },
+      { "en": "He built a firewall between work and family life.", "zh": "他在工作与家庭之间立了一道防火墙。" }
+    ]
+  },
+  "scanner": {
+    "zh": "扫描仪；扫描器",
+    "note": "办公扫描仪、医学影像设备（CT scanner）、安检与无线电的扫描器都是它；动词 scan。",
+    "ex": [
+      { "en": "Put the page face down on the scanner.", "zh": "把纸面朝下放在扫描仪上。" },
+      { "en": "The scanner picked up a weak signal.", "zh": "扫描器捕捉到一个很弱的信号。" }
+    ]
+  },
+  "basics": {
+    "zh": "基础、基本要点",
+    "note": "用复数形式指「基本知识」；back to basics 是「回归基本功」。单数 basic 是形容词。",
+    "ex": [
+      { "en": "Learn the basics before you touch the settings.", "zh": "先学会基本的东西再动设置。" },
+      { "en": "The course covers the basics of contract law.", "zh": "这门课讲合同法基础。" }
+    ]
+  },
+  "binary": {
+    "zh": "二进制的；二元的",
+    "note": "技术上的「二进制」、逻辑上的「非此即彼」、天文的「双星」都是它。信号语境里反义 analog。",
+    "ex": [
+      { "en": "Computers store numbers in binary form.", "zh": "计算机用二进制形式存数字。" },
+      { "en": "The question is not binary.", "zh": "这个问题不是非黑即白的。" }
+    ]
+  },
+  "coalition": {
+    "zh": "联合政府；临时联盟",
+    "note": "政治上是多党联合政府，社会上是为某件事临时结成的联盟；动词 coalesce 是「合并、汇合」。",
+    "ex": [
+      { "en": "The coalition fell after eight months.", "zh": "联合政府八个月后就垮了。" },
+      { "en": "A coalition of charities opposed the law.", "zh": "一批慈善机构联合起来反对这项法律。" }
+    ]
+  },
+  "enrollment": {
+    "zh": "注册人数；入学、参保",
+    "note": "美式 enrollment、英式 enrolment（单写 l）；指「注册这件事」与「注册人数」，保险语境里是「参保」。",
+    "ex": [
+      { "en": "Enrollment fell by nine percent this year.", "zh": "今年注册人数下降了百分之九。" },
+      { "en": "Open enrollment runs through November.", "zh": "开放参保期持续到十一月。" }
+    ]
+  },
+  "champ": {
+    "zh": "大声咀嚼；冠军（口语）",
+    "note": "动词是「（马）焦躁地咬嚼、大声嚼」，口语里 the champ 是「冠军」。champ at the bit 是「迫不及待」。",
+    "ex": [
+      { "en": "He champed his food like he had not eaten in days.", "zh": "他嚼得像是好几天没吃过东西。" },
+      { "en": "The champ took the belt in the fifth round.", "zh": "拳王在第五回合赢下了腰带。" }
+    ]
+  },
+  "react": {
+    "zh": "反应；起反应",
+    "note": "通用「反应」与化学「起反应」（react with）；名词 reaction。react against 是「反抗」。",
+    "ex": [
+      { "en": "She reacted faster than anyone expected.", "zh": "她的反应比谁预料的都快。" },
+      { "en": "The compound reacts with water.", "zh": "这种化合物会与水反应。" }
+    ]
+  },
+  "bidder": {
+    "zh": "投标者、竞买人",
+    "note": "拍卖与招标里的「出价方」，动词 bid。区别 buyer——前者只是在出价，后者已经成交。",
+    "ex": [
+      { "en": "Three bidders turned up for the site.", "zh": "有三家来竞这块地。" },
+      { "en": "The highest bidder won the painting.", "zh": "出价最高的人得到了那幅画。" }
+    ]
+  },
+  "aging": {
+    "zh": "老化；老龄化的",
+    "note": "美式 aging 单写、英式 ageing；人口「老龄化」与物品「老化」都用它。",
+    "ex": [
+      { "en": "The population is aging fast.", "zh": "人口正在快速老龄化。" },
+      { "en": "Aging equipment caused the outage.", "zh": "老化的设备导致了这次中断。" }
+    ]
+  },
+  "allocation": {
+    "zh": "分配、拨款",
+    "note": "资源、预算、内存的「分配」，动词 allocate。区别 allotment——那更偏「按人头摊派」。",
+    "ex": [
+      { "en": "The allocation of funds was never explained.", "zh": "资金怎么分的，从来没有解释。" },
+      { "en": "Each team gets an allocation of two hundred hours.", "zh": "每个团队分到两百小时。" }
+    ]
+  },
+  "sampling": {
+    "zh": "抽样；采样",
+    "note": "统计的「抽样」、音乐的「采样」、检验的「取样」都用它；动词 sample。",
+    "ex": [
+      { "en": "The sampling method skewed the results.", "zh": "抽样方法让结果出现了偏差。" },
+      { "en": "Water sampling happens every Monday.", "zh": "每周一采水样。" }
+    ]
+  },
+  "civilian": {
+    "zh": "平民；民用的",
+    "note": "与 military 相对；「民用」指非军事用途（civilian aircraft 民用飞机）。",
+    "ex": [
+      { "en": "The blast killed nine civilians.", "zh": "爆炸造成九名平民死亡。" },
+      { "en": "The technology moved from military to civilian use.", "zh": "这项技术从军用转为民用。" }
+    ]
+  },
+  "ballet": {
+    "zh": "芭蕾",
+    "note": "不可数指这门艺术，可数指一部芭蕾舞剧；t 不发音，读 /ˈbæleɪ/。",
+    "ex": [
+      { "en": "She trained in ballet from the age of five.", "zh": "她五岁起学芭蕾。" },
+      { "en": "The company performs classical ballet.", "zh": "这个团演的是古典芭蕾。" }
+    ]
+  },
+  "excerpt": {
+    "zh": "摘录、节选",
+    "note": "名动同形，指从长文中摘出一段；名词重音常在前 /ˈeksɜːpt/，动词在后。",
+    "ex": [
+      { "en": "The magazine ran an excerpt from the memoir.", "zh": "杂志登了回忆录的节选。" },
+      { "en": "He excerpted three paragraphs for the talk.", "zh": "他为这次演讲摘了三段。" }
+    ]
+  }
+}
